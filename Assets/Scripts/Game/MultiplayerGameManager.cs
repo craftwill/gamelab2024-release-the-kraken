@@ -91,9 +91,9 @@ namespace Kraken
 
             _localPlayer = NetworkUtils.Instantiate(_playerPrefab.name, _playersSpawnPos.position);
 
-            var localPhotonPlayer = PhotonNetwork.LocalPlayer;
+            /*var localPhotonPlayer = PhotonNetwork.LocalPlayer;
             photonView.RPC(nameof(RPC_PlayerCreated), RpcTarget.MasterClient, _localPlayer.GetPhotonView().ViewID,
-                localPhotonPlayer.NickName);
+                localPhotonPlayer.NickName);*/
         }
 
         [PunRPC]
