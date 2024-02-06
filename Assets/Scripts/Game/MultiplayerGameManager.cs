@@ -90,6 +90,10 @@ namespace Kraken
             Debug.Log("Creating player!");
 
             _localPlayer = NetworkUtils.Instantiate(_playerPrefab.name, _playersSpawnPos.position);
+
+            var localPhotonPlayer = PhotonNetwork.LocalPlayer;
+            photonView.RPC(nameof(RPC_PlayerCreated), RpcTarget.MasterClient, _localPlayer.GetPhotonView().ViewID,
+                localPhotonPlayer.NickName);
         }
 
         [PunRPC]
@@ -129,11 +133,7 @@ namespace Kraken
 
         private void TeleportPlayer(PhotonView playerToTeleport, Vector3 position) 
         {
-            var characterController = playerToTeleport.GetComponent<CharacterController>();
-            var initialCharControllerEnabled = characterController.enabled;
-            characterController.enabled = false;
             playerToTeleport.transform.position = position;
-            characterController.enabled = initialCharControllerEnabled;
         }
 
         private PlayerEntity GetPlayerEntity(string playerUserId) 
