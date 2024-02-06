@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDebugLogs: 0
   loadCustomSceneName: 
-  isSkipMainMenu: 1
+  isSkipMainMenu: 0
   moveSpeed: 5

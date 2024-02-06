@@ -5,23 +5,32 @@ using UnityEngine;
 
 using Bytes;
 
-using Kraken;
-
-namespace Kraken.Network
+namespace Kraken
 {
     public class NetworkManager : MonoBehaviourPunCallbacks
     {
+        const int MAX_LOBBY_SIZE = 3;
         const string TEST_ROOM_CODE = "test";
 
-        public void Init()
+        private void Start()
+        {
+            DontDestroyOnLoad(this.gameObject);
+
+            EventManager.AddEventListener(EventNames.TryConnectToPhoton, HandleTryConnectToPhoton);
+        }
+
+        private void HandleTryConnectToPhoton(BytesData data)
+        {
+            TryConnectToPhoton();
+        }
+
+        public void TryConnectToPhoton()
         {
             TryConnect();
             PhotonNetwork.AutomaticallySyncScene = true;
 
             EventManager.AddEventListener(EventNames.CreateRoom, HandleCreateRoom);
             EventManager.AddEventListener(EventNames.JoinRoomWithCode, HandleJoinRoom);
-            EventManager.AddEventListener(EventNames.JoinGameScene, HandleJoinGameScene);
-            EventManager.AddEventListener(EventNames.SetLocalPlayerNickName, HandleSetLocalPlayerNickName);
         }
 
         private void TryConnect()
@@ -34,31 +43,16 @@ namespace Kraken.Network
             Debug.Log("Logged in the master server in " + PhotonNetwork.CloudRegion + " region!");
             PhotonNetwork.AutomaticallySyncScene = true;
 
-            // Automaticlly create a room a join it
-            if (Config.current.isSkipMainMenu)
-            {
-                CreateRoomWithCode(TEST_ROOM_CODE);
-            }
+            EventManager.Dispatch(EventNames.ConnectedToMaster, null);
 
-            // Create NickName or retrieve it from PlayerPrefs if it already exists
-            if (!GameManager.IsLocalPlayerNickNameSet())
-            {
-                // Pop-up to ask Player to set a username
-                //EventManager.Dispatch(EventNames.PopupSetLocalPlayerNickName, null);
-            }
-            else
-            {
-                // Needs to be assigned every time you connect to the Master Server
-                PhotonNetwork.NickName = GameManager.GetLocalPlayerNickName();
-                Debug.Log($"Your nickname is: {PhotonNetwork.NickName}");
-            }
+            PhotonNetwork.LocalPlayer.NickName = "Player" + UnityEngine.Random.Range(1, 100);
         }
 
         public override void OnDisconnected(DisconnectCause cause)
         {
             base.OnDisconnected(cause);
 
-            Debug.Log("Disconnected!" + cause.ToString());
+            EventManager.Dispatch(EventNames.NetworkError, null);
         }
 
         /// <summary>
@@ -71,15 +65,8 @@ namespace Kraken.Network
             Debug.Log("On Joined Room!");
             if (!PhotonNetwork.IsMasterClient) return;
 
-            // Directly load the multiplayerGameScene to skip the lobby
-            if (Config.current.isSkipMainMenu)
-            {
-                LoadMultiplayerGameScene();
-                return;
-            }
-
             // Load lobby view
-            PhotonNetwork.LoadLevel(1);
+            PhotonNetwork.LoadLevel("Lobby");
         }
 
         public override void OnCreateRoomFailed(short returnCode, string message)
@@ -87,7 +74,7 @@ namespace Kraken.Network
             base.OnCreateRoomFailed(returnCode, message);
 
             // If played failed to create the TEST_ROOM_CODE room, then it must already exist. Join it instead. 
-            if (returnCode == ErrorCode.GameIdAlreadyExists && Config.current.isSkipMainMenu)
+            if (returnCode == ErrorCode.GameIdAlreadyExists)
             {
                 JoinRoomWithCode(TEST_ROOM_CODE);
             }
@@ -111,28 +98,21 @@ namespace Kraken.Network
             CreateRoomWithRandomCode();
         }
 
-        private void CreateRoomWithRandomCode() 
+        private void CreateRoomWithRandomCode()
         {
             PhotonNetwork.SetMasterClient(PhotonNetwork.LocalPlayer);
             Debug.Log($"masterclient is: {PhotonNetwork.LocalPlayer}");
-            PhotonNetwork.CreateRoom(NetworkUtils.CreateRandomRoomCode(), BuildRoomOptions());
+            PhotonNetwork.CreateRoom(TEST_ROOM_CODE, BuildRoomOptions());
         }
 
-        private void CreateRoomWithCode(string code)
-        {
-            PhotonNetwork.SetMasterClient(PhotonNetwork.LocalPlayer);
-            Debug.Log($"masterclient is: {PhotonNetwork.LocalPlayer}");
-            PhotonNetwork.CreateRoom(code, BuildRoomOptions());
-        }
-
-        private RoomOptions BuildRoomOptions() 
+        private RoomOptions BuildRoomOptions()
         {
             return new RoomOptions()
             {
                 IsVisible = true,
                 IsOpen = true,
                 PublishUserId = true,
-                MaxPlayers = (byte)NetworkUtils.MAX_LOBBY_SIZE
+                MaxPlayers = (byte)MAX_LOBBY_SIZE
             };
         }
 
@@ -142,8 +122,8 @@ namespace Kraken.Network
         /// <param name="data"></param>
         private void HandleJoinRoom(BytesData data)
         {
-            var roomData = data as StringDataBytes;
-            string roomCode = roomData.StringValue;
+            //var roomData = data as StringDataBytes;
+            string roomCode = TEST_ROOM_CODE;//roomData.StringValue;
 
             if (roomCode != String.Empty)
             {
@@ -151,37 +131,17 @@ namespace Kraken.Network
             }
         }
 
-        /// <summary>
-        /// Handle join game scene
-        /// </summary>
-        /// <param name="data"></param>
-        private void HandleJoinGameScene(BytesData data)
+        static private string CreateRandomRoomCode()
         {
-            LoadMultiplayerGameScene();
+            string alphabet = "abcdejfhijklmnopqrstuvwxyz".ToUpper();
+            string digit = "0123456789";
+
+            return $"{GetRandomCharacterFrom(alphabet)}{GetRandomCharacterFrom(digit)}{GetRandomCharacterFrom(alphabet)}{GetRandomCharacterFrom(digit)}";
         }
 
-        private void LoadMultiplayerGameScene() 
+        static private char GetRandomCharacterFrom(string aString)
         {
-            var customSceneName = Config.current.loadCustomSceneName;
-            if (customSceneName != "")
-            {
-                Debug.LogWarning("You loaded a custom scene with name: " + customSceneName);
-                PhotonNetwork.LoadLevel(customSceneName);
-                return;
-            }
-            PhotonNetwork.LoadLevel(2);
-        }
-
-        /// <summary>
-        /// Once a player has set a NickName in the pop up, this is called.
-        /// It will update the Networked name and saves it locally in the PlayerPrefs.
-        /// </summary>
-        private void HandleSetLocalPlayerNickName(BytesData data)
-        {
-            var nameData = (data as StringDataBytes).StringValue;
-            PhotonNetwork.LocalPlayer.NickName = nameData;
-            GameManager.SetLocalPlayerNickName(nameData);
-            Debug.Log($"NetworkManager -- Your nickname is now: {PhotonNetwork.LocalPlayer.NickName}");
+            return aString[UnityEngine.Random.Range(0, aString.Length)];
         }
     }
 }

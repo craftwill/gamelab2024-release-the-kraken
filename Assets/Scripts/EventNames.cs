@@ -9,13 +9,19 @@ namespace Kraken
 {
     public class EventNames
     {
-        static public string InitNetwork = "InitNetwork";
-        static public string StartGame = "StartGame";
-        static public string CreateRoom = "CreateRoom";
-        static public string JoinRoomWithCode = "JoinRoomWithCode";
-        static public string JoinGameScene = "JoinGameScene";
+        // Custom late start()
+        public const string LateStart = "LateStart";
 
-        static public string SetLocalPlayerNickName = "SetLocalPlayerNickName";
+        // Main menu
+        public const string TryConnectToPhoton = "TryConnectToPhoton";
+        public const string ConnectedToMaster = "ConnectedToMaster";
+        public const string NetworkError = "NetworkError";
+
+        // Lobby Events
+        public const string JoinRoomWithCode = "JoinRoomWithCode";
+        public const string CreateRoom = "CreateRoom";
+        public const string UpdateLobbyView = "UpdateLobbyView";
+        public const string JoinGameScene = "JoinGameScene";
     }
 
     public class Vector2EventData : BytesData

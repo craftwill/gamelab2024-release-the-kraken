@@ -1,3 +1,4 @@
+using Bytes;
 using Kraken.Network;
 using UnityEngine;
 
@@ -8,8 +9,6 @@ namespace Kraken
         private static GameManager Instance { get; set; }
         [SerializeField] private ConfigSO _buildConfig;
         [SerializeField] private ConfigSO _unityConfig;
-
-        private NetworkManager _networkManager;
 
         private void Awake()
         {
@@ -26,17 +25,23 @@ namespace Kraken
                     Config.current = _buildConfig;
             }
 
-            _networkManager = GetComponent<NetworkManager>();
-            if (_networkManager != null)
-            {
-                _networkManager.Init();
-            }
-            else
-            {
-                Debug.LogError("No NetworkManager!");
-            }
-
             VerifyConnectedDevices();
+        }
+
+        private void Start()
+        {
+            DontDestroyOnLoad(this.gameObject);
+
+            EventManager.AddEventListener(EventNames.LateStart, HandleLateStart);
+        }
+
+        protected void HandleLateStart(BytesData data)
+        {
+            Debug.Log("Late start!");
+
+            // Only connect once in the MainMenu LateStart()
+            EventManager.Dispatch(EventNames.TryConnectToPhoton, null);
+            EventManager.RemoveEventListener(EventNames.LateStart, HandleLateStart);
         }
 
         #region Getters and setters for Player preferences and settings

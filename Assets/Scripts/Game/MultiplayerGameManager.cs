@@ -39,34 +39,7 @@ namespace Kraken
 
         private void Start()
         {
-            playerEntities = new List<PlayerEntity>();
-
-            SubscribeToLocalEvents();
             CreatePlayer();
-        }
-
-        /// <summary>
-        /// Literally starts the game.
-        /// </summary>
-        /// <param name="data"></param>
-        private void HandleStartGame(BytesData data)
-        {
-            if (PhotonNetwork.IsMasterClient)
-            {
-                // Waits for the levelTransitionEnd callback to actually start the timer and other round related stuff.
-                //gameStarted = true;
-            }
-        }
-
-        private void SubscribeToLocalEvents()
-        {
-            // Game Flow
-            EventManager.AddEventListener(EventNames.StartGame, HandleStartGame);
-        }
-
-        private void OnDestroy()
-        {
-            EventManager.RemoveEventListener(EventNames.StartGame, HandleStartGame);
         }
 
         private void Update()
@@ -90,35 +63,6 @@ namespace Kraken
             Debug.Log("Creating player!");
 
             _localPlayer = NetworkUtils.Instantiate(_playerPrefab.name, _playersSpawnPos.position);
-
-            /*var localPhotonPlayer = PhotonNetwork.LocalPlayer;
-            photonView.RPC(nameof(RPC_PlayerCreated), RpcTarget.MasterClient, _localPlayer.GetPhotonView().ViewID,
-                localPhotonPlayer.NickName);*/
-        }
-
-        [PunRPC]
-        private void RPC_PlayerCreated(int playerCreatedViewId, string nickname)
-        {
-            playerCount++;
-            photonView.RPC(nameof(RPC_SetupPlayerOnAllClients), RpcTarget.AllBuffered, playerCreatedViewId,
-                playerCount);
-        }
-
-        [PunRPC]
-        private void RPC_SetupPlayerOnAllClients(int playerCreatedViewId, int playerNumber)
-        {
-            var playerPhotonView = PhotonNetwork.GetPhotonView(playerCreatedViewId);
-            playerEntities.Add(playerPhotonView.GetComponent<PlayerEntity>());
-
-            Player player = playerPhotonView.Owner;
-
-            var playerEntity = playerPhotonView.GetComponent<PlayerEntity>();
-
-            // Wait for level to setup first
-            Animate.Delay(1f, () => {
-                TeleportPlayer(_localPlayer.GetPhotonView(), _playersSpawnPos.position);
-                //playerEntity.EnablePlayerController();
-            });
         }
 
         private void TeleportPlayer(string playerUserId, Vector3 position)
