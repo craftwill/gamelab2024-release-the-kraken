@@ -30,14 +30,6 @@ namespace Kraken
             }
         }
         
-        //private void OnMove(InputAction.CallbackContext value)
-        //{
-        //    if (_isOwner)
-        //    {
-        //        moveVec = value.ReadValue<Vector2>();                
-        //    }
-            
-        //}
         public void OnMove(InputAction.CallbackContext value)
         {
             if (_isOwner)
