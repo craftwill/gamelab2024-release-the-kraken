@@ -10,7 +10,7 @@ namespace Kraken
     {
         private bool _isOwner;
         [SerializeField] private InputActionReference _moveInput;
-        private Vector2 moveVec = Vector2.zero;
+        private Vector2 _moveVec = Vector2.zero;
 
         private void Start()
         {
@@ -26,7 +26,7 @@ namespace Kraken
         {
             if (_isOwner)
             {
-                transform.position += new Vector3(moveVec.x, 0, moveVec.y) * Config.current.moveSpeed * Time.deltaTime;
+                transform.position += new Vector3(_moveVec.x, 0, _moveVec.y) * Config.current.moveSpeed * Time.deltaTime;
             }
         }
         
@@ -34,7 +34,7 @@ namespace Kraken
         {
             if (_isOwner)
             {
-                moveVec = value.ReadValue<Vector2>();
+                _moveVec = value.ReadValue<Vector2>();
             }                
         }
     }
