@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Photon.Pun;
 using UnityEngine.UIElements;
+using Cinemachine;
 
 namespace Kraken
 {
@@ -26,6 +27,8 @@ namespace Kraken
                 UnityEngine.Cursor.lockState = CursorLockMode.Locked;
                 UnityEngine.Cursor.visible = false;
                 _camera.SetActive(true);
+                _camera.GetComponent<CinemachineFreeLook>().m_XAxis.m_MaxSpeed = Config.current.xCameraSensitivity;
+                _camera.GetComponent<CinemachineFreeLook>().m_YAxis.m_MaxSpeed = Config.current.yCameraSensitivity;
             }
         }
 
@@ -33,14 +36,13 @@ namespace Kraken
         {
             if (_isOwner)
             {
-                Vector3 cameraDirection = transform­.position - new Vector3(_camera.transform.position.x, transform.position.y, _camera.transform.position.z);
+                Vector3 cameraDirection = transform.position - new Vector3(_camera.transform.position.x, transform.position.y, _camera.transform.position.z);
                 _cameraOrientation.forward = cameraDirection.normalized;
                 Vector3 movementDirection = _cameraOrientation.forward * _moveVec.y + _cameraOrientation.right * _moveVec.x;
                 if (movementDirection != Vector3.zero)
                 {
                     transform.forward = Vector3.Slerp(transform.forward, movementDirection.normalized, Time.deltaTime * Config.current.rotationSpeed);
                     transform.position += transform.forward * Config.current.moveSpeed * Time.deltaTime;
-                    //_rigidBody.velocity = transform.forward * Config.current.moveSpeed * Time.deltaTime;
                 }
             }
         }

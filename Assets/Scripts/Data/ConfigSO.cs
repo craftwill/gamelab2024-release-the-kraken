@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace Kraken
 {
@@ -15,5 +15,7 @@ namespace Kraken
         [Header("Player Controls settings")]
         public float moveSpeed = 5f;
         public float rotationSpeed = 50f;
+        public float xCameraSensitivity = 360f;
+        public float yCameraSensitivity = 2f;
     }
 }

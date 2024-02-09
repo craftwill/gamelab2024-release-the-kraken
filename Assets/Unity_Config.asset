@@ -15,4 +15,7 @@ MonoBehaviour:
   showDebugLogs: 0
   loadCustomSceneName: 
   isSkipMainMenu: 0
-  moveSpeed: 5
+  moveSpeed: 7.5
+  rotationSpeed: 50
+  xCameraSensitivity: 400
+  yCameraSensitivity: 2
