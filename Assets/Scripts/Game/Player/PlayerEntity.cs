@@ -12,10 +12,11 @@ namespace Kraken
     {
         private bool _isOwner;
         [SerializeField] private InputActionReference _moveInput;
-        [SerializeField] private Rigidbody _rigidBody;
+        [SerializeField] private CharacterController _controller;
         [SerializeField] private GameObject _camera;
         [SerializeField] private Transform _cameraOrientation;
         private Vector2 _moveVec = Vector2.zero;
+        private float _fallingVelocity = -1.0f;
 
         private void Start()
         {
@@ -36,17 +37,35 @@ namespace Kraken
         {
             if (_isOwner)
             {
+                if (_controller.isGrounded)
+                {
+                    _fallingVelocity = -1.0f;
+                }
+                ApplyGravity();
+
                 Vector3 cameraDirection = transform.position - new Vector3(_camera.transform.position.x, transform.position.y, _camera.transform.position.z);
                 _cameraOrientation.forward = cameraDirection.normalized;
                 Vector3 movementDirection = _cameraOrientation.forward * _moveVec.y + _cameraOrientation.right * _moveVec.x;
                 if (movementDirection != Vector3.zero)
                 {
                     transform.forward = Vector3.Slerp(transform.forward, movementDirection.normalized, Time.deltaTime * Config.current.rotationSpeed);
-                    transform.position += transform.forward * Config.current.moveSpeed * Time.deltaTime;
+                    movementDirection = new Vector3(transform.forward.x, _fallingVelocity, transform.forward.z);
                 }
+                else
+                {
+                    movementDirection = Vector3.zero;
+                    movementDirection.y += _fallingVelocity;
+                }
+                _controller.Move(movementDirection * Config.current.moveSpeed * Time.deltaTime);
+
             }
         }
         
+        public void ApplyGravity()
+        {
+            _fallingVelocity -= Config.current.gravity * Time.deltaTime;
+        }
+
         public void OnMove(InputAction.CallbackContext value)
         {
             if (_isOwner)
