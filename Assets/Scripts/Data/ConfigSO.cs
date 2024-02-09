@@ -14,5 +14,6 @@ namespace Kraken
 
         [Header("Player Controls settings")]
         public float moveSpeed = 5f;
+        public float rotationSpeed = 50f;
     }
 }
