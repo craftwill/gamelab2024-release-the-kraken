@@ -25,6 +25,7 @@ namespace Kraken
                 _moveInput.action.canceled += OnMove;
                 UnityEngine.Cursor.lockState = CursorLockMode.Locked;
                 UnityEngine.Cursor.visible = false;
+                _camera.SetActive(true);
             }
         }
 
@@ -39,7 +40,7 @@ namespace Kraken
                 {
                     transform.forward = Vector3.Slerp(transform.forward, movementDirection.normalized, Time.deltaTime * Config.current.rotationSpeed);
                     transform.position += transform.forward * Config.current.moveSpeed * Time.deltaTime;
-                    //_rigidBody.velocity = new Vector3(_moveVec.x, 0, _moveVec.y) * Config.current.moveSpeed * Time.deltaTime;
+                    //_rigidBody.velocity = transform.forward * Config.current.moveSpeed * Time.deltaTime;
                 }
             }
         }
