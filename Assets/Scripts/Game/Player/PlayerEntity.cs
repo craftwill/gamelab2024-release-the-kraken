@@ -65,7 +65,6 @@ namespace Kraken
                 }
                 else
                 {
-                    movementDirection = Vector3.zero;
                     movementDirection.y += _fallingVelocity;
                 }
                 if (_isSprinting)
