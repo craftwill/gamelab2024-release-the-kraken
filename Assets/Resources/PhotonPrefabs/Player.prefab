@@ -1124,6 +1124,8 @@ MonoBehaviour:
   _controller: {fileID: 7000252827930271329}
   _camera: {fileID: 1601542376723397981}
   _cameraOrientation: {fileID: 5087714006406940513}
+  _sprintInput: {fileID: -2249790821337775847, guid: abae805e8a04eb44c951b59d4dda4171,
+    type: 3}
 --- !u!114 &2338596183922361558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1241,6 +1243,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 5d90d284-3ba0-4a4e-9a09-b7e2f5491cc3
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 157061cc-9494-4424-a372-1dfeafb65133
+    m_ActionName: Player/Sprint[/Keyboard/leftShift,/DualSenseGamepadHID/buttonEast]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

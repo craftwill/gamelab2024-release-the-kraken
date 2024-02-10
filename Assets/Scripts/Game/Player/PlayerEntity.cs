@@ -17,6 +17,9 @@ namespace Kraken
         [SerializeField] private Transform _cameraOrientation;
         private Vector2 _moveVec = Vector2.zero;
         private float _fallingVelocity = -1.0f;
+        private bool _isSprinting = false;
+
+        [SerializeField] private InputActionReference _sprintInput;
 
         private void Start()
         {
@@ -30,10 +33,19 @@ namespace Kraken
                 _camera.SetActive(true);
                 _camera.GetComponent<CinemachineFreeLook>().m_XAxis.m_MaxSpeed = Config.current.xCameraSensitivity;
                 _camera.GetComponent<CinemachineFreeLook>().m_YAxis.m_MaxSpeed = Config.current.yCameraSensitivity;
+
+                _sprintInput.action.performed += OnSprintPerformed;
+                _sprintInput.action.canceled += OnSprintCanceled;
             }
         }
 
-        private void Update()
+        private void OnDestroy()
+        {
+            _sprintInput.action.performed -= OnSprintPerformed;
+            _sprintInput.action.canceled -= OnSprintCanceled;
+        }
+
+            private void Update()
         {
             if (_isOwner)
             {
@@ -56,7 +68,14 @@ namespace Kraken
                     movementDirection = Vector3.zero;
                     movementDirection.y += _fallingVelocity;
                 }
-                _controller.Move(movementDirection * Config.current.moveSpeed * Time.deltaTime);
+                if (_isSprinting)
+                {
+                    _controller.Move(movementDirection * Config.current.sprintSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    _controller.Move(movementDirection * Config.current.moveSpeed * Time.deltaTime);
+                }
 
             }
         }
@@ -72,6 +91,22 @@ namespace Kraken
             {
                 _moveVec = value.ReadValue<Vector2>();
             }                
+        }
+
+        public void OnSprintPerformed(InputAction.CallbackContext value)
+        {
+            if (_isOwner)
+            {
+                _isSprinting = true;
+            }
+        }
+
+        public void OnSprintCanceled(InputAction.CallbackContext value)
+        {
+            if (_isOwner)
+            {
+                _isSprinting = false;
+            }
         }
     }
 }
