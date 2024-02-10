@@ -19,5 +19,5 @@ MonoBehaviour:
   sprintSpeed: 14
   rotationSpeed: 50
   gravity: 5
-  xCameraSensitivity: 400
+  xCameraSensitivity: 300
   yCameraSensitivity: 2
