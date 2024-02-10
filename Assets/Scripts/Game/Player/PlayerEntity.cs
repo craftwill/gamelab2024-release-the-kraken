@@ -26,14 +26,14 @@ namespace Kraken
             if (photonView.AmOwner)
             {
                 _isOwner = true;
-                _moveInput.action.performed += OnMove;
-                _moveInput.action.canceled += OnMove;
                 UnityEngine.Cursor.lockState = CursorLockMode.Locked;
                 UnityEngine.Cursor.visible = false;
                 _camera.SetActive(true);
                 _camera.GetComponent<CinemachineFreeLook>().m_XAxis.m_MaxSpeed = Config.current.xCameraSensitivity;
                 _camera.GetComponent<CinemachineFreeLook>().m_YAxis.m_MaxSpeed = Config.current.yCameraSensitivity;
 
+                _moveInput.action.performed += OnMove;
+                _moveInput.action.canceled += OnMove;
                 _sprintInput.action.performed += OnSprintPerformed;
                 _sprintInput.action.canceled += OnSprintCanceled;
             }
@@ -43,6 +43,8 @@ namespace Kraken
         {
             _sprintInput.action.performed -= OnSprintPerformed;
             _sprintInput.action.canceled -= OnSprintCanceled;
+            _moveInput.action.performed -= OnMove;
+            _moveInput.action.canceled -= OnMove;
         }
 
             private void Update()
