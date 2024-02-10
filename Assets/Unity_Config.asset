@@ -16,6 +16,7 @@ MonoBehaviour:
   loadCustomSceneName: 
   isSkipMainMenu: 0
   moveSpeed: 7.5
+  sprintSpeed: 14
   rotationSpeed: 50
   gravity: 5
   xCameraSensitivity: 400
