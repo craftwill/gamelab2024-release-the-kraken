@@ -12,10 +12,11 @@ namespace Kraken
     {
         public InputActionReference attackInput;
         public int damage;
+        public GameObject collider;
 
         private Action<InputAction.CallbackContext> _inputCallBackHandler;
         
-        public void Subscribe(MonoBehaviourPun handle)
+        public void Subscribe(PlayerAttackComponent handle)
         {
             _inputCallBackHandler = (context) => PerformAttack(handle, context);
             attackInput.action.performed += _inputCallBackHandler;
@@ -25,7 +26,7 @@ namespace Kraken
             attackInput.action.performed -= _inputCallBackHandler;
         }
         private Vector3 p = Vector3.zero;
-        private void PerformAttack(MonoBehaviourPun handle, InputAction.CallbackContext callback)
+        private void PerformAttack(PlayerAttackComponent handle, InputAction.CallbackContext callback)
         {
             Vector3 pos = handle.transform.position;
            
