@@ -9,7 +9,7 @@ namespace Kraken
 {
     public class NetworkManager : MonoBehaviourPunCallbacks
     {
-        const int MAX_LOBBY_SIZE = 3;
+        const int MAX_LOBBY_SIZE = 11; // UwU
         const string TEST_ROOM_CODE = "test";
 
         private void Start()
