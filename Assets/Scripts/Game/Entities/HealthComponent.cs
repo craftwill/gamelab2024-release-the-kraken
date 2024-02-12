@@ -29,7 +29,6 @@ namespace Kraken.Game
             _detectDmgComps = GetComponentsInChildren<DetectDamageComponent>();
             foreach (var detectDmgComp in _detectDmgComps)
             {
-                Debug.Log(detectDmgComp);
                 detectDmgComp.OnDetectDamage.AddListener(TakeDamage);
             }
         }
@@ -57,7 +56,7 @@ namespace Kraken.Game
             Health -= dmgAmount;
             OnTakeDamage.Invoke(dmgAmount);
 
-            Debug.Log("Took " + dmgAmount + " dmg!");
+            Debug.Log(name + " Took " + dmgAmount + " dmg!");
 
             if (Health <= 0)
             {
@@ -68,7 +67,7 @@ namespace Kraken.Game
 
         private void Die()
         {
-            Debug.Log("Dead!");
+            Debug.Log(name + " Dead!");
             IsAlive = false;
             OnDie.Invoke();
 
