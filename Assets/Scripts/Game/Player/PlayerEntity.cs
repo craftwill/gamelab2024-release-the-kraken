@@ -20,6 +20,7 @@ namespace Kraken
         private bool _isSprinting = false;
 
         [SerializeField] private InputActionReference _sprintInput;
+        [SerializeField] private AK.Wwise.Event _sprintSound;   // Temporary probably
 
         private void Start()
         {
@@ -99,6 +100,7 @@ namespace Kraken
             if (_isOwner)
             {
                 _isSprinting = true;
+                _sprintSound.Post(gameObject);
             }
         }
 
