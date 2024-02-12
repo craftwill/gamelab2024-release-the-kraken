@@ -11,6 +11,7 @@ namespace Kraken
     public class PlayerEntity : MonoBehaviourPun
     {
         private bool _isOwner;
+        [SerializeField] private PlayerSoundComponent _soundComponent;
         [SerializeField] private InputActionReference _moveInput;
         [SerializeField] private CharacterController _controller;
         [SerializeField] private GameObject _camera;
@@ -20,7 +21,6 @@ namespace Kraken
         private bool _isSprinting = false;
 
         [SerializeField] private InputActionReference _sprintInput;
-        [SerializeField] private AK.Wwise.Event _sprintSound;   // Temporary probably
 
         private void Start()
         {
@@ -100,7 +100,7 @@ namespace Kraken
             if (_isOwner)
             {
                 _isSprinting = true;
-                _sprintSound.Post(gameObject);
+                _soundComponent.PlaySprintSFX();
             }
         }
 
