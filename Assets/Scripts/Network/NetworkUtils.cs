@@ -20,13 +20,13 @@ namespace Kraken.Network
             return PhotonNetwork.Instantiate(Path.Combine(PhotonPrefabsPath, objectPath), Vector3.zero, Quaternion.identity);
         }
 
-        static public GameObject Instantiate(string objectPath,Vector3 position)
+        static public GameObject Instantiate(string objectPath, Vector3 position)
         {
             Debug.Log(Path.Combine(PhotonPrefabsPath, objectPath));
             return PhotonNetwork.Instantiate(Path.Combine(PhotonPrefabsPath, objectPath), position, Quaternion.identity);
         }
         
-        static public GameObject Instantiate(string objectPath,Vector3 position,Quaternion rotation)
+        static public GameObject Instantiate(string objectPath, Vector3 position, Quaternion rotation)
         {
             return PhotonNetwork.Instantiate(Path.Combine(PhotonPrefabsPath, objectPath), position, rotation);
         }
