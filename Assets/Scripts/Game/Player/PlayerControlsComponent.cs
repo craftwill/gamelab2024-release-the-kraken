@@ -99,7 +99,7 @@ public class PlayerControlsComponent : MonoBehaviourPun
         {
             _isSprinting = true;
         }
-        _soundComponent.PlaySprintSFX();
+        photonView.RPC(nameof(_soundComponent.RPC_All_PlaySprintSound), RpcTarget.All);
     }
 
     public void OnSprintCanceled(InputAction.CallbackContext value)
