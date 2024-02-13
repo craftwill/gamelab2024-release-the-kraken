@@ -11,6 +11,7 @@ namespace Kraken
     {
         private bool _isOwner;
         [SerializeField] private List<AttackSO> _attacks = new List<AttackSO>();
+        [SerializeField] public bool IsFreeToAttack { get; set; } = true;
 
         private void Start()
         {
