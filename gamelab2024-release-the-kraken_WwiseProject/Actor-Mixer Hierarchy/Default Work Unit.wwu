@@ -8,6 +8,9 @@
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
 					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="New Attenuation" ID="{21F5D5AA-3A07-4871-9C7D-27540D1E0FEC}" WorkUnitID="{DCCF40E7-2697-49F0-8DB4-BFAF3F6745E1}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
 						</Reference>
