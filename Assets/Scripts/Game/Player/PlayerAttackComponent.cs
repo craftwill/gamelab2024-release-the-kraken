@@ -27,11 +27,5 @@ namespace Kraken
                 _attacks.ForEach(x => x.Unsubscribe());
             }
         }
-
-        public void OnDrawGizmos()
-        {
-            Gizmos.DrawWireSphere(this.transform.position + this.transform.forward, 1);
-            Gizmos.DrawWireSphere(this.transform.position + this.transform.forward + Vector3.up, 1);
-        }
     }
 }
