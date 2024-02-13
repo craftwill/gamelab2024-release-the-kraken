@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{98DED9CF-D1E0-4F7D-B5F7-936BCD85A456}" SchemaVersion="119">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{98DED9CF-D1E0-4F7D-B5F7-936BCD85A456}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Testing" ID="{577694D5-AB44-40A9-B87E-ED4597DCEBC2}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_fast_whoosh_118248" ID="{C844183B-5883-4BF2-8DB0-7D4D1C642480}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>
