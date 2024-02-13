@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_fast_whoosh_118248" ID="{C844183B-5883-4BF2-8DB0-7D4D1C642480}">
+					<ChildrenList>
+						<Action Name="" ID="{6DAF88DE-66CA-4A89-A86A-0B5475520CF8}" ShortID="316467153">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="fast-whoosh-118248" ID="{DB3A231B-C652-4875-BA65-E034E0348602}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

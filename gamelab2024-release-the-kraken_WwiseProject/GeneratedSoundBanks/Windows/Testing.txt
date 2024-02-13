@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3916127644	Play_fast_whoosh_118248			\Default Work Unit\Play_fast_whoosh_118248	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	392899862	fast-whoosh-118248	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\fast-whoosh-118248_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\fast-whoosh-118248		212064
+

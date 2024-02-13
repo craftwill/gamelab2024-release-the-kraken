@@ -1004,6 +1004,8 @@ GameObject:
   m_Component:
   - component: {fileID: 723387988070830562}
   - component: {fileID: 5806521009423482011}
+  - component: {fileID: 5510866118124797234}
+  - component: {fileID: 3860904718989671536}
   - component: {fileID: 2338596183922361558}
   - component: {fileID: 4801927777905466368}
   - component: {fileID: 2994236915493532572}
@@ -1046,6 +1048,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782d4b0a80cf5cc479bd7c67afbb1091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5510866118124797234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747958540799682996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 211ba3d75f0fd364e8f0f377c736f524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundComponent: {fileID: 3860904718989671536}
   _moveInput: {fileID: -5786590348021691354, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
   _controller: {fileID: 7000252827930271329}
@@ -1053,6 +1068,23 @@ MonoBehaviour:
   _cameraOrientation: {fileID: 5087714006406940513}
   _sprintInput: {fileID: -2249790821337775847, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
+--- !u!114 &3860904718989671536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747958540799682996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ab031389cdd1e479a085f4873192d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprintSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4141459023a671342bf6f2e6091c7771,
+      type: 2}
 --- !u!114 &2338596183922361558
 MonoBehaviour:
   m_ObjectHideFlags: 0

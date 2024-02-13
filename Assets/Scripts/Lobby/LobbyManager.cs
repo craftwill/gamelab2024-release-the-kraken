@@ -79,13 +79,13 @@ namespace Kraken
 
         private void JoinGameScene()
         {
-            /*var customSceneName = Config.loadCustomSceneName;
+            var customSceneName = Config.current.loadCustomSceneName;
             if (customSceneName != "")
             {
                 Debug.LogWarning("You loaded a custom scene with name: " + customSceneName);
                 PhotonNetwork.LoadLevel(customSceneName);
                 return;
-            }*/
+            }
             PhotonNetwork.LoadLevel("Game");
         }
     }
