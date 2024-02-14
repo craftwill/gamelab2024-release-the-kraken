@@ -41,7 +41,10 @@ namespace Kraken
 
             _collider = Instantiate(colliderGameObject, handle.transform);
             _collider.transform.position += handle.transform.forward;
-            Debug.Log(_collider.transform.name);
+            var idc = _collider.GetComponent<InflictDamageComponent>();
+            if (idc is not null) idc.Damage = damage;
+            else Debug.LogWarning("Warning: the collider doesn't have an InflictDamageComponent attached");
+
             _inProgress = false;
         }
         public void Unsubscribe()
@@ -58,14 +61,12 @@ namespace Kraken
                 {
                     if (nextAttack is null)
                     {
-                        //stack overflow if I don't set it to false here
                         _inProgress = false;
                         this.PerformAttack(handle, callback);
                     }
                     else nextAttack.PerformAttack(handle, callback);
                     return;
                 }
-                Debug.Log("Performing " + attackName);
                 handle.IsFreeToAttack = false;
                 handle.StartCoroutine(FreeToAttackFunc(handle));
 
@@ -79,10 +80,8 @@ namespace Kraken
         private IEnumerator AttackFunc(PlayerAttackComponent handle)
         {
             yield return new WaitForSeconds(timeBeforeHitboxDuration);
-            Debug.Log(this.name + " hitbox out");
             _collider.SetActive(true);
             yield return new WaitForSeconds(hitboxDuration);
-            Debug.Log(this.name + " hitbox gone");
             _collider.SetActive(false);
         }
         private IEnumerator FreeToAttackFunc(PlayerAttackComponent handle)
@@ -94,7 +93,6 @@ namespace Kraken
         {
             yield return new WaitForSeconds(totalAttackLength);
             _inProgress = false;
-            Debug.Log("Finishing " + attackName);
         }
         public bool IsInProgress()
         {

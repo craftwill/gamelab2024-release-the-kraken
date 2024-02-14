@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2563695677943353302}
   - component: {fileID: 1787525923220813135}
   - component: {fileID: 4857967701125020262}
+  - component: {fileID: 8143446707109047063}
   m_Layer: 0
   m_Name: Collider_1
   m_TagString: DealDamage
@@ -64,3 +65,15 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8143446707109047063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9211684295016083868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fbb695d39ea3cc49a8b4e371da4cc45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
