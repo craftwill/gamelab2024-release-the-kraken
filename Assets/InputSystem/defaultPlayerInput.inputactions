@@ -1,5 +1,5 @@
 {
-    "name": "gamelab2024-release-the-kraken",
+    "name": "defaultPlayerInput",
     "maps": [
         {
             "name": "Player",
@@ -24,18 +24,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Fire",
+                    "name": "Sprint",
                     "type": "Button",
-                    "id": "f887a20a-d1cd-450b-9f1c-d4650c2abc5a",
+                    "id": "157061cc-9494-4424-a372-1dfeafb65133",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Sprint",
+                    "name": "Attack",
                     "type": "Button",
-                    "id": "157061cc-9494-4424-a372-1dfeafb65133",
+                    "id": "d434dbe5-9f45-4850-9f4f-0c7b91c4cfd5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -210,61 +210,6 @@
                 },
                 {
                     "name": "",
-                    "id": "143bb1cd-cc10-4eca-a2f0-a3664166fe91",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "886e731e-7071-4ae4-95c0-e61739dad6fd",
-                    "path": "<Touchscreen>/primaryTouch/tap",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Touch",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ee3d0cd2-254e-47a7-a8cb-bc94d9658c54",
-                    "path": "<Joystick>/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Joystick",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8255d333-5683-4943-a58a-ccb207ff1dce",
-                    "path": "<XRController>/{PrimaryAction}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "XR",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "179038af-210f-482b-8de3-30af528b6743",
                     "path": "<Keyboard>/leftShift",
                     "interactions": "",
@@ -282,6 +227,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a32e167c-4a9e-4f28-b678-2c665ab6cc3d",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cb843826-fa7d-4900-a1fb-ee00083b26cf",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

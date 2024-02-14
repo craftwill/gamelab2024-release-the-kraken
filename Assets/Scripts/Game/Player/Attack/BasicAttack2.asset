@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b190fddeccaaebc40be13e9c4dfb3944, type: 3}
+  m_Name: BasicAttack2
+  m_EditorClassIdentifier: 
+  attackName: Attack 2
+  attackInput: {fileID: 0}
+  canBeActivatedFromNeutral: 0
+  nextAttack: {fileID: 11400000, guid: 3a05d6f4e3bebaf4ba868bb7bec59b00, type: 2}
+  colliderGameObject: {fileID: 9211684295016083868, guid: 7176f4963c849c742a97a6e122965e1b,
+    type: 3}
+  timeBeforeHitboxDuration: 0
+  hitboxDuration: 0.1
+  attackCancelDuration: 0.2
+  totalAttackLength: 0.5
+  damage: 1

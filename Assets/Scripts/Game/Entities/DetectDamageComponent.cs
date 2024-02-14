@@ -13,7 +13,16 @@ namespace Kraken.Game
         {
             if (other.transform.tag == "DealDamage")
             {
-                OnDetectDamage.Invoke(1);
+                var idc = other.GetComponent<InflictDamageComponent>();
+                if(idc is not null)
+                {
+                    OnDetectDamage.Invoke(idc.Damage);
+                }
+                else
+                {
+                    OnDetectDamage.Invoke(1);
+                }
+                
             }
         }
     }

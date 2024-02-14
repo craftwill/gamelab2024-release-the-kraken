@@ -1010,6 +1010,7 @@ GameObject:
   - component: {fileID: 4801927777905466368}
   - component: {fileID: 2994236915493532572}
   - component: {fileID: 7000252827930271329}
+  - component: {fileID: 7072117056597327463}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1159,10 +1160,6 @@ MonoBehaviour:
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: f887a20a-d1cd-450b-9f1c-d4650c2abc5a
-    m_ActionName: Player/Fire[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: bff4d14a-73c0-4530-8bfd-acb457713602
     m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
@@ -1205,6 +1202,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 157061cc-9494-4424-a372-1dfeafb65133
     m_ActionName: Player/Sprint[/Keyboard/leftShift,/DualSenseGamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d434dbe5-9f45-4850-9f4f-0c7b91c4cfd5
+    m_ActionName: Player/Attack[/XInputControllerWindows/buttonWest,/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1236,6 +1237,22 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7072117056597327463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747958540799682996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d503edd519b4b44449739099bc34767e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attacks:
+  - {fileID: 11400000, guid: 9b2192cb0ef96284ca43aedeb5de9f37, type: 2}
+  - {fileID: 11400000, guid: efdefda1c7c82d74cb89e2e94c6612b2, type: 2}
+  - {fileID: 11400000, guid: 3a05d6f4e3bebaf4ba868bb7bec59b00, type: 2}
 --- !u!1 &8483757960527509177
 GameObject:
   m_ObjectHideFlags: 3

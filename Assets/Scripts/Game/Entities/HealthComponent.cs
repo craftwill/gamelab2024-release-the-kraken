@@ -43,9 +43,7 @@ namespace Kraken.Game
 
         public void TakeDamage(float dmgAmount) 
         {
-            if (!PhotonNetwork.IsMasterClient) return;
-
-            photonView.RPC(nameof(RPC_Master_TakeDamage), RpcTarget.MasterClient, dmgAmount);
+            photonView.RPC(nameof(RPC_Master_TakeDamage), RpcTarget.All, dmgAmount);
         }
 
         [PunRPC]
@@ -67,6 +65,7 @@ namespace Kraken.Game
 
         private void Die()
         {
+            if (!PhotonNetwork.IsMasterClient) return;
             Debug.Log(name + " Dead!");
             IsAlive = false;
             OnDie.Invoke();
