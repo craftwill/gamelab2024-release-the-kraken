@@ -22,11 +22,42 @@ namespace Kraken
         public const string CreateRoom = "CreateRoom";
         public const string UpdateLobbyView = "UpdateLobbyView";
         public const string JoinGameScene = "JoinGameScene";
+
+        // GameFlow events
+        public const string StartGameFlow = "StartGameFlow";
+        public const string StopGameFlow = "StopGameFlow";
+
+        // Objectives events
+        public const string StartObjectives = "StartFirstObjective";
+        public const string NextObjective = "NextObjective";
+        public const string StopObjectives = "StartFirstObjective";
+
+        // Spawning
+        public const string StartSpawning = "StartSpawning";
+        public const string StopSpawning = "StopSpawning";
+
+        // UI events
+        public const string UpdateCountownTimerUI = "UpdateCountownTimerUI";
+        public const string UpdateObjectiveUI = "UpdateObjectiveUI";
     }
 
     public class Vector2EventData : BytesData
     {
         public Vector2EventData(Vector2 vector2) { Vector2 = vector2; }
         public Vector2 Vector2 { get; private set; }
+    }
+
+    // UI 
+    public class UpdateCountownTimerUIData : BytesData
+    {
+        public UpdateCountownTimerUIData(float countdownTime, System.Action endCallback) { CountdownTime = countdownTime; EndCallback = endCallback; }
+        public float CountdownTime { get; private set; }
+        public System.Action EndCallback { get; private set; }
+    }
+
+    public class UpdateObjectiveUIData : BytesData
+    {
+        public UpdateObjectiveUIData(ObjectiveInstance objectiveInstance) { ObjectiveInstance = objectiveInstance; }
+        public ObjectiveInstance ObjectiveInstance { get; private set; } // null = no objective
     }
 }

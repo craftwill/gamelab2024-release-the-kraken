@@ -1,12 +1,9 @@
-using Bytes;
 using Kraken.Network;
 using Photon.Pun;
 using Photon.Realtime;
-using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
+
+using Bytes;
 
 namespace Kraken
 {
@@ -35,6 +32,17 @@ namespace Kraken
         private void Start()
         {
             CreatePlayer();
+
+            Animate.Delay(1f, () => 
+            {
+                EventManager.Dispatch(EventNames.StartGameFlow, null);
+                
+                // Stop gameflow for testing purposes after 8 seconds.
+                Animate.Delay(8f, () =>
+                {
+                    EventManager.Dispatch(EventNames.StopGameFlow, null);
+                });
+            });
         }
 
         private void Update()
