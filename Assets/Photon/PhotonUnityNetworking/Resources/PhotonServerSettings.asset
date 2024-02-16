@@ -48,6 +48,7 @@ MonoBehaviour:
   - RPC_Master_PlayerCreated
   - RPC_StartCountdownTimer
   - RPC_All_UpdateObjectiveUI
+  - RPC_All_TogglePause
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

@@ -39,6 +39,9 @@ namespace Kraken
         // UI events
         public const string UpdateCountownTimerUI = "UpdateCountownTimerUI";
         public const string UpdateObjectiveUI = "UpdateObjectiveUI";
+        
+        //Game Events
+        public const string TogglePause = "TogglePause";
     }
 
     public class Vector2EventData : BytesData
