@@ -315,6 +315,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2097570763600934453}
     m_Modifications:
+    - target: {fileID: 3382447331919981739, guid: 18c4019109ebecd47ab6135118b9a0a2,
+        type: 3}
+      propertyPath: _interactableWhenVisible
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5621948085891224972, guid: 18c4019109ebecd47ab6135118b9a0a2,
         type: 3}
       propertyPath: m_Name
@@ -439,6 +444,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2097570763600934453}
     m_Modifications:
+    - target: {fileID: 17192084303354646, guid: 36b9468a87ccd8a48906562e14d5cdd8,
+        type: 3}
+      propertyPath: _interactableWhenVisible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 838616576289285339, guid: 36b9468a87ccd8a48906562e14d5cdd8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 838616576289285339, guid: 36b9468a87ccd8a48906562e14d5cdd8,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 838616576289285339, guid: 36b9468a87ccd8a48906562e14d5cdd8,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 838616576289285339, guid: 36b9468a87ccd8a48906562e14d5cdd8,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 838616576289285339, guid: 36b9468a87ccd8a48906562e14d5cdd8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 838616576289285339, guid: 36b9468a87ccd8a48906562e14d5cdd8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1991315499540421783, guid: 36b9468a87ccd8a48906562e14d5cdd8,
         type: 3}
       propertyPath: m_Name

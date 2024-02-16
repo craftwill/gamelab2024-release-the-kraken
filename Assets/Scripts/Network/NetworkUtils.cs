@@ -22,7 +22,7 @@ namespace Kraken.Network
 
         static public GameObject Instantiate(string objectPath, Vector3 position)
         {
-            Debug.Log(Path.Combine(PhotonPrefabsPath, objectPath));
+            //Debug.Log(Path.Combine(PhotonPrefabsPath, objectPath));
             return PhotonNetwork.Instantiate(Path.Combine(PhotonPrefabsPath, objectPath), position, Quaternion.identity);
         }
         

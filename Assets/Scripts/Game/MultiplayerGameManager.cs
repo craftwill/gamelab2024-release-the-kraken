@@ -16,6 +16,9 @@ namespace Kraken
         [SerializeField] private GameObject _playerPrefab;
 
         private GameObject _localPlayer;
+        private bool _gameStarted = false;
+        private bool _gameEnded = false;
+        private int _playerCount = 0;
 
         public override void OnEnable()
         {
@@ -33,26 +36,46 @@ namespace Kraken
         {
             CreatePlayer();
 
-            Animate.Delay(1f, () => 
+            if (!PhotonNetwork.IsMasterClient) return;
+
+            // Skip need to wait for two players to have joined.
+            if (Config.current.useDebugGameFlow)
             {
-                EventManager.Dispatch(EventNames.StartGameFlow, null);
-                
-                // Stop gameflow for testing purposes after 8 seconds.
-                Animate.Delay(8f, () =>
+                // Start gameflow for testing purposes after 1 seconds.
+                Animate.Delay(1f, () =>
                 {
-                    EventManager.Dispatch(EventNames.StopGameFlow, null);
+                    TryStartGameFlow();
                 });
-            });
+
+                // Stop gameflow for testing purposes after 12 seconds.
+                Animate.Delay(12f, () =>
+                {
+                    TryStopGameFlow();
+                });
+            }
         }
 
-        private void Update()
+        public void TryStartGameFlow() 
         {
-            
+            if (_gameStarted) return;
+
+            if (_gameEnded)
+            {
+                Debug.LogError("Can't start the game again! It's ended and need to go back to lobby first!");
+                return;
+            }    
+
+            _gameStarted = true;
+            EventManager.Dispatch(EventNames.StartGameFlow, null);
         }
 
-        public override void OnPlayerLeftRoom(Player otherPlayer)
+        public void TryStopGameFlow()
         {
-            base.OnPlayerLeftRoom(otherPlayer);
+            if (_gameEnded) return;
+
+            _gameEnded = true;
+            _gameStarted = false;
+            EventManager.Dispatch(EventNames.StopGameFlow, null);
         }
 
         private void CreatePlayer()
@@ -60,11 +83,20 @@ namespace Kraken
             Debug.Log("Creating player!");
 
             _localPlayer = NetworkUtils.Instantiate(_playerPrefab.name, _playersSpawnPos.position);
+
+            photonView.RPC(nameof(RPC_Master_PlayerCreated), RpcTarget.MasterClient, _localPlayer.GetPhotonView().ViewID);
         }
 
-        private void TeleportPlayer(PhotonView playerToTeleport, Vector3 position) 
+        [PunRPC]
+        private void RPC_Master_PlayerCreated(int playerCreatedViewId)
         {
-            playerToTeleport.transform.position = position;
+            _playerCount++;
+            Debug.Log("Player created! Player count: " + _playerCount);
+
+            if (_playerCount >= 2)
+            {
+                TryStartGameFlow();
+            }
         }
     }
 }

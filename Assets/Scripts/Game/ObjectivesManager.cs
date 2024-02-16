@@ -23,6 +23,15 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.StopObjectives, HandleStopObjectives);
         }
 
+        private void OnDestroy()
+        {
+            if (!_isMaster) return;
+
+            EventManager.RemoveEventListener(EventNames.StartObjectives, HandleStartObjectives);
+            EventManager.RemoveEventListener(EventNames.NextObjective, HandleNextObjectives);
+            EventManager.RemoveEventListener(EventNames.StopObjectives, HandleStopObjectives);
+        }
+
         private void HandleStartObjectives(BytesData data) 
         {
             Debug.Log("Start objectives!");
@@ -49,7 +58,13 @@ namespace Kraken
 
         private void UpdateObjectiveUI()
         {
-            EventManager.Dispatch(EventNames.UpdateObjectiveUI, new UpdateObjectiveUIData(currentObjective));
+            ObjectiveSO objectiveSO = currentObjective.objectiveSO;
+            photonView.RPC(nameof(RPC_All_UpdateObjectiveUI), RpcTarget.All, objectiveSO.name);
+        }
+
+        private void RPC_All_UpdateObjectiveUI(string objectiveName) 
+        {
+            EventManager.Dispatch(EventNames.UpdateObjectiveUI, new UpdateObjectiveUIData(objectiveName));
         }
 
         private ObjectiveInstance GetNextObjective()

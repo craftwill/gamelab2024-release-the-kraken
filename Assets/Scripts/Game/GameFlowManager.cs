@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 using Photon.Pun;
@@ -18,12 +17,26 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
         }
 
+        private void OnDestroy()
+        {
+            if (!_isMaster) return;
+
+            EventManager.RemoveEventListener(EventNames.StartGameFlow, HandleStartGameFlow);
+            EventManager.RemoveEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
+        }
+
         private void HandleStartGameFlow(BytesData data)
         {
             Debug.Log("Starting gameflow!");
 
-            void CountdownDoneCallback() 
+            photonView.RPC(nameof(RPC_StartCountdownTimer), RpcTarget.All);
+        }
+
+        private void RPC_StartCountdownTimer()
+        {
+            void CountdownDoneCallback()
             {
+                if (!_isMaster) return;
                 StartGameAfterCountdown();
             }
 

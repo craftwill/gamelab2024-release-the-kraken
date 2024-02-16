@@ -28,9 +28,9 @@ namespace Kraken
         public const string StopGameFlow = "StopGameFlow";
 
         // Objectives events
-        public const string StartObjectives = "StartFirstObjective";
+        public const string StartObjectives = "StartObjectives";
         public const string NextObjective = "NextObjective";
-        public const string StopObjectives = "StartFirstObjective";
+        public const string StopObjectives = "StopObjectives";
 
         // Spawning
         public const string StartSpawning = "StartSpawning";
@@ -57,7 +57,7 @@ namespace Kraken
 
     public class UpdateObjectiveUIData : BytesData
     {
-        public UpdateObjectiveUIData(ObjectiveInstance objectiveInstance) { ObjectiveInstance = objectiveInstance; }
-        public ObjectiveInstance ObjectiveInstance { get; private set; } // null = no objective
+        public UpdateObjectiveUIData(string objectiveName) { ObjectiveName = objectiveName; }
+        public string ObjectiveName { get; private set; }
     }
 }

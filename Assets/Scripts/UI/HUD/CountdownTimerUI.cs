@@ -19,6 +19,11 @@ namespace Kraken.UI
             EventManager.AddEventListener(EventNames.UpdateCountownTimerUI, HandleUpdateCountownTimerUI);
         }
 
+        private void OnDestroy()
+        {
+            EventManager.RemoveEventListener(EventNames.UpdateCountownTimerUI, HandleUpdateCountownTimerUI);
+        }
+
         public void HandleUpdateCountownTimerUI(BytesData data) 
         {
             UpdateCountownTimerUIData countdownData = (data as UpdateCountownTimerUIData);
@@ -30,9 +35,10 @@ namespace Kraken.UI
             Animate.Repeat(1f, () => 
             {
                 // Keep doing countdown until last second
-                if (currentCount == 0)
+                if (currentCount == 1)
                 {
                     SetVisible(false);
+                    countdownData.EndCallback?.Invoke();
                     return false;
                 }
 

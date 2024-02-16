@@ -17,11 +17,14 @@ namespace Kraken.UI
             EventManager.AddEventListener(EventNames.UpdateObjectiveUI, HandleUpdateObjectiveUI);
         }
 
+        private void OnDestroy()
+        {
+            EventManager.RemoveEventListener(EventNames.UpdateObjectiveUI, HandleUpdateObjectiveUI);
+        }
+
         public void HandleUpdateObjectiveUI(BytesData data)
         {
-            ObjectiveInstance objectiveInstanceData = (data as UpdateObjectiveUIData).ObjectiveInstance;
-
-            Debug.Log("123");
+            UpdateObjectiveUIData objectiveInstanceData = (data as UpdateObjectiveUIData);
 
             if (objectiveInstanceData == null)
             {
@@ -30,7 +33,7 @@ namespace Kraken.UI
             }
 
             SetVisible(true);
-            _txtObjectiveName.text = objectiveInstanceData.objectiveSO.objectiveName;
+            _txtObjectiveName.text = objectiveInstanceData.ObjectiveName;
         }
     }
 }
