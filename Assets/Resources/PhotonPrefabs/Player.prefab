@@ -1068,6 +1068,8 @@ MonoBehaviour:
   _cameraOrientation: {fileID: 5087714006406940513}
   _sprintInput: {fileID: -2249790821337775847, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
+  _pauseInput: {fileID: 7956368911678358776, guid: abae805e8a04eb44c951b59d4dda4171,
+    type: 3}
 --- !u!114 &3860904718989671536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1206,6 +1208,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: d434dbe5-9f45-4850-9f4f-0c7b91c4cfd5
     m_ActionName: Player/Attack[/XInputControllerWindows/buttonWest,/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2071646b-06c6-4141-80d5-5395ac627ca5
+    m_ActionName: Player/Pause[/Keyboard/escape,/DualSenseGamepadHID/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

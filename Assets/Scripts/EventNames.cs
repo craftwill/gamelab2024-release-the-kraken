@@ -22,6 +22,9 @@ namespace Kraken
         public const string CreateRoom = "CreateRoom";
         public const string UpdateLobbyView = "UpdateLobbyView";
         public const string JoinGameScene = "JoinGameScene";
+
+        //Game Events
+        public const string TogglePause = "TogglePause";
     }
 
     public class Vector2EventData : BytesData
