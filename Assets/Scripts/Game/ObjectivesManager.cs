@@ -58,10 +58,17 @@ namespace Kraken
 
         private void UpdateObjectiveUI()
         {
+            if(currentObjective == null)
+            {
+                photonView.RPC(nameof(RPC_All_UpdateObjectiveUI), RpcTarget.All, "");
+                return;
+            }
+
             ObjectiveSO objectiveSO = currentObjective.objectiveSO;
             photonView.RPC(nameof(RPC_All_UpdateObjectiveUI), RpcTarget.All, objectiveSO.name);
         }
 
+        [PunRPC]
         private void RPC_All_UpdateObjectiveUI(string objectiveName) 
         {
             EventManager.Dispatch(EventNames.UpdateObjectiveUI, new UpdateObjectiveUIData(objectiveName));

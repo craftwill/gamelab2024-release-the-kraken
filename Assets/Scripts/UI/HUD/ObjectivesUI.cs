@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using TMPro;
+using WebSocketSharp;
 
 namespace Kraken.UI
 {
@@ -26,7 +27,7 @@ namespace Kraken.UI
         {
             UpdateObjectiveUIData objectiveInstanceData = (data as UpdateObjectiveUIData);
 
-            if (objectiveInstanceData == null)
+            if (objectiveInstanceData.ObjectiveName.IsNullOrEmpty())
             {
                 SetVisible(false);
                 return;

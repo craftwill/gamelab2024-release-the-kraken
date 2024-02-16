@@ -32,6 +32,7 @@ namespace Kraken
             photonView.RPC(nameof(RPC_StartCountdownTimer), RpcTarget.All);
         }
 
+        [PunRPC]
         private void RPC_StartCountdownTimer()
         {
             void CountdownDoneCallback()
