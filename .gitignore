@@ -71,6 +71,11 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
+# Wwise files
+Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset
+Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/DecodedBanks.meta
+Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/DecodedBanks/English(US).meta
+
 JSON
 .idea/.idea.gamelab2023-blood-god/.idea/workspace.xml
 ProjectSettings/ProjectSettings.asset
