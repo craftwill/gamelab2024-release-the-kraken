@@ -43,7 +43,6 @@ namespace Kraken
         [PunRPC]
         public void RPC_All_TogglePause(bool pause)
         {
-            print("A");
             if (pause)
             {
                 Time.timeScale = 0;
