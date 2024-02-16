@@ -45,6 +45,7 @@ MonoBehaviour:
   - RPC_Master_OpenGameScene
   - RPC_Master_TakeDamage
   - RPC_All_PlaySprintSound
+  - RPC_All_TogglePause
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
