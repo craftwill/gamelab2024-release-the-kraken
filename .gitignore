@@ -73,6 +73,8 @@ crashlytics-build.properties
 
 # Wwise files
 Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset
+Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/DecodedBanks.meta
+Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/DecodedBanks/English(US).meta
 
 JSON
 .idea/.idea.gamelab2023-blood-god/.idea/workspace.xml
@@ -83,7 +85,3 @@ Assets/Feel/NiceVibrations/OlderVersions/v1.7/NiceVibrations-v-1-7.unitypackage.
 Assets/Feel/FeelDemos/FeelTemplatesDemo.unitypackage.meta
 .idea/.idea.gamelab2023-blood-god/.idea/workspace.xml
 Assets/Art/Font/Scriptorium SDF.asset
-
-Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/DecodedBanks.meta
-
-Assets/StreamingAssets/Audio/GeneratedSoundBanks/Windows/DecodedBanks/English(US).meta
