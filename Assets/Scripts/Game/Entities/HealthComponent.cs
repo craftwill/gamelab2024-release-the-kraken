@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.Events;
 
 using Photon.Pun;
+using MoreMountains.Feedbacks;
 
 namespace Kraken.Game
 {
     public class HealthComponent : MonoBehaviourPun
     {
+        [SerializeField] private MMF_Player _feedback;
         [field: SerializeField] public float Health { get; private set; } = 10f;
         [field: SerializeField] public float MaxHealth { get; private set; } = 10f;
         [field: SerializeField] public bool IsAlive { get; private set; } = true;
@@ -53,6 +55,7 @@ namespace Kraken.Game
 
             Health -= dmgAmount;
             OnTakeDamage.Invoke(dmgAmount);
+            _feedback.PlayFeedbacks();
 
             Debug.Log(name + " Took " + dmgAmount + " dmg!");
 
