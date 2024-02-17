@@ -15,6 +15,8 @@ namespace Kraken
         [Header("GameFlow")]
         [Tooltip("Skip need to wait for two players to have joined.")]
         public bool useDebugGameFlow = true;
+        [Tooltip("Maximum time the game can last in seconds")]
+        public int gameDuration = 30;
 
         [Header("Player Controls settings")]
         public float moveSpeed = 7.5f;

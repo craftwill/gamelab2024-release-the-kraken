@@ -26,6 +26,7 @@ namespace Kraken
         // GameFlow events
         public const string StartGameFlow = "StartGameFlow";
         public const string StopGameFlow = "StopGameFlow";
+        public const string StartGameTimer = "StartGameTimer";
 
         // Objectives events
         public const string StartObjectives = "StartObjectives";

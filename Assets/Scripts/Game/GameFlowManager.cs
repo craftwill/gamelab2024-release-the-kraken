@@ -61,6 +61,7 @@ namespace Kraken
 
             EventManager.Dispatch(EventNames.StartObjectives, null);
             EventManager.Dispatch(EventNames.StartSpawning, null);
+            EventManager.Dispatch(EventNames.StartGameTimer, null);
         }
     }
 }
