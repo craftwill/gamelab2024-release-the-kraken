@@ -12,6 +12,10 @@ namespace Kraken
         public string loadCustomSceneName = "";
         public bool isSkipMainMenu = false;
 
+        [Header("GameFlow")]
+        [Tooltip("Skip need to wait for two players to have joined.")]
+        public bool useDebugGameFlow = true;
+
         [Header("Player Controls settings")]
         public float moveSpeed = 7.5f;
         public float sprintSpeed = 14f;

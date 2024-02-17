@@ -8,7 +8,7 @@ using Cinemachine;
 
 namespace Kraken
 {
-    public class PlayerEntity : MonoBehaviourPun
+    public class PlayerEntity : Entity
     {
         private bool _isOwner;
 
