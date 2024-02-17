@@ -2,7 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InflictDamageComponent : MonoBehaviour
+namespace Kraken
 {
-    public int Damage { get; set; } = 0;
+    public class InflictDamageComponent : MonoBehaviour
+    {
+        public EntityClan Damageclan { get; set; } = EntityClan.Ally;
+        public float Damage { get; set; } = 1f;
+    }
 }
