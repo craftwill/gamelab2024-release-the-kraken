@@ -50,6 +50,8 @@ MonoBehaviour:
   - RPC_All_UpdateObjectiveUI
   - RPC_All_TogglePause
   - RPC_All_MoveController
+  - RPC_All_Attack
+  - RPC_All_Die
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
