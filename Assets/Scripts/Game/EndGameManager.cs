@@ -13,6 +13,7 @@ namespace Kraken
             if (!_isMaster) return;
 
             EventManager.AddEventListener(EventNames.StartGameTimer, HandleStartGameTimer);
+            EventManager.AddEventListener(EventNames.PlayerDeath, HandlePlayerDeath);
         }
 
         private void OnDestroy()
@@ -29,6 +30,13 @@ namespace Kraken
             photonView.RPC(nameof(RPC_StartGameTimer), RpcTarget.All);
         }
 
+        private void HandlePlayerDeath(BytesData data)
+        {
+            string playerId = (data as StringDataBytes).StringValue;
+
+            photonView.RPC(nameof(RPC_PlayerDeath), RpcTarget.All, playerId);
+        }
+
         [PunRPC]
         public void RPC_StartGameTimer()
         {
@@ -41,6 +49,15 @@ namespace Kraken
             //EventManager.Dispatch(EventNames.UpdateGameTimerUI,
             //    new UpdateCountownTimerUIData(Config.current.gameDuration, GameTimerDoneCallback));
             Animate.Delay(Config.current.gameDuration, GameTimerDoneCallback);
+        }
+
+        [PunRPC]
+        public void RPC_PlayerDeath(string playerId)
+        {
+            //to be implemented, depending on who died you show different thing to the player
+
+            if (!_isMaster) return;
+            EndGameAfterPlayerDeath();
         }
 
         private void EndGameAfterGameTimer()

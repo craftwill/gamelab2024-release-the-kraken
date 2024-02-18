@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using Photon.Pun;
 using UnityEngine.UIElements;
 using Cinemachine;
+using Bytes;
 
 namespace Kraken
 {
@@ -18,6 +19,14 @@ namespace Kraken
             {
                 _isOwner = true;
             }
+        }
+
+        protected override void HandleDie()
+        {
+            base.HandleDie();
+
+            StringDataBytes bytes = new StringDataBytes(PhotonNetwork.LocalPlayer.UserId);
+            EventManager.Dispatch(EventNames.PlayerDeath, bytes);
         }
     }
 }

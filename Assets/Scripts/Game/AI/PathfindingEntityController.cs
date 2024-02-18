@@ -50,7 +50,8 @@ namespace Kraken
             if (_entityAttackComponent.IsAttacking) return;
 
             (PlayerEntity closestPlayer, float closestDistance) = _ownerEntity.GetClosestPlayer();
-            _target = closestPlayer.transform;
+            if (closestPlayer is not null) _target = closestPlayer.transform;
+            else _target = null;
 
             // Attack closest player if close enough
             if (closestDistance <= _attackDistance)
