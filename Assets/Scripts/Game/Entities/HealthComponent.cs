@@ -12,7 +12,7 @@ namespace Kraken.Game
     {
         [SerializeField] private MMF_Player _feedback;
         [field: SerializeField] public float Health { get; private set; } = 10f;
-        [field: SerializeField] public float MaxHealth { get; private set; } = 10f;
+        [field: SerializeField] public float MaxHealth { get; set; } = 10f;
         [field: SerializeField] public bool IsAlive { get; private set; } = true;
 
         [Header("Testing")]

@@ -8,9 +8,17 @@ namespace Kraken
 {
     public class EnemyEntity : Entity
     {
+        [SerializeField] private EnemyConfigSO _config;
+        [SerializeField] private EntityAttackComponent _attackComponent;
+        [SerializeField] private BaseEntityController _entityController;
+
         protected override void Awake()
         {
             base.Awake();
+
+            _healthComponent.MaxHealth = _config.maxHealth;
+            _attackComponent.InitSettings(_config.damageDealt, _config.attackCooldown, _config.attackDuration, _config.lockedIntoAttackDuration);
+            _entityController.InitSettings(_config.moveSpeed, _config.attackRange);
         }
 
         protected override void HandleTakeDamage(float dmgAmount)

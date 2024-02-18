@@ -11,8 +11,10 @@ namespace Kraken.Game
 {
     public class SpawnOnStartDebug : MonoBehaviourPun
     {
-        public string entityToSpawnName;
-        public float spawnStartDelay;
+        [SerializeField] private EnemySpawnPack[] _enemySpawnPacks;
+        [SerializeField] private float _spawnStartDelay;
+        [SerializeField] private float _spawnWaveDelay = 8f;
+        [SerializeField] private int _amountOfWaves = 3;
 
         private Transform[] _spawnPoints;
 
@@ -27,20 +29,30 @@ namespace Kraken.Game
         {
             if (!PhotonNetwork.IsMasterClient) return;
 
-            Animate.Delay(spawnStartDelay, SpawnEntitiesAtEverySpawnPoint, true);
+            Animate.Delay(_spawnStartDelay, SpawnEntitiesAtEverySpawnPoint, true);
         }
 
         private void SpawnEntitiesAtEverySpawnPoint()
         {
+            int i = 0;
             foreach (var spawnPoint in _spawnPoints)
             {
-                SpawnEntity(spawnPoint.position);
+                Animate.Delay(i * Random.Range(0.1f, 0.3f), () => { SpawnEntity(spawnPoint.position); }, true);
+                i++;
+            }
+            _amountOfWaves--;
+
+            if (_amountOfWaves > 0)
+            {
+                Animate.Delay(_spawnStartDelay, SpawnEntitiesAtEverySpawnPoint, true);
             }
         }
 
         private void SpawnEntity(Vector3 spawnPos) 
         {
-            NetworkUtils.Instantiate(entityToSpawnName, spawnPos);
+            EnemySpawnPack spawnPack = _enemySpawnPacks[Random.Range(0, 2)];
+
+            NetworkUtils.Instantiate(spawnPack.GetRandomMinion().name, spawnPos);
         }
     }
 }
