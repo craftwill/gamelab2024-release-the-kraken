@@ -224,22 +224,12 @@ namespace Kraken
             {
                 if (player.CustomProperties == null || !player.CustomProperties.ContainsKey("player"))
                 {
-                    if (player.CustomProperties == null)
-                    {
-                        Debug.Log("player " + player.UserId + " has no custom properties");
-                    }
-                    else if (!player.CustomProperties.ContainsKey("player"))
-                    {
-                        Debug.Log("player " + player.UserId + "'s properties have no player key");
-                    }
                     return false;
                 }
                 if ((int)player.CustomProperties["player"] == 1)
                 {
-                    Debug.Log("player " + player.UserId + " has not selected a character");
                     return false;
                 }
-                Debug.Log("player " + player.UserId + " is ready to go");
             }
             return true;
         }
