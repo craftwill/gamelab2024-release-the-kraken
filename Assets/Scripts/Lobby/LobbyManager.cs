@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using Unity.VisualScripting;
 
 using Photon.Realtime;
 using Photon.Pun;
@@ -9,8 +11,6 @@ using Photon.Pun;
 using TMPro;
 
 using Bytes;
-using UnityEngine.UI;
-using Unity.VisualScripting;
 using static UnityEditor.PlayerSettings;
 
 namespace Kraken
@@ -23,7 +23,6 @@ namespace Kraken
         [SerializeField] private GameObject _controller2;
         [SerializeField] private InputActionReference _moveInput;
         [SerializeField] private Button _btnStart;
-        private TMP_Text txtPlayer;
         private GameObject _controlledController;
         private int _currentControllerPositionIndex = 1;
         private int[] controllerPositions = { -300, 0, 300 };
