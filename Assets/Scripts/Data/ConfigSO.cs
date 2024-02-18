@@ -8,6 +8,7 @@ namespace Kraken
         [Header("Testing")]
         public bool showDebugLogs;
         public bool requireTwoPlayers = true;
+        public bool forceUseDazzlePlayer1 = false;
 
         [Header("Network")]
         public string loadCustomSceneName = "";

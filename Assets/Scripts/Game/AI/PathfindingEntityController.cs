@@ -13,8 +13,6 @@ namespace Kraken
         [SerializeField] protected EntityAttackComponent _entityAttackComponent;
         [SerializeField] protected NavMeshAgent _navMeshAgent;
 
-        [SerializeField] protected float _attackDistance = 2.5f;
-
         protected Transform _target;
 
         protected override void Start()
@@ -50,10 +48,13 @@ namespace Kraken
             if (_entityAttackComponent.IsAttacking) return;
 
             (PlayerEntity closestPlayer, float closestDistance) = _ownerEntity.GetClosestPlayer();
+
+            if (closestPlayer == null) return;
+
             _target = closestPlayer.transform;
 
             // Attack closest player if close enough
-            if (closestDistance <= _attackDistance)
+            if (closestDistance <= _attackRange)
             {
                 _entityAttackComponent.TryAttack();
             }
