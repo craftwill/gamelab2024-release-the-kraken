@@ -21,6 +21,7 @@ namespace Kraken
             if (!_isMaster) return;
 
             EventManager.RemoveEventListener(EventNames.StartGameTimer, HandleStartGameTimer);
+            EventManager.RemoveEventListener(EventNames.PlayerDeath, HandlePlayerDeath);
         }
 
         private void HandleStartGameTimer(BytesData data)
@@ -55,6 +56,7 @@ namespace Kraken
         public void RPC_PlayerDeath(string playerId)
         {
             //to be implemented, depending on who died you show different thing to the player
+            //somewhere in here we transition to a result scene
 
             if (!_isMaster) return;
             EndGameAfterPlayerDeath();
