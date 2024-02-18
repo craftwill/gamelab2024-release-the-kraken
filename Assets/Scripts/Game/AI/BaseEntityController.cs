@@ -7,7 +7,7 @@ namespace Kraken
 {
     public abstract class BaseEntityController : MonoBehaviourPun
     {
-        [SerializeField] private float _moveSpeed = 1f;
+        [SerializeField] protected float _moveSpeed = 1f;
         [SerializeField] protected float _attackRange = 2.5f;
 
         public virtual void InitSettings(float moveSpeed, float attackRange)

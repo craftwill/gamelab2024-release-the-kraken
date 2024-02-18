@@ -41,24 +41,40 @@ namespace Kraken
         {
             GetComponent<PhotonTransformView>().enabled = false;
             GetComponent<NavMeshAgent>().enabled = false;
+            GetComponent<SphereCollider>().isTrigger = false;
+            Rigidbody rg = GetComponent<Rigidbody>();
+            rg.isKinematic = false;
 
-            SphereCollider colAdded = gameObject.AddComponent<SphereCollider>();
-            colAdded.radius = 0.2f;
-
-            Rigidbody rgAdded = gameObject.AddComponent<Rigidbody>();
             Vector3 closestPlayerPos = GetClosestPlayer().Item1.transform.position;
             Vector3 dirToSend = -(closestPlayerPos - this.transform.position).normalized;
             Vector3 verticalForce = new Vector3(0f, Random.Range(1f, 10f), 0f);
-            rgAdded.AddForce(dirToSend * 35f + verticalForce, ForceMode.Impulse);
-            rgAdded.AddTorque(new Vector3(Random.Range(3f, 8f), Random.Range(3f, 8f), Random.Range(3f, 8f)), ForceMode.Impulse);
+            rg.AddForce(dirToSend * 35f + verticalForce, ForceMode.Impulse);
+            rg.AddTorque(new Vector3(Random.Range(3f, 8f), Random.Range(3f, 8f), Random.Range(3f, 8f)), ForceMode.Impulse);
 
             if (!PhotonNetwork.IsMasterClient) return;
 
-            Animate.Delay(1.5f, () => 
+            Animate.Delay(1.5f, () =>
             {
                 if (this == null) return;
                 PhotonNetwork.Destroy(photonView);
             }, true);
+        }
+
+        // Disable controller.
+        public void DisableControllerAndEnablePhysics() 
+        {
+            GetComponent<NavMeshAgent>().enabled = false;
+            GetComponent<SphereCollider>().isTrigger = false;
+            Rigidbody rg = GetComponent<Rigidbody>();
+            rg.isKinematic = false;
+        }
+
+        public void EnableControllerAndDisablePhysics()
+        {
+            GetComponent<NavMeshAgent>().enabled = true;
+            GetComponent<SphereCollider>().isTrigger = true;
+            Rigidbody rg = GetComponent<Rigidbody>();
+            rg.isKinematic = true;
         }
     }
 }

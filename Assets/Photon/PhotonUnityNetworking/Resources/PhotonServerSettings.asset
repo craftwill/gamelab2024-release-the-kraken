@@ -52,6 +52,7 @@ MonoBehaviour:
   - RPC_All_MoveController
   - RPC_All_Attack
   - RPC_All_Die
+  - RPC_All_ActivateAbility
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

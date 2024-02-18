@@ -18,6 +18,8 @@ namespace Kraken
         protected override void Start()
         {
             base.Start();
+
+            _navMeshAgent.speed *= _moveSpeed;
         }
 
         protected override void Update()

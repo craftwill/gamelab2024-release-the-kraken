@@ -164,6 +164,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2994236915493532572, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994236915493532572, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
+      value: 1b434f4b-cfcf-4788-b8d4-c1360137cf95
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994236915493532572, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: Player/CastUltimate[/Keyboard/r,/XInputControllerWindows/buttonNorth]
+      objectReference: {fileID: 0}
     - target: {fileID: 4801927777905466368, guid: c767677ecb1762942a114712b6d1e354,
         type: 3}
       propertyPath: sceneViewId
@@ -182,7 +197,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6946738537219836964}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6747958540799682996, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      insertIndex: 7
+      addedObject: {fileID: 6065683228769132252}
   m_SourcePrefab: {fileID: 100100000, guid: c767677ecb1762942a114712b6d1e354, type: 3}
 --- !u!4 &1892013353678974844 stripped
 Transform:
@@ -190,3 +209,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1173246613505425054}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5615325859885225770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6747958540799682996, guid: c767677ecb1762942a114712b6d1e354,
+    type: 3}
+  m_PrefabInstance: {fileID: 1173246613505425054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6065683228769132252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5615325859885225770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebffad4bad0ca7e4a9aa7e588c265b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cooldown: 12
+  _castUltimateInput: {fileID: 3613899715532151061, guid: abae805e8a04eb44c951b59d4dda4171,
+    type: 3}
+  _ultimatePrefab: {fileID: 5835624996936666444, guid: 9e161fc5c0c22e1438cdcddadfbc9c04,
+    type: 3}
+  _spawnDistanceOffset: 5
