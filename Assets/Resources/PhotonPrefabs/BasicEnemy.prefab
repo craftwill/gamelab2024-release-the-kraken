@@ -113,6 +113,9 @@ MonoBehaviour:
   _entityAnimationComponent: {fileID: 7010872933795953625}
   _healthComponent: {fileID: 8142153588247244116}
   <EntityClan>k__BackingField: 1
+  _config: {fileID: 11400000, guid: 76d8ad19f574a3840aa2436902398a3b, type: 2}
+  _attackComponent: {fileID: 6807864403598660797}
+  _entityController: {fileID: 4623548838470204180}
 --- !u!114 &4623548838470204180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,10 +128,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 893b1a6e60225654b8798b72b5538567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveSpeed: 1
+  _attackRange: 2.5
   _ownerEntity: {fileID: 2628587998543513100}
   _entityAttackComponent: {fileID: 6807864403598660797}
   _navMeshAgent: {fileID: 7968008091505032441}
-  _attackDistance: 2.5
 --- !u!114 &7010872933795953625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,17 +792,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0e67be6e18ecfd447a6a04ce071430d4,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.405334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e67be6e18ecfd447a6a04ce071430d4,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.405334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e67be6e18ecfd447a6a04ce071430d4,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.405334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e67be6e18ecfd447a6a04ce071430d4,
         type: 3}

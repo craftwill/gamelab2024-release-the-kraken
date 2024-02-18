@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eacc4aa7b5ff17047afb21582376bf4c, type: 3}
+  m_Name: EnemySpawnPack_Wolf
+  m_EditorClassIdentifier: 
+  enemyClanType: 1
+  normalMinion: {fileID: 3072840427676032051, guid: c7743661aca801543a43ccb1c6646fe7,
+    type: 3}
+  meleeMinion: {fileID: 4530902662497312406, guid: cfe5fe23b8c165743aa11cdfcb30d9e1,
+    type: 3}
+  rangeMinion: {fileID: 1956051173781878928, guid: 609d6ad64b39ed74d9e5d4533d75917c,
+    type: 3}
