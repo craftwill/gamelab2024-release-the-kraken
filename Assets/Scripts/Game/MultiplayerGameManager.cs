@@ -13,7 +13,8 @@ namespace Kraken
         [SerializeField] private Transform _playersRespawnPos;
         [SerializeField] private Transform _playersSpawnPos;
         [SerializeField] private Transform _respawnBoxTeleportPos;
-        [SerializeField] private GameObject _playerPrefab;
+        [SerializeField] private GameObject _razzlePrefab;
+        [SerializeField] private GameObject _dazzlePrefab;
 
         private GameObject _localPlayer;
         private bool _gameStarted = false;
@@ -82,7 +83,22 @@ namespace Kraken
         {
             Debug.Log("Creating player!");
 
-            _localPlayer = NetworkUtils.Instantiate(_playerPrefab.name, _playersSpawnPos.position);
+            string playerToCreateName = _razzlePrefab.name;
+            if (!PhotonNetwork.IsMasterClient)
+            {
+                playerToCreateName = _dazzlePrefab.name;
+            }
+
+            // Force usage of Dazzle for player1
+            if (Config.current.forceUseDazzlePlayer1) 
+            {
+                if (PhotonNetwork.IsMasterClient)
+                    playerToCreateName = _dazzlePrefab.name;
+                else
+                    playerToCreateName = _razzlePrefab.name;
+            }
+
+            _localPlayer = NetworkUtils.Instantiate(playerToCreateName, _playersSpawnPos.position);
 
             photonView.RPC(nameof(RPC_Master_PlayerCreated), RpcTarget.MasterClient, _localPlayer.GetPhotonView().ViewID);
         }

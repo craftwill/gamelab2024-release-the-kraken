@@ -21,6 +21,14 @@ namespace Kraken
         public bool IsAttacking { get; private set; } = false;
         private bool _canAttack = true;
 
+        public void InitSettings(float dmgDealt, float atkCdr, float atkDuration, float lockedInAtkDuration)
+        {
+            _damageDealt = dmgDealt;
+            _attackCooldown = atkCdr;
+            _attackDuration = atkDuration;
+            _lockedIntoAttackDuration = lockedInAtkDuration;
+        }
+
         private void Awake()
         {
             _inflictDamageComponent.Damage = _damageDealt;
