@@ -20,6 +20,8 @@ namespace Together
 
         private CanvasGroup cvGroup;
 
+        [SerializeField] private TMP_InputField _roomCode;
+
         private void Start()
         {
             cvGroup = GetComponent<CanvasGroup>();
@@ -51,9 +53,10 @@ namespace Together
         public void Btn_OnJoinGame()
         {
             if (isJoining) { return; }
-
+            if (_roomCode.text.Length == 0) { return; }
+            
             isJoining = true;
-            EventManager.Dispatch(EventNames.JoinRoomWithCode, null);
+            EventManager.Dispatch(EventNames.JoinRoomWithCode, new StringDataBytes(_roomCode.text.ToUpper()));
         }
 
         public void Btn_OnQuit()

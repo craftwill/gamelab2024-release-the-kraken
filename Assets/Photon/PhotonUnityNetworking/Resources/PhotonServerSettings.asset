@@ -49,6 +49,7 @@ MonoBehaviour:
   - RPC_StartCountdownTimer
   - RPC_All_UpdateObjectiveUI
   - RPC_All_TogglePause
+  - RPC_All_MoveController
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

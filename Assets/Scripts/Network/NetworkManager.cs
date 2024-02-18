@@ -4,12 +4,15 @@ using Photon.Realtime;
 using UnityEngine;
 
 using Bytes;
+using Kraken.Network;
+using System.Collections;
+using TMPro;
 
 namespace Kraken
 {
     public class NetworkManager : MonoBehaviourPunCallbacks
     {
-        const int MAX_LOBBY_SIZE = 11; // UwU
+        const int MAX_LOBBY_SIZE = 2;
         const string TEST_ROOM_CODE = "test";
 
         private void Start()
@@ -102,7 +105,7 @@ namespace Kraken
         {
             PhotonNetwork.SetMasterClient(PhotonNetwork.LocalPlayer);
             Debug.Log($"masterclient is: {PhotonNetwork.LocalPlayer}");
-            PhotonNetwork.CreateRoom(TEST_ROOM_CODE, BuildRoomOptions());
+            PhotonNetwork.CreateRoom(NetworkUtils.CreateRandomRoomCode(), BuildRoomOptions());
         }
 
         private RoomOptions BuildRoomOptions()
@@ -122,8 +125,8 @@ namespace Kraken
         /// <param name="data"></param>
         private void HandleJoinRoom(BytesData data)
         {
-            //var roomData = data as StringDataBytes;
-            string roomCode = TEST_ROOM_CODE;//roomData.StringValue;
+            var roomData = data as StringDataBytes;
+            string roomCode = roomData.StringValue;
 
             if (roomCode != String.Empty)
             {

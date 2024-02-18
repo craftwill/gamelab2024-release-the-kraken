@@ -7,6 +7,7 @@ namespace Kraken
     {
         [Header("Testing")]
         public bool showDebugLogs;
+        public bool requireTwoPlayers = true;
 
         [Header("Network")]
         public string loadCustomSceneName = "";
