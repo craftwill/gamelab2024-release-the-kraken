@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +10,8 @@ namespace Kraken.Game
     {
         public UnityEvent<float> OnDetectDamage;
 
+        [SerializeField] private EntityClan[] _takeDamageFromClans;
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.transform.tag == "DealDamage")
@@ -16,7 +19,10 @@ namespace Kraken.Game
                 var idc = other.GetComponent<InflictDamageComponent>();
                 if(idc is not null)
                 {
-                    OnDetectDamage.Invoke(idc.Damage);
+                    if (_takeDamageFromClans.Contains(idc.Damageclan))
+                    {
+                        OnDetectDamage.Invoke(idc.Damage);
+                    }
                 }
                 else
                 {
