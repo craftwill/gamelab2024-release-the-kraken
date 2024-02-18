@@ -44,6 +44,7 @@ namespace Kraken
         
         //Game Events
         public const string TogglePause = "TogglePause";
+        public const string ToggleCursor = "ToggleCursor";
     }
 
     public class Vector2EventData : BytesData

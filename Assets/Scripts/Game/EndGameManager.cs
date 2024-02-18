@@ -40,7 +40,7 @@ namespace Kraken
 
             //EventManager.Dispatch(EventNames.UpdateGameTimerUI,
             //    new UpdateCountownTimerUIData(Config.current.gameDuration, GameTimerDoneCallback));
-            Animate.Delay(5, GameTimerDoneCallback);
+            Animate.Delay(Config.current.gameDuration, GameTimerDoneCallback);
         }
 
         private void EndGameAfterGameTimer()
@@ -65,8 +65,9 @@ namespace Kraken
 
         private void EndGame()
         {
-            //Go back to the lobby with second player
-            //EventManager.Dispatch(EventNames.CreateRoom, null);
+            EventManager.Dispatch(EventNames.ToggleCursor, new BoolDataBytes(true));
+            
+            PhotonNetwork.LoadLevel("Lobby");
         }
     }
 }

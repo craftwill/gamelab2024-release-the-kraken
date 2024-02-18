@@ -21,6 +21,7 @@ namespace Kraken
             {
                 Btn_OnStartGame();
             }
+            photonView.RPC(nameof(RPC_All_UpdateLobbyView), RpcTarget.All);
         }
         
         public override void OnPlayerEnteredRoom(Player newPlayer)
