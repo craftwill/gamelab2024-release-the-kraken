@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Unity_Config
   m_EditorClassIdentifier: 
   showDebugLogs: 0
+  requireTwoPlayers: 0
+  forceUseDazzlePlayer1: 0
   loadCustomSceneName: 
   isSkipMainMenu: 0
-  useDebugGameFlow: 0
+  useDebugGameFlow: 1
+  gameDuration: 600
   moveSpeed: 7.5
   sprintSpeed: 14
   rotationSpeed: 50

@@ -41,6 +41,7 @@ namespace Kraken
                 _sprintInput.action.canceled += OnSprintCanceled;
                 _pauseInput.action.performed += OnPause;
 
+                EventManager.AddEventListener(EventNames.ToggleCursor, ToggleCursor);
             }
         }
 
@@ -51,6 +52,8 @@ namespace Kraken
             _moveInput.action.performed -= OnMove;
             _moveInput.action.canceled -= OnMove;
             _pauseInput.action.performed -= OnPause;
+
+            EventManager.RemoveEventListener(EventNames.ToggleCursor, ToggleCursor);
         }
 
         private void Update()
@@ -120,6 +123,13 @@ namespace Kraken
         public void OnPause(InputAction.CallbackContext value)
         {
             EventManager.Dispatch(EventNames.TogglePause, null);
+        }
+
+        private void ToggleCursor(BytesData data)
+        {
+            bool toggle = ((BoolDataBytes)data).BoolValue;
+            Cursor.visible = toggle;
+            Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         }
     }
 }

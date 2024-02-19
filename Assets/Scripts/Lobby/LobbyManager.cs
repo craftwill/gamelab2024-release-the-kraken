@@ -35,17 +35,16 @@ namespace Kraken
             {
                 Btn_OnStartGame();
             }
+            _currentControllerPositionIndex = 1;
+
+            PhotonNetwork.LocalPlayer.SetCustomProperties(new ExitGames.Client.Photon.Hashtable
+            {
+                { "player", 1 }
+            });
+
             _txtRoomCode.text = PhotonNetwork.CurrentRoom.Name;
             TogglePlayer2();
             _requireTwoPlayers = Config.current.requireTwoPlayers;
-
-            //Initialize controller 1 position for joining player
-            if (PhotonNetwork.MasterClient.CustomProperties != null && PhotonNetwork.MasterClient.CustomProperties.ContainsKey("player"))
-            {
-                Vector3 newPos = _controller1.transform.localPosition;
-                newPos.x = controllerPositions[(int)PhotonNetwork.MasterClient.CustomProperties["player"]];
-                _controller1.transform.localPosition = newPos;
-            }
 
             _moveInput.action.performed += OnMove;
             _moveInput.action.canceled += OnInputReleased;
@@ -72,15 +71,25 @@ namespace Kraken
         public override void OnPlayerEnteredRoom(Player newPlayer)
         {
             base.OnPlayerEnteredRoom(newPlayer);
-            photonView.RPC(nameof(RPC_All_UpdateLobbyView), RpcTarget.All);
             TogglePlayer2();
         }
 
         public override void OnPlayerLeftRoom(Player otherPlayer)
         {
             base.OnPlayerLeftRoom(otherPlayer);
-            photonView.RPC(nameof(RPC_All_UpdateLobbyView), RpcTarget.All);
             TogglePlayer2();
+        }
+
+        public override void OnJoinedRoom()
+        {
+            base.OnJoinedRoom();
+            //Initialize controller 1 position for joining player
+            if (PhotonNetwork.MasterClient.CustomProperties != null && PhotonNetwork.MasterClient.CustomProperties.ContainsKey("player"))
+            {
+                Vector3 newPos = _controller1.transform.localPosition;
+                newPos.x = controllerPositions[(int)PhotonNetwork.MasterClient.CustomProperties["player"]];
+                _controller1.transform.localPosition = newPos;
+            }
         }
 
         private void TogglePlayer2()
@@ -98,29 +107,6 @@ namespace Kraken
             }
 
             _controlledController = PhotonNetwork.IsMasterClient ? _controller1 : _controller2;
-        }
-
-        [PunRPC]
-        private void RPC_All_UpdateLobbyView() 
-        {
-            LocalUpdateLobbyView();
-        }
-
-        private void LocalUpdateLobbyView()
-        {
-            _txtPlayerList.text = "";
-            for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
-            {
-                Player player = PhotonNetwork.PlayerList[i];
-
-                _txtPlayerList.text += player.NickName;
-                if (player.UserId == PhotonNetwork.LocalPlayer.UserId)
-                {
-                    _txtPlayerList.text += " (YOU)";
-                }
-
-                _txtPlayerList.text += "\n";
-            }
         }
 
         public void Btn_OnStartGame() 

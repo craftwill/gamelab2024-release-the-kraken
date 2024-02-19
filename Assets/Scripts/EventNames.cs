@@ -26,6 +26,7 @@ namespace Kraken
         // GameFlow events
         public const string StartGameFlow = "StartGameFlow";
         public const string StopGameFlow = "StopGameFlow";
+        public const string StartGameTimer = "StartGameTimer";
 
         // Objectives events
         public const string StartObjectives = "StartObjectives";
@@ -39,9 +40,14 @@ namespace Kraken
         // UI events
         public const string UpdateCountownTimerUI = "UpdateCountownTimerUI";
         public const string UpdateObjectiveUI = "UpdateObjectiveUI";
+        public const string UpdateGameTimerUI = "UpdateGameTimerUI";
         
         //Game Events
         public const string TogglePause = "TogglePause";
+        public const string ToggleCursor = "ToggleCursor";
+
+        //Player Events
+        public const string PlayerDeath = "PlayerDeath";
     }
 
     public class Vector2EventData : BytesData
