@@ -176,15 +176,16 @@ namespace Kraken
 
         public void OnControlsChanged(string newScheme)
         {
+            CinemachineFreeLook freeLookCam = _camera.GetComponent<CinemachineFreeLook>();
             if (newScheme.Equals("Gamepad"))
             {
-                _camera.GetComponent<CinemachineFreeLook>().m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.cameraControllerMultiplier;
-                _camera.GetComponent<CinemachineFreeLook>().m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier * Config.current.cameraControllerMultiplier;
+                freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.cameraControllerMultiplier;
+                freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier * Config.current.cameraControllerMultiplier;
             }
             else
             {
-                _camera.GetComponent<CinemachineFreeLook>().m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity;
-                _camera.GetComponent<CinemachineFreeLook>().m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier; ;
+                freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity;
+                freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier; ;
             }
         }
     }
