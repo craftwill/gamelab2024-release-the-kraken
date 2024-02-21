@@ -14,6 +14,7 @@ namespace Kraken
 
             EventManager.AddEventListener(EventNames.StartGameTimer, HandleStartGameTimer);
             EventManager.AddEventListener(EventNames.PlayerDeath, HandlePlayerDeath);
+            EventManager.AddEventListener(EventNames.PlayerWin, HandlePlayerWin);
         }
 
         private void OnDestroy()
@@ -26,16 +27,23 @@ namespace Kraken
 
         private void HandleStartGameTimer(BytesData data)
         {
-            Debug.Log("Starting game timer!");
             
             photonView.RPC(nameof(RPC_StartGameTimer), RpcTarget.All);
         }
 
         private void HandlePlayerDeath(BytesData data)
         {
+            EventManager.Dispatch(EventNames.StopGameFlow, null);
             string playerId = (data as StringDataBytes).StringValue;
 
             photonView.RPC(nameof(RPC_PlayerDeath), RpcTarget.All, playerId);
+        }
+
+        private void HandlePlayerWin(BytesData data)
+        {
+            EventManager.Dispatch(EventNames.StopGameFlow, null);
+
+            EndGameAfterWin();
         }
 
         [PunRPC]

@@ -12,8 +12,8 @@ namespace Kraken
     {
         [SerializeField] private List<ObjectiveSO> _allObjectives;
 
-        private ObjectiveInstance currentObjective;
-
+        private ObjectiveInstance currentObjective = null;
+        private static int objectiveIndex = 0;
         private void Start()
         {
             if (!_isMaster) return;
@@ -36,8 +36,7 @@ namespace Kraken
         {
             Debug.Log("Start objectives!");
 
-            currentObjective = GetNextObjective();
-            UpdateObjectiveUI();
+            HandleNextObjectives(data);
         }
 
         private void HandleNextObjectives(BytesData data)
@@ -45,6 +44,8 @@ namespace Kraken
             Debug.Log("Next objective!");
 
             currentObjective = GetNextObjective();
+            currentObjective?.TriggerObjective();
+            
             UpdateObjectiveUI();
         }
 
@@ -76,7 +77,15 @@ namespace Kraken
 
         private ObjectiveInstance GetNextObjective()
         {
-            return new ObjectiveInstance(_allObjectives[0]);
+            if (objectiveIndex >= _allObjectives.Count) {
+
+                EventManager.Dispatch(EventNames.PlayerWin, null);
+                return null;
+            } 
+
+            var nextObjective = new ObjectiveInstance(_allObjectives[objectiveIndex]);
+            objectiveIndex++;
+            return nextObjective;
         }
     }
 }

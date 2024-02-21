@@ -48,6 +48,7 @@ namespace Kraken
 
         //Player Events
         public const string PlayerDeath = "PlayerDeath";
+        public const string PlayerWin = "PlayerWin";
     }
 
     public class Vector2EventData : BytesData
