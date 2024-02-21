@@ -17,9 +17,12 @@ namespace Kraken
         [SerializeField] private CharacterController _controller;
         [SerializeField] private GameObject _camera;
         [SerializeField] private Transform _cameraOrientation;
+        [SerializeField] private PlayerInput _input;
+        private string _currentScheme;
         private Vector2 _moveVec = Vector2.zero;
         private float _fallingVelocity = -1.0f;
         private bool _isSprinting = false;
+        private float _movementMagnitude = 0.0f;
 
         [SerializeField] private InputActionReference _sprintInput;
         [SerializeField] private InputActionReference _pauseInput;
@@ -32,8 +35,20 @@ namespace Kraken
                 UnityEngine.Cursor.lockState = CursorLockMode.Locked;
                 UnityEngine.Cursor.visible = false;
                 _camera.SetActive(true);
-                _camera.GetComponent<CinemachineFreeLook>().m_XAxis.m_MaxSpeed = Config.current.xCameraSensitivity;
-                _camera.GetComponent<CinemachineFreeLook>().m_YAxis.m_MaxSpeed = Config.current.yCameraSensitivity;
+                CinemachineFreeLook freeLookCam = _camera.GetComponent<CinemachineFreeLook>();
+                if (_input.currentControlScheme.Equals("Gamepad"))
+                {
+                    freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.cameraControllerMultiplier;
+                    freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier * Config.current.cameraControllerMultiplier;
+                }
+                else
+                {
+                    freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity;
+                    freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier; ;
+                }
+                freeLookCam.m_XAxis.m_InvertInput = Config.current.invertXAxis;
+                freeLookCam.m_YAxis.m_InvertInput = Config.current.invertYAxis;
+                _currentScheme = _input.currentControlScheme;
 
                 _moveInput.action.performed += OnMove;
                 _moveInput.action.canceled += OnMove;
@@ -84,9 +99,14 @@ namespace Kraken
                 }
                 else
                 {
-                    _controller.Move(movementDirection * Config.current.moveSpeed * Time.deltaTime);
+                    _controller.Move(movementDirection * Config.current.moveSpeed * _movementMagnitude * Time.deltaTime);
                 }
 
+                if (!_currentScheme.Equals(_input.currentControlScheme))
+                {
+                    OnControlsChanged(_input.currentControlScheme);
+                    _currentScheme = _input.currentControlScheme;
+                }
             }
         }
 
@@ -100,6 +120,7 @@ namespace Kraken
             if (_isOwner)
             {
                 _moveVec = value.ReadValue<Vector2>();
+                _movementMagnitude = Mathf.Clamp(_moveVec.magnitude, 0.0f, 1.0f);
             }
         }
 
@@ -130,6 +151,20 @@ namespace Kraken
             bool toggle = ((BoolDataBytes)data).BoolValue;
             Cursor.visible = toggle;
             Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+        }
+
+        public void OnControlsChanged(string newScheme)
+        {
+            if (newScheme.Equals("Gamepad"))
+            {
+                _camera.GetComponent<CinemachineFreeLook>().m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.cameraControllerMultiplier;
+                _camera.GetComponent<CinemachineFreeLook>().m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier * Config.current.cameraControllerMultiplier;
+            }
+            else
+            {
+                _camera.GetComponent<CinemachineFreeLook>().m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity;
+                _camera.GetComponent<CinemachineFreeLook>().m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier; ;
+            }
         }
     }
 }

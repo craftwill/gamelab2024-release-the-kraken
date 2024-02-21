@@ -35,13 +35,13 @@ namespace Kraken
         private MoreMountains.Feedbacks.MMF_Player _feedbacks;
         private void Update()
         {
-            if (_isOwner)
+            /*if (_isOwner)
             {
                 if (Input.GetMouseButtonDown(0))
                 {
                     _feedbacks.PlayFeedbacks();
                 }
-            }
+            }*/
         }
     }
 }
