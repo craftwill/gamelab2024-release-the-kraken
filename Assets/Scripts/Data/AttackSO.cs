@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Photon.Pun;
 using System;
+using Bytes;
 
 namespace Kraken
 {
@@ -81,8 +82,10 @@ namespace Kraken
         {
             yield return new WaitForSeconds(timeBeforeHitboxDuration);
             _collider.SetActive(true);
+            EventManager.Dispatch(EventNames.PlayerAttackStart, new FloatDataBytes(Config.current.attackMoveSpeed));
             yield return new WaitForSeconds(hitboxDuration);
             _collider.SetActive(false);
+            EventManager.Dispatch(EventNames.PlayerAttackEnd, null);
         }
         private IEnumerator FreeToAttackFunc(PlayerAttackComponent handle)
         {
