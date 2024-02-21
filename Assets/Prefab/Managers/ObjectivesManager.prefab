@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _allObjectives:
-  - {fileID: 11400000, guid: 46217cf42df2a4345a43a80c33c405a8, type: 2}
+  - {fileID: 11400000, guid: 8f2b9857dd9d1b74294f51251ca87efe, type: 2}
+  - {fileID: 11400000, guid: 8f2b9857dd9d1b74294f51251ca87efe, type: 2}
+  - {fileID: 11400000, guid: 8f2b9857dd9d1b74294f51251ca87efe, type: 2}
 --- !u!114 &7751270002852661781
 MonoBehaviour:
   m_ObjectHideFlags: 0

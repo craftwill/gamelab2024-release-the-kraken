@@ -11,7 +11,7 @@ using Photon.Pun;
 using TMPro;
 
 using Bytes;
-using static UnityEditor.PlayerSettings;
+
 
 namespace Kraken
 {

@@ -14,6 +14,11 @@ namespace Kraken
         {
             this.objectiveSO = objectiveSO;
         }
+
+        public void TriggerObjective()
+        {
+            objectiveSO.TriggerObjective(this);
+        }
     }
 
 }

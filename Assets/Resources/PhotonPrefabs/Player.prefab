@@ -1195,8 +1195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _feedback: {fileID: 3180136273290756812}
-  <Health>k__BackingField: 55
-  <MaxHealth>k__BackingField: 55
+  <Health>k__BackingField: 2000
+  <MaxHealth>k__BackingField: 2000
   <IsAlive>k__BackingField: 1
   _destroyOnDie: 1
   OnTakeDamage:
