@@ -23,6 +23,7 @@ namespace Kraken
         [Header("Player Controls settings")]
         public float moveSpeed = 7.5f;
         public float sprintSpeed = 14f;
+        public float attackMoveSpeed = 10f;
         public float rotationSpeed = 50f;
         public float gravity = 5f;
         public float cameraSensitivity = 2f;

@@ -22,7 +22,9 @@ namespace Kraken
         private Vector2 _moveVec = Vector2.zero;
         private float _fallingVelocity = -1.0f;
         private bool _isSprinting = false;
+        private bool _isAttacking = false;
         private float _movementMagnitude = 0.0f;
+        private float _attackMovementSpeed = 0.0f;
 
         [SerializeField] private InputActionReference _sprintInput;
         [SerializeField] private InputActionReference _pauseInput;
@@ -57,6 +59,8 @@ namespace Kraken
                 _pauseInput.action.performed += OnPause;
 
                 EventManager.AddEventListener(EventNames.ToggleCursor, ToggleCursor);
+                EventManager.AddEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
+                EventManager.AddEventListener(EventNames.PlayerAttackEnd, HandleAttackEnd);
             }
         }
 
@@ -69,6 +73,8 @@ namespace Kraken
             _pauseInput.action.performed -= OnPause;
 
             EventManager.RemoveEventListener(EventNames.ToggleCursor, ToggleCursor);
+            EventManager.RemoveEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
+            EventManager.RemoveEventListener(EventNames.PlayerAttackEnd, HandleAttackEnd);
         }
 
         private void Update()
@@ -84,7 +90,7 @@ namespace Kraken
                 Vector3 cameraDirection = transform.position - new Vector3(_camera.transform.position.x, transform.position.y, _camera.transform.position.z);
                 _cameraOrientation.forward = cameraDirection.normalized;
                 Vector3 movementDirection = _cameraOrientation.forward * _moveVec.y + _cameraOrientation.right * _moveVec.x;
-                if (movementDirection != Vector3.zero)
+                if (movementDirection != Vector3.zero && !_isAttacking)
                 {
                     transform.forward = Vector3.Slerp(transform.forward, movementDirection.normalized, Time.deltaTime * Config.current.rotationSpeed);
                     movementDirection = new Vector3(transform.forward.x, _fallingVelocity, transform.forward.z);
@@ -93,7 +99,11 @@ namespace Kraken
                 {
                     movementDirection.y += _fallingVelocity;
                 }
-                if (_isSprinting)
+                if (_isAttacking)
+                {
+                    _controller.Move(transform.forward * _attackMovementSpeed * Time.deltaTime);
+                }
+                else if (_isSprinting)
                 {
                     _controller.Move(movementDirection * Config.current.sprintSpeed * Time.deltaTime);
                 }
@@ -144,6 +154,17 @@ namespace Kraken
         public void OnPause(InputAction.CallbackContext value)
         {
             EventManager.Dispatch(EventNames.TogglePause, null);
+        }
+
+        public void HandleAttackStart(BytesData data)
+        {
+            _attackMovementSpeed = ((FloatDataBytes)data).FloatValue;
+            _isAttacking = true;
+        }
+
+        public void HandleAttackEnd(BytesData data)
+        {
+            _isAttacking = false;
         }
 
         private void ToggleCursor(BytesData data)
