@@ -20,8 +20,9 @@ namespace Kraken
             base.TriggerObjective(instance);
 
             Spawner[] spawners = FindObjectsByType<Spawner>(FindObjectsSortMode.InstanceID);
-            spawner = spawners[0];
+            spawner = spawners[Random.Range(0, spawners.Length)];
 
+            //should not be kept this way
             Animate.Repeat(spawnFrequency, () =>
             {
                 NetworkUtils.Instantiate(spawnConfig.GetRandomEnemyToSpawn().name, spawner.GetRandomPosition());

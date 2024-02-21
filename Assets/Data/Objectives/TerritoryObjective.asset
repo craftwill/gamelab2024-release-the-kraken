@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TerritoryObjective
   m_EditorClassIdentifier: 
   objectiveName: Go to the red zone!
-  objectiveTimer: 60
-  spawnFrequency: 2
+  objectiveTimer: 20
+  spawnFrequency: 1
   spawnCount: 20
   spawner: {fileID: 479531292222118300, guid: ec7d92182b74ae946ae195e669a72151, type: 3}
   spawnConfig: {fileID: 11400000, guid: ae52b6ddd841e724aa2dc41bdb8f3f64, type: 2}

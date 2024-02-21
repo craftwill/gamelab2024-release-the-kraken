@@ -8,11 +8,11 @@ public class EnemySpawnData : ScriptableObject
 {
     public bool sheepMelee;
     public int meleeSheepSpawnRatio { get; set; } = 0;
-    public GameObject meleeSheepPrefab { get; set; } = null;
+    public GameObject meleeSheepPrefab;
 
     public bool sheepRange;
     public int rangeSheepSpawnRatio { get; set; } = 0;
-    public GameObject rangeSheepPrefab { get; set; } = null;
+    public GameObject rangeSheepPrefab;
 
     private class Entry
     {
@@ -48,12 +48,11 @@ class CustomTypeEditor : Editor
         if (data.sheepMelee)
         {
             int ratio = EditorGUILayout.IntField(nameof(data.sheepMelee) + " spawn ratio", data.meleeSheepSpawnRatio);
-            GameObject prefab = (GameObject)EditorGUILayout.ObjectField(nameof(data.sheepMelee) + " prefab", data.meleeSheepPrefab, typeof(GameObject), false);
+            //GameObject prefab = (GameObject)EditorGUILayout.ObjectField(nameof(data.sheepMelee) + " prefab", data.meleeSheepPrefab, typeof(GameObject), false);
 
-            if(data.meleeSheepSpawnRatio != ratio || data.meleeSheepPrefab != prefab)
+            if(data.meleeSheepSpawnRatio != ratio)
             {
                 data.meleeSheepSpawnRatio = ratio;
-                data.meleeSheepPrefab = prefab;
 
                 data.FieldChanged();
             }
@@ -66,7 +65,7 @@ class CustomTypeEditor : Editor
         if (data.sheepRange)
         {
             data.rangeSheepSpawnRatio = EditorGUILayout.IntField(nameof(data.sheepRange) + " spawn ratio", data.rangeSheepSpawnRatio);
-            data.rangeSheepPrefab = (GameObject)EditorGUILayout.ObjectField(nameof(data.sheepMelee) + " prefab", data.rangeSheepPrefab, typeof(GameObject), false);
+            //data.rangeSheepPrefab = (GameObject)EditorGUILayout.ObjectField(nameof(data.sheepMelee) + " prefab", data.rangeSheepPrefab, typeof(GameObject), false);
         }
         else
         {
