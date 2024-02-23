@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemySpawnData", menuName = "Kraken/Spawning/EnemySpawnData")]
-public class EnemySpawnData : ScriptableObject
+public class EnemySpawnDataSO : ScriptableObject
 {
     public bool sheepMelee;
     public int meleeSheepSpawnRatio { get; set; } = 0;
@@ -37,13 +37,13 @@ public class EnemySpawnData : ScriptableObject
 
 #if UNITY_EDITOR
 
-[CustomEditor(typeof(EnemySpawnData))]
+[CustomEditor(typeof(EnemySpawnDataSO))]
 class CustomTypeEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        EnemySpawnData data = (EnemySpawnData)target;
+        EnemySpawnDataSO data = (EnemySpawnDataSO)target;
 
         if (data.sheepMelee)
         {

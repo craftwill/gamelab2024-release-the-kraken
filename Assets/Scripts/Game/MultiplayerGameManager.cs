@@ -47,12 +47,6 @@ namespace Kraken
                 {
                     TryStartGameFlow();
                 });
-
-                // Stop gameflow for testing purposes after 12 seconds.
-                //Animate.Delay(12f, () =>
-                //{
-                //    TryStopGameFlow();
-                //});
             }
         }
 

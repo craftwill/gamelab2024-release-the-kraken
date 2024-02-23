@@ -13,7 +13,7 @@ namespace Kraken
         [Tooltip("At what interval do enemies spawn")] public int spawnFrequency;
         [Tooltip("How many total enemies will be spawned")] public int spawnCount;
         [Tooltip("The spawner game object")] public Spawner spawner;
-        public EnemySpawnData spawnConfig;
+        public EnemySpawnDataSO spawnConfig;
 
         public override void TriggerObjective(ObjectiveInstance instance)
         {
