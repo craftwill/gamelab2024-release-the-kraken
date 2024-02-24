@@ -15,12 +15,14 @@ MonoBehaviour:
   showDebugLogs: 0
   requireTwoPlayers: 0
   forceUseDazzlePlayer1: 0
+  requireTwoPlayersForUltimate: 0
   loadCustomSceneName: 
   isSkipMainMenu: 0
   useDebugGameFlow: 1
   gameDuration: 600
   moveSpeed: 7.5
   sprintSpeed: 14
+  attackMoveSpeed: 10
   rotationSpeed: 50
   gravity: 5
   cameraSensitivity: 0.2
@@ -28,3 +30,6 @@ MonoBehaviour:
   cameraControllerMultiplier: 10
   invertXAxis: 0
   invertYAxis: 1
+  ultimateStartMaxDistance: 5
+  ultimateEndDistance: 5
+  ultimateDamage: 10
