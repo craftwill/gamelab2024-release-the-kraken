@@ -54,6 +54,9 @@ MonoBehaviour:
   - RPC_All_Die
   - RPC_PlayerDeath
   - RPC_StartGameTimer
+  - RPC_All_StartDrawing
+  - RPC_Others_WaitingForUltimate
+  - Rpc_All_FinishDrawing
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
