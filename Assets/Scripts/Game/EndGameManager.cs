@@ -92,7 +92,7 @@ namespace Kraken
 
         private void EndGame()
         {
-            EventManager.Dispatch(EventNames.ToggleCursor, new BoolDataBytes(true));
+            GameManager.ToggleCursor(true);
             
             PhotonNetwork.LoadLevel("Lobby");
         }

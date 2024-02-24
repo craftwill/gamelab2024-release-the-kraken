@@ -58,7 +58,7 @@ namespace Kraken
                 _sprintInput.action.canceled += OnSprintCanceled;
                 _pauseInput.action.performed += OnPause;
 
-                EventManager.AddEventListener(EventNames.ToggleCursor, ToggleCursor);
+                GameManager.ToggleCursor(false);
                 EventManager.AddEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
                 EventManager.AddEventListener(EventNames.PlayerAttackEnd, HandleAttackEnd);
             }
@@ -72,7 +72,6 @@ namespace Kraken
             _moveInput.action.canceled -= OnMove;
             _pauseInput.action.performed -= OnPause;
 
-            EventManager.RemoveEventListener(EventNames.ToggleCursor, ToggleCursor);
             EventManager.RemoveEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
             EventManager.RemoveEventListener(EventNames.PlayerAttackEnd, HandleAttackEnd);
         }
@@ -165,13 +164,6 @@ namespace Kraken
         public void HandleAttackEnd(BytesData data)
         {
             _isAttacking = false;
-        }
-
-        private void ToggleCursor(BytesData data)
-        {
-            bool toggle = ((BoolDataBytes)data).BoolValue;
-            Cursor.visible = toggle;
-            Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
         }
 
         public void OnControlsChanged(string newScheme)
