@@ -159,6 +159,7 @@ namespace Kraken
 
         public void OnPause(InputAction.CallbackContext value)
         {
+            _camera.SetActive(!_camera.activeInHierarchy);
             EventManager.Dispatch(EventNames.TogglePause, null);
         }
 

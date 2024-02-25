@@ -31,5 +31,5 @@ MonoBehaviour:
   invertXAxis: 0
   invertYAxis: 1
   ultimateStartMaxDistance: 5
-  ultimateEndDistance: 5
+  ultimateEndDistance: 3
   ultimateDamage: 10

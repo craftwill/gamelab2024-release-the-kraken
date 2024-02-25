@@ -35,7 +35,7 @@ namespace Kraken
 
         [Header("Duo Ultimate Attack")]
         public float ultimateStartMaxDistance = 5f;
-        public float ultimateEndDistance = 5f;
+        public float ultimateEndDistance = 3f;
         public int ultimateDamage = 10;
     }
 }

@@ -1,9 +1,12 @@
 using Kraken.Game;
 using Photon.Pun;
 using Photon.Realtime;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
+using UnityEngine.Experimental.AI;
 
 namespace Kraken
 {
@@ -18,11 +21,12 @@ namespace Kraken
         [SerializeField] private TrailRenderer _trailRenderer;
         private GameObject[] _players = { };
         private UltimateState _state = UltimateState.NotInUltimate;
-        private bool _otherPlayerWaiting = false;
+        private static bool _otherPlayerWaiting = false;
         private bool _playersSeparated = false;
 
         private void Update()
         {
+            if (!photonView.AmOwner) return;
             if (!PhotonNetwork.IsMasterClient) return;
             if (_state == UltimateState.InUltimate)
             {
@@ -75,6 +79,7 @@ namespace Kraken
             _state = UltimateState.InUltimate;
             //_otherPlayerWaiting = false;
             _playersSeparated = false;
+            if (_players.Length != 2) _players = GameObject.FindGameObjectsWithTag("Player");
             _players[0].transform.GetComponentInChildren<TrailRenderer>().AddPosition(_players[1].transform.position);
             _players[1].transform.GetComponentInChildren<TrailRenderer>().AddPosition(_players[0].transform.position);
             foreach (GameObject player in _players)
@@ -86,15 +91,28 @@ namespace Kraken
         [PunRPC]
         public void Rpc_All_FinishDrawing()
         {
-            List<Vector3> positions = new List<Vector3>();
+            List<Vector2> positions = new List<Vector2>();
+            bool firstPlayer = true;
             foreach (GameObject player in _players)
             {
                 TrailRenderer renderer = player.transform.GetComponentInChildren<TrailRenderer>();
                 renderer.emitting = false;
                 Vector3[] rendererPositions = new Vector3[renderer.positionCount];
                 renderer.GetPositions(rendererPositions);
-                positions.AddRange(rendererPositions);
+                if (firstPlayer)
+                {
+                    Array.Reverse(rendererPositions);
+                }
+                Vector2 pos2d = Vector2.zero;
+                foreach (Vector3 pos in rendererPositions)
+                {
+                    pos2d.x = pos.x;
+                    pos2d.y = pos.z;
+                    positions.Add(pos2d);
+                }
+                //positions.AddRange(rendererPositions2d);
                 renderer.Clear();
+                firstPlayer = false;
             }
             if (PhotonNetwork.IsMasterClient)
             {
@@ -117,16 +135,20 @@ namespace Kraken
             }
         }
 
-        private void UltimateGoOff(List<Vector3> positions)
+        private void UltimateGoOff(List<Vector2> positions)
         {
-            Vector3 lassoCenter = TempGetUltimateCenter(positions);
-            float furthest = TempGetFurthestPositionDistance(positions, lassoCenter);
+            //Vector3 lassoCenter = TempGetUltimateCenter(positions);
+            //float furthest = TempGetFurthestPositionDistance(positions, lassoCenter);
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             HealthComponent enemyHealthComponent;
             int enemiesAffected = 0;
+            Vector2 enemyPos2d = Vector2.zero;
             foreach (GameObject enemy in enemies)
             {
-                if (Vector3.Distance(enemy.transform.position, lassoCenter) < furthest)
+                enemyPos2d.x = enemy.transform.position.x;
+                enemyPos2d.y = enemy.transform.position.z;
+                //if (Vector3.Distance(enemy.transform.position, lassoCenter) < furthest)
+                if (isEnemyInPolygon(positions, enemyPos2d))
                 {
                     enemiesAffected++;
                     enemyHealthComponent = enemy.GetComponent<HealthComponent>();
@@ -136,10 +158,10 @@ namespace Kraken
                     }
                 }
             }
-            Debug.Log("Affecting " + enemiesAffected + " enemies within " + furthest + " units around " + lassoCenter);
+            Debug.Log(enemiesAffected + " have taken " + Config.current.ultimateDamage + " damage by the ultimate");
         }
 
-        private Vector3 TempGetUltimateCenter(List<Vector3> positions)
+        /*private Vector3 TempGetUltimateCenter(List<Vector3> positions)
         {
             Vector3 center = Vector3.zero;
             foreach (Vector3 position in positions)
@@ -161,6 +183,31 @@ namespace Kraken
                 }
             }
             return furthestDistance;
+        }*/
+
+        // Shamelessly stolen from https://codereview.stackexchange.com/questions/108857/point-inside-polygon-check
+        private bool isEnemyInPolygon(List<Vector2> positions, Vector2 enemyPos)
+        {
+            int polygonLength = positions.Count, i = 0;
+            bool inside = false;
+            // x, y for tested point.
+            float pointX = enemyPos.x, pointY = enemyPos.y;
+            // start / end point for the current polygon segment.
+            float startX, startY, endX, endY;
+            Vector2 endPoint = positions[polygonLength - 1];
+            endX = endPoint.x;
+            endY = endPoint.y;
+            while (i < polygonLength)
+            {
+                startX = endX; startY = endY;
+                endPoint = positions[i++];
+                endX = endPoint.x; endY = endPoint.y;
+                //
+                inside ^= (endY > pointY ^ startY > pointY) /* ? pointY inside [startY;endY] segment ? */
+                          && /* if so, test if it is under the segment */
+                          ((pointX - endX) < (pointY - endY) * (startX - endX) / (startY - endY));
+            }
+            return inside;
         }
     }
 }
