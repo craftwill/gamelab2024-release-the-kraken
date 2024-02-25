@@ -115,7 +115,9 @@ namespace Kraken
                 }
                 else
                 {
-                    _controller.Move(movementDirection * Config.current.moveSpeed * _movementMagnitude * Time.deltaTime);
+                    movementDirection.x *= _movementMagnitude;
+                    movementDirection.z *= _movementMagnitude;
+                    _controller.Move(movementDirection * Config.current.moveSpeed * Time.deltaTime);
                 }
 
                 if (!_currentScheme.Equals(_input.currentControlScheme))
