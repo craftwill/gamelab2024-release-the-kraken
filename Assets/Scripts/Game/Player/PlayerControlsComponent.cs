@@ -18,6 +18,7 @@ namespace Kraken
         [SerializeField] private GameObject _camera;
         [SerializeField] private Transform _cameraOrientation;
         [SerializeField] private PlayerInput _input;
+        [SerializeField] private DuoUltimateComponent _duoUltimateComponent;
         private string _currentScheme;
         private Vector2 _moveVec = Vector2.zero;
         private float _fallingVelocity = -1.0f;
@@ -28,6 +29,7 @@ namespace Kraken
 
         [SerializeField] private InputActionReference _sprintInput;
         [SerializeField] private InputActionReference _pauseInput;
+        [SerializeField] private InputActionReference _duoUltimateInput;
 
         private void Start()
         {
@@ -57,6 +59,8 @@ namespace Kraken
                 _sprintInput.action.performed += OnSprintPerformed;
                 _sprintInput.action.canceled += OnSprintCanceled;
                 _pauseInput.action.performed += OnPause;
+                _duoUltimateInput.action.performed += OnDuoUltimate;
+                _duoUltimateInput.action.canceled += OnDuoUltimateReleased;
 
                 EventManager.AddEventListener(EventNames.ToggleCursor, ToggleCursor);
                 EventManager.AddEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
@@ -71,6 +75,8 @@ namespace Kraken
             _moveInput.action.performed -= OnMove;
             _moveInput.action.canceled -= OnMove;
             _pauseInput.action.performed -= OnPause;
+            _duoUltimateInput.action.performed += OnDuoUltimate;
+            _duoUltimateInput.action.canceled += OnDuoUltimateReleased;
 
             EventManager.RemoveEventListener(EventNames.ToggleCursor, ToggleCursor);
             EventManager.RemoveEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
@@ -109,7 +115,9 @@ namespace Kraken
                 }
                 else
                 {
-                    _controller.Move(movementDirection * Config.current.moveSpeed * _movementMagnitude * Time.deltaTime);
+                    movementDirection.x *= _movementMagnitude;
+                    movementDirection.z *= _movementMagnitude;
+                    _controller.Move(movementDirection * Config.current.moveSpeed * Time.deltaTime);
                 }
 
                 if (!_currentScheme.Equals(_input.currentControlScheme))
@@ -153,6 +161,7 @@ namespace Kraken
 
         public void OnPause(InputAction.CallbackContext value)
         {
+            _camera.SetActive(!_camera.activeInHierarchy);
             EventManager.Dispatch(EventNames.TogglePause, null);
         }
 
@@ -185,8 +194,18 @@ namespace Kraken
             else
             {
                 freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity;
-                freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier; ;
+                freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier;
             }
+        }
+
+        public void OnDuoUltimate(InputAction.CallbackContext value)
+        {
+            _duoUltimateComponent.OnDuoUltimateInput(true);
+        }
+
+        public void OnDuoUltimateReleased(InputAction.CallbackContext value)
+        {
+            _duoUltimateComponent.OnDuoUltimateInput(false);
         }
     }
 }
