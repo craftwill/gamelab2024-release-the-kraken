@@ -79,8 +79,7 @@ namespace Kraken
 
             // Fetch property for player type
             string playerToCreateName = _razzlePrefab.name;
-            if (PhotonNetwork.LocalPlayer.CustomProperties != null &&
-                PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("player"))
+            if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("player"))
             {
                 if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue("player", out var value))
                 {
@@ -88,11 +87,19 @@ namespace Kraken
                     if (classId == 0)
                     {
                         playerToCreateName = _razzlePrefab.name;
-                    } 
+                    }
                     else if (classId == 2)
                     {
                         playerToCreateName = _dazzlePrefab.name;
                     }
+                }
+            }
+            else
+            {
+                // Player2 is dazzle by default if custom properties are null
+                if (!PhotonNetwork.IsMasterClient)
+                {
+                    playerToCreateName = _dazzlePrefab.name;
                 }
             }
 
