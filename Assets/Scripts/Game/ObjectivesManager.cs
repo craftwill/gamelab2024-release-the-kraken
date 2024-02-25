@@ -11,12 +11,12 @@ namespace Kraken
     public class ObjectivesManager : KrakenNetworkedManager
     {
         [System.Serializable]
-        public struct Test
+        public struct ObjectiveWithLocation
         {
             public ObjectiveSO objective;
             public Zone spawnLocation;
         }
-        [SerializeField] private List<Test> _allObjectives;
+        [SerializeField] private List<ObjectiveWithLocation> _allObjectives;
 
         private ObjectiveInstance currentObjective = null;
         private static int objectiveIndex = 0;
