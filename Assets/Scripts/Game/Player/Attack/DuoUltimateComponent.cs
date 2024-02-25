@@ -23,6 +23,7 @@ namespace Kraken
         private static UltimateState _state = UltimateState.NotInUltimate;
         private static bool _otherPlayerWaiting = false;
         private bool _playersSeparated = false;
+        private Coroutine _inputTimerCoroutine;
 
 
         private void Update()
@@ -55,7 +56,7 @@ namespace Kraken
             {
                 photonView.RPC(nameof(RPC_All_StartDrawing), RpcTarget.All);
             }
-            else
+            else if (input)
             {
                 photonView.RPC(nameof(RPC_Others_WaitingForUltimate), RpcTarget.Others, input); ;
             }
@@ -64,15 +65,20 @@ namespace Kraken
         [PunRPC]
         public void RPC_Others_WaitingForUltimate(bool isWaiting)
         {
-            _otherPlayerWaiting = isWaiting;
+            //otherPlayerWaiting = isWaiting;
+            if (_inputTimerCoroutine != null)
+            {
+                StopCoroutine(_inputTimerCoroutine);
+                _inputTimerCoroutine = null;
+            }
+            _inputTimerCoroutine = StartCoroutine(UltimateTriggerTimer());
         }
 
-        public void OnDuoUltimateReleased()
+        private IEnumerator UltimateTriggerTimer()
         {
-            if (_state == UltimateState.WaitingForUltimate)
-            {
-                _state = UltimateState.NotInUltimate;
-            }
+            _otherPlayerWaiting = true;
+            yield return new WaitForSeconds(Config.current.ultimateTriggerTimer);
+            _otherPlayerWaiting = false;
         }
 
         [PunRPC]
