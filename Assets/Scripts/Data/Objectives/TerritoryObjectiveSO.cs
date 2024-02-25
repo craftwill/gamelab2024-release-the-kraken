@@ -19,24 +19,20 @@ namespace Kraken
 
         [Header("Territory config")]
         [Tooltip("At what interval do enemies spawn")] public int spawnFrequency;
-        [Tooltip("How many total enemies will be spawned")] public int spawnCount;
-        [Tooltip("The spawner game object")] public Spawner spawner;
         public List<Entry> spawnData = new List<Entry>();
 
         public override void TriggerObjective(ObjectiveInstance instance)
         {
             base.TriggerObjective(instance);
-
-            Spawner[] spawners = FindObjectsByType<Spawner>(FindObjectsSortMode.InstanceID);
-            spawner = spawners[Random.Range(0, spawners.Length)];
+            Spawner spawner = instance.Zone.GetSpawner();
 
             //should not be kept this way
             Animate.Repeat(spawnFrequency, () =>
             {
-                NetworkUtils.Instantiate(GetRandomEnemy().name, spawner.GetRandomPosition());
-                return true;
-            }, spawnCount, true);
-
+                bool isInProgress = !instance.IsCompleted;
+                if (isInProgress) NetworkUtils.Instantiate(GetRandomEnemy().name, spawner.GetRandomPosition());
+                return isInProgress;
+            }, -1, true);
         }
 
         //Randomly selects an item in the list with the probability based on the weight

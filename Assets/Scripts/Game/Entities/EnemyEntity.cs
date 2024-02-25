@@ -11,6 +11,7 @@ namespace Kraken
         [SerializeField] private EnemyConfigSO _config;
         [SerializeField] private EntityAttackComponent _attackComponent;
         [SerializeField] private BaseEntityController _entityController;
+        [SerializeField] private EnemyZoneComponent _enemyZoneComponent;
 
         protected override void Awake()
         {
@@ -19,6 +20,7 @@ namespace Kraken
             _healthComponent.MaxHealth = _config.maxHealth;
             _attackComponent.InitSettings(_config.damageDealt, _config.attackCooldown, _config.attackDuration, _config.lockedIntoAttackDuration);
             _entityController.InitSettings(_config.moveSpeed, _config.attackRange);
+            _enemyZoneComponent.InitSettings(_config.zoneOccupancyCount);
         }
 
         protected override void HandleTakeDamage(float dmgAmount)
