@@ -1,3 +1,4 @@
+using Bytes;
 using Kraken.Game;
 using Photon.Pun;
 using Photon.Realtime;
@@ -23,6 +24,7 @@ namespace Kraken
         private static UltimateState _state = UltimateState.NotInUltimate;
         private static bool _otherPlayerWaiting = false;
         private bool _playersSeparated = false;
+        private static bool _ultimateAvailable = true;
         private Coroutine _inputTimerCoroutine;
 
 
@@ -49,7 +51,7 @@ namespace Kraken
 
         public void OnDuoUltimateInput(bool input)
         {
-            if (_state == UltimateState.InUltimate) return;
+            if (_state == UltimateState.InUltimate || !_ultimateAvailable) return;
 
             _state = input ? UltimateState.WaitingForUltimate : UltimateState.NotInUltimate;
             if ((_otherPlayerWaiting || !Config.current.requireTwoPlayersForUltimate) && input && GetDistanceBetweenPlayers() < Config.current.ultimateStartMaxDistance)
@@ -85,7 +87,7 @@ namespace Kraken
         public void RPC_All_StartDrawing()
         {
             _state = UltimateState.InUltimate;
-            //_otherPlayerWaiting = false;
+            _otherPlayerWaiting = false;
             _playersSeparated = false;
             if (_players.Length != 2) _players = GameObject.FindGameObjectsWithTag("Player");
             _players[0].transform.GetComponentInChildren<TrailRenderer>().AddPosition(_players[1].transform.position);
@@ -104,6 +106,15 @@ namespace Kraken
         {
             yield return new WaitForSeconds(Config.current.ultimateDuration);
             photonView.RPC(nameof(Rpc_All_FinishDrawing), RpcTarget.All, false);
+        }
+
+        IEnumerator UltimateCooldown()
+        {
+            _ultimateAvailable = false;
+            EventManager.Dispatch(EventNames.UpdateUltimateUI, new BoolDataBytes(false));
+            yield return new WaitForSeconds(Config.current.ultimateCooldown);
+            _ultimateAvailable = true;
+            EventManager.Dispatch(EventNames.UpdateUltimateUI, new BoolDataBytes(true));
         }
 
         [PunRPC]
@@ -142,6 +153,7 @@ namespace Kraken
             }
 
             _state = UltimateState.NotInUltimate;
+            StartCoroutine(UltimateCooldown());
         }
 
         private float GetDistanceBetweenPlayers()
@@ -221,7 +233,7 @@ namespace Kraken
             return furthestDistance;
         }*/
 
-        // Shamelessly stolen from https://codereview.stackexchange.com/questions/108857/point-inside-polygon-check
+        // Shamelessly stolen from https://codereview.stackexchange.com/a/108903
         private bool isEnemyInPolygon(List<Vector2> positions, Vector2 enemyPos)
         {
             int polygonLength = positions.Count, i = 0;

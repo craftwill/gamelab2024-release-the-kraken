@@ -41,5 +41,6 @@ namespace Kraken
         public int ultimateMinDamage = 3;
         public float ultimateDuration = 5f;
         public float ultimateTriggerTimer = 5f;
+        public float ultimateCooldown = 10f;
     }
 }

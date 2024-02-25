@@ -41,7 +41,8 @@ namespace Kraken
         public const string UpdateCountownTimerUI = "UpdateCountownTimerUI";
         public const string UpdateObjectiveUI = "UpdateObjectiveUI";
         public const string UpdateGameTimerUI = "UpdateGameTimerUI";
-        
+        public const string UpdateUltimateUI = "UpdateUltimateUI";
+
         //Game Events
         public const string TogglePause = "TogglePause";
         public const string ToggleCursor = "ToggleCursor";
