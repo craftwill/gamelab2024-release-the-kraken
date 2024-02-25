@@ -67,7 +67,6 @@ namespace Kraken
         [PunRPC]
         public void RPC_Others_WaitingForUltimate(bool isWaiting)
         {
-            //otherPlayerWaiting = isWaiting;
             if (_inputTimerCoroutine != null)
             {
                 StopCoroutine(_inputTimerCoroutine);
@@ -143,7 +142,6 @@ namespace Kraken
                         positions.Add(pos2d);
                     }
                 }
-                //positions.AddRange(rendererPositions2d);
                 renderer.Clear();
                 firstPlayer = false;
             }
@@ -185,8 +183,6 @@ namespace Kraken
             {
                 damage = (int) Mathf.Lerp(Config.current.ultimateMinDamage, Config.current.ultimateDamage, playerDistance / Config.current.ultimateMinDamageDistance);
             }
-            //Vector3 lassoCenter = TempGetUltimateCenter(positions);
-            //float furthest = TempGetFurthestPositionDistance(positions, lassoCenter);
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             HealthComponent enemyHealthComponent;
             int enemiesAffected = 0;
@@ -195,7 +191,6 @@ namespace Kraken
             {
                 enemyPos2d.x = enemy.transform.position.x;
                 enemyPos2d.y = enemy.transform.position.z;
-                //if (Vector3.Distance(enemy.transform.position, lassoCenter) < furthest)
                 if (isEnemyInPolygon(positions, enemyPos2d))
                 {
                     enemiesAffected++;
