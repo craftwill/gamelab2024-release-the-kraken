@@ -19,5 +19,8 @@ namespace Kraken
         public float attackCooldown = 1f;
         public float attackDuration = 0.1f;
         public float lockedIntoAttackDuration = 0.5f;
+
+        [Header("Zone occupancy")]
+        public int zoneOccupancyCount = 1;
     }
 }

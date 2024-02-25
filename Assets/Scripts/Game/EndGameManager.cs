@@ -15,6 +15,7 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.StartGameTimer, HandleStartGameTimer);
             EventManager.AddEventListener(EventNames.PlayerDeath, HandlePlayerDeath);
             EventManager.AddEventListener(EventNames.PlayerWin, HandlePlayerWin);
+            EventManager.AddEventListener(EventNames.ZoneFullLoss, HandleZoneFullLoss);
         }
 
         private void OnDestroy()
@@ -23,6 +24,8 @@ namespace Kraken
 
             EventManager.RemoveEventListener(EventNames.StartGameTimer, HandleStartGameTimer);
             EventManager.RemoveEventListener(EventNames.PlayerDeath, HandlePlayerDeath);
+            EventManager.RemoveEventListener(EventNames.PlayerWin, HandlePlayerWin);
+            EventManager.RemoveEventListener(EventNames.ZoneFullLoss, HandleZoneFullLoss);
         }
 
         private void HandleStartGameTimer(BytesData data)
@@ -46,6 +49,12 @@ namespace Kraken
             EndGameAfterWin();
         }
 
+        private void HandleZoneFullLoss(BytesData data)
+        {
+            EventManager.Dispatch(EventNames.StopGameFlow, null);
+            EndGameAfterDefeat();
+        }
+
         [PunRPC]
         public void RPC_StartGameTimer()
         {
@@ -57,7 +66,7 @@ namespace Kraken
 
             //EventManager.Dispatch(EventNames.UpdateGameTimerUI,
             //    new UpdateCountownTimerUIData(Config.current.gameDuration, GameTimerDoneCallback));
-            Animate.Delay(Config.current.gameDuration, GameTimerDoneCallback);
+            Animate.Delay(Config.current.gameDuration, GameTimerDoneCallback, true);
         }
 
         [PunRPC]
@@ -92,7 +101,7 @@ namespace Kraken
 
         private void EndGame()
         {
-            EventManager.Dispatch(EventNames.ToggleCursor, new BoolDataBytes(true));
+            GameManager.ToggleCursor(true);
             
             PhotonNetwork.LoadLevel("Lobby");
         }

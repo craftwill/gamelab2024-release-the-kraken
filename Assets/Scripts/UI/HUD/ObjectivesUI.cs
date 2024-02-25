@@ -12,6 +12,7 @@ namespace Kraken.UI
     {
         [Header("ObjectivesUI")]
         [SerializeField] private TextMeshProUGUI _txtObjectiveName;
+        [SerializeField] private TextMeshProUGUI _txtTimeUntilNextObjective;
 
         private void Start()
         {
@@ -35,6 +36,11 @@ namespace Kraken.UI
 
             SetVisible(true);
             _txtObjectiveName.text = objectiveInstanceData.ObjectiveName;
+            var t = System.TimeSpan.FromSeconds(objectiveInstanceData.ObjectiveTimer);
+            _txtTimeUntilNextObjective.text = string.Format("{0:D2}:{1:D2}", t.Minutes, t.Seconds);
+
         }
+
+
     }
 }

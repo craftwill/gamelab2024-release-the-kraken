@@ -76,6 +76,12 @@ namespace Kraken
             Debug.Log("GameManager -- PlayerPrefs saved.");
         }
 
+        static public void ToggleCursor(bool toggle)
+        {
+            Cursor.visible = toggle;
+            Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+        }
+
         #endregion
 
         private void VerifyConnectedDevices()
