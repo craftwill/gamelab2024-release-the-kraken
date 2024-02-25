@@ -20,7 +20,7 @@ namespace Kraken
         }
         [SerializeField] private TrailRenderer _trailRenderer;
         private GameObject[] _players = { };
-        private UltimateState _state = UltimateState.NotInUltimate;
+        private static UltimateState _state = UltimateState.NotInUltimate;
         private static bool _otherPlayerWaiting = false;
         private bool _playersSeparated = false;
 
@@ -28,8 +28,10 @@ namespace Kraken
         {
             if (!photonView.AmOwner) return;
             if (!PhotonNetwork.IsMasterClient) return;
+            Debug.Log(_state);
             if (_state == UltimateState.InUltimate)
             {
+                Debug.Log(GetDistanceBetweenPlayers() < Config.current.ultimateEndDistance);
                 if (GetDistanceBetweenPlayers() < Config.current.ultimateEndDistance)
                 {
                     if (_playersSeparated)
