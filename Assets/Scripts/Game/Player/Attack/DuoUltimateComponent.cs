@@ -19,24 +19,24 @@ namespace Kraken
             InUltimate
         }
         [SerializeField] private TrailRenderer _trailRenderer;
-        private GameObject[] _players = { };
+        private GameObject[] _players = {};
         private static UltimateState _state = UltimateState.NotInUltimate;
         private static bool _otherPlayerWaiting = false;
         private bool _playersSeparated = false;
 
+
         private void Update()
         {
-            if (!photonView.AmOwner) return;
+            if (!photonView.IsMine) return;
             if (!PhotonNetwork.IsMasterClient) return;
-            Debug.Log(_state);
             if (_state == UltimateState.InUltimate)
             {
-                Debug.Log(GetDistanceBetweenPlayers() < Config.current.ultimateEndDistance);
                 if (GetDistanceBetweenPlayers() < Config.current.ultimateEndDistance)
                 {
                     if (_playersSeparated)
                     {
-                        photonView.RPC(nameof(Rpc_All_FinishDrawing), RpcTarget.All);
+                        _playersSeparated = false;
+                        photonView.RPC(nameof(Rpc_All_FinishDrawing), RpcTarget.All, true);
                     }
                 }
                 else
@@ -88,29 +88,43 @@ namespace Kraken
             {
                 player.transform.GetComponentInChildren<TrailRenderer>().emitting = true;
             }
+            if (PhotonNetwork.IsMasterClient)
+            {
+                StartCoroutine(UltimateTimer());
+            }
+        }
+
+        IEnumerator UltimateTimer()
+        {
+            yield return new WaitForSeconds(Config.current.ultimateDuration);
+            photonView.RPC(nameof(Rpc_All_FinishDrawing), RpcTarget.All, false);
         }
 
         [PunRPC]
-        public void Rpc_All_FinishDrawing()
+        public void Rpc_All_FinishDrawing(bool complete)
         {
+            if (_players.Length != 2) _players = GameObject.FindGameObjectsWithTag("Player");
             List<Vector2> positions = new List<Vector2>();
             bool firstPlayer = true;
             foreach (GameObject player in _players)
             {
                 TrailRenderer renderer = player.transform.GetComponentInChildren<TrailRenderer>();
                 renderer.emitting = false;
-                Vector3[] rendererPositions = new Vector3[renderer.positionCount];
-                renderer.GetPositions(rendererPositions);
-                if (firstPlayer)
+                if (PhotonNetwork.IsMasterClient)
                 {
-                    Array.Reverse(rendererPositions);
-                }
-                Vector2 pos2d = Vector2.zero;
-                foreach (Vector3 pos in rendererPositions)
-                {
-                    pos2d.x = pos.x;
-                    pos2d.y = pos.z;
-                    positions.Add(pos2d);
+                    Vector3[] rendererPositions = new Vector3[renderer.positionCount];
+                    renderer.GetPositions(rendererPositions);
+                    if (firstPlayer)
+                    {
+                        Array.Reverse(rendererPositions);
+                    }
+                    Vector2 pos2d = Vector2.zero;
+                    foreach (Vector3 pos in rendererPositions)
+                    {
+                        pos2d.x = pos.x;
+                        pos2d.y = pos.z;
+                        positions.Add(pos2d);
+                    }
                 }
                 //positions.AddRange(rendererPositions2d);
                 renderer.Clear();
@@ -118,7 +132,7 @@ namespace Kraken
             }
             if (PhotonNetwork.IsMasterClient)
             {
-                UltimateGoOff(positions);
+                UltimateGoOff(positions, complete);
             }
 
             _state = UltimateState.NotInUltimate;
@@ -137,8 +151,22 @@ namespace Kraken
             }
         }
 
-        private void UltimateGoOff(List<Vector2> positions)
+        private void UltimateGoOff(List<Vector2> positions, bool complete)
         {
+            float playerDistance = Vector3.Distance(_players[0].transform.position, _players[1].transform.position);
+            int damage = 0;
+            if (complete)
+            {
+                damage = Config.current.ultimateDamage;
+            }
+            else if (playerDistance > Config.current.ultimateMinDamageDistance)
+            {
+                damage = Config.current.ultimateMinDamage;
+            }
+            else
+            {
+                damage = (int) Mathf.Lerp(Config.current.ultimateMinDamage, Config.current.ultimateDamage, playerDistance / Config.current.ultimateMinDamageDistance);
+            }
             //Vector3 lassoCenter = TempGetUltimateCenter(positions);
             //float furthest = TempGetFurthestPositionDistance(positions, lassoCenter);
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -156,11 +184,11 @@ namespace Kraken
                     enemyHealthComponent = enemy.GetComponent<HealthComponent>();
                     if (enemyHealthComponent != null)
                     {
-                        enemyHealthComponent.TakeDamage(Config.current.ultimateDamage);
+                        enemyHealthComponent.TakeDamage(damage);
                     }
                 }
             }
-            Debug.Log(enemiesAffected + " have taken " + Config.current.ultimateDamage + " damage by the ultimate");
+            Debug.Log(enemiesAffected + " enemies have taken " + damage + " damage by the ultimate");
         }
 
         /*private Vector3 TempGetUltimateCenter(List<Vector3> positions)
