@@ -11,6 +11,13 @@ namespace Kraken
 {
     public class PlayerControlsComponent : MonoBehaviourPun
     {
+        enum MovementState
+        {
+            Walking,
+            Dashing,
+            Sprinting,
+            Attacking
+        }
         private bool _isOwner;
         [SerializeField] private PlayerSoundComponent _soundComponent;
         [SerializeField] private InputActionReference _moveInput;
@@ -19,13 +26,15 @@ namespace Kraken
         [SerializeField] private Transform _cameraOrientation;
         [SerializeField] private PlayerInput _input;
         [SerializeField] private DuoUltimateComponent _duoUltimateComponent;
+        [SerializeField] private GameObject _takeDamageComponent;
+        private MovementState _movementState = MovementState.Walking;
         private string _currentScheme;
         private Vector2 _moveVec = Vector2.zero;
         private float _fallingVelocity = -1.0f;
-        private bool _isSprinting = false;
-        private bool _isAttacking = false;
+        private bool _sprintPressed = false;
         private float _movementMagnitude = 0.0f;
         private float _attackMovementSpeed = 0.0f;
+        private bool _dashReady = true;
 
         [SerializeField] private InputActionReference _sprintInput;
         [SerializeField] private InputActionReference _pauseInput;
@@ -95,20 +104,20 @@ namespace Kraken
                 Vector3 cameraDirection = transform.position - new Vector3(_camera.transform.position.x, transform.position.y, _camera.transform.position.z);
                 _cameraOrientation.forward = cameraDirection.normalized;
                 Vector3 movementDirection = _cameraOrientation.forward * _moveVec.y + _cameraOrientation.right * _moveVec.x;
-                if (movementDirection != Vector3.zero && !_isAttacking)
+                if (movementDirection != Vector3.zero && _movementState != MovementState.Attacking)
                 {
                     transform.forward = Vector3.Slerp(transform.forward, movementDirection.normalized, Time.deltaTime * Config.current.rotationSpeed);
-                    movementDirection = new Vector3(transform.forward.x, _fallingVelocity, transform.forward.z);
                 }
-                else
-                {
-                    movementDirection.y += _fallingVelocity;
-                }
-                if (_isAttacking)
+                movementDirection = new Vector3(transform.forward.x, _fallingVelocity, transform.forward.z);
+                if (_movementState == MovementState.Attacking)
                 {
                     _controller.Move(transform.forward * _attackMovementSpeed * Time.deltaTime);
                 }
-                else if (_isSprinting)
+                else if (_movementState == MovementState.Dashing)
+                {
+                    _controller.Move(movementDirection * Config.current.dashSpeed * Time.deltaTime);
+                }
+                else if (_movementState == MovementState.Sprinting)
                 {
                     _controller.Move(movementDirection * Config.current.sprintSpeed * Time.deltaTime);
                 }
@@ -145,17 +154,49 @@ namespace Kraken
         {
             if (_isOwner)
             {
-                _isSprinting = true;
+                _sprintPressed = true;
+                if (_movementState != MovementState.Dashing)
+                {
+                    if (_dashReady)
+                    {
+                        StartCoroutine(DashCoroutine());
+                        photonView.RPC(nameof(_soundComponent.RPC_All_PlaySprintSound), RpcTarget.All);
+                    }
+                    else
+                    {
+                        _movementState = MovementState.Sprinting;
+                    }
+                }
             }
-            photonView.RPC(nameof(_soundComponent.RPC_All_PlaySprintSound), RpcTarget.All);
         }
 
         public void OnSprintCanceled(InputAction.CallbackContext value)
         {
             if (_isOwner)
             {
-                _isSprinting = false;
+                _sprintPressed = false;
+                if (_movementState == MovementState.Sprinting)
+                {
+                    _movementState = MovementState.Walking;
+                }
             }
+        }
+
+        IEnumerator DashCoroutine()
+        {
+            _movementState = MovementState.Dashing;
+            _takeDamageComponent.SetActive(false);
+            yield return new WaitForSeconds(Config.current.dashDuration);
+            _movementState = _sprintPressed ? MovementState.Sprinting : MovementState.Walking;
+            _takeDamageComponent.SetActive(true);
+            StartCoroutine(DashCooldown());
+        }
+
+        IEnumerator DashCooldown()
+        {
+            _dashReady = false;
+            yield return new WaitForSeconds(Config.current.dashCooldown);
+            _dashReady = true;
         }
 
         public void OnPause(InputAction.CallbackContext value)
@@ -167,12 +208,19 @@ namespace Kraken
         public void HandleAttackStart(BytesData data)
         {
             _attackMovementSpeed = ((FloatDataBytes)data).FloatValue;
-            _isAttacking = true;
+            _movementState = MovementState.Attacking;
         }
 
         public void HandleAttackEnd(BytesData data)
         {
-            _isAttacking = false;
+            if (_sprintPressed)
+            {
+                _movementState = MovementState.Sprinting;
+            }
+            else
+            {
+                _movementState = MovementState.Walking;
+            }
         }
 
         public void OnControlsChanged(string newScheme)

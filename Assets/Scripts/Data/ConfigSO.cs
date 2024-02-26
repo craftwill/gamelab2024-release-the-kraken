@@ -32,6 +32,9 @@ namespace Kraken
         public float cameraControllerMultiplier = 10f;
         public bool invertXAxis = false;
         public bool invertYAxis = false;
+        public float dashDuration = 0.2f;
+        public float dashSpeed = 30f;
+        public float dashCooldown = 3.0f;
 
         [Header("Duo Ultimate Attack")]
         public float ultimateStartMaxDistance = 5f;

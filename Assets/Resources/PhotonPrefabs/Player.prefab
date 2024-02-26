@@ -1300,6 +1300,7 @@ MonoBehaviour:
   _cameraOrientation: {fileID: 5087714006406940513}
   _input: {fileID: 2994236915493532572}
   _duoUltimateComponent: {fileID: 6776644671420513302}
+  _takeDamageComponent: {fileID: 897399624514842760}
   _sprintInput: {fileID: -2249790821337775847, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
   _pauseInput: {fileID: 7956368911678358776, guid: abae805e8a04eb44c951b59d4dda4171,
@@ -1375,7 +1376,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trailRenderer: {fileID: 9101600829869686194}
-  _endCollider: {fileID: 0}
 --- !u!114 &2338596183922361558
 MonoBehaviour:
   m_ObjectHideFlags: 0
