@@ -9,6 +9,7 @@ namespace Kraken
         public bool showDebugLogs;
         public bool requireTwoPlayers = true;
         public bool forceUseDazzlePlayer1 = false;
+        public bool requireTwoPlayersForUltimate = true;
 
         [Header("Network")]
         public string loadCustomSceneName = "";
@@ -31,5 +32,15 @@ namespace Kraken
         public float cameraControllerMultiplier = 10f;
         public bool invertXAxis = false;
         public bool invertYAxis = false;
+
+        [Header("Duo Ultimate Attack")]
+        public float ultimateStartMaxDistance = 5f;
+        public float ultimateEndDistance = 3f;
+        public float ultimateMinDamageDistance = 15f;
+        public int ultimateDamage = 10;
+        public int ultimateMinDamage = 3;
+        public float ultimateDuration = 5f;
+        public float ultimateTriggerTimer = 5f;
+        public float ultimateCooldown = 10f;
     }
 }

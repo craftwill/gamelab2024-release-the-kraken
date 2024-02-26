@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f788d800c1c6bc40a4578f7438ab716, type: 3}
   m_Name: TerritoryObjective
   m_EditorClassIdentifier: 
-  objectiveName: Go to the red zone!
-  objectiveTimer: 20
-  spawnFrequency: 1
-  spawnCount: 20
-  spawner: {fileID: 479531292222118300, guid: ec7d92182b74ae946ae195e669a72151, type: 3}
-  spawnConfig: {fileID: 11400000, guid: ae52b6ddd841e724aa2dc41bdb8f3f64, type: 2}
+  objectiveName: Enemies are swarming the red zone!
+  objectiveTimer: 60
+  spawnFrequency: 2
+  spawnData:
+  - spawnRatio: 50
+    prefab: {fileID: 9076670195779392182, guid: 86853c697165ac240bb5cccbf01cdd4c,
+      type: 3}
+  - spawnRatio: 50
+    prefab: {fileID: 4324829711065338193, guid: 80ff4f58d4a363e44973653c6a0d9ed5,
+      type: 3}

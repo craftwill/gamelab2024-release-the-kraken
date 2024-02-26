@@ -46,9 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _allObjectives:
-  - {fileID: 11400000, guid: 8f2b9857dd9d1b74294f51251ca87efe, type: 2}
-  - {fileID: 11400000, guid: 8f2b9857dd9d1b74294f51251ca87efe, type: 2}
-  - {fileID: 11400000, guid: 8f2b9857dd9d1b74294f51251ca87efe, type: 2}
+  - objective: {fileID: 11400000, guid: 8f2b9857dd9d1b74294f51251ca87efe, type: 2}
+    spawnLocation: {fileID: 0}
+  - objective: {fileID: 11400000, guid: d9729f7919619a24b93fc278fe9b4f83, type: 2}
+    spawnLocation: {fileID: 0}
 --- !u!114 &7751270002852661781
 MonoBehaviour:
   m_ObjectHideFlags: 0

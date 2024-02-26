@@ -32,6 +32,7 @@ namespace Kraken
         public const string StartObjectives = "StartObjectives";
         public const string NextObjective = "NextObjective";
         public const string StopObjectives = "StopObjectives";
+        public const string ZoneFullLoss = "ZoneFullLoss";
 
         // Spawning
         public const string StartSpawning = "StartSpawning";
@@ -40,13 +41,14 @@ namespace Kraken
         // UI events
         public const string UpdateCountownTimerUI = "UpdateCountownTimerUI";
         public const string UpdateObjectiveUI = "UpdateObjectiveUI";
+        public const string UpdateObjectiveTimerUI = "UpdateObjectiveTimerUI";
         public const string UpdateGameTimerUI = "UpdateGameTimerUI";
         public const string ShowVictoryScreenUI = "ShowVictoryScreenUI";
         public const string ShowDefeatScreenUI = "ShowDefeatScreenUI";
+        public const string UpdateUltimateUI = "UpdateUltimateUI";
 
         //Game Events
         public const string TogglePause = "TogglePause";
-        public const string ToggleCursor = "ToggleCursor";
 
         //Player Events
         public const string PlayerDeath = "PlayerDeath";
@@ -71,7 +73,12 @@ namespace Kraken
 
     public class UpdateObjectiveUIData : BytesData
     {
-        public UpdateObjectiveUIData(string objectiveName) { ObjectiveName = objectiveName; }
+        public UpdateObjectiveUIData(string objectiveName, int objectiveTimer)
+        {
+            ObjectiveName = objectiveName;
+            ObjectiveTimer = objectiveTimer;
+        }
         public string ObjectiveName { get; private set; }
+        public int ObjectiveTimer { get; private set; }
     }
 }

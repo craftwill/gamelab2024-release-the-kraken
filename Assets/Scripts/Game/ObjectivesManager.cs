@@ -10,7 +10,13 @@ namespace Kraken
 {
     public class ObjectivesManager : KrakenNetworkedManager
     {
-        [SerializeField] private List<ObjectiveSO> _allObjectives;
+        [System.Serializable]
+        public struct ObjectiveWithLocation
+        {
+            public ObjectiveSO objective;
+            public Zone spawnLocation;
+        }
+        [SerializeField] private List<ObjectiveWithLocation> _allObjectives;
 
         private ObjectiveInstance currentObjective = null;
         private static int objectiveIndex = 0;
@@ -44,35 +50,56 @@ namespace Kraken
             Debug.Log("Next objective!");
 
             currentObjective = GetNextObjective();
-            currentObjective?.TriggerObjective();
+
+            if (currentObjective is null) return;
+
+            currentObjective.TriggerObjective();
             
-            UpdateObjectiveUI();
+            ObjectiveInstance cur = currentObjective;
+            int time = cur.objectiveSO.objectiveTimer;
+            //will either end by the time or if something triggers the next objective to start
+            Animate.Repeat(1f, () =>
+            {
+                UpdateObjectiveUI(time);
+
+                if (time == 0)
+                {
+                    cur.EndObjective(true);
+                }
+                time--;
+
+                return cur == currentObjective;
+
+            }, cur.objectiveSO.objectiveTimer, true);
         }
 
         private void HandleStopObjectives(BytesData data)
         {
             Debug.Log("Stop objectives!");
-
+            currentObjective.EndObjective(false);
             currentObjective = null;
-            UpdateObjectiveUI();
+            UpdateObjectiveUI(-1);
         }
 
-        private void UpdateObjectiveUI()
+        private void UpdateObjectiveUI(int timeLeft)
         {
             if(currentObjective == null)
             {
-                photonView.RPC(nameof(RPC_All_UpdateObjectiveUI), RpcTarget.All, "");
+                photonView.RPC(nameof(RPC_All_UpdateObjectiveUI), RpcTarget.All, "", 0);
                 return;
             }
 
             ObjectiveSO objectiveSO = currentObjective.objectiveSO;
-            photonView.RPC(nameof(RPC_All_UpdateObjectiveUI), RpcTarget.All, objectiveSO.name);
+            
+
+
+            photonView.RPC(nameof(RPC_All_UpdateObjectiveUI), RpcTarget.All, objectiveSO.objectiveName, timeLeft);
         }
 
         [PunRPC]
-        private void RPC_All_UpdateObjectiveUI(string objectiveName) 
+        private void RPC_All_UpdateObjectiveUI(string objectiveName, int objectiveTimer) 
         {
-            EventManager.Dispatch(EventNames.UpdateObjectiveUI, new UpdateObjectiveUIData(objectiveName));
+            EventManager.Dispatch(EventNames.UpdateObjectiveUI, new UpdateObjectiveUIData(objectiveName, objectiveTimer));
         }
 
         private ObjectiveInstance GetNextObjective()
@@ -81,9 +108,11 @@ namespace Kraken
 
                 EventManager.Dispatch(EventNames.PlayerWin, null);
                 return null;
-            } 
+            }
 
-            var nextObjective = new ObjectiveInstance(_allObjectives[objectiveIndex]);
+            var objective = _allObjectives[objectiveIndex].objective;
+            var zone = _allObjectives[objectiveIndex].spawnLocation;
+            var nextObjective = new ObjectiveInstance(objective, zone);
             objectiveIndex++;
             return nextObjective;
         }
