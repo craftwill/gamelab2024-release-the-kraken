@@ -27,15 +27,14 @@ namespace Kraken
 
         private void HandleStartGameTimer(BytesData data)
         {
-            
             photonView.RPC(nameof(RPC_StartGameTimer), RpcTarget.All);
         }
 
         private void HandlePlayerDeath(BytesData data)
         {
             EventManager.Dispatch(EventNames.StopGameFlow, null);
-            string playerId = (data as StringDataBytes).StringValue;
 
+            string playerId = (data as StringDataBytes).StringValue;
             photonView.RPC(nameof(RPC_PlayerDeath), RpcTarget.All, playerId);
         }
 
@@ -55,8 +54,6 @@ namespace Kraken
                 EndGameAfterGameTimer();
             }
 
-            //EventManager.Dispatch(EventNames.UpdateGameTimerUI,
-            //    new UpdateCountownTimerUIData(Config.current.gameDuration, GameTimerDoneCallback));
             Animate.Delay(Config.current.gameDuration, GameTimerDoneCallback);
         }
 
@@ -72,29 +69,36 @@ namespace Kraken
 
         private void EndGameAfterGameTimer()
         {
-            EndGame();
+            EndGame(isVictory: false);
         }
 
         private void EndGameAfterPlayerDeath()
         {
-            EndGame();
+            EndGame(isVictory: false);
         }
 
         private void EndGameAfterWin()
         {
-            EndGame();
+            EndGame(isVictory: true);
         }
 
         private void EndGameAfterDefeat()
         {
-            EndGame();
+            EndGame(isVictory: false);
         }
 
-        private void EndGame()
+        private void EndGame(bool isVictory)
         {
             EventManager.Dispatch(EventNames.ToggleCursor, new BoolDataBytes(true));
-            
-            PhotonNetwork.LoadLevel("Lobby");
+
+            if (isVictory)
+            {
+                EventManager.Dispatch(EventNames.ShowVictoryScreenUI, null);
+            }
+            else
+            {
+                EventManager.Dispatch(EventNames.ShowDefeatScreenUI, null);
+            }
         }
     }
 }
