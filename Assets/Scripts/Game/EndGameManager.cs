@@ -98,8 +98,6 @@ namespace Kraken
 
         private void EndGame(bool isVictory)
         {
-            EventManager.Dispatch(EventNames.ToggleCursor, new BoolDataBytes(true));
-
             if (isVictory)
             {
                 EventManager.Dispatch(EventNames.ShowVictoryScreenUI, null);
