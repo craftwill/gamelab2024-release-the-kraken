@@ -23,6 +23,7 @@ namespace Kraken
         [SerializeField] private InputActionReference _moveInput;
         [SerializeField] private CharacterController _controller;
         [SerializeField] private GameObject _camera;
+        [SerializeField] private CinemachineFreeLook _freeLookCam;
         [SerializeField] private Transform _cameraOrientation;
         [SerializeField] private PlayerInput _input;
         [SerializeField] private DuoUltimateComponent _duoUltimateComponent;
@@ -35,6 +36,7 @@ namespace Kraken
         private float _movementMagnitude = 0.0f;
         private float _attackMovementSpeed = 0.0f;
         private bool _dashReady = true;
+        private Coroutine _fovChangeCoroutine = null;
 
         [SerializeField] private InputActionReference _sprintInput;
         [SerializeField] private InputActionReference _pauseInput;
@@ -48,19 +50,20 @@ namespace Kraken
                 UnityEngine.Cursor.lockState = CursorLockMode.Locked;
                 UnityEngine.Cursor.visible = false;
                 _camera.SetActive(true);
-                CinemachineFreeLook freeLookCam = _camera.GetComponent<CinemachineFreeLook>();
+                _freeLookCam = _camera.GetComponent<CinemachineFreeLook>();
                 if (_input.currentControlScheme.Equals("Gamepad"))
                 {
-                    freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.cameraControllerMultiplier;
-                    freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier * Config.current.cameraControllerMultiplier;
+                    _freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.cameraControllerMultiplier;
+                    _freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier * Config.current.cameraControllerMultiplier;
                 }
                 else
                 {
-                    freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity;
-                    freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier; ;
+                    _freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity;
+                    _freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier; ;
                 }
-                freeLookCam.m_XAxis.m_InvertInput = Config.current.invertXAxis;
-                freeLookCam.m_YAxis.m_InvertInput = Config.current.invertYAxis;
+                _freeLookCam.m_XAxis.m_InvertInput = Config.current.invertXAxis;
+                _freeLookCam.m_YAxis.m_InvertInput = Config.current.invertYAxis;
+                _freeLookCam.m_Lens.FieldOfView = Config.current.baseFov;
                 _currentScheme = _input.currentControlScheme;
 
                 _moveInput.action.performed += OnMove;
@@ -157,6 +160,12 @@ namespace Kraken
                 _sprintPressed = true;
                 if (_movementState != MovementState.Dashing)
                 {
+                    if (_fovChangeCoroutine != null)
+                    {
+                        StopCoroutine(_fovChangeCoroutine);
+                        _fovChangeCoroutine = null;
+                    }
+                    _fovChangeCoroutine = StartCoroutine(ChangeCameraFOV(Config.current.sprintFov, Config.current.fovChangeDuration));
                     if (_dashReady)
                     {
                         StartCoroutine(DashCoroutine());
@@ -178,6 +187,12 @@ namespace Kraken
                 if (_movementState == MovementState.Sprinting)
                 {
                     _movementState = MovementState.Walking;
+                    if (_fovChangeCoroutine != null)
+                    {
+                        StopCoroutine(_fovChangeCoroutine);
+                        _fovChangeCoroutine = null;
+                    }
+                    _fovChangeCoroutine = StartCoroutine(ChangeCameraFOV(Config.current.baseFov, Config.current.fovChangeDuration));
                 }
             }
         }
@@ -225,16 +240,31 @@ namespace Kraken
 
         public void OnControlsChanged(string newScheme)
         {
-            CinemachineFreeLook freeLookCam = _camera.GetComponent<CinemachineFreeLook>();
             if (newScheme.Equals("Gamepad"))
             {
-                freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.cameraControllerMultiplier;
-                freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier * Config.current.cameraControllerMultiplier;
+                _freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.cameraControllerMultiplier;
+                _freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier * Config.current.cameraControllerMultiplier;
             }
             else
             {
-                freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity;
-                freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier;
+                _freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity;
+                _freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier;
+            }
+        }
+
+        // shamelessly stolen from https://www.reddit.com/r/unity/comments/vzf1od/how_do_i_change_the_field_of_view_in_cinemachine/
+        private IEnumerator ChangeCameraFOV(float endFOV, float duration)
+        {
+            if (Config.current.changeFovOnSprint)
+            {
+                float startFOV = _freeLookCam.m_Lens.FieldOfView;
+                float time = 0;
+                while (time < duration)
+                {
+                    _freeLookCam.m_Lens.FieldOfView = Mathf.Lerp(startFOV, endFOV, time / duration);
+                    yield return null;
+                    time += Time.deltaTime;
+                }
             }
         }
 
