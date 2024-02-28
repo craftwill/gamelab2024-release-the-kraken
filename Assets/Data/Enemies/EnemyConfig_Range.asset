@@ -20,3 +20,5 @@ MonoBehaviour:
   attackCooldown: 2
   attackDuration: 0.1
   lockedIntoAttackDuration: 1
+  zoneOccupancyCount: 1
+  pathfindingDistanceRadius: 100
