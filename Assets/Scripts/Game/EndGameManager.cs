@@ -6,8 +6,17 @@ using Photon.Pun;
 
 namespace Kraken
 {
+    public enum EndGameType 
+    {
+        TimerOut,
+        PlayerDeath,
+        PlayerWin,
+        ZoneFullLoss
+    }
     public class EndGameManager : KrakenNetworkedManager
     {
+        private bool isGameEnded = false;
+
         private void Start()
         {
             if (!_isMaster) return;
@@ -35,23 +44,17 @@ namespace Kraken
 
         private void HandlePlayerDeath(BytesData data)
         {
-            EventManager.Dispatch(EventNames.StopGameFlow, null);
-
-            string playerId = (data as StringDataBytes).StringValue;
-            photonView.RPC(nameof(RPC_PlayerDeath), RpcTarget.All, playerId);
+            photonView.RPC(nameof(RPC_All_EndGame), RpcTarget.All, false, (int)EndGameType.PlayerDeath);
         }
 
         private void HandlePlayerWin(BytesData data)
         {
-            EventManager.Dispatch(EventNames.StopGameFlow, null);
-
-            EndGameAfterWin();
+            photonView.RPC(nameof(RPC_All_EndGame), RpcTarget.All, true, (int)EndGameType.PlayerWin);
         }
 
         private void HandleZoneFullLoss(BytesData data)
         {
-            EventManager.Dispatch(EventNames.StopGameFlow, null);
-            EndGameAfterDefeat();
+            photonView.RPC(nameof(RPC_All_EndGame), RpcTarget.All, false, (int)EndGameType.ZoneFullLoss);
         }
 
         [PunRPC]
@@ -60,44 +63,28 @@ namespace Kraken
             void GameTimerDoneCallback()
             {
                 if (!_isMaster) return;
-                EndGameAfterGameTimer();
+                photonView.RPC(nameof(RPC_All_EndGame), RpcTarget.All, false, (int)EndGameType.TimerOut);
             }
             
             Animate.Delay(Config.current.gameDuration, GameTimerDoneCallback, true);
         }
 
+
         [PunRPC]
-        public void RPC_PlayerDeath(string playerId)
+        public void RPC_All_EndGame(bool isVictory, int endGameTypeInt)
         {
-            //to be implemented, depending on who died you show different thing to the player
-            //somewhere in here we transition to a result scene
-
-            if (!_isMaster) return;
-            EndGameAfterPlayerDeath();
+            EndGameType EndGameType = (EndGameType)endGameTypeInt;
+            EndGame(isVictory, EndGameType);
         }
 
-        private void EndGameAfterGameTimer()
+        private void EndGame(bool isVictory, EndGameType endGameType)
         {
-            EndGame(isVictory: false);
-        }
+            if (isGameEnded) return;
 
-        private void EndGameAfterPlayerDeath()
-        {
-            EndGame(isVictory: false);
-        }
+            isGameEnded = true;
 
-        private void EndGameAfterWin()
-        {
-            EndGame(isVictory: true);
-        }
+            EventManager.Dispatch(EventNames.StopGameFlow, null);
 
-        private void EndGameAfterDefeat()
-        {
-            EndGame(isVictory: false);
-        }
-
-        private void EndGame(bool isVictory)
-        {
             if (isVictory)
             {
                 EventManager.Dispatch(EventNames.ShowVictoryScreenUI, null);
@@ -106,7 +93,7 @@ namespace Kraken
             {
                 EventManager.Dispatch(EventNames.ShowDefeatScreenUI, null);
             }
-            
+
             GameManager.ToggleCursor(true);
         }
     }

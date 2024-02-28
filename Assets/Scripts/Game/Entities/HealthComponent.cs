@@ -57,8 +57,6 @@ namespace Kraken.Game
             OnTakeDamage.Invoke(dmgAmount);
             _feedback.PlayFeedbacks();
 
-            Debug.Log(name + " Took " + dmgAmount + " dmg!");
-
             if (Health <= 0)
             {
                 Health = 0;
@@ -69,7 +67,7 @@ namespace Kraken.Game
         private void Die()
         {
             if (!PhotonNetwork.IsMasterClient) return;
-            Debug.Log(name + " Dead!");
+
             IsAlive = false;
             OnDie.Invoke();
 

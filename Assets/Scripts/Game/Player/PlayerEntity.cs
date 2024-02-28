@@ -1,16 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 using Photon.Pun;
-using UnityEngine.UIElements;
-using Cinemachine;
+
 using Bytes;
 
 namespace Kraken
 {
     public class PlayerEntity : Entity
     {
+        [SerializeField] private PlayerControlsComponent _controls;
+
         private bool _isOwner;
 
         private void Start()
@@ -19,6 +19,19 @@ namespace Kraken
             {
                 _isOwner = true;
             }
+
+            EventManager.AddEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
+        }
+
+        protected virtual void OnDestroy()
+        {
+            EventManager.RemoveEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
+        }
+
+        protected virtual void HandleStopGameFlow(BytesData data)
+        {
+            print("Disable player controls!");
+            _controls.DisableControls();
         }
 
         protected override void HandleDie()

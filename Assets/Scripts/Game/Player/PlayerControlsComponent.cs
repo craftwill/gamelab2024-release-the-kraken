@@ -1,11 +1,11 @@
-using Bytes;
-using Cinemachine;
-using Kraken;
-using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
+
+using Bytes;
+
+using Photon.Pun;
 
 namespace Kraken
 {
@@ -27,6 +27,8 @@ namespace Kraken
         private float _movementMagnitude = 0.0f;
         private float _attackMovementSpeed = 0.0f;
 
+        private bool controlsEnabled = true;
+
         [SerializeField] private InputActionReference _sprintInput;
         [SerializeField] private InputActionReference _pauseInput;
         [SerializeField] private InputActionReference _duoUltimateInput;
@@ -36,8 +38,8 @@ namespace Kraken
             if (photonView.AmOwner)
             {
                 _isOwner = true;
-                UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-                UnityEngine.Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 _camera.SetActive(true);
                 CinemachineFreeLook freeLookCam = _camera.GetComponent<CinemachineFreeLook>();
                 if (_input.currentControlScheme.Equals("Gamepad"))
@@ -84,6 +86,8 @@ namespace Kraken
 
         private void Update()
         {
+            if (!controlsEnabled) return;
+
             if (_isOwner)
             {
                 if (_controller.isGrounded)
@@ -198,6 +202,13 @@ namespace Kraken
         public void OnDuoUltimateReleased(InputAction.CallbackContext value)
         {
             _duoUltimateComponent.OnDuoUltimateInput(false);
+        }
+
+        public void DisableControls()
+        {
+            CinemachineFreeLook freeLookCam = _camera.GetComponent<CinemachineFreeLook>();
+            freeLookCam.enabled = false;
+            controlsEnabled = false;
         }
     }
 }
