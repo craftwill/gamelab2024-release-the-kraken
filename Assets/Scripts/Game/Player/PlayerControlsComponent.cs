@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 using Cinemachine;
 
 using Bytes;
@@ -20,6 +21,7 @@ namespace Kraken
         }
         private bool _isOwner;
         [SerializeField] private PlayerSoundComponent _soundComponent;
+        [SerializeField] private PlayerAnimationComponent _playerAnimationComponent;
         [SerializeField] private InputActionReference _moveInput;
         [SerializeField] private CharacterController _controller;
         [SerializeField] private GameObject _camera;
@@ -154,6 +156,31 @@ namespace Kraken
             {
                 _moveVec = value.ReadValue<Vector2>();
                 _movementMagnitude = Mathf.Clamp(_moveVec.magnitude, 0.0f, 1.0f);
+
+                // Show correct moving animation and sync with other clients when needed.
+                bool didAnimStateChange = false;
+                if (Mathf.Abs(_moveVec.x) > 0f || Mathf.Abs(_moveVec.y) > 0f)
+                {
+                    didAnimStateChange = _playerAnimationComponent.SetLoopedStateWalking();
+                    if (didAnimStateChange)
+                        photonView.RPC(nameof(RPC_Other_SetLoopAnimState), RpcTarget.Others, "Walk");
+                }
+                else
+                {
+                    didAnimStateChange = _playerAnimationComponent.SetLoopedStateIdle();
+                    if(didAnimStateChange) 
+                        photonView.RPC(nameof(RPC_Other_SetLoopAnimState), RpcTarget.Others, "Idle");
+                }
+            }
+        }
+
+        [PunRPC]
+        private void RPC_Other_SetLoopAnimState(string animStateType)
+        {
+            switch (animStateType)
+            {
+                case "Walk":  _playerAnimationComponent.SetLoopedStateWalking(); break;
+                case "Idle":  _playerAnimationComponent.SetLoopedStateIdle(); break;
             }
         }
 

@@ -11,13 +11,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 5827006316491211626}
-    m_Position: {x: 400, y: 200, z: 0}
+    m_Position: {x: 400, y: 340, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8692470421529734605}
     m_Position: {x: 400, y: 280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1856469986814052864}
-    m_Position: {x: 400, y: 360, z: 0}
+    m_Position: {x: 400, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 340642485377568648}
     m_Position: {x: 700, y: 200, z: 0}
@@ -44,7 +44,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Razzle_Attack_WhipTail
+  m_Name: Razzle_AttackCombo1
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -120,7 +120,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Razzle_Walk_Fly
+  m_Name: Razzle_Walk
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -174,7 +174,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Razzle_Attack_GiantNeedle
+  m_Name: Razzle_AttackCombo3
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -201,7 +201,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Razzle_Attack_LightningWand
+  m_Name: Razzle_AttackCombo2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

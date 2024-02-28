@@ -29,13 +29,18 @@ namespace Kraken
         [Tooltip("How long the animation is")]
         public float totalAttackLength;
         public int damage;
+        public int comboStep = 1;
 
         private GameObject _collider;
         private Action<InputAction.CallbackContext> _inputCallBackHandler;
         private bool _inProgress = false;
-        
-        public void Subscribe(PlayerAttackComponent handle)
+
+        private PlayerEntity _playerEntity;
+
+        public void Subscribe(PlayerAttackComponent handle, PlayerEntity playerEntity)
         {
+            _playerEntity = playerEntity;
+
             _inputCallBackHandler = (context) => PerformAttack(handle, context);
             if (canBeActivatedFromNeutral)
                 attackInput.action.performed += _inputCallBackHandler;
@@ -48,6 +53,7 @@ namespace Kraken
 
             _inProgress = false;
         }
+
         public void Unsubscribe()
         {
             if(canBeActivatedFromNeutral)
@@ -78,8 +84,11 @@ namespace Kraken
             }
 
         }
+
         private IEnumerator AttackFunc(PlayerAttackComponent handle)
         {
+            _playerEntity.PlayAttackAnimationCombo(comboStep);
+
             yield return new WaitForSeconds(timeBeforeHitboxDuration);
             _collider.SetActive(true);
             EventManager.Dispatch(EventNames.PlayerAttackStart, new FloatDataBytes(Config.current.attackMoveSpeed));
@@ -87,16 +96,19 @@ namespace Kraken
             _collider.SetActive(false);
             EventManager.Dispatch(EventNames.PlayerAttackEnd, null);
         }
+
         private IEnumerator FreeToAttackFunc(PlayerAttackComponent handle)
         {
             yield return new WaitForSeconds(attackCancelDuration);
             handle.IsFreeToAttack = true;
         }
+
         private IEnumerator InProgressFunc(PlayerAttackComponent handle)
         {
             yield return new WaitForSeconds(totalAttackLength);
             _inProgress = false;
         }
+
         public bool IsInProgress()
         {
             return _inProgress || 
