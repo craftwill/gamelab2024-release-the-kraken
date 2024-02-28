@@ -47,6 +47,7 @@ namespace Kraken
         public const string ShowVictoryScreenUI = "ShowVictoryScreenUI";
         public const string ShowDefeatScreenUI = "ShowDefeatScreenUI";
         public const string UpdateUltimateUI = "UpdateUltimateUI";
+        public const string UpdateHealthUI = "UpdateHealthUI";
 
         //Game Events
         public const string TogglePause = "TogglePause";

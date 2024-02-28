@@ -13,6 +13,12 @@ namespace Kraken
 
         private bool _isOwner;
 
+        protected override void Awake()
+        {
+            base.Awake();
+            _healthComponent.MaxHealth = Config.current.maxHealth;
+        }
+
         private void Start()
         {
             if (photonView.AmOwner)
@@ -40,6 +46,17 @@ namespace Kraken
 
             StringDataBytes bytes = new StringDataBytes(PhotonNetwork.LocalPlayer.UserId);
             EventManager.Dispatch(EventNames.PlayerDeath, bytes);
+        }
+
+        protected override void HandleTakeDamage(float dmgAmount)
+        {
+            base.HandleTakeDamage(dmgAmount);
+
+            if (_isOwner)
+            {
+                FloatDataBytes bytes = new FloatDataBytes(_healthComponent.Health/_healthComponent.MaxHealth);
+                EventManager.Dispatch(EventNames.UpdateHealthUI, bytes);
+            }
         }
     }
 }
