@@ -30,6 +30,13 @@ MonoBehaviour:
   cameraControllerMultiplier: 10
   invertXAxis: 0
   invertYAxis: 1
+  dashDuration: 0.2
+  dashSpeed: 30
   ultimateStartMaxDistance: 5
   ultimateEndDistance: 3
+  ultimateMinDamageDistance: 15
   ultimateDamage: 10
+  ultimateMinDamage: 3
+  ultimateDuration: 5
+  ultimateTriggerTimer: 5
+  ultimateCooldown: 10

@@ -27,11 +27,20 @@ namespace Kraken
         public float attackMoveSpeed = 10f;
         public float rotationSpeed = 50f;
         public float gravity = 5f;
+        public float dashDuration = 0.2f;
+        public float dashSpeed = 30f;
+        public float dashCooldown = 3.0f;
+
+        [Header("Camera settings")]
         public float cameraSensitivity = 2f;
         public float yCameraSensitivityMultiplier = 0.25f;
         public float cameraControllerMultiplier = 10f;
         public bool invertXAxis = false;
         public bool invertYAxis = false;
+        public float baseFov = 50f;
+        public float sprintFov = 60f;
+        public float fovChangeDuration = 0.2f;
+        public bool changeFovOnSprint = true;
 
         [Header("Duo Ultimate Attack")]
         public float ultimateStartMaxDistance = 5f;
