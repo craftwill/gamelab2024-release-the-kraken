@@ -284,8 +284,7 @@ namespace Kraken
 
         public void DisableControls()
         {
-            CinemachineFreeLook freeLookCam = _camera.GetComponent<CinemachineFreeLook>();
-            freeLookCam.enabled = false;
+            _freeLookCam.enabled = false;
             controlsEnabled = false;
         }
     }
