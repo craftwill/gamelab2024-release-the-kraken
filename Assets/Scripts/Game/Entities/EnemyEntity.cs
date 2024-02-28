@@ -23,6 +23,21 @@ namespace Kraken
             _enemyZoneComponent.InitSettings(_config.zoneOccupancyCount);
         }
 
+        protected virtual void Start()
+        {
+            EventManager.AddEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
+        }
+
+        protected virtual void OnDestroy()
+        {
+            EventManager.RemoveEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
+        }
+
+        protected virtual void HandleStopGameFlow(BytesData data) 
+        {
+            _healthComponent.TakeDamage(1_000_000);
+        }
+
         protected override void HandleTakeDamage(float dmgAmount)
         {
             base.HandleTakeDamage(dmgAmount);
@@ -56,7 +71,7 @@ namespace Kraken
 
             if (!PhotonNetwork.IsMasterClient) return;
 
-            Animate.Delay(1.5f, () => 
+            Animate.Delay(2.5f, () => 
             {
                 if (this == null) return;
                 PhotonNetwork.Destroy(photonView);

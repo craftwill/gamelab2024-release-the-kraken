@@ -57,6 +57,8 @@ MonoBehaviour:
   - RPC_All_StartDrawing
   - RPC_Others_WaitingForUltimate
   - Rpc_All_FinishDrawing
+  - RPC_All_EndGameAfterWin
+  - RPC_All_EndGame
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
