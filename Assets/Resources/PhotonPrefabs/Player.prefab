@@ -1720,6 +1720,7 @@ MonoBehaviour:
   _entityAnimationComponent: {fileID: 2933143383433771963}
   _healthComponent: {fileID: 5208069392134486679}
   <EntityClan>k__BackingField: 1
+  _controls: {fileID: 5510866118124797234}
 --- !u!114 &2933143383433771963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1751,6 +1752,7 @@ MonoBehaviour:
     type: 3}
   _controller: {fileID: 7000252827930271329}
   _camera: {fileID: 1601542376723397981}
+  _freeLookCam: {fileID: 0}
   _cameraOrientation: {fileID: 5087714006406940513}
   _input: {fileID: 2994236915493532572}
   _duoUltimateComponent: {fileID: 6776644671420513302}

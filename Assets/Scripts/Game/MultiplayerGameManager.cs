@@ -4,6 +4,7 @@ using Photon.Realtime;
 using UnityEngine;
 
 using Bytes;
+using UnityEngine.SceneManagement;
 
 namespace Kraken
 {
@@ -35,6 +36,8 @@ namespace Kraken
 
         private void Start()
         {
+            EventManager.AddEventListener(EventNames.LeaveGame, HandleLeaveGame);
+
             CreatePlayer();
 
             if (!PhotonNetwork.IsMasterClient) return;
@@ -50,7 +53,24 @@ namespace Kraken
             }
         }
 
-        public void TryStartGameFlow() 
+        private void OnDestroy()
+        {
+            EventManager.RemoveEventListener(EventNames.LeaveGame, HandleLeaveGame);
+        }
+
+        private void HandleLeaveGame(BytesData data) 
+        {
+            PhotonNetwork.LeaveRoom();
+        }
+
+        public override void OnLeftRoom()
+        {
+            base.OnLeftRoom();
+
+            SceneManager.LoadScene(1); // Back to main menu
+        }
+
+        public void TryStartGameFlow()
         {
             if (_gameStarted) return;
 

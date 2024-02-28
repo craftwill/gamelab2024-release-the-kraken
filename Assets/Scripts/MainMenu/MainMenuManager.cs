@@ -25,6 +25,12 @@ namespace Together
         private void Start()
         {
             cvGroup = GetComponent<CanvasGroup>();
+
+            // If already connected, allows menu interaction
+            if (PhotonNetwork.IsConnected)
+            {
+                cvGroup.interactable = true;
+            }
         }
 
         public override void OnConnectedToMaster()
