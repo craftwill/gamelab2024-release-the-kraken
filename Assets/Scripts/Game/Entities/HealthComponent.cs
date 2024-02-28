@@ -26,13 +26,16 @@ namespace Kraken.Game
 
         private void Awake()
         {
-            Health = MaxHealth;
-
             _detectDmgComps = GetComponentsInChildren<DetectDamageComponent>();
             foreach (var detectDmgComp in _detectDmgComps)
             {
                 detectDmgComp.OnDetectDamage.AddListener(TakeDamage);
             }
+        }
+
+        private void Start()
+        {
+            Health = MaxHealth;
         }
 
         private void OnDestroy()
