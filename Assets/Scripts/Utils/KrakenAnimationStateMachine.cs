@@ -29,6 +29,8 @@ namespace Kraken
         // Only use variation suffix if nbVariation is defined
         public void PlayAnimOnce(IKrakenAnimState animState, string prefix, string suffix = "", string speedParamName = "", float speedMult = 1f, System.Action callback = null, float animTransitionDuration = 0.3f)
         {
+            if (animator == null) return;
+
             CancelCurrentPlayOnceAnim();
 
             bool paramExists = false;

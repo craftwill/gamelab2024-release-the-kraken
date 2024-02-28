@@ -9,18 +9,18 @@ namespace Kraken
 {
     public class EntityAnimationComponent : MonoBehaviour
     {
-        [SerializeField] private KrakenAnimationStateMachine _animStateMachine;
-        [SerializeField] private string _animatorPrefix;
-        [SerializeField] private string _animatorSuffix;
+        [SerializeField] protected KrakenAnimationStateMachine _animStateMachine;
+        [SerializeField] protected string _animatorPrefix = "";
+        [SerializeField] protected string _animatorSuffix = "";
 
-        private int _hurtStep = 1;
+        protected int _hurtStep = 1;
 
         private void Start()
         {
             if (_animStateMachine.GetAnimator() == null) return;
 
             _animStateMachine.GetAnimator().speed = Random.Range(0.9f, 1.1f);
-
+            
             SetLoopedStateIdle();
         }
 
@@ -36,14 +36,22 @@ namespace Kraken
             }
         }
 
-        public void SetLoopedStateIdle()
+        public bool SetLoopedStateIdle()
         {
-            _animStateMachine.SetLoopedState(EntityAnimState.Idle, _animatorPrefix, _animatorSuffix);
+            EntityAnimState newAnimState = EntityAnimState.Idle;
+            bool didAnimStateChange = _animStateMachine.GetCurrentLoopedState()?.ClipName != newAnimState.ClipName;
+            _animStateMachine.SetLoopedState(newAnimState, _animatorPrefix, _animatorSuffix);
+
+            return didAnimStateChange;
         }
 
-        public void SetLoopedStateWalking()
+        public bool SetLoopedStateWalking()
         {
-            _animStateMachine.SetLoopedState(EntityAnimState.Walk, _animatorPrefix, _animatorSuffix);
+            EntityAnimState newAnimState = EntityAnimState.Walk;
+            bool didAnimStateChange = _animStateMachine.GetCurrentLoopedState()?.ClipName != newAnimState.ClipName;
+            _animStateMachine.SetLoopedState(newAnimState, _animatorPrefix, _animatorSuffix);
+
+            return didAnimStateChange;
         }
 
         public void PlayBasicAttackAnimation() 
