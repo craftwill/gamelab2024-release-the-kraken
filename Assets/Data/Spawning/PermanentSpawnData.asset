@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73c3bd6c3a6e8d74aaa3672d9ee89729, type: 3}
-  m_Name: BuildSpawnData
+  m_Name: PermanentSpawnData
   m_EditorClassIdentifier: 
-  sheepMelee: 1
-  meleeSheepSpawnRatio: 1
-  meleeSheepPrefab: {fileID: 9076670195779392182, guid: 86853c697165ac240bb5cccbf01cdd4c,
-    type: 3}
-  sheepRange: 1
-  rangeSheepSpawnRatio: 9
-  rangeSheepPrefab: {fileID: 4324829711065338193, guid: 80ff4f58d4a363e44973653c6a0d9ed5,
-    type: 3}
+  spawnData:
+  - spawnRatio: 50
+    prefab: {fileID: 4324829711065338193, guid: 80ff4f58d4a363e44973653c6a0d9ed5,
+      type: 3}
+  - spawnRatio: 50
+    prefab: {fileID: 9076670195779392182, guid: 86853c697165ac240bb5cccbf01cdd4c,
+      type: 3}
