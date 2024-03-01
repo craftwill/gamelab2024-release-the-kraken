@@ -28,7 +28,7 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
         }
 
-        protected virtual void OnDestroy()
+        protected override void OnDestroy()
         {
             EventManager.RemoveEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
         }
@@ -76,6 +76,11 @@ namespace Kraken
                 if (this == null) return;
                 PhotonNetwork.Destroy(photonView);
             }, true);
+        }
+
+        public Kraken.Game.HealthComponent GetHealthComponent()
+        {
+            return _healthComponent;
         }
     }
 }

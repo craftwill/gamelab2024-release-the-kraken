@@ -40,6 +40,12 @@ namespace Kraken
 
         }
 
+        protected virtual void OnDestroy()
+        {
+            _healthComponent.OnTakeDamage.RemoveAllListeners();
+            _healthComponent.OnDie.RemoveAllListeners();
+        }
+
         public (PlayerEntity, float) GetClosestPlayer()
         {
             PlayerEntity closestPlayer = null;

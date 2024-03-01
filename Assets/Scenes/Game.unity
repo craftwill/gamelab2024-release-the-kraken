@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2259.797, g: 2402.3088, b: 3501.813, a: 1}
+  m_IndirectSpecularColor: {r: 2257.6077, g: 2399.5461, b: 3498.372, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1577,6 +1577,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 492709006}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &492709008 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3650747343828016411, guid: ec7d92182b74ae946ae195e669a72151,
+    type: 3}
+  m_PrefabInstance: {fileID: 492709006}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fe28b2389635344be09119b96f70bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &513736679
 GameObject:
   m_ObjectHideFlags: 0
@@ -7764,10 +7776,15 @@ PrefabInstance:
         type: 3}
       propertyPath: _allObjectives.Array.data[0].spawnLocation
       value: 
-      objectReference: {fileID: 77720841}
+      objectReference: {fileID: 492709008}
     - target: {fileID: 8198660850295026202, guid: 09244ba4cb5528442a249e3f67ccab89,
         type: 3}
       propertyPath: _allObjectives.Array.data[1].spawnLocation
+      value: 
+      objectReference: {fileID: 77720841}
+    - target: {fileID: 8198660850295026202, guid: 09244ba4cb5528442a249e3f67ccab89,
+        type: 3}
+      propertyPath: _allObjectives.Array.data[2].spawnLocation
       value: 
       objectReference: {fileID: 1972092577}
     - target: {fileID: 8767720622561718191, guid: 09244ba4cb5528442a249e3f67ccab89,

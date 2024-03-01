@@ -24,6 +24,20 @@ namespace Kraken
         {
             if (!_isMaster) return;
 
+            if (Config.current.randomizeObjectives)
+            {
+                System.Random r = new System.Random();
+                int n = _allObjectives.Count;
+                while(n > 1)
+                {
+                    n--;
+                    int index = r.Next(n + 1);
+                    var value = _allObjectives[index];
+                    _allObjectives[index] = _allObjectives[n];
+                    _allObjectives[n] = value;
+                }
+            }
+
             EventManager.AddEventListener(EventNames.StartObjectives, HandleStartObjectives);
             EventManager.AddEventListener(EventNames.NextObjective, HandleNextObjectives);
             EventManager.AddEventListener(EventNames.StopObjectives, HandleStopObjectives);
