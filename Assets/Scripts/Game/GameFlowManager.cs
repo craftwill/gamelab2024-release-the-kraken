@@ -54,7 +54,7 @@ namespace Kraken
             EventManager.Dispatch(EventNames.StopSpawning, null);
         }
 
-        private void StartGameAfterCountdown() 
+        private void StartGameAfterCountdown()
         {
             // Start spawning enemies and activate objectives
             Debug.Log("Countdown done, start spawning enemies and set objective!");

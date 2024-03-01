@@ -10,6 +10,7 @@ namespace Kraken
     public class PlayerAttackComponent : MonoBehaviourPun
     {
         private bool _isOwner;
+        [SerializeField] private PlayerEntity _playerEntity;
         [SerializeField] private List<AttackSO> _attacks = new List<AttackSO>();
         [SerializeField] public bool IsFreeToAttack { get; set; } = true;
 
@@ -18,12 +19,13 @@ namespace Kraken
             if (photonView.AmOwner)
             {
                 _isOwner = true;
-                _attacks.ForEach(x => x.Subscribe(this));
+                _attacks.ForEach(x => x.Subscribe(this, _playerEntity));
 
                 //temporary
                 _feedbacks = GetComponent<MoreMountains.Feedbacks.MMF_Player>();
             }
         }
+
         private void OnDestroy()
         {
             if (_isOwner)
@@ -31,6 +33,7 @@ namespace Kraken
                 _attacks.ForEach(x => x.Unsubscribe());
             }
         }
+
         //Every changes in this file is temporary and is just to showcase
         private MoreMountains.Feedbacks.MMF_Player _feedbacks;
         private void Update()

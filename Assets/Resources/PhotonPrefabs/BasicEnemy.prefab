@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 2628587998543513100}
   - component: {fileID: 4623548838470204180}
   - component: {fileID: 7010872933795953625}
+  - component: {fileID: 3587988577761823498}
   - component: {fileID: 6807864403598660797}
   - component: {fileID: 8142153588247244116}
   - component: {fileID: 8581956803195504288}
@@ -199,6 +200,7 @@ MonoBehaviour:
   _attackRange: 2.5
   _ownerEntity: {fileID: 2628587998543513100}
   _entityAttackComponent: {fileID: 6807864403598660797}
+  _entityAnimationComponent: {fileID: 7010872933795953625}
   _navMeshAgent: {fileID: 7968008091505032441}
 --- !u!114 &7010872933795953625
 MonoBehaviour:
@@ -212,8 +214,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2519eef501d23d4a9fb45248d161fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 7174202112263796747}
-  _animatorSuffix: AnimatorBasicEnemyTest
+  _animStateMachine: {fileID: 3587988577761823498}
+  _animatorPrefix: BasicEnemy
+  _animatorSuffix: 
+--- !u!114 &3587988577761823498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3106089648525901737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f84eb3626bd8f7744897ec4f77a8cf90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!114 &6807864403598660797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ownerEntity: {fileID: 2628587998543513100}
   _inflictDamageComponent: {fileID: 2128031792877044517}
+  _entityAnimationComponent: {fileID: 7010872933795953625}
   _damageDealt: 1
   _attackCooldown: 2
   _attackDuration: 0.1

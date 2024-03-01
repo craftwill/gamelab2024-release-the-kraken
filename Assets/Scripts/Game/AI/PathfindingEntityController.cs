@@ -11,6 +11,7 @@ namespace Kraken
     {
         [SerializeField] protected Entity _ownerEntity;
         [SerializeField] protected EntityAttackComponent _entityAttackComponent;
+        [SerializeField] protected EntityAnimationComponent _entityAnimationComponent;
         [SerializeField] protected NavMeshAgent _navMeshAgent;
 
         protected Transform _target;
@@ -26,6 +27,8 @@ namespace Kraken
         protected override void Start()
         {
             base.Start();
+
+            _entityAnimationComponent.SetLoopedStateIdle();
         }
 
         protected override void Update()
@@ -41,7 +44,13 @@ namespace Kraken
                 return;
             }
 
-            if (_target == null) return;
+            if (_target == null)
+            {
+                _entityAnimationComponent.SetLoopedStateIdle();
+                return;
+            }
+
+            _entityAnimationComponent.SetLoopedStateWalking();
 
             Vector3 destination = _target.position;
             _navMeshAgent.SetDestination(destination);

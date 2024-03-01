@@ -21,6 +21,9 @@ namespace Kraken
         [Tooltip("Maximum time the game can last in seconds")]
         public int gameDuration = 600;
 
+        [Header("Player settings")]
+        public int maxHealth = 100;
+
         [Header("Player Controls settings")]
         public float moveSpeed = 7.5f;
         public float sprintSpeed = 14f;

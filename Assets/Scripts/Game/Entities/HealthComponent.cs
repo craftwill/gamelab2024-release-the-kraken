@@ -26,13 +26,16 @@ namespace Kraken.Game
 
         private void Awake()
         {
-            Health = MaxHealth;
-
             _detectDmgComps = GetComponentsInChildren<DetectDamageComponent>();
             foreach (var detectDmgComp in _detectDmgComps)
             {
                 detectDmgComp.OnDetectDamage.AddListener(TakeDamage);
             }
+        }
+
+        private void Start()
+        {
+            Health = MaxHealth;
         }
 
         private void OnDestroy()
@@ -57,8 +60,6 @@ namespace Kraken.Game
             OnTakeDamage.Invoke(dmgAmount);
             _feedback.PlayFeedbacks();
 
-            Debug.Log(name + " Took " + dmgAmount + " dmg!");
-
             if (Health <= 0)
             {
                 Health = 0;
@@ -69,7 +70,7 @@ namespace Kraken.Game
         private void Die()
         {
             if (!PhotonNetwork.IsMasterClient) return;
-            Debug.Log(name + " Dead!");
+
             IsAlive = false;
             OnDie.Invoke();
 
