@@ -22,14 +22,16 @@ namespace Kraken
         private bool _isOwner;
         [SerializeField] private PlayerSoundComponent _soundComponent;
         [SerializeField] private PlayerAnimationComponent _playerAnimationComponent;
+        [SerializeField] private PlayerAttackComponent _playerAttackComponent;
         [SerializeField] private InputActionReference _moveInput;
         [SerializeField] private CharacterController _controller;
         [SerializeField] private GameObject _camera;
-        [SerializeField] private CinemachineFreeLook _freeLookCam;
         [SerializeField] private Transform _cameraOrientation;
         [SerializeField] private PlayerInput _input;
         [SerializeField] private DuoUltimateComponent _duoUltimateComponent;
         [SerializeField] private GameObject _takeDamageComponent;
+        private CinemachineFreeLook _freeLookCam;
+        
         private MovementState _movementState = MovementState.Walking;
         private string _currentScheme;
         private Vector2 _moveVec = Vector2.zero;
@@ -48,13 +50,14 @@ namespace Kraken
 
         private void Start()
         {
+            _freeLookCam = _camera.GetComponent<CinemachineFreeLook>();
+
             if (photonView.AmOwner)
             {
                 _isOwner = true;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 _camera.SetActive(true);
-                _freeLookCam = _camera.GetComponent<CinemachineFreeLook>();
                 if (_input.currentControlScheme.Equals("Gamepad"))
                 {
                     _freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.cameraControllerMultiplier;
@@ -152,6 +155,8 @@ namespace Kraken
 
         public void OnMove(InputAction.CallbackContext value)
         {
+            if (!controlsEnabled) return;
+
             if (_isOwner)
             {
                 _moveVec = value.ReadValue<Vector2>();
@@ -186,6 +191,8 @@ namespace Kraken
 
         public void OnSprintPerformed(InputAction.CallbackContext value)
         {
+            if (!controlsEnabled) return;
+
             if (_isOwner)
             {
                 _sprintPressed = true;
@@ -212,6 +219,8 @@ namespace Kraken
 
         public void OnSprintCanceled(InputAction.CallbackContext value)
         {
+            if (!controlsEnabled) return;
+
             if (_isOwner)
             {
                 _sprintPressed = false;
@@ -301,11 +310,15 @@ namespace Kraken
 
         public void OnDuoUltimate(InputAction.CallbackContext value)
         {
+            if (!controlsEnabled) return;
+
             _duoUltimateComponent.OnDuoUltimateInput(true);
         }
 
         public void OnDuoUltimateReleased(InputAction.CallbackContext value)
         {
+            if (!controlsEnabled) return;
+
             _duoUltimateComponent.OnDuoUltimateInput(false);
         }
 
@@ -313,6 +326,8 @@ namespace Kraken
         {
             _freeLookCam.enabled = false;
             controlsEnabled = false;
+
+            _playerAttackComponent.UnsubscribeAttacks();
         }
     }
 }

@@ -39,7 +39,8 @@ namespace Kraken
 
         protected virtual void HandleStopGameFlow(BytesData data)
         {
-            print("Disable player controls!");
+            if (!_isOwner) return;
+
             _controls.DisableControls();
         }
 
