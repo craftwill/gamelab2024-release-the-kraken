@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Kraken.UI
 {
-    public class HealthUI : MonoBehaviour
+    public class HealthUI : KrakenUIElement
     {
         [SerializeField] Slider _slider;
         private void Start()

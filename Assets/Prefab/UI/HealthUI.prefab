@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4782754034369518360}
   - component: {fileID: 1755865202249682029}
   - component: {fileID: 5286789984649393582}
+  - component: {fileID: 1812893381732396695}
   m_Layer: 5
   m_Name: HealthUI
   m_TagString: Untagged
@@ -102,7 +103,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3e5b44064e8d84d9903703950e507e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startsVisible: 1
+  _interactableWhenVisible: 0
+  _visibleAlpha: 1
   _slider: {fileID: 1755865202249682029}
+--- !u!225 &1812893381732396695
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991315499540421783}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &6829749259643972156
 GameObject:
   m_ObjectHideFlags: 0

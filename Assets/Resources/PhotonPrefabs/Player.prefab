@@ -1752,11 +1752,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundComponent: {fileID: 3860904718989671536}
   _playerAnimationComponent: {fileID: 4871313712549404074}
+  _playerAttackComponent: {fileID: 7072117056597327463}
   _moveInput: {fileID: -5786590348021691354, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
   _controller: {fileID: 7000252827930271329}
   _camera: {fileID: 1601542376723397981}
-  _freeLookCam: {fileID: 0}
   _cameraOrientation: {fileID: 5087714006406940513}
   _input: {fileID: 2994236915493532572}
   _duoUltimateComponent: {fileID: 6776644671420513302}

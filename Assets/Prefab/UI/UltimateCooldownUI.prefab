@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startsVisible: 1
-  _interactableWhenVisible: 1
+  _interactableWhenVisible: 0
   _visibleAlpha: 1
   _txtAvailable: {fileID: 1677704993797485653}
   _txtCooldown: {fileID: 3946217751182920828}
@@ -199,8 +199,8 @@ CanvasGroup:
   m_GameObject: {fileID: 1991315499540421783}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &3946217751182920828
 GameObject:
