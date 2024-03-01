@@ -20,6 +20,7 @@ MonoBehaviour:
   isSkipMainMenu: 0
   useDebugGameFlow: 1
   gameDuration: 600
+  maxHealth: 100
   moveSpeed: 7.5
   sprintSpeed: 14
   attackMoveSpeed: 3
