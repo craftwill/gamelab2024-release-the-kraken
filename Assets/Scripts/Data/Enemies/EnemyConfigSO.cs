@@ -13,7 +13,7 @@ namespace Kraken
         public float maxHealth = 3f;
         public float moveSpeed = 1.0f;
 
-        [Header("Combat")]
+        [Tooltip("Basic combat stats for melee and range minions"), Header("Basic Combat")]
         public float attackRange = 2.5f;
         public float damageDealt = 1;
         public float attackCooldown = 1f;
