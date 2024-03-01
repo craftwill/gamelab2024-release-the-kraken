@@ -14,6 +14,7 @@ namespace Kraken
         public float moveSpeed = 1.0f;
 
         [Tooltip("Basic combat stats for melee and range minions"), Header("Basic Combat")]
+        public bool isRanged = false;
         public float attackRange = 2.5f;
         public float damageDealt = 1;
         public float attackCooldown = 1f;
