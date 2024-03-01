@@ -16,7 +16,6 @@ namespace Kraken
 
         protected Transform _target;
         protected float _pathfindingDistanceRadius;
-        protected float _closestDistance = 0f;
 
         public override void InitSettings(EnemyConfigSO config)
         {
@@ -65,9 +64,8 @@ namespace Kraken
             if (_entityAttackComponent.IsAttacking) return;
 
             (PlayerEntity closestPlayer, float closestDistance) = _ownerEntity.GetClosestPlayer();
-            _closestDistance = closestDistance;
             
-            if (closestPlayer == null || _closestDistance > _pathfindingDistanceRadius) 
+            if (closestPlayer == null || closestDistance > _pathfindingDistanceRadius) 
             {
                 _target = null;
                 return;
@@ -76,9 +74,9 @@ namespace Kraken
             _target = closestPlayer.transform;
 
             // Attack closest player if close enough
-            if (_closestDistance <= _attackRange)
+            if (closestDistance <= _attackRange)
             {
-                _entityAttackComponent.TryAttack(_target);
+                _entityAttackComponent.TryAttack();
             }
         }
     }

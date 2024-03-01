@@ -22,7 +22,7 @@ namespace Kraken
         public bool IsAttacking { get; private set; } = false;
         private bool _canAttack = true;
 
-        public void InitSettings(float dmgDealt, float atkCdr, float atkDuration, float lockedInAtkDuration, bool isRange = false)
+        public void InitSettings(float dmgDealt, float atkCdr, float atkDuration, float lockedInAtkDuration)
         {
             _damageDealt = dmgDealt;
             _attackCooldown = atkCdr;
@@ -36,7 +36,7 @@ namespace Kraken
             _inflictDamageComponent.Damageclan = _ownerEntity.EntityClan;
         }
 
-        public void TryAttack(Transform target) 
+        public void TryAttack() 
         {
             if (!PhotonNetwork.IsMasterClient || !_canAttack) { return; }
 
