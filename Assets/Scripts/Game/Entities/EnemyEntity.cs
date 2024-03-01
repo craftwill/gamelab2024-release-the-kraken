@@ -19,7 +19,7 @@ namespace Kraken
 
             _healthComponent.MaxHealth = _config.maxHealth;
             _attackComponent.InitSettings(_config.damageDealt, _config.attackCooldown, _config.attackDuration, _config.lockedIntoAttackDuration);
-            _entityController.InitSettings(_config.moveSpeed, _config.attackRange);
+            _entityController.InitSettings(_config);
             _enemyZoneComponent.InitSettings(_config.zoneOccupancyCount);
         }
 

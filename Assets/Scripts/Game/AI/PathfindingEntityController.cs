@@ -15,6 +15,13 @@ namespace Kraken
         [SerializeField] protected NavMeshAgent _navMeshAgent;
 
         protected Transform _target;
+        protected float _pathfindingDistanceRadius;
+
+        public override void InitSettings(EnemyConfigSO config)
+        {
+            base.InitSettings(config);
+            _pathfindingDistanceRadius = config.pathfindingDistanceRadius;
+        }
 
         protected override void Start()
         {
@@ -57,8 +64,12 @@ namespace Kraken
             if (_entityAttackComponent.IsAttacking) return;
 
             (PlayerEntity closestPlayer, float closestDistance) = _ownerEntity.GetClosestPlayer();
-
-            if (closestPlayer == null) return;
+            
+            if (closestPlayer == null || closestDistance > _pathfindingDistanceRadius) 
+            {
+                _target = null;
+                return;
+            }
 
             _target = closestPlayer.transform;
 

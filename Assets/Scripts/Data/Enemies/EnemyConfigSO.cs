@@ -22,5 +22,8 @@ namespace Kraken
 
         [Header("Zone occupancy")]
         public int zoneOccupancyCount = 1;
+
+        [Header("Pathfinding")]
+        public float pathfindingDistanceRadius = 100f;
     }
 }
