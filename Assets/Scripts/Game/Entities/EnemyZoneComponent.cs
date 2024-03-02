@@ -9,7 +9,7 @@ namespace Kraken
 {
     public class EnemyZoneComponent : MonoBehaviourPun
     {
-        public int ZoneCount { get; set; } = 0;
+        public int ZoneCount { get; private set; } = 0;
         public List<Zone> CurrentZones { get; private set; } = new List<Zone>();
 
         public void InitSettings(int zoneCount)

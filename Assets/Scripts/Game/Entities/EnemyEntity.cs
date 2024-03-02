@@ -56,6 +56,10 @@ namespace Kraken
             if (PhotonNetwork.IsMasterClient)
             {
                 _enemyZoneComponent.RemoveEnemyFromZones();
+
+                //remove colliders to not interfere with ontriggerexit
+                var colliders = GetComponentsInChildren<Collider>();
+                System.Array.ForEach(colliders, x => x.enabled = false);
             }
         }
 
@@ -65,7 +69,6 @@ namespace Kraken
         {
             GetComponent<PhotonTransformView>().enabled = false;
             GetComponent<NavMeshAgent>().enabled = false;
-            GetComponentInChildren<EnemyZoneComponent>().ZoneCount = 0;
 
             SphereCollider colAdded = gameObject.AddComponent<SphereCollider>();
             colAdded.radius = 0.2f;
