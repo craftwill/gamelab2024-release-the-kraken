@@ -52,6 +52,11 @@ namespace Kraken
             base.HandleDie();
 
             photonView.RPC(nameof(RPC_All_Die), RpcTarget.All);
+
+            if (PhotonNetwork.IsMasterClient)
+            {
+                _enemyZoneComponent.RemoveEnemyFromZones();
+            }
         }
 
         // send flying enemy with physics when it dies
@@ -60,6 +65,8 @@ namespace Kraken
         {
             GetComponent<PhotonTransformView>().enabled = false;
             GetComponent<NavMeshAgent>().enabled = false;
+            var colliders = GetComponents<Collider>();
+            System.Array.ForEach(colliders, x => x.enabled = false);
 
             SphereCollider colAdded = gameObject.AddComponent<SphereCollider>();
             colAdded.radius = 0.2f;

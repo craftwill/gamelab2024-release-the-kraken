@@ -14,14 +14,20 @@ namespace Kraken
         private int _enemyCount = 0;
         private bool _isCurrentlyFull = false;
         private bool _isActiveZone = false;
+        private List<EnemyEntity> _enemyInZones;
 
         private void OnTriggerEnter(Collider other)
         {
             if (!PhotonNetwork.IsMasterClient) return;
-
+            
             //This trigger is on a gameobject with ZoneOccupancy Layer
             var ezc = other.GetComponent<EnemyZoneComponent>();
-            int zoneCount = ezc is null ? 1 : ezc.ZoneCount;
+            int zoneCount = 1;
+            if(ezc is not null)
+            {
+                ezc.SetZoneToEnemy(this);
+                zoneCount = ezc.ZoneCount;
+            }
 
             ChangeEnemyCount(zoneCount);
         }
@@ -32,12 +38,17 @@ namespace Kraken
 
             //This trigger is on a gameobject with ZoneOccupancy Layer
             var ezc = other.GetComponent<EnemyZoneComponent>();
-            int zoneCount = ezc is null ? 1 : ezc.ZoneCount;
+            int zoneCount = 1;
+            if(ezc is not null)
+            {
+                ezc.RemoveZoneToEnemy(this);
+                zoneCount = ezc.ZoneCount;
+            }
 
             ChangeEnemyCount(-zoneCount);
         }
 
-        private void ChangeEnemyCount(int zoneCount)
+        public void ChangeEnemyCount(int zoneCount)
         {
             _enemyCount += zoneCount;
 
