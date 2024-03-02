@@ -54,6 +54,15 @@ namespace Kraken
 
             _minimapIcon.SetActive(false);
             photonView.RPC(nameof(RPC_All_Die), RpcTarget.All);
+
+            if (PhotonNetwork.IsMasterClient)
+            {
+                _enemyZoneComponent.RemoveEnemyFromZones();
+
+                //remove colliders to not interfere with ontriggerexit
+                var colliders = GetComponentsInChildren<Collider>();
+                System.Array.ForEach(colliders, x => x.enabled = false);
+            }
         }
 
         // send flying enemy with physics when it dies
