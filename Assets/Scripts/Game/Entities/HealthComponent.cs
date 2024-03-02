@@ -58,7 +58,7 @@ namespace Kraken.Game
 
             Health -= dmgAmount;
             OnTakeDamage.Invoke(dmgAmount);
-            _feedback.PlayFeedbacks();
+            _feedback?.PlayFeedbacks();
 
             if (Health <= 0)
             {
