@@ -15,6 +15,7 @@ namespace Kraken
         private bool _isCurrentlyFull = false;
         private bool _isActiveZone = false;
         private List<EnemyEntity> _enemyInZones;
+        private Animate _animOccupancyTimer;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -56,21 +57,30 @@ namespace Kraken
             {
                 EventManager.Dispatch(EventNames.UpdateCurrentZoneOccupancyUI, new UpdateZoneOccupancyUIData(_enemyCount, _maxEnemyCount));
             }
-            
+
             if (_enemyCount >= _maxEnemyCount)
             {
                 _isCurrentlyFull = true;
-                Animate.Delay(_maxZoneOccupancyTimer, () =>
+                if (_animOccupancyTimer == null)
                 {
-                    if (_isCurrentlyFull)
+                    _animOccupancyTimer = Animate.Delay(_maxZoneOccupancyTimer, () =>
                     {
-                        EventManager.Dispatch(EventNames.ZoneFullLoss, null);
-                    }
-                }, true);
+                        if (_isCurrentlyFull)
+                        {
+                            EventManager.Dispatch(EventNames.ZoneFullLoss, null);
+                        }
+                    }, true);
+                }
             }
             else
             {
                 _isCurrentlyFull = false;
+                // Cancel occupancy timer
+                if (_animOccupancyTimer != null)
+                {
+                    _animOccupancyTimer?.Stop(callEndFunction: false);
+                    _animOccupancyTimer = null;
+                }
             }
         }
 
