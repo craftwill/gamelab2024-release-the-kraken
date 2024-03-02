@@ -26,6 +26,7 @@ namespace Kraken
         private bool _playersSeparated = false;
         private static bool _ultimateAvailable = true;
         private Coroutine _inputTimerCoroutine;
+        private Coroutine ultimateTimerCoroutine;
 
 
         private void Update()
@@ -40,6 +41,11 @@ namespace Kraken
                     {
                         _playersSeparated = false;
                         photonView.RPC(nameof(Rpc_All_FinishDrawing), RpcTarget.All, true);
+                        if (ultimateTimerCoroutine != null)
+                        {
+                            StopCoroutine(ultimateTimerCoroutine);
+                            ultimateTimerCoroutine = null;
+                        }
                     }
                 }
                 else
@@ -97,7 +103,7 @@ namespace Kraken
             }
             if (PhotonNetwork.IsMasterClient)
             {
-                StartCoroutine(UltimateTimer());
+                ultimateTimerCoroutine = StartCoroutine(UltimateTimer());
             }
         }
 
@@ -110,10 +116,10 @@ namespace Kraken
         IEnumerator UltimateCooldown()
         {
             _ultimateAvailable = false;
-            EventManager.Dispatch(EventNames.UpdateUltimateUI, new BoolDataBytes(false));
+            EventManager.Dispatch(EventNames.UpdateUltimateUI, new FloatDataBytes(Config.current.ultimateCooldown));
             yield return new WaitForSeconds(Config.current.ultimateCooldown);
             _ultimateAvailable = true;
-            EventManager.Dispatch(EventNames.UpdateUltimateUI, new BoolDataBytes(true));
+            EventManager.Dispatch(EventNames.UpdateUltimateUI, new FloatDataBytes(0));
         }
 
         [PunRPC]

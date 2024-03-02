@@ -1,6 +1,7 @@
 using Bytes;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using WebSocketSharp;
 
@@ -10,9 +11,12 @@ namespace Kraken.UI
     {
         [SerializeField] private GameObject _txtAvailable;
         [SerializeField] private GameObject _txtCooldown;
+        private TextMeshProUGUI _cooldownText;
+        private Coroutine _cooldownCoroutine;
 
         private void Start()
         {
+            _cooldownText = _txtCooldown.GetComponent<TextMeshProUGUI>();
             EventManager.AddEventListener(EventNames.UpdateUltimateUI, HandleUpdateUltimateUI);
         }
 
@@ -23,17 +27,31 @@ namespace Kraken.UI
 
         public void HandleUpdateUltimateUI(BytesData data)
         {
-            bool available = ((BoolDataBytes)data).BoolValue;
-
-            if (available)
+            float cooldownTime = ((FloatDataBytes)data).FloatValue;
+            if (cooldownTime == 0)
             {
                 _txtAvailable.SetActive(true);
                 _txtCooldown.SetActive(false);
             }
             else
             {
-                _txtAvailable.SetActive(false);
-                _txtCooldown.SetActive(true);
+                if (_cooldownCoroutine == null)
+                {
+                    StartCoroutine(CooldownTimer(cooldownTime));
+                    _txtAvailable.SetActive(false);
+                    _txtCooldown.SetActive(true);
+                }
+            }
+        }
+
+        private IEnumerator CooldownTimer(float time)
+        {
+            int displayTime = (int)Mathf.Ceil(time);
+            for (int i = displayTime; i >= 0; i--)
+            {
+                
+                _cooldownText.text = i == 1 ? i.ToString() + " second before ultimate is recharged" : i.ToString() + " seconds before ultimate is recharged";
+                yield return new WaitForSeconds(1);
             }
         }
     }
