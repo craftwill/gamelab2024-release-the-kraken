@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "c100f0ae8d59d3be12995015f67f7d8afa495bb5"
+      "hash": "ddb5a163a45151c47cc2b65ef9d0d1d56f122ef3"
     },
     "com.hwaet.projectcloner": {
       "version": "https://github.com/hwaet/UnityProjectCloner.git",
