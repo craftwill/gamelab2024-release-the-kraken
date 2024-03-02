@@ -184,6 +184,7 @@ MonoBehaviour:
   _attackComponent: {fileID: 6807864403598660797}
   _entityController: {fileID: 4623548838470204180}
   _enemyZoneComponent: {fileID: 6731842890158060048}
+  _pathfindingEntityController: {fileID: 4623548838470204180}
 --- !u!114 &4623548838470204180
 MonoBehaviour:
   m_ObjectHideFlags: 0
