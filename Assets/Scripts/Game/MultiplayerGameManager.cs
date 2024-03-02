@@ -60,6 +60,7 @@ namespace Kraken
 
         private void HandleLeaveGame(BytesData data) 
         {
+            AnimateManager.GetInstance().ClearAllAnimations();
             PhotonNetwork.LeaveRoom();
         }
 
