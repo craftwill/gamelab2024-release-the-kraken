@@ -65,8 +65,7 @@ namespace Kraken
         {
             GetComponent<PhotonTransformView>().enabled = false;
             GetComponent<NavMeshAgent>().enabled = false;
-            var colliders = GetComponents<Collider>();
-            System.Array.ForEach(colliders, x => x.enabled = false);
+            GetComponentInChildren<EnemyZoneComponent>().ZoneCount = 0;
 
             SphereCollider colAdded = gameObject.AddComponent<SphereCollider>();
             colAdded.radius = 0.2f;

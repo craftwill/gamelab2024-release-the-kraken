@@ -19,10 +19,10 @@ namespace Kraken
         private void OnTriggerEnter(Collider other)
         {
             if (!PhotonNetwork.IsMasterClient) return;
-            
+
             //This trigger is on a gameobject with ZoneOccupancy Layer
             var ezc = other.GetComponent<EnemyZoneComponent>();
-            int zoneCount = 1;
+            int zoneCount = 0;
             if(ezc is not null)
             {
                 ezc.SetZoneToEnemy(this);
@@ -38,7 +38,7 @@ namespace Kraken
 
             //This trigger is on a gameobject with ZoneOccupancy Layer
             var ezc = other.GetComponent<EnemyZoneComponent>();
-            int zoneCount = 1;
+            int zoneCount = 0;
             if(ezc is not null)
             {
                 ezc.RemoveZoneToEnemy(this);
