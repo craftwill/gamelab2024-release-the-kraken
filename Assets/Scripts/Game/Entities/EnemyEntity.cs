@@ -12,6 +12,7 @@ namespace Kraken
         [SerializeField] private EntityAttackComponent _attackComponent;
         [SerializeField] private BaseEntityController _entityController;
         [SerializeField] private EnemyZoneComponent _enemyZoneComponent;
+        [SerializeField] private PathfindingEntityController _pathfindingEntityController;
 
         protected override void Awake()
         {
@@ -43,6 +44,7 @@ namespace Kraken
             base.HandleTakeDamage(dmgAmount);
 
             _entityAnimationComponent.PlayHurtAnim();
+            _pathfindingEntityController.Stagger();
         }
 
         protected override void HandleDie()

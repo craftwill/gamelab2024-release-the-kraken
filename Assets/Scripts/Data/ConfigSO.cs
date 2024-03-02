@@ -54,5 +54,8 @@ namespace Kraken
         public float ultimateDuration = 5f;
         public float ultimateTriggerTimer = 5f;
         public float ultimateCooldown = 10f;
+
+        [Header("Combat Settings")]
+        public float enemyStaggerDuration = 0.5f;
     }
 }
