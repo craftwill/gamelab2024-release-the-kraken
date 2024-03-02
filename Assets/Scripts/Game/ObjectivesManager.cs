@@ -5,6 +5,7 @@ using UnityEngine;
 using Photon.Pun;
 
 using Bytes;
+using MoreMountains.Tools;
 
 namespace Kraken
 {
@@ -23,6 +24,9 @@ namespace Kraken
         private void Start()
         {
             if (!_isMaster) return;
+
+            // Temporary basic shuffle
+            _allObjectives.MMShuffle();
 
             EventManager.AddEventListener(EventNames.StartObjectives, HandleStartObjectives);
             EventManager.AddEventListener(EventNames.NextObjective, HandleNextObjectives);
