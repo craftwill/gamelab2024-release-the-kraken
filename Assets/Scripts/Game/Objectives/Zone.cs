@@ -53,7 +53,7 @@ namespace Kraken
         public void ChangeEnemyCount(int zoneCount)
         {
             _enemyCount += zoneCount;
-            _minimapIndicator.SetOccupation(_enemyCount, _maxEnemyCount);
+            _minimapIndicator?.SetOccupation(_enemyCount, _maxEnemyCount);
 
             if (_isActiveZone)
             {

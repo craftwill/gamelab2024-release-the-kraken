@@ -25,7 +25,7 @@ namespace Kraken
         public void TriggerObjective()
         {
             objectiveSO.TriggerObjective(this);
-            MinimapHighlight.SetActive(true);
+            MinimapHighlight?.SetActive(true);
         }
 
         public void EndObjective(bool goToNext)
@@ -34,7 +34,7 @@ namespace Kraken
             if (IsCompleted) return;
             IsCompleted = true;
             objectiveSO.EndObjective(this);
-            MinimapHighlight.SetActive(false);
+            MinimapHighlight?.SetActive(false);
             if (goToNext) EventManager.Dispatch(EventNames.NextObjective, null);
         }
     }
