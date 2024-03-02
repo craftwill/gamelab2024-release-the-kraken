@@ -15595,6 +15595,26 @@ PrefabInstance:
       propertyPath: _allObjectives.Array.data[3].spawnLocation
       value: 
       objectReference: {fileID: 1257528496}
+    - target: {fileID: 8198660850295026202, guid: 09244ba4cb5528442a249e3f67ccab89,
+        type: 3}
+      propertyPath: _allObjectives.Array.data[0].minimapHighlight
+      value: 
+      objectReference: {fileID: 89433838}
+    - target: {fileID: 8198660850295026202, guid: 09244ba4cb5528442a249e3f67ccab89,
+        type: 3}
+      propertyPath: _allObjectives.Array.data[1].minimapHighlight
+      value: 
+      objectReference: {fileID: 1306128698}
+    - target: {fileID: 8198660850295026202, guid: 09244ba4cb5528442a249e3f67ccab89,
+        type: 3}
+      propertyPath: _allObjectives.Array.data[2].minimapHighlight
+      value: 
+      objectReference: {fileID: 1142366900}
+    - target: {fileID: 8198660850295026202, guid: 09244ba4cb5528442a249e3f67ccab89,
+        type: 3}
+      propertyPath: _allObjectives.Array.data[3].minimapHighlight
+      value: 
+      objectReference: {fileID: 2034037397}
     - target: {fileID: 8767720622561718191, guid: 09244ba4cb5528442a249e3f67ccab89,
         type: 3}
       propertyPath: m_Name
