@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: PermanentSpawnData
   m_EditorClassIdentifier: 
   spawnData:
-  - spawnRatio: 50
+  - spawnRatio: 35
     prefab: {fileID: 4324829711065338193, guid: 80ff4f58d4a363e44973653c6a0d9ed5,
       type: 3}
-  - spawnRatio: 50
+  - spawnRatio: 15
     prefab: {fileID: 9076670195779392182, guid: 86853c697165ac240bb5cccbf01cdd4c,
+      type: 3}
+  - spawnRatio: 50
+    prefab: {fileID: 6215088595974302264, guid: 7116d8db96e86ef4492229dac797ad33,
       type: 3}
