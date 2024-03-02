@@ -11,6 +11,7 @@ namespace Kraken
         [SerializeField, Tooltip("Maximum zone occupancy")] private int _maxEnemyCount = 100;
         [SerializeField, Tooltip("Time before loss after maximum zone occupancy is reached")] private int _maxZoneOccupancyTimer = 30;
         [SerializeField, Tooltip("The spawner object in the scene with its spawn points as children")] private Spawner _spawner;
+        [SerializeField, Tooltip("The visual indicator for the zone occupation in the minimap")] private MinimapZoneOccupationUI _minimapIndicator;
         private int _enemyCount = 0;
         private bool _isCurrentlyFull = false;
         private bool _isActiveZone = false;
@@ -40,6 +41,7 @@ namespace Kraken
         private void ChangeEnemyCount(int zoneCount)
         {
             _enemyCount += zoneCount;
+            _minimapIndicator.SetOccupation(_enemyCount, _maxEnemyCount);
 
             if (_isActiveZone)
             {
