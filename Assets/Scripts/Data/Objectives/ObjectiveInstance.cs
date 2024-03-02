@@ -28,6 +28,7 @@ namespace Kraken
             //If EndObjective has already been called, don't do anything
             if (IsCompleted) return;
             IsCompleted = true;
+            objectiveSO.EndObjective(this);
             if (goToNext) EventManager.Dispatch(EventNames.NextObjective, null);
         }
     }

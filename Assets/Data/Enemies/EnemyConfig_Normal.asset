@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyName: Sheep Normal
   maxHealth: 1
   moveSpeed: 0.8
-  attackRange: 1.9
+  attackRange: 1.5
   damageDealt: 1
   attackCooldown: 1
   attackDuration: 0.1

@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 1862454165680212714}
   - component: {fileID: 2430947413421373467}
   - component: {fileID: 6731842890158060048}
+  - component: {fileID: 6476307419514796788}
   m_Layer: 6
   m_Name: ZoneOccupancy
   m_TagString: Untagged
@@ -120,6 +121,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e1cdcf0148b4446913931f05611f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &6476307419514796788
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2875127913013045799}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3106089648525901737
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +617,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2.3
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -627,8 +655,8 @@ Transform:
   m_GameObject: {fileID: 3528024205557268655}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.053, z: 1.2888}
-  m_LocalScale: {x: 0.8740248, y: 0.8740248, z: 1.117703}
+  m_LocalPosition: {x: 0, y: -0.053, z: 1.1653}
+  m_LocalScale: {x: 0.8740248, y: 0.8740248, z: 0.8706906}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2745319777357053054}

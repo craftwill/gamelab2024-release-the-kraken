@@ -1,7 +1,9 @@
+using Kraken.Game;
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Kraken
 {

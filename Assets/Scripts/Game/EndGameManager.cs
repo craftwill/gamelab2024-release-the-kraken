@@ -54,6 +54,7 @@ namespace Kraken
 
         private void HandleZoneFullLoss(BytesData data)
         {
+            print("DEFEAT!! -------- ZoneFullLoss");
             photonView.RPC(nameof(RPC_All_EndGame), RpcTarget.All, false, (int)EndGameType.ZoneFullLoss);
         }
 
@@ -63,6 +64,7 @@ namespace Kraken
             void GameTimerDoneCallback()
             {
                 if (!_isMaster) return;
+                print("DEFEAT!! -------- Timer expired!");
                 photonView.RPC(nameof(RPC_All_EndGame), RpcTarget.All, false, (int)EndGameType.TimerOut);
             }
             
