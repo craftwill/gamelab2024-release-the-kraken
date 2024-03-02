@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: EnemyConfig_Normal
   m_EditorClassIdentifier: 
   enemyName: Sheep Normal
-  maxHealth: 3
-  moveSpeed: 1
+  maxHealth: 1
+  moveSpeed: 0.8
   attackRange: 1.9
   damageDealt: 1
   attackCooldown: 1
   attackDuration: 0.1
   lockedIntoAttackDuration: 0.5
+  zoneOccupancyCount: 1
+  pathfindingDistanceRadius: 100

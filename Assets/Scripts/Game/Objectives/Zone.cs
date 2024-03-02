@@ -16,6 +16,8 @@ namespace Kraken
 
         private void OnTriggerEnter(Collider other)
         {
+            if (!PhotonNetwork.IsMasterClient) return;
+
             //This trigger is on a gameobject with ZoneOccupancy Layer
             var ezc = other.GetComponent<EnemyZoneComponent>();
             int zoneCount = ezc is null ? 1 : ezc.ZoneCount;
@@ -25,6 +27,8 @@ namespace Kraken
 
         private void OnTriggerExit(Collider other)
         {
+            if (!PhotonNetwork.IsMasterClient) return;
+
             //This trigger is on a gameobject with ZoneOccupancy Layer
             var ezc = other.GetComponent<EnemyZoneComponent>();
             int zoneCount = ezc is null ? 1 : ezc.ZoneCount;

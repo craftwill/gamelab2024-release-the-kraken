@@ -11,6 +11,7 @@ namespace Kraken
     {
         [SerializeField] private Entity _ownerEntity;
         [SerializeField] private InflictDamageComponent _inflictDamageComponent;
+        [SerializeField] private EntityAnimationComponent _entityAnimationComponent;
 
         [Header("Attack Settings")]
         [SerializeField] private float _damageDealt = 1;
@@ -38,6 +39,8 @@ namespace Kraken
         public void TryAttack() 
         {
             if (!PhotonNetwork.IsMasterClient || !_canAttack) { return; }
+
+            _entityAnimationComponent.PlayBasicAttackAnimation();
 
             IsAttacking = true;
             _canAttack = false;

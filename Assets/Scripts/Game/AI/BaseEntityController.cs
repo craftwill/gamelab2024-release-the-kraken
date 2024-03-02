@@ -10,10 +10,10 @@ namespace Kraken
         [SerializeField] private float _moveSpeed = 1f;
         [SerializeField] protected float _attackRange = 2.5f;
 
-        public virtual void InitSettings(float moveSpeed, float attackRange)
+        public virtual void InitSettings(EnemyConfigSO config)
         {
-            _moveSpeed = moveSpeed;
-            _attackRange = attackRange;
+            _moveSpeed = config.moveSpeed;
+            _attackRange = config.attackRange;
         }
 
         protected virtual void Awake()

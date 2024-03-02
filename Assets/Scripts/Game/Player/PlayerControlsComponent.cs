@@ -1,11 +1,12 @@
-using Bytes;
-using Cinemachine;
-using Kraken;
-using Photon.Pun;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
+using Cinemachine;
+
+using Bytes;
+
+using Photon.Pun;
 
 namespace Kraken
 {
@@ -20,14 +21,17 @@ namespace Kraken
         }
         private bool _isOwner;
         [SerializeField] private PlayerSoundComponent _soundComponent;
+        [SerializeField] private PlayerAnimationComponent _playerAnimationComponent;
+        [SerializeField] private PlayerAttackComponent _playerAttackComponent;
         [SerializeField] private InputActionReference _moveInput;
         [SerializeField] private CharacterController _controller;
         [SerializeField] private GameObject _camera;
-        [SerializeField] private CinemachineFreeLook _freeLookCam;
         [SerializeField] private Transform _cameraOrientation;
         [SerializeField] private PlayerInput _input;
         [SerializeField] private DuoUltimateComponent _duoUltimateComponent;
         [SerializeField] private GameObject _takeDamageComponent;
+        private CinemachineFreeLook _freeLookCam;
+        
         private MovementState _movementState = MovementState.Walking;
         private string _currentScheme;
         private Vector2 _moveVec = Vector2.zero;
@@ -38,19 +42,22 @@ namespace Kraken
         private bool _dashReady = true;
         private Coroutine _fovChangeCoroutine = null;
 
+        private bool controlsEnabled = true;
+
         [SerializeField] private InputActionReference _sprintInput;
         [SerializeField] private InputActionReference _pauseInput;
         [SerializeField] private InputActionReference _duoUltimateInput;
 
         private void Start()
         {
+            _freeLookCam = _camera.GetComponent<CinemachineFreeLook>();
+
             if (photonView.AmOwner)
             {
                 _isOwner = true;
-                UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-                UnityEngine.Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 _camera.SetActive(true);
-                _freeLookCam = _camera.GetComponent<CinemachineFreeLook>();
                 if (_input.currentControlScheme.Equals("Gamepad"))
                 {
                     _freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.cameraControllerMultiplier;
@@ -96,6 +103,8 @@ namespace Kraken
 
         private void Update()
         {
+            if (!controlsEnabled) return;
+
             if (_isOwner)
             {
                 if (_controller.isGrounded)
@@ -146,15 +155,44 @@ namespace Kraken
 
         public void OnMove(InputAction.CallbackContext value)
         {
+            if (!controlsEnabled) return;
+
             if (_isOwner)
             {
                 _moveVec = value.ReadValue<Vector2>();
                 _movementMagnitude = Mathf.Clamp(_moveVec.magnitude, 0.0f, 1.0f);
+
+                // Show correct moving animation and sync with other clients when needed.
+                bool didAnimStateChange = false;
+                if (Mathf.Abs(_moveVec.x) > 0f || Mathf.Abs(_moveVec.y) > 0f)
+                {
+                    didAnimStateChange = _playerAnimationComponent.SetLoopedStateWalking();
+                    if (didAnimStateChange)
+                        photonView.RPC(nameof(RPC_Other_SetLoopAnimState), RpcTarget.Others, "Walk");
+                }
+                else
+                {
+                    didAnimStateChange = _playerAnimationComponent.SetLoopedStateIdle();
+                    if(didAnimStateChange) 
+                        photonView.RPC(nameof(RPC_Other_SetLoopAnimState), RpcTarget.Others, "Idle");
+                }
+            }
+        }
+
+        [PunRPC]
+        private void RPC_Other_SetLoopAnimState(string animStateType)
+        {
+            switch (animStateType)
+            {
+                case "Walk":  _playerAnimationComponent.SetLoopedStateWalking(); break;
+                case "Idle":  _playerAnimationComponent.SetLoopedStateIdle(); break;
             }
         }
 
         public void OnSprintPerformed(InputAction.CallbackContext value)
         {
+            if (!controlsEnabled) return;
+
             if (_isOwner)
             {
                 _sprintPressed = true;
@@ -181,6 +219,8 @@ namespace Kraken
 
         public void OnSprintCanceled(InputAction.CallbackContext value)
         {
+            if (!controlsEnabled) return;
+
             if (_isOwner)
             {
                 _sprintPressed = false;
@@ -270,12 +310,24 @@ namespace Kraken
 
         public void OnDuoUltimate(InputAction.CallbackContext value)
         {
+            if (!controlsEnabled) return;
+
             _duoUltimateComponent.OnDuoUltimateInput(true);
         }
 
         public void OnDuoUltimateReleased(InputAction.CallbackContext value)
         {
+            if (!controlsEnabled) return;
+
             _duoUltimateComponent.OnDuoUltimateInput(false);
+        }
+
+        public void DisableControls()
+        {
+            _freeLookCam.enabled = false;
+            controlsEnabled = false;
+
+            _playerAttackComponent.UnsubscribeAttacks();
         }
     }
 }

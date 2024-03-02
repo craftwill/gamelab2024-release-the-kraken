@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dazzle_Attack_SlashLPaw
+  m_Name: Dazzle_AttackCombo2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -56,7 +56,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dazzle_NarutoRun
+  m_Name: Dazzle_Walk
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -83,7 +83,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dazzle_Attack_SlashRPaw
+  m_Name: Dazzle_AttackCombo1
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -110,7 +110,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dazzle_Attack_Slash2xPaw
+  m_Name: Dazzle_AttackCombo3
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -168,13 +168,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 2599217221982122263}
-    m_Position: {x: 300, y: 360, z: 0}
+    m_Position: {x: 300, y: 350, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5609701513019844969}
-    m_Position: {x: 300, y: 200, z: 0}
+    m_Position: {x: 300, y: 280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1106529847000951826}
-    m_Position: {x: 300, y: 280, z: 0}
+    m_Position: {x: 300, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4578000169285451267}
     m_Position: {x: 600, y: 200, z: 0}

@@ -57,6 +57,15 @@ MonoBehaviour:
   - RPC_All_StartDrawing
   - RPC_Others_WaitingForUltimate
   - Rpc_All_FinishDrawing
+  - RPC_All_EndGameAfterWin
+  - RPC_All_EndGame
+  - RPC_All_PlayAttackAnimationCombo
+  - RPC_All_PlayBasicAttackAnimation
+  - RPC_All_SetLoopedState
+  - RPC_All_SetLoopedStateIdle
+  - RPC_All_SetLoopedStateWalking
+  - RPC_All_SetLoopAnimState
+  - RPC_Other_SetLoopAnimState
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

@@ -20,18 +20,24 @@ MonoBehaviour:
   isSkipMainMenu: 0
   useDebugGameFlow: 1
   gameDuration: 600
+  maxHealth: 100
   moveSpeed: 7.5
   sprintSpeed: 14
-  attackMoveSpeed: 10
+  attackMoveSpeed: 3
   rotationSpeed: 50
   gravity: 5
+  dashDuration: 0.2
+  dashSpeed: 30
+  dashCooldown: 3
   cameraSensitivity: 0.2
   yCameraSensitivityMultiplier: 0.01
   cameraControllerMultiplier: 10
   invertXAxis: 0
   invertYAxis: 1
-  dashDuration: 0.2
-  dashSpeed: 30
+  baseFov: 50
+  sprintFov: 60
+  fovChangeDuration: 0.2
+  changeFovOnSprint: 1
   ultimateStartMaxDistance: 5
   ultimateEndDistance: 3
   ultimateMinDamageDistance: 15

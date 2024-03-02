@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b190fddeccaaebc40be13e9c4dfb3944, type: 3}
+  m_Name: Dazzle_AttackCombo1
+  m_EditorClassIdentifier: 
+  attackName: Attack 1
+  attackInput: {fileID: 8504988724220268357, guid: abae805e8a04eb44c951b59d4dda4171,
+    type: 3}
+  canBeActivatedFromNeutral: 1
+  nextAttack: {fileID: 11400000, guid: efdefda1c7c82d74cb89e2e94c6612b2, type: 2}
+  colliderGameObject: {fileID: 9211684295016083868, guid: 7176f4963c849c742a97a6e122965e1b,
+    type: 3}
+  timeBeforeHitboxDuration: 0.21
+  hitboxDuration: 0.15
+  attackCancelDuration: 0.5
+  totalAttackLength: 2
+  damage: 1
+  comboStep: 1

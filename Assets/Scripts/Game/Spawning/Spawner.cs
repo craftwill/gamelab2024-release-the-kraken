@@ -19,5 +19,10 @@ namespace Kraken
             if (spawnPoints.Count == 0) return Vector3.zero;
             return spawnPoints[Random.Range(0, spawnPoints.Count)].position;
         }
+
+        public List<Transform> GetSpawnPoints()
+        {
+            return spawnPoints;
+        }
     }
 }
