@@ -13,6 +13,7 @@ namespace Kraken
         [SerializeField, Tooltip("The spawner object in the scene with its spawn points as children")] private Spawner _spawner;
         private int _enemyCount = 0;
         private bool _isCurrentlyFull = false;
+        private bool _isActiveZone = false;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -39,6 +40,12 @@ namespace Kraken
         private void ChangeEnemyCount(int zoneCount)
         {
             _enemyCount += zoneCount;
+
+            if (_isActiveZone)
+            {
+                EventManager.Dispatch(EventNames.UpdateCurrentZoneOccupancyUI, new UpdateZoneOccupancyUIData(_enemyCount, _maxEnemyCount));
+            }
+            
             if (_enemyCount >= _maxEnemyCount)
             {
                 _isCurrentlyFull = true;
@@ -59,6 +66,11 @@ namespace Kraken
         public Spawner GetSpawner()
         {
             return _spawner;
+        }
+
+        public void SetIsActiveZone(bool isActiveZone) 
+        {
+            _isActiveZone = isActiveZone;
         }
     }
 }

@@ -12,5 +12,6 @@ namespace Kraken
         [Tooltip("Time before next objective spawns")] public int objectiveTimer = 60;
 
         public virtual void TriggerObjective(ObjectiveInstance instance) { }
+        public virtual void EndObjective(ObjectiveInstance instance) { }
     }
 }
