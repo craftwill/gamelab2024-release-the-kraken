@@ -93,8 +93,10 @@ namespace Kraken
         private IEnumerator StaggerCoroutine()
         {
             _staggered = true;
+            _navMeshAgent.isStopped = true;
             yield return new WaitForSeconds(Config.current.enemyStaggerDuration);
             _staggered = false;
+            _navMeshAgent.isStopped = false;
             _staggerCoroutine = null;
         }
     }
