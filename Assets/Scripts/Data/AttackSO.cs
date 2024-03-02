@@ -68,14 +68,17 @@ namespace Kraken
                 {
                     if (nextAttack is null)
                     {
-                        _inProgress = false;
-                        this.PerformAttack(handle, callback);
+                        // Input buffer here?
+                        // _inProgress = false;
+                        // this.PerformAttack(handle, callback);
                     }
-                    else nextAttack.PerformAttack(handle, callback);
+                    else
+                    {
+                        nextAttack.PerformAttack(handle, callback);
+                    }
                     return;
                 }
                 handle.IsFreeToAttack = false;
-                handle.StartCoroutine(FreeToAttackFunc(handle));
 
                 _inProgress = true;
                 handle.StartCoroutine(InProgressFunc(handle));
@@ -87,7 +90,12 @@ namespace Kraken
 
         private IEnumerator AttackFunc(PlayerAttackComponent handle)
         {
-            _playerEntity.PlayAttackAnimationCombo(comboStep);
+            void AnimDonePlayingCallback()
+            {
+                handle.IsFreeToAttack = true;
+            }
+
+            _playerEntity.PlayAttackAnimationCombo(comboStep, AnimDonePlayingCallback);
 
             yield return new WaitForSeconds(timeBeforeHitboxDuration);
             _collider.SetActive(true);
@@ -95,12 +103,6 @@ namespace Kraken
             yield return new WaitForSeconds(hitboxDuration);
             _collider.SetActive(false);
             EventManager.Dispatch(EventNames.PlayerAttackEnd, null);
-        }
-
-        private IEnumerator FreeToAttackFunc(PlayerAttackComponent handle)
-        {
-            yield return new WaitForSeconds(attackCancelDuration);
-            handle.IsFreeToAttack = true;
         }
 
         private IEnumerator InProgressFunc(PlayerAttackComponent handle)
