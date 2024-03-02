@@ -76,7 +76,7 @@ namespace Kraken
         private void HandleStopObjectives(BytesData data)
         {
             Debug.Log("Stop objectives!");
-            currentObjective.EndObjective(false);
+            currentObjective?.EndObjective(false);
             currentObjective = null;
             UpdateObjectiveUI(-1);
         }
@@ -90,8 +90,6 @@ namespace Kraken
             }
 
             ObjectiveSO objectiveSO = currentObjective.objectiveSO;
-            
-
 
             photonView.RPC(nameof(RPC_All_UpdateObjectiveUI), RpcTarget.All, objectiveSO.objectiveName, timeLeft);
         }

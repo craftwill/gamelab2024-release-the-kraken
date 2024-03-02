@@ -13,8 +13,6 @@ namespace Kraken
         [SerializeField] protected string _animatorPrefix = "";
         [SerializeField] protected string _animatorSuffix = "";
 
-        protected int _hurtStep = 1;
-
         private void Start()
         {
             if (_animStateMachine.GetAnimator() == null) return;
@@ -28,12 +26,7 @@ namespace Kraken
         {
             if (_animStateMachine.GetAnimator() == null) return;
 
-            _animStateMachine.GetAnimator().Play(_animatorSuffix + "_hurt" + _hurtStep);
-            _hurtStep++;
-            if (_hurtStep > 2)
-            {
-                _hurtStep = 1;
-            }
+            _animStateMachine.PlayAnimOnce(EntityAnimState.Hurt, _animatorPrefix, _animatorSuffix);
         }
 
         public bool SetLoopedStateIdle()
@@ -64,6 +57,7 @@ namespace Kraken
         {
             static public readonly EntityAnimState Idle = new EntityAnimState("Idle", 1f);
             static public readonly EntityAnimState Walk = new EntityAnimState("Walk", 1f);
+            static public readonly EntityAnimState Hurt = new EntityAnimState("Hurt", 1f);
             static public readonly EntityAnimState Die = new EntityAnimState("Die", 1f);
 
             // Player's will use a different animState because they use combo attacks.
