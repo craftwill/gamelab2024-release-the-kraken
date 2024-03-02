@@ -839,6 +839,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3650747343828016411, guid: ec7d92182b74ae946ae195e669a72151,
         type: 3}
+      propertyPath: _maxEnemyCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650747343828016411, guid: ec7d92182b74ae946ae195e669a72151,
+        type: 3}
       propertyPath: _minimapIndicator
       value: 
       objectReference: {fileID: 1334138511}
@@ -3897,6 +3902,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650747343828016411, guid: ec7d92182b74ae946ae195e669a72151,
+        type: 3}
+      propertyPath: _maxEnemyCount
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3650747343828016411, guid: ec7d92182b74ae946ae195e669a72151,
         type: 3}
@@ -9127,6 +9137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650747343828016411, guid: ec7d92182b74ae946ae195e669a72151,
+        type: 3}
+      propertyPath: _maxEnemyCount
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3650747343828016411, guid: ec7d92182b74ae946ae195e669a72151,
         type: 3}
@@ -14450,6 +14465,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650747343828016411, guid: ec7d92182b74ae946ae195e669a72151,
+        type: 3}
+      propertyPath: _maxEnemyCount
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3650747343828016411, guid: ec7d92182b74ae946ae195e669a72151,
         type: 3}
