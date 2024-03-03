@@ -13,8 +13,17 @@ namespace Kraken
         [SerializeField] protected EntityAttackComponent _entityAttackComponent;
         [SerializeField] protected EntityAnimationComponent _entityAnimationComponent;
         [SerializeField] protected NavMeshAgent _navMeshAgent;
+        private bool _staggered = false;
+        private Coroutine _staggerCoroutine;
 
         protected Transform _target;
+        protected float _pathfindingDistanceRadius;
+
+        public override void InitSettings(EnemyConfigSO config)
+        {
+            base.InitSettings(config);
+            _pathfindingDistanceRadius = config.pathfindingDistanceRadius;
+        }
 
         protected override void Start()
         {
@@ -57,8 +66,12 @@ namespace Kraken
             if (_entityAttackComponent.IsAttacking) return;
 
             (PlayerEntity closestPlayer, float closestDistance) = _ownerEntity.GetClosestPlayer();
-
-            if (closestPlayer == null) return;
+            
+            if (closestPlayer == null || closestDistance > _pathfindingDistanceRadius || _staggered) 
+            {
+                _target = null;
+                return;
+            }
 
             _target = closestPlayer.transform;
 
@@ -67,6 +80,24 @@ namespace Kraken
             {
                 _entityAttackComponent.TryAttack();
             }
+        }
+
+        public void Stagger()
+        {
+            if (_staggerCoroutine == null)
+            {
+                _staggerCoroutine = StartCoroutine(StaggerCoroutine());
+            }
+        }
+
+        private IEnumerator StaggerCoroutine()
+        {
+            _staggered = true;
+            _navMeshAgent.isStopped = true;
+            yield return new WaitForSeconds(Config.current.enemyStaggerDuration);
+            _staggered = false;
+            _navMeshAgent.isStopped = false;
+            _staggerCoroutine = null;
         }
     }
 }

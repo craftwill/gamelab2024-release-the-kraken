@@ -1,9 +1,8 @@
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
+
 using Photon.Pun;
-using UnityEngine.InputSystem;
-using System;
 
 namespace Kraken
 {
@@ -20,9 +19,6 @@ namespace Kraken
             {
                 _isOwner = true;
                 _attacks.ForEach(x => x.Subscribe(this, _playerEntity));
-
-                //temporary
-                _feedbacks = GetComponent<MoreMountains.Feedbacks.MMF_Player>();
             }
         }
 
@@ -34,17 +30,13 @@ namespace Kraken
             }
         }
 
-        //Every changes in this file is temporary and is just to showcase
-        private MoreMountains.Feedbacks.MMF_Player _feedbacks;
-        private void Update()
+        public void UnsubscribeAttacks() 
         {
-            /*if (_isOwner)
+            if (photonView.AmOwner)
             {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    _feedbacks.PlayFeedbacks();
-                }
-            }*/
+                _isOwner = true;
+                _attacks.ForEach(x => x.Unsubscribe());
+            }
         }
     }
 }

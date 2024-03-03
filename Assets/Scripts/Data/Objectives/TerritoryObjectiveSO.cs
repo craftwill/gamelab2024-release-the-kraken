@@ -18,6 +18,7 @@ namespace Kraken
         {
             base.TriggerObjective(instance);
             Spawner spawner = instance.Zone.GetSpawner();
+            instance.Zone.SetIsActiveZone(true);
 
             //should not be kept this way
             Animate.Repeat(spawnFrequency, () =>
@@ -26,6 +27,14 @@ namespace Kraken
                 if (isInProgress) NetworkUtils.Instantiate(spawnData.GetRandomEnemy().name, spawner.GetRandomPosition());
                 return isInProgress;
             }, -1, true);
+        }
+
+        public override void EndObjective(ObjectiveInstance instance)
+        {
+            base.EndObjective(instance);
+
+            instance.Zone.SetIsActiveZone(false);
+            EventManager.Dispatch(EventNames.UpdateCurrentZoneOccupancyUI, new UpdateZoneOccupancyUIData(0, 10));
         }
     }
 }

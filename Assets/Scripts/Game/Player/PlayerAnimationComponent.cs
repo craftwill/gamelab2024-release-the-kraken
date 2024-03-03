@@ -7,11 +7,14 @@ namespace Kraken
 {
     public class PlayerAnimationComponent : EntityAnimationComponent
     {
-        public void PlayAttackAnimationCombo(int comboStep)
+        [SerializeField] private float _animsAttackComboSpeed = 1.6f;
+        [SerializeField] private float _animsTransitionDuration = 0.1f;
+
+        public void PlayAttackAnimationCombo(int comboStep, System.Action animDonePlayingCallback = null)
         {
             PlayerAnimState attackComboState = new("AttackCombo" + comboStep, 1f);
             print("attack name: " + attackComboState.ClipName);
-            _animStateMachine.PlayAnimOnce(attackComboState, _animatorPrefix, _animatorSuffix);
+            _animStateMachine.PlayAnimOnce(attackComboState, _animatorPrefix, _animatorSuffix, "AttackComboSpeed", _animsAttackComboSpeed, animDonePlayingCallback, _animsTransitionDuration);
         }
 
         // Animations used by player

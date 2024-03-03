@@ -46,7 +46,7 @@ namespace Kraken
                 currentPlayOnceAnim = null;
                 PlayStateLoopedAnimation(BuildClipName(prefix, suffix, currentState.ClipName));
                 callback?.Invoke();
-            }, animTransitionDuration);
+            }, speedMult, animTransitionDuration);
         }
 
         public void CancelCurrentPlayOnceAnim()
@@ -89,9 +89,9 @@ namespace Kraken
         }
 
         // Used to be able to set a callback at the end of animation played by target animator
-        private Animate PlayAnimatorClip(Animator animator, string clipName, System.Action callback, float animTransitionDuration = 0.0f)
+        private Animate PlayAnimatorClip(Animator animator, string clipName, System.Action callback, float animSpeed, float animTransitionDuration = 0.0f)
         {
-            float lDuration = GetAnimatorLayerDuration(animator, clipName);
+            float lDuration = GetAnimatorLayerDuration(animator, clipName) / animSpeed;
             animator.CrossFade(clipName, animTransitionDuration, 0);
             return Animate.Delay(lDuration, callback, true);
         }

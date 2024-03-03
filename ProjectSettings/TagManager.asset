@@ -15,9 +15,9 @@ TagManager:
   - Water
   - UI
   - ZoneOccupancy
-  - 
-  - 
-  - 
+  - InvisibleWall
+  - Enemy
+  - Minimap
   - 
   - 
   - 

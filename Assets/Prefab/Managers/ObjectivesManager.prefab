@@ -52,6 +52,10 @@ MonoBehaviour:
     spawnLocation: {fileID: 0}
   - objective: {fileID: 11400000, guid: d9729f7919619a24b93fc278fe9b4f83, type: 2}
     spawnLocation: {fileID: 0}
+  - objective: {fileID: 11400000, guid: 0114a1512d0efe6408678174e82d21ed, type: 2}
+    spawnLocation: {fileID: 0}
+  - objective: {fileID: 11400000, guid: b3b15758b2993f7478a91d08d1adfb65, type: 2}
+    spawnLocation: {fileID: 0}
 --- !u!114 &7751270002852661781
 MonoBehaviour:
   m_ObjectHideFlags: 0

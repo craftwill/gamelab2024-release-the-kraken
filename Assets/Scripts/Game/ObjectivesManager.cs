@@ -5,6 +5,7 @@ using UnityEngine;
 using Photon.Pun;
 
 using Bytes;
+using MoreMountains.Tools;
 
 namespace Kraken
 {
@@ -15,6 +16,7 @@ namespace Kraken
         {
             public ObjectiveSO objective;
             public Zone spawnLocation;
+            public GameObject minimapHighlight;
         }
         [SerializeField] private List<ObjectiveWithLocation> _allObjectives;
 
@@ -24,19 +26,8 @@ namespace Kraken
         {
             if (!_isMaster) return;
 
-            if (Config.current.randomizeObjectives)
-            {
-                System.Random r = new System.Random();
-                int n = _allObjectives.Count;
-                while(n > 1)
-                {
-                    n--;
-                    int index = r.Next(n + 1);
-                    var value = _allObjectives[index];
-                    _allObjectives[index] = _allObjectives[n];
-                    _allObjectives[n] = value;
-                }
-            }
+            // Temporary basic shuffle
+            _allObjectives.MMShuffle();
 
             EventManager.AddEventListener(EventNames.StartObjectives, HandleStartObjectives);
             EventManager.AddEventListener(EventNames.NextObjective, HandleNextObjectives);
@@ -90,7 +81,7 @@ namespace Kraken
         private void HandleStopObjectives(BytesData data)
         {
             Debug.Log("Stop objectives!");
-            currentObjective.EndObjective(false);
+            currentObjective?.EndObjective(false);
             currentObjective = null;
             UpdateObjectiveUI(-1);
         }
@@ -104,8 +95,6 @@ namespace Kraken
             }
 
             ObjectiveSO objectiveSO = currentObjective.objectiveSO;
-            
-
 
             photonView.RPC(nameof(RPC_All_UpdateObjectiveUI), RpcTarget.All, objectiveSO.objectiveName, timeLeft);
         }
@@ -126,7 +115,8 @@ namespace Kraken
 
             var objective = _allObjectives[objectiveIndex].objective;
             var zone = _allObjectives[objectiveIndex].spawnLocation;
-            var nextObjective = new ObjectiveInstance(objective, zone);
+            var minimapHighlight = _allObjectives[objectiveIndex].minimapHighlight;
+            var nextObjective = new ObjectiveInstance(objective, zone, minimapHighlight);
             objectiveIndex++;
             return nextObjective;
         }

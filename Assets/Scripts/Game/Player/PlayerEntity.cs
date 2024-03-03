@@ -39,7 +39,8 @@ namespace Kraken
 
         protected virtual void HandleStopGameFlow(BytesData data)
         {
-            print("Disable player controls!");
+            if (!_isOwner) return;
+
             _controls.DisableControls();
         }
 
@@ -62,13 +63,15 @@ namespace Kraken
             }
         }
 
-        public void PlayAttackAnimationCombo(int comboStep)
+        public void PlayAttackAnimationCombo(int comboStep, System.Action animDonePlayingCallback)
         {
-            photonView.RPC(nameof(RPC_All_PlayAttackAnimationCombo), RpcTarget.All, comboStep);
+            _playerAnimationComponent.PlayAttackAnimationCombo(comboStep, animDonePlayingCallback);
+
+            photonView.RPC(nameof(RPC_Other_PlayAttackAnimationCombo), RpcTarget.Others, comboStep);
         }
 
         [PunRPC]
-        private void RPC_All_PlayAttackAnimationCombo(int comboStep) 
+        private void RPC_Other_PlayAttackAnimationCombo(int comboStep) 
         {
             _playerAnimationComponent.PlayAttackAnimationCombo(comboStep);
         }

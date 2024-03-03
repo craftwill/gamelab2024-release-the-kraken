@@ -40,8 +40,6 @@ namespace Kraken
         {
             if (!PhotonNetwork.IsMasterClient || !_canAttack) { return; }
 
-            _entityAnimationComponent.PlayBasicAttackAnimation();
-
             IsAttacking = true;
             _canAttack = false;
             photonView.RPC(nameof(RPC_All_Attack), RpcTarget.All);
@@ -61,6 +59,7 @@ namespace Kraken
         private void RPC_All_Attack() 
         {
             // All clients play attack animation and collider
+            _entityAnimationComponent.PlayBasicAttackAnimation();
             _inflictDamageComponent.gameObject.SetActive(true);
 
             // Only master client processes attack duration

@@ -27,6 +27,7 @@ namespace Kraken.UI
         {
             _canvasGroup.alpha = isVisible ? _visibleAlpha : 0;
             _canvasGroup.interactable = _interactableWhenVisible && isVisible;
+            _canvasGroup.blocksRaycasts = _interactableWhenVisible && isVisible;
         }
     }
 }

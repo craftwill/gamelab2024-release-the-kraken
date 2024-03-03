@@ -22,6 +22,6 @@ MonoBehaviour:
   timeBeforeHitboxDuration: 0.21
   hitboxDuration: 0.15
   attackCancelDuration: 0.5
-  totalAttackLength: 1
+  totalAttackLength: 2
   damage: 1
   comboStep: 1

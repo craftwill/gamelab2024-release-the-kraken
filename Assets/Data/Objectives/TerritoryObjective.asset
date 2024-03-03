@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f788d800c1c6bc40a4578f7438ab716, type: 3}
   m_Name: TerritoryObjective
   m_EditorClassIdentifier: 
-  objectiveName: Enemies are swarming the red zone!
-  objectiveTimer: 60
+  objectiveName: Defend the RED zone!
+  objectiveTimer: 45
   spawnFrequency: 2
   spawnData: {fileID: 11400000, guid: ae52b6ddd841e724aa2dc41bdb8f3f64, type: 2}

@@ -12,6 +12,8 @@ namespace Kraken
         [SerializeField] private EntityAttackComponent _attackComponent;
         [SerializeField] private BaseEntityController _entityController;
         [SerializeField] private EnemyZoneComponent _enemyZoneComponent;
+        [SerializeField] private PathfindingEntityController _pathfindingEntityController;
+        [SerializeField] private GameObject _minimapIcon;
 
         protected override void Awake()
         {
@@ -19,7 +21,7 @@ namespace Kraken
 
             _healthComponent.MaxHealth = _config.maxHealth;
             _attackComponent.InitSettings(_config.damageDealt, _config.attackCooldown, _config.attackDuration, _config.lockedIntoAttackDuration);
-            _entityController.InitSettings(_config.moveSpeed, _config.attackRange);
+            _entityController.InitSettings(_config);
             _enemyZoneComponent.InitSettings(_config.zoneOccupancyCount);
         }
 
@@ -43,13 +45,24 @@ namespace Kraken
             base.HandleTakeDamage(dmgAmount);
 
             _entityAnimationComponent.PlayHurtAnim();
+            _pathfindingEntityController.Stagger();
         }
 
         protected override void HandleDie()
         {
             base.HandleDie();
 
+            _minimapIcon.SetActive(false);
             photonView.RPC(nameof(RPC_All_Die), RpcTarget.All);
+
+            if (PhotonNetwork.IsMasterClient)
+            {
+                _enemyZoneComponent.RemoveEnemyFromZones();
+
+                //remove colliders to not interfere with ontriggerexit
+                var colliders = GetComponentsInChildren<Collider>();
+                System.Array.ForEach(colliders, x => x.enabled = false);
+            }
         }
 
         // send flying enemy with physics when it dies
