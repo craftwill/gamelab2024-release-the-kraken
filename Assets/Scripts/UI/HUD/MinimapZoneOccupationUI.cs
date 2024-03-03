@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace Kraken.UI
+namespace Kraken
 {
-    public class MinimapZoneOccupationUI : KrakenUIElement
+    public class MinimapZoneOccupationUI : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _percentage;
 
