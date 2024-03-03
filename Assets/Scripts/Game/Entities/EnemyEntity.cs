@@ -13,6 +13,7 @@ namespace Kraken
         [SerializeField] private BaseEntityController _entityController;
         [SerializeField] private EnemyZoneComponent _enemyZoneComponent;
         [SerializeField] private PathfindingEntityController _pathfindingEntityController;
+        [SerializeField] private GameObject _minimapIcon;
 
         protected override void Awake()
         {
@@ -51,6 +52,7 @@ namespace Kraken
         {
             base.HandleDie();
 
+            _minimapIcon.SetActive(false);
             photonView.RPC(nameof(RPC_All_Die), RpcTarget.All);
 
             if (PhotonNetwork.IsMasterClient)

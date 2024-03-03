@@ -16,6 +16,7 @@ namespace Kraken
         {
             public ObjectiveSO objective;
             public Zone spawnLocation;
+            public GameObject minimapHighlight;
         }
         [SerializeField] private List<ObjectiveWithLocation> _allObjectives;
 
@@ -114,7 +115,8 @@ namespace Kraken
 
             var objective = _allObjectives[objectiveIndex].objective;
             var zone = _allObjectives[objectiveIndex].spawnLocation;
-            var nextObjective = new ObjectiveInstance(objective, zone);
+            var minimapHighlight = _allObjectives[objectiveIndex].minimapHighlight;
+            var nextObjective = new ObjectiveInstance(objective, zone, minimapHighlight);
             objectiveIndex++;
             return nextObjective;
         }
