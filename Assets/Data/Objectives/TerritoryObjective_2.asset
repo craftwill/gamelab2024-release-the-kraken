@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: Defend the GREEN zone!
   objectiveTimer: 45
-  spawnFrequency: 2
+  spawnFrequency: 1
   spawnData: {fileID: 11400000, guid: ae52b6ddd841e724aa2dc41bdb8f3f64, type: 2}
