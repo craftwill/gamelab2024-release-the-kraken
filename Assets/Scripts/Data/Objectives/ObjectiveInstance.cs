@@ -12,9 +12,9 @@ namespace Kraken
         public bool IsCompleted { get; private set; } = false;
         public Zone Zone { get; private set; } = null;
 
-        public GameObject MinimapHighlight { get; private set; } = null;
+        public MinimapHighlightComponent MinimapHighlight { get; private set; } = null;
 
-        public ObjectiveInstance(ObjectiveSO objectiveSO, Zone zone, GameObject minimapHighlight)
+        public ObjectiveInstance(ObjectiveSO objectiveSO, Zone zone, MinimapHighlightComponent minimapHighlight)
         {
             this.objectiveSO = objectiveSO;
             this.Zone = zone;
@@ -25,7 +25,7 @@ namespace Kraken
         public void TriggerObjective()
         {
             objectiveSO.TriggerObjective(this);
-            MinimapHighlight?.SetActive(true);
+            MinimapHighlight?.SetVisible(true);
         }
 
         public void EndObjective(bool goToNext)
@@ -34,7 +34,7 @@ namespace Kraken
             if (IsCompleted) return;
             IsCompleted = true;
             objectiveSO.EndObjective(this);
-            MinimapHighlight?.SetActive(false);
+            MinimapHighlight?.SetVisible(false);
             if (goToNext) EventManager.Dispatch(EventNames.NextObjective, null);
         }
     }

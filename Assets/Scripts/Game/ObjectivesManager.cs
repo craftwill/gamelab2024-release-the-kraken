@@ -16,7 +16,7 @@ namespace Kraken
         {
             public ObjectiveSO objective;
             public Zone spawnLocation;
-            public GameObject minimapHighlight;
+            public MinimapHighlightComponent minimapHighlight;
         }
         [SerializeField] private List<ObjectiveWithLocation> _allObjectives;
 
