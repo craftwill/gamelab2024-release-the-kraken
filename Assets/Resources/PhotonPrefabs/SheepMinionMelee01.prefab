@@ -88,6 +88,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a5dd960308749d248bfb55d3f1925a2d,
         type: 2}
+    - target: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: _entityController
+      value: 
+      objectReference: {fileID: 5906959919119089799}
+    - target: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: _pathfindingEntityController
+      value: 
+      objectReference: {fileID: 5906959919119089799}
     - target: {fileID: 2745319777357053054, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -163,7 +173,8 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4623548838470204180, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6904248142507945207, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     m_AddedGameObjects:
@@ -171,11 +182,81 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2909190590866051640}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3106089648525901737, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 5906959919119089799}
   m_SourcePrefab: {fileID: 100100000, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
+--- !u!114 &619148179017791906 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6807864403598660797, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+    type: 3}
+  m_PrefabInstance: {fileID: 6263877508021169439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9076670195779392182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3130f33711de1064b83b6052ceaf4cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2014332115498473775 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5555642061347861552, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
     type: 3}
   m_PrefabInstance: {fileID: 6263877508021169439}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4009994421526845126 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7010872933795953625, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+    type: 3}
+  m_PrefabInstance: {fileID: 6263877508021169439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9076670195779392182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2519eef501d23d4a9fb45248d161fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!195 &4069510527136649702 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 7968008091505032441, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+    type: 3}
+  m_PrefabInstance: {fileID: 6263877508021169439}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8257171505656605459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+    type: 3}
+  m_PrefabInstance: {fileID: 6263877508021169439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9076670195779392182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e0f31c64a009cd48a76e0493edefb8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &9076670195779392182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3106089648525901737, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+    type: 3}
+  m_PrefabInstance: {fileID: 6263877508021169439}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5906959919119089799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9076670195779392182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a94f8cda13ede041a1663bc883f23b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 1
+  _attackRange: 2.5
+  _ownerEntity: {fileID: 8257171505656605459}
+  _entityAnimationComponent: {fileID: 4009994421526845126}
+  _navMeshAgent: {fileID: 4069510527136649702}
+  _entityAttackComponent: {fileID: 619148179017791906}

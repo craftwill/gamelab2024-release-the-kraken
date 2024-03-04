@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 
 using System.Collections.Generic;
@@ -8,16 +9,15 @@ using UnityEngine;
 
 
 
-public class ConeTelegraph : MonoBehaviour
+public class ConeTelegraph : MonoBehaviourPun
 {
-    [SerializeField, Range(0f, 1f)] private float chargeRatio;
-    [SerializeField] private float _range;
-    [SerializeField] private float _angle;
-    [SerializeField] private LayerMask _obstructingLayer;//layers that block the cone
-    [SerializeField] private int _triangleResolution = 120;
+    private float _range;
+    private float _angle;
+    private LayerMask _obstructingLayer;
+    private int _triangleResolution;
+    private Material _materialInner;
+    private Material _materialOuter;
 
-    [SerializeField] private Material _materialInner;
-    [SerializeField] private Material _materialOuter;
     [SerializeField] private MeshRenderer _meshRendererInner;
     [SerializeField] private MeshRenderer _meshRendererOuter;
     [SerializeField] private MeshFilter _meshFilterInner;
@@ -25,10 +25,16 @@ public class ConeTelegraph : MonoBehaviour
 
     private Mesh _coneMeshInner;
     private Mesh _coneMeshOuter;
-    
 
-    private void Start()
+    public void InitSettings(float range, float angle, LayerMask obstructingLayer, Material materialInner, Material materialOuter)
     {
+        _range = range;
+        _angle = angle;
+        _obstructingLayer = obstructingLayer;
+        _triangleResolution = (int)angle;
+        _materialInner = materialInner;
+        _materialOuter = materialOuter;
+
         _meshRendererInner.material = _materialInner;
         _meshRendererOuter.material = _materialOuter;
 
@@ -38,14 +44,7 @@ public class ConeTelegraph : MonoBehaviour
         _angle *= Mathf.Deg2Rad;
     }
 
-    private void FixedUpdate()
-    {
-        DrawVisionCone(chargeRatio);
-    }
-
-
-
-    void DrawVisionCone(float chargeRatio)
+    public void DrawCone(float chargeRatio, bool triggerPlayer = false)
     {
         int[] trianglesInner = new int[(_triangleResolution - 1) * 3];
         int[] trianglesOuter = new int[(_triangleResolution - 1) * 6];
@@ -75,7 +74,9 @@ public class ConeTelegraph : MonoBehaviour
 
             if(Physics.Raycast(transform.position, RaycastDirection, out RaycastHit hit, _range, _obstructingLayer))
             {
-                if (hit.transform.CompareTag("Player")){
+                if (triggerPlayer && hit.transform.CompareTag("Player"))
+                {
+
                 }
                 verticesInner[i + 1] = VertForward * Mathf.Min(chargeRatio * _range, hit.distance);
                 verticesOuter[2 * i] = VertForward * Mathf.Min(chargeRatio * _range, hit.distance);

@@ -10,7 +10,6 @@ namespace Kraken
     public class PathfindingEntityController : BaseEntityController
     {
         [SerializeField] protected Entity _ownerEntity;
-        [SerializeField] protected EntityAttackComponent _entityAttackComponent;
         [SerializeField] protected EntityAnimationComponent _entityAnimationComponent;
         [SerializeField] protected NavMeshAgent _navMeshAgent;
         private bool _staggered = false;
@@ -18,6 +17,7 @@ namespace Kraken
 
         protected Transform _target;
         protected float _pathfindingDistanceRadius;
+        protected float _closestPlayerDistance;
 
         public override void InitSettings(EnemyConfigSO config)
         {
@@ -63,8 +63,6 @@ namespace Kraken
 
             if (!PhotonNetwork.IsMasterClient) { return; }
 
-            if (_entityAttackComponent.IsAttacking) return;
-
             (PlayerEntity closestPlayer, float closestDistance) = _ownerEntity.GetClosestPlayer();
             
             if (closestPlayer == null || closestDistance > _pathfindingDistanceRadius || _staggered) 
@@ -73,13 +71,8 @@ namespace Kraken
                 return;
             }
 
+            _closestPlayerDistance = closestDistance;
             _target = closestPlayer.transform;
-
-            // Attack closest player if close enough
-            if (closestDistance <= _attackRange)
-            {
-                _entityAttackComponent.TryAttack();
-            }
         }
 
         public void Stagger()

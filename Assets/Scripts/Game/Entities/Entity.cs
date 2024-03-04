@@ -46,7 +46,7 @@ namespace Kraken
             _healthComponent.OnDie.RemoveAllListeners();
         }
 
-        public (PlayerEntity, float) GetClosestPlayer()
+        public virtual (PlayerEntity, float) GetClosestPlayer()
         {
             PlayerEntity closestPlayer = null;
             float closestDistance = 9999;
@@ -55,7 +55,7 @@ namespace Kraken
             {
                 if (playerEntity == null) { continue; }
 
-                float distance = Vector3.Distance(playerEntity.transform.position, this.transform.position);
+                float distance = Vector2.Distance(new Vector2(playerEntity.transform.position.x, playerEntity.transform.position.z), new Vector2(transform.position.x, transform.position.z));
                 if (distance <= closestDistance)
                 {
                     closestDistance = distance;
