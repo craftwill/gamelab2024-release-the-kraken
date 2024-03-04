@@ -215,6 +215,8 @@ MonoBehaviour:
   _enemyZoneComponent: {fileID: 6731842890158060048}
   _pathfindingEntityController: {fileID: 4623548838470204180}
   _minimapIcon: {fileID: 5847381557580223909}
+  _woolPrefab: {fileID: 5281229062787241931, guid: a7e2e3f5a7a656a44805d0841a9704b9,
+    type: 3}
 --- !u!114 &4623548838470204180
 MonoBehaviour:
   m_ObjectHideFlags: 0

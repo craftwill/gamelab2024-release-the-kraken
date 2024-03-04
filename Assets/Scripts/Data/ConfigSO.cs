@@ -60,5 +60,15 @@ namespace Kraken
 
         [Header("Minimap Settings")]
         public bool showBasicEnemies = false;
+
+        [Header("LilWool Settings")]
+        public float minWoolVerticalVelocity = 1f;
+        public float maxWoolVerticalVelocity = 2f;
+        public float maxWoolHorizontalVelocity = 1f;
+        public float maxWoolAngularVelocity = 5f;
+        public float woolRagdollDuration = 2f;
+        public float woolAcceleration = 10f;
+        public float woolDrag = 5f;
+        public int initialWoolQuantity = 0;
     }
 }

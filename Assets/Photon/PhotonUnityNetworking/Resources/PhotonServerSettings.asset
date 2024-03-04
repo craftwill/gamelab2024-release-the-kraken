@@ -70,6 +70,7 @@ MonoBehaviour:
   - RPC_All_UpdateDisplay
   - RPC_All_SetVisible
   - RPC_All_SetHighlightVisible
+  - RPC_All_SpawnWool
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

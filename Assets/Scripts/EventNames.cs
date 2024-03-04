@@ -52,6 +52,8 @@ namespace Kraken
 
         //Game Events
         public const string TogglePause = "TogglePause";
+        public const string GainWool = "GainWool";
+        public const string NoMoreWool = "NoMoreWool";
 
         //Player Events
         public const string PlayerDeath = "PlayerDeath";

@@ -96,7 +96,10 @@ namespace Kraken
             _navMeshAgent.isStopped = true;
             yield return new WaitForSeconds(Config.current.enemyStaggerDuration);
             _staggered = false;
-            _navMeshAgent.isStopped = false;
+            if (_navMeshAgent.isOnNavMesh)
+            {
+                _navMeshAgent.isStopped = false;
+            }
             _staggerCoroutine = null;
         }
     }
