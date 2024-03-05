@@ -36,7 +36,7 @@ namespace Kraken
         {
             base.Update();
 
-            if (!PhotonNetwork.IsMasterClient) return;
+            if (!PhotonNetwork.IsMasterClient || !_isActive) return;
 
             if (!_navMeshAgent.isOnNavMesh)
             {
@@ -61,7 +61,7 @@ namespace Kraken
         {
             base.FixedUpdate();
 
-            if (!PhotonNetwork.IsMasterClient) { return; }
+            if (!PhotonNetwork.IsMasterClient || !_isActive) return;
 
             (PlayerEntity closestPlayer, float closestDistance) = _ownerEntity.GetClosestPlayer();
             
@@ -73,6 +73,11 @@ namespace Kraken
 
             _closestPlayerDistance = closestDistance;
             _target = closestPlayer.transform;
+        }
+
+        private void OnDestroy()
+        {
+            StopAllCoroutines();
         }
 
         public void Stagger()
@@ -89,8 +94,18 @@ namespace Kraken
             _navMeshAgent.isStopped = true;
             yield return new WaitForSeconds(Config.current.enemyStaggerDuration);
             _staggered = false;
-            _navMeshAgent.isStopped = false;
+            // Will sometimes be disabled due to other game mechanics
+            if(_navMeshAgent.enabled)
+                _navMeshAgent.isStopped = false;
             _staggerCoroutine = null;
+        }
+
+        public override void SetControllerActive(bool isActive)
+        {
+            base.SetControllerActive(isActive);
+
+            _navMeshAgent.isStopped = !isActive;
+            _navMeshAgent.enabled = isActive;
         }
     }
 }
