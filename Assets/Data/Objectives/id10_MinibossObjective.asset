@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 733798a2ec03cf64a85eaf539f69baa0, type: 3}
+  m_Name: id10_MinibossObjective
+  m_EditorClassIdentifier: 
+  objectiveName: A strong foe spawned in the red zone!
+  objectiveTimer: 60
+  minibossPrefab: {fileID: 7282374055492276171, guid: 691daec9c7545fd4e983b7f43bb3a5b4,
+    type: 3}
+  territory: {fileID: 11400000, guid: 4363a71699020e24cb6335c1ae93c0f1, type: 2}

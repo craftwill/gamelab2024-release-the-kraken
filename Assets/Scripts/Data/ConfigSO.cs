@@ -18,6 +18,8 @@ namespace Kraken
         [Header("GameFlow")]
         [Tooltip("Skip need to wait for two players to have joined.")]
         public bool useDebugGameFlow = true;
+        [Tooltip("Randomize objectives")]
+        public bool randomizeObjectives = true;
         [Tooltip("Maximum time the game can last in seconds")]
         public int gameDuration = 600;
 
@@ -54,5 +56,11 @@ namespace Kraken
         public float ultimateDuration = 5f;
         public float ultimateTriggerTimer = 5f;
         public float ultimateCooldown = 10f;
+
+        [Header("Combat Settings")]
+        public float enemyStaggerDuration = 0.5f;
+
+        [Header("Minimap Settings")]
+        public bool showBasicEnemies = false;
     }
 }

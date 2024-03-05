@@ -48,6 +48,7 @@ namespace Kraken
         public const string ShowDefeatScreenUI = "ShowDefeatScreenUI";
         public const string UpdateUltimateUI = "UpdateUltimateUI";
         public const string UpdateHealthUI = "UpdateHealthUI";
+        public const string UpdateCurrentZoneOccupancyUI = "UpdateCurrentZoneOccupancyUI";
 
         //Game Events
         public const string TogglePause = "TogglePause";
@@ -82,5 +83,16 @@ namespace Kraken
         }
         public string ObjectiveName { get; private set; }
         public int ObjectiveTimer { get; private set; }
+    }
+
+    public class UpdateZoneOccupancyUIData : BytesData
+    {
+        public UpdateZoneOccupancyUIData(int enemyCount, int maxEnemyCount)
+        {
+            EnemyCount = enemyCount;
+            MaxEnemyCount = maxEnemyCount;
+        }
+        public int EnemyCount { get; private set; }
+        public int MaxEnemyCount { get; private set; }
     }
 }

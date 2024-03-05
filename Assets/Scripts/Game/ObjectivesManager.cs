@@ -5,6 +5,7 @@ using UnityEngine;
 using Photon.Pun;
 
 using Bytes;
+using MoreMountains.Tools;
 
 namespace Kraken
 {
@@ -15,6 +16,7 @@ namespace Kraken
         {
             public ObjectiveSO objective;
             public Zone spawnLocation;
+            public MinimapHighlightComponent minimapHighlight;
         }
         [SerializeField] private List<ObjectiveWithLocation> _allObjectives;
 
@@ -23,6 +25,9 @@ namespace Kraken
         private void Start()
         {
             if (!_isMaster) return;
+
+            // Temporary basic shuffle
+            if (Config.current.randomizeObjectives) _allObjectives.MMShuffle();
 
             EventManager.AddEventListener(EventNames.StartObjectives, HandleStartObjectives);
             EventManager.AddEventListener(EventNames.NextObjective, HandleNextObjectives);
@@ -76,7 +81,7 @@ namespace Kraken
         private void HandleStopObjectives(BytesData data)
         {
             Debug.Log("Stop objectives!");
-            currentObjective.EndObjective(false);
+            currentObjective?.EndObjective(false);
             currentObjective = null;
             UpdateObjectiveUI(-1);
         }
@@ -90,8 +95,6 @@ namespace Kraken
             }
 
             ObjectiveSO objectiveSO = currentObjective.objectiveSO;
-            
-
 
             photonView.RPC(nameof(RPC_All_UpdateObjectiveUI), RpcTarget.All, objectiveSO.objectiveName, timeLeft);
         }
@@ -112,7 +115,8 @@ namespace Kraken
 
             var objective = _allObjectives[objectiveIndex].objective;
             var zone = _allObjectives[objectiveIndex].spawnLocation;
-            var nextObjective = new ObjectiveInstance(objective, zone);
+            var minimapHighlight = _allObjectives[objectiveIndex].minimapHighlight;
+            var nextObjective = new ObjectiveInstance(objective, zone, minimapHighlight);
             objectiveIndex++;
             return nextObjective;
         }

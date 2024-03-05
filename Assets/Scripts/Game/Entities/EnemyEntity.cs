@@ -12,13 +12,15 @@ namespace Kraken
         [SerializeField] private EntityAttackComponent _attackComponent;
         [SerializeField] private BaseEntityController _entityController;
         [SerializeField] private EnemyZoneComponent _enemyZoneComponent;
+        [SerializeField] private PathfindingEntityController _pathfindingEntityController;
+        [SerializeField] private GameObject _minimapIcon;
 
         protected override void Awake()
         {
             base.Awake();
 
             _healthComponent.MaxHealth = _config.maxHealth;
-            _attackComponent.InitSettings(_config.damageDealt, _config.attackCooldown, _config.attackDuration, _config.lockedIntoAttackDuration);
+            if (_attackComponent) _attackComponent.InitSettings(_config.damageDealt, _config.attackCooldown, _config.attackDuration, _config.lockedIntoAttackDuration);
             _entityController.InitSettings(_config);
             _enemyZoneComponent.InitSettings(_config.zoneOccupancyCount);
         }
@@ -28,7 +30,7 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
         }
 
-        protected virtual void OnDestroy()
+        protected override void OnDestroy()
         {
             EventManager.RemoveEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
         }
@@ -43,13 +45,24 @@ namespace Kraken
             base.HandleTakeDamage(dmgAmount);
 
             _entityAnimationComponent.PlayHurtAnim();
+            _pathfindingEntityController.Stagger();
         }
 
         protected override void HandleDie()
         {
             base.HandleDie();
 
+            _minimapIcon.SetActive(false);
             photonView.RPC(nameof(RPC_All_Die), RpcTarget.All);
+
+            if (PhotonNetwork.IsMasterClient)
+            {
+                _enemyZoneComponent.RemoveEnemyFromZones();
+
+                //remove colliders to not interfere with ontriggerexit
+                var colliders = GetComponentsInChildren<Collider>();
+                System.Array.ForEach(colliders, x => x.enabled = false);
+            }
         }
 
         // send flying enemy with physics when it dies
@@ -76,6 +89,11 @@ namespace Kraken
                 if (this == null) return;
                 PhotonNetwork.Destroy(photonView);
             }, true);
+        }
+
+        public Kraken.Game.HealthComponent GetHealthComponent()
+        {
+            return _healthComponent;
         }
     }
 }

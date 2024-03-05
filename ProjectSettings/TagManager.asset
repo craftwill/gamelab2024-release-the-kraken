@@ -15,12 +15,12 @@ TagManager:
   - Water
   - UI
   - ZoneOccupancy
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - InvisibleWall
+  - Enemy
+  - Minimap
+  - Wall
+  - Wool
+  - Player
   - 
   - 
   - 
