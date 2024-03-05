@@ -16,6 +16,7 @@ namespace Kraken
         [SerializeField] private PathfindingEntityController _pathfindingEntityController;
         [SerializeField] private GameObject _minimapIcon;
         [SerializeField] private GameObject _woolPrefab;
+        [SerializeField] private int _woolDropped = 1;
 
         protected override void Awake()
         {
@@ -102,7 +103,10 @@ namespace Kraken
         [PunRPC]
         private void RPC_All_SpawnWool()
         {
-            Instantiate(_woolPrefab, gameObject.transform.position, Quaternion.identity);
+            for (int i = 0; i < _woolDropped; i++)
+            {
+                Instantiate(_woolPrefab, gameObject.transform.position, Quaternion.identity);
+            }
         }
     }
 }

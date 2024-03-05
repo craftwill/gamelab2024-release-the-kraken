@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1837869026512219782}
   - component: {fileID: 5147311760017598160}
   - component: {fileID: 4501505304600315502}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 9202293448660386269}
   - component: {fileID: 6178553950723016240}
   - component: {fileID: 6384618469004386142}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: LilWool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,9 +133,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 9202293448660386269}
   _collider: {fileID: 6178553950723016240}
-  _excludeLayerMaskWhenRushingToPlayer:
+  _playerLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4096
 --- !u!54 &9202293448660386269
 Rigidbody:
   m_ObjectHideFlags: 0

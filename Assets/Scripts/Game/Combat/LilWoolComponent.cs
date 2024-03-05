@@ -11,6 +11,7 @@ namespace Kraken
     {
         [SerializeField] private Rigidbody _rb;
         [SerializeField] private Collider _collider;
+        [SerializeField] private LayerMask _playerLayer;
         private GameObject[] _players = { };
         private GameObject _destinationPlayer = null;
         private Vector3 _velocity = Vector3.up;
@@ -73,7 +74,7 @@ namespace Kraken
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.layer == 11 && !_destroyed) // Player
+            if (((1 << other.gameObject.layer) & _playerLayer) != 0 && !_destroyed)
             {
                 _destroyed = true;
                 EventManager.Dispatch(EventNames.GainWool, new IntDataBytes(1));
