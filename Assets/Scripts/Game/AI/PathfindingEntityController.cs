@@ -30,6 +30,7 @@ namespace Kraken
             base.Start();
 
             _entityAnimationComponent.SetLoopedStateIdle();
+            _navMeshAgent.speed *= _moveSpeed;
         }
 
         protected override void Update()
