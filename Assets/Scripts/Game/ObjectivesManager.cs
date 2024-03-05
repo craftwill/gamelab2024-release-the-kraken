@@ -27,7 +27,7 @@ namespace Kraken
             if (!_isMaster) return;
 
             // Temporary basic shuffle
-            _allObjectives.MMShuffle();
+            if (Config.current.randomizeObjectives) _allObjectives.MMShuffle();
 
             EventManager.AddEventListener(EventNames.StartObjectives, HandleStartObjectives);
             EventManager.AddEventListener(EventNames.NextObjective, HandleNextObjectives);

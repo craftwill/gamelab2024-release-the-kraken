@@ -18,9 +18,9 @@ TagManager:
   - InvisibleWall
   - Enemy
   - Minimap
-  - 
-  - 
-  - 
+  - Wall
+  - Wool
+  - Player
   - 
   - 
   - 

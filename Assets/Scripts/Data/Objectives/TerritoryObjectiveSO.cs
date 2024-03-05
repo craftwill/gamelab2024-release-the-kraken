@@ -10,13 +10,6 @@ namespace Kraken
     [CreateAssetMenu(fileName = "TerritoryObjective", menuName = "Kraken/Systems/TerritoryObjective")]
     public class TerritoryObjectiveSO : ObjectiveSO
     {
-        [System.Serializable]
-        public class Entry
-        {
-            public int spawnRatio;
-            public GameObject prefab;
-        }
-
         [Header("Territory config")]
         [Tooltip("At what interval do enemies spawn")] public float spawnFrequency;
         [SerializeField] private EnemySpawnDataSO spawnData;

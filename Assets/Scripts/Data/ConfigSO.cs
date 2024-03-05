@@ -18,6 +18,8 @@ namespace Kraken
         [Header("GameFlow")]
         [Tooltip("Skip need to wait for two players to have joined.")]
         public bool useDebugGameFlow = true;
+        [Tooltip("Randomize objectives")]
+        public bool randomizeObjectives = true;
         [Tooltip("Maximum time the game can last in seconds")]
         public int gameDuration = 600;
 
