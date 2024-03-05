@@ -120,7 +120,12 @@ namespace Kraken
                 {
                     transform.forward = Vector3.Slerp(transform.forward, movementDirection.normalized, Time.deltaTime * Config.current.rotationSpeed);
                 }
-                movementDirection = new Vector3(transform.forward.x, _fallingVelocity, transform.forward.z);
+                movementDirection = new Vector3(0, _fallingVelocity, 0);
+                if (_moveVec != Vector2.zero)
+                {
+                    movementDirection.x = transform.forward.x;
+                    movementDirection.z = transform.forward.z;
+                }
                 if (_movementState == MovementState.Attacking)
                 {
                     _controller.Move(transform.forward * _attackMovementSpeed * Time.deltaTime);
