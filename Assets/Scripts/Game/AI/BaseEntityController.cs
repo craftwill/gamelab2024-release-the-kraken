@@ -9,6 +9,7 @@ namespace Kraken
     {
         protected float _moveSpeed = 2.5f;
         protected float _attackRange = 2.5f;
+        protected bool _isActive = true;
 
         public virtual void InitSettings(EnemyConfigSO config)
         {
@@ -34,6 +35,11 @@ namespace Kraken
         protected virtual void FixedUpdate()
         {
 
+        }
+
+        public virtual void SetControllerActive(bool isActive) 
+        {
+            _isActive = isActive;
         }
     }
 }
