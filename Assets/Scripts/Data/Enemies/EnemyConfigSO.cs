@@ -17,7 +17,7 @@ namespace Kraken
         public float attackRange = 2.5f;
         public float damageDealt = 1;
         public float attackCooldown = 1f;
-        public float attackDuration = 0.1f;
+        [Tooltip("How long is the hitbox out")] public float attackDuration = 0.1f;
         public float lockedIntoAttackDuration = 0.5f;
 
         [Header("Zone occupancy")]

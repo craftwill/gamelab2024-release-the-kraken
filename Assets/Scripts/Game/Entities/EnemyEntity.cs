@@ -22,7 +22,7 @@ namespace Kraken
             base.Awake();
 
             _healthComponent.MaxHealth = _config.maxHealth;
-            _attackComponent.InitSettings(_config.damageDealt, _config.attackCooldown, _config.attackDuration, _config.lockedIntoAttackDuration);
+            if (_attackComponent) _attackComponent.InitSettings(_config.damageDealt, _config.attackCooldown, _config.attackDuration, _config.lockedIntoAttackDuration);
             _entityController.InitSettings(_config);
             _enemyZoneComponent.InitSettings(_config.zoneOccupancyCount);
         }
@@ -32,7 +32,7 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
         }
 
-        protected virtual void OnDestroy()
+        protected override void OnDestroy()
         {
             EventManager.RemoveEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
         }
@@ -92,6 +92,11 @@ namespace Kraken
                 if (this == null) return;
                 PhotonNetwork.Destroy(photonView);
             }, true);
+        }
+
+        public Kraken.Game.HealthComponent GetHealthComponent()
+        {
+            return _healthComponent;
         }
 
         [PunRPC]
