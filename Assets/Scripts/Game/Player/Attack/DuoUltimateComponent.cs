@@ -25,9 +25,19 @@ namespace Kraken
         private static bool _otherPlayerWaiting = false;
         private bool _playersSeparated = false;
         private static bool _ultimateAvailable = true;
+        private static int _woolQuantity = 0;
         private Coroutine _inputTimerCoroutine;
         private Coroutine ultimateTimerCoroutine;
 
+        private void Start()
+        {
+            EventManager.AddEventListener(EventNames.UpdateWoolQuantity, UpdateWoolQuantity);
+        }
+
+        private void OnDestroy()
+        {
+            EventManager.RemoveEventListener(EventNames.UpdateWoolQuantity, UpdateWoolQuantity);
+        }
 
         private void Update()
         {
@@ -120,6 +130,11 @@ namespace Kraken
             yield return new WaitForSeconds(Config.current.ultimateCooldown);
             _ultimateAvailable = true;
             EventManager.Dispatch(EventNames.UpdateUltimateUI, new FloatDataBytes(0));
+        }
+
+        private void UpdateWoolQuantity(BytesData data)
+        {
+            _woolQuantity = ((IntDataBytes)data).IntValue;
         }
 
         [PunRPC]

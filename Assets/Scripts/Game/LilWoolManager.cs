@@ -30,9 +30,9 @@ namespace Kraken
 
         private void OnQuantityUpdate()
         {
+            EventManager.Dispatch(EventNames.UpdateWoolQuantity, new IntDataBytes(_woolQuantity));
             if ( _woolQuantity <= 0 )
             {
-                EventManager.Dispatch(EventNames.NoMoreWool, null);
                 _woolQuantity = 0;
             }
         }
