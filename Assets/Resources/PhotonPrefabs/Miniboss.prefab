@@ -395,6 +395,21 @@ PrefabInstance:
       propertyPath: _inflictDamageComponent
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7943204919484701936, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943204919484701936, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943204919484701936, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8581956803195504288, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: sceneViewId
@@ -403,6 +418,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4623548838470204180, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     - {fileID: 6807864403598660797, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
+    - {fileID: 6273920595487294825, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3528024205557268655, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     m_AddedGameObjects:
