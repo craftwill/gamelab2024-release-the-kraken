@@ -774,8 +774,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -809.0,
-            "y": 525.0,
+            "x": -812.0,
+            "y": 496.0,
             "width": 172.0,
             "height": 34.0
         }
@@ -1964,9 +1964,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1167.0,
-            "y": 604.0,
-            "width": 153.99993896484376,
+            "x": -1170.0,
+            "y": 575.0,
+            "width": 154.0,
             "height": 34.0
         }
     },
@@ -1997,13 +1997,13 @@
     },
     "m_Name": "Sample Texture 2D",
     "m_DrawState": {
-        "m_Expanded": true,
+        "m_Expanded": false,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1404.9998779296875,
-            "y": 281.0,
-            "width": 182.9998779296875,
-            "height": 251.0
+            "x": -1405.0,
+            "y": 321.0,
+            "width": 180.0,
+            "height": 155.0
         }
     },
     "m_Slots": [
@@ -2205,10 +2205,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1595.9998779296875,
-            "y": 320.9999694824219,
+            "x": -1596.0,
+            "y": 361.0000305175781,
             "width": 144.0,
-            "height": 34.0
+            "height": 33.999969482421878
         }
     },
     "m_Slots": [
@@ -2827,13 +2827,13 @@
     },
     "m_Name": "Sample Texture 2D",
     "m_DrawState": {
-        "m_Expanded": true,
+        "m_Expanded": false,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1404.0,
-            "y": 542.0,
-            "width": 183.0,
-            "height": 251.0
+            "x": -1407.0,
+            "y": 513.0,
+            "width": 180.0,
+            "height": 155.0
         }
     },
     "m_Slots": [
@@ -2942,10 +2942,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -363.7933349609375,
-            "y": 458.2396240234375,
-            "width": 0.0,
-            "height": 0.0
+            "x": -369.00006103515627,
+            "y": 399.0000305175781,
+            "width": 140.00003051757813,
+            "height": 34.0
         }
     },
     "m_Slots": [
@@ -3370,7 +3370,7 @@
     },
     "m_Name": "Sample Texture 2D",
     "m_DrawState": {
-        "m_Expanded": true,
+        "m_Expanded": false,
         "m_Position": {
             "serializedVersion": "2",
             "x": -1407.0,
@@ -3559,9 +3559,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -944.9998779296875,
-            "y": 541.0,
-            "width": 129.99993896484376,
+            "x": -948.0,
+            "y": 512.0,
+            "width": 130.0,
             "height": 118.0
         }
     },
@@ -3602,8 +3602,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1610.0,
-            "y": 581.9999389648438,
+            "x": -1613.0,
+            "y": 553.0,
             "width": 156.0,
             "height": 34.0
         }
@@ -3838,10 +3838,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -571.0000610351563,
-            "y": 515.0000610351563,
-            "width": 171.99993896484376,
-            "height": 141.9998779296875
+            "x": -585.0,
+            "y": 486.0,
+            "width": 172.0,
+            "height": 142.0
         }
     },
     "m_Slots": [
