@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 7729896154172495490}
   - component: {fileID: 8495025156255695186}
   - component: {fileID: 352419719905337942}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: DetectDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

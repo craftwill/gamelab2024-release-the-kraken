@@ -1,3 +1,4 @@
+using Bytes;
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,12 +13,15 @@ namespace Kraken
         [SerializeField] private MinibossAttackAdditionalConfig _attackConfig;
 
         private Coroutine _drawCoroutine = null;
+        private float _cooldown = 0f;
+        private bool _isOnCooldown = false;
 
         //MinibossEntityController does not use EntityAttackComponent
         public override void InitSettings(EnemyConfigSO config)
         {
             base.InitSettings(config);
             _inflictDamageComponent.Damage = config.damageDealt;
+            _cooldown = config.attackCooldown;
         }
 
         protected override void Start()
@@ -40,10 +44,11 @@ namespace Kraken
 
             if (!PhotonNetwork.IsMasterClient) return;
 
-            if(_target && _closestPlayerDistance <= _attackRange)
+            if(_target && !_isOnCooldown && _closestPlayerDistance <= _attackRange)
             {
                 if (_drawCoroutine is null)
                 {
+                    _isOnCooldown = true;
                     photonView.RPC(nameof(RPC_ALL_StartConeTelegraph), RpcTarget.All);
                 }
             }
@@ -71,6 +76,9 @@ namespace Kraken
             _coneTelegraph.DrawCone(1f, true);
             _coneTelegraph.gameObject.SetActive(false);
             _drawCoroutine = null;
+
+            Animate.Delay(_cooldown, () => _isOnCooldown = false, true);
+
         }
     }
 
