@@ -19,6 +19,7 @@ namespace Kraken
             public MinimapHighlightComponent minimapHighlight;
         }
         [SerializeField] private List<ObjectiveWithLocation> _allObjectives;
+        [SerializeField] private ObjectiveWithLocation _bossObjective;
 
         private ObjectiveInstance currentObjective = null;
         private int objectiveIndex = 0;
