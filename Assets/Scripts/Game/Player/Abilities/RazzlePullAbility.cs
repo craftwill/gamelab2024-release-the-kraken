@@ -112,7 +112,7 @@ namespace Kraken
             Rigidbody rg = enemy.GetComponent<Rigidbody>();
             Vector3 dirToCenter = -(enemy.transform.position - transform.position).normalized;
             float distanceToCenter = Vector3.Distance(enemy.transform.position, transform.position);
-            Vector3 pullForce = dirToCenter;//(dirToCenter * (3f + _timeSinceStart * _timeSinceStart));
+            Vector3 pullForce = dirToCenter;
             Vector3 finalForce = (pullForce / distanceToCenter) * strengthMultiplier;
             rg.AddForce(finalForce, forceMode);
             // Drag stronger the longer time advances and the closer to center

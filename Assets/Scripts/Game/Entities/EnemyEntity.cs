@@ -75,10 +75,6 @@ namespace Kraken
             Rigidbody rg = GetComponent<Rigidbody>();
             rg.isKinematic = false;
 
-            //SphereCollider colAdded = gameObject.AddComponent<SphereCollider>();
-           // colAdded.radius = 0.2f;
-
-            //Rigidbody rgAdded = gameObject.AddComponent<Rigidbody>();
             Vector3 closestPlayerPos = GetClosestPlayer().Item1.transform.position;
             Vector3 dirToSend = -(closestPlayerPos - this.transform.position).normalized;
             Vector3 verticalForce = new Vector3(0f, Random.Range(1f, 10f), 0f);
