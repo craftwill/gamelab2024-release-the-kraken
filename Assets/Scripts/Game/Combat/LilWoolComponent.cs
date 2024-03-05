@@ -15,6 +15,7 @@ namespace Kraken
         private GameObject _destinationPlayer = null;
         private Vector3 _velocity = Vector3.up;
         private bool _ragdolling = true;
+        private bool _destroyed = false;
         private void Start()
         {
             float maxHorizontalVelocity = Config.current.maxWoolHorizontalVelocity;
@@ -72,8 +73,9 @@ namespace Kraken
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.layer == 11) // Player
+            if (other.gameObject.layer == 11 && !_destroyed) // Player
             {
+                _destroyed = true;
                 EventManager.Dispatch(EventNames.GainWool, new IntDataBytes(1));
                 Destroy(gameObject);
             }
