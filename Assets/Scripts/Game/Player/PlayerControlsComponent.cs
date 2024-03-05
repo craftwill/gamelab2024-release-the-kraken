@@ -129,15 +129,18 @@ namespace Kraken
                 {
                     _controller.Move(movementDirection * Config.current.dashSpeed * Time.deltaTime);
                 }
-                else if (_movementState == MovementState.Sprinting)
+                else if (_moveVec != Vector2.zero)
                 {
-                    _controller.Move(movementDirection * Config.current.sprintSpeed * Time.deltaTime);
-                }
-                else
-                {
-                    movementDirection.x *= _movementMagnitude;
-                    movementDirection.z *= _movementMagnitude;
-                    _controller.Move(movementDirection * Config.current.moveSpeed * Time.deltaTime);
+                    if (_movementState == MovementState.Sprinting)
+                    {
+                        _controller.Move(movementDirection * Config.current.sprintSpeed * Time.deltaTime);
+                    }
+                    else
+                    {
+                        movementDirection.x *= _movementMagnitude;
+                        movementDirection.z *= _movementMagnitude;
+                        _controller.Move(movementDirection * Config.current.moveSpeed * Time.deltaTime);
+                    }
                 }
 
                 if (!_currentScheme.Equals(_input.currentControlScheme))
