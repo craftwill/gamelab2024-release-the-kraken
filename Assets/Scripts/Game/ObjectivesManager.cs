@@ -21,14 +21,14 @@ namespace Kraken
         [SerializeField] private List<ObjectiveWithLocation> _allObjectives;
 
         private ObjectiveInstance currentObjective = null;
-        private static int objectiveIndex = 0;
+        private int objectiveIndex = 0;
         private void Start()
         {
             if (!_isMaster) return;
 
             // Temporary basic shuffle
             if (Config.current.randomizeObjectives) _allObjectives.MMShuffle();
-
+            Debug.Log(_allObjectives.Count);
             EventManager.AddEventListener(EventNames.StartObjectives, HandleStartObjectives);
             EventManager.AddEventListener(EventNames.NextObjective, HandleNextObjectives);
             EventManager.AddEventListener(EventNames.StopObjectives, HandleStopObjectives);

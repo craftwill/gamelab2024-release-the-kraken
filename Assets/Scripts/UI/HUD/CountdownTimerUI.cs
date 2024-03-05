@@ -47,7 +47,7 @@ namespace Kraken.UI
                 _countdownAnimator.Play("AnimatorCountdownUI_step", -1, 0);
 
                 return true;
-            });
+            }, -1, true);
         }
     }
 }
