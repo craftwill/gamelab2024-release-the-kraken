@@ -25,6 +25,13 @@ namespace Kraken
 
         [Header("Player settings")]
         public int maxHealth = 100;
+        [Header("Razzle")]
+        public float razzleAbilityCooldown = 10f;
+        public float razzleAbilityPullDuration = 5f;
+        public float razzleAbilityRadius = 4f;
+        public float razzleAbilityInitialPullStrength = 4f;
+        public float razzleAbilityPullStrengthOverTime = 1.5f;
+        public float razzleAbilitySpawnDistanceOffset = 5f;
 
         [Header("Player Controls settings")]
         public float moveSpeed = 7.5f;
