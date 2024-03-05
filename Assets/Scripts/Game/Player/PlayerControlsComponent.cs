@@ -120,7 +120,12 @@ namespace Kraken
                 {
                     transform.forward = Vector3.Slerp(transform.forward, movementDirection.normalized, Time.deltaTime * Config.current.rotationSpeed);
                 }
-                movementDirection = new Vector3(transform.forward.x, _fallingVelocity, transform.forward.z);
+                movementDirection = new Vector3(0, _fallingVelocity, 0);
+                if (_moveVec != Vector2.zero)
+                {
+                    movementDirection.x = transform.forward.x;
+                    movementDirection.z = transform.forward.z;
+                }
                 if (_movementState == MovementState.Attacking)
                 {
                     _controller.Move(transform.forward * _attackMovementSpeed * Time.deltaTime);
@@ -129,18 +134,15 @@ namespace Kraken
                 {
                     _controller.Move(movementDirection * Config.current.dashSpeed * Time.deltaTime);
                 }
-                else if (_moveVec != Vector2.zero)
+                else if (_movementState == MovementState.Sprinting)
                 {
-                    if (_movementState == MovementState.Sprinting)
-                    {
-                        _controller.Move(movementDirection * Config.current.sprintSpeed * Time.deltaTime);
-                    }
-                    else
-                    {
-                        movementDirection.x *= _movementMagnitude;
-                        movementDirection.z *= _movementMagnitude;
-                        _controller.Move(movementDirection * Config.current.moveSpeed * Time.deltaTime);
-                    }
+                    _controller.Move(movementDirection * Config.current.sprintSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    movementDirection.x *= _movementMagnitude;
+                    movementDirection.z *= _movementMagnitude;
+                    _controller.Move(movementDirection * Config.current.moveSpeed * Time.deltaTime);
                 }
 
                 if (!_currentScheme.Equals(_input.currentControlScheme))
