@@ -8,6 +8,7 @@ namespace Kraken
     public class MinibossEntityController : PathfindingEntityController
     {
         [SerializeField] private ConeTelegraph _coneTelegraph;
+        [SerializeField] private InflictDamageComponent _inflictDamageComponent;//could probably avoid using this component
         [SerializeField] private MinibossAttackAdditionalConfig _attackConfig;
 
         private Coroutine _drawCoroutine = null;
@@ -16,13 +17,14 @@ namespace Kraken
         public override void InitSettings(EnemyConfigSO config)
         {
             base.InitSettings(config);
+            _inflictDamageComponent.Damage = config.damageDealt;
         }
 
         protected override void Start()
         {
             base.Start();
 
-            _coneTelegraph.InitSettings(_attackRange, _attackConfig.angle, _attackConfig.obstructingLayer, _attackConfig.materialInner, _attackConfig.materialOuter);
+            _coneTelegraph.InitSettings(_attackRange, _attackConfig.angle, _attackConfig.obstructingLayer, _attackConfig.playerLayer, _attackConfig.materialInner, _attackConfig.materialOuter);
 
             if (!PhotonNetwork.IsMasterClient) return;
         }
@@ -40,8 +42,10 @@ namespace Kraken
 
             if(_target && _closestPlayerDistance <= _attackRange)
             {
-
-                photonView.RPC(nameof(RPC_ALL_StartConeTelegraph), RpcTarget.All);
+                if (_drawCoroutine is null)
+                {
+                    photonView.RPC(nameof(RPC_ALL_StartConeTelegraph), RpcTarget.All);
+                }
             }
         }
 
@@ -49,11 +53,9 @@ namespace Kraken
         [PunRPC]
         private void RPC_ALL_StartConeTelegraph()
         {
-            if(_drawCoroutine is null)
-            {
-                _coneTelegraph.gameObject.SetActive(true);
-                _drawCoroutine = StartCoroutine(ConeCharge());
-            }
+            _coneTelegraph.gameObject.SetActive(true);
+            _drawCoroutine = StartCoroutine(ConeCharge());
+            
         }
 
         private IEnumerator ConeCharge()
@@ -66,7 +68,7 @@ namespace Kraken
                 yield return new WaitForEndOfFrame();
                 time += Time.deltaTime;
             }
-
+            _coneTelegraph.DrawCone(1f, true);
             _coneTelegraph.gameObject.SetActive(false);
             _drawCoroutine = null;
         }
@@ -78,6 +80,7 @@ namespace Kraken
         public float chargeTime;
         public float angle;
         public LayerMask obstructingLayer;//layers that block the cone
+        public LayerMask playerLayer;
         public Material materialInner;
         public Material materialOuter;
     }

@@ -52,6 +52,7 @@ MonoBehaviour:
   _meshRendererOuter: {fileID: 6838476657534772776}
   _meshFilterInner: {fileID: 8724877189563924057}
   _meshFilterOuter: {fileID: 3433447377392701766}
+  _inflictDamageComponent: {fileID: 9012708890727214374}
 --- !u!114 &9012708890727214374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +137,7 @@ MonoBehaviour:
   _meshRendererOuter: {fileID: 6838476657534772776}
   _meshFilterInner: {fileID: 8724877189563924057}
   _meshFilterOuter: {fileID: 3433447377392701766}
+  _inflictDamageComponent: {fileID: 0}
 --- !u!23 &268411497363306965
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -456,12 +458,16 @@ MonoBehaviour:
   _entityAnimationComponent: {fileID: 3404900828455816123}
   _navMeshAgent: {fileID: 2350652154481233051}
   _coneTelegraph: {fileID: 801501132520092306}
+  _inflictDamageComponent: {fileID: 9012708890727214374}
   _attackConfig:
-    chargeTime: 5
+    chargeTime: 3
     angle: 60
     obstructingLayer:
       serializedVersion: 2
       m_Bits: 1152
+    playerLayer:
+      serializedVersion: 2
+      m_Bits: 4096
     materialInner: {fileID: 2100000, guid: 13c654d50cf991c4fbbac1d8495671df, type: 2}
     materialOuter: {fileID: 2100000, guid: 64294c33826ea3a43b298d38f07759c3, type: 2}
 --- !u!4 &7499172055204269084 stripped
