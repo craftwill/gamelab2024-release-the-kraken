@@ -25,13 +25,13 @@ namespace Kraken
 
         public void ActivateAbility()
         {
-            InitAbility();
             photonView.RPC(nameof(RPC_All_ActivateDazzleAbility), RpcTarget.All);
         }
 
         [PunRPC]
         private void RPC_All_ActivateDazzleAbility()
         {
+            InitAbility();
             List<EnemyEntity> enemiesFound = CombatUtils.GetEnemyEntitiesInRadius(transform.position, _radius);
 
             foreach (EnemyEntity enemyEntity in enemiesFound)
@@ -41,7 +41,7 @@ namespace Kraken
 
             Animate.Delay(_abilityCircleLifeTime, () => 
             {
-                if (!PhotonNetwork.IsMasterClient) return;
+                if (!photonView.AmOwner) return;
 
                 PhotonNetwork.Destroy(photonView);
             });

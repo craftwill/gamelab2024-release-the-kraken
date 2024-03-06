@@ -33,13 +33,13 @@ namespace Kraken
 
         public void ActivateAbility()
         {
-            InitAbility();
             photonView.RPC(nameof(RPC_All_ActivateRazzleAbility), RpcTarget.All);
         }
 
         [PunRPC]
         private void RPC_All_ActivateRazzleAbility()
         {
+            InitAbility();
             _isPulling = true;
             _timeSinceStart = 0;
 
