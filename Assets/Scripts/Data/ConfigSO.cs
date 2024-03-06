@@ -32,6 +32,13 @@ namespace Kraken
         public float razzleAbilityInitialPullStrength = 4f;
         public float razzleAbilityPullStrengthOverTime = 1.5f;
         public float razzleAbilitySpawnDistanceOffset = 5f;
+        [Header("Dazzle")]
+        public float dazzleAbilityCooldown = 10f;
+        public float dazzleAbilityJumpDuration = 0.27f;
+        public float dazzleAbilityJumpDistance = 7f;
+        public float dazzleAbilityJumpHeigth = 3f;
+        public float dazzleAbilityDamage = 5f;
+        public float dazzleAbilityRadius = 3f;
 
         [Header("Player Controls settings")]
         public float moveSpeed = 7.5f;

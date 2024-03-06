@@ -17,6 +17,7 @@ namespace Kraken
         protected override void Awake()
         {
             base.Awake();
+
             _healthComponent.MaxHealth = Config.current.maxHealth;
         }
 
@@ -32,8 +33,10 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
         }
 
-        protected virtual void OnDestroy()
+        protected override void OnDestroy()
         {
+            base.OnDestroy();
+
             EventManager.RemoveEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
         }
 
@@ -41,7 +44,9 @@ namespace Kraken
         {
             if (!_isOwner) return;
 
-            _controls.DisableControls();
+            _controls.SetControlsEnabled(false);
+            _controls.SetCameraControlsEnabled(false);
+            _controls.SetCameraEnabled(false);
         }
 
         protected override void HandleDie()
@@ -74,6 +79,11 @@ namespace Kraken
         private void RPC_Other_PlayAttackAnimationCombo(int comboStep) 
         {
             _playerAnimationComponent.PlayAttackAnimationCombo(comboStep);
+        }
+
+        public void SetControlsEnabled(bool controlsEnabled) 
+        {
+            _controls.SetControlsEnabled(controlsEnabled);
         }
     }
 }

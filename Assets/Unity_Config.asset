@@ -28,6 +28,8 @@ MonoBehaviour:
   razzleAbilityInitialPullStrength: 60
   razzleAbilityPullStrengthOverTime: 10
   razzleAbilitySpawnDistanceOffset: 9
+  dazzleAbilityDamage: 5
+  dazzleAbilityRadius: 2.5
   moveSpeed: 7.5
   sprintSpeed: 14
   attackMoveSpeed: 3

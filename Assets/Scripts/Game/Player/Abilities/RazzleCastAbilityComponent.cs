@@ -1,7 +1,8 @@
-using Bytes;
-using Kraken.Network;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+using Kraken.Network;
 
 namespace Kraken
 {
@@ -35,10 +36,9 @@ namespace Kraken
         public override void CastAbility()
         {
             if (!CanCastAbility()) return;
+            if (!photonView.AmOwner) return;
 
             base.CastAbility();
-
-            if (!photonView.AmOwner) return;
 
             Vector3 spawnPos = transform.position + transform.forward * _spawnDistanceOffset + new Vector3(0f, _verticalOffset, 0f);
             GameObject ability = NetworkUtils.Instantiate(_abilityPrefab.name, spawnPos);
