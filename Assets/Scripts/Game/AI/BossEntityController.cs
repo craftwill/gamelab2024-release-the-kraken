@@ -29,15 +29,6 @@ namespace Kraken
             base.FixedUpdate();
 
             if (!PhotonNetwork.IsMasterClient) return;
-
-            //if (_target && !_isOnCooldown && _closestPlayerDistance <= _attackRange)
-            //{
-            //    if (_drawCoroutine is null)
-            //    {
-            //        _isOnCooldown = true;
-            //        photonView.RPC(nameof(RPC_ALL_StartConeTelegraph), RpcTarget.All);
-            //    }
-            //}
         }
     }
 }

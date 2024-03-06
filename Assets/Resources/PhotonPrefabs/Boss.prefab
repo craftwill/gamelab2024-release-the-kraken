@@ -63,6 +63,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 5555642061347861552, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555642061347861552, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555642061347861552, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8581956803195504288, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: sceneViewId
@@ -125,8 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3905b7c82fa7fbf4b901f81fa89f0078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 2.5
-  _attackRange: 2.5
   _ownerEntity: {fileID: 7321243370245587170}
   _entityAnimationComponent: {fileID: 2354055616582417719}
   _navMeshAgent: {fileID: 3419599846057638423}

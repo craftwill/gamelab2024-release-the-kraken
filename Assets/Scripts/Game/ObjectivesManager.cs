@@ -23,6 +23,8 @@ namespace Kraken
 
         private ObjectiveInstance currentObjective = null;
         private int objectiveIndex = 0;
+        private int minibossAlives = 0;
+
         private void Start()
         {
             if (!_isMaster) return;
@@ -33,6 +35,7 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.StartObjectives, HandleStartObjectives);
             EventManager.AddEventListener(EventNames.NextObjective, HandleNextObjectives);
             EventManager.AddEventListener(EventNames.StopObjectives, HandleStopObjectives);
+            EventManager.AddEventListener(EventNames.MinibossCountChange, HandleMinibossCount);
         }
 
         private void OnDestroy()
@@ -42,6 +45,15 @@ namespace Kraken
             EventManager.RemoveEventListener(EventNames.StartObjectives, HandleStartObjectives);
             EventManager.RemoveEventListener(EventNames.NextObjective, HandleNextObjectives);
             EventManager.RemoveEventListener(EventNames.StopObjectives, HandleStopObjectives);
+        }
+
+        private void HandleMinibossCount(BytesData data)
+        {
+            int count = (data as IntDataBytes).IntValue;
+            minibossAlives += count;
+
+            if (minibossAlives == 0 && currentObjective == null)
+                HandleNextObjectives(null);
         }
 
         private void HandleStartObjectives(BytesData data) 
@@ -109,9 +121,7 @@ namespace Kraken
         private ObjectiveInstance GetNextObjective()
         {
             if (objectiveIndex >= _allObjectives.Count) {
-
-                EventManager.Dispatch(EventNames.PlayerWin, null);
-                return null;
+                return TrySpawnBossObjective();
             }
 
             var objective = _allObjectives[objectiveIndex].objective;
@@ -120,6 +130,13 @@ namespace Kraken
             var nextObjective = new ObjectiveInstance(objective, zone, minimapHighlight);
             objectiveIndex++;
             return nextObjective;
+        }
+
+        private ObjectiveInstance TrySpawnBossObjective()
+        {
+            if (minibossAlives == 0) return new ObjectiveInstance(_bossObjective.objective, _bossObjective.spawnLocation, _bossObjective.minimapHighlight);
+
+            return null;
         }
     }
 }

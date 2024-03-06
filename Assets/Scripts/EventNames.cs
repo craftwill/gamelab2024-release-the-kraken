@@ -34,6 +34,7 @@ namespace Kraken
         public const string NextObjective = "NextObjective";
         public const string StopObjectives = "StopObjectives";
         public const string ZoneFullLoss = "ZoneFullLoss";
+        public const string MinibossCountChange = "MinibossDeath";
 
         // Spawning
         public const string StartSpawning = "StartSpawning";

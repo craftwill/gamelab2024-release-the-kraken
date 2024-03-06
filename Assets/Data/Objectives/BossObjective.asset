@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: BossObjective
   m_EditorClassIdentifier: 
   objectiveName: The final boss spawned!
-  objectiveTimer: 60
-  bossPrefab: {fileID: 0}
+  objectiveTimer: -1
+  bossPrefab: {fileID: 7708995712779942215, guid: 6f7a9bd6f58aead4b8cacc9f5f345a70,
+    type: 3}
