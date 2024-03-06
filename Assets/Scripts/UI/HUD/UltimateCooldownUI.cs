@@ -14,6 +14,8 @@ namespace Kraken.UI
         private TextMeshProUGUI _text;
         private TextMeshProUGUI _cooldownText;
         private Coroutine _cooldownCoroutine;
+        private int _woolQuantity = 0;
+        private bool _inUltimate = false;
 
         private void Start()
         {
@@ -21,6 +23,7 @@ namespace Kraken.UI
             _cooldownText = _txtCooldown.GetComponent<TextMeshProUGUI>();
             //EventManager.AddEventListener(EventNames.UpdateUltimateUI, HandleUpdateUltimateUI);
             EventManager.AddEventListener(EventNames.UpdateWoolQuantity, HandleUpdateWoolQuantity);
+            EventManager.AddEventListener(EventNames.UltimateRunning, HandleUltimateRunning);
             _text.text = "0 wool\nNeed " + Config.current.ultimateMinWool + " to use ultimate";
         }
 
@@ -28,6 +31,7 @@ namespace Kraken.UI
         {
             //EventManager.RemoveEventListener(EventNames.UpdateUltimateUI, HandleUpdateUltimateUI);
             EventManager.RemoveEventListener(EventNames.UpdateWoolQuantity, HandleUpdateWoolQuantity);
+            EventManager.RemoveEventListener(EventNames.UltimateRunning, HandleUltimateRunning);
         }
 
         public void HandleUpdateUltimateUI(BytesData data)
@@ -51,9 +55,24 @@ namespace Kraken.UI
 
         private void HandleUpdateWoolQuantity(BytesData data)
         {
-            int woolQty = ((IntDataBytes)data).IntValue;
-            string text = woolQty.ToString() + " wool";
-            if (woolQty < Config.current.ultimateMinWool)
+            _woolQuantity = ((IntDataBytes)data).IntValue;
+            RefreshText();
+        }
+
+        private void HandleUltimateRunning(BytesData data)
+        {
+            _inUltimate = ((BoolDataBytes)data).BoolValue;
+            RefreshText();
+        }
+
+        private void RefreshText()
+        {
+            string text = _woolQuantity.ToString() + " wool";
+            if (_inUltimate)
+            {
+                text += "\n ";
+            }
+            else if (_woolQuantity < Config.current.ultimateMinWool)
             {
                 text += "\nNeed " + Config.current.ultimateMinWool + " to use ultimate";
             }

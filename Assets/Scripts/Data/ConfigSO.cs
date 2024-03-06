@@ -64,6 +64,7 @@ namespace Kraken
         public float ultimateTriggerTimer = 5f;
         public float ultimateCooldown = 10f;
         public int ultimateMinWool = 10;
+        public float ultimateDistancePerWool = 1f;
         public float ultimateMinimumDuration = 0.5f;
 
         [Header("Combat Settings")]
