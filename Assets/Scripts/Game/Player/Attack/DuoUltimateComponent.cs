@@ -24,6 +24,7 @@ namespace Kraken
         private static UltimateState _state = UltimateState.NotInUltimate;
         private static bool _otherPlayerWaiting = false;
         private bool _playersSeparated = false;
+        private bool _canBeEnded = true;
         private static bool _ultimateAvailable = true;
         private static int _woolQuantity = 0;
         private Coroutine _inputTimerCoroutine;
@@ -45,6 +46,8 @@ namespace Kraken
             if (!PhotonNetwork.IsMasterClient) return;
             if (_state == UltimateState.InUltimate)
             {
+                if (!_canBeEnded) return;
+
                 if (GetDistanceBetweenPlayers() < Config.current.ultimateEndDistance)
                 {
                     if (_playersSeparated)
@@ -98,12 +101,20 @@ namespace Kraken
             _otherPlayerWaiting = false;
         }
 
+        private IEnumerator UltimateMinimumTimer()
+        {
+            _canBeEnded = false;
+            yield return new WaitForSeconds(Config.current.ultimateMinimumDuration);
+            _canBeEnded = true;
+        }
+
         [PunRPC]
         public void RPC_All_StartDrawing()
         {
             _state = UltimateState.InUltimate;
             _otherPlayerWaiting = false;
             _playersSeparated = false;
+            StartCoroutine(UltimateMinimumTimer());
             if (_players.Length != 2) _players = GameObject.FindGameObjectsWithTag("Player");
             _players[0].transform.GetComponentInChildren<TrailRenderer>().AddPosition(_players[1].transform.position);
             _players[1].transform.GetComponentInChildren<TrailRenderer>().AddPosition(_players[0].transform.position);

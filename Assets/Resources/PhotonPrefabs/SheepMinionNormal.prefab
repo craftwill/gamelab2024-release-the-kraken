@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1024217798744234630, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1246207604446139757, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
