@@ -9,6 +9,7 @@ namespace Kraken
 {
     public class DazzlePullAbility : MonoBehaviourPun
     {
+        [SerializeField] private float _abilityCircleLifeTime = 0.28f;
         private float _damageDealt = 5f;
         private float _radius = 4f;
 
@@ -33,14 +34,12 @@ namespace Kraken
         {
             List<EnemyEntity> enemiesFound = CombatUtils.GetEnemyEntitiesInRadius(transform.position, _radius);
 
-            Debug.Log("count: " + enemiesFound.Count);
             foreach (EnemyEntity enemyEntity in enemiesFound)
             {
-                Debug.Log(enemyEntity.name);
                 enemyEntity.TakeDamage(_damageDealt);
             }
 
-            Animate.Delay(0.35f, () => 
+            Animate.Delay(_abilityCircleLifeTime, () => 
             {
                 if (!PhotonNetwork.IsMasterClient) return;
 
