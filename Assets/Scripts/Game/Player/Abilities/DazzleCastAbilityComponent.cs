@@ -3,8 +3,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 using Kraken.Network;
+
 using Bytes;
-using UnityEditor.ShaderGraph.Internal;
 
 namespace Kraken
 {
