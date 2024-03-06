@@ -25,13 +25,14 @@ namespace Kraken
         private static bool _otherPlayerWaiting = false;
         private bool _playersSeparated = false;
         private bool _canBeEnded = true;
-        private static bool _ultimateAvailable = true;
+        private static bool _ultimateAvailable = false;
         private static int _woolQuantity = 0;
+        private static int _minWoolQuantity = 0;
         private Coroutine _inputTimerCoroutine;
-        private Coroutine ultimateTimerCoroutine;
 
         private void Start()
         {
+            _minWoolQuantity = Config.current.ultimateMinWool;
             EventManager.AddEventListener(EventNames.UpdateWoolQuantity, UpdateWoolQuantity);
         }
 
@@ -54,11 +55,6 @@ namespace Kraken
                     {
                         _playersSeparated = false;
                         photonView.RPC(nameof(Rpc_All_FinishDrawing), RpcTarget.All, true);
-                        if (ultimateTimerCoroutine != null)
-                        {
-                            StopCoroutine(ultimateTimerCoroutine);
-                            ultimateTimerCoroutine = null;
-                        }
                     }
                 }
                 else
@@ -70,7 +66,12 @@ namespace Kraken
 
         public void OnDuoUltimateInput(bool input)
         {
-            if (_state == UltimateState.InUltimate || !_ultimateAvailable) return;
+            if (!_ultimateAvailable) return;
+            if (_state == UltimateState.InUltimate)
+            {
+                // Cancel the ultimate
+                return;
+            }
 
             _state = input ? UltimateState.WaitingForUltimate : UltimateState.NotInUltimate;
             if ((_otherPlayerWaiting || !Config.current.requireTwoPlayersForUltimate) && input && GetDistanceBetweenPlayers() < Config.current.ultimateStartMaxDistance)
@@ -146,6 +147,14 @@ namespace Kraken
         private void UpdateWoolQuantity(BytesData data)
         {
             _woolQuantity = ((IntDataBytes)data).IntValue;
+            if (_woolQuantity >= _minWoolQuantity)
+            {
+                _ultimateAvailable = true;
+            }
+            else
+            {
+                _ultimateAvailable = false;
+            }
         }
 
         [PunRPC]
@@ -223,7 +232,7 @@ namespace Kraken
             {
                 enemyPos2d.x = enemy.transform.position.x;
                 enemyPos2d.y = enemy.transform.position.z;
-                if (isEnemyInPolygon(positions, enemyPos2d))
+                if (IsEnemyInPolygon(positions, enemyPos2d))
                 {
                     enemiesAffected++;
                     enemyHealthComponent = enemy.GetComponent<HealthComponent>();
@@ -261,7 +270,7 @@ namespace Kraken
         }*/
 
         // Shamelessly stolen from https://codereview.stackexchange.com/a/108903
-        private bool isEnemyInPolygon(List<Vector2> positions, Vector2 enemyPos)
+        private bool IsEnemyInPolygon(List<Vector2> positions, Vector2 enemyPos)
         {
             int polygonLength = positions.Count, i = 0;
             bool inside = false;

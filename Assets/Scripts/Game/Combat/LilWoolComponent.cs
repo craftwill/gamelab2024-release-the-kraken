@@ -36,9 +36,11 @@ namespace Kraken
         {
             if (_players.Length != 2) RefreshPlayerList();
             if (_ragdolling) return;
-
-            Vector3 direction = (_destinationPlayer.transform.position - transform.position).normalized;
-            _rb.AddForce(_rb.mass * Config.current.woolAcceleration * direction);
+            if (_destinationPlayer != null)
+            {
+                Vector3 direction = (_destinationPlayer.transform.position - transform.position).normalized;
+                _rb.AddForce(_rb.mass * Config.current.woolAcceleration * direction);
+            }
         }
 
         private void RefreshPlayerList()

@@ -11,18 +11,23 @@ namespace Kraken.UI
     {
         [SerializeField] private GameObject _txtAvailable;
         [SerializeField] private GameObject _txtCooldown;
+        private TextMeshProUGUI _text;
         private TextMeshProUGUI _cooldownText;
         private Coroutine _cooldownCoroutine;
 
         private void Start()
         {
+            _text = _txtAvailable.GetComponent<TextMeshProUGUI>();
             _cooldownText = _txtCooldown.GetComponent<TextMeshProUGUI>();
-            EventManager.AddEventListener(EventNames.UpdateUltimateUI, HandleUpdateUltimateUI);
+            //EventManager.AddEventListener(EventNames.UpdateUltimateUI, HandleUpdateUltimateUI);
+            EventManager.AddEventListener(EventNames.UpdateWoolQuantity, HandleUpdateWoolQuantity);
+            _text.text = "0 wool\nNeed " + Config.current.ultimateMinWool + " to use ultimate";
         }
 
         private void OnDestroy()
         {
-            EventManager.RemoveEventListener(EventNames.UpdateUltimateUI, HandleUpdateUltimateUI);
+            //EventManager.RemoveEventListener(EventNames.UpdateUltimateUI, HandleUpdateUltimateUI);
+            EventManager.RemoveEventListener(EventNames.UpdateWoolQuantity, HandleUpdateWoolQuantity);
         }
 
         public void HandleUpdateUltimateUI(BytesData data)
@@ -42,6 +47,21 @@ namespace Kraken.UI
                     _txtCooldown.SetActive(true);
                 }
             }
+        }
+
+        private void HandleUpdateWoolQuantity(BytesData data)
+        {
+            int woolQty = ((IntDataBytes)data).IntValue;
+            string text = woolQty.ToString() + " wool";
+            if (woolQty < Config.current.ultimateMinWool)
+            {
+                text += "\nNeed " + Config.current.ultimateMinWool + " to use ultimate";
+            }
+            else
+            {
+                text += "\nSpacebar/LT+RT to use ultimate";
+            }
+            _text.text = text;
         }
 
         private IEnumerator CooldownTimer(float time)
