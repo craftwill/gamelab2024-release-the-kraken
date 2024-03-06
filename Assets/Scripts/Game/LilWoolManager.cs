@@ -1,4 +1,5 @@
 using Bytes;
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,7 +25,14 @@ namespace Kraken
         private void GainWool(BytesData data)
         {
             int quantityToAdd = ((IntDataBytes)data).IntValue;
-            _woolQuantity += quantityToAdd;
+            photonView.RPC(nameof(RPC_All_GainWool), RpcTarget.All, quantityToAdd);
+            
+        }
+
+        [PunRPC]
+        private void RPC_All_GainWool(int quantity)
+        {
+            _woolQuantity += quantity;
             OnQuantityUpdate();
         }
 

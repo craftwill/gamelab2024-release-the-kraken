@@ -68,6 +68,7 @@ namespace Kraken.UI
         private void RefreshText()
         {
             string text = _woolQuantity.ToString() + " wool";
+            if (_woolQuantity < 0) text = "0 wool";
             if (_inUltimate)
             {
                 text += "\n ";
