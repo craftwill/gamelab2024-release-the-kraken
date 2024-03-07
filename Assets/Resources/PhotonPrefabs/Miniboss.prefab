@@ -468,8 +468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477518fe7f955d64dbac3ad15fb27059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 1
-  _attackRange: 2.5
   _ownerEntity: {fileID: 7670090109933237870}
   _entityAnimationComponent: {fileID: 3404900828455816123}
   _navMeshAgent: {fileID: 2350652154481233051}
