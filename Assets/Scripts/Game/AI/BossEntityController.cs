@@ -7,6 +7,8 @@ namespace Kraken
 {
     public class BossEntityController : PathfindingEntityController
     {
+        [SerializeField] private StarfallAttackConfig starfallConfig;
+
         public override void InitSettings(EnemyConfigSO config)
         {
             base.InitSettings(config);
@@ -30,5 +32,17 @@ namespace Kraken
 
             if (!PhotonNetwork.IsMasterClient) return;
         }
+    }
+
+    [System.Serializable]
+    public struct StarfallAttackConfig
+    {
+        float chargeTime;
+        float attackRadius;
+        float starCount;
+        float delayBetweenStars;
+        float telegraphRadius;
+        
+        
     }
 }
