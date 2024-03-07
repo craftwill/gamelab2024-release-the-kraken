@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3059947787033558459}
   - component: {fileID: 4392585566801665248}
   m_Layer: 0
-  m_Name: AtkCollider_1_2
+  m_Name: AtkCollider_2
   m_TagString: DealDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
