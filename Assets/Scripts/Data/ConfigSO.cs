@@ -82,5 +82,6 @@ namespace Kraken
         public float woolAcceleration = 10f;
         public float woolDrag = 5f;
         public int initialWoolQuantity = 0;
+        public int maxWoolQuantity = 50;
     }
 }

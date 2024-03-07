@@ -26,7 +26,7 @@ namespace Kraken
         {
             int quantityToAdd = ((IntDataBytes)data).IntValue;
             photonView.RPC(nameof(RPC_All_GainWool), RpcTarget.All, quantityToAdd);
-            
+
         }
 
         [PunRPC]
@@ -38,12 +38,15 @@ namespace Kraken
 
         private void OnQuantityUpdate()
         {
-            EventManager.Dispatch(EventNames.UpdateWoolQuantity, new IntDataBytes(_woolQuantity));
-            if ( _woolQuantity <= 0 )
+            if (_woolQuantity <= 0)
             {
                 _woolQuantity = 0;
             }
+            else if (_woolQuantity > Config.current.maxWoolQuantity)
+            {
+                _woolQuantity = Config.current.maxWoolQuantity;
+            }
+            EventManager.Dispatch(EventNames.UpdateWoolQuantity, new IntDataBytes(_woolQuantity));
         }
     }
-
 }

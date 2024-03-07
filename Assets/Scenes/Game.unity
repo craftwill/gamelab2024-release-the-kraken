@@ -16374,6 +16374,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198660850295026202, guid: 09244ba4cb5528442a249e3f67ccab89,
         type: 3}
+      propertyPath: _bossObjective.spawnLocation
+      value: 
+      objectReference: {fileID: 77720841}
+    - target: {fileID: 8198660850295026202, guid: 09244ba4cb5528442a249e3f67ccab89,
+        type: 3}
+      propertyPath: _bossObjective.minimapHighlight
+      value: 
+      objectReference: {fileID: 89433840}
+    - target: {fileID: 8198660850295026202, guid: 09244ba4cb5528442a249e3f67ccab89,
+        type: 3}
       propertyPath: _allObjectives.Array.data[0].spawnLocation
       value: 
       objectReference: {fileID: 77720841}
