@@ -76,6 +76,10 @@ MonoBehaviour:
   - RPC_All_GainWool
   - RPC_Master_SpendWool
   - RPC_All_UseWool
+  - RPC_Master_GainWool
+  - RPC_AllCancelUltimate
+  - RPC_Master_RecoverSecondPlayerWool
+  - RPC_Master_DispatchGainWool
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

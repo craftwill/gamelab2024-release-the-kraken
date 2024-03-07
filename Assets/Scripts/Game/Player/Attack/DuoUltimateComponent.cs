@@ -5,7 +5,6 @@ using Photon.Realtime;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 using UnityEngine.Experimental.AI;
 
@@ -28,6 +27,7 @@ namespace Kraken
         private static bool _ultimateAvailable = false;
         private static int _woolQuantity = 0;
         private static int _minWoolQuantity = 0;
+        public static int _woolUsed = 0;
 
         private float _distanceTraveled = 0;
         private float _nextWoolUsage = 0;
@@ -65,8 +65,9 @@ namespace Kraken
                 _previousPosition = transform.position;
                 if (_distanceTraveled > _nextWoolUsage)
                 {
-                    photonView.RPC(nameof(RPC_Master_GainWool), RpcTarget.MasterClient, -1);
+                    photonView.RPC(nameof(RPC_Master_DispatchGainWool), RpcTarget.MasterClient, -1);
                     _nextWoolUsage += Config.current.ultimateDistancePerWool;
+                    _woolUsed++;
                 }
 
                 if (!PhotonNetwork.IsMasterClient || !_canBeEnded) return;
@@ -92,12 +93,13 @@ namespace Kraken
 
         public void OnDuoUltimateInput(bool input)
         {
-            if (!_ultimateAvailable) return;
             if (_state == UltimateState.InUltimate)
             {
                 // Cancel the ultimate
+                photonView.RPC(nameof(RPC_AllCancelUltimate), RpcTarget.All);
                 return;
             }
+            if (!_ultimateAvailable) return;
 
             _state = input ? UltimateState.WaitingForUltimate : UltimateState.NotInUltimate;
             if ((_otherPlayerWaiting || !Config.current.requireTwoPlayersForUltimate) && input && GetDistanceBetweenPlayers() < Config.current.ultimateStartMaxDistance)
@@ -111,7 +113,7 @@ namespace Kraken
         }
 
         [PunRPC]
-        public void RPC_Master_GainWool(int quantity)
+        public void RPC_Master_DispatchGainWool(int quantity)
         {
             EventManager.Dispatch(EventNames.GainWool, new IntDataBytes(-1));
         }
@@ -163,11 +165,11 @@ namespace Kraken
             _distanceTraveled = 0;
             _previousPosition = transform.position;
             _nextWoolUsage = Config.current.ultimateDistancePerWool;
+            _woolUsed = 0;
             _state = UltimateState.InUltimate;
             StartCoroutine(UltimateMinimumTimer());
             if (_players.Length != 2) _players = GameObject.FindGameObjectsWithTag("Player");
             _players[0].transform.GetComponentInChildren<TrailRenderer>().AddPosition(_players[1].transform.position);
-            _players[1].transform.GetComponentInChildren<TrailRenderer>().AddPosition(_players[0].transform.position);
             foreach (GameObject player in _players)
             {
                 player.transform.GetComponentInChildren<TrailRenderer>().emitting = true;
@@ -231,8 +233,36 @@ namespace Kraken
             }
 
             _state = UltimateState.NotInUltimate;
-            StartCoroutine(UltimateCooldown());
             EventManager.Dispatch(EventNames.UltimateRunning, new BoolDataBytes(false));
+        }
+
+        [PunRPC]
+        private void RPC_AllCancelUltimate()
+        {
+            if (_players.Length != 2) _players = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject player in _players)
+            {
+                TrailRenderer renderer = player.transform.GetComponentInChildren<TrailRenderer>();
+                renderer.emitting = false;
+                renderer.Clear();
+            }
+            if (PhotonNetwork.IsMasterClient)
+            {
+                EventManager.Dispatch(EventNames.GainWool, new IntDataBytes(_woolUsed));
+            }
+            else
+            {
+                photonView.RPC(nameof(RPC_Master_RecoverSecondPlayerWool), RpcTarget.MasterClient, _woolUsed);
+            }
+
+            _state = UltimateState.NotInUltimate;
+            EventManager.Dispatch(EventNames.UltimateRunning, new BoolDataBytes(false));
+        }
+
+        [PunRPC]
+        private void RPC_Master_RecoverSecondPlayerWool(int quantity)
+        {
+            EventManager.Dispatch(EventNames.GainWool, new IntDataBytes(quantity));
         }
 
         private float GetDistanceBetweenPlayers()
