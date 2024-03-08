@@ -72,6 +72,10 @@ MonoBehaviour:
   - RPC_All_SetHighlightVisible
   - RPC_ALL_StartConeTelegraph
   - RPC_All_ActivateAbility
+  - RPC_All_Send
+  - RPC_All_ProjectileHit
+  - RPC_Other_SendProjectile
+  - RPC_All_SendProjectile
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

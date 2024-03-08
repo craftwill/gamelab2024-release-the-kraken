@@ -32,9 +32,9 @@ namespace Kraken
             if (_entityAttackComponent.IsAttacking) return;
 
             // Attack closest player if close enough
-            if (_closestPlayerDistance <= _attackRange)
+            if (_target != null && _closestPlayerDistance <= _attackRange)
             {
-                _entityAttackComponent.TryAttack();
+                _entityAttackComponent.TryAttack(_target.position);
             }
         }
     }
