@@ -1,5 +1,106 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6474780863231159706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6223562693087841255}
+  - component: {fileID: 3590300219914515738}
+  m_Layer: 0
+  m_Name: RingsOfLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6223562693087841255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6474780863231159706}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7492163626080287376}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3590300219914515738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6474780863231159706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39ccef6742f8a944b554b31ab69672c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ring1ChargeTime: 0
+  _ring2ChargeTime: 0
+  _ring1Radius: 0
+  _ring2Radius: 0
+  _ringOfLightTelegraphPrefab: {fileID: 7606557052295748628, guid: cb0a3c04fd1d6b149b29f1789e02c3a8,
+    type: 3}
+--- !u!1 &6568383321523420838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3831642685429979409}
+  - component: {fileID: 4076349888599845715}
+  m_Layer: 0
+  m_Name: Starfall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3831642685429979409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568383321523420838}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7492163626080287376}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4076349888599845715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568383321523420838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed6f817674e8fa54c8aaf11abf0f1f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chargeTime: 0
+  _attackRadius: 0
+  _starCount: 0
+  _delayBetweenStars: 0
+  _telegraphRadius: 0
+  _starfallTelegraphPrefab: {fileID: 7606557052295748628, guid: cb0a3c04fd1d6b149b29f1789e02c3a8,
+    type: 3}
 --- !u!1001 &4747030220377589486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,14 +111,25 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
-      propertyPath: _entityController
+      propertyPath: _config
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d969c2c79c71e04bb5998530d493c58,
+        type: 2}
+    - target: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: _attackComponent
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
+      propertyPath: _entityController
+      value: 
+      objectReference: {fileID: 7503936983532037170}
+    - target: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
       propertyPath: _pathfindingEntityController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7503936983532037170}
     - target: {fileID: 2745319777357053054, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -95,8 +207,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4623548838470204180, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
+    - {fileID: 6807864403598660797, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2745319777357053054, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3831642685429979409}
+    - targetCorrespondingSourceObject: {fileID: 2745319777357053054, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6223562693087841255}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3106089648525901737, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
@@ -133,6 +254,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0f31c64a009cd48a76e0493edefb8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &7492163626080287376 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2745319777357053054, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+    type: 3}
+  m_PrefabInstance: {fileID: 4747030220377589486}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7708995712779942215 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3106089648525901737, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
@@ -154,3 +281,20 @@ MonoBehaviour:
   _ownerEntity: {fileID: 7321243370245587170}
   _entityAnimationComponent: {fileID: 2354055616582417719}
   _navMeshAgent: {fileID: 3419599846057638423}
+  _rolAttack: {fileID: 3590300219914515738}
+  _starfallAttack: {fileID: 4076349888599845715}
+  _starfallConfig:
+    starChargeTime: 1.2
+    attackRadius: 12
+    starCount: 50
+    delayBetweenStars: 0.1
+    telegraphRadius: 1
+    damage: 20
+    cooldown: 8
+  _rolConfig:
+    ring1ChargeTime: 2
+    ring2ChargeTime: 2
+    ring1Radius: 8
+    ring2Radius: 6
+    damage: 50
+    cooldown: 8

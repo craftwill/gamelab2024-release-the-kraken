@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using Kraken.Network;
+using Photon.Pun;
 
 namespace Kraken
 {
     public class StarfallAttack : MonoBehaviour
     {
-        //left as serializable for designer to tweek values if needed
+        //left for designer to test values if needed
         [SerializeField] private float _chargeTime;
         [SerializeField] private float _attackRadius;
         [SerializeField] private int _starCount;
@@ -17,15 +18,14 @@ namespace Kraken
 
         [SerializeField] private GameObject _starfallTelegraphPrefab;
 
-        [SerializeField, Range(0f,1f)] private float test;
-        public void StartAttack(float chargeTime, float attackRadius, int starCount, float delayBetweenStars, float telegraphRadius)
+        public void StartAttack(float chargeTime, float attackRadius, int starCount, float delayBetweenStars, float telegraphRadius, int damage)
         {
             _chargeTime = chargeTime;
             _attackRadius = attackRadius;
             _starCount = starCount;
             _delayBetweenStars = delayBetweenStars;
             _telegraphRadius = telegraphRadius;
-            StartCoroutine(StarSpawn());
+            StartCoroutine(StarSpawn(damage));
         }
 
         public void StartAttack()
@@ -33,10 +33,10 @@ namespace Kraken
             StartCoroutine(StarSpawn());
         }
 
-        private IEnumerator StarSpawn()
+        private IEnumerator StarSpawn(int damage = 0)
         {
             List<Vector3> spawnPoints = new List<Vector3>();
-            float minDistance = 0.3f * _attackRadius;
+            float minDistance = 0.2f * _attackRadius;
             
             int maxAttempts = 20;
 
@@ -49,7 +49,7 @@ namespace Kraken
                 for (int j = 0; j < maxAttempts; ++j)
                 {
                     Vector2 rPos = Random.insideUnitCircle * _attackRadius;
-                    p = new Vector3(rPos.x, transform.position.y, rPos.y);
+                    p = new Vector3(rPos.x, 0, rPos.y);
                     
                     bool tooClose = false;
                     foreach(Vector3 point in spawnPoints)
@@ -68,15 +68,24 @@ namespace Kraken
                         break;
                     }
                 }
-
                 if (!valid)
                 {
                     p = transform.position;
                 }
                 spawnPoints.Add(p);
 
-                RingTelegraph telegraph = Instantiate(_starfallTelegraphPrefab, p, _starfallTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
-                telegraph.StartTelegraph(_chargeTime, _telegraphRadius);
+                RingTelegraph telegraph;
+
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    telegraph = NetworkUtils.Instantiate(_starfallTelegraphPrefab.name, p + transform.position, _starfallTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
+                }
+                else
+                {
+                    telegraph = Instantiate(_starfallTelegraphPrefab, p + transform.position, _starfallTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
+                }
+
+                telegraph.StartTelegraph(_chargeTime, _telegraphRadius, 0f, damage);
 
                 yield return new WaitForSeconds(_delayBetweenStars);
             }

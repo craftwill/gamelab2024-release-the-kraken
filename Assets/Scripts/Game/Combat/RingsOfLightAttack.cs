@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using Bytes;
+using Kraken.Network;
 
 namespace Kraken
 {
-    public class RingOfLightsAttack : MonoBehaviour
+    public class RingsOfLightAttack : MonoBehaviour
     {
-        //left as serializable for designer to tweek values if needed
+        //left for designer to test values if needed
         [SerializeField] private float _ring1ChargeTime;
         [SerializeField] private float _ring2ChargeTime;
         [SerializeField] private float _ring1Radius;
@@ -16,34 +17,40 @@ namespace Kraken
 
         [SerializeField] private GameObject _ringOfLightTelegraphPrefab;
 
+        public void StartAttack(float ring1ChargeTime, float ring2ChargeTime, float ring1Radius, float ring2Radius, int damage)
+        {
+            RingTelegraph telegraph = NetworkUtils.Instantiate(_ringOfLightTelegraphPrefab.name, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
+            telegraph.StartTelegraph(ring1ChargeTime, ring1Radius, 0f, damage);
+
+            Animate.Delay(ring1ChargeTime, () =>
+            {
+                RingTelegraph telegraph2 = NetworkUtils.Instantiate(_ringOfLightTelegraphPrefab.name, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
+                telegraph2.StartTelegraph(ring2ChargeTime, ring2Radius, ring1Radius, damage);
+            }, true);
+        }
+
+        //two functions method for designer testing as well
         public void StartAttack()
         {
             RingTelegraph telegraph = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
 
             telegraph.StartTelegraph(_ring1ChargeTime, _ring1Radius);
             Invoke(nameof(Ring2), _ring1ChargeTime);
-
-            //Animate.Delay(_ring1ChargeTime, () =>
-            //{
-            //    StarfallTelegraph telegraph2 = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation).GetComponent<StarfallTelegraph>();
-            //    telegraph2.StartTelegraph(_ring2ChargeTime, _ring2Radius, _ring1Radius);
-            //}, true);
         }
-
         private void Ring2()
         {
             RingTelegraph telegraph2 = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
             telegraph2.StartTelegraph(_ring2ChargeTime, _ring2Radius, _ring1Radius);
         }
 
-        [CustomEditor(typeof(RingOfLightsAttack))]
+        [CustomEditor(typeof(RingsOfLightAttack))]
         public class CustomButton : Editor
         {
             public override void OnInspectorGUI()
             {
                 base.OnInspectorGUI();
 
-                var script = (RingOfLightsAttack)target;
+                var script = (RingsOfLightAttack)target;
                 if (GUILayout.Button("Trigger attack"))
                 {
                     if (Application.isPlaying)

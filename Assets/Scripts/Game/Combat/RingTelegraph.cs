@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,16 +19,16 @@ namespace Kraken
 
         private const int POLYGON_SIDES = 50;
 
-        public void StartTelegraph(float chargeTime, float telegraphRadius, float offsetRadius = 0f)
+        public void StartTelegraph(float chargeTime, float telegraphRadius, float offsetRadius = 0f, int damage = 0)
         {
             _meshInner = new Mesh();
             _meshOuter = new Mesh();
             _meshFilterInner.mesh = _meshInner;
             _meshFilterOuter.mesh = _meshOuter;
-            StartCoroutine(DrawCoroutine(chargeTime, telegraphRadius, offsetRadius));
+            StartCoroutine(DrawCoroutine(chargeTime, telegraphRadius, offsetRadius, damage));
         }
 
-        private IEnumerator DrawCoroutine(float chargeTime, float telegraphRadius, float offsetRadius)
+        private IEnumerator DrawCoroutine(float chargeTime, float telegraphRadius, float offsetRadius, int damage)
         {
             float time = 0f;
 
@@ -40,7 +41,26 @@ namespace Kraken
                 yield return new WaitForEndOfFrame();
                 time += Time.deltaTime;
             }
-            Destroy(this.gameObject);
+
+            if (!PhotonNetwork.IsMasterClient)
+            {
+                Destroy(this.gameObject);
+                yield break;
+            }
+            PlayerEntity[] players = CombatUtils.GetPlayerEntities();
+
+            System.Array.ForEach(players, p =>
+            {
+                float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(p.transform.position.x, p.transform.position.z));
+                
+                if(distance >= offsetRadius && distance <= telegraphRadius + offsetRadius)
+                {
+                    var ddc = p.GetComponentInChildren<Kraken.Game.DetectDamageComponent>();
+                    if (ddc) ddc.TakeDamageFromOtherSource(damage);
+                }
+            });
+
+            PhotonNetwork.Destroy(this.gameObject);
         }
 
         //got help for the below functions from https://www.youtube.com/watch?v=YG-gIX_OvSE
