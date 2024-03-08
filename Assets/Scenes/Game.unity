@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2261.738, g: 2405.4868, b: 3509.417, a: 1}
+  m_IndirectSpecularColor: {r: 2265.6018, g: 2410.18, b: 3517.188, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12918,6 +12918,79 @@ Transform:
   - {fileID: 522242995}
   m_Father: {fileID: 1673329123}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1709305148
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3622246722456022249, guid: 3161920557a49c14794718ba9baf23ee,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 505
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952612443171248940, guid: 3161920557a49c14794718ba9baf23ee,
+        type: 3}
+      propertyPath: m_Name
+      value: LilWoolManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8040770468569464396, guid: 3161920557a49c14794718ba9baf23ee,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8040770468569464396, guid: 3161920557a49c14794718ba9baf23ee,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8040770468569464396, guid: 3161920557a49c14794718ba9baf23ee,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8040770468569464396, guid: 3161920557a49c14794718ba9baf23ee,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8040770468569464396, guid: 3161920557a49c14794718ba9baf23ee,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8040770468569464396, guid: 3161920557a49c14794718ba9baf23ee,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8040770468569464396, guid: 3161920557a49c14794718ba9baf23ee,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8040770468569464396, guid: 3161920557a49c14794718ba9baf23ee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8040770468569464396, guid: 3161920557a49c14794718ba9baf23ee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8040770468569464396, guid: 3161920557a49c14794718ba9baf23ee,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3161920557a49c14794718ba9baf23ee, type: 3}
 --- !u!1 &1710620309
 GameObject:
   m_ObjectHideFlags: 0
@@ -13831,7 +13904,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1527
+    m_Bits: 7671
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -16301,6 +16374,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8198660850295026202, guid: 09244ba4cb5528442a249e3f67ccab89,
         type: 3}
+      propertyPath: _bossObjective.spawnLocation
+      value: 
+      objectReference: {fileID: 77720841}
+    - target: {fileID: 8198660850295026202, guid: 09244ba4cb5528442a249e3f67ccab89,
+        type: 3}
+      propertyPath: _bossObjective.minimapHighlight
+      value: 
+      objectReference: {fileID: 89433840}
+    - target: {fileID: 8198660850295026202, guid: 09244ba4cb5528442a249e3f67ccab89,
+        type: 3}
       propertyPath: _allObjectives.Array.data[0].spawnLocation
       value: 
       objectReference: {fileID: 77720841}
@@ -16362,46 +16445,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8767720622561718191, guid: 09244ba4cb5528442a249e3f67ccab89,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5095434720157447487}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09244ba4cb5528442a249e3f67ccab89, type: 3}
---- !u!1 &5095434720157447486 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8767720622561718191, guid: 09244ba4cb5528442a249e3f67ccab89,
-    type: 3}
-  m_PrefabInstance: {fileID: 5095434720157447485}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5095434720157447487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5095434720157447486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1ed2613c0357b4c9cb3b539d261810, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _allObjectives:
-  - objective: {fileID: 11400000, guid: d5de5d7bb1f2bd440acdcc480dbce767, type: 2}
-    spawnLocation: {fileID: 0}
-    minimapHighlight: {fileID: 0}
-  - objective: {fileID: 11400000, guid: 8f2b9857dd9d1b74294f51251ca87efe, type: 2}
-    spawnLocation: {fileID: 0}
-    minimapHighlight: {fileID: 0}
-  - objective: {fileID: 11400000, guid: d9729f7919619a24b93fc278fe9b4f83, type: 2}
-    spawnLocation: {fileID: 0}
-    minimapHighlight: {fileID: 0}
-  - objective: {fileID: 11400000, guid: 0114a1512d0efe6408678174e82d21ed, type: 2}
-    spawnLocation: {fileID: 0}
-    minimapHighlight: {fileID: 0}
-  - objective: {fileID: 11400000, guid: b3b15758b2993f7478a91d08d1adfb65, type: 2}
-    spawnLocation: {fileID: 0}
-    minimapHighlight: {fileID: 0}
 --- !u!1001 &8801591240150869097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16492,6 +16537,7 @@ SceneRoots:
   - {fileID: 5095434720157447485}
   - {fileID: 1309612064}
   - {fileID: 547677947}
+  - {fileID: 1709305148}
   - {fileID: 1529639496}
   - {fileID: 1957874129}
   - {fileID: 786039406}

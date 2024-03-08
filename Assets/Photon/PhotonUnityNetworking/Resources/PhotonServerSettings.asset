@@ -71,7 +71,15 @@ MonoBehaviour:
   - RPC_All_SetVisible
   - RPC_All_SetHighlightVisible
   - RPC_ALL_StartConeTelegraph
+  - RPC_All_SpawnWool
   - RPC_All_ActivateAbility
+  - RPC_All_GainWool
+  - RPC_Master_SpendWool
+  - RPC_All_UseWool
+  - RPC_Master_GainWool
+  - RPC_AllCancelUltimate
+  - RPC_Master_RecoverSecondPlayerWool
+  - RPC_Master_DispatchGainWool
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
