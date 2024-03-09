@@ -44,23 +44,21 @@ namespace Kraken
 
             if (!PhotonNetwork.IsMasterClient)
             {
-                Destroy(this.gameObject);
-                yield break;
-            }
-            PlayerEntity[] players = CombatUtils.GetPlayerEntities();
+                PlayerEntity[] players = CombatUtils.GetPlayerEntities();
 
-            System.Array.ForEach(players, p =>
-            {
-                float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(p.transform.position.x, p.transform.position.z));
-                
-                if(distance >= offsetRadius && distance <= telegraphRadius + offsetRadius)
+                System.Array.ForEach(players, p =>
                 {
-                    var ddc = p.GetComponentInChildren<Kraken.Game.DetectDamageComponent>();
-                    if (ddc) ddc.TakeDamageFromOtherSource(damage);
-                }
-            });
+                    float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(p.transform.position.x, p.transform.position.z));
 
-            PhotonNetwork.Destroy(this.gameObject);
+                    if (distance >= offsetRadius && distance <= telegraphRadius + offsetRadius)
+                    {
+                        var ddc = p.GetComponentInChildren<Kraken.Game.DetectDamageComponent>();
+                        if (ddc) ddc.TakeDamageFromOtherSource(damage);
+                    }
+                });
+            }
+
+            Destroy(this.gameObject);
         }
 
         //got help for the below functions from https://www.youtube.com/watch?v=YG-gIX_OvSE

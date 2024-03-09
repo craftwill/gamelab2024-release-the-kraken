@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEditor;
 using Bytes;
 using Kraken.Network;
+using Photon.Pun;
 
 namespace Kraken
 {
-    public class RingsOfLightAttack : MonoBehaviour
+    public class RingsOfLightAttack : MonoBehaviourPun
     {
         //left for designer to test values if needed
         [SerializeField] private float _ring1ChargeTime;
@@ -19,12 +20,18 @@ namespace Kraken
 
         public void StartAttack(float ring1ChargeTime, float ring2ChargeTime, float ring1Radius, float ring2Radius, int damage)
         {
-            RingTelegraph telegraph = NetworkUtils.Instantiate(_ringOfLightTelegraphPrefab.name, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
+            photonView.RPC(nameof(RPC_ALL_RingsOfLight), RpcTarget.All, ring1ChargeTime, ring2ChargeTime, ring1Radius, ring2Radius, damage);
+        }
+
+        [PunRPC]
+        private void RPC_ALL_RingsOfLight(float ring1ChargeTime, float ring2ChargeTime, float ring1Radius, float ring2Radius, int damage)
+        {
+            RingTelegraph telegraph = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
             telegraph.StartTelegraph(ring1ChargeTime, ring1Radius, 0f, damage);
 
             Animate.Delay(ring1ChargeTime, () =>
             {
-                RingTelegraph telegraph2 = NetworkUtils.Instantiate(_ringOfLightTelegraphPrefab.name, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
+                RingTelegraph telegraph2 = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
                 telegraph2.StartTelegraph(ring2ChargeTime, ring2Radius, ring1Radius, damage);
             }, true);
         }

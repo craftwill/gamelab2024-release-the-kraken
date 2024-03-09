@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6223562693087841255}
   - component: {fileID: 3590300219914515738}
+  - component: {fileID: 4702124003625813099}
   m_Layer: 0
   m_Name: RingsOfLight
   m_TagString: Untagged
@@ -50,6 +51,28 @@ MonoBehaviour:
   _ring2Radius: 0
   _ringOfLightTelegraphPrefab: {fileID: 7606557052295748628, guid: cb0a3c04fd1d6b149b29f1789e02c3a8,
     type: 3}
+--- !u!114 &4702124003625813099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6474780863231159706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &6568383321523420838
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,6 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3831642685429979409}
   - component: {fileID: 4076349888599845715}
+  - component: {fileID: 6644211839944383033}
   m_Layer: 0
   m_Name: Starfall
   m_TagString: Untagged
@@ -101,6 +125,28 @@ MonoBehaviour:
   _telegraphRadius: 0
   _starfallTelegraphPrefab: {fileID: 7606557052295748628, guid: cb0a3c04fd1d6b149b29f1789e02c3a8,
     type: 3}
+--- !u!114 &6644211839944383033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568383321523420838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &4747030220377589486
 PrefabInstance:
   m_ObjectHideFlags: 0

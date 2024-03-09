@@ -7,9 +7,8 @@ using Photon.Pun;
 
 namespace Kraken
 {
-    public class StarfallAttack : MonoBehaviour
+    public class StarfallAttack : MonoBehaviourPun
     {
-        //left for designer to test values if needed
         [SerializeField] private float _chargeTime;
         [SerializeField] private float _attackRadius;
         [SerializeField] private int _starCount;
@@ -25,34 +24,61 @@ namespace Kraken
             _starCount = starCount;
             _delayBetweenStars = delayBetweenStars;
             _telegraphRadius = telegraphRadius;
-            StartCoroutine(StarSpawn(damage));
+            StartCoroutine(StarSpawn(chargeTime, telegraphRadius, damage));
         }
 
         public void StartAttack()
         {
-            StartCoroutine(StarSpawn());
+            StartCoroutine(StarSpawn(_chargeTime, _telegraphRadius));
         }
 
-        private IEnumerator StarSpawn(int damage = 0)
+        private IEnumerator StarSpawn(float chargeTime = 1f, float telegraphRadius = 1f, int damage = 0)
         {
-            List<Vector3> spawnPoints = new List<Vector3>();
+            List<Vector3> spawnPoints = GetSpawnPoints();
+
+            foreach(Vector3 s in spawnPoints)
+            {
+                Vector3 finalPos = s + transform.position;
+
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    photonView.RPC(nameof(RPC_ALL_Starfall), RpcTarget.All, finalPos, chargeTime, telegraphRadius, damage);
+                }
+                else
+                {
+                    RPC_ALL_Starfall(finalPos, chargeTime, telegraphRadius, damage);
+                }
+
+                yield return new WaitForSeconds(_delayBetweenStars);
+            }
+        }
+
+        [PunRPC]
+        private void RPC_ALL_Starfall(Vector3 pos, float chargeTime, float telegraphRadius, int damage)
+        {
+            RingTelegraph telegraph = Instantiate(_starfallTelegraphPrefab, pos, _starfallTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
+            telegraph.StartTelegraph(chargeTime, telegraphRadius, 0f, damage);
+        }
+
+        private List<Vector3> GetSpawnPoints()
+        {
+            var spawnPoints = new List<Vector3>();
             float minDistance = 0.2f * _attackRadius;
-            
             int maxAttempts = 20;
 
             for (int i = 0; i < _starCount; ++i)
             {
                 Vector3 p = transform.position;
-                
+
                 //rejection sampling
                 bool valid = false;
                 for (int j = 0; j < maxAttempts; ++j)
                 {
                     Vector2 rPos = Random.insideUnitCircle * _attackRadius;
                     p = new Vector3(rPos.x, 0, rPos.y);
-                    
+
                     bool tooClose = false;
-                    foreach(Vector3 point in spawnPoints)
+                    foreach (Vector3 point in spawnPoints)
                     {
                         var t = Vector3.Distance(p, point);
                         if (t < minDistance)
@@ -74,36 +100,23 @@ namespace Kraken
                 }
                 spawnPoints.Add(p);
 
-                RingTelegraph telegraph;
-
-                if (PhotonNetwork.IsMasterClient)
-                {
-                    telegraph = NetworkUtils.Instantiate(_starfallTelegraphPrefab.name, p + transform.position, _starfallTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
-                }
-                else
-                {
-                    telegraph = Instantiate(_starfallTelegraphPrefab, p + transform.position, _starfallTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
-                }
-
-                telegraph.StartTelegraph(_chargeTime, _telegraphRadius, 0f, damage);
-
-                yield return new WaitForSeconds(_delayBetweenStars);
             }
+            return spawnPoints;
         }
+    }
 
-        [CustomEditor(typeof(StarfallAttack))]
-        public class CustomButton : Editor
+    [CustomEditor(typeof(StarfallAttack))]
+    public class CustomButton : Editor
+    {
+        public override void OnInspectorGUI()
         {
-            public override void OnInspectorGUI()
-            {
-                base.OnInspectorGUI();
+            base.OnInspectorGUI();
 
-                var script = (StarfallAttack)target;
-                if (GUILayout.Button("Trigger attack"))
-                {
-                    if (Application.isPlaying)
-                        script.StartAttack();
-                }
+            var script = (StarfallAttack)target;
+            if (GUILayout.Button("Trigger attack"))
+            {
+                if (Application.isPlaying)
+                    script.StartAttack();
             }
         }
     }
