@@ -80,6 +80,8 @@ MonoBehaviour:
   - RPC_AllCancelUltimate
   - RPC_Master_RecoverSecondPlayerWool
   - RPC_Master_DispatchGainWool
+  - RPC_ALL_Starfall
+  - RPC_ALL_RingsOfLight
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
