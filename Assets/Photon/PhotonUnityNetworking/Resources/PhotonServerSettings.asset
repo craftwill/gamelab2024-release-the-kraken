@@ -71,6 +71,9 @@ MonoBehaviour:
   - RPC_All_SetVisible
   - RPC_All_SetHighlightVisible
   - RPC_ALL_StartConeTelegraph
+  - RPC_All_ActivateAbility
+  - RPC_All_ActivateDazzleAbility
+  - RPC_All_ActivateRazzleAbility
   - RPC_All_SpawnWool
   - RPC_All_ActivateAbility
   - RPC_All_Send

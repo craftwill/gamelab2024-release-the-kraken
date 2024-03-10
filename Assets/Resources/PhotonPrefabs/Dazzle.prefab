@@ -90,6 +90,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2994236915493532572, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994236915493532572, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionId
+      value: c8d556fb-e989-40b7-a7f3-581d80a3ee8e
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994236915493532572, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionName
+      value: Player/CastAbility[/Keyboard/e]
+      objectReference: {fileID: 0}
     - target: {fileID: 3938902759498121455, guid: c767677ecb1762942a114712b6d1e354,
         type: 3}
       propertyPath: m_IsActive
@@ -144,7 +159,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3408789936260912706}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6747958540799682996, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 3301035463224948240}
   m_SourcePrefab: {fileID: 100100000, guid: c767677ecb1762942a114712b6d1e354, type: 3}
 --- !u!4 &914100191289639072 stripped
 Transform:
@@ -158,12 +177,49 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 479198835140235586}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6558336477556455670}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bff15319430b96847a38864208b37882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6211199275726532057 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5806521009423482011, guid: c767677ecb1762942a114712b6d1e354,
+    type: 3}
+  m_PrefabInstance: {fileID: 479198835140235586}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6558336477556455670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782d4b0a80cf5cc479bd7c67afbb1091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &6558336477556455670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6747958540799682996, guid: c767677ecb1762942a114712b6d1e354,
+    type: 3}
+  m_PrefabInstance: {fileID: 479198835140235586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3301035463224948240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6558336477556455670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62279f64b6689f74caaba9759c2f9230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cooldown: 4
+  _playerEntity: {fileID: 6211199275726532057}
+  _castAbilityInput: {fileID: 4469811346193628206, guid: abae805e8a04eb44c951b59d4dda4171,
+    type: 3}
+  _abilityPrefab: {fileID: 1911473875266983035, guid: 6d71a596deda610449ab94767950ac9f,
+    type: 3}
+  _verticalOffset: -0.45
 --- !u!1001 &485436688897154879
 PrefabInstance:
   m_ObjectHideFlags: 0

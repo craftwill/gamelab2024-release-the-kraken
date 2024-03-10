@@ -28,6 +28,12 @@ MonoBehaviour:
   razzleAbilityInitialPullStrength: 60
   razzleAbilityPullStrengthOverTime: 10
   razzleAbilitySpawnDistanceOffset: 9
+  dazzleAbilityCooldown: 2
+  dazzleAbilityJumpDuration: 0.27
+  dazzleAbilityJumpDistance: 8
+  dazzleAbilityJumpHeigth: 3
+  dazzleAbilityDamage: 5
+  dazzleAbilityRadius: 3
   moveSpeed: 7.5
   sprintSpeed: 14
   attackMoveSpeed: 3
@@ -53,6 +59,7 @@ MonoBehaviour:
   ultimateDuration: 5
   ultimateTriggerTimer: 5
   ultimateCooldown: 10
+  ultimateMinimumDuration: 0.5
   enemyStaggerDuration: 2
   showBasicEnemies: 0
   minWoolVerticalVelocity: 5

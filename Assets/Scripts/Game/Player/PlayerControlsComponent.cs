@@ -1,12 +1,9 @@
+using Bytes;
+using Cinemachine;
+using Photon.Pun;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Events;
-using Cinemachine;
-
-using Bytes;
-
-using Photon.Pun;
 
 namespace Kraken
 {
@@ -43,6 +40,7 @@ namespace Kraken
         private Coroutine _fovChangeCoroutine = null;
 
         private bool controlsEnabled = true;
+        private bool cameraControlsEnabled = true;
 
         [SerializeField] private InputActionReference _sprintInput;
         [SerializeField] private InputActionReference _pauseInput;
@@ -101,8 +99,6 @@ namespace Kraken
 
         private void Update()
         {
-            if (!controlsEnabled) return;
-
             if (_isOwner)
             {
                 if (_controller.isGrounded)
@@ -111,43 +107,56 @@ namespace Kraken
                 }
                 ApplyGravity();
 
-                Vector3 cameraDirection = transform.position - new Vector3(_camera.transform.position.x, transform.position.y, _camera.transform.position.z);
-                _cameraOrientation.forward = cameraDirection.normalized;
-                Vector3 movementDirection = _cameraOrientation.forward * _moveVec.y + _cameraOrientation.right * _moveVec.x;
-                if (movementDirection != Vector3.zero && _movementState != MovementState.Attacking)
-                {
-                    transform.forward = Vector3.Slerp(transform.forward, movementDirection.normalized, Time.deltaTime * Config.current.rotationSpeed);
-                }
-                movementDirection = new Vector3(0, _fallingVelocity, 0);
-                if (_moveVec != Vector2.zero)
-                {
-                    movementDirection.x = transform.forward.x;
-                    movementDirection.z = transform.forward.z;
-                }
-                if (_movementState == MovementState.Attacking)
-                {
-                    _controller.Move(transform.forward * _attackMovementSpeed * Time.deltaTime);
-                }
-                else if (_movementState == MovementState.Dashing)
-                {
-                    _controller.Move(movementDirection * Config.current.dashSpeed * Time.deltaTime);
-                }
-                else if (_movementState == MovementState.Sprinting)
-                {
-                    _controller.Move(movementDirection * Config.current.sprintSpeed * Time.deltaTime);
-                }
-                else
-                {
-                    movementDirection.x *= _movementMagnitude;
-                    movementDirection.z *= _movementMagnitude;
-                    _controller.Move(movementDirection * Config.current.moveSpeed * Time.deltaTime);
-                }
+                if (cameraControlsEnabled)
+                    ProcessCameraControls();
 
-                if (!_currentScheme.Equals(_input.currentControlScheme))
-                {
-                    OnControlsChanged(_input.currentControlScheme);
-                    _currentScheme = _input.currentControlScheme;
-                }
+                if (controlsEnabled)
+                    ProcessControls();
+            }
+        }
+
+        private void ProcessCameraControls() 
+        {
+            Vector3 cameraDirection = transform.position - new Vector3(_camera.transform.position.x, transform.position.y, _camera.transform.position.z);
+            _cameraOrientation.forward = cameraDirection.normalized;
+        }
+
+        private void ProcessControls() 
+        {
+            Vector3 movementDirection = _cameraOrientation.forward * _moveVec.y + _cameraOrientation.right * _moveVec.x;
+            if (movementDirection != Vector3.zero && _movementState != MovementState.Attacking)
+            {
+                transform.forward = Vector3.Slerp(transform.forward, movementDirection.normalized, Time.deltaTime * Config.current.rotationSpeed);
+            }
+            movementDirection = new Vector3(0, _fallingVelocity, 0);
+            if (_moveVec != Vector2.zero)
+            {
+                movementDirection.x = transform.forward.x;
+                movementDirection.z = transform.forward.z;
+            }
+            if (_movementState == MovementState.Attacking)
+            {
+                _controller.Move(transform.forward * _attackMovementSpeed * Time.deltaTime);
+            }
+            else if (_movementState == MovementState.Dashing)
+            {
+                _controller.Move(movementDirection * Config.current.dashSpeed * Time.deltaTime);
+            }
+            else if (_movementState == MovementState.Sprinting)
+            {
+                _controller.Move(movementDirection * Config.current.sprintSpeed * Time.deltaTime);
+            }
+            else
+            {
+                movementDirection.x *= _movementMagnitude;
+                movementDirection.z *= _movementMagnitude;
+                _controller.Move(movementDirection * Config.current.moveSpeed * Time.deltaTime);
+            }
+
+            if (!_currentScheme.Equals(_input.currentControlScheme))
+            {
+                OnControlsChanged(_input.currentControlScheme);
+                _currentScheme = _input.currentControlScheme;
             }
         }
 
@@ -318,12 +327,28 @@ namespace Kraken
             _duoUltimateComponent.OnDuoUltimateInput(true);
         }
 
-        public void DisableControls()
+        public void OnDuoUltimateReleased(InputAction.CallbackContext value)
         {
-            _freeLookCam.enabled = false;
-            controlsEnabled = false;
+            if (!controlsEnabled) return;
 
-            _playerAttackComponent.UnsubscribeAttacks();
+            _duoUltimateComponent.OnDuoUltimateInput(false);
+        }
+
+        public void SetControlsEnabled(bool controlsEnabled)
+        {
+            this.controlsEnabled = controlsEnabled;
+
+            _playerAttackComponent.SetAttacksControlsEnabled(controlsEnabled);
+        }
+
+        public void SetCameraControlsEnabled(bool cameraControlsEnabled)
+        {
+            this.cameraControlsEnabled = cameraControlsEnabled;
+        }
+
+        public void SetCameraEnabled(bool isCameraEnabled) 
+        {
+            _freeLookCam.enabled = isCameraEnabled;
         }
     }
 }
