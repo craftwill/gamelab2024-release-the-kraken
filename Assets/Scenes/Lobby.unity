@@ -2660,7 +2660,11 @@ MonoBehaviour:
   _txtRoomCode: {fileID: 935561380}
   _controller1: {fileID: 1474436173}
   _controller2: {fileID: 31026337}
-  _moveInput: {fileID: -5786590348021691354, guid: abae805e8a04eb44c951b59d4dda4171,
+  _moveInput: {fileID: 4288678290045130036, guid: abae805e8a04eb44c951b59d4dda4171,
+    type: 3}
+  _submitInput: {fileID: 3428002986216895096, guid: abae805e8a04eb44c951b59d4dda4171,
+    type: 3}
+  _cancelInput: {fileID: -6215972033495757003, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
   _btnStart: {fileID: 1618817272}
 --- !u!114 &1732652934
@@ -2771,9 +2775,17 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 5d90d284-3ba0-4a4e-9a09-b7e2f5491cc3
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7ae23e2f-87bc-469f-af1a-0a659672c28a
+    m_ActionName: Player/DuoUltimateAttack[/Keyboard/space,/DualSenseGamepadHID/leftTrigger,/DualSenseGamepadHID/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c8d556fb-e989-40b7-a7f3-581d80a3ee8e
+    m_ActionName: Player/CastAbility[/Keyboard/e,/DualSenseGamepadHID/buttonWest]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1840942439

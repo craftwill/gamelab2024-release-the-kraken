@@ -22,6 +22,8 @@ namespace Kraken
         [SerializeField] private GameObject _controller1;
         [SerializeField] private GameObject _controller2;
         [SerializeField] private InputActionReference _moveInput;
+        [SerializeField] private InputActionReference _submitInput;
+        [SerializeField] private InputActionReference _cancelInput;
         [SerializeField] private Button _btnStart;
         private GameObject _controlledController;
         private int _currentControllerPositionIndex = 1;
@@ -48,6 +50,8 @@ namespace Kraken
 
             _moveInput.action.performed += OnMove;
             _moveInput.action.canceled += OnInputReleased;
+            _submitInput.action.performed += OnSubmit;
+            _cancelInput.action.performed += OnCancel;
 
             if (!PhotonNetwork.IsMasterClient)
             {
@@ -74,6 +78,8 @@ namespace Kraken
         {
             _moveInput.action.performed -= OnMove;
             _moveInput.action.canceled -= OnInputReleased;
+            _submitInput.action.performed -= OnSubmit;
+            _cancelInput.action.performed -= OnCancel;
         }
 
         public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -119,7 +125,7 @@ namespace Kraken
 
         public void Btn_OnStartGame() 
         {
-            if (AreAllPlayersReady())
+            if (AreAllPlayersReady() && PhotonNetwork.IsMasterClient)
             {
                 photonView.RPC(nameof(RPC_Master_OpenGameScene), RpcTarget.MasterClient);
             }
@@ -175,6 +181,7 @@ namespace Kraken
 
         public void OnMove(InputAction.CallbackContext value)
         {
+            Debug.Log("move");
             if (_movementInput) return;
             _movementInput = true;
             float direction = value.ReadValue<Vector2>().x;
@@ -195,8 +202,21 @@ namespace Kraken
             photonView.RPC(nameof(RPC_All_MoveController), RpcTarget.All, _currentControllerPositionIndex, controllerToMove);
         }
 
+        public void OnSubmit(InputAction.CallbackContext value)
+        {
+            Debug.Log("Submit");
+            Btn_OnStartGame();
+        }
+
+        public void OnCancel(InputAction.CallbackContext value)
+        {
+            Debug.Log("Cancel");
+            Btn_OnLeaveLobby();
+        }
+
         public void OnInputReleased(InputAction.CallbackContext value)
         {
+            Debug.Log("released");
             _movementInput = false;
         }
 
