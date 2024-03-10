@@ -48,10 +48,18 @@ namespace Kraken
 
             _moveInput.action.performed += OnMove;
             _moveInput.action.canceled += OnInputReleased;
+
+            if (!PhotonNetwork.IsMasterClient)
+            {
+                _btnStart.interactable = false;
+                _btnStart.gameObject.SetActive(false);
+            }
         }
 
         private void Update()
         {
+            if (!PhotonNetwork.IsMasterClient) return;
+
             if (AreAllPlayersReady())
             {
                 _btnStart.interactable = true;
