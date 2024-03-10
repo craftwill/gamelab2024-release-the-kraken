@@ -21,7 +21,7 @@ namespace Kraken
         [SerializeField] private float _lockedIntoAttackDuration = 0.5f;
         [SerializeField] private GameObject _rangedProjectile = null;
 
-        public bool IsAttacking { get; private set; } = false;
+        public bool IsLockedInAttack { get; private set; } = false;
         private bool _canAttack = true;
 
         public void InitSettings(float dmgDealt, float atkCdr, float atkDuration, float lockedInAtkDuration, GameObject rangedProjectile)
@@ -39,23 +39,27 @@ namespace Kraken
             _inflictDamageComponent.Damageclan = _ownerEntity.EntityClan;
         }
 
-        public void TryAttack(Vector3 targetPosition)
+        // Returns if an attack has been launched.
+        public bool TryAttack(Vector3 targetPosition, System.Action attackLockDoneCallback = null)
         {
-            if (!PhotonNetwork.IsMasterClient || !_canAttack) { return; }
+            if (!PhotonNetwork.IsMasterClient || !_canAttack) { return false; }
 
-            IsAttacking = true;
+            IsLockedInAttack = true;
             _canAttack = false;
             photonView.RPC(nameof(RPC_All_Attack), RpcTarget.All, targetPosition);
 
             Animate.Delay(_attackCooldown, () => {
                 if (this == null) { return; }
                 _canAttack = true;
-            });
+            }, timeScaled_: true);
 
             Animate.Delay(_lockedIntoAttackDuration, () => {
                 if (this == null) { return; }
-                IsAttacking = false;
-            });
+                IsLockedInAttack = false;
+                attackLockDoneCallback?.Invoke();
+            }, timeScaled_: true);
+
+            return true;
         }
 
         [PunRPC]
@@ -83,7 +87,7 @@ namespace Kraken
             Animate.Delay(_attackDuration, () => {
                 if (this == null) { return; }
                 _inflictDamageComponent.gameObject.SetActive(false);
-            });
+            }, timeScaled_: true);
         }
 
         private void RangedAttack(Vector3 targetPosition)

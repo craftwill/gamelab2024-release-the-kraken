@@ -11,9 +11,17 @@ namespace Kraken
         [field: SerializeField] public InflictDamageComponent InflictDamageComponent { private set; get; }
         public bool CanDamage { get; private set; } = true;
         protected Vector3 _currentDirection;
-        protected float _speed = 0.2f;
+        protected float _speed = 0.33f;
 
-        public void InitAndSend(Vector3 direction, EntityClan damageClan, float damage)
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Ground")) 
+            {
+                ProjectileHit();
+            }
+        }
+
+        public virtual void InitAndSend(Vector3 direction, EntityClan damageClan, float damage)
         {
             InflictDamageComponent.Damageclan = damageClan;
             InflictDamageComponent.Damage = damage;
