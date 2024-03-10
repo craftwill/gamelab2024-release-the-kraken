@@ -9,9 +9,9 @@ namespace Kraken
     public class BaseProjectile : MonoBehaviourPun
     {
         [field: SerializeField] public InflictDamageComponent InflictDamageComponent { private set; get; }
+        [SerializeField] protected float _speed = 0.33f;
         public bool CanDamage { get; private set; } = true;
         protected Vector3 _currentDirection;
-        protected float _speed = 0.33f;
 
         private void OnTriggerEnter(Collider other)
         {
