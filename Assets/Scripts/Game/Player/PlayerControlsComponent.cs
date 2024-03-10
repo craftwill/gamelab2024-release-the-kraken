@@ -79,7 +79,6 @@ namespace Kraken
                 _sprintInput.action.canceled += OnSprintCanceled;
                 _pauseInput.action.performed += OnPause;
                 _duoUltimateInput.action.performed += OnDuoUltimate;
-                _duoUltimateInput.action.canceled += OnDuoUltimateReleased;
 
                 GameManager.ToggleCursor(false);
                 EventManager.AddEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
@@ -95,7 +94,6 @@ namespace Kraken
             _moveInput.action.canceled -= OnMove;
             _pauseInput.action.performed -= OnPause;
             _duoUltimateInput.action.performed += OnDuoUltimate;
-            _duoUltimateInput.action.canceled += OnDuoUltimateReleased;
 
             EventManager.RemoveEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
             EventManager.RemoveEventListener(EventNames.PlayerAttackEnd, HandleAttackEnd);
@@ -120,7 +118,12 @@ namespace Kraken
                 {
                     transform.forward = Vector3.Slerp(transform.forward, movementDirection.normalized, Time.deltaTime * Config.current.rotationSpeed);
                 }
-                movementDirection = new Vector3(transform.forward.x, _fallingVelocity, transform.forward.z);
+                movementDirection = new Vector3(0, _fallingVelocity, 0);
+                if (_moveVec != Vector2.zero)
+                {
+                    movementDirection.x = transform.forward.x;
+                    movementDirection.z = transform.forward.z;
+                }
                 if (_movementState == MovementState.Attacking)
                 {
                     _controller.Move(transform.forward * _attackMovementSpeed * Time.deltaTime);
@@ -313,13 +316,6 @@ namespace Kraken
             if (!controlsEnabled) return;
 
             _duoUltimateComponent.OnDuoUltimateInput(true);
-        }
-
-        public void OnDuoUltimateReleased(InputAction.CallbackContext value)
-        {
-            if (!controlsEnabled) return;
-
-            _duoUltimateComponent.OnDuoUltimateInput(false);
         }
 
         public void DisableControls()

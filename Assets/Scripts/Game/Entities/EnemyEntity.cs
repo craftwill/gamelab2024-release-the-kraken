@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 using Bytes;
+using Kraken.Network;
 
 namespace Kraken
 {
@@ -14,6 +15,8 @@ namespace Kraken
         [SerializeField] private EnemyZoneComponent _enemyZoneComponent;
         [SerializeField] private PathfindingEntityController _pathfindingEntityController;
         [SerializeField] private GameObject _minimapIcon;
+        [SerializeField] private GameObject _woolPrefab;
+        [SerializeField] private int _woolDropped = 1;
 
         protected override void Awake()
         {
@@ -62,6 +65,7 @@ namespace Kraken
                 //remove colliders to not interfere with ontriggerexit
                 var colliders = GetComponentsInChildren<Collider>();
                 System.Array.ForEach(colliders, x => x.enabled = false);
+                photonView.RPC(nameof(RPC_All_SpawnWool), RpcTarget.All);
             }
         }
 
@@ -71,16 +75,15 @@ namespace Kraken
         {
             GetComponent<PhotonTransformView>().enabled = false;
             GetComponent<NavMeshAgent>().enabled = false;
+            GetComponent<SphereCollider>().isTrigger = false;
+            Rigidbody rg = GetComponent<Rigidbody>();
+            rg.isKinematic = false;
 
-            SphereCollider colAdded = gameObject.AddComponent<SphereCollider>();
-            colAdded.radius = 0.2f;
-
-            Rigidbody rgAdded = gameObject.AddComponent<Rigidbody>();
             Vector3 closestPlayerPos = GetClosestPlayer().Item1.transform.position;
             Vector3 dirToSend = -(closestPlayerPos - this.transform.position).normalized;
             Vector3 verticalForce = new Vector3(0f, Random.Range(1f, 10f), 0f);
-            rgAdded.AddForce(dirToSend * 35f + verticalForce, ForceMode.Impulse);
-            rgAdded.AddTorque(new Vector3(Random.Range(3f, 8f), Random.Range(3f, 8f), Random.Range(3f, 8f)), ForceMode.Impulse);
+            rg.AddForce(dirToSend * 35f + verticalForce, ForceMode.Impulse);
+            rg.AddTorque(new Vector3(Random.Range(3f, 8f), Random.Range(3f, 8f), Random.Range(3f, 8f)), ForceMode.Impulse);
 
             if (!PhotonNetwork.IsMasterClient) return;
 
@@ -91,9 +94,34 @@ namespace Kraken
             }, true);
         }
 
+        public void DisableControllerAndEnablePhysics()
+        {
+            _entityController.SetControllerActive(false);
+            GetComponent<SphereCollider>().isTrigger = false;
+            Rigidbody rg = GetComponent<Rigidbody>();
+            rg.isKinematic = false;
+        }
+
+        public void EnableControllerAndDisablePhysics()
+        {
+            _entityController.SetControllerActive(true);
+            GetComponent<SphereCollider>().isTrigger = true;
+            Rigidbody rg = GetComponent<Rigidbody>();
+            rg.isKinematic = true;
+        }
+
         public Kraken.Game.HealthComponent GetHealthComponent()
         {
             return _healthComponent;
+        }
+
+        [PunRPC]
+        private void RPC_All_SpawnWool()
+        {
+            for (int i = 0; i < _woolDropped; i++)
+            {
+                Instantiate(_woolPrefab, gameObject.transform.position, Quaternion.identity);
+            }
         }
     }
 }

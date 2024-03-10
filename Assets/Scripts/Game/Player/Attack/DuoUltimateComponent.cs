@@ -5,7 +5,6 @@ using Photon.Realtime;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 using UnityEngine.Experimental.AI;
 
@@ -24,28 +23,65 @@ namespace Kraken
         private static UltimateState _state = UltimateState.NotInUltimate;
         private static bool _otherPlayerWaiting = false;
         private bool _playersSeparated = false;
-        private static bool _ultimateAvailable = true;
-        private Coroutine _inputTimerCoroutine;
-        private Coroutine ultimateTimerCoroutine;
+        private bool _canBeEnded = true;
+        private static bool _ultimateAvailable = false;
+        private static int _woolQuantity = 0;
+        private static int _minWoolQuantity = 0;
+        public static int _woolUsed = 0;
 
+        private float _distanceTraveled = 0;
+        private float _nextWoolUsage = 0;
+        private Vector3 _previousPosition;
+
+        private Coroutine _inputTimerCoroutine;
+
+        private void Start()
+        {
+            _minWoolQuantity = Config.current.ultimateMinWool;
+            EventManager.AddEventListener(EventNames.UpdateWoolQuantity, UpdateWoolQuantity);
+            if (photonView.IsMine)
+            {
+                EventManager.AddEventListener(EventNames.UltimateRunning, HandleUltimateRunning);
+            };
+        }
+
+        private void OnDestroy()
+        {
+            EventManager.RemoveEventListener(EventNames.UpdateWoolQuantity, UpdateWoolQuantity);
+            if (photonView.IsMine)
+            {
+                EventManager.RemoveEventListener(EventNames.UltimateRunning, HandleUltimateRunning);
+            };
+        }
 
         private void Update()
         {
             if (!photonView.IsMine) return;
-            if (!PhotonNetwork.IsMasterClient) return;
             if (_state == UltimateState.InUltimate)
             {
-                if (GetDistanceBetweenPlayers() < Config.current.ultimateEndDistance)
+                //Calculate distance traveled
+                Vector3 distanceVec = transform.position - _previousPosition;
+                _distanceTraveled += distanceVec.magnitude;
+                _previousPosition = transform.position;
+                if (_distanceTraveled > _nextWoolUsage)
+                {
+                    photonView.RPC(nameof(RPC_Master_DispatchGainWool), RpcTarget.MasterClient, -1);
+                    _nextWoolUsage += Config.current.ultimateDistancePerWool;
+                    _woolUsed++;
+                }
+
+                if (!PhotonNetwork.IsMasterClient || !_canBeEnded) return;
+
+                if (_woolQuantity == 0)
+                {
+                    photonView.RPC(nameof(Rpc_All_FinishDrawing), RpcTarget.All, true);
+                }
+                else if (GetDistanceBetweenPlayers() < Config.current.ultimateEndDistance)
                 {
                     if (_playersSeparated)
                     {
                         _playersSeparated = false;
                         photonView.RPC(nameof(Rpc_All_FinishDrawing), RpcTarget.All, true);
-                        if (ultimateTimerCoroutine != null)
-                        {
-                            StopCoroutine(ultimateTimerCoroutine);
-                            ultimateTimerCoroutine = null;
-                        }
                     }
                 }
                 else
@@ -57,7 +93,13 @@ namespace Kraken
 
         public void OnDuoUltimateInput(bool input)
         {
-            if (_state == UltimateState.InUltimate || !_ultimateAvailable) return;
+            if (_state == UltimateState.InUltimate)
+            {
+                // Cancel the ultimate
+                photonView.RPC(nameof(RPC_AllCancelUltimate), RpcTarget.All);
+                return;
+            }
+            if (!_ultimateAvailable) return;
 
             _state = input ? UltimateState.WaitingForUltimate : UltimateState.NotInUltimate;
             if ((_otherPlayerWaiting || !Config.current.requireTwoPlayersForUltimate) && input && GetDistanceBetweenPlayers() < Config.current.ultimateStartMaxDistance)
@@ -68,6 +110,12 @@ namespace Kraken
             {
                 photonView.RPC(nameof(RPC_Others_WaitingForUltimate), RpcTarget.Others, input); ;
             }
+        }
+
+        [PunRPC]
+        public void RPC_Master_DispatchGainWool(int quantity)
+        {
+            EventManager.Dispatch(EventNames.GainWool, new IntDataBytes(-1));
         }
 
         [PunRPC]
@@ -88,29 +136,44 @@ namespace Kraken
             _otherPlayerWaiting = false;
         }
 
+        private IEnumerator UltimateMinimumTimer()
+        {
+            _canBeEnded = false;
+            yield return new WaitForSeconds(Config.current.ultimateMinimumDuration);
+            _canBeEnded = true;
+        }
+
         [PunRPC]
         public void RPC_All_StartDrawing()
         {
-            _state = UltimateState.InUltimate;
+            EventManager.Dispatch(EventNames.UltimateRunning, new BoolDataBytes(true));
+        }
+
+        private void HandleUltimateRunning(BytesData data)
+        {
+            bool isRunning = ((BoolDataBytes)data).BoolValue;
+            if (isRunning)
+            {
+                OnStartDrawing();
+            }
+        }
+
+        private void OnStartDrawing()
+        {
             _otherPlayerWaiting = false;
             _playersSeparated = false;
+            _distanceTraveled = 0;
+            _previousPosition = transform.position;
+            _nextWoolUsage = Config.current.ultimateDistancePerWool;
+            _woolUsed = 0;
+            _state = UltimateState.InUltimate;
+            StartCoroutine(UltimateMinimumTimer());
             if (_players.Length != 2) _players = GameObject.FindGameObjectsWithTag("Player");
             _players[0].transform.GetComponentInChildren<TrailRenderer>().AddPosition(_players[1].transform.position);
-            _players[1].transform.GetComponentInChildren<TrailRenderer>().AddPosition(_players[0].transform.position);
             foreach (GameObject player in _players)
             {
                 player.transform.GetComponentInChildren<TrailRenderer>().emitting = true;
             }
-            if (PhotonNetwork.IsMasterClient)
-            {
-                ultimateTimerCoroutine = StartCoroutine(UltimateTimer());
-            }
-        }
-
-        IEnumerator UltimateTimer()
-        {
-            yield return new WaitForSeconds(Config.current.ultimateDuration);
-            photonView.RPC(nameof(Rpc_All_FinishDrawing), RpcTarget.All, false);
         }
 
         IEnumerator UltimateCooldown()
@@ -120,6 +183,19 @@ namespace Kraken
             yield return new WaitForSeconds(Config.current.ultimateCooldown);
             _ultimateAvailable = true;
             EventManager.Dispatch(EventNames.UpdateUltimateUI, new FloatDataBytes(0));
+        }
+
+        private void UpdateWoolQuantity(BytesData data)
+        {
+            _woolQuantity = ((IntDataBytes)data).IntValue;
+            if (_woolQuantity >= _minWoolQuantity)
+            {
+                _ultimateAvailable = true;
+            }
+            else
+            {
+                _ultimateAvailable = false;
+            }
         }
 
         [PunRPC]
@@ -157,7 +233,36 @@ namespace Kraken
             }
 
             _state = UltimateState.NotInUltimate;
-            StartCoroutine(UltimateCooldown());
+            EventManager.Dispatch(EventNames.UltimateRunning, new BoolDataBytes(false));
+        }
+
+        [PunRPC]
+        private void RPC_AllCancelUltimate()
+        {
+            if (_players.Length != 2) _players = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject player in _players)
+            {
+                TrailRenderer renderer = player.transform.GetComponentInChildren<TrailRenderer>();
+                renderer.emitting = false;
+                renderer.Clear();
+            }
+            if (PhotonNetwork.IsMasterClient)
+            {
+                EventManager.Dispatch(EventNames.GainWool, new IntDataBytes(_woolUsed));
+            }
+            else
+            {
+                photonView.RPC(nameof(RPC_Master_RecoverSecondPlayerWool), RpcTarget.MasterClient, _woolUsed);
+            }
+
+            _state = UltimateState.NotInUltimate;
+            EventManager.Dispatch(EventNames.UltimateRunning, new BoolDataBytes(false));
+        }
+
+        [PunRPC]
+        private void RPC_Master_RecoverSecondPlayerWool(int quantity)
+        {
+            EventManager.Dispatch(EventNames.GainWool, new IntDataBytes(quantity));
         }
 
         private float GetDistanceBetweenPlayers()
@@ -197,7 +302,7 @@ namespace Kraken
             {
                 enemyPos2d.x = enemy.transform.position.x;
                 enemyPos2d.y = enemy.transform.position.z;
-                if (isEnemyInPolygon(positions, enemyPos2d))
+                if (IsEnemyInPolygon(positions, enemyPos2d))
                 {
                     enemiesAffected++;
                     enemyHealthComponent = enemy.GetComponent<HealthComponent>();
@@ -235,7 +340,7 @@ namespace Kraken
         }*/
 
         // Shamelessly stolen from https://codereview.stackexchange.com/a/108903
-        private bool isEnemyInPolygon(List<Vector2> positions, Vector2 enemyPos)
+        private bool IsEnemyInPolygon(List<Vector2> positions, Vector2 enemyPos)
         {
             int polygonLength = positions.Count, i = 0;
             bool inside = false;

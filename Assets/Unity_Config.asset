@@ -19,8 +19,15 @@ MonoBehaviour:
   loadCustomSceneName: 
   isSkipMainMenu: 0
   useDebugGameFlow: 1
+  randomizeObjectives: 1
   gameDuration: 600
   maxHealth: 250
+  razzleAbilityCooldown: 4
+  razzleAbilityPullDuration: 2.4
+  razzleAbilityRadius: 6
+  razzleAbilityInitialPullStrength: 60
+  razzleAbilityPullStrengthOverTime: 10
+  razzleAbilitySpawnDistanceOffset: 9
   moveSpeed: 7.5
   sprintSpeed: 14
   attackMoveSpeed: 3
@@ -46,4 +53,14 @@ MonoBehaviour:
   ultimateDuration: 5
   ultimateTriggerTimer: 5
   ultimateCooldown: 10
+  ultimateMinimumDuration: 0.5
   enemyStaggerDuration: 2
+  showBasicEnemies: 0
+  minWoolVerticalVelocity: 5
+  maxWoolVerticalVelocity: 8
+  maxWoolHorizontalVelocity: 3
+  maxWoolAngularVelocity: 5
+  woolRagdollDuration: 2
+  woolAcceleration: 50
+  woolDrag: 5
+  initialWoolQuantity: 0
