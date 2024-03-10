@@ -74,12 +74,12 @@ namespace Kraken
                 Vector3 spawnPos = transform.position + new Vector3(0f, _verticalOffset, 0f);
                 GameObject ability = NetworkUtils.Instantiate(_abilityPrefab.name, spawnPos);
 
-                DazzlePullAbility aoeAbility = ability.GetComponent<DazzlePullAbility>();
+                DazzleAoEAbility aoeAbility = ability.GetComponent<DazzleAoEAbility>();
                 aoeAbility.ActivateAbility();
 
                 _playerEntity.SetControlsEnabled(true);
                 transform.position = endPos;
-            }, true);
+            }, timeScaled_: true);
         }
     }
 }

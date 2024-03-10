@@ -7,11 +7,11 @@ using Bytes;
 
 namespace Kraken
 {
-    public class DazzlePullAbility : MonoBehaviourPun
+    public class DazzleAoEAbility : MonoBehaviourPun
     {
         [SerializeField] private float _abilityCircleLifeTime = 0.28f;
+        [SerializeField] private float _radius = 4f;
         private float _damageDealt = 5f;
-        private float _radius = 4f;
 
         private void InitAbility() 
         {
@@ -19,7 +19,7 @@ namespace Kraken
             _damageDealt = Config.current.dazzleAbilityDamage;
             _radius = Config.current.dazzleAbilityRadius;
 
-            // Size ability mesh approximatly to the radius size
+            // Size ability mesh to the radius size (yup, divided by 4 is the way)
             transform.localScale *= _radius / 4f;
         }
 
@@ -44,7 +44,7 @@ namespace Kraken
                 if (!photonView.AmOwner) return;
 
                 PhotonNetwork.Destroy(photonView);
-            });
+            }, timeScaled_: true);
         }
 
         private void OnDrawGizmosSelected()
