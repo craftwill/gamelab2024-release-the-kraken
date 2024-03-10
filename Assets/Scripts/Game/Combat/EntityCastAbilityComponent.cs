@@ -20,7 +20,7 @@ namespace Kraken
                 {
                     // Can Cast again
                     _cooldownAnim = null;
-                });
+                }, timeScaled_: true);
             }
         }
 

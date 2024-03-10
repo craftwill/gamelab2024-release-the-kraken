@@ -20,7 +20,7 @@ namespace Kraken
 
         private float _initialEnemiesDrag = -1;
 
-        private void Start()
+        private void InitAbility()
         {
             _pullDuration = Config.current.razzleAbilityPullDuration;
             _radius = Config.current.razzleAbilityRadius;
@@ -33,12 +33,13 @@ namespace Kraken
 
         public void ActivateAbility()
         {
-            photonView.RPC(nameof(RPC_All_ActivateAbility), RpcTarget.All);
+            photonView.RPC(nameof(RPC_All_ActivateRazzleAbility), RpcTarget.All);
         }
 
         [PunRPC]
-        private void RPC_All_ActivateAbility()
+        private void RPC_All_ActivateRazzleAbility()
         {
+            InitAbility();
             _isPulling = true;
             _timeSinceStart = 0;
 
@@ -47,11 +48,10 @@ namespace Kraken
 
         private void FindNewTargets() 
         {
-            Collider[] collidersFoundInSphere = Physics.OverlapSphere(transform.position, _radius, Physics.AllLayers, QueryTriggerInteraction.Collide);
+            List<EnemyEntity> enemiesFound = CombatUtils.GetEnemyEntitiesInRadius(transform.position, _radius);
 
-            foreach (Collider col in collidersFoundInSphere)
+            foreach (EnemyEntity enemyEntity in enemiesFound)
             {
-                EnemyEntity enemyEntity = col.GetComponent<EnemyEntity>();
                 if (enemyEntity != null)
                 {
                     if (_enemyEntitiesBeingPulled.Contains(enemyEntity)) continue;

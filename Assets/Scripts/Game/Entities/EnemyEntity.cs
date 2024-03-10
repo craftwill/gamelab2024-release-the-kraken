@@ -1,6 +1,8 @@
-using Photon.Pun;
+
 using UnityEngine;
 using UnityEngine.AI;
+
+using Photon.Pun;
 
 using Bytes;
 using Kraken.Network;
@@ -108,6 +110,11 @@ namespace Kraken
             GetComponent<SphereCollider>().isTrigger = true;
             Rigidbody rg = GetComponent<Rigidbody>();
             rg.isKinematic = true;
+        }
+
+        public void TakeDamage(float dmgAmount)
+        {
+            _healthComponent.TakeDamage(dmgAmount);
         }
 
         public Kraken.Game.HealthComponent GetHealthComponent()

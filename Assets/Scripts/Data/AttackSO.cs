@@ -31,11 +31,18 @@ namespace Kraken
         public int damage;
         public int comboStep = 1;
 
+        private bool controlsEnabled = true;
+
         private GameObject _collider;
         private Action<InputAction.CallbackContext> _inputCallBackHandler;
         private bool _inProgress = false;
 
         private PlayerEntity _playerEntity;
+
+        public void SetControlsEnabled(bool controlsEnabled) 
+        {
+            this.controlsEnabled = controlsEnabled;
+        }
 
         public void Subscribe(PlayerAttackComponent handle, PlayerEntity playerEntity)
         {
@@ -62,6 +69,8 @@ namespace Kraken
         
         private void PerformAttack(PlayerAttackComponent handle, InputAction.CallbackContext callback)
         {
+            if (!controlsEnabled) return;
+
             if (handle.IsFreeToAttack)
             {
                 if (IsInProgress())

@@ -30,12 +30,11 @@ namespace Kraken
             }
         }
 
-        public void UnsubscribeAttacks() 
+        public void SetAttacksControlsEnabled(bool controlsEnabled)
         {
             if (photonView.AmOwner)
             {
-                _isOwner = true;
-                _attacks.ForEach(x => x.Unsubscribe());
+                _attacks.ForEach(x => x.SetControlsEnabled(controlsEnabled));
             }
         }
     }
