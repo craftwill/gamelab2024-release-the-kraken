@@ -17,7 +17,7 @@ MonoBehaviour:
     type: 3}
   canBeActivatedFromNeutral: 1
   nextAttack: {fileID: 11400000, guid: 8ce0b873351851b47a26208ab227c093, type: 2}
-  colliderGameObject: {fileID: 9211684295016083868, guid: 7176f4963c849c742a97a6e122965e1b,
+  colliderGameObject: {fileID: 9211684295016083868, guid: 2225460c0f30b044f9f6ad6844e982ed,
     type: 3}
   timeBeforeHitboxDuration: 0.45
   hitboxDuration: 0.15
