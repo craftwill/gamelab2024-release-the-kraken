@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733798a2ec03cf64a85eaf539f69baa0, type: 3}
   m_Name: id10_MinibossObjective
   m_EditorClassIdentifier: 
-  objectiveName: A strong foe spawned in the red zone!
+  objectiveName: A strong foe spawned in the NORTH zone!
   objectiveTimer: 60
   minibossPrefab: {fileID: 7282374055492276171, guid: 691daec9c7545fd4e983b7f43bb3a5b4,
     type: 3}

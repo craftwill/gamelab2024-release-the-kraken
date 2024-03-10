@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8327c3e2fa30b4a90260a44d525164, type: 3}
   m_Name: BossObjective
   m_EditorClassIdentifier: 
-  objectiveName: The final boss spawned!
+  objectiveName: The final boss spawned in the CENTER zone!
   objectiveTimer: -1
   bossPrefab: {fileID: 7708995712779942215, guid: 6f7a9bd6f58aead4b8cacc9f5f345a70,
     type: 3}
