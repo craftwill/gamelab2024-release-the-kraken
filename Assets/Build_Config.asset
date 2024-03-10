@@ -55,3 +55,11 @@ MonoBehaviour:
   ultimateCooldown: 10
   enemyStaggerDuration: 2
   showBasicEnemies: 0
+  minWoolVerticalVelocity: 5
+  maxWoolVerticalVelocity: 8
+  maxWoolHorizontalVelocity: 3
+  maxWoolAngularVelocity: 5
+  woolRagdollDuration: 2
+  woolAcceleration: 50
+  woolDrag: 5
+  initialWoolQuantity: 0

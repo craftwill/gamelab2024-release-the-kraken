@@ -79,7 +79,6 @@ namespace Kraken
                 _sprintInput.action.canceled += OnSprintCanceled;
                 _pauseInput.action.performed += OnPause;
                 _duoUltimateInput.action.performed += OnDuoUltimate;
-                _duoUltimateInput.action.canceled += OnDuoUltimateReleased;
 
                 GameManager.ToggleCursor(false);
                 EventManager.AddEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
@@ -95,7 +94,6 @@ namespace Kraken
             _moveInput.action.canceled -= OnMove;
             _pauseInput.action.performed -= OnPause;
             _duoUltimateInput.action.performed += OnDuoUltimate;
-            _duoUltimateInput.action.canceled += OnDuoUltimateReleased;
 
             EventManager.RemoveEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
             EventManager.RemoveEventListener(EventNames.PlayerAttackEnd, HandleAttackEnd);
@@ -318,13 +316,6 @@ namespace Kraken
             if (!controlsEnabled) return;
 
             _duoUltimateComponent.OnDuoUltimateInput(true);
-        }
-
-        public void OnDuoUltimateReleased(InputAction.CallbackContext value)
-        {
-            if (!controlsEnabled) return;
-
-            _duoUltimateComponent.OnDuoUltimateInput(false);
         }
 
         public void DisableControls()

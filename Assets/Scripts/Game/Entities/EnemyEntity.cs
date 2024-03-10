@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 using Bytes;
+using Kraken.Network;
 
 namespace Kraken
 {
@@ -14,6 +15,8 @@ namespace Kraken
         [SerializeField] private EnemyZoneComponent _enemyZoneComponent;
         [SerializeField] private PathfindingEntityController _pathfindingEntityController;
         [SerializeField] private GameObject _minimapIcon;
+        [SerializeField] private GameObject _woolPrefab;
+        [SerializeField] private int _woolDropped = 1;
 
         protected override void Awake()
         {
@@ -63,6 +66,7 @@ namespace Kraken
                 //remove colliders to not interfere with ontriggerexit
                 var colliders = GetComponentsInChildren<Collider>();
                 System.Array.ForEach(colliders, x => x.enabled = false);
+                photonView.RPC(nameof(RPC_All_SpawnWool), RpcTarget.All);
             }
         }
 
@@ -110,6 +114,15 @@ namespace Kraken
         public Kraken.Game.HealthComponent GetHealthComponent()
         {
             return _healthComponent;
+        }
+
+        [PunRPC]
+        private void RPC_All_SpawnWool()
+        {
+            for (int i = 0; i < _woolDropped; i++)
+            {
+                Instantiate(_woolPrefab, gameObject.transform.position, Quaternion.identity);
+            }
         }
     }
 }
