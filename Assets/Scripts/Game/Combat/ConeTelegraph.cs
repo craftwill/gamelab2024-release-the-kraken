@@ -40,6 +40,9 @@ namespace Kraken
             _coneMeshInner = new Mesh();
             _coneMeshOuter = new Mesh();
 
+            _meshFilterInner.mesh = _coneMeshInner;
+            _meshFilterOuter.mesh = _coneMeshOuter;
+
             _angle *= Mathf.Deg2Rad;
         }
 
@@ -122,9 +125,6 @@ namespace Kraken
 
             _coneMeshInner.triangles = trianglesInner;
             _coneMeshOuter.triangles = trianglesOuter;
-
-            _meshFilterInner.mesh = _coneMeshInner;
-            _meshFilterOuter.mesh = _coneMeshOuter;
         }
     }
 }

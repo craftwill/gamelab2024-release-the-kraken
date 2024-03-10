@@ -23,5 +23,13 @@ namespace Kraken
 
             return enemiesFound;
         }
+
+        private static PlayerEntity[] PlayerEnties = null;
+
+        static public PlayerEntity[] GetPlayerEntities()
+        {
+            if (PlayerEnties is null) PlayerEnties = GameObject.FindObjectsByType<PlayerEntity>(FindObjectsSortMode.None);
+            return PlayerEnties;
+        }
     }
 }

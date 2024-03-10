@@ -1,3 +1,4 @@
+using Bytes;
 using Kraken.Network;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,12 +22,16 @@ namespace Kraken
             EnemyEntity entity = NetworkUtils.Instantiate(minibossPrefab.name, _instance.Zone.GetSpawner().GetRandomPosition()).GetComponent<EnemyEntity>();
             entity.GetHealthComponent().OnDie.AddListener(MinibossDeath);
 
+            EventManager.Dispatch(EventNames.MinibossCountChange, new IntDataBytes(1));
+
             territory.TriggerObjective(_instance);
         }
 
-        public void MinibossDeath()
-        {
+        private void MinibossDeath()
+        {   
             _instance.EndObjective(true);
+
+            EventManager.Dispatch(EventNames.MinibossCountChange, new IntDataBytes(-1));
         }
     }
 }

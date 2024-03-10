@@ -34,6 +34,7 @@ namespace Kraken
         public const string NextObjective = "NextObjective";
         public const string StopObjectives = "StopObjectives";
         public const string ZoneFullLoss = "ZoneFullLoss";
+        public const string MinibossCountChange = "MinibossDeath";
 
         // Spawning
         public const string StartSpawning = "StartSpawning";
@@ -52,6 +53,9 @@ namespace Kraken
 
         //Game Events
         public const string TogglePause = "TogglePause";
+        public const string GainWool = "GainWool";
+        public const string UpdateWoolQuantity = "UpdateWoolQuantity";
+        public const string UltimateRunning = "UltimateRunning";
 
         //Player Events
         public const string PlayerDeath = "PlayerDeath";
