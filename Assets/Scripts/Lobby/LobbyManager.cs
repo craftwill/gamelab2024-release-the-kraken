@@ -181,7 +181,6 @@ namespace Kraken
 
         public void OnMove(InputAction.CallbackContext value)
         {
-            Debug.Log("move");
             if (_movementInput) return;
             _movementInput = true;
             float direction = value.ReadValue<Vector2>().x;
@@ -204,19 +203,16 @@ namespace Kraken
 
         public void OnSubmit(InputAction.CallbackContext value)
         {
-            Debug.Log("Submit");
             Btn_OnStartGame();
         }
 
         public void OnCancel(InputAction.CallbackContext value)
         {
-            Debug.Log("Cancel");
             Btn_OnLeaveLobby();
         }
 
         public void OnInputReleased(InputAction.CallbackContext value)
         {
-            Debug.Log("released");
             _movementInput = false;
         }
 

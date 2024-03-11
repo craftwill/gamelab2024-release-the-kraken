@@ -93,7 +93,7 @@ namespace Together
         }
         public override void OnJoinRoomFailed(short returnCode, string message)
         {
-            Debug.Log("Couldn't join: " + message);
+            Debug.LogWarning("Couldn't join: " + message);
             isJoining = false;
         }
     }
