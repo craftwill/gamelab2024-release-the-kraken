@@ -12,6 +12,7 @@ namespace Kraken
         [SerializeField] protected Entity _ownerEntity;
         [SerializeField] protected EntityAnimationComponent _entityAnimationComponent;
         [SerializeField] protected NavMeshAgent _navMeshAgent;
+        protected bool _canMove = true;
         private bool _staggered = false;
         private Coroutine _staggerCoroutine;
 
@@ -63,6 +64,8 @@ namespace Kraken
             base.FixedUpdate();
 
             if (!PhotonNetwork.IsMasterClient || !_isActive) return;
+
+            if (!_canMove) return;
 
             (PlayerEntity closestPlayer, float closestDistance) = _ownerEntity.GetClosestPlayer();
             
