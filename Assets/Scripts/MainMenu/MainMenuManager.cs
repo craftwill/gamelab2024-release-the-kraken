@@ -31,6 +31,12 @@ namespace Together
             {
                 cvGroup.interactable = true;
             }
+            _inputFieldRoomCode.onSubmit.AddListener(OnEnterInCodeField);
+        }
+
+        private void OnDestroy()
+        {
+            _inputFieldRoomCode.onSubmit.RemoveListener(OnEnterInCodeField);
         }
 
         public override void OnConnectedToMaster()
@@ -79,6 +85,16 @@ namespace Together
             
             if(cause == DisconnectCause.DisconnectByClientLogic)
                 Application.Quit();
+        }
+
+        private void OnEnterInCodeField(string text)
+        {
+            Btn_OnJoinGame();
+        }
+        public override void OnJoinRoomFailed(short returnCode, string message)
+        {
+            Debug.LogWarning("Couldn't join: " + message);
+            isJoining = false;
         }
     }
 }
