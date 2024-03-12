@@ -25,7 +25,8 @@ namespace Kraken
             base.Awake();
 
             _healthComponent.MaxHealth = _config.maxHealth;
-            if (_attackComponent) _attackComponent.InitSettings(_config.damageDealt, _config.attackCooldown, _config.attackDuration, _config.lockedIntoAttackDuration);
+            if (_attackComponent) 
+                _attackComponent.InitSettings(_config.damageDealt, _config.attackCooldown, _config.attackDuration, _config.lockedIntoAttackDuration, _config.rangedProjectile);
             _entityController.InitSettings(_config);
             _enemyZoneComponent.InitSettings(_config.zoneOccupancyCount);
         }

@@ -76,6 +76,10 @@ MonoBehaviour:
   - RPC_All_ActivateRazzleAbility
   - RPC_All_SpawnWool
   - RPC_All_ActivateAbility
+  - RPC_All_Send
+  - RPC_All_ProjectileHit
+  - RPC_Other_SendProjectile
+  - RPC_All_SendProjectile
   - RPC_All_GainWool
   - RPC_Master_SpendWool
   - RPC_All_UseWool

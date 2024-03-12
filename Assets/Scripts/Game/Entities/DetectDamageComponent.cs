@@ -16,19 +16,31 @@ namespace Kraken.Game
         {
             if (other.transform.tag == "DealDamage")
             {
-                var idc = other.GetComponent<InflictDamageComponent>();
-                if(idc is not null)
+                var inflictDmgComp = other.GetComponent<InflictDamageComponent>();
+                if(inflictDmgComp != null)
                 {
-                    if (_takeDamageFromClans.Contains(idc.Damageclan))
-                    {
-                        OnDetectDamage.Invoke(idc.Damage);
-                    }
+                    ProcessDamage(inflictDmgComp);
                 }
-                else
-                {
-                    OnDetectDamage.Invoke(1);
-                }
-                
+            }
+        }
+
+        private void ProcessDamage(InflictDamageComponent inflictDmgComp) 
+        {
+            bool canDamage = _takeDamageFromClans.Contains(inflictDmgComp.Damageclan);
+
+            if (!canDamage) return;
+
+            // If its a projectile, call ProjectileHit on it.
+            BaseProjectile projectile = inflictDmgComp.gameObject.GetComponent<BaseProjectile>();
+            if (projectile != null)
+            {
+                canDamage = canDamage && projectile.CanDamage;
+                projectile.ProjectileHit();
+            }
+
+            if (canDamage)
+            {
+                OnDetectDamage.Invoke(inflictDmgComp.Damage);
             }
         }
 

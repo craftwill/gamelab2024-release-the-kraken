@@ -16,6 +16,7 @@ namespace Kraken
         public const string TryConnectToPhoton = "TryConnectToPhoton";
         public const string ConnectedToMaster = "ConnectedToMaster";
         public const string NetworkError = "NetworkError";
+        public const string JoinFailed = "JoinFailed";
 
         // Lobby Events
         public const string JoinRoomWithCode = "JoinRoomWithCode";
