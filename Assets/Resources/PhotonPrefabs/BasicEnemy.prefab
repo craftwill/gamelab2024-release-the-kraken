@@ -251,7 +251,7 @@ MonoBehaviour:
   _minimapIcon: {fileID: 5847381557580223909}
   _woolPrefab: {fileID: 5281229062787241931, guid: a7e2e3f5a7a656a44805d0841a9704b9,
     type: 3}
-  _distanceCheck: {fileID: 1356253468389236086}
+  _woolDropped: 1
 --- !u!114 &4623548838470204180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,8 +264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 893b1a6e60225654b8798b72b5538567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 1
-  _attackRange: 2.5
   _ownerEntity: {fileID: 2628587998543513100}
   _entityAnimationComponent: {fileID: 7010872933795953625}
   _navMeshAgent: {fileID: 7968008091505032441}
@@ -992,7 +990,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 2.5, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 25, y: 25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2745319777357053054}

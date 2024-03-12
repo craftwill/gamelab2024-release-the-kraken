@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f788d800c1c6bc40a4578f7438ab716, type: 3}
-  m_Name: TerritoryObjective_2
+  m_Name: TerritoryObjective_South
   m_EditorClassIdentifier: 
-  objectiveName: Defend the GREEN zone!
+  objectiveName: Defend the SOUTH zone!
   objectiveTimer: 45
   spawnFrequency: 1
   spawnData: {fileID: 11400000, guid: ae52b6ddd841e724aa2dc41bdb8f3f64, type: 2}

@@ -21,4 +21,4 @@ MonoBehaviour:
   attackDuration: 0.1
   lockedIntoAttackDuration: 0.5
   zoneOccupancyCount: 1
-  pathfindingDistanceRadius: 100
+  pathfindingDistanceRadius: 25
