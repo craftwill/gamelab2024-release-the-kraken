@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Sheep Range
   maxHealth: 2
-  moveSpeed: 0.5
+  moveSpeed: 1
   attackRange: 2
   damageDealt: 1
   attackCooldown: 2
   attackDuration: 0.1
   lockedIntoAttackDuration: 1
   zoneOccupancyCount: 1
-  pathfindingDistanceRadius: 100
+  pathfindingDistanceRadius: 25
