@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using Kraken.Network;
 using Photon.Pun;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace Kraken
 {
@@ -105,6 +108,7 @@ namespace Kraken
         }
     }
 
+#if UNITY_EDITOR
     [CustomEditor(typeof(StarfallAttack))]
     public class CustomButton : Editor
     {
@@ -120,4 +124,5 @@ namespace Kraken
             }
         }
     }
+#endif
 }

@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using Bytes;
 using Kraken.Network;
 using Photon.Pun;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 
 namespace Kraken
 {
@@ -50,6 +54,7 @@ namespace Kraken
             telegraph2.StartTelegraph(_ring2ChargeTime, _ring2Radius, _ring1Radius);
         }
 
+#if UNITY_EDITOR
         [CustomEditor(typeof(RingsOfLightAttack))]
         public class CustomButton : Editor
         {
@@ -66,5 +71,6 @@ namespace Kraken
             }
         }
     }
+#endif
 }
 
