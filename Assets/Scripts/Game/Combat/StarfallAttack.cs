@@ -106,23 +106,22 @@ namespace Kraken
             }
             return spawnPoints;
         }
-    }
-
 #if UNITY_EDITOR
-    [CustomEditor(typeof(StarfallAttack))]
-    public class CustomButton : Editor
-    {
-        public override void OnInspectorGUI()
+        [CustomEditor(typeof(StarfallAttack))]
+        public class CustomButton : Editor
         {
-            base.OnInspectorGUI();
-
-            var script = (StarfallAttack)target;
-            if (GUILayout.Button("Trigger attack"))
+            public override void OnInspectorGUI()
             {
-                if (Application.isPlaying)
-                    script.StartAttack();
+                base.OnInspectorGUI();
+
+                var script = (StarfallAttack)target;
+                if (GUILayout.Button("Trigger attack"))
+                {
+                    if (Application.isPlaying)
+                        script.StartAttack();
+                }
             }
         }
-    }
 #endif
+    }
 }
