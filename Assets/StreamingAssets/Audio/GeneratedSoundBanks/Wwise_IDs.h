@@ -13,7 +13,11 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAY_FAST_WHOOSH_118248 = 3916127644U;
+        static const AkUniqueID PLAY_DASH = 2211787386U;
+        static const AkUniqueID PLAY_ENEMYHURT = 349172053U;
+        static const AkUniqueID PLAY_ENEMYSHOOT = 3253098515U;
+        static const AkUniqueID PLAY_PLAYERHURT = 3178286754U;
+        static const AkUniqueID PLAY_ULTIMATEGOOFF = 2741312416U;
     } // namespace EVENTS
 
     namespace BANKS

@@ -13,6 +13,7 @@ namespace Kraken
         [SerializeField] private Entity _ownerEntity;
         [SerializeField] private InflictDamageComponent _inflictDamageComponent;
         [SerializeField] private EntityAnimationComponent _entityAnimationComponent;
+        [SerializeField] private EnemySoundComponent _soundComponent;
 
         [Header("Attack Settings")]
         [SerializeField] private float _damageDealt = 1;
@@ -101,6 +102,7 @@ namespace Kraken
 
             // This send() calls a RPC_All behind the scene
             projectile.InitAndSend(sendDirection, _ownerEntity.EntityClan, _damageDealt);
+            photonView.RPC(nameof(_soundComponent.RPC_All_PlayEnemyAttackSound), RpcTarget.All);
         }
 
         private bool GetUsesRangedAttack() 
