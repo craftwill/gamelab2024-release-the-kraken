@@ -31,7 +31,7 @@ namespace Kraken
         public int damage;
         public int comboStep = 1;
 
-        private bool controlsEnabled = true;
+        
 
         private GameObject _collider;
         private Action<InputAction.CallbackContext> _inputCallBackHandler;
@@ -39,25 +39,20 @@ namespace Kraken
 
         private PlayerEntity _playerEntity;
 
-        public void SetControlsEnabled(bool controlsEnabled) 
-        {
-            this.controlsEnabled = controlsEnabled;
-        }
-
         public void Subscribe(PlayerAttackComponent handle, PlayerEntity playerEntity)
         {
             _playerEntity = playerEntity;
-
+            Debug.Log("here1");
             _inputCallBackHandler = (context) => PerformAttack(handle, context);
             if (canBeActivatedFromNeutral)
                 attackInput.action.performed += _inputCallBackHandler;
-
+            Debug.Log("here2");
             _collider = Instantiate(colliderGameObject, handle.transform);
             _collider.transform.position += handle.transform.forward;
             var idc = _collider.GetComponent<InflictDamageComponent>();
             if (idc is not null) idc.Damage = damage;
             else Debug.LogWarning("Warning: the collider doesn't have an InflictDamageComponent attached");
-
+            Debug.Log("here3");
             _inProgress = false;
         }
 
