@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using Kraken.Network;
 using Photon.Pun;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace Kraken
 {
@@ -103,21 +106,22 @@ namespace Kraken
             }
             return spawnPoints;
         }
-    }
-
-    [CustomEditor(typeof(StarfallAttack))]
-    public class CustomButton : Editor
-    {
-        public override void OnInspectorGUI()
+#if UNITY_EDITOR
+        [CustomEditor(typeof(StarfallAttack))]
+        public class CustomButton : Editor
         {
-            base.OnInspectorGUI();
-
-            var script = (StarfallAttack)target;
-            if (GUILayout.Button("Trigger attack"))
+            public override void OnInspectorGUI()
             {
-                if (Application.isPlaying)
-                    script.StartAttack();
+                base.OnInspectorGUI();
+
+                var script = (StarfallAttack)target;
+                if (GUILayout.Button("Trigger attack"))
+                {
+                    if (Application.isPlaying)
+                        script.StartAttack();
+                }
             }
         }
+#endif
     }
 }
