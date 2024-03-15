@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using System.Collections;
 using UnityEngine.InputSystem;
+using Bytes;
 
 namespace Kraken
 {
@@ -17,14 +18,24 @@ namespace Kraken
 
         private AttackSO _currentAttack;
         private bool _controlsEnabled = true;
+        private bool _inProgress;
+        private List<GameObject> _colliders = new List<GameObject>();
 
         private void Start()
         {
             if (photonView.AmOwner)
             {
                 _isOwner = true;
-                _attackInput.action.performed += PerformAttack;
+                _attackInput.action.performed += AttackPressed;
                 _currentAttack = _attacks[0];
+                _attacks.ForEach(x =>
+                {
+                    var c = Instantiate(x.colliderGameObject, transform);
+                    c.transform.position += transform.forward;
+                    var idc = c.GetComponent<InflictDamageComponent>();
+                    idc.Damage = x.damage;
+                    _colliders.Add(c);
+                });
             }
         }
 
@@ -32,7 +43,7 @@ namespace Kraken
         {
             if (_isOwner)
             {
-                _attackInput.action.performed -= PerformAttack;
+                _attackInput.action.performed -= AttackPressed;
             }
         }
 
@@ -44,64 +55,66 @@ namespace Kraken
             }
         }
 
-
-        private void PerformAttack(InputAction.CallbackContext callback)
+        private void AttackPressed(InputAction.CallbackContext callback)
         {
             if (!_controlsEnabled) return;
 
             if (IsFreeToAttack)
             {
-                if (IsInProgress())
+                if (_inProgress)
                 {
-                    if (nextAttack is null)
-                    {
-                        // Input buffer here?
-                        // _inProgress = false;
-                        // this.PerformAttack(handle, callback);
-                    }
-                    else
-                    {
-                        nextAttack.PerformAttack(handle, callback);
-                    }
-                    return;
+                    //if the animation of the current attack has not ended, perform the next attack(or the first one if this is the last one)
+                    _currentAttack = _currentAttack?.nextAttack ?? _attacks[0];
                 }
-                handle.IsFreeToAttack = false;
-
-                _inProgress = true;
-                handle.StartCoroutine(InProgressFunc(handle));
-
-                handle.StartCoroutine(AttackFunc(handle));
+                else
+                {
+                    _currentAttack = _attacks[0];
+                }
+                PerformAttack(_currentAttack);
             }
-
         }
 
-        /*private IEnumerator AttackFunc(PlayerAttackComponent handle)
+        private void PerformAttack(AttackSO attack)
+        {
+            StopCoroutine(nameof(InProgressFunc));
+            StopCoroutine(nameof(AnimDoneBufferTimer));
+            IsFreeToAttack = false;
+            _inProgress = true;
+            StartCoroutine(InProgressFunc(attack));
+            StartCoroutine(AttackFunc(attack));
+        }
+
+        private IEnumerator AttackFunc(AttackSO attack)
         {
             void AnimDonePlayingCallback()
             {
-                handle.IsFreeToAttack = true;
+                if (IsFreeToAttack)
+                {
+                    StartCoroutine(AnimDoneBufferTimer(attack));
+                }
             }
 
-            _playerEntity.PlayAttackAnimationCombo(comboStep, AnimDonePlayingCallback);
+            _playerEntity.PlayAttackAnimationCombo(attack.comboStep, AnimDonePlayingCallback);
 
-            yield return new WaitForSeconds(timeBeforeHitboxDuration);
-            _collider.SetActive(true);
+            yield return new WaitForSeconds(attack.timeBeforeHitboxDuration);
+            _colliders[attack.comboStep - 1].SetActive(true);
             EventManager.Dispatch(EventNames.PlayerAttackStart, new FloatDataBytes(Config.current.attackMoveSpeed));
-            yield return new WaitForSeconds(hitboxDuration);
-            _collider.SetActive(false);
+            yield return new WaitForSeconds(attack.hitboxDuration);
+            Debug.Log("hitbox in");
+            _colliders[attack.comboStep - 1].SetActive(false);
             EventManager.Dispatch(EventNames.PlayerAttackEnd, null);
         }
 
-        private IEnumerator InProgressFunc(PlayerAttackComponent handle)
+        private IEnumerator InProgressFunc(AttackSO attack)
         {
-            yield return new WaitForSeconds(totalAttackLength);
-            _inProgress = false;
+            yield return new WaitForSeconds(attack.attackLockLength);
+            IsFreeToAttack = true;
         }
-        */
-        public bool IsInProgress()
+
+        private IEnumerator AnimDoneBufferTimer(AttackSO attack)
         {
-            return _inProgress ||
-                (nextAttack is null ? false : nextAttack.IsInProgress());
+            yield return new WaitForSeconds(attack.animDoneBufferTimer);
+            _inProgress = false;
         }
     }
 }
