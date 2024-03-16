@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{4917630B-9388-B416-9769-325939968F3B}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{28C5AF7C-610A-330A-1FEA-ADADE9F2CEB7}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -30,15 +30,51 @@
 					<ShortName>fast-whoosh-118248.wav</ShortName>
 					<CachePath>SFX/fast-whoosh-118248_818F3B66.wem</CachePath>
 				</File>
+				<File Id="933963966" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ameno.wav</ShortName>
+					<CachePath>SFX/ameno_818F3B66.wem</CachePath>
+				</File>
+				<File Id="996749074" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>pew-pew-lame-sound-effect.wav</ShortName>
+					<CachePath>SFX/pew-pew-lame-sound-effect_461CF5D3.wem</CachePath>
+				</File>
+				<File Id="1042314046" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>classic_hurt.wav</ShortName>
+					<CachePath>SFX/classic_hurt_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1046494642" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>squeaky-toy-1-6059.wav</ShortName>
+					<CachePath>SFX/squeaky-toy-1-6059_818F3B66.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
-				<Event Id="3916127644" Name="Play_fast_whoosh_118248" DurationType="OneShot" DurationMin="1.2016326" DurationMax="1.2016326">
+				<Event Id="2211787386" Name="Play_Dash" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.2016326" DurationMax="1.2016326">
 					<MediaRefs>
 						<MediaRef Id="392899862"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="349172053" Name="Play_EnemyHurt" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.504" DurationMax="0.504">
+					<MediaRefs>
+						<MediaRef Id="1046494642"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3253098515" Name="Play_EnemyShoot" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.49308255" DurationMax="0.49308255">
+					<MediaRefs>
+						<MediaRef Id="996749074"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3178286754" Name="Play_PlayerHurt" DurationType="OneShot" DurationMin="0.36571428" DurationMax="0.36571428">
+					<MediaRefs>
+						<MediaRef Id="1042314046"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2741312416" Name="Play_UltimateGoOff" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.8557596" DurationMax="1.8557596">
+					<MediaRefs>
+						<MediaRef Id="933963966"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{35CDE757-0225-2484-E61A-A98B3EC6F71F}</FileHash>
+	<FileHash>{B806247C-694E-8CF6-C695-3D125670EE0F}</FileHash>
 </SoundBanksInfo>

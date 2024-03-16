@@ -19,6 +19,7 @@ namespace Kraken
             InUltimate
         }
         [SerializeField] private TrailRenderer _trailRenderer;
+        [SerializeField] private PlayerSoundComponent _soundComponent;
         private GameObject[] _players = {};
         private static UltimateState _state = UltimateState.NotInUltimate;
         private static bool _otherPlayerWaiting = false;
@@ -312,6 +313,7 @@ namespace Kraken
                     }
                 }
             }
+            photonView.RPC(nameof(_soundComponent.RPC_All_PlayUltimateGoOffSound), RpcTarget.All);
             Debug.Log(enemiesAffected + " enemies have taken " + damage + " damage by the ultimate");
         }
 
