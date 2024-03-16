@@ -81,6 +81,8 @@ namespace Kraken
                 GameManager.ToggleCursor(false);
                 EventManager.AddEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
                 EventManager.AddEventListener(EventNames.PlayerAttackEnd, HandleAttackEnd);
+                EventManager.AddEventListener(EventNames.UpdateCameraSettings, OnCameraSettingsChanged);
+                EventManager.AddEventListener(EventNames.TogglePause, OnTogglePause);
             }
         }
 
@@ -95,6 +97,8 @@ namespace Kraken
 
             EventManager.RemoveEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
             EventManager.RemoveEventListener(EventNames.PlayerAttackEnd, HandleAttackEnd);
+            EventManager.RemoveEventListener(EventNames.UpdateCameraSettings, OnCameraSettingsChanged);
+            EventManager.RemoveEventListener(EventNames.TogglePause, OnTogglePause);
         }
 
         private void Update()
@@ -112,6 +116,13 @@ namespace Kraken
 
                 if (controlsEnabled)
                     ProcessControls();
+
+                //Workaround
+                if (float.IsNaN(_freeLookCam.m_YAxis.Value))
+                {
+                    Debug.LogWarning("Y axis is NaN");
+                    _freeLookCam.m_YAxis.Value = 0;
+                }
             }
         }
 
@@ -268,8 +279,12 @@ namespace Kraken
 
         public void OnPause(InputAction.CallbackContext value)
         {
-            _camera.SetActive(!_camera.activeInHierarchy);
             EventManager.Dispatch(EventNames.TogglePause, null);
+        }
+
+        public void OnTogglePause(BytesData data)
+        {
+            _camera.SetActive(!_camera.activeInHierarchy);
         }
 
         public void HandleAttackStart(BytesData data)
@@ -349,6 +364,23 @@ namespace Kraken
         public void SetCameraEnabled(bool isCameraEnabled) 
         {
             _freeLookCam.enabled = isCameraEnabled;
+        }
+
+        public void OnCameraSettingsChanged(BytesData data)
+        {
+            if (_input.currentControlScheme.Equals("Gamepad"))
+            {
+                _freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.cameraControllerMultiplier;
+                _freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier * Config.current.cameraControllerMultiplier;
+            }
+            else
+            {
+                _freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity;
+                _freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier; ;
+            }
+            _freeLookCam.m_XAxis.m_InvertInput = Config.current.invertXAxis;
+            _freeLookCam.m_YAxis.m_InvertInput = Config.current.invertYAxis;
+            _freeLookCam.m_Lens.FieldOfView = Config.current.baseFov;
         }
     }
 }
