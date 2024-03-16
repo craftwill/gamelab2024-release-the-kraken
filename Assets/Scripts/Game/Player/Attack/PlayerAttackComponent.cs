@@ -14,8 +14,8 @@ namespace Kraken
         [SerializeField] private PlayerEntity _playerEntity;
         [SerializeField] private List<AttackSO> _attacks = new List<AttackSO>();
         [SerializeField] private InputActionReference _attackInput;
-        [SerializeField] public bool IsFreeToAttack { get; set; } = true;
-
+        
+        private bool _isFreeToAttack = true;
         private AttackSO _currentAttack;
         private bool _controlsEnabled = true;
         private bool _inProgress;
@@ -59,7 +59,7 @@ namespace Kraken
         {
             if (!_controlsEnabled) return;
 
-            if (IsFreeToAttack)
+            if (_isFreeToAttack)
             {
                 if (_inProgress)
                 {
@@ -78,7 +78,7 @@ namespace Kraken
         {
             StopCoroutine(nameof(InProgressFunc));
             StopCoroutine(nameof(AnimDoneBufferTimer));
-            IsFreeToAttack = false;
+            _isFreeToAttack = false;
             _inProgress = true;
             StartCoroutine(InProgressFunc(attack));
             StartCoroutine(AttackFunc(attack));
@@ -88,7 +88,7 @@ namespace Kraken
         {
             void AnimDonePlayingCallback()
             {
-                if (IsFreeToAttack)
+                if (_isFreeToAttack)
                 {
                     StartCoroutine(AnimDoneBufferTimer(attack));
                 }
@@ -100,7 +100,6 @@ namespace Kraken
             _colliders[attack.comboStep - 1].SetActive(true);
             EventManager.Dispatch(EventNames.PlayerAttackStart, new FloatDataBytes(Config.current.attackMoveSpeed));
             yield return new WaitForSeconds(attack.hitboxDuration);
-            Debug.Log("hitbox in");
             _colliders[attack.comboStep - 1].SetActive(false);
             EventManager.Dispatch(EventNames.PlayerAttackEnd, null);
         }
@@ -108,7 +107,7 @@ namespace Kraken
         private IEnumerator InProgressFunc(AttackSO attack)
         {
             yield return new WaitForSeconds(attack.attackLockLength);
-            IsFreeToAttack = true;
+            _isFreeToAttack = true;
         }
 
         private IEnumerator AnimDoneBufferTimer(AttackSO attack)
