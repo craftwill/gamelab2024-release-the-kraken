@@ -2088,6 +2088,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9b2192cb0ef96284ca43aedeb5de9f37, type: 2}
   - {fileID: 11400000, guid: efdefda1c7c82d74cb89e2e94c6612b2, type: 2}
   - {fileID: 11400000, guid: 3a05d6f4e3bebaf4ba868bb7bec59b00, type: 2}
+  _attackInput: {fileID: 8504988724220268357, guid: abae805e8a04eb44c951b59d4dda4171,
+    type: 3}
 --- !u!114 &6776644671420513302
 MonoBehaviour:
   m_ObjectHideFlags: 0
