@@ -90,5 +90,8 @@ namespace Kraken
         public float woolDrag = 5f;
         public int initialWoolQuantity = 0;
         public int maxWoolQuantity = 50;
+
+        [Header("UI Settings")]
+        public bool hideGameCanvasOnPause = false;
     }
 }
