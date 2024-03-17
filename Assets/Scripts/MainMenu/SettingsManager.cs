@@ -8,11 +8,11 @@ namespace Kraken
 {
     public class SettingsManager : MonoBehaviour
     {
-        [SerializeField] GameObject previousMenu;
-        [SerializeField] Toggle _toggleFullscreen;
-        [SerializeField] Toggle _toggleInvertYAxis;
-        [SerializeField] Toggle _toggleInvertXAxis;
-        [SerializeField] Slider _sliderSensitivity;
+        [SerializeField] private GameObject _previousMenu;
+        [SerializeField] private Toggle _toggleFullscreen;
+        [SerializeField] private Toggle _toggleInvertYAxis;
+        [SerializeField] private Toggle _toggleInvertXAxis;
+        [SerializeField] private Slider _sliderSensitivity;
         private string _fullscreenKey = Config.DISPLAY_FULLSCREEN;
         private string _invertYAxisKey = Config.CAMERA_INVERT_Y_AXIS;
         private string _invertXAxisKey = Config.CAMERA_INVERT_X_AXIS;

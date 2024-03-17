@@ -81,7 +81,7 @@ namespace Kraken
                 GameManager.ToggleCursor(false);
                 EventManager.AddEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
                 EventManager.AddEventListener(EventNames.PlayerAttackEnd, HandleAttackEnd);
-                EventManager.AddEventListener(EventNames.UpdateCameraSettings, OnCameraSettingsChanged);
+                EventManager.AddEventListener(EventNames.UpdateCameraSettings, HandleCameraSettingsChanged);
                 EventManager.AddEventListener(EventNames.TogglePause, OnTogglePause);
             }
         }
@@ -97,7 +97,7 @@ namespace Kraken
 
             EventManager.RemoveEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
             EventManager.RemoveEventListener(EventNames.PlayerAttackEnd, HandleAttackEnd);
-            EventManager.RemoveEventListener(EventNames.UpdateCameraSettings, OnCameraSettingsChanged);
+            EventManager.RemoveEventListener(EventNames.UpdateCameraSettings, HandleCameraSettingsChanged);
             EventManager.RemoveEventListener(EventNames.TogglePause, OnTogglePause);
         }
 
@@ -366,7 +366,7 @@ namespace Kraken
             _freeLookCam.enabled = isCameraEnabled;
         }
 
-        public void OnCameraSettingsChanged(BytesData data)
+        public void HandleCameraSettingsChanged(BytesData data)
         {
             if (_input.currentControlScheme.Equals("Gamepad"))
             {
