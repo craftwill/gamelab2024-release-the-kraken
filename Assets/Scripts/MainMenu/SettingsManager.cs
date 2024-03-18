@@ -57,7 +57,7 @@ namespace Kraken
         public void BtnBack()
         {
             gameObject.SetActive(false);
-            previousMenu.SetActive(true);
+            _previousMenu.SetActive(true);
         }
     }
 }
