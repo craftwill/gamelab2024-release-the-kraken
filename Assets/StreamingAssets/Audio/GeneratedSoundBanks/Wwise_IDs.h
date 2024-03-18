@@ -20,6 +20,12 @@ namespace AK
         static const AkUniqueID PLAY_ULTIMATEGOOFF = 2741312416U;
     } // namespace EVENTS
 
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID VOLUMEMUSIC = 3923584592U;
+        static const AkUniqueID VOLUMESOUNDS = 583340435U;
+    } // namespace GAME_PARAMETERS
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
@@ -29,6 +35,8 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID SOUNDS = 1492361653U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

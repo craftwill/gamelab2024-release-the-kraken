@@ -3533,6 +3533,11 @@ PrefabInstance:
       propertyPath: previousMenu
       value: 
       objectReference: {fileID: 1732652931}
+    - target: {fileID: 2564221547770356321, guid: 38cadceff938c564b8ea0a56b3d14248,
+        type: 3}
+      propertyPath: _previousMenu
+      value: 
+      objectReference: {fileID: 1732652931}
     - target: {fileID: 7694868230518541051, guid: 38cadceff938c564b8ea0a56b3d14248,
         type: 3}
       propertyPath: m_Name

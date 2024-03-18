@@ -42,6 +42,14 @@ namespace Together
             {
                 Config.current.cameraSensitivity = PlayerPrefs.GetFloat(Config.CAMERA_SENSITIVITY);
             }
+            if (PlayerPrefs.HasKey(Config.VOLUME_MUSIC))
+            {
+                AkSoundEngine.SetRTPCValue(Config.VOLUME_MUSIC, PlayerPrefs.GetFloat(Config.VOLUME_MUSIC));
+            }
+            if (PlayerPrefs.HasKey(Config.VOLUME_SOUNDS))
+            {
+                AkSoundEngine.SetRTPCValue(Config.VOLUME_SOUNDS, PlayerPrefs.GetFloat(Config.VOLUME_SOUNDS));
+            }
         }
 
         private void Start()
