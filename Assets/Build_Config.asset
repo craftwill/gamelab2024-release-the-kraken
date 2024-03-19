@@ -28,12 +28,14 @@ MonoBehaviour:
   razzleAbilityInitialPullStrength: 60
   razzleAbilityPullStrengthOverTime: 10
   razzleAbilitySpawnDistanceOffset: 9
+  razzleSpawnPoint: {x: 120, y: -46, z: 99}
   dazzleAbilityCooldown: 2
   dazzleAbilityJumpDuration: 0.27
   dazzleAbilityJumpDistance: 8
   dazzleAbilityJumpHeigth: 3
   dazzleAbilityDamage: 5
   dazzleAbilityRadius: 3
+  dazzleSpawnPoint: {x: 122, y: -46, z: 99}
   moveSpeed: 7.5
   sprintSpeed: 14
   attackMoveSpeed: 3

@@ -100,6 +100,7 @@ namespace Kraken
 
             // Fetch property for player type
             string playerToCreateName = _razzlePrefab.name;
+            Vector3 playerToCreateSpawnPos = _playersSpawnPos.position;
             if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("player"))
             {
                 if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue("player", out var value))
@@ -108,10 +109,12 @@ namespace Kraken
                     if (classId == 0)
                     {
                         playerToCreateName = _razzlePrefab.name;
+                        playerToCreateSpawnPos = Config.current.razzleSpawnPoint;
                     }
                     else if (classId == 2)
                     {
                         playerToCreateName = _dazzlePrefab.name;
+                        playerToCreateSpawnPos = Config.current.dazzleSpawnPoint;
                     }
                 }
             }
@@ -121,6 +124,7 @@ namespace Kraken
                 if (!PhotonNetwork.IsMasterClient)
                 {
                     playerToCreateName = _dazzlePrefab.name;
+                    playerToCreateSpawnPos = Config.current.dazzleSpawnPoint;
                 }
             }
 
@@ -128,12 +132,18 @@ namespace Kraken
             if (Config.current.forceUseDazzlePlayer1) 
             {
                 if (PhotonNetwork.IsMasterClient)
+                {
                     playerToCreateName = _dazzlePrefab.name;
+                    playerToCreateSpawnPos = Config.current.razzleSpawnPoint;
+                }   
                 else
+                {
                     playerToCreateName = _razzlePrefab.name;
+                    playerToCreateSpawnPos = Config.current.dazzleSpawnPoint;
+                }
             }
 
-            _localPlayer = NetworkUtils.Instantiate(playerToCreateName, _playersSpawnPos.position);
+            _localPlayer = NetworkUtils.Instantiate(playerToCreateName, playerToCreateSpawnPos);
 
             photonView.RPC(nameof(RPC_Master_PlayerCreated), RpcTarget.MasterClient, _localPlayer.GetPhotonView().ViewID);
         }
