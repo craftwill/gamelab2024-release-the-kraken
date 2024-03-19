@@ -59,6 +59,8 @@ MonoBehaviour:
   ultimateDuration: 5
   ultimateTriggerTimer: 5
   ultimateCooldown: 10
+  ultimateMinWool: 10
+  ultimateDistancePerWool: 1
   ultimateMinimumDuration: 0.5
   enemyStaggerDuration: 2
   showBasicEnemies: 0
@@ -67,6 +69,8 @@ MonoBehaviour:
   maxWoolHorizontalVelocity: 3
   maxWoolAngularVelocity: 5
   woolRagdollDuration: 2
-  woolAcceleration: 50
+  woolAcceleration: 75
   woolDrag: 5
   initialWoolQuantity: 0
+  maxWoolQuantity: 50
+  hideGameCanvasOnPause: 0
