@@ -76,6 +76,8 @@ namespace Kraken
 
         [Header("Combat Settings")]
         public float enemyStaggerDuration = 0.5f;
+        public float comboPitchIncrement = 100f;
+        public float comboMaxHitInterval = 0.5f;
 
         [Header("Minimap Settings")]
         public bool showBasicEnemies = false;

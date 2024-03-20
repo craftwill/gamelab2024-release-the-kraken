@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{2EEF828B-5131-D2FA-5B35-0CB35A4DCD8F}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{BE1D35F1-E980-061B-A4E4-7B4B795102E1}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -24,11 +24,12 @@
 				<Bus Id="3991942870" Name="Music"/>
 			</Busses>
 			<GameParameters>
+				<GameParameter Id="24633649" Name="ComboPitch"/>
 				<GameParameter Id="583340435" Name="VolumeSounds"/>
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{D58A993C-D07E-BAE4-377C-E5DCCB5E8D46}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{21103C23-7782-1C19-7C02-6FE991A1265C}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -80,7 +81,10 @@
 					</MediaRefs>
 				</Event>
 			</Events>
+			<GameParameters>
+				<GameParameter Id="24633649" Name="ComboPitch"/>
+			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{3FD44614-C1CF-AE7B-774B-A6B20D67C46D}</FileHash>
+	<FileHash>{D9A637BA-0192-1372-420D-1AB274F029A8}</FileHash>
 </SoundBanksInfo>

@@ -26,5 +26,8 @@ namespace Kraken
         public const string CAMERA_SENSITIVITY = "CameraSensitivity";
         public const string VOLUME_MUSIC = "VolumeMusic";
         public const string VOLUME_SOUNDS = "VolumeSounds";
+
+        // Wwise RTCP names
+        public const string COMBO_PITCH = "ComboPitch";
     }
 }
