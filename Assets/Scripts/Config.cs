@@ -27,7 +27,7 @@ namespace Kraken
         public const string VOLUME_MUSIC = "VolumeMusic";
         public const string VOLUME_SOUNDS = "VolumeSounds";
 
-        // Wwise RTCP names
+        // Wwise RTPC names
         public const string COMBO_PITCH = "ComboPitch";
     }
 }
