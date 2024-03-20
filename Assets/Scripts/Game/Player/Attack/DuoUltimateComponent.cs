@@ -314,7 +314,22 @@ namespace Kraken
                 }
             }
             photonView.RPC(nameof(_soundComponent.RPC_All_PlayUltimateGoOffSound), RpcTarget.All);
+            photonView.RPC(nameof(RPC_All_Slowmo), RpcTarget.All);
             Debug.Log(enemiesAffected + " enemies have taken " + damage + " damage by the ultimate");
+        }
+
+        [PunRPC]
+        public void RPC_All_Slowmo()
+        {
+            StartCoroutine(UltimateSlowmo());
+        }
+
+        private IEnumerator UltimateSlowmo()
+        {
+            float previousTimescale = Time.timeScale;
+            Time.timeScale = Config.current.ultimateSlowMoTimeScale;
+            yield return new WaitForSeconds(Config.current.ultimateSlowMoDuration);
+            Time.timeScale = previousTimescale;
         }
 
         /*private Vector3 TempGetUltimateCenter(List<Vector3> positions)

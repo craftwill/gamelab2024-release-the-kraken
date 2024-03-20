@@ -73,6 +73,8 @@ namespace Kraken
         public int ultimateMinWool = 10;
         public float ultimateDistancePerWool = 1f;
         public float ultimateMinimumDuration = 0.5f;
+        public float ultimateSlowMoTimeScale = 0.5f;
+        public float ultimateSlowMoDuration = 1f;
 
         [Header("Combat Settings")]
         public float enemyStaggerDuration = 0.5f;
