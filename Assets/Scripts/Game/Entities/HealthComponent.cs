@@ -11,6 +11,7 @@ namespace Kraken.Game
     public class HealthComponent : MonoBehaviourPun
     {
         [SerializeField] private MMF_Player _feedback;
+        [SerializeField] private FlickerVFX _flickerVFX;
         [field: SerializeField] public float Health { get; private set; } = 10f;
         [field: SerializeField] public float MaxHealth { get; set; } = 10f;
         [field: SerializeField] public bool IsAlive { get; private set; } = true;
@@ -59,6 +60,7 @@ namespace Kraken.Game
             Health -= dmgAmount;
             OnTakeDamage.Invoke(dmgAmount);
             _feedback?.PlayFeedbacks();
+            _flickerVFX?.PlayHurtFeedback();
 
             if (Health <= 0)
             {
