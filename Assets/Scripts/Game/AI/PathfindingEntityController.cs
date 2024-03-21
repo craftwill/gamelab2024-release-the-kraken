@@ -47,6 +47,16 @@ namespace Kraken
                 return;
             }
 
+            if (CanPathfind())
+            {
+                _navMeshAgent.isStopped = false;
+            }
+            else
+            {
+                _navMeshAgent.isStopped = true;
+                return;
+            }
+
             if (_target == null)
             {
                 _entityAnimationComponent.SetLoopedStateIdle();
@@ -110,6 +120,11 @@ namespace Kraken
 
             _navMeshAgent.isStopped = !isActive;
             _navMeshAgent.enabled = isActive;
+        }
+
+        protected virtual bool CanPathfind()
+        {
+            return true;
         }
     }
 }
