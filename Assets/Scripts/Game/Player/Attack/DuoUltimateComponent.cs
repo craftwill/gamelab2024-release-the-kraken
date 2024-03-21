@@ -314,7 +314,10 @@ namespace Kraken
                 }
             }
             photonView.RPC(nameof(_soundComponent.RPC_All_PlayUltimateGoOffSound), RpcTarget.All);
-            photonView.RPC(nameof(RPC_All_Slowmo), RpcTarget.All);
+            if (Config.current.ultimateDoesSlowMo)
+            {
+                photonView.RPC(nameof(RPC_All_Slowmo), RpcTarget.All);
+            }
             Debug.Log(enemiesAffected + " enemies have taken " + damage + " damage by the ultimate");
         }
 
