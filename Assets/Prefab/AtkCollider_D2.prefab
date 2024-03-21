@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3059947787033558459}
   - component: {fileID: 4392585566801665248}
   - component: {fileID: 3424657061161406922}
+  - component: {fileID: 3169238747169965335}
   m_Layer: 0
   m_Name: AtkCollider_D2
   m_TagString: DealDamage
@@ -64,7 +65,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9211684295016083868}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -135,6 +136,21 @@ MonoBehaviour:
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &3169238747169965335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9211684295016083868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f51cdd889d4a946bf9a7382efac2a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vfxRenderers:
+  - {fileID: 3385676342609306044}
+  _progressDuration: 0.25
 --- !u!1001 &4124667323854978360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -223,6 +239,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0c1c15a2f07ed34d9e742b12ceb431e, type: 3}
+--- !u!23 &3385676342609306044 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: d0c1c15a2f07ed34d9e742b12ceb431e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4124667323854978360}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4519215366667508435 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0c1c15a2f07ed34d9e742b12ceb431e,

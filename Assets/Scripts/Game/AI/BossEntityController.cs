@@ -11,6 +11,8 @@ namespace Kraken
         [SerializeField] private RingsOfLightAttack _rolAttack;
         [SerializeField] private StarfallAttack _starfallAttack;
 
+        [SerializeField] private BossAnimationComponent _bossAnim;
+
         [SerializeField] private StarfallAttackConfig _starfallConfig;
         [SerializeField] private RingsOfLightAttackConfig _rolConfig;
 
@@ -46,12 +48,14 @@ namespace Kraken
                 float cd = 0f;
                 if(Random.value > 0.5f)
                 {
+                    _bossAnim.PlayRingsOfLightAttack();
                     _rolAttack.StartAttack(_rolConfig.ring1ChargeTime, _rolConfig.ring2ChargeTime, _rolConfig.ring1Radius, _rolConfig.ring2Radius, _rolConfig.damage);
                     cd = _rolConfig.cooldown;
                     
                 }
                 else
                 {
+                    _bossAnim.PlayStarfallAttack();
                     _starfallAttack.StartAttack(_starfallConfig.starChargeTime, _starfallConfig.attackRadius, _starfallConfig.starCount, _starfallConfig.delayBetweenStars, _starfallConfig.telegraphRadius, _starfallConfig.damage);
                     cd = _starfallConfig.cooldown;
                 }
