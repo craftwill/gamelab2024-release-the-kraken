@@ -17,6 +17,8 @@ namespace Kraken
         private float _cooldown = 0f;
         private bool _isOnCooldown = false;
 
+        private bool _canPathfind = true;
+
         //MinibossEntityController does not use EntityAttackComponent
         public override void InitSettings(EnemyConfigSO config)
         {
@@ -49,6 +51,7 @@ namespace Kraken
             {
                 if (_drawCoroutine is null)
                 {
+                    _canPathfind = false;
                     _isOnCooldown = true;
                     photonView.RPC(nameof(RPC_ALL_StartConeTelegraph), RpcTarget.All);
                 }
@@ -83,9 +86,14 @@ namespace Kraken
             _coneTelegraph.DrawCone(1f, true);
             _coneTelegraph.gameObject.SetActive(false);
             _drawCoroutine = null;
-
+            _canPathfind = true;
             Animate.Delay(_cooldown, () => _isOnCooldown = false, true);
 
+        }
+
+        protected override bool CanPathfind()
+        {
+            return _canPathfind;
         }
     }
 
