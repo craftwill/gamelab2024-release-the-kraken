@@ -32,6 +32,7 @@ namespace Kraken
         public float razzleAbilityInitialPullStrength = 4f;
         public float razzleAbilityPullStrengthOverTime = 1.5f;
         public float razzleAbilitySpawnDistanceOffset = 5f;
+        public Vector3 razzleSpawnPoint = Vector3.zero;
         [Header("Dazzle")]
         public float dazzleAbilityCooldown = 10f;
         public float dazzleAbilityJumpDuration = 0.27f;
@@ -39,6 +40,7 @@ namespace Kraken
         public float dazzleAbilityJumpHeigth = 3f;
         public float dazzleAbilityDamage = 5f;
         public float dazzleAbilityRadius = 3f;
+        public Vector3 dazzleSpawnPoint = Vector3.zero;
 
         [Header("Player Controls settings")]
         public float moveSpeed = 7.5f;
@@ -73,9 +75,14 @@ namespace Kraken
         public int ultimateMinWool = 10;
         public float ultimateDistancePerWool = 1f;
         public float ultimateMinimumDuration = 0.5f;
+        public bool ultimateDoesSlowMo = true;
+        public float ultimateSlowMoTimeScale = 0.5f;
+        public float ultimateSlowMoDuration = 1f;
 
         [Header("Combat Settings")]
         public float enemyStaggerDuration = 0.5f;
+        public float comboPitchIncrement = 100f;
+        public float comboMaxHitInterval = 0.5f;
 
         [Header("Minimap Settings")]
         public bool showBasicEnemies = false;

@@ -5,6 +5,9 @@ Event	ID	Name			Wwise Object Path	Notes
 	3178286754	Play_PlayerHurt			\Default Work Unit\Play_PlayerHurt	
 	3253098515	Play_EnemyShoot			\Default Work Unit\Play_EnemyShoot	
 
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	24633649	ComboPitch			\Default Work Unit\ComboPitch	
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	392899862	fast-whoosh-118248	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\fast-whoosh-118248_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\fast-whoosh-118248		212064
 	933963966	ameno	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\ameno_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\ameno		327452
