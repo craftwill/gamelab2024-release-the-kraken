@@ -59,9 +59,14 @@ namespace Kraken
         [PunRPC]
         private void RPC_ALL_StartConeTelegraph()
         {
+            void AnimDonePlayingCallback()
+            {
+                _animComponent.SetLoopedStateCharged();
+            }
+
             _coneTelegraph.gameObject.SetActive(true);
             _drawCoroutine = StartCoroutine(ConeCharge());
-            _animComponent.PlayMinibossAttack();
+            _animComponent.PlayMinibossPrepareAttack(AnimDonePlayingCallback);
         }
 
         private IEnumerator ConeCharge()
@@ -74,6 +79,7 @@ namespace Kraken
                 yield return new WaitForEndOfFrame();
                 time += Time.deltaTime;
             }
+            _animComponent.PlayMinibossAttack();
             _coneTelegraph.DrawCone(1f, true);
             _coneTelegraph.gameObject.SetActive(false);
             _drawCoroutine = null;
