@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -821072116891616812}
   - component: {fileID: 4914144530665358802}
   - component: {fileID: 2020390893348817608}
+  - component: {fileID: 1805352711219351327}
   m_Layer: 0
   m_Name: AtkCollider_R3
   m_TagString: DealDamage
@@ -136,6 +137,22 @@ MonoBehaviour:
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &1805352711219351327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9211684295016083868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f51cdd889d4a946bf9a7382efac2a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vfxRenderers:
+  - {fileID: 152731360877146252}
+  - {fileID: 2935739144075609052}
+  _progressDuration: 0.35
 --- !u!1001 &1575989376255945736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -224,6 +241,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b13156a0e19bda54ca6bb6f6f397254b, type: 3}
+--- !u!23 &152731360877146252 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: b13156a0e19bda54ca6bb6f6f397254b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1575989376255945736}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1321156136538934243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b13156a0e19bda54ca6bb6f6f397254b,
@@ -318,6 +341,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 169f37fdb48e5a040bbe2b65f185aa4f, type: 3}
+--- !u!23 &2935739144075609052 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 169f37fdb48e5a040bbe2b65f185aa4f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4574604521995804504}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4104745110817339571 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 169f37fdb48e5a040bbe2b65f185aa4f,
