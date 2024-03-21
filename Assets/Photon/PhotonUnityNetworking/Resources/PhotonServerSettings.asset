@@ -95,6 +95,7 @@ MonoBehaviour:
   - RPC_All_PlayEnemyHurtSound
   - RPC_All_PlayPlayerHurtSound
   - RPC_All_PlayUltimateGoOffSound
+  - RPC_All_Slowmo
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
