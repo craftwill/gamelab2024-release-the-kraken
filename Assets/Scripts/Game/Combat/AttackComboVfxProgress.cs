@@ -10,19 +10,19 @@ namespace Kraken
     {
         [SerializeField] private Renderer[] _vfxRenderers;
         [SerializeField] private float _progressDuration = 0.35f;
-        private void Start()
+        private void OnEnable()
         {
             Animate.LerpSomething(_progressDuration, (float step) => 
             {
                 foreach (var renderer in _vfxRenderers)
                 {
-                    renderer.material.SetFloat("Progress", step);
+                    renderer.material.SetFloat("_Progress", step);
                 }
             }, () => 
             {
                 foreach (var renderer in _vfxRenderers)
                 {
-                    renderer.material.SetFloat("Progress", 1f);
+                    renderer.material.SetFloat("_Progress", 1f);
                 }
             }, timeScaled_: true);
         }
