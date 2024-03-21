@@ -79,7 +79,7 @@ namespace Kraken
 
         private void MeleeAttack()
         {
-            _entityAnimationComponent.PlayBasicAttackAnimation();
+            PlayAttackAnim();
             _inflictDamageComponent.gameObject.SetActive(true);
 
             // Only master client processes attack duration
@@ -96,6 +96,8 @@ namespace Kraken
             // Only master client processes projectile creation
             if (!PhotonNetwork.IsMasterClient) return;
 
+            PlayAttackAnim();
+
             Vector3 spawnPos = transform.position + transform.forward;
             BaseProjectile projectile = NetworkUtils.Instantiate(_rangedProjectile.name, spawnPos).GetComponent<BaseProjectile>();
             Vector3 sendDirection = (targetPosition - transform.position).normalized;
@@ -103,6 +105,15 @@ namespace Kraken
             // This send() calls a RPC_All behind the scene
             projectile.InitAndSend(sendDirection, _ownerEntity.EntityClan, _damageDealt);
             photonView.RPC(nameof(_soundComponent.RPC_All_PlayEnemyAttackSound), RpcTarget.All);
+        }
+
+        private void PlayAttackAnim()
+        {
+            // If currently playing hurt anim, don't play attack anim.
+            if (_entityAnimationComponent.GetCurrentPlayOnceAnim().ClipName == "Hurt")
+                return;
+
+            _entityAnimationComponent.PlayBasicAttackAnimation();
         }
 
         private bool GetUsesRangedAttack() 
