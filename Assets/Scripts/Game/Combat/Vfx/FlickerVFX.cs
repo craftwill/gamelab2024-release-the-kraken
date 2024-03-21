@@ -18,17 +18,6 @@ namespace Kraken
         public void Awake()
         {
             _renderers = GetComponentsInChildren<Renderer>();
-
-            /*if (_renderers.Length > 0)
-            {
-                foreach (Renderer rend in _renderers)
-                {
-                    foreach (Material mat in rend.materials)
-                    {
-                        mat.EnableKeyword("_EMISSION");
-                    }
-                }
-            }*/
         }
 
         public void PlayHurtFeedback()
