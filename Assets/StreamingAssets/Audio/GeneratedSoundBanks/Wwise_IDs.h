@@ -22,6 +22,7 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID COMBOPITCH = 24633649U;
         static const AkUniqueID VOLUMEMUSIC = 3923584592U;
         static const AkUniqueID VOLUMESOUNDS = 583340435U;
     } // namespace GAME_PARAMETERS
