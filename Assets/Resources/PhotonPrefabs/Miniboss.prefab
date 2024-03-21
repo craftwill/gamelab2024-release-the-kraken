@@ -297,6 +297,11 @@ PrefabInstance:
       objectReference: {fileID: 8090054366600028031}
     - target: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
+      propertyPath: _entityAnimationComponent
+      value: 
+      objectReference: {fileID: 9001902255904061304}
+    - target: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
       propertyPath: _pathfindingEntityController
       value: 
       objectReference: {fileID: 8090054366600028031}
@@ -425,6 +430,7 @@ PrefabInstance:
     - {fileID: 6807864403598660797, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     - {fileID: 6273920595487294825, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     - {fileID: 7174202112263796747, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
+    - {fileID: 7010872933795953625, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3528024205557268655, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     m_AddedGameObjects:
@@ -441,6 +447,10 @@ PrefabInstance:
         type: 3}
       insertIndex: 2
       addedObject: {fileID: 8090054366600028031}
+    - targetCorrespondingSourceObject: {fileID: 3106089648525901737, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 9001902255904061304}
   m_SourcePrefab: {fileID: 100100000, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
 --- !u!4 &221423567439365202 stripped
 Transform:
@@ -454,18 +464,6 @@ NavMeshAgent:
     type: 3}
   m_PrefabInstance: {fileID: 5623655126188437602}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3404900828455816123 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7010872933795953625, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
-    type: 3}
-  m_PrefabInstance: {fileID: 5623655126188437602}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7282374055492276171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2519eef501d23d4a9fb45248d161fee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7282374055492276171 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3106089648525901737, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
@@ -485,10 +483,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ownerEntity: {fileID: 7670090109933237870}
-  _entityAnimationComponent: {fileID: 3404900828455816123}
+  _entityAnimationComponent: {fileID: 9001902255904061304}
   _navMeshAgent: {fileID: 2350652154481233051}
   _coneTelegraph: {fileID: 801501132520092306}
   _inflictDamageComponent: {fileID: 9012708890727214374}
+  _animComponent: {fileID: 9001902255904061304}
   _attackConfig:
     chargeTime: 3
     angle: 60
@@ -500,6 +499,21 @@ MonoBehaviour:
       m_Bits: 4096
     materialInner: {fileID: 2100000, guid: 13c654d50cf991c4fbbac1d8495671df, type: 2}
     materialOuter: {fileID: 2100000, guid: 64294c33826ea3a43b298d38f07759c3, type: 2}
+--- !u!114 &9001902255904061304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282374055492276171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f84f1425ae05a74594f7bae0cda0678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animStateMachine: {fileID: 9205397303649844072}
+  _animatorPrefix: SheepMiniBoss
+  _animatorSuffix: 
 --- !u!4 &7499172055204269084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2745319777357053054, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
@@ -516,6 +530,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e0f31c64a009cd48a76e0493edefb8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9205397303649844072 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3587988577761823498, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+    type: 3}
+  m_PrefabInstance: {fileID: 5623655126188437602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282374055492276171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f84eb3626bd8f7744897ec4f77a8cf90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6342898409378164265

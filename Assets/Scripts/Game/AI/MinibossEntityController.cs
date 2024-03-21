@@ -10,6 +10,7 @@ namespace Kraken
     {
         [SerializeField] private ConeTelegraph _coneTelegraph;
         [SerializeField] private InflictDamageComponent _inflictDamageComponent;//could probably avoid using this component
+        [SerializeField] private MinibossAnimationComponent _animComponent;
         [SerializeField] private MinibossAttackAdditionalConfig _attackConfig;
 
         private Coroutine _drawCoroutine = null;
@@ -58,9 +59,14 @@ namespace Kraken
         [PunRPC]
         private void RPC_ALL_StartConeTelegraph()
         {
+            void AnimDonePlayingCallback()
+            {
+                _animComponent.SetLoopedStateCharged();
+            }
+
             _coneTelegraph.gameObject.SetActive(true);
             _drawCoroutine = StartCoroutine(ConeCharge());
-            
+            _animComponent.PlayMinibossPrepareAttack(AnimDonePlayingCallback);
         }
 
         private IEnumerator ConeCharge()
@@ -73,6 +79,7 @@ namespace Kraken
                 yield return new WaitForEndOfFrame();
                 time += Time.deltaTime;
             }
+            _animComponent.PlayMinibossAttack();
             _coneTelegraph.DrawCone(1f, true);
             _coneTelegraph.gameObject.SetActive(false);
             _drawCoroutine = null;
