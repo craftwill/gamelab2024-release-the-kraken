@@ -147,6 +147,111 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!1001 &2309500284478778903
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 934863956264956638}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 5ea1c3368854ff24ba7f68a8a9725bad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5ea1c3368854ff24ba7f68a8a9725bad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5ea1c3368854ff24ba7f68a8a9725bad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5ea1c3368854ff24ba7f68a8a9725bad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5ea1c3368854ff24ba7f68a8a9725bad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5ea1c3368854ff24ba7f68a8a9725bad,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5ea1c3368854ff24ba7f68a8a9725bad,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5ea1c3368854ff24ba7f68a8a9725bad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5ea1c3368854ff24ba7f68a8a9725bad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5ea1c3368854ff24ba7f68a8a9725bad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5ea1c3368854ff24ba7f68a8a9725bad,
+        type: 3}
+      propertyPath: m_Name
+      value: SK_SheepBQ
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5ea1c3368854ff24ba7f68a8a9725bad,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5731587168373060996}
+  m_SourcePrefab: {fileID: 100100000, guid: 5ea1c3368854ff24ba7f68a8a9725bad, type: 3}
+--- !u!4 &2848042123418667516 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5ea1c3368854ff24ba7f68a8a9725bad,
+    type: 3}
+  m_PrefabInstance: {fileID: 2309500284478778903}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3228403170426770246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5ea1c3368854ff24ba7f68a8a9725bad,
+    type: 3}
+  m_PrefabInstance: {fileID: 2309500284478778903}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5731587168373060996
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3228403170426770246}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 857265b3edb78a5498e547b8489b19ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &4747030220377589486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -171,6 +276,11 @@ PrefabInstance:
       propertyPath: _entityController
       value: 
       objectReference: {fileID: 7503936983532037170}
+    - target: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: _entityAnimationComponent
+      value: 
+      objectReference: {fileID: 6957891619024676904}
     - target: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: _pathfindingEntityController
@@ -231,6 +341,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 3587988577761823498, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 5731587168373060996}
     - target: {fileID: 5555642061347861552, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -264,7 +379,9 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4623548838470204180, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     - {fileID: 6807864403598660797, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
-    m_RemovedGameObjects: []
+    - {fileID: 7010872933795953625, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 6904248142507945207, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2745319777357053054, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
@@ -274,24 +391,26 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6223562693087841255}
+    - targetCorrespondingSourceObject: {fileID: 5555642061347861552, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2848042123418667516}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3106089648525901737, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       insertIndex: 2
       addedObject: {fileID: 7503936983532037170}
+    - targetCorrespondingSourceObject: {fileID: 3106089648525901737, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 6957891619024676904}
   m_SourcePrefab: {fileID: 100100000, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
---- !u!114 &2354055616582417719 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7010872933795953625, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+--- !u!4 &934863956264956638 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5555642061347861552, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
     type: 3}
   m_PrefabInstance: {fileID: 4747030220377589486}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7708995712779942215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2519eef501d23d4a9fb45248d161fee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!195 &3419599846057638423 stripped
 NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 7968008091505032441, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
@@ -335,10 +454,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ownerEntity: {fileID: 7321243370245587170}
-  _entityAnimationComponent: {fileID: 2354055616582417719}
+  _entityAnimationComponent: {fileID: 6957891619024676904}
   _navMeshAgent: {fileID: 3419599846057638423}
   _rolAttack: {fileID: 3590300219914515738}
   _starfallAttack: {fileID: 4076349888599845715}
+  _bossAnim: {fileID: 6957891619024676904}
   _starfallConfig:
     starChargeTime: 1.2
     attackRadius: 12
@@ -354,3 +474,30 @@ MonoBehaviour:
     ring2Radius: 6
     damage: 50
     cooldown: 8
+--- !u!114 &6957891619024676904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7708995712779942215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c32c241ed868084fbd90303517b84d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animStateMachine: {fileID: 8082780783602929124}
+  _animatorPrefix: SheepBoss_Queen
+  _animatorSuffix: 
+--- !u!114 &8082780783602929124 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3587988577761823498, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+    type: 3}
+  m_PrefabInstance: {fileID: 4747030220377589486}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7708995712779942215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f84eb3626bd8f7744897ec4f77a8cf90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
