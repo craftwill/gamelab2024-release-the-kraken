@@ -570,6 +570,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <InflictDamageComponent>k__BackingField: {fileID: 3294322074392474494}
+  _speed: 0.33
+  _arcStrength: 0.15
 --- !u!114 &3294322074392474494
 MonoBehaviour:
   m_ObjectHideFlags: 0
