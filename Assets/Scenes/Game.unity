@@ -38233,6 +38233,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3127610480956783585, guid: 06de1ed7d1d48674ebd2a13dd357fc00,
+        type: 3}
+      propertyPath: _previousMenu
+      value: 
+      objectReference: {fileID: 2146420241}
     - target: {fileID: 8893606496914965919, guid: 06de1ed7d1d48674ebd2a13dd357fc00,
         type: 3}
       propertyPath: _gameCanvas
@@ -38260,6 +38265,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0388f59d5e44a7640bea2d0bdd241003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2146420241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7189177883619455336, guid: 06de1ed7d1d48674ebd2a13dd357fc00,
+    type: 3}
+  m_PrefabInstance: {fileID: 2146420239}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1362033505343311647
 PrefabInstance:
   m_ObjectHideFlags: 0
