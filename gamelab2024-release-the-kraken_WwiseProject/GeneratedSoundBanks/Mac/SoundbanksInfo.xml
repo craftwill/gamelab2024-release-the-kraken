@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Mac</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{BE1D35F1-E980-061B-A4E4-7B4B795102E1}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="1492361653" Name="Sounds"/>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3991942870" Name="Music"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="24633649" Name="ComboPitch"/>
+				<GameParameter Id="583340435" Name="VolumeSounds"/>
+				<GameParameter Id="3923584592" Name="VolumeMusic"/>
+			</GameParameters>
+		</SoundBank>
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{21103C23-7782-1C19-7C02-6FE991A1265C}">
+			<ShortName>Testing</ShortName>
+			<Path>Testing.bnk</Path>
+			<Media>
+				<File Id="392899862" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>fast-whoosh-118248.wav</ShortName>
+					<CachePath>SFX/fast-whoosh-118248_818F3B66.wem</CachePath>
+				</File>
+				<File Id="933963966" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ameno.wav</ShortName>
+					<CachePath>SFX/ameno_818F3B66.wem</CachePath>
+				</File>
+				<File Id="996749074" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>pew-pew-lame-sound-effect.wav</ShortName>
+					<CachePath>SFX/pew-pew-lame-sound-effect_461CF5D3.wem</CachePath>
+				</File>
+				<File Id="1042314046" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>classic_hurt.wav</ShortName>
+					<CachePath>SFX/classic_hurt_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1046494642" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>squeaky-toy-1-6059.wav</ShortName>
+					<CachePath>SFX/squeaky-toy-1-6059_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2211787386" Name="Play_Dash" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.2016326" DurationMax="1.2016326">
+					<MediaRefs>
+						<MediaRef Id="392899862"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="349172053" Name="Play_EnemyHurt" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.504" DurationMax="0.504">
+					<MediaRefs>
+						<MediaRef Id="1046494642"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3253098515" Name="Play_EnemyShoot" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.49308255" DurationMax="0.49308255">
+					<MediaRefs>
+						<MediaRef Id="996749074"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3178286754" Name="Play_PlayerHurt" DurationType="OneShot" DurationMin="0.36571428" DurationMax="0.36571428">
+					<MediaRefs>
+						<MediaRef Id="1042314046"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2741312416" Name="Play_UltimateGoOff" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.8557596" DurationMax="1.8557596">
+					<MediaRefs>
+						<MediaRef Id="933963966"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="24633649" Name="ComboPitch"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{D9A637BA-0192-1372-420D-1AB274F029A8}</FileHash>
+</SoundBanksInfo>

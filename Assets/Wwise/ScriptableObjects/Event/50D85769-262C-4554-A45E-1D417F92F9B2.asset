@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f788d800c1c6bc40a4578f7438ab716, type: 3}
-  m_Name: TerritoryObjective_2
+  m_Script: {fileID: 11500000, guid: 2c75bd90d2002764cbcde38269546abc, type: 3}
+  m_Name: 50D85769-262C-4554-A45E-1D417F92F9B2
   m_EditorClassIdentifier: 
-  objectiveName: Defend the GREEN zone!
-  objectiveTimer: 45
-  spawnFrequency: 1
-  spawnData: {fileID: 11400000, guid: ae52b6ddd841e724aa2dc41bdb8f3f64, type: 2}
+  objectName: Play_EnemyHurt
+  id: 349172053
+  guid: 50D85769-262C-4554-A45E-1D417F92F9B2

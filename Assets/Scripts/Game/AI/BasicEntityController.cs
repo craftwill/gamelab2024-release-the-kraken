@@ -29,12 +29,28 @@ namespace Kraken
 
             if (!PhotonNetwork.IsMasterClient) { return; }
 
-            if (_entityAttackComponent.IsAttacking) return;
-
             // Attack closest player if close enough
-            if (_closestPlayerDistance <= _attackRange)
+            if (_target != null && _closestPlayerDistance <= _attackRange)
             {
-                _entityAttackComponent.TryAttack();
+                // Turn towards player before trying to attack
+                transform.LookAt(_target.position, Vector3.up);
+                TryAttack();
+            }
+        }
+
+        private void TryAttack()
+        {
+            void attackLockDoneCallback() 
+            {
+                _navMeshAgent.isStopped = false;
+            }
+
+            bool attackLaunched = _entityAttackComponent.TryAttack(_target.position, attackLockDoneCallback);
+
+            if (attackLaunched) 
+            {
+                // Stop moving during attack
+                _navMeshAgent.isStopped = true;
             }
         }
     }

@@ -184,6 +184,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SheepMinionRange01
       objectReference: {fileID: 0}
+    - target: {fileID: 3587988577761823498, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 6612533073753887289}
     - target: {fileID: 8581956803195504288, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: sceneViewId
@@ -191,6 +196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4623548838470204180, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
+    - {fileID: 7174202112263796747, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6904248142507945207, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     m_AddedGameObjects:
@@ -234,8 +240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a94f8cda13ede041a1663bc883f23b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 1
-  _attackRange: 2.5
   _ownerEntity: {fileID: 3703493239978273012}
   _entityAnimationComponent: {fileID: 8526565787915474209}
   _navMeshAgent: {fileID: 8758340765868216833}

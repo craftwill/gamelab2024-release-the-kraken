@@ -16,12 +16,16 @@ namespace Kraken
         public const string TryConnectToPhoton = "TryConnectToPhoton";
         public const string ConnectedToMaster = "ConnectedToMaster";
         public const string NetworkError = "NetworkError";
+        public const string JoinFailed = "JoinFailed";
 
         // Lobby Events
         public const string JoinRoomWithCode = "JoinRoomWithCode";
         public const string CreateRoom = "CreateRoom";
         public const string UpdateLobbyView = "UpdateLobbyView";
         public const string JoinGameScene = "JoinGameScene";
+
+        //Settings Events
+        public const string UpdateCameraSettings = "UpdateCameraSettings";
 
         // GameFlow events
         public const string StartGameFlow = "StartGameFlow";
@@ -56,6 +60,7 @@ namespace Kraken
         public const string GainWool = "GainWool";
         public const string UpdateWoolQuantity = "UpdateWoolQuantity";
         public const string UltimateRunning = "UltimateRunning";
+        public const string IncreaseCombo = "IncreaseCombo";
 
         //Player Events
         public const string PlayerDeath = "PlayerDeath";

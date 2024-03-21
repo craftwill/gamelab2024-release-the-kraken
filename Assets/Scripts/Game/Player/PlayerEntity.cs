@@ -10,6 +10,7 @@ namespace Kraken
     public class PlayerEntity : Entity
     {
         [SerializeField] private PlayerControlsComponent _controls;
+        [SerializeField] private PlayerSoundComponent _soundComponent;
 
         private PlayerAnimationComponent _playerAnimationComponent;
         private bool _isOwner;
@@ -65,6 +66,7 @@ namespace Kraken
             {
                 FloatDataBytes bytes = new FloatDataBytes(_healthComponent.Health/_healthComponent.MaxHealth);
                 EventManager.Dispatch(EventNames.UpdateHealthUI, bytes);
+                photonView.RPC(nameof(_soundComponent.RPC_All_PlayPlayerHurtSound), RpcTarget.All);
             }
         }
 

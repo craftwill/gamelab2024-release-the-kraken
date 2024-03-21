@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using Bytes;
 using Kraken.Network;
 using Photon.Pun;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 
 namespace Kraken
 {
@@ -49,15 +53,15 @@ namespace Kraken
             RingTelegraph telegraph2 = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
             telegraph2.StartTelegraph(_ring2ChargeTime, _ring2Radius, _ring1Radius);
         }
-
-        [CustomEditor(typeof(RingsOfLightAttack))]
+#if UNITY_EDITOR
+        [CustomEditor(typeof(StarfallAttack))]
         public class CustomButton : Editor
         {
             public override void OnInspectorGUI()
             {
                 base.OnInspectorGUI();
 
-                var script = (RingsOfLightAttack)target;
+                var script = (StarfallAttack)target;
                 if (GUILayout.Button("Trigger attack"))
                 {
                     if (Application.isPlaying)
@@ -65,6 +69,7 @@ namespace Kraken
                 }
             }
         }
+#endif
     }
 }
 

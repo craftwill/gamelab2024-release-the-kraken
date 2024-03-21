@@ -16,6 +16,7 @@ namespace Kraken
         [SerializeField] private BaseEntityController _entityController;
         [SerializeField] private EnemyZoneComponent _enemyZoneComponent;
         [SerializeField] private PathfindingEntityController _pathfindingEntityController;
+        [SerializeField] private EnemySoundComponent _soundComponent;
         [SerializeField] private GameObject _minimapIcon;
         [SerializeField] private GameObject _woolPrefab;
         [SerializeField] private int _woolDropped = 1;
@@ -25,7 +26,8 @@ namespace Kraken
             base.Awake();
 
             _healthComponent.MaxHealth = _config.maxHealth;
-            if (_attackComponent) _attackComponent.InitSettings(_config.damageDealt, _config.attackCooldown, _config.attackDuration, _config.lockedIntoAttackDuration);
+            if (_attackComponent) 
+                _attackComponent.InitSettings(_config.damageDealt, _config.attackCooldown, _config.attackDuration, _config.lockedIntoAttackDuration, _config.rangedProjectile);
             _entityController.InitSettings(_config);
             _enemyZoneComponent.InitSettings(_config.zoneOccupancyCount);
         }
@@ -51,6 +53,7 @@ namespace Kraken
 
             _entityAnimationComponent.PlayHurtAnim();
             _pathfindingEntityController.Stagger();
+            photonView.RPC(nameof(_soundComponent.RPC_All_PlayEnemyHurtSound), RpcTarget.All);
         }
 
         protected override void HandleDie()

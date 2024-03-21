@@ -19,6 +19,9 @@ namespace Kraken
         public float attackCooldown = 1f;
         [Tooltip("How long is the hitbox out")] public float attackDuration = 0.1f;
         public float lockedIntoAttackDuration = 0.5f;
+        [Header("Ranged attack")]
+        [Tooltip("If this is null, enemy is not a ranged attacker")]
+        [SerializeField] public GameObject rangedProjectile;
 
         [Header("Zone occupancy")]
         public int zoneOccupancyCount = 1;

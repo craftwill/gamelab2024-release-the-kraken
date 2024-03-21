@@ -3,12 +3,56 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Play_fast_whoosh_118248" ID="{C844183B-5883-4BF2-8DB0-7D4D1C642480}">
+				<Event Name="Play_Dash" ID="{C844183B-5883-4BF2-8DB0-7D4D1C642480}">
 					<ChildrenList>
 						<Action Name="" ID="{6DAF88DE-66CA-4A89-A86A-0B5475520CF8}" ShortID="316467153">
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="fast-whoosh-118248" ID="{DB3A231B-C652-4875-BA65-E034E0348602}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_EnemyShoot" ID="{94A96539-83E0-4FBD-AD12-48A3A79DA2C5}">
+					<ChildrenList>
+						<Action Name="" ID="{709754B4-5599-4A52-B9F1-5DE630054905}" ShortID="221836452">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="pew-pew-lame-sound-effect" ID="{673A8F8D-340C-44F7-9403-FE0B38CA459A}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_EnemyHurt" ID="{50D85769-262C-4554-A45E-1D417F92F9B2}">
+					<ChildrenList>
+						<Action Name="" ID="{20C8A4C6-151A-42ED-8218-D6BA71BB047B}" ShortID="508309703">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="squeaky-toy-1-6059" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PlayerHurt" ID="{D9E29EE0-084F-4F26-93EA-23EB7F9640A2}">
+					<ChildrenList>
+						<Action Name="" ID="{EFF6A7D7-1D41-4AFF-94D9-59EF571345AB}" ShortID="223434850">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="classic_hurt" ID="{61087652-9BE2-4C4B-8912-B68F26CD8378}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UltimateGoOff" ID="{B292BC4C-D218-4DF9-95E7-11172D165110}">
+					<ChildrenList>
+						<Action Name="" ID="{E88F93DC-1BCD-4C24-9A13-D5964F1A4768}" ShortID="822425631">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ameno" ID="{7F91470D-B461-4944-A1C0-1BA261C1DB26}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

@@ -15,9 +15,11 @@ namespace Kraken
             PausedByOther
         }
         private PauseState _pauseState = PauseState.Unpaused;
+        [SerializeField] private PauseMenuManager _pauseMenuManager;
 
         private void Start()
         {
+            Time.timeScale = 1;
             PhotonNetwork.MinimalTimeScaleToDispatchInFixedUpdate = 0;
             EventManager.AddEventListener(EventNames.TogglePause, TogglePause);
         }
@@ -56,6 +58,7 @@ namespace Kraken
                 Time.timeScale = 1;
                 _pauseState = PauseState.Unpaused;
             }
+            _pauseMenuManager.OnTogglePause();
         }
     }
 }

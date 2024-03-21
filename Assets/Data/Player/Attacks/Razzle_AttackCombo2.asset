@@ -13,14 +13,12 @@ MonoBehaviour:
   m_Name: Razzle_AttackCombo2
   m_EditorClassIdentifier: 
   attackName: Attack 2
-  attackInput: {fileID: 0}
-  canBeActivatedFromNeutral: 0
   nextAttack: {fileID: 11400000, guid: b80c5db01a58c8f4997e183b99842619, type: 2}
   colliderGameObject: {fileID: 9211684295016083868, guid: 2b4127f83315b7943bf277346bd80c9f,
     type: 3}
   timeBeforeHitboxDuration: 0.2
   hitboxDuration: 0.15
-  attackCancelDuration: 0.4
-  totalAttackLength: 1.5
+  attackLockLength: 0.1
+  animDoneBufferTimer: 0.6
   damage: 1
   comboStep: 2

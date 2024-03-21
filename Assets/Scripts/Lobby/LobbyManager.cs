@@ -22,6 +22,8 @@ namespace Kraken
         [SerializeField] private GameObject _controller1;
         [SerializeField] private GameObject _controller2;
         [SerializeField] private InputActionReference _moveInput;
+        [SerializeField] private InputActionReference _submitInput;
+        [SerializeField] private InputActionReference _cancelInput;
         [SerializeField] private Button _btnStart;
         private GameObject _controlledController;
         private int _currentControllerPositionIndex = 1;
@@ -48,10 +50,20 @@ namespace Kraken
 
             _moveInput.action.performed += OnMove;
             _moveInput.action.canceled += OnInputReleased;
+            _submitInput.action.performed += OnSubmit;
+            _cancelInput.action.performed += OnCancel;
+
+            if (!PhotonNetwork.IsMasterClient)
+            {
+                _btnStart.interactable = false;
+                _btnStart.gameObject.SetActive(false);
+            }
         }
 
         private void Update()
         {
+            if (!PhotonNetwork.IsMasterClient) return;
+
             if (AreAllPlayersReady())
             {
                 _btnStart.interactable = true;
@@ -66,6 +78,8 @@ namespace Kraken
         {
             _moveInput.action.performed -= OnMove;
             _moveInput.action.canceled -= OnInputReleased;
+            _submitInput.action.performed -= OnSubmit;
+            _cancelInput.action.performed -= OnCancel;
         }
 
         public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -111,7 +125,7 @@ namespace Kraken
 
         public void Btn_OnStartGame() 
         {
-            if (AreAllPlayersReady())
+            if (AreAllPlayersReady() && PhotonNetwork.IsMasterClient)
             {
                 photonView.RPC(nameof(RPC_Master_OpenGameScene), RpcTarget.MasterClient);
             }
@@ -185,6 +199,16 @@ namespace Kraken
             PhotonNetwork.LocalPlayer.SetCustomProperties(props);
             int controllerToMove = _controlledController == _controller1 ? 1 : 2;
             photonView.RPC(nameof(RPC_All_MoveController), RpcTarget.All, _currentControllerPositionIndex, controllerToMove);
+        }
+
+        public void OnSubmit(InputAction.CallbackContext value)
+        {
+            Btn_OnStartGame();
+        }
+
+        public void OnCancel(InputAction.CallbackContext value)
+        {
+            Btn_OnLeaveLobby();
         }
 
         public void OnInputReleased(InputAction.CallbackContext value)
