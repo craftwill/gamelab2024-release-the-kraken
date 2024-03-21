@@ -110,7 +110,7 @@ namespace Kraken
         private void PlayAttackAnim()
         {
             // If currently playing hurt anim, don't play attack anim.
-            if (_entityAnimationComponent.GetCurrentPlayOnceAnim().ClipName == "Hurt")
+            if (_entityAnimationComponent.GetCurrentPlayOnceAnim()?.ClipName == "Hurt")
                 return;
 
             _entityAnimationComponent.PlayBasicAttackAnimation();
