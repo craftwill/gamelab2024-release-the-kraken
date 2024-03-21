@@ -11,6 +11,7 @@ namespace Kraken
         [SerializeField] private Animator animator;
 
         private IKrakenAnimState currentState;
+        private IKrakenAnimState currentPlayOnceState;
         private Animate currentPlayOnceAnim;
 
         public void Initialize()
@@ -41,8 +42,10 @@ namespace Kraken
                 animator.SetFloat(speedParamName, speedMult);
             }
 
+            currentPlayOnceState = animState;
             currentPlayOnceAnim = PlayAnimatorClip(animator, BuildClipName(prefix, suffix, animState.ClipName, animState.NbVariations), () => {
                 if (this == null) return;
+                currentPlayOnceState = null;
                 currentPlayOnceAnim = null;
                 PlayStateLoopedAnimation(BuildClipName(prefix, suffix, currentState.ClipName));
                 callback?.Invoke();
@@ -81,6 +84,11 @@ namespace Kraken
         {
             SetLoopedState(KrakenBaseAnimState.Nothing);
             currentPlayOnceAnim?.Stop(false);
+        }
+
+        public IKrakenAnimState GetCurrentPlayOnceState() 
+        {
+            return currentPlayOnceState;
         }
 
         public Animator GetAnimator()
