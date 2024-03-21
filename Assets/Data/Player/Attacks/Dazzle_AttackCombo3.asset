@@ -13,14 +13,12 @@ MonoBehaviour:
   m_Name: Dazzle_AttackCombo3
   m_EditorClassIdentifier: 
   attackName: Attack 3
-  attackInput: {fileID: 0}
-  canBeActivatedFromNeutral: 0
   nextAttack: {fileID: 0}
   colliderGameObject: {fileID: 9211684295016083868, guid: 641705ac708c59a4d9dbff4322092e0b,
     type: 3}
   timeBeforeHitboxDuration: 0.18
   hitboxDuration: 0.15
-  attackCancelDuration: 0.8
-  totalAttackLength: 0.3
+  attackLockLength: 0.15
+  animDoneBufferTimer: 0
   damage: 3
   comboStep: 3

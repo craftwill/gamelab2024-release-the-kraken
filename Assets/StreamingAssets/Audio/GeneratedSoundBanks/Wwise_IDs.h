@@ -13,8 +13,19 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAY_FAST_WHOOSH_118248 = 3916127644U;
+        static const AkUniqueID PLAY_DASH = 2211787386U;
+        static const AkUniqueID PLAY_ENEMYHURT = 349172053U;
+        static const AkUniqueID PLAY_ENEMYSHOOT = 3253098515U;
+        static const AkUniqueID PLAY_PLAYERHURT = 3178286754U;
+        static const AkUniqueID PLAY_ULTIMATEGOOFF = 2741312416U;
     } // namespace EVENTS
+
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID COMBOPITCH = 24633649U;
+        static const AkUniqueID VOLUMEMUSIC = 3923584592U;
+        static const AkUniqueID VOLUMESOUNDS = 583340435U;
+    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {
@@ -25,6 +36,8 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID SOUNDS = 1492361653U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

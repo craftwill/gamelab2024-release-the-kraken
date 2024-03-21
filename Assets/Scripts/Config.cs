@@ -18,5 +18,16 @@ namespace Kraken
         public const string SFX_VOLUME_KEY = "SFXVolume";
         public const string UI_VOLUME_KEY = "UIVolume";
         public const string CONTROLS_KEY = "Controls";
+
+        // Settings keys
+        public const string DISPLAY_FULLSCREEN = "DisplayFullscreen";
+        public const string CAMERA_INVERT_Y_AXIS = "CameraInvertYAxis";
+        public const string CAMERA_INVERT_X_AXIS = "CameraInvertXAxis";
+        public const string CAMERA_SENSITIVITY = "CameraSensitivity";
+        public const string VOLUME_MUSIC = "VolumeMusic";
+        public const string VOLUME_SOUNDS = "VolumeSounds";
+
+        // Wwise RTPC names
+        public const string COMBO_PITCH = "ComboPitch";
     }
 }
