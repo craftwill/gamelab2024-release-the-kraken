@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2258.5415, g: 1773.416, b: 1661.6082, a: 1}
+  m_IndirectSpecularColor: {r: 2265.4358, g: 1781.9065, b: 1673.4221, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -39435,7 +39435,7 @@ GameObject:
   - component: {fileID: 1357713936}
   - component: {fileID: 1357713938}
   - component: {fileID: 1357713937}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Terrain_0_0_76ab6750-e64c-4e21-930f-9916b3bb00d6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52789,7 +52789,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 7671
+    m_Bits: 15863
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
