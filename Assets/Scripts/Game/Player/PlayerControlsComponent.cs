@@ -292,6 +292,12 @@ namespace Kraken
 
         public void OnTogglePause(BytesData data)
         {
+            photonView.RPC(nameof(RPC_All_ToggleCamera), RpcTarget.All);
+        }
+
+        [PunRPC]
+        public void RPC_All_ToggleCamera()
+        {
             _camera.SetActive(!_camera.activeInHierarchy);
         }
 
