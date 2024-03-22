@@ -27,6 +27,7 @@ namespace Kraken
         [SerializeField] private PlayerInput _input;
         [SerializeField] private DuoUltimateComponent _duoUltimateComponent;
         [SerializeField] private GameObject _takeDamageComponent;
+        [SerializeField] private PauseManager _pauseManager = null;
         private CinemachineFreeLook _freeLookCam;
         
         private MovementState _movementState = MovementState.Walking;
@@ -49,6 +50,10 @@ namespace Kraken
         private void Start()
         {
             _freeLookCam = _camera.GetComponent<CinemachineFreeLook>();
+            if (_pauseManager == null)
+            {
+                _pauseManager = Object.FindObjectOfType<PauseManager>(); //temp but i don't wanna lock the game scene
+            }
 
             if (photonView.AmOwner)
             {
@@ -279,7 +284,10 @@ namespace Kraken
 
         public void OnPause(InputAction.CallbackContext value)
         {
-            EventManager.Dispatch(EventNames.TogglePause, null);
+            if (_pauseManager._pauseState != PauseManager.PauseState.PausedByOther)
+            {
+                EventManager.Dispatch(EventNames.TogglePause, null);
+            }
         }
 
         public void OnTogglePause(BytesData data)

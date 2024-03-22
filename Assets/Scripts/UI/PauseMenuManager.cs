@@ -2,6 +2,7 @@ using Bytes;
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +14,16 @@ namespace Kraken
         [SerializeField] private GameObject _gameCanvas;
         [SerializeField] private GameObject _pauseBaseMenu;
         [SerializeField] private GameObject _pauseSettingsMenu;
+        [SerializeField] private PauseManager _pauseManager = null;
         private bool _paused = false;
+
+        private void Start()
+        {
+            if (_pauseManager == null)
+            {
+                _pauseManager = Object.FindObjectOfType<PauseManager>(); //temp but i don't wanna lock the game scene
+            }
+        }
 
         public void OnTogglePause()
         {
@@ -31,7 +41,10 @@ namespace Kraken
 
         public void OnBtnResume()
         {
-            EventManager.Dispatch(EventNames.TogglePause, null);
+            if (_pauseManager._pauseState == PauseManager.PauseState.PausedBySelf)
+            {
+                EventManager.Dispatch(EventNames.TogglePause, null);
+            }
         }
 
         public void OnBtnSettings()
