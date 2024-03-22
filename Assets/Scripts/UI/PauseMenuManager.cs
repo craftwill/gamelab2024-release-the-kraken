@@ -54,8 +54,8 @@ namespace Kraken
 
         public void OnBtnQuit()
         {
+            AnimateManager.GetInstance().ClearAllAnimations();
             PhotonNetwork.LeaveRoom();
-            PhotonNetwork.LoadLevel("MainMenu");
         }
     }
 }
