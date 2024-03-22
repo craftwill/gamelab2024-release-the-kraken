@@ -22,19 +22,19 @@ MonoBehaviour:
   randomizeObjectives: 1
   gameDuration: 600
   maxHealth: 250
-  razzleAbilityCooldown: 4
+  razzleAbilityCooldown: 3
   razzleAbilityPullDuration: 2.4
-  razzleAbilityRadius: 6
+  razzleAbilityRadius: 8
   razzleAbilityInitialPullStrength: 60
   razzleAbilityPullStrengthOverTime: 10
-  razzleAbilitySpawnDistanceOffset: 9
+  razzleAbilitySpawnDistanceOffset: 10
   razzleSpawnPoint: {x: 120, y: -45, z: 99}
-  dazzleAbilityCooldown: 4
-  dazzleAbilityJumpDuration: 0.27
+  dazzleAbilityCooldown: 3
+  dazzleAbilityJumpDuration: 0.2
   dazzleAbilityJumpDistance: 8
   dazzleAbilityJumpHeigth: 3
   dazzleAbilityDamage: 5
-  dazzleAbilityRadius: 3
+  dazzleAbilityRadius: 4
   dazzleSpawnPoint: {x: 122, y: -45, z: 99}
   moveSpeed: 8.5
   sprintSpeed: 20
