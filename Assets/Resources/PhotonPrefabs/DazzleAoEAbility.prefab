@@ -152,3 +152,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _abilityCircleLifeTime: 0.28
+  _radius: 4
