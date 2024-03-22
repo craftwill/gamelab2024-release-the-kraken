@@ -62,7 +62,9 @@ namespace Kraken
         {
             base.HandleTakeDamage(dmgAmount);
 
-            _playerAnimationComponent.PlayHurtAnim();
+            // Don't play hurt anim if player is attacking
+            if(!_playerAnimationComponent.GetCurrentPlayOnceAnim().ClipName.Contains("AttackCombo"))
+                _playerAnimationComponent.PlayHurtAnim();
 
             if (_isOwner)
             {
