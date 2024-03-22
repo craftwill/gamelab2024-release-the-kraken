@@ -52,6 +52,11 @@ namespace Kraken
             _animStateMachine.PlayAnimOnce(EntityAnimState.BasicAttack, _animatorPrefix, _animatorSuffix);
         }
 
+        public IKrakenAnimState GetCurrentPlayOnceAnim() 
+        {
+            return _animStateMachine.GetCurrentPlayOnceState();
+        }
+
         // Animations used by every entity
         public class EntityAnimState : KrakenBaseAnimState
         {
