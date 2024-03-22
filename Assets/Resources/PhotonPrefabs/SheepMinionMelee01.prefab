@@ -204,6 +204,11 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 6930782094237217246}
+    - target: {fileID: 7010872933795953625, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: _animatorPrefix
+      value: SheepMinion_Melee
+      objectReference: {fileID: 0}
     - target: {fileID: 8581956803195504288, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: sceneViewId

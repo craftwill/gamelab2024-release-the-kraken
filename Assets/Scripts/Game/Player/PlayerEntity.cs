@@ -62,6 +62,8 @@ namespace Kraken
         {
             base.HandleTakeDamage(dmgAmount);
 
+            _playerAnimationComponent.PlayHurtAnim();
+
             if (_isOwner)
             {
                 FloatDataBytes bytes = new FloatDataBytes(_healthComponent.Health/_healthComponent.MaxHealth);
