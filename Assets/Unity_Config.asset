@@ -62,7 +62,7 @@ MonoBehaviour:
   ultimateTriggerTimer: 5
   ultimateCooldown: 10
   ultimateMinWool: 10
-  ultimateDistancePerWool: 1
+  ultimateDistancePerWool: 2
   ultimateMinimumDuration: 0.5
   ultimateDoesSlowMo: 1
   ultimateSlowMoTimeScale: 0.25
@@ -70,6 +70,7 @@ MonoBehaviour:
   enemyStaggerDuration: 2
   comboPitchIncrement: 100
   comboMaxHitInterval: 2
+  hitFlashDuration: 0.1
   showBasicEnemies: 0
   minWoolVerticalVelocity: 5
   maxWoolVerticalVelocity: 8
