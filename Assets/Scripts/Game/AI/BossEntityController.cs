@@ -10,8 +10,8 @@ namespace Kraken
     {
         [SerializeField] private RingsOfLightAttack _rolAttack;
         [SerializeField] private StarfallAttack _starfallAttack;
-
         [SerializeField] private BossAnimationComponent _bossAnim;
+        [SerializeField] private Kraken.Game.HealthComponent _healthComponent;
 
         [SerializeField] private StarfallAttackConfig _starfallConfig;
         [SerializeField] private RingsOfLightAttackConfig _rolConfig;
@@ -21,6 +21,7 @@ namespace Kraken
         public override void InitSettings(EnemyConfigSO config)
         {
             base.InitSettings(config);
+            _healthComponent.OnDie.AddListener(OnDieListener);
         }
 
         protected override void Start()
@@ -62,6 +63,13 @@ namespace Kraken
 
                 Animate.Delay(cd, () => _isOnCooldown = false, true);
             }
+        }
+
+        private void OnDieListener()
+        {
+            StopAllCoroutines();
+            _rolAttack.gameObject.SetActive(false);
+            _starfallAttack.gameObject.SetActive(false);
         }
     }
 
