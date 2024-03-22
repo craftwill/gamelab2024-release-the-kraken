@@ -11,6 +11,7 @@ namespace Kraken
         [SerializeField] private ConeTelegraph _coneTelegraph;
         [SerializeField] private InflictDamageComponent _inflictDamageComponent;//could probably avoid using this component
         [SerializeField] private MinibossAnimationComponent _animComponent;
+        [SerializeField] private Kraken.Game.HealthComponent _healthComponent;
         [SerializeField] private MinibossAttackAdditionalConfig _attackConfig;
 
         private Coroutine _drawCoroutine = null;
@@ -25,6 +26,7 @@ namespace Kraken
             base.InitSettings(config);
             _inflictDamageComponent.Damage = config.damageDealt;
             _cooldown = config.attackCooldown;
+            _healthComponent.OnDie.AddListener(OnDieListener); 
         }
 
         protected override void Start()
@@ -94,6 +96,12 @@ namespace Kraken
         protected override bool CanPathfind()
         {
             return _canPathfind;
+        }
+
+        private void OnDieListener()
+        {
+            StopAllCoroutines();
+            _coneTelegraph.gameObject.SetActive(false);
         }
     }
 
