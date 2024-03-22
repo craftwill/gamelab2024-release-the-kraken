@@ -83,5 +83,17 @@ namespace Kraken
             gameObject.SetActive(false);
             _previousMenu.SetActive(true);
         }
+
+        public void BtnTriggerVictory() 
+        {
+            BtnBack();
+            EventManager.Dispatch(EventNames.PlayerWin, null);
+        }
+
+        public void BtnTriggerDefeat()
+        {
+            BtnBack();
+            EventManager.Dispatch(EventNames.PlayerDeath, null);
+        }
     }
 }
