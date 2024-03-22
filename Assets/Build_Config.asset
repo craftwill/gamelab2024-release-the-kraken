@@ -28,14 +28,14 @@ MonoBehaviour:
   razzleAbilityInitialPullStrength: 60
   razzleAbilityPullStrengthOverTime: 10
   razzleAbilitySpawnDistanceOffset: 9
-  razzleSpawnPoint: {x: 120, y: -46, z: 99}
+  razzleSpawnPoint: {x: 75.75, y: -30.9, z: 62}
   dazzleAbilityCooldown: 2
   dazzleAbilityJumpDuration: 0.27
   dazzleAbilityJumpDistance: 8
   dazzleAbilityJumpHeigth: 3
   dazzleAbilityDamage: 5
   dazzleAbilityRadius: 3
-  dazzleSpawnPoint: {x: 122, y: -46, z: 99}
+  dazzleSpawnPoint: {x: 77.75, y: -30.9, z: 62}
   moveSpeed: 7.5
   sprintSpeed: 14
   attackMoveSpeed: 3
@@ -70,6 +70,7 @@ MonoBehaviour:
   enemyStaggerDuration: 2
   comboPitchIncrement: 100
   comboMaxHitInterval: 2
+  hitFlashDuration: 0.1
   showBasicEnemies: 0
   minWoolVerticalVelocity: 5
   maxWoolVerticalVelocity: 8
