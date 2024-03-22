@@ -29,15 +29,15 @@ MonoBehaviour:
   razzleAbilityPullStrengthOverTime: 10
   razzleAbilitySpawnDistanceOffset: 9
   razzleSpawnPoint: {x: 120, y: -45, z: 99}
-  dazzleAbilityCooldown: 2
+  dazzleAbilityCooldown: 4
   dazzleAbilityJumpDuration: 0.27
   dazzleAbilityJumpDistance: 8
   dazzleAbilityJumpHeigth: 3
   dazzleAbilityDamage: 5
   dazzleAbilityRadius: 3
   dazzleSpawnPoint: {x: 122, y: -45, z: 99}
-  moveSpeed: 7.5
-  sprintSpeed: 14
+  moveSpeed: 8.5
+  sprintSpeed: 20
   attackMoveSpeed: 3
   rotationSpeed: 50
   gravity: 5
