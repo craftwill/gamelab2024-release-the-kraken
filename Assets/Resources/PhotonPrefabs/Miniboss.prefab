@@ -464,6 +464,18 @@ NavMeshAgent:
     type: 3}
   m_PrefabInstance: {fileID: 5623655126188437602}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4536674062849678646 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8142153588247244116, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+    type: 3}
+  m_PrefabInstance: {fileID: 5623655126188437602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282374055492276171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5592c53961416c489a7b7d5606087d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7282374055492276171 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3106089648525901737, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
@@ -488,6 +500,7 @@ MonoBehaviour:
   _coneTelegraph: {fileID: 801501132520092306}
   _inflictDamageComponent: {fileID: 9012708890727214374}
   _animComponent: {fileID: 9001902255904061304}
+  _healthComponent: {fileID: 4536674062849678646}
   _attackConfig:
     chargeTime: 3
     angle: 60
