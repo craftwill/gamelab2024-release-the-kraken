@@ -8,13 +8,13 @@ namespace Kraken
 {
     public class PauseManager : MonoBehaviourPun
     {
-        enum PauseState
+        public enum PauseState
         {
             Unpaused,
             PausedBySelf,
             PausedByOther
         }
-        private PauseState _pauseState = PauseState.Unpaused;
+        public PauseState _pauseState { get; private set; } = PauseState.Unpaused;
         [SerializeField] private PauseMenuManager _pauseMenuManager;
 
         private void Start()

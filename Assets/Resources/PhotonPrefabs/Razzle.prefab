@@ -496,7 +496,6 @@ MonoBehaviour:
     type: 3}
   _abilityPrefab: {fileID: 1911473875266983035, guid: 7d2f5f6fe6939f44e97389e718101846,
     type: 3}
-  _spawnDistanceOffset: 5
   _verticalOffset: -0.45
 --- !u!114 &6039986356545168180 stripped
 MonoBehaviour:

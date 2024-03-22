@@ -63,9 +63,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47fe28b2389635344be09119b96f70bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxEnemyCount: 10
+  _maxEnemyCount: 100
   _maxZoneOccupancyTimer: 30
   _spawner: {fileID: 2037235297513267488}
+  _minimapIndicator: {fileID: 0}
 --- !u!65 &6842461947601769082
 BoxCollider:
   m_ObjectHideFlags: 0

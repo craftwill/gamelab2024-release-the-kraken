@@ -22,22 +22,22 @@ MonoBehaviour:
   randomizeObjectives: 1
   gameDuration: 600
   maxHealth: 250
-  razzleAbilityCooldown: 4
+  razzleAbilityCooldown: 3
   razzleAbilityPullDuration: 2.4
-  razzleAbilityRadius: 6
+  razzleAbilityRadius: 8
   razzleAbilityInitialPullStrength: 60
   razzleAbilityPullStrengthOverTime: 10
-  razzleAbilitySpawnDistanceOffset: 9
-  razzleSpawnPoint: {x: 120, y: -45, z: 99}
-  dazzleAbilityCooldown: 2
-  dazzleAbilityJumpDuration: 0.27
+  razzleAbilitySpawnDistanceOffset: 10
+  razzleSpawnPoint: {x: 75.75, y: -30.9, z: 62}
+  dazzleAbilityCooldown: 3
+  dazzleAbilityJumpDuration: 0.2
   dazzleAbilityJumpDistance: 8
   dazzleAbilityJumpHeigth: 3
   dazzleAbilityDamage: 5
-  dazzleAbilityRadius: 3
-  dazzleSpawnPoint: {x: 122, y: -45, z: 99}
-  moveSpeed: 7.5
-  sprintSpeed: 14
+  dazzleAbilityRadius: 4
+  dazzleSpawnPoint: {x: 77.75, y: -30.9, z: 62}
+  moveSpeed: 8.5
+  sprintSpeed: 20
   attackMoveSpeed: 3
   rotationSpeed: 50
   gravity: 5
@@ -62,7 +62,7 @@ MonoBehaviour:
   ultimateTriggerTimer: 5
   ultimateCooldown: 10
   ultimateMinWool: 10
-  ultimateDistancePerWool: 1
+  ultimateDistancePerWool: 2
   ultimateMinimumDuration: 0.5
   ultimateDoesSlowMo: 1
   ultimateSlowMoTimeScale: 0.25
@@ -70,6 +70,7 @@ MonoBehaviour:
   enemyStaggerDuration: 2
   comboPitchIncrement: 100
   comboMaxHitInterval: 2
+  hitFlashDuration: 0.1
   showBasicEnemies: 0
   minWoolVerticalVelocity: 5
   maxWoolVerticalVelocity: 8
