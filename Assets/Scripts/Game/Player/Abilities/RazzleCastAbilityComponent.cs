@@ -10,11 +10,12 @@ namespace Kraken
     {
         [SerializeField] private InputActionReference _castAbilityInput;
         [SerializeField] private GameObject _abilityPrefab;
-        [SerializeField] private float _spawnDistanceOffset = 5f;
         [SerializeField] private float _verticalOffset = -0.35f;
+        private float _spawnDistanceOffset = 5f;
 
         private void Start()
         {
+            _spawnDistanceOffset = Config.current.razzleAbilitySpawnDistanceOffset;
             _cooldown = Config.current.razzleAbilityCooldown;
         }
 
