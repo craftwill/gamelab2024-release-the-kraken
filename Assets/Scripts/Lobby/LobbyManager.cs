@@ -127,7 +127,8 @@ namespace Kraken
         {
             if (AreAllPlayersReady() && PhotonNetwork.IsMasterClient)
             {
-                photonView.RPC(nameof(RPC_Master_OpenGameScene), RpcTarget.MasterClient);
+                _btnStart.interactable = false;
+                JoinGameScene();
             }
         }
 
