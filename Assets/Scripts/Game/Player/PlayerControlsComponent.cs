@@ -38,7 +38,6 @@ namespace Kraken
         private float _movementMagnitude = 0.0f;
         private float _attackMovementSpeed = 0.0f;
         private bool _dashReady = true;
-        private Coroutine _fovChangeCoroutine = null;
 
         private bool controlsEnabled = true;
         private bool cameraControlsEnabled = true;
@@ -135,6 +134,17 @@ namespace Kraken
         {
             Vector3 cameraDirection = transform.position - new Vector3(_camera.transform.position.x, transform.position.y, _camera.transform.position.z);
             _cameraOrientation.forward = cameraDirection.normalized;
+            if (Config.current.changeFovOnSprint)
+            {
+                if (_movementState == MovementState.Sprinting && _movementMagnitude > 0.0f)
+                {
+                    _freeLookCam.m_Lens.FieldOfView = Mathf.Lerp(_freeLookCam.m_Lens.FieldOfView, Config.current.sprintFov, 1 / Config.current.fovChangeDuration);
+                }
+                else
+                {
+                    _freeLookCam.m_Lens.FieldOfView = Mathf.Lerp(_freeLookCam.m_Lens.FieldOfView, Config.current.baseFov, 1 / Config.current.fovChangeDuration);
+                }
+            }
         }
 
         private void ProcessControls() 
@@ -226,12 +236,6 @@ namespace Kraken
                 _sprintPressed = true;
                 if (_movementState != MovementState.Dashing)
                 {
-                    if (_fovChangeCoroutine != null)
-                    {
-                        StopCoroutine(_fovChangeCoroutine);
-                        _fovChangeCoroutine = null;
-                    }
-                    _fovChangeCoroutine = StartCoroutine(ChangeCameraFOV(Config.current.sprintFov, Config.current.fovChangeDuration));
                     if (_dashReady)
                     {
                         StartCoroutine(DashCoroutine());
@@ -255,12 +259,6 @@ namespace Kraken
                 if (_movementState == MovementState.Sprinting)
                 {
                     _movementState = MovementState.Walking;
-                    if (_fovChangeCoroutine != null)
-                    {
-                        StopCoroutine(_fovChangeCoroutine);
-                        _fovChangeCoroutine = null;
-                    }
-                    _fovChangeCoroutine = StartCoroutine(ChangeCameraFOV(Config.current.baseFov, Config.current.fovChangeDuration));
                 }
             }
         }
@@ -330,22 +328,6 @@ namespace Kraken
             {
                 _freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity;
                 _freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier;
-            }
-        }
-
-        // shamelessly stolen from https://www.reddit.com/r/unity/comments/vzf1od/how_do_i_change_the_field_of_view_in_cinemachine/
-        private IEnumerator ChangeCameraFOV(float endFOV, float duration)
-        {
-            if (Config.current.changeFovOnSprint)
-            {
-                float startFOV = _freeLookCam.m_Lens.FieldOfView;
-                float time = 0;
-                while (time < duration)
-                {
-                    _freeLookCam.m_Lens.FieldOfView = Mathf.Lerp(startFOV, endFOV, time / duration);
-                    yield return null;
-                    time += Time.deltaTime;
-                }
             }
         }
 

@@ -51,7 +51,7 @@ MonoBehaviour:
   invertYAxis: 1
   baseFov: 50
   sprintFov: 60
-  fovChangeDuration: 0.2
+  fovChangeDuration: 5
   changeFovOnSprint: 1
   ultimateStartMaxDistance: 5
   ultimateEndDistance: 3
