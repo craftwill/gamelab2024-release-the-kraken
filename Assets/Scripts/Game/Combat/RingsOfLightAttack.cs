@@ -30,12 +30,12 @@ namespace Kraken
         [PunRPC]
         private void RPC_ALL_RingsOfLight(float ring1ChargeTime, float ring2ChargeTime, float ring1Radius, float ring2Radius, int damage)
         {
-            RingTelegraph telegraph = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
+            RingTelegraph telegraph = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation, this.transform).GetComponent<RingTelegraph>();
             telegraph.StartTelegraph(ring1ChargeTime, ring1Radius, 0f, damage);
 
             Animate.Delay(ring1ChargeTime, () =>
             {
-                RingTelegraph telegraph2 = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
+                RingTelegraph telegraph2 = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation, this.transform).GetComponent<RingTelegraph>();
                 telegraph2.StartTelegraph(ring2ChargeTime, ring2Radius, ring1Radius, damage);
             }, true);
         }
@@ -43,14 +43,14 @@ namespace Kraken
         //two functions method for designer testing as well
         public void StartAttack()
         {
-            RingTelegraph telegraph = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
+            RingTelegraph telegraph = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation, this.transform).GetComponent<RingTelegraph>();
 
             telegraph.StartTelegraph(_ring1ChargeTime, _ring1Radius);
             Invoke(nameof(Ring2), _ring1ChargeTime);
         }
         private void Ring2()
         {
-            RingTelegraph telegraph2 = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
+            RingTelegraph telegraph2 = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation,this.transform).GetComponent<RingTelegraph>();
             telegraph2.StartTelegraph(_ring2ChargeTime, _ring2Radius, _ring1Radius);
         }
 #if UNITY_EDITOR

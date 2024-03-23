@@ -101,7 +101,7 @@ namespace Kraken
         private void OnDieListener()
         {
             StopAllCoroutines();
-            _coneTelegraph.gameObject.SetActive(false);
+            PhotonNetwork.Destroy(_coneTelegraph.gameObject);
         }
     }
 

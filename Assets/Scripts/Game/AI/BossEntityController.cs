@@ -68,8 +68,8 @@ namespace Kraken
         private void OnDieListener()
         {
             StopAllCoroutines();
-            _rolAttack.gameObject.SetActive(false);
-            _starfallAttack.gameObject.SetActive(false);
+            PhotonNetwork.Destroy(_rolAttack.gameObject);
+            PhotonNetwork.Destroy(_starfallAttack.gameObject);
         }
     }
 
