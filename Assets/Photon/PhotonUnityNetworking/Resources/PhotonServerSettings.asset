@@ -97,6 +97,7 @@ MonoBehaviour:
   - RPC_All_PlayUltimateGoOffSound
   - RPC_All_Slowmo
   - RPC_All_ToggleCamera
+  - RPC_All_QuitToMainMenu
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

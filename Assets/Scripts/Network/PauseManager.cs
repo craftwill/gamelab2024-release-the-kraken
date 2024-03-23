@@ -60,5 +60,17 @@ namespace Kraken
             }
             _pauseMenuManager.OnTogglePause();
         }
+
+        public void QuitToMainMenu()
+        {
+            photonView.RPC(nameof(RPC_All_QuitToMainMenu), RpcTarget.All);
+        }
+
+        [PunRPC]
+        public void RPC_All_QuitToMainMenu()
+        {
+            AnimateManager.GetInstance().ClearAllAnimations();
+            PhotonNetwork.LeaveRoom();
+        }
     }
 }
