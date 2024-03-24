@@ -103,7 +103,8 @@ namespace Kraken
         public bool hideGameCanvasOnPause = false;
 
         [Header("Scaling Settings")]
-        public float enemySpawningScaling = 1.5f;
+        public float permanentSpawningScaling = 0.8f;
+        public float objectiveSpawningScaling = 1f;
         public float enemyHealthScaling = 1f;
     }
 }

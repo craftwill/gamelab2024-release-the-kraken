@@ -37,14 +37,11 @@ namespace Kraken.Game
 
         private void Start()
         {
-            float baseHealth = MaxHealth;
             if (ScaleHpWithNight)
             {
-                for (int i = 0; i < PlayerPrefs.GetInt(Config.GAME_NIGHT_KEY,0); i++)
-                {
-                    MaxHealth *= Config.current.enemyHealthScaling;
-                }
+                MaxHealth *= Mathf.Pow(Config.current.enemyHealthScaling, PlayerPrefs.GetInt(Config.GAME_NIGHT_KEY, 0));
                 MaxHealth = Mathf.Round(MaxHealth);
+                
             }
             Health = MaxHealth;
         }
