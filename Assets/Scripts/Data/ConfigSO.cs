@@ -78,6 +78,7 @@ namespace Kraken
         public bool ultimateDoesSlowMo = true;
         public float ultimateSlowMoTimeScale = 0.5f;
         public float ultimateSlowMoDuration = 1f;
+        public bool ultimateIsCancellable = false;
 
         [Header("Combat Settings")]
         public float enemyStaggerDuration = 0.5f;

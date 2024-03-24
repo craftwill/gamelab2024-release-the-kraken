@@ -96,8 +96,11 @@ namespace Kraken
         {
             if (_state == UltimateState.InUltimate)
             {
-                // Cancel the ultimate
-                photonView.RPC(nameof(RPC_AllCancelUltimate), RpcTarget.All);
+                if (Config.current.ultimateIsCancellable)
+                {
+                    // Cancel the ultimate
+                    photonView.RPC(nameof(RPC_AllCancelUltimate), RpcTarget.All);
+                }
                 return;
             }
             if (!_ultimateAvailable) return;
