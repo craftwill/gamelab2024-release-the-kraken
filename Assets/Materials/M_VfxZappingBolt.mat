@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_VfxImpact
+  m_Name: M_VfxZappingBolt
   m_Shader: {fileID: -6465566751694194690, guid: 3d4c049f3e135664cac0e3d5342d1982,
     type: 3}
   m_Parent: {fileID: 0}
@@ -91,7 +91,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GTP_Map:
-        m_Texture: {fileID: 2800000, guid: 92155b68ef7cce04992a91812a96775f, type: 3}
+        m_Texture: {fileID: 2800000, guid: df68cee118bd9ff4d95b411c049a95ec, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HeightMap:
@@ -225,7 +225,7 @@ Material:
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
     - _ExcludeFromTUAndAA: 0
-    - _Gradient_Power: 3
+    - _Gradient_Power: 5
     - _Gradient_Thickness: 1
     - _HeightAmplitude: 0.02
     - _HeightCenter: 0.5
@@ -255,7 +255,7 @@ Material:
     - _PPDMinSamples: 5
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
-    - _Progress: 0.378
+    - _Progress: 0.453
     - _RayTracing: 0
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
@@ -311,7 +311,7 @@ Material:
     - _Diffusion_Profile_Asset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Emission_Color: {r: 32768, g: 32768, b: 32768, a: 0}
+    - _Emission_Color: {r: 24543.879, g: 24543.879, b: 24543.879, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
