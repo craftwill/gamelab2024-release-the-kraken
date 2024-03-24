@@ -15,6 +15,7 @@ namespace Kraken.Game
         [field: SerializeField] public float Health { get; private set; } = 10f;
         [field: SerializeField] public float MaxHealth { get; set; } = 10f;
         [field: SerializeField] public bool IsAlive { get; private set; } = true;
+        [field: SerializeField] public bool ScaleHpWithNight { get; private set; } = true;
 
         [Header("Testing")]
         public bool _destroyOnDie;
@@ -36,6 +37,15 @@ namespace Kraken.Game
 
         private void Start()
         {
+            float baseHealth = MaxHealth;
+            if (ScaleHpWithNight)
+            {
+                for (int i = 0; i < PlayerPrefs.GetInt(Config.GAME_NIGHT_KEY,0); i++)
+                {
+                    MaxHealth *= Config.current.enemyHealthScaling;
+                }
+                MaxHealth = Mathf.Round(MaxHealth);
+            }
             Health = MaxHealth;
         }
 
