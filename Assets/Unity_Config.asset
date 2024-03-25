@@ -82,3 +82,6 @@ MonoBehaviour:
   initialWoolQuantity: 0
   maxWoolQuantity: 50
   hideGameCanvasOnPause: 0
+  permanentSpawningScaling: 0.8
+  objectiveSpawningScaling: 1
+  enemyHealthScaling: 1

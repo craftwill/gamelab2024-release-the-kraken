@@ -63,5 +63,24 @@ namespace Kraken
             EventManager.Dispatch(EventNames.StartSpawning, null);
             EventManager.Dispatch(EventNames.StartGameTimer, null);
         }
+
+        public void GoToNextNight()
+        {
+            photonView.RPC(nameof(RPC_All_GoToNextNight), RpcTarget.All);
+        }
+
+        [PunRPC]
+        public void RPC_All_GoToNextNight()
+        {
+            if (PlayerPrefs.HasKey(Config.GAME_NIGHT_KEY))
+            {
+                PlayerPrefs.SetInt(Config.GAME_NIGHT_KEY, PlayerPrefs.GetInt(Config.GAME_NIGHT_KEY) + 1);
+            }
+            else
+            {
+                PlayerPrefs.SetInt(Config.GAME_NIGHT_KEY, 1);
+            }
+            PhotonNetwork.LoadLevel("Game");
+        }
     }
 }

@@ -18,6 +18,8 @@ namespace Kraken
         {
             base.TriggerObjective(instance);
             List<Spawner> spawners = new List<Spawner>();
+            // Night scaling
+            spawnFrequency *= Mathf.Pow(Config.current.objectiveSpawningScaling, PlayerPrefs.GetInt(Config.GAME_NIGHT_KEY, 0));
 
             if (instance.Zones is not null)
             {
