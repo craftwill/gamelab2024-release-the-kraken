@@ -12,6 +12,7 @@ namespace Kraken
         [SerializeField] private StarfallAttack _starfallAttack;
         [SerializeField] private BossAnimationComponent _bossAnim;
         [SerializeField] private Kraken.Game.HealthComponent _healthComponent;
+        [SerializeField] private BossSoundComponent _soundComponent;
 
         [SerializeField] private StarfallAttackConfig _starfallConfig;
         [SerializeField] private RingsOfLightAttackConfig _rolConfig;
@@ -27,7 +28,7 @@ namespace Kraken
         protected override void Start()
         {
             base.Start();
-
+            _soundComponent.PlayBossSpawnSound();
             if (!PhotonNetwork.IsMasterClient) return;
         }
 

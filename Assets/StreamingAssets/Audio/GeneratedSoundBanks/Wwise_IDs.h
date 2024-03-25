@@ -13,11 +13,17 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_BOSSSPAWN = 3774338134U;
         static const AkUniqueID PLAY_DASH = 2211787386U;
         static const AkUniqueID PLAY_ENEMYHURT = 349172053U;
         static const AkUniqueID PLAY_ENEMYSHOOT = 3253098515U;
         static const AkUniqueID PLAY_PLAYERHURT = 3178286754U;
         static const AkUniqueID PLAY_ULTIMATEGOOFF = 2741312416U;
+        static const AkUniqueID PLAY_ULTIMATENOTICE = 984790419U;
+        static const AkUniqueID PLAY_ULTIMATEREADY = 1218358740U;
+        static const AkUniqueID PLAY_ULTIMATETRIGGERED = 3162760014U;
+        static const AkUniqueID PLAY_WOOLCOLLECTED = 1863926102U;
+        static const AkUniqueID PLAY_ZONEFULLCAPACITY = 3233615227U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS

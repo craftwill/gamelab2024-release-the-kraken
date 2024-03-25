@@ -98,6 +98,10 @@ MonoBehaviour:
   - RPC_All_Slowmo
   - RPC_All_ToggleCamera
   - RPC_All_QuitToMainMenu
+  - RPC_All_PlayUltimateNoticeSound
+  - RPC_All_PlayUltimateReady
+  - RPC_All_PlayUltimateTriggeredSound
+  - RPC_All_PlayPickupSound
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

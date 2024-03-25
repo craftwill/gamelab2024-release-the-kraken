@@ -34,6 +34,11 @@
 				<Sound Name="pew-pew-lame-sound-effect" ID="{673A8F8D-340C-44F7-9403-FE0B38CA459A}" ShortID="804680531">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -131,7 +136,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="classic_hurt" ID="{61087652-9BE2-4C4B-8912-B68F26CD8378}" ShortID="1036399665">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="New Attenuation" ID="{21F5D5AA-3A07-4871-9C7D-27540D1E0FEC}" WorkUnitID="{DCCF40E7-2697-49F0-8DB4-BFAF3F6745E1}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
 						</Reference>
@@ -178,6 +189,196 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="ameno" ID="{B6FA9681-17BB-409B-AED1-2BF897B467C1}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="ultimateReady" ID="{0D7F5367-C109-4A6E-BED2-D99893D9FC41}" ShortID="157974442">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="FFXIV Limit Break 3 Video Effect" ID="{9B3843EA-622E-4C23-A8E5-0B654988CA04}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.89676350308642"/>
+								<Property Name="TrimEnd" Type="Real64" Value="1.80277199074074"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>FFXIV Limit Break 3 Video Effect.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="908038837"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="FFXIV Limit Break 3 Video Effect" ID="{9B3843EA-622E-4C23-A8E5-0B654988CA04}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="FFXIV Limit Break 3" ID="{68685F74-FC6F-4DF0-846E-99A873B605DB}" ShortID="1050956728">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="FFXIV Limit Break 3" ID="{0C35C878-CB39-4BD7-B5AE-A36B2799CA70}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="1.40523765432099"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="4.37287770061729"/>
+								<Property Name="TrimEnd" Type="Real64" Value="6.8690235339506"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>FFXIV Limit Break 3.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="781786885"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="FFXIV Limit Break 3" ID="{0C35C878-CB39-4BD7-B5AE-A36B2799CA70}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="tindeck_1" ID="{AB2A271F-3162-4050-B3E5-4F5B3A493D83}" ShortID="751575558">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="tindeck_1" ID="{2FA5A393-7D54-4C7A-93AD-505A59732BE6}">
+							<Language>SFX</Language>
+							<AudioFile>tindeck_1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="624797327"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="tindeck_1" ID="{2FA5A393-7D54-4C7A-93AD-505A59732BE6}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="y2mate_rQlfs1Y" ID="{F1371669-91B2-4EA1-9820-FDE53E67ED8F}" ShortID="419229758">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="y2mate_rQlfs1Y" ID="{2339D01F-8823-48CF-B713-E743C6A93882}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.272088292106967"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>y2mate_rQlfs1Y.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="422643003"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="y2mate_rQlfs1Y" ID="{2339D01F-8823-48CF-B713-E743C6A93882}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="alarme-factorio" ID="{30CB82B9-35C3-4E7B-B157-EE03DE61B0A3}" ShortID="1003038029">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="alarme-factorio" ID="{C3AD231E-59AC-42D8-AEA9-06BCF820037B}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="0"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="1.69300786981459"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>alarme-factorio.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="875765215"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="alarme-factorio" ID="{C3AD231E-59AC-42D8-AEA9-06BCF820037B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="xphit" ID="{E3462DE1-23B6-43CF-9232-46F0E246269C}" ShortID="566440177">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{E94E4028-8B62-4FA9-914E-80F20159F1D2}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="400"/>
+											<Property Name="Min" Type="Real64" Value="-1000"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="New Attenuation" ID="{21F5D5AA-3A07-4871-9C7D-27540D1E0FEC}" WorkUnitID="{DCCF40E7-2697-49F0-8DB4-BFAF3F6745E1}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="xphit" ID="{21A1366D-C3E5-4118-B6FF-898A1F4B7C1B}">
+							<Language>SFX</Language>
+							<AudioFile>xphit.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1037371522"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="xphit" ID="{21A1366D-C3E5-4118-B6FF-898A1F4B7C1B}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

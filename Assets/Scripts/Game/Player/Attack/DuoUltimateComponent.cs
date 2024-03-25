@@ -132,6 +132,7 @@ namespace Kraken
 
         private IEnumerator UltimateTriggerTimer()
         {
+            _soundComponent.PlayUltimateNoticeSound();
             _otherPlayerWaiting = true;
             yield return new WaitForSeconds(Config.current.ultimateTriggerTimer);
             _otherPlayerWaiting = false;
@@ -148,6 +149,7 @@ namespace Kraken
         public void RPC_All_StartDrawing()
         {
             EventManager.Dispatch(EventNames.UltimateRunning, new BoolDataBytes(true));
+            _soundComponent.PlayUltimateTriggeredSound();
         }
 
         private void HandleUltimateRunning(BytesData data)
@@ -191,6 +193,10 @@ namespace Kraken
             _woolQuantity = ((IntDataBytes)data).IntValue;
             if (_woolQuantity >= _minWoolQuantity)
             {
+                if (_ultimateAvailable == false)
+                {
+                    _soundComponent.RPC_All_PlayUltimateReady();
+                }
                 _ultimateAvailable = true;
             }
             else

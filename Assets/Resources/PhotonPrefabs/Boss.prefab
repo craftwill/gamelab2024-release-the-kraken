@@ -404,6 +404,10 @@ PrefabInstance:
         type: 3}
       insertIndex: 3
       addedObject: {fileID: 6957891619024676904}
+    - targetCorrespondingSourceObject: {fileID: 3106089648525901737, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      insertIndex: 7
+      addedObject: {fileID: 6177580151121801195}
   m_SourcePrefab: {fileID: 100100000, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
 --- !u!4 &934863956264956638 stripped
 Transform:
@@ -472,6 +476,7 @@ MonoBehaviour:
   _starfallAttack: {fileID: 4076349888599845715}
   _bossAnim: {fileID: 6957891619024676904}
   _healthComponent: {fileID: 3539384387315477434}
+  _soundComponent: {fileID: 6177580151121801195}
   _starfallConfig:
     starChargeTime: 1.2
     attackRadius: 12
@@ -502,6 +507,23 @@ MonoBehaviour:
   _animStateMachine: {fileID: 8082780783602929124}
   _animatorPrefix: SheepBoss_Queen
   _animatorSuffix: 
+--- !u!114 &6177580151121801195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7708995712779942215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04f541fb7d3e0049b135b18cda7733a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bossSpawnSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f31c9e5c8524fd94183b734e4ea7cd6e,
+      type: 2}
 --- !u!114 &8082780783602929124 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3587988577761823498, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
