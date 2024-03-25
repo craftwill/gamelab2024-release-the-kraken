@@ -88,6 +88,10 @@ namespace Kraken
                 EventManager.AddEventListener(EventNames.UpdateCameraSettings, HandleCameraSettingsChanged);
                 EventManager.AddEventListener(EventNames.TogglePause, OnTogglePause);
             }
+            else
+            {
+                _controller.gameObject.SetActive(false);
+            }
         }
 
         private void OnDestroy()
