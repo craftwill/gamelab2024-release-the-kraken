@@ -101,5 +101,13 @@ namespace Kraken
 
         [Header("UI Settings")]
         public bool hideGameCanvasOnPause = false;
+
+        [Header("Scaling Settings")]
+        [Tooltip("Multiplies a delay, should be < 1")]
+        public float permanentSpawningScaling = 0.8f;
+        [Tooltip("Multiplies a delay, should be < 1")]
+        public float objectiveSpawningScaling = 1f;
+        [Tooltip("Multiplies a value, should be > 1")]
+        public float enemyHealthScaling = 1f;
     }
 }
