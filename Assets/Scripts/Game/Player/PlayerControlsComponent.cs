@@ -133,10 +133,6 @@ namespace Kraken
                     _freeLookCam.m_YAxis.Value = 0;
                 }
             }
-            else
-            {
-                _controller.enabled = false;
-            }
         }
 
         private void ProcessCameraControls() 
