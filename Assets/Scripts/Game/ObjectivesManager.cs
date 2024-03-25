@@ -15,12 +15,14 @@ namespace Kraken
         public struct ObjectiveWithLocation
         {
             public ObjectiveSO objective;
-            public Zone spawnLocation;
-            public MinimapHighlightComponent minimapHighlight;
+            public List<Zone> spawnLocation;
+            public List<MinimapHighlightComponent> minimapHighlight;
         }
-        [SerializeField] private List<ObjectiveWithLocation> _allObjectives;
+        [SerializeField] private List<ObjectiveWithLocation> _allSpawnObjectives;
+        [SerializeField] private List<ObjectiveWithLocation> _allMinibossObjectives;
         [SerializeField] private ObjectiveWithLocation _bossObjective;
 
+        private List<ObjectiveWithLocation> _loadedObjectives;
         private ObjectiveInstance currentObjective = null;
         private int objectiveIndex = 0;
         private int minibossAlives = 0;
@@ -30,8 +32,17 @@ namespace Kraken
             if (!_isMaster) return;
 
             // Temporary basic shuffle
-            if (Config.current.randomizeObjectives) _allObjectives.MMShuffle();
-            
+            if (Config.current.randomizeObjectives)
+            {
+                _allSpawnObjectives.MMShuffle();
+                _allMinibossObjectives.MMShuffle();
+            }
+
+            _loadedObjectives = new List<ObjectiveWithLocation>();
+            _loadedObjectives.AddRange(_allSpawnObjectives.GetRange(0, Config.current.spawnObjectiveCount));
+            _loadedObjectives.AddRange(_allMinibossObjectives.GetRange(0, Config.current.minibossObjectiveCount));
+            if (Config.current.randomizeObjectives) _loadedObjectives.MMShuffle();
+
             EventManager.AddEventListener(EventNames.StartObjectives, HandleStartObjectives);
             EventManager.AddEventListener(EventNames.NextObjective, HandleNextObjectives);
             EventManager.AddEventListener(EventNames.StopObjectives, HandleStopObjectives);
@@ -120,13 +131,13 @@ namespace Kraken
 
         private ObjectiveInstance GetNextObjective()
         {
-            if (objectiveIndex >= _allObjectives.Count) {
+            if (objectiveIndex >= _loadedObjectives.Count) {
                 return TrySpawnBossObjective();
             }
 
-            var objective = _allObjectives[objectiveIndex].objective;
-            var zone = _allObjectives[objectiveIndex].spawnLocation;
-            var minimapHighlight = _allObjectives[objectiveIndex].minimapHighlight;
+            var objective = _loadedObjectives[objectiveIndex].objective;
+            var zone = _loadedObjectives[objectiveIndex].spawnLocation;
+            var minimapHighlight = _loadedObjectives[objectiveIndex].minimapHighlight;
             var nextObjective = new ObjectiveInstance(objective, zone, minimapHighlight);
             objectiveIndex++;
             return nextObjective;

@@ -17,23 +17,32 @@ namespace Kraken
         public override void TriggerObjective(ObjectiveInstance instance)
         {
             base.TriggerObjective(instance);
-            Spawner spawner = instance.Zone.GetSpawner();
-            instance.Zone.SetIsActiveZone(true);
+            List<Spawner> spawners = new List<Spawner>();
 
-            //should not be kept this way
-            Animate.Repeat(spawnFrequency, () =>
+            if (instance.Zones is not null)
             {
-                bool isInProgress = !instance.IsCompleted;
-                if (isInProgress) NetworkUtils.Instantiate(spawnData.GetRandomEnemy().name, spawner.GetRandomPosition());
-                return isInProgress;
-            }, -1, true);
+                foreach(Zone z in instance.Zones)
+                {
+                    spawners.Add(z.GetSpawner());
+                    z.SetIsActiveZone(true);
+                }
+                Animate.Repeat(spawnFrequency, () =>
+                {
+                    bool isInProgress = !instance.IsCompleted;
+                    if (isInProgress)
+                    {
+                        spawners.ForEach(x => NetworkUtils.Instantiate(spawnData.GetRandomEnemy().name, x.GetRandomPosition()));
+                    }
+                    return isInProgress;
+                }, -1, true);
+            }
         }
 
         public override void EndObjective(ObjectiveInstance instance)
         {
             base.EndObjective(instance);
 
-            instance.Zone.SetIsActiveZone(false);
+            instance.Zones?.ForEach(x => x?.SetIsActiveZone(false));
             EventManager.Dispatch(EventNames.UpdateCurrentZoneOccupancyUI, new UpdateZoneOccupancyUIData(0, 10));
         }
     }

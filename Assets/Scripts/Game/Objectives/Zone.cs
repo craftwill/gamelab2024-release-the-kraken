@@ -57,7 +57,8 @@ namespace Kraken
 
             if (_isActiveZone)
             {
-                EventManager.Dispatch(EventNames.UpdateCurrentZoneOccupancyUI, new UpdateZoneOccupancyUIData(_enemyCount, _maxEnemyCount));
+                //commenting it in case we want to reuse stuff
+                //EventManager.Dispatch(EventNames.UpdateCurrentZoneOccupancyUI, new UpdateZoneOccupancyUIData(_enemyCount, _maxEnemyCount));
             }
 
             if (_enemyCount >= _maxEnemyCount)

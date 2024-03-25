@@ -42,7 +42,7 @@ namespace Kraken
                 time += Time.deltaTime;
             }
 
-            if (!PhotonNetwork.IsMasterClient)
+            if (PhotonNetwork.IsMasterClient)
             {
                 PlayerEntity[] players = CombatUtils.GetPlayerEntities();
 
