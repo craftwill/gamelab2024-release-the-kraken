@@ -29,13 +29,33 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{21103C23-7782-1C19-7C02-6FE991A1265C}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{FAE93EAF-B5E8-A4B4-9F1F-9754C0F1CDF1}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
 				<File Id="392899862" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>fast-whoosh-118248.wav</ShortName>
 					<CachePath>SFX/fast-whoosh-118248_818F3B66.wem</CachePath>
+				</File>
+				<File Id="422643003" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>y2mate_rQlfs1Y.wav</ShortName>
+					<CachePath>SFX/y2mate_rQlfs1Y_FC9CA280.wem</CachePath>
+				</File>
+				<File Id="624797327" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>tindeck_1.wav</ShortName>
+					<CachePath>SFX/tindeck_1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="781786885" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FFXIV Limit Break 3.wav</ShortName>
+					<CachePath>SFX/FFXIV Limit Break 3_76AE5D17.wem</CachePath>
+				</File>
+				<File Id="875765215" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>alarme-factorio.wav</ShortName>
+					<CachePath>SFX/alarme-factorio_FCF97502.wem</CachePath>
+				</File>
+				<File Id="908038837" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FFXIV Limit Break 3 Video Effect.wav</ShortName>
+					<CachePath>SFX/FFXIV Limit Break 3 Video Effect_F4D2370A.wem</CachePath>
 				</File>
 				<File Id="933963966" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ameno.wav</ShortName>
@@ -44,6 +64,10 @@
 				<File Id="996749074" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>pew-pew-lame-sound-effect.wav</ShortName>
 					<CachePath>SFX/pew-pew-lame-sound-effect_461CF5D3.wem</CachePath>
+				</File>
+				<File Id="1037371522" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>xphit.wav</ShortName>
+					<CachePath>SFX/xphit_818F3B66.wem</CachePath>
 				</File>
 				<File Id="1042314046" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>classic_hurt.wav</ShortName>
@@ -55,6 +79,11 @@
 				</File>
 			</Media>
 			<Events>
+				<Event Id="3774338134" Name="Play_BossSpawn" DurationType="OneShot" DurationMin="1.6930078" DurationMax="1.6930078">
+					<MediaRefs>
+						<MediaRef Id="875765215"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2211787386" Name="Play_Dash" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.2016326" DurationMax="1.2016326">
 					<MediaRefs>
 						<MediaRef Id="392899862"/>
@@ -70,7 +99,7 @@
 						<MediaRef Id="996749074"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3178286754" Name="Play_PlayerHurt" DurationType="OneShot" DurationMin="0.36571428" DurationMax="0.36571428">
+				<Event Id="3178286754" Name="Play_PlayerHurt" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.36571428" DurationMax="0.36571428">
 					<MediaRefs>
 						<MediaRef Id="1042314046"/>
 					</MediaRefs>
@@ -80,11 +109,36 @@
 						<MediaRef Id="933963966"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="984790419" Name="Play_UltimateNotice" DurationType="OneShot" DurationMin="0.4477303" DurationMax="0.4477303">
+					<MediaRefs>
+						<MediaRef Id="422643003"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1218358740" Name="Play_UltimateReady" DurationType="OneShot" DurationMin="0.9060085" DurationMax="0.9060085">
+					<MediaRefs>
+						<MediaRef Id="908038837"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3162760014" Name="Play_UltimateTriggered" DurationType="OneShot" DurationMin="2.4961457" DurationMax="2.4961457">
+					<MediaRefs>
+						<MediaRef Id="781786885"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1863926102" Name="Play_WoolCollected" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.5952754" DurationMax="1.336348">
+					<MediaRefs>
+						<MediaRef Id="1037371522"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3233615227" Name="Play_ZoneFullCapacity" DurationType="OneShot" DurationMin="1.5673469" DurationMax="1.5673469">
+					<MediaRefs>
+						<MediaRef Id="624797327"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="24633649" Name="ComboPitch"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D9A637BA-0192-1372-420D-1AB274F029A8}</FileHash>
+	<FileHash>{CE8CA5A8-0B68-29A9-F7F5-DD1ECEA07C25}</FileHash>
 </SoundBanksInfo>

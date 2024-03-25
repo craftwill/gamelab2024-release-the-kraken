@@ -9,6 +9,8 @@ namespace Kraken
     public class MinimapZoneOccupationUI : MonoBehaviourPun
     {
         [SerializeField] private TextMeshProUGUI _percentage;
+        [SerializeField] private OccupancySoundComponent _soundComponent;
+        private bool _isOverloaded = false;
 
         public void SetOccupation(int enemyCount, int maxEnemyCount)
         {
@@ -25,11 +27,17 @@ namespace Kraken
             _percentage.text = percentageInt.ToString() + "%";
             if (enemyCount > maxEnemyCount)
             {
+                if (!_isOverloaded)
+                {
+                    _soundComponent.PlayFullCapacitySound();
+                }
                 _percentage.color = Color.red;
+                _isOverloaded = true;
             }
             else
             {
                 _percentage.color = Color.black;
+                _isOverloaded = false;
             }
         }
     }

@@ -2081,6 +2081,21 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: efec16645f07dc540862788362f999ef,
       type: 2}
+  _ultimateReadySound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 22f25e401a97e4e408193d038ef9db78,
+      type: 2}
+  _ultimateNoticeSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 49de6790640aeb245921b3449b542e80,
+      type: 2}
+  _ultimateTriggeredSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b3a47167a5245454192241782c574561,
+      type: 2}
 --- !u!114 &5208069392134486679
 MonoBehaviour:
   m_ObjectHideFlags: 0

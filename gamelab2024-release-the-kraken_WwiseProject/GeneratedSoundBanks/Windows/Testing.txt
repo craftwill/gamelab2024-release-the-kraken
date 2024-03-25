@@ -1,17 +1,29 @@
 Event	ID	Name			Wwise Object Path	Notes
 	349172053	Play_EnemyHurt			\Default Work Unit\Play_EnemyHurt	
+	984790419	Play_UltimateNotice			\Default Work Unit\Play_UltimateNotice	
+	1218358740	Play_UltimateReady			\Default Work Unit\Play_UltimateReady	
+	1863926102	Play_WoolCollected			\Default Work Unit\Play_WoolCollected	
 	2211787386	Play_Dash			\Default Work Unit\Play_Dash	
 	2741312416	Play_UltimateGoOff			\Default Work Unit\Play_UltimateGoOff	
+	3162760014	Play_UltimateTriggered			\Default Work Unit\Play_UltimateTriggered	
 	3178286754	Play_PlayerHurt			\Default Work Unit\Play_PlayerHurt	
+	3233615227	Play_ZoneFullCapacity			\Default Work Unit\Play_ZoneFullCapacity	
 	3253098515	Play_EnemyShoot			\Default Work Unit\Play_EnemyShoot	
+	3774338134	Play_BossSpawn			\Default Work Unit\Play_BossSpawn	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	24633649	ComboPitch			\Default Work Unit\ComboPitch	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	392899862	fast-whoosh-118248	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\fast-whoosh-118248_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\fast-whoosh-118248		212064
+	422643003	y2mate_rQlfs1Y	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\y2mate_rQlfs1Y_FC9CA280.wem		\Actor-Mixer Hierarchy\Default Work Unit\y2mate_rQlfs1Y		79076
+	624797327	tindeck_1	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\tindeck_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\tindeck_1		276576
+	781786885	FFXIV Limit Break 3	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\FFXIV Limit Break 3_76AE5D17.wem		\Actor-Mixer Hierarchy\Default Work Unit\FFXIV Limit Break 3		479356
+	875765215	alarme-factorio	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\alarme-factorio_FCF97502.wem		\Actor-Mixer Hierarchy\Default Work Unit\alarme-factorio		298744
+	908038837	ultimateReady	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\FFXIV Limit Break 3 Video Effect_F4D2370A.wem		\Actor-Mixer Hierarchy\Default Work Unit\ultimateReady		174048
 	933963966	ameno	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\ameno_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\ameno		327452
 	996749074	pew-pew-lame-sound-effect	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\pew-pew-lame-sound-effect_461CF5D3.wem		\Actor-Mixer Hierarchy\Default Work Unit\pew-pew-lame-sound-effect		43584
+	1037371522	xphit	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\xphit_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\xphit		66246
 	1042314046	classic_hurt	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\classic_hurt_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\classic_hurt		32352
 	1046494642	squeaky-toy-1-6059	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\squeaky-toy-1-6059_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\squeaky-toy-1-6059		48480
 
