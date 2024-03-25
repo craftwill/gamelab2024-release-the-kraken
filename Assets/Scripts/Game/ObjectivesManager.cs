@@ -56,6 +56,7 @@ namespace Kraken
             EventManager.RemoveEventListener(EventNames.StartObjectives, HandleStartObjectives);
             EventManager.RemoveEventListener(EventNames.NextObjective, HandleNextObjectives);
             EventManager.RemoveEventListener(EventNames.StopObjectives, HandleStopObjectives);
+            EventManager.RemoveEventListener(EventNames.MinibossCountChange, HandleMinibossCount);
         }
 
         private void HandleMinibossCount(BytesData data)
