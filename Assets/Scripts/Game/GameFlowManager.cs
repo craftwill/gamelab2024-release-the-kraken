@@ -80,7 +80,6 @@ namespace Kraken
             {
                 PlayerPrefs.SetInt(Config.GAME_NIGHT_KEY, 1);
             }
-            AnimateManager.GetInstance().ClearAllAnimations();
             PhotonNetwork.LoadLevel("Game");
         }
     }
