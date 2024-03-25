@@ -1171,6 +1171,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZoneOccupancyUI
       objectReference: {fileID: 0}
+    - target: {fileID: 94162946520419823, guid: e7c7522a455c739489b5c8af7b987cd3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3750586050650830168, guid: e7c7522a455c739489b5c8af7b987cd3,
         type: 3}
       propertyPath: m_text

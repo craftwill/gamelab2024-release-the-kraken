@@ -31,5 +31,12 @@ namespace Kraken
             if (PlayerEnties is null) PlayerEnties = GameObject.FindObjectsByType<PlayerEntity>(FindObjectsSortMode.None);
             return PlayerEnties;
         }
+
+        //couldn't be bothered tbh
+        //the player entities have to be reset otherwise when you restart the game it has reference to the players from the previous instance
+        static public void ResetGetPlayer()
+        {
+            PlayerEnties = null;
+        }
     }
 }

@@ -33,6 +33,12 @@ namespace Kraken
 
         private void Start()
         {
+            // Reset night count to 0
+            if (PlayerPrefs.HasKey(Config.GAME_NIGHT_KEY))
+            {
+                PlayerPrefs.SetInt(Config.GAME_NIGHT_KEY, 0);
+            }
+
             if (Config.current.isSkipMainMenu)
             {
                 Btn_OnStartGame();

@@ -22,7 +22,8 @@ namespace Kraken
 
         public void PlayHurtFeedback()
         {
-            PlayHurtFeedbackWithFlashColor(_hitFlashColor);
+            //currently commented until it gets fixed
+            //PlayHurtFeedbackWithFlashColor(_hitFlashColor);
         }
 
         public void PlayHurtFeedbackWithFlashColor(Color hitFlashColor)

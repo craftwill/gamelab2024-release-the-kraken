@@ -28,6 +28,9 @@ namespace Kraken
 
             EventManager.AddEventListener(EventNames.StartSpawning, HandleStartSpawning);
             EventManager.AddEventListener(EventNames.StopSpawning, HandleStopSpawning);
+
+            // Night scaling
+            spawnFrequency *= Mathf.Pow(Config.current.permanentSpawningScaling, PlayerPrefs.GetInt(Config.GAME_NIGHT_KEY, 0));
         }
 
         private void OnDestroy()

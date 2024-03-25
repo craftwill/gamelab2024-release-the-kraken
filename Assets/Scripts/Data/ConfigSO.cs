@@ -20,6 +20,8 @@ namespace Kraken
         public bool useDebugGameFlow = true;
         [Tooltip("Randomize objectives")]
         public bool randomizeObjectives = true;
+        public int spawnObjectiveCount = 3;
+        public int minibossObjectiveCount = 2;
         [Tooltip("Maximum time the game can last in seconds")]
         public int gameDuration = 600;
 
@@ -78,6 +80,7 @@ namespace Kraken
         public bool ultimateDoesSlowMo = true;
         public float ultimateSlowMoTimeScale = 0.5f;
         public float ultimateSlowMoDuration = 1f;
+        public bool ultimateIsCancellable = false;
 
         [Header("Combat Settings")]
         public float enemyStaggerDuration = 0.5f;
@@ -101,5 +104,13 @@ namespace Kraken
 
         [Header("UI Settings")]
         public bool hideGameCanvasOnPause = false;
+
+        [Header("Scaling Settings")]
+        [Tooltip("Multiplies a delay, should be < 1")]
+        public float permanentSpawningScaling = 0.8f;
+        [Tooltip("Multiplies a delay, should be < 1")]
+        public float objectiveSpawningScaling = 1f;
+        [Tooltip("Multiplies a value, should be > 1")]
+        public float enemyHealthScaling = 1f;
     }
 }
