@@ -385,7 +385,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 8324816408501412758}
   m_OnClick:
     m_PersistentCalls:
@@ -681,6 +681,8 @@ MonoBehaviour:
   _startsVisible: 0
   _interactableWhenVisible: 1
   _visibleAlpha: 1
+  _gameFlowManager: {fileID: 0}
+  _btnNextNight: {fileID: 3711156370372552294}
 --- !u!225 &8874980545548238361
 CanvasGroup:
   m_ObjectHideFlags: 0
