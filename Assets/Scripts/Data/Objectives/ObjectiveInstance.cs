@@ -10,22 +10,28 @@ namespace Kraken
         public ObjectiveSO objectiveSO;
 
         public bool IsCompleted { get; private set; } = false;
-        public Zone Zone { get; private set; } = null;
+        public List<Zone> Zones { get; private set; } = null;
 
-        public MinimapHighlightComponent MinimapHighlight { get; private set; } = null;
+        public List<MinimapHighlightComponent> MinimapHighlights { get; private set; } = null;
 
-        public ObjectiveInstance(ObjectiveSO objectiveSO, Zone zone, MinimapHighlightComponent minimapHighlight)
+        public ObjectiveInstance(ObjectiveSO objectiveSO, List<Zone> zones, List<MinimapHighlightComponent> minimapHighlights)
         {
             this.objectiveSO = objectiveSO;
-            this.Zone = zone;
-            this.MinimapHighlight = minimapHighlight;
+            this.Zones = zones;
+            this.MinimapHighlights = minimapHighlights;
 
         }
 
         public void TriggerObjective()
         {
             objectiveSO.TriggerObjective(this);
-            MinimapHighlight?.SetVisible(true);
+            if (MinimapHighlights is not null)
+            {
+                foreach(MinimapHighlightComponent mhc in MinimapHighlights)
+                {
+                    mhc?.SetVisible(true);
+                }
+            }
         }
 
         public void EndObjective(bool goToNext)
@@ -34,7 +40,13 @@ namespace Kraken
             if (IsCompleted) return;
             IsCompleted = true;
             objectiveSO.EndObjective(this);
-            MinimapHighlight?.SetVisible(false);
+            if (MinimapHighlights is not null)
+            {
+                foreach (MinimapHighlightComponent mhc in MinimapHighlights)
+                {
+                    mhc?.SetVisible(false);
+                }
+            }
             if (goToNext) EventManager.Dispatch(EventNames.NextObjective, null);
         }
     }

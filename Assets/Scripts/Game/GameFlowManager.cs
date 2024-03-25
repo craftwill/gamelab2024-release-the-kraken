@@ -11,6 +11,8 @@ namespace Kraken
     {
         private void Start()
         {
+            //scuffed
+            CombatUtils.ResetGetPlayer();
             if (!_isMaster) return;
 
             EventManager.AddEventListener(EventNames.StartGameFlow, HandleStartGameFlow);

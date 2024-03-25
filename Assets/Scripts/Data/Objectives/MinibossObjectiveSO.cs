@@ -19,7 +19,7 @@ namespace Kraken
         public override void TriggerObjective(ObjectiveInstance instance)
         {
             _instance = instance;
-            EnemyEntity entity = NetworkUtils.Instantiate(minibossPrefab.name, _instance.Zone.GetSpawner().GetRandomPosition()).GetComponent<EnemyEntity>();
+            EnemyEntity entity = NetworkUtils.Instantiate(minibossPrefab.name, _instance.Zones[0].GetSpawner().GetRandomPosition()).GetComponent<EnemyEntity>();
             entity.GetHealthComponent().OnDie.AddListener(MinibossDeath);
 
             EventManager.Dispatch(EventNames.MinibossCountChange, new IntDataBytes(1));
