@@ -88,10 +88,7 @@ namespace Kraken
                 EventManager.AddEventListener(EventNames.UpdateCameraSettings, HandleCameraSettingsChanged);
                 EventManager.AddEventListener(EventNames.TogglePause, OnTogglePause);
             }
-            else
-            {
-                _controller.gameObject.SetActive(false);
-            }
+    
         }
 
         private void OnDestroy()
@@ -131,6 +128,10 @@ namespace Kraken
                     Debug.LogWarning("Y axis is NaN");
                     _freeLookCam.m_YAxis.Value = 0;
                 }
+            }
+            else
+            {
+                _controller.enabled = false;
             }
         }
 
