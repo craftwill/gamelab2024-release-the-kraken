@@ -8,14 +8,8 @@ namespace Kraken
 {
     public class PauseManager : MonoBehaviourPun
     {
-        public enum PauseState
-        {
-            Unpaused,
-            PausedBySelf,
-            PausedByOther
-        }
-        public PauseState _pauseState { get; private set; } = PauseState.Unpaused;
         [SerializeField] private PauseMenuManager _pauseMenuManager;
+        public bool Paused { get; private set; } = false;
 
         private void Start()
         {
@@ -30,31 +24,7 @@ namespace Kraken
 
         private void TogglePause(BytesData data)
         {
-            if (_pauseState == PauseState.Unpaused)
-            {
-                _pauseState = PauseState.PausedBySelf;
-                photonView.RPC(nameof(RPC_All_TogglePause), RpcTarget.All, true);
-            }
-            else if (_pauseState == PauseState.PausedBySelf)
-            {
-                photonView.RPC(nameof(RPC_All_TogglePause), RpcTarget.All, false);
-            }
-        }
-
-        [PunRPC]
-        public void RPC_All_TogglePause(bool pause)
-        {
-            if (pause)
-            {
-                if (_pauseState == PauseState.Unpaused)
-                {
-                    _pauseState = PauseState.PausedByOther;
-                }
-            }
-            else
-            {
-                _pauseState = PauseState.Unpaused;
-            }
+            Paused = !Paused;
             _pauseMenuManager.OnTogglePause();
         }
 
