@@ -88,6 +88,11 @@ namespace Kraken
                 EventManager.AddEventListener(EventNames.UpdateCameraSettings, HandleCameraSettingsChanged);
                 EventManager.AddEventListener(EventNames.TogglePause, OnTogglePause);
             }
+            else
+            {
+                _input.enabled = false;
+            }
+    
         }
 
         private void OnDestroy()
