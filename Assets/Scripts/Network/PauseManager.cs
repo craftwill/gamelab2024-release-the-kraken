@@ -19,7 +19,6 @@ namespace Kraken
 
         private void Start()
         {
-            Time.timeScale = 1;
             PhotonNetwork.MinimalTimeScaleToDispatchInFixedUpdate = 0;
             EventManager.AddEventListener(EventNames.TogglePause, TogglePause);
         }
@@ -47,7 +46,6 @@ namespace Kraken
         {
             if (pause)
             {
-                Time.timeScale = 0;
                 if (_pauseState == PauseState.Unpaused)
                 {
                     _pauseState = PauseState.PausedByOther;
@@ -55,7 +53,6 @@ namespace Kraken
             }
             else
             {
-                Time.timeScale = 1;
                 _pauseState = PauseState.Unpaused;
             }
             _pauseMenuManager.OnTogglePause();
