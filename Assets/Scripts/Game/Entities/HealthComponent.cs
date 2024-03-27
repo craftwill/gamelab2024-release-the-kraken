@@ -22,6 +22,7 @@ namespace Kraken.Game
 
         [Header("Events")]
         public UnityEvent<float> OnTakeDamage;
+        public UnityEvent<float> OnHealed;
         public UnityEvent OnDie;
 
         private DetectDamageComponent[] _detectDmgComps;

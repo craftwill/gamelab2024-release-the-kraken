@@ -23,6 +23,7 @@ namespace Kraken.UI
         {
             float hp = ((FloatDataBytes)data).FloatValue;
             _slider.value = hp;
+            Debug.Log("Update health " + hp);
         }
     }
 }

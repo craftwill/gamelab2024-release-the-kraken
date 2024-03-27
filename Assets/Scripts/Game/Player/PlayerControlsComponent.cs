@@ -374,13 +374,14 @@ namespace Kraken
 
         public void OnHeal(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled) return;
+            if (!controlsEnabled || _pauseManager.Paused) return;
 
             _healingComponent.OnHealingInput(true);
         }
 
         public void OnHealReleased(InputAction.CallbackContext value)
         {
+            if (_pauseManager.Paused) return;
             _healingComponent.OnHealingInput(false);
         }
 

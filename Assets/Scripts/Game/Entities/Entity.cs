@@ -25,12 +25,18 @@ namespace Kraken
         protected virtual void Awake()
         {
             _healthComponent.OnTakeDamage.AddListener(HandleTakeDamage);
+            _healthComponent.OnHealed.AddListener(HandleHealed);
             _healthComponent.OnDie.AddListener(HandleDie);
 
             _playerEntitiesList = FindObjectsOfType<PlayerEntity>();
         }
 
         protected virtual void HandleTakeDamage(float dmgAmount)
+        {
+
+        }
+
+        protected virtual void HandleHealed(float healAmount)
         {
 
         }
