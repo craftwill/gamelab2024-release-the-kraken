@@ -52,7 +52,7 @@ namespace Kraken
 
             foreach (EnemyEntity enemyEntity in enemiesFound)
             {
-                if (enemyEntity != null)
+                if (enemyEntity != null && enemyEntity.GetController() is BasicEntityController)
                 {
                     if (_enemyEntitiesBeingPulled.Contains(enemyEntity)) continue;
 

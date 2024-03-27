@@ -137,5 +137,10 @@ namespace Kraken
                 Instantiate(_woolPrefab, gameObject.transform.position, Quaternion.identity);
             }
         }
+
+        public PathfindingEntityController GetController()
+        {
+            return _pathfindingEntityController;
+        }
     }
 }

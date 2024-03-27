@@ -53,6 +53,7 @@ namespace Kraken
             {
                 if (_drawCoroutine is null)
                 {
+                    transform.LookAt(_target.position, Vector3.up);
                     _canPathfind = false;
                     _isOnCooldown = true;
                     photonView.RPC(nameof(RPC_ALL_StartConeTelegraph), RpcTarget.All);
