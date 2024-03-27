@@ -26,6 +26,7 @@ namespace Kraken
         [SerializeField] private Transform _cameraOrientation;
         [SerializeField] private PlayerInput _input;
         [SerializeField] private DuoUltimateComponent _duoUltimateComponent;
+        [SerializeField] private PlayerHealingComponent _healingComponent;
         [SerializeField] private GameObject _takeDamageComponent;
         [SerializeField] private PauseManager _pauseManager = null;
         private CinemachineFreeLook _freeLookCam;
@@ -46,6 +47,7 @@ namespace Kraken
         [SerializeField] private InputActionReference _sprintInput;
         [SerializeField] private InputActionReference _pauseInput;
         [SerializeField] private InputActionReference _duoUltimateInput;
+        [SerializeField] private InputActionReference _healInput;
 
         private void Start()
         {
@@ -82,6 +84,8 @@ namespace Kraken
                 _sprintInput.action.canceled += OnSprintCanceled;
                 _pauseInput.action.performed += OnPause;
                 _duoUltimateInput.action.performed += OnDuoUltimate;
+                _healInput.action.performed += OnHeal;
+                _healInput.action.canceled += OnHealReleased;
 
                 GameManager.ToggleCursor(false);
                 EventManager.AddEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
@@ -104,6 +108,8 @@ namespace Kraken
             _moveInput.action.canceled -= OnMove;
             _pauseInput.action.performed -= OnPause;
             _duoUltimateInput.action.performed += OnDuoUltimate;
+            _healInput.action.performed -= OnHeal;
+            _healInput.action.canceled -= OnHealReleased;
 
             EventManager.RemoveEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
             EventManager.RemoveEventListener(EventNames.PlayerAttackEnd, HandleAttackEnd);
@@ -368,6 +374,18 @@ namespace Kraken
             if (!controlsEnabled) return;
 
             _duoUltimateComponent.OnDuoUltimateInput(false);
+        }
+
+        public void OnHeal(InputAction.CallbackContext value)
+        {
+            if (!controlsEnabled) return;
+
+            _healingComponent.OnHealingInput(true);
+        }
+
+        public void OnHealReleased(InputAction.CallbackContext value)
+        {
+            _healingComponent.OnHealingInput(false);
         }
 
         public void SetControlsEnabled(bool controlsEnabled)

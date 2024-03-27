@@ -76,6 +76,18 @@ namespace Kraken.Game
             }
         }
 
+        public void GetHealed(float healAmount)
+        {
+            photonView.RPC(nameof(RPC_MasterGetHealed), RpcTarget.All, healAmount);
+        }
+
+        [PunRPC]
+        private void RPC_MasterGetHealed(float healAmount)
+        {
+            if (!IsAlive) return;
+            Health = Mathf.Clamp(Health + healAmount, 0, MaxHealth);
+        }
+
         private void Die()
         {
             if (!PhotonNetwork.IsMasterClient) return;

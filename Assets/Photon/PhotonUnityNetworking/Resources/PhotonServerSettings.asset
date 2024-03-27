@@ -103,6 +103,7 @@ MonoBehaviour:
   - RPC_All_PlayUltimateTriggeredSound
   - RPC_All_PlayPickupSound
   - RPC_All_GoToNextNight
+  - RPC_MasterGetHealed
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

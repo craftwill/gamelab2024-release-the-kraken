@@ -83,6 +83,11 @@ namespace Kraken
         public float ultimateSlowMoDuration = 1f;
         public bool ultimateIsCancellable = false;
 
+        [Header("Healing settings")]
+        public float healingMaxDistance = 3f;
+        public float healingRate = 0.1f;
+        public float healingHpPerWool = 10f;
+
         [Header("Combat Settings")]
         public float enemyStaggerDuration = 0.5f;
         public float comboPitchIncrement = 100f;
