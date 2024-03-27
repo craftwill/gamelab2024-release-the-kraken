@@ -38,6 +38,7 @@ namespace Kraken
         private float _movementMagnitude = 0.0f;
         private float _attackMovementSpeed = 0.0f;
         private bool _dashReady = true;
+        private Coroutine _resumeSprintCoroutine = null;
 
         private bool controlsEnabled = true;
         private bool cameraControlsEnabled = true;
@@ -312,6 +313,25 @@ namespace Kraken
 
         public void HandleAttackEnd(BytesData data)
         {
+            if (_sprintPressed)
+            {
+                _movementState = MovementState.Walking;
+                if (_resumeSprintCoroutine != null)
+                {
+                    StopCoroutine(_resumeSprintCoroutine);
+                    _resumeSprintCoroutine = null;
+                }
+                _resumeSprintCoroutine = StartCoroutine(resumeSprintingCoroutine());
+            }
+            else
+            {
+                _movementState = MovementState.Walking;
+            }
+        }
+
+        private IEnumerator resumeSprintingCoroutine()
+        {
+            yield return new WaitForSeconds(Config.current.sprintAfterAttackCooldown);
             if (_sprintPressed)
             {
                 _movementState = MovementState.Sprinting;

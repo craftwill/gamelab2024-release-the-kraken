@@ -53,6 +53,7 @@ namespace Kraken
         public float dashDuration = 0.2f;
         public float dashSpeed = 30f;
         public float dashCooldown = 3.0f;
+        public float sprintAfterAttackCooldown = 0.4f;
 
         [Header("Camera settings")]
         public float cameraSensitivity = 2f;
