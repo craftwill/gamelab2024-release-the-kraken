@@ -43,7 +43,7 @@ namespace Kraken
             if (_isHealing)
             {
                 transform.LookAt(_componentToHeal.transform);
-                if (GetDistanceBetweenPlayers() > Config.current.healingMaxDistance || _componentToHeal.Health == _componentToHeal.MaxHealth || _lilWoolManager._woolQuantity == 0)
+                if (GetDistanceBetweenPlayers() > Config.current.healingMaxDistance || _componentToHeal.Health == _componentToHeal.MaxHealth)
                 {
                     _isHealing = false;
                 }
@@ -76,6 +76,10 @@ namespace Kraken
             {
                 if (healingDone++ % Config.current.healingHpPerWool == 0)
                 {
+                    if (_lilWoolManager._woolQuantity == 0)
+                    {
+                        _isHealing = false;
+                    }
                     photonView.RPC(nameof(RPC_Master_UseWool), RpcTarget.MasterClient);
                 }
                 _componentToHeal?.GetHealed(1f);
