@@ -51,8 +51,12 @@ namespace Kraken
         {
             base.HandleTakeDamage(dmgAmount);
 
-            _entityAnimationComponent.PlayHurtAnim();
-            _pathfindingEntityController.Stagger();
+            if(_pathfindingEntityController is BasicEntityController)
+            {
+                _entityAnimationComponent.PlayHurtAnim();
+                _pathfindingEntityController.Stagger();
+            }
+
             photonView.RPC(nameof(_soundComponent.RPC_All_PlayEnemyHurtSound), RpcTarget.All);
         }
 
