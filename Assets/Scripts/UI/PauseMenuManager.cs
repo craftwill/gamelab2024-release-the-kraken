@@ -40,10 +40,7 @@ namespace Kraken
 
         public void OnBtnResume()
         {
-            if (_pauseManager._pauseState == PauseManager.PauseState.PausedBySelf)
-            {
-                EventManager.Dispatch(EventNames.TogglePause, null);
-            }
+            EventManager.Dispatch(EventNames.TogglePause, null);
         }
 
         public void OnBtnSettings()
