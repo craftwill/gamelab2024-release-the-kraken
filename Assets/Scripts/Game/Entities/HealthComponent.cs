@@ -85,6 +85,7 @@ namespace Kraken.Game
         [PunRPC]
         private void RPC_MasterGetHealed(float healAmount)
         {
+            OnHealed.Invoke(healAmount);
             if (!IsAlive) return;
             Health = Mathf.Clamp(Health + healAmount, 0, MaxHealth);
         }

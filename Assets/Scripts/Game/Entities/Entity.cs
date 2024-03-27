@@ -49,6 +49,7 @@ namespace Kraken
         protected virtual void OnDestroy()
         {
             _healthComponent.OnTakeDamage.RemoveAllListeners();
+            _healthComponent.OnHealed.RemoveAllListeners();
             _healthComponent.OnDie.RemoveAllListeners();
         }
 
