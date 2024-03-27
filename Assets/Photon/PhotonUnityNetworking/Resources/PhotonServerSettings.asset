@@ -106,6 +106,10 @@ MonoBehaviour:
   - RPC_MasterGetHealed
   - UseWool
   - RPC_Master_UseWool
+  - RPC_All_PlayHealing
+  - RPC_All_StopHealing
+  - RPC_All_PlayHealingSound
+  - RPC_All_StopHealingSound
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

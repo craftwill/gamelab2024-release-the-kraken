@@ -6,6 +6,8 @@
 				<SoundBank Name="Testing" ID="{577694D5-AB44-40A9-B87E-ED4597DCEBC2}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_ZoneFullCapacity" ID="{0235C9CA-1F9B-42F0-899A-2B9CC62B78D0}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Healing" ID="{B3D3D271-8D71-4459-B081-2371F99348CF}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Healing" ID="{EFA9971A-7464-452A-827E-23B52EB8D26F}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_EnemyHurt" ID="{50D85769-262C-4554-A45E-1D417F92F9B2}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BossSpawn" ID="{F5629778-F9A1-48CC-8B4E-6FF8B6FE9B66}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UltimateTriggered" ID="{05C734AA-4FE2-4AEC-9A46-D5472CC3D081}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>

@@ -1,10 +1,12 @@
 Event	ID	Name			Wwise Object Path	Notes
 	349172053	Play_EnemyHurt			\Default Work Unit\Play_EnemyHurt	
+	730396682	Stop_Healing			\Default Work Unit\Stop_Healing	
 	984790419	Play_UltimateNotice			\Default Work Unit\Play_UltimateNotice	
 	1218358740	Play_UltimateReady			\Default Work Unit\Play_UltimateReady	
 	1863926102	Play_WoolCollected			\Default Work Unit\Play_WoolCollected	
 	2211787386	Play_Dash			\Default Work Unit\Play_Dash	
 	2741312416	Play_UltimateGoOff			\Default Work Unit\Play_UltimateGoOff	
+	3068332144	Play_Healing			\Default Work Unit\Play_Healing	
 	3162760014	Play_UltimateTriggered			\Default Work Unit\Play_UltimateTriggered	
 	3178286754	Play_PlayerHurt			\Default Work Unit\Play_PlayerHurt	
 	3233615227	Play_ZoneFullCapacity			\Default Work Unit\Play_ZoneFullCapacity	
@@ -15,6 +17,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	24633649	ComboPitch			\Default Work Unit\ComboPitch	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	12264851	healing-pokemon-sound	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\healing-pokemon-sound_04A517DC.wem		\Actor-Mixer Hierarchy\Default Work Unit\healing-pokemon-sound		212608
 	392899862	fast-whoosh-118248	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\fast-whoosh-118248_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\fast-whoosh-118248		212064
 	422643003	y2mate_rQlfs1Y	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\y2mate_rQlfs1Y_FC9CA280.wem		\Actor-Mixer Hierarchy\Default Work Unit\y2mate_rQlfs1Y		79076
 	624797327	tindeck_1	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\tindeck_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\tindeck_1		276576

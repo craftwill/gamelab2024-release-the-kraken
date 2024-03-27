@@ -10,6 +10,7 @@ namespace Kraken
     public class PlayerHealingComponent : MonoBehaviourPun
     {
         [SerializeField] private PlayerControlsComponent _playerControls;
+        [SerializeField] private PlayerSoundComponent _soundComponent;
         private GameObject[] _players = { };
         private HealthComponent _componentToHeal;
         private LilWoolManager _lilWoolManager;
@@ -70,6 +71,7 @@ namespace Kraken
         {
             int healingDone = 0;
             _playerControls.SetControlsEnabled(false);
+            photonView.RPC(nameof(_soundComponent.RPC_All_PlayHealingSound), RpcTarget.All);
             while (_isHealing)
             {
                 if (healingDone++ % Config.current.healingHpPerWool == 0)
@@ -80,6 +82,7 @@ namespace Kraken
                 yield return new WaitForSeconds(Config.current.healingRate);
             }
             _playerControls.SetControlsEnabled(true);
+            photonView.RPC(nameof(_soundComponent.RPC_All_StopHealingSound), RpcTarget.All);
         }
 
         [PunRPC]
