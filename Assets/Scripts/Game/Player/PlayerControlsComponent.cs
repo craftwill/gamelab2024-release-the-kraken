@@ -40,7 +40,7 @@ namespace Kraken
         private bool _dashReady = true;
         private Coroutine _resumeSprintCoroutine = null;
 
-        private bool controlsEnabled = true;
+        public bool controlsEnabled { get; private set; } = true;
         private bool cameraControlsEnabled = true;
 
         [SerializeField] private InputActionReference _sprintInput;
@@ -124,7 +124,7 @@ namespace Kraken
                 if (cameraControlsEnabled)
                     ProcessCameraControls();
 
-                if (controlsEnabled)
+                if (controlsEnabled && !_pauseManager.Paused)
                     ProcessControls();
 
                 //Workaround
@@ -199,7 +199,7 @@ namespace Kraken
 
         public void OnMove(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled) return;
+            if (!controlsEnabled || _pauseManager.Paused) return;
 
             if (_isOwner)
             {
@@ -235,7 +235,7 @@ namespace Kraken
 
         public void OnSprintPerformed(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled) return;
+            if (!controlsEnabled || _pauseManager.Paused) return;
 
             if (_isOwner)
             {
@@ -257,7 +257,7 @@ namespace Kraken
 
         public void OnSprintCanceled(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled) return;
+            if (!controlsEnabled || _pauseManager.Paused) return;
 
             if (_isOwner)
             {
@@ -288,21 +288,17 @@ namespace Kraken
 
         public void OnPause(InputAction.CallbackContext value)
         {
-            if (_pauseManager._pauseState != PauseManager.PauseState.PausedByOther)
-            {
-                EventManager.Dispatch(EventNames.TogglePause, null);
-            }
+            EventManager.Dispatch(EventNames.TogglePause, null);
         }
 
         public void OnTogglePause(BytesData data)
         {
-            photonView.RPC(nameof(RPC_All_ToggleCamera), RpcTarget.All);
-        }
-
-        [PunRPC]
-        public void RPC_All_ToggleCamera()
-        {
             _camera.SetActive(!_camera.activeInHierarchy);
+            _moveVec = Vector2.zero;
+            _movementState = MovementState.Walking;
+            bool didAnimStateChange = _playerAnimationComponent.SetLoopedStateIdle();
+            if (didAnimStateChange)
+                photonView.RPC(nameof(RPC_Other_SetLoopAnimState), RpcTarget.Others, "Idle");
         }
 
         public void HandleAttackStart(BytesData data)
@@ -358,14 +354,14 @@ namespace Kraken
 
         public void OnDuoUltimate(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled) return;
+            if (!controlsEnabled || _pauseManager.Paused) return;
 
             _duoUltimateComponent.OnDuoUltimateInput(true);
         }
 
         public void OnDuoUltimateReleased(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled) return;
+            if (!controlsEnabled || _pauseManager.Paused) return;
 
             _duoUltimateComponent.OnDuoUltimateInput(false);
         }
