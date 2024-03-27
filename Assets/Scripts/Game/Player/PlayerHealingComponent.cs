@@ -1,3 +1,4 @@
+using Bytes;
 using Kraken.Game;
 using Photon.Pun;
 using System.Collections;
@@ -11,7 +12,13 @@ namespace Kraken
         [SerializeField] private PlayerControlsComponent _playerControls;
         private GameObject[] _players = { };
         private HealthComponent _componentToHeal;
+        private LilWoolManager _lilWoolManager;
         private bool _isHealing = false;
+
+        private void Start()
+        {
+            _lilWoolManager = Object.FindObjectOfType<LilWoolManager>();
+        }
 
         private void Update()
         {
@@ -35,7 +42,7 @@ namespace Kraken
             if (_isHealing)
             {
                 transform.LookAt(_componentToHeal.transform);
-                if (GetDistanceBetweenPlayers() > Config.current.healingMaxDistance || _componentToHeal.Health == _componentToHeal.MaxHealth)
+                if (GetDistanceBetweenPlayers() > Config.current.healingMaxDistance || _componentToHeal.Health == _componentToHeal.MaxHealth || _lilWoolManager._woolQuantity == 0)
                 {
                     _isHealing = false;
                 }
@@ -47,7 +54,7 @@ namespace Kraken
 
             if (pressed)
             {
-                if (GetDistanceBetweenPlayers() <= Config.current.healingMaxDistance && _componentToHeal.Health < _componentToHeal.MaxHealth)
+                if (GetDistanceBetweenPlayers() <= Config.current.healingMaxDistance && _componentToHeal.Health < _componentToHeal.MaxHealth && _lilWoolManager._woolQuantity > 0)
                 {
                     _isHealing = true;
                     StartCoroutine(HealCoroutine());
@@ -61,13 +68,24 @@ namespace Kraken
 
         private IEnumerator HealCoroutine()
         {
+            int healingDone = 0;
             _playerControls.SetControlsEnabled(false);
             while (_isHealing)
             {
+                if (healingDone++ % Config.current.healingHpPerWool == 0)
+                {
+                    photonView.RPC(nameof(RPC_Master_UseWool), RpcTarget.MasterClient);
+                }
                 _componentToHeal?.GetHealed(1f);
                 yield return new WaitForSeconds(Config.current.healingRate);
             }
             _playerControls.SetControlsEnabled(true);
+        }
+
+        [PunRPC]
+        private void RPC_Master_UseWool()
+        {
+            EventManager.Dispatch(EventNames.GainWool, new IntDataBytes(-1));
         }
 
         private float GetDistanceBetweenPlayers()

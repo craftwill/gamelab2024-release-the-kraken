@@ -104,6 +104,8 @@ MonoBehaviour:
   - RPC_All_PlayPickupSound
   - RPC_All_GoToNextNight
   - RPC_MasterGetHealed
+  - UseWool
+  - RPC_Master_UseWool
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
