@@ -83,6 +83,14 @@ namespace Kraken
         public float ultimateSlowMoDuration = 1f;
         public bool ultimateIsCancellable = false;
 
+        [Header("Healing settings")]
+        [Tooltip("The max distance between the two players to be able to heal")]
+        public float healingMaxDistance = 3f;
+        [Tooltip("Heals 1 HP every x seconds")]
+        public float healingRate = 0.1f;
+        [Tooltip("How much hp one wool lets you heal")]
+        public float healingHpPerWool = 10f;
+
         [Header("Combat Settings")]
         public float enemyStaggerDuration = 0.5f;
         public float comboPitchIncrement = 100f;
