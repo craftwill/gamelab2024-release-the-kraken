@@ -1963,6 +1963,7 @@ GameObject:
   - component: {fileID: 4801927777905466368}
   - component: {fileID: 2994236915493532572}
   - component: {fileID: 7000252827930271329}
+  - component: {fileID: 5403232961705662853}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -2048,6 +2049,7 @@ MonoBehaviour:
   _input: {fileID: 2994236915493532572}
   _duoUltimateComponent: {fileID: 6776644671420513302}
   _healingComponent: {fileID: 186451009981560704}
+  _towerInteractComponent: {fileID: 5403232961705662853}
   _takeDamageComponent: {fileID: 897399624514842760}
   _pauseManager: {fileID: 0}
   _sprintInput: {fileID: -2249790821337775847, guid: abae805e8a04eb44c951b59d4dda4171,
@@ -2057,6 +2059,8 @@ MonoBehaviour:
   _duoUltimateInput: {fileID: 2035575773999566507, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
   _healInput: {fileID: 1633009384100133035, guid: abae805e8a04eb44c951b59d4dda4171,
+    type: 3}
+  _towerInteractInput: {fileID: 364970863935581191, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
 --- !u!114 &3860904718989671536
 MonoBehaviour:
@@ -2365,6 +2369,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: aa816a1b-ad15-4074-b75b-f1b4da640e06
     m_ActionName: Player/Heal[/Keyboard/q,/DualSenseGamepadHID/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48d3e829-0f3a-442b-a6d6-662d69cddcb0
+    m_ActionName: Player/Tower[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -2396,6 +2404,18 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &5403232961705662853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747958540799682996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9875a39c3c567b341a0acdf953e4937e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7438497340087592465
 GameObject:
   m_ObjectHideFlags: 0
