@@ -45,7 +45,10 @@ namespace Kraken
 
             if (_playersInRange.Count == 2)
             {
-
+                if(_towerState == TowerState.Inactive)
+                {
+                    _towerState = TowerState.Waiting;
+                }
             }
         }
 
