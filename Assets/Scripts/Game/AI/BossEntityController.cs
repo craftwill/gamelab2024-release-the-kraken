@@ -1,8 +1,9 @@
-using Bytes;
-using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
+
+using Bytes;
+
+using Photon.Pun;
 
 namespace Kraken
 {
@@ -11,7 +12,7 @@ namespace Kraken
         [SerializeField] private RingsOfLightAttack _rolAttack;
         [SerializeField] private StarfallAttack _starfallAttack;
         [SerializeField] private BossAnimationComponent _bossAnim;
-        [SerializeField] private Kraken.Game.HealthComponent _healthComponent;
+        [SerializeField] private Game.HealthComponent _healthComponent;
         [SerializeField] private BossSoundComponent _soundComponent;
 
         [SerializeField] private StarfallAttackConfig _starfallConfig;
@@ -22,6 +23,7 @@ namespace Kraken
         public override void InitSettings(EnemyConfigSO config)
         {
             base.InitSettings(config);
+            _healthComponent.OnTakeDamage.AddListener(OnTakeDamageListener);
             _healthComponent.OnDie.AddListener(OnDieListener);
         }
 
@@ -64,6 +66,12 @@ namespace Kraken
 
                 Animate.Delay(cd, () => _isOnCooldown = false, true);
             }
+        }
+
+        private void OnTakeDamageListener(float dmgAmount)
+        {
+            Debug.Log("OnTakeDamageListener miniboss");
+            EventManager.Dispatch(EventNames.UpdateBossHealthUI, new FloatDataBytes(_healthComponent.Health / _healthComponent.MaxHealth));
         }
 
         private void OnDieListener()

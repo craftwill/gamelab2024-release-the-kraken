@@ -38,6 +38,8 @@ namespace Kraken
                     return isInProgress;
                 }, -1, true);
             }
+
+            EventManager.Dispatch(EventNames.ShowReinforcementHintUI, new StringDataBytes("REINFORCEMENT INCOMING!"));
         }
 
         public override void EndObjective(ObjectiveInstance instance)

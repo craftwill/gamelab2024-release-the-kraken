@@ -13,8 +13,9 @@ namespace Kraken
         {
             if (!_isMaster) return;
 
+            _woolQuantity = Config.current.initialWoolQuantity;
+
             EventManager.AddEventListener(EventNames.GainWool, GainWool);
-            _woolQuantity = 0;
         }
 
         private void OnDestroy()
