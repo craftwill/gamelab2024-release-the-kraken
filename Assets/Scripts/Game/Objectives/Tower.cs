@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using Kraken.Network;
+using Newtonsoft.Json;
 
 namespace Kraken
 {
@@ -14,14 +15,14 @@ namespace Kraken
             return Path.Combine(Application.persistentDataPath, "towers.json");
         }
 
-        private enum TowerState
+        public enum TowerState
         {
             Inactive = 0,
             Waiting = 1,
             Active = 2
         }
 
-        [SerializeField] private int _id;
+        public int Id { get; set; }
         [SerializeField] private GameObject _waitingPrefab;
         [SerializeField] private GameObject _towerPrefab;
 
@@ -84,52 +85,28 @@ namespace Kraken
 
         private void Start()
         {
-            if (!PhotonNetwork.IsMasterClient)
-                return;
-
-            string filePath = GetFilePath();
-            if (File.Exists(filePath))
-            {
-                string jsonData = File.ReadAllText(filePath);
-                var dataList = JsonUtility.FromJson<Dictionary<int, int>>(jsonData);
-
-                if (dataList.TryGetValue(_id, out int val))
-                {
-                    if(val == (int)TowerState.Waiting)
-                    {
-                        SetNewTowerState(TowerState.Active);
-                    }
-                    if(val == (int)TowerState.Active)
-                    {
-                        SetNewTowerState(TowerState.Inactive);
-                    }
-                }
-                else
-                {
-                    SetNewTowerState(TowerState.Inactive);
-                }
-            }
+            if (!PhotonNetwork.IsMasterClient) return;
         }
 
-        private void SetNewTowerState(TowerState newState)
+        public void SetNewTowerState(TowerState newState)
         {
             _towerState = newState;
 
             if(_towerState == TowerState.Waiting)
             {
                 NetworkUtils.Instantiate(_waitingPrefab.name, transform.position, transform.rotation);
+                TowerManager.Instance.TowerBuilt();
             }
             else if(_towerState == TowerState.Active)
             {
                 NetworkUtils.Instantiate(_towerPrefab.name, transform.position, transform.rotation);
             }
 
-            string filePath = GetFilePath();
-            string jsonData = File.ReadAllText(filePath);
-            var dataList = JsonUtility.FromJson<Dictionary<int, int>>(jsonData);
-            Debug.Log(_id + " " + _towerState);
-            dataList.TryAdd(_id, (int)_towerState);
-            File.WriteAllText(filePath, JsonUtility.ToJson(jsonData));
+            if(!TowerManager.Instance.TowerData.TryAdd(Id, (int)_towerState))
+            {
+                TowerManager.Instance.TowerData[Id] = (int)_towerState;
+            }
+            TowerManager.Instance.WriteFile();
         }
     }
 }

@@ -82,17 +82,26 @@ namespace Kraken
         [PunRPC]
         private void RPC_All_Die() 
         {
-            GetComponent<PhotonTransformView>().enabled = false;
-            GetComponent<NavMeshAgent>().enabled = false;
-            GetComponent<SphereCollider>().isTrigger = false;
-            Rigidbody rg = GetComponent<Rigidbody>();
-            rg.isKinematic = false;
+            if(_pathfindingEntityController is BasicEntityController)
+            {
+                GetComponent<PhotonTransformView>().enabled = false;
+                GetComponent<NavMeshAgent>().enabled = false;
+                GetComponent<SphereCollider>().isTrigger = false;
+                Rigidbody rg = GetComponent<Rigidbody>();
+                rg.isKinematic = false;
 
-            Vector3 closestPlayerPos = GetClosestPlayer().Item1.transform.position;
-            Vector3 dirToSend = -(closestPlayerPos - this.transform.position).normalized;
-            Vector3 verticalForce = new Vector3(0f, Random.Range(1f, 10f), 0f);
-            rg.AddForce(dirToSend * 35f + verticalForce, ForceMode.Impulse);
-            rg.AddTorque(new Vector3(Random.Range(3f, 8f), Random.Range(3f, 8f), Random.Range(3f, 8f)), ForceMode.Impulse);
+                Vector3 closestPlayerPos = GetClosestPlayer().Item1.transform.position;
+                Vector3 dirToSend = -(closestPlayerPos - this.transform.position).normalized;
+                Vector3 verticalForce = new Vector3(0f, Random.Range(1f, 10f), 0f);
+                rg.AddForce(dirToSend * 35f + verticalForce, ForceMode.Impulse);
+                rg.AddTorque(new Vector3(Random.Range(3f, 8f), Random.Range(3f, 8f), Random.Range(3f, 8f)), ForceMode.Impulse);
+            }
+            else if (PhotonNetwork.IsMasterClient)
+            {
+                PhotonNetwork.Destroy(photonView);
+                return;
+            }
+            
 
             if (!PhotonNetwork.IsMasterClient) return;
 
