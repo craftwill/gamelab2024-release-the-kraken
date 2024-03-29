@@ -35753,6 +35753,11 @@ PrefabInstance:
       propertyPath: _minimapIndicator
       value: 
       objectReference: {fileID: 625585443}
+    - target: {fileID: 1562584503501297595, guid: 6b97e817a37669944b953c819f65b5d3,
+        type: 3}
+      propertyPath: _id
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1642008255514005180, guid: 6b97e817a37669944b953c819f65b5d3,
         type: 3}
       propertyPath: _minimapIndicator
@@ -35782,6 +35787,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013158288628416543, guid: 6b97e817a37669944b953c819f65b5d3,
+        type: 3}
+      propertyPath: _id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071771102990950422, guid: 6b97e817a37669944b953c819f65b5d3,
+        type: 3}
+      propertyPath: _id
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4316464543802571025, guid: 6b97e817a37669944b953c819f65b5d3,
         type: 3}
@@ -35828,6 +35843,11 @@ PrefabInstance:
       propertyPath: _minimapIndicator
       value: 
       objectReference: {fileID: 1755916998}
+    - target: {fileID: 7077745724743767571, guid: 6b97e817a37669944b953c819f65b5d3,
+        type: 3}
+      propertyPath: _id
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3037619434540727521, guid: 6b97e817a37669944b953c819f65b5d3, type: 3}
