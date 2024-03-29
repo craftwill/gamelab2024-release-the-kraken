@@ -83,6 +83,9 @@ namespace Kraken
         public float ultimateSlowMoDuration = 1f;
         public bool ultimateIsCancellable = false;
 
+        [Header("Tower settigns")]
+        public int towerWoolCost = 50;
+
         [Header("Healing settings")]
         [Tooltip("The max distance between the two players to be able to heal")]
         public float healingMaxDistance = 3f;

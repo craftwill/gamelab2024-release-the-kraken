@@ -110,6 +110,9 @@ MonoBehaviour:
   - RPC_All_StopHealing
   - RPC_All_PlayHealingSound
   - RPC_All_StopHealingSound
+  - RPC_Master_BuildTower
+  - RPC_Master_AddPlayerInRange
+  - RPC_Master_RemovePlayerInRange
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

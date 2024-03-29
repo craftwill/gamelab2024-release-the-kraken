@@ -8,10 +8,11 @@ namespace Kraken
     public class PlayerTowerInteractComponent : MonoBehaviourPun
     {
         private Tower _towerInRange = null;
+        private LilWoolManager _lilWoolManager = null;
         // Start is called before the first frame update
         void Start()
         {
-
+            _lilWoolManager = FindAnyObjectByType<LilWoolManager>(FindObjectsInactive.Exclude);
         }
 
         // Update is called once per frame
@@ -24,7 +25,8 @@ namespace Kraken
         {
             if (_towerInRange)
             {
-                _towerInRange.PlayerTryBuild(this);
+                if(_lilWoolManager?._woolQuantity >= 0)
+                    _towerInRange.PlayerTryBuild();
             }
         }
 
@@ -32,7 +34,7 @@ namespace Kraken
         {
             if (_towerInRange)
             {
-                _towerInRange.PlayerCancelBuild(this);
+                //_towerInRange.PlayerCancelBuild(this);
             }
         }
 
@@ -40,7 +42,7 @@ namespace Kraken
         {
             if (t is null)
             {
-                _towerInRange.PlayerCancelBuild(this);
+                //_towerInRange.PlayerCancelBuild();
             }
             _towerInRange = t;
         }

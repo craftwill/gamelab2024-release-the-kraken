@@ -25,8 +25,9 @@ namespace Kraken
         [SerializeField] private GameObject _waitingPrefab;
         [SerializeField] private GameObject _towerPrefab;
 
-        private List<PlayerTowerInteractComponent> _playersInRange = new List<PlayerTowerInteractComponent>();
+        private List<string> _playersInRange = new List<string>();
         private TowerState _towerState;
+        private LilWoolManager _lilWoolManager = null;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -48,24 +49,37 @@ namespace Kraken
             }
         }
 
-        public void PlayerTryBuild(PlayerTowerInteractComponent player)
+        public void PlayerTryBuild()
         {
-            //circular reference baby
-            if (!_playersInRange.Contains(player))
-                _playersInRange.Add(player);
-            
-            if (_playersInRange.Count == 1)
+            string id = PhotonNetwork.LocalPlayer.UserId;
+            photonView.RPC(nameof(RPC_Master_AddPlayerInRange), RpcTarget.MasterClient, id);
+        }
+
+        [PunRPC]
+        private void RPC_Master_AddPlayerInRange(string id)
+        {
+            if (!_playersInRange.Contains(id))
+                _playersInRange.Add(id);
+
+            if (_playersInRange.Count == PhotonNetwork.PlayerList.Length)
             {
-                if(_towerState == TowerState.Inactive)
+                if (_towerState == TowerState.Inactive)
                 {
                     SetNewTowerState(TowerState.Waiting);
                 }
             }
         }
 
-        public void PlayerCancelBuild(PlayerTowerInteractComponent player)
+        [PunRPC]
+        private void RPC_Master_RemovePlayerInRange(string id)
         {
-            _playersInRange.Remove(player);
+            _playersInRange.Remove(id);
+        }
+
+        public void PlayerCancelBuild()
+        {
+            string id = PhotonNetwork.LocalPlayer.UserId;
+            photonView.RPC(nameof(RPC_Master_RemovePlayerInRange), RpcTarget.MasterClient, id);
         }
 
         private void Start()
@@ -107,7 +121,7 @@ namespace Kraken
             }
             else if(_towerState == TowerState.Active)
             {
-                PhotonNetwork.Instantiate(_towerPrefab.name, transform.position, transform.rotation);
+                NetworkUtils.Instantiate(_towerPrefab.name, transform.position, transform.rotation);
             }
 
             string filePath = GetFilePath();
