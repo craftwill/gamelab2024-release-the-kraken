@@ -19,6 +19,8 @@ namespace Kraken
             base.TriggerObjective(instance);
             List<Spawner> spawners = new List<Spawner>();
             // Night scaling
+
+            
             spawnFrequency *= Mathf.Pow(Config.current.objectiveSpawningScaling, PlayerPrefs.GetInt(Config.GAME_NIGHT_KEY, 0));
 
             if (instance.Zones is not null)
@@ -27,16 +29,19 @@ namespace Kraken
                 {
                     spawners.Add(z.GetSpawner());
                     z.SetIsActiveZone(true);
-                }
-                Animate.Repeat(spawnFrequency, () =>
-                {
-                    bool isInProgress = !instance.IsCompleted;
-                    if (isInProgress)
+
+                    if (z.ZoneHasTower()) spawnFrequency *= Config.current.towerSpawnMultiplier;
+
+                    Animate.Repeat(spawnFrequency, () =>
                     {
-                        spawners.ForEach(x => NetworkUtils.Instantiate(spawnData.GetRandomEnemy().name, x.GetRandomPosition()));
-                    }
-                    return isInProgress;
-                }, -1, true);
+                        bool isInProgress = !instance.IsCompleted;
+                        if (isInProgress)
+                        {
+                            spawners.ForEach(x => NetworkUtils.Instantiate(spawnData.GetRandomEnemy().name, x.GetRandomPosition()));
+                        }
+                        return isInProgress;
+                    }, -1, true);
+                }            
             }
         }
 

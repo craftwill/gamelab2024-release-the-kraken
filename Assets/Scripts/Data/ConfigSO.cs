@@ -86,6 +86,7 @@ namespace Kraken
         [Header("Tower settigns")]
         public int towerWoolCost = 50;
         public int maxTowerPerRound = 2;
+        [Tooltip("A zone with a tower in it will spawn x timer slower")] public float towerSpawnMultiplier = 5;
 
         [Header("Healing settings")]
         [Tooltip("The max distance between the two players to be able to heal")]

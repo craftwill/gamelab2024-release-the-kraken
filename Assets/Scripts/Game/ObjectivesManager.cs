@@ -39,8 +39,8 @@ namespace Kraken
             }
 
             _loadedObjectives = new List<ObjectiveWithLocation>();
-            _loadedObjectives.AddRange(_allSpawnObjectives.GetRange(0, Config.current.spawnObjectiveCount));
-            _loadedObjectives.AddRange(_allMinibossObjectives.GetRange(0, Config.current.minibossObjectiveCount));
+            _loadedObjectives.AddRange(_allSpawnObjectives.GetRange(0, 0));
+            _loadedObjectives.AddRange(_allMinibossObjectives.GetRange(0, 0));
             if (Config.current.randomizeObjectives) _loadedObjectives.MMShuffle();
 
             EventManager.AddEventListener(EventNames.StartObjectives, HandleStartObjectives);

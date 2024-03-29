@@ -108,5 +108,10 @@ namespace Kraken
             }
             TowerManager.Instance.WriteFile();
         }
+
+        public TowerState GetTowerState()
+        {
+            return _towerState;
+        }
     }
 }
