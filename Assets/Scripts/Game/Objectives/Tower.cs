@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using Kraken.Network;
 
 namespace Kraken
 {
@@ -21,6 +22,9 @@ namespace Kraken
         }
 
         [SerializeField] private int _id;
+        [SerializeField] private GameObject _waitingPrefab;
+        [SerializeField] private GameObject _towerPrefab;
+
         private List<PlayerTowerInteractComponent> _playersInRange = new List<PlayerTowerInteractComponent>();
         private TowerState _towerState;
 
@@ -50,13 +54,11 @@ namespace Kraken
             if (!_playersInRange.Contains(player))
                 _playersInRange.Add(player);
             
-
-
-            if (_playersInRange.Count == 2)
+            if (_playersInRange.Count == 1)
             {
                 if(_towerState == TowerState.Inactive)
                 {
-                    _towerState = TowerState.Waiting;
+                    SetNewTowerState(TowerState.Waiting);
                 }
             }
         }
@@ -68,6 +70,9 @@ namespace Kraken
 
         private void Start()
         {
+            if (!PhotonNetwork.IsMasterClient)
+                return;
+
             string filePath = GetFilePath();
             if (File.Exists(filePath))
             {
@@ -78,29 +83,39 @@ namespace Kraken
                 {
                     if(val == (int)TowerState.Waiting)
                     {
-                        _towerState = TowerState.Active;
+                        SetNewTowerState(TowerState.Active);
                     }
                     if(val == (int)TowerState.Active)
                     {
-                        _towerState = TowerState.Inactive;
+                        SetNewTowerState(TowerState.Inactive);
                     }
                 }
                 else
                 {
-                    _towerState = TowerState.Inactive;
+                    SetNewTowerState(TowerState.Inactive);
                 }
-
-                Debug.Log(_towerState);
-                dataList.Add(_id, (int)_towerState);
-                File.WriteAllText(filePath, JsonUtility.ToJson(jsonData));
             }
-            
         }
 
-        // Update is called once per frame
-        void Update()
+        private void SetNewTowerState(TowerState newState)
         {
+            _towerState = newState;
 
+            if(_towerState == TowerState.Waiting)
+            {
+                NetworkUtils.Instantiate(_waitingPrefab.name, transform.position, transform.rotation);
+            }
+            else if(_towerState == TowerState.Active)
+            {
+                PhotonNetwork.Instantiate(_towerPrefab.name, transform.position, transform.rotation);
+            }
+
+            string filePath = GetFilePath();
+            string jsonData = File.ReadAllText(filePath);
+            var dataList = JsonUtility.FromJson<Dictionary<int, int>>(jsonData);
+            Debug.Log(_id + " " + _towerState);
+            dataList.TryAdd(_id, (int)_towerState);
+            File.WriteAllText(filePath, JsonUtility.ToJson(jsonData));
         }
     }
 }
