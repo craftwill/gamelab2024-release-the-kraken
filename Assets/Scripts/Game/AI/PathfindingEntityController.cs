@@ -123,7 +123,7 @@ namespace Kraken
             _staggered = true;
             _navMeshAgent.isStopped = true;
             _navMeshAgent.ResetPath();
-            _entityAnimationComponent.SetLoopedStateIdle();
+            _entityAnimationComponent.SetLoopedStateIdle(); // Should be hurt but we don't have that
             yield return new WaitForSeconds(Config.current.enemyStaggerDuration);
             _staggered = false;
             // Will sometimes be disabled due to other game mechanics
