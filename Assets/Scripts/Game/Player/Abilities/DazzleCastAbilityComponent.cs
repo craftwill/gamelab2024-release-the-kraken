@@ -14,6 +14,8 @@ namespace Kraken
         [SerializeField] private PlayerEntity _playerEntity;
         [SerializeField] private InputActionReference _castAbilityInput;
         [SerializeField] private GameObject _abilityPrefab;
+        [SerializeField] private PlayerControlsComponent _controlsComponent;
+        [SerializeField] private PauseManager _pauseManager = null;
         [SerializeField] private float _verticalOffset = -0.25f;
 
         private float _jumpDuration = 0.27f;
@@ -26,6 +28,10 @@ namespace Kraken
             _jumpDuration = Config.current.dazzleAbilityJumpDuration;
             _jumpDistance = Config.current.dazzleAbilityJumpDistance;
             _jumpHeight = Config.current.dazzleAbilityJumpHeigth;
+            if (_pauseManager == null)
+            {
+                _pauseManager = Object.FindObjectOfType<PauseManager>(); //temp but i don't wanna lock the game scene
+            }
         }
 
         private void Awake()
@@ -40,6 +46,7 @@ namespace Kraken
 
         public void OnCastAbility(InputAction.CallbackContext value)
         {
+            if (!_controlsComponent.controlsEnabled || _pauseManager.Paused) return;
             CastAbility();
         }
 

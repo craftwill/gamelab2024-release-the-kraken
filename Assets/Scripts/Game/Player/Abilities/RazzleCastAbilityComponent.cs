@@ -9,6 +9,8 @@ namespace Kraken
     public class RazzleCastAbilityComponent : EntityCastAbilityComponent
     {
         [SerializeField] private InputActionReference _castAbilityInput;
+        [SerializeField] private PlayerControlsComponent _controlsComponent;
+        [SerializeField] private PauseManager _pauseManager = null;
         [SerializeField] private GameObject _abilityPrefab;
         [SerializeField] private float _verticalOffset = -0.35f;
         private float _spawnDistanceOffset = 5f;
@@ -17,6 +19,10 @@ namespace Kraken
         {
             _spawnDistanceOffset = Config.current.razzleAbilitySpawnDistanceOffset;
             _cooldown = Config.current.razzleAbilityCooldown;
+            if (_pauseManager == null)
+            {
+                _pauseManager = Object.FindObjectOfType<PauseManager>(); //temp but i don't wanna lock the game scene
+            }
         }
 
         private void Awake()
@@ -31,6 +37,7 @@ namespace Kraken
 
         public void OnCastAbility(InputAction.CallbackContext value)
         {
+            if (!_controlsComponent.controlsEnabled || _pauseManager.Paused) return;
             CastAbility();
         }
 

@@ -124,6 +124,31 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Healing" ID="{B3D3D271-8D71-4459-B081-2371F99348CF}">
+					<ChildrenList>
+						<Action Name="" ID="{BAD56919-23B3-47AD-9C6B-883FD97173AF}" ShortID="998813752">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="healing-pokemon-sound" ID="{ECE4734B-9395-4040-8F2C-94F572E1F120}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Healing" ID="{EFA9971A-7464-452A-827E-23B52EB8D26F}">
+					<ChildrenList>
+						<Action Name="" ID="{BD674D4C-A769-47D2-AB1B-FBED33FA64E3}" ShortID="975446082">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="healing-pokemon-sound" ID="{ECE4734B-9395-4040-8F2C-94F572E1F120}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

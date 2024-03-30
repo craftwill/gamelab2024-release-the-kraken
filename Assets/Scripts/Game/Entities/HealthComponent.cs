@@ -22,6 +22,7 @@ namespace Kraken.Game
 
         [Header("Events")]
         public UnityEvent<float> OnTakeDamage;
+        public UnityEvent<float> OnHealed;
         public UnityEvent OnDie;
 
         private DetectDamageComponent[] _detectDmgComps;
@@ -74,6 +75,19 @@ namespace Kraken.Game
                 Health = 0;
                 Die();
             }
+        }
+
+        public void GetHealed(float healAmount)
+        {
+            photonView.RPC(nameof(RPC_MasterGetHealed), RpcTarget.All, healAmount);
+        }
+
+        [PunRPC]
+        private void RPC_MasterGetHealed(float healAmount)
+        {
+            OnHealed.Invoke(healAmount);
+            if (!IsAlive) return;
+            Health = Mathf.Clamp(Health + healAmount, 0, MaxHealth);
         }
 
         private void Die()

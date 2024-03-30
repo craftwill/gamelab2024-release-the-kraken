@@ -1958,6 +1958,7 @@ GameObject:
   - component: {fileID: 6776644671420513302}
   - component: {fileID: 5423530764624292386}
   - component: {fileID: 4871313712549404074}
+  - component: {fileID: 186451009981560704}
   - component: {fileID: 2338596183922361558}
   - component: {fileID: 4801927777905466368}
   - component: {fileID: 2994236915493532572}
@@ -2046,6 +2047,7 @@ MonoBehaviour:
   _cameraOrientation: {fileID: 5087714006406940513}
   _input: {fileID: 2994236915493532572}
   _duoUltimateComponent: {fileID: 6776644671420513302}
+  _healingComponent: {fileID: 186451009981560704}
   _takeDamageComponent: {fileID: 897399624514842760}
   _pauseManager: {fileID: 0}
   _sprintInput: {fileID: -2249790821337775847, guid: abae805e8a04eb44c951b59d4dda4171,
@@ -2053,6 +2055,8 @@ MonoBehaviour:
   _pauseInput: {fileID: 7956368911678358776, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
   _duoUltimateInput: {fileID: 2035575773999566507, guid: abae805e8a04eb44c951b59d4dda4171,
+    type: 3}
+  _healInput: {fileID: 1633009384100133035, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
 --- !u!114 &3860904718989671536
 MonoBehaviour:
@@ -2096,6 +2100,16 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: b3a47167a5245454192241782c574561,
       type: 2}
+  _healingSoundStart:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a55026c989d8d9f45b22fd45383f32b4,
+      type: 2}
+  _healingSoundStop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 030ec604c485feb4fa3693f0d03422e9,
+      type: 2}
 --- !u!114 &5208069392134486679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2116,6 +2130,9 @@ MonoBehaviour:
   <ScaleHpWithNight>k__BackingField: 0
   _destroyOnDie: 1
   OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealed:
     m_PersistentCalls:
       m_Calls: []
   OnDie:
@@ -2140,6 +2157,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3a05d6f4e3bebaf4ba868bb7bec59b00, type: 2}
   _attackInput: {fileID: 8504988724220268357, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
+  _pauseManager: {fileID: 0}
 --- !u!114 &6776644671420513302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2184,6 +2202,20 @@ MonoBehaviour:
   _animatorSuffix: 
   _animsAttackComboSpeed: 1.6
   _animsTransitionDuration: 0.1
+--- !u!114 &186451009981560704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747958540799682996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33cbd6f52dcfcd94e8131bf294e7df33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerControls: {fileID: 5510866118124797234}
+  _soundComponent: {fileID: 3860904718989671536}
 --- !u!114 &2338596183922361558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2329,6 +2361,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: c8d556fb-e989-40b7-a7f3-581d80a3ee8e
     m_ActionName: Player/CastAbility[/Keyboard/e,/DualSenseGamepadHID/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aa816a1b-ad15-4074-b75b-f1b4da640e06
+    m_ActionName: Player/Heal[/Keyboard/q,/DualSenseGamepadHID/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

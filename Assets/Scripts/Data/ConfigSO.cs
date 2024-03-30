@@ -53,6 +53,7 @@ namespace Kraken
         public float dashDuration = 0.2f;
         public float dashSpeed = 30f;
         public float dashCooldown = 3.0f;
+        public float sprintAfterAttackCooldown = 0.4f;
 
         [Header("Camera settings")]
         public float cameraSensitivity = 2f;
@@ -81,6 +82,14 @@ namespace Kraken
         public float ultimateSlowMoTimeScale = 0.5f;
         public float ultimateSlowMoDuration = 1f;
         public bool ultimateIsCancellable = false;
+
+        [Header("Healing settings")]
+        [Tooltip("The max distance between the two players to be able to heal")]
+        public float healingMaxDistance = 3f;
+        [Tooltip("Heals 1 HP every x seconds")]
+        public float healingRate = 0.1f;
+        [Tooltip("How much hp one wool lets you heal")]
+        public float healingHpPerWool = 10f;
 
         [Header("Combat Settings")]
         public float enemyStaggerDuration = 0.5f;

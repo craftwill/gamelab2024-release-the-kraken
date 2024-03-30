@@ -8,7 +8,7 @@ namespace Kraken
 {
     public class LilWoolManager : KrakenNetworkedManager
     {
-        private int _woolQuantity = 0;
+        public int _woolQuantity { get; private set; } = 0;
         private void Start()
         {
             if (!_isMaster) return;

@@ -26,6 +26,7 @@ namespace Kraken
         [SerializeField] private Transform _cameraOrientation;
         [SerializeField] private PlayerInput _input;
         [SerializeField] private DuoUltimateComponent _duoUltimateComponent;
+        [SerializeField] private PlayerHealingComponent _healingComponent;
         [SerializeField] private GameObject _takeDamageComponent;
         [SerializeField] private PauseManager _pauseManager = null;
         private CinemachineFreeLook _freeLookCam;
@@ -38,13 +39,15 @@ namespace Kraken
         private float _movementMagnitude = 0.0f;
         private float _attackMovementSpeed = 0.0f;
         private bool _dashReady = true;
+        private Coroutine _resumeSprintCoroutine = null;
 
-        private bool controlsEnabled = true;
+        public bool controlsEnabled { get; private set; } = true;
         private bool cameraControlsEnabled = true;
 
         [SerializeField] private InputActionReference _sprintInput;
         [SerializeField] private InputActionReference _pauseInput;
         [SerializeField] private InputActionReference _duoUltimateInput;
+        [SerializeField] private InputActionReference _healInput;
 
         private void Start()
         {
@@ -81,6 +84,8 @@ namespace Kraken
                 _sprintInput.action.canceled += OnSprintCanceled;
                 _pauseInput.action.performed += OnPause;
                 _duoUltimateInput.action.performed += OnDuoUltimate;
+                _healInput.action.performed += OnHeal;
+                _healInput.action.canceled += OnHealReleased;
 
                 GameManager.ToggleCursor(false);
                 EventManager.AddEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
@@ -103,6 +108,8 @@ namespace Kraken
             _moveInput.action.canceled -= OnMove;
             _pauseInput.action.performed -= OnPause;
             _duoUltimateInput.action.performed += OnDuoUltimate;
+            _healInput.action.performed -= OnHeal;
+            _healInput.action.canceled -= OnHealReleased;
 
             EventManager.RemoveEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
             EventManager.RemoveEventListener(EventNames.PlayerAttackEnd, HandleAttackEnd);
@@ -123,7 +130,7 @@ namespace Kraken
                 if (cameraControlsEnabled)
                     ProcessCameraControls();
 
-                if (controlsEnabled)
+                if (controlsEnabled && !_pauseManager.Paused)
                     ProcessControls();
 
                 //Workaround
@@ -198,7 +205,7 @@ namespace Kraken
 
         public void OnMove(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled) return;
+            if (!controlsEnabled || _pauseManager.Paused) return;
 
             if (_isOwner)
             {
@@ -234,7 +241,7 @@ namespace Kraken
 
         public void OnSprintPerformed(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled) return;
+            if (!controlsEnabled || _pauseManager.Paused) return;
 
             if (_isOwner)
             {
@@ -256,7 +263,7 @@ namespace Kraken
 
         public void OnSprintCanceled(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled) return;
+            if (!controlsEnabled || _pauseManager.Paused) return;
 
             if (_isOwner)
             {
@@ -287,21 +294,17 @@ namespace Kraken
 
         public void OnPause(InputAction.CallbackContext value)
         {
-            if (_pauseManager._pauseState != PauseManager.PauseState.PausedByOther)
-            {
-                EventManager.Dispatch(EventNames.TogglePause, null);
-            }
+            EventManager.Dispatch(EventNames.TogglePause, null);
         }
 
         public void OnTogglePause(BytesData data)
         {
-            photonView.RPC(nameof(RPC_All_ToggleCamera), RpcTarget.All);
-        }
-
-        [PunRPC]
-        public void RPC_All_ToggleCamera()
-        {
             _camera.SetActive(!_camera.activeInHierarchy);
+            _moveVec = Vector2.zero;
+            _movementState = MovementState.Walking;
+            bool didAnimStateChange = _playerAnimationComponent.SetLoopedStateIdle();
+            if (didAnimStateChange)
+                photonView.RPC(nameof(RPC_Other_SetLoopAnimState), RpcTarget.Others, "Idle");
         }
 
         public void HandleAttackStart(BytesData data)
@@ -312,6 +315,25 @@ namespace Kraken
 
         public void HandleAttackEnd(BytesData data)
         {
+            if (_sprintPressed)
+            {
+                _movementState = MovementState.Walking;
+                if (_resumeSprintCoroutine != null)
+                {
+                    StopCoroutine(_resumeSprintCoroutine);
+                    _resumeSprintCoroutine = null;
+                }
+                _resumeSprintCoroutine = StartCoroutine(resumeSprintingCoroutine());
+            }
+            else
+            {
+                _movementState = MovementState.Walking;
+            }
+        }
+
+        private IEnumerator resumeSprintingCoroutine()
+        {
+            yield return new WaitForSeconds(Config.current.sprintAfterAttackCooldown);
             if (_sprintPressed)
             {
                 _movementState = MovementState.Sprinting;
@@ -338,16 +360,29 @@ namespace Kraken
 
         public void OnDuoUltimate(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled) return;
+            if (!controlsEnabled || _pauseManager.Paused) return;
 
             _duoUltimateComponent.OnDuoUltimateInput(true);
         }
 
         public void OnDuoUltimateReleased(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled) return;
+            if (!controlsEnabled || _pauseManager.Paused) return;
 
             _duoUltimateComponent.OnDuoUltimateInput(false);
+        }
+
+        public void OnHeal(InputAction.CallbackContext value)
+        {
+            if (!controlsEnabled || _pauseManager.Paused) return;
+
+            _healingComponent.OnHealingInput(true);
+        }
+
+        public void OnHealReleased(InputAction.CallbackContext value)
+        {
+            if (_pauseManager.Paused) return;
+            _healingComponent.OnHealingInput(false);
         }
 
         public void SetControlsEnabled(bool controlsEnabled)

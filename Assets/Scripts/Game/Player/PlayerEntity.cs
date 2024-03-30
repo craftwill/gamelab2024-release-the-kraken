@@ -85,6 +85,15 @@ namespace Kraken
             }
         }
 
+        protected override void HandleHealed(float healAmount)
+        {
+            if (_isOwner)
+            {
+                var hpData = new FloatDataBytes(_healthComponent.Health / _healthComponent.MaxHealth);
+                EventManager.Dispatch(EventNames.UpdatePlayerHealthUI, hpData);
+            }
+        }
+
         public void PlayAttackAnimationCombo(int comboStep, System.Action animDonePlayingCallback)
         {
             _playerAnimationComponent.PlayAttackAnimationCombo(comboStep, animDonePlayingCallback);

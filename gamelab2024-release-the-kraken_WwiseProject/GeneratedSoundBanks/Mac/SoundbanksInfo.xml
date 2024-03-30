@@ -29,10 +29,14 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{FAE93EAF-B5E8-A4B4-9F1F-9754C0F1CDF1}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{717978E3-0644-2AFF-CC3F-08390E60C014}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
+				<File Id="12264851" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>healing-pokemon-sound.wav</ShortName>
+					<CachePath>SFX/healing-pokemon-sound_04A517DC.wem</CachePath>
+				</File>
 				<File Id="392899862" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>fast-whoosh-118248.wav</ShortName>
 					<CachePath>SFX/fast-whoosh-118248_818F3B66.wem</CachePath>
@@ -99,6 +103,11 @@
 						<MediaRef Id="996749074"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3068332144" Name="Play_Healing" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="12264851"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3178286754" Name="Play_PlayerHurt" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.36571428" DurationMax="0.36571428">
 					<MediaRefs>
 						<MediaRef Id="1042314046"/>
@@ -134,11 +143,12 @@
 						<MediaRef Id="624797327"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="730396682" Name="Stop_Healing" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="24633649" Name="ComboPitch"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{CE8CA5A8-0B68-29A9-F7F5-DD1ECEA07C25}</FileHash>
+	<FileHash>{A324EFD6-6BFD-2810-8864-A41583FBF10E}</FileHash>
 </SoundBanksInfo>
