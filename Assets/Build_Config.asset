@@ -18,7 +18,7 @@ MonoBehaviour:
   requireTwoPlayersForUltimate: 1
   loadCustomSceneName: 
   isSkipMainMenu: 0
-  useDebugGameFlow: 1
+  useDebugGameFlow: 0
   randomizeObjectives: 1
   gameDuration: 600
   maxHealth: 500
