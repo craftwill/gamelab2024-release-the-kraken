@@ -44,6 +44,12 @@ namespace Kraken
         public float dazzleAbilityRadius = 3f;
         public Vector3 dazzleSpawnPoint = Vector3.zero;
 
+        [Header("Enemy settings")]
+        public float enemyMinRoamDistance = 4f;
+        public float enemyMaxRoamDistance = 10f;
+        public float enemyRoamMinChangeFrequency = 2f;
+        public float enemyRoamMaxChangeFrequency = 5f;
+
         [Header("Player Controls settings")]
         public float moveSpeed = 7.5f;
         public float sprintSpeed = 14f;
