@@ -10,11 +10,6 @@ namespace Kraken
 {
     public class Tower : MonoBehaviourPun
     {
-        public static string GetFilePath()
-        {
-            return Path.Combine(Application.persistentDataPath, "towers.json");
-        }
-
         public enum TowerState
         {
             Inactive = 0,
@@ -28,7 +23,6 @@ namespace Kraken
 
         private List<string> _playersInRange = new List<string>();
         private TowerState _towerState;
-        private LilWoolManager _lilWoolManager = null;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -81,11 +75,6 @@ namespace Kraken
         {
             string id = PhotonNetwork.LocalPlayer.UserId;
             photonView.RPC(nameof(RPC_Master_RemovePlayerInRange), RpcTarget.MasterClient, id);
-        }
-
-        private void Start()
-        {
-            if (!PhotonNetwork.IsMasterClient) return;
         }
 
         public void SetNewTowerState(TowerState newState)

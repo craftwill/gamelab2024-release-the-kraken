@@ -9,17 +9,15 @@ namespace Kraken
     {
         private Tower _towerInRange = null;
         private LilWoolManager _lilWoolManager = null;
-        private TowerManager _towerManager = null;
         
         private void Start()
         {
             _lilWoolManager = FindAnyObjectByType<LilWoolManager>(FindObjectsInactive.Exclude);
-            _towerManager = FindAnyObjectByType<TowerManager>(FindObjectsInactive.Exclude);
         }
 
         public void OnTowerInteractPressed()
         {
-            if (_towerInRange &&_lilWoolManager?._woolQuantity >= 0 && TowerManager.Instance.TowersBuiltThisRound < Config.current.maxTowerPerRound)
+            if (_towerInRange &&_lilWoolManager?._woolQuantity >= Config.current.towerWoolCost && TowerManager.Instance.TowersBuiltThisRound < Config.current.maxTowerPerRound)
             {
                 _towerInRange.PlayerTryBuild();
             }
