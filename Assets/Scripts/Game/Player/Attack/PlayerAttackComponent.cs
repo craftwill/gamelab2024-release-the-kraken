@@ -35,6 +35,7 @@ namespace Kraken
                     c.transform.position += transform.forward;
                     var idc = c.GetComponent<InflictDamageComponent>();
                     idc.Damage = x.damage;
+                    idc.Source = transform;
                     _colliders.Add(c);
                 });
                 if (_pauseManager == null)

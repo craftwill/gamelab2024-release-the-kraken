@@ -42,7 +42,7 @@ namespace Kraken
         {
             base.Update();
 
-            if (!PhotonNetwork.IsMasterClient || !_isActive) return;
+            if (!PhotonNetwork.IsMasterClient || !_isActive || _staggered) return;
 
             if (!_navMeshAgent.isOnNavMesh)
             {
@@ -80,8 +80,6 @@ namespace Kraken
                 }
                 return;
             }
-
-            
 
             Vector3 destination = _target.position;
             _navMeshAgent.SetDestination(destination);
@@ -124,6 +122,7 @@ namespace Kraken
         {
             _staggered = true;
             _navMeshAgent.isStopped = true;
+            _navMeshAgent.ResetPath();
             yield return new WaitForSeconds(Config.current.enemyStaggerDuration);
             _staggered = false;
             // Will sometimes be disabled due to other game mechanics

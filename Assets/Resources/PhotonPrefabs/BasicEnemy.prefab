@@ -350,8 +350,12 @@ MonoBehaviour:
   <Health>k__BackingField: 3
   <MaxHealth>k__BackingField: 3
   <IsAlive>k__BackingField: 1
+  <ScaleHpWithNight>k__BackingField: 1
   _destroyOnDie: 0
   OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealed:
     m_PersistentCalls:
       m_Calls: []
   OnDie:
@@ -899,6 +903,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _takeDamageFromClans: 00000000
+  _getKnockedBack: 1
+  _rigidBody: {fileID: 1024217798744234630}
+  _agent: {fileID: 7968008091505032441}
+  _healthComponent: {fileID: 8142153588247244116}
 --- !u!54 &6562337585680407701
 Rigidbody:
   m_ObjectHideFlags: 0
