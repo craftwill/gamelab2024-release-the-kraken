@@ -25,6 +25,8 @@ namespace Kraken
             EventManager.Dispatch(EventNames.MinibossCountChange, new IntDataBytes(1));
 
             territory.TriggerObjective(_instance);
+
+            EventManager.Dispatch(EventNames.ShowReinforcementHintUI, new StringDataBytes("REINFORCEMENT INCOMING!"));
         }
 
         private void MinibossDeath()
