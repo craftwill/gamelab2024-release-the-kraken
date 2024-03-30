@@ -21,7 +21,6 @@ namespace Kraken
         {
             if (_towerInRange &&_lilWoolManager?._woolQuantity >= 0 && TowerManager.Instance.TowersBuiltThisRound < Config.current.maxTowerPerRound)
             {
-                Debug.Log("here");
                 _towerInRange.PlayerTryBuild();
             }
         }
@@ -30,7 +29,7 @@ namespace Kraken
         {
             if (_towerInRange)
             {
-                //_towerInRange.PlayerCancelBuild(this);
+                _towerInRange.PlayerCancelBuild();
             }
         }
 
@@ -38,7 +37,7 @@ namespace Kraken
         {
             if (t is null)
             {
-                //_towerInRange.PlayerCancelBuild();
+                _towerInRange.PlayerCancelBuild();
             }
             _towerInRange = t;
         }
