@@ -42,7 +42,8 @@ namespace Kraken
         {
             void attackLockDoneCallback() 
             {
-                _navMeshAgent.isStopped = false;
+                if (_navMeshAgent.isOnNavMesh)
+                    _navMeshAgent.isStopped = false;
             }
 
             bool attackLaunched = _entityAttackComponent.TryAttack(_target.position, attackLockDoneCallback);

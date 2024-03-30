@@ -138,6 +138,7 @@ namespace Kraken
 
             _navMeshAgent.isStopped = !isActive;
             _navMeshAgent.enabled = isActive;
+            _entityAnimationComponent.SetLoopedStateIdle(); // For some reason doesn't seem to work
         }
 
         protected virtual bool CanPathfind()
