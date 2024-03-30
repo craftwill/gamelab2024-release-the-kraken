@@ -23,6 +23,7 @@ namespace Kraken
                     // Can Cast again
                     _cooldownAnim = null;
                 }, timeScaled_: true);
+                EventManager.Dispatch(EventNames.StartAbilityCooldown, new FloatDataBytes(_cooldown));
             }
         }
 
