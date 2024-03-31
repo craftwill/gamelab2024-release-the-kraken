@@ -27,6 +27,7 @@ namespace Kraken
         [SerializeField] private PlayerInput _input;
         [SerializeField] private DuoUltimateComponent _duoUltimateComponent;
         [SerializeField] private PlayerHealingComponent _healingComponent;
+        [SerializeField] private PlayerTowerInteractComponent _towerInteractComponent;
         [SerializeField] private GameObject _takeDamageComponent;
         [SerializeField] private PauseManager _pauseManager = null;
         private CinemachineFreeLook _freeLookCam;
@@ -48,6 +49,7 @@ namespace Kraken
         [SerializeField] private InputActionReference _pauseInput;
         [SerializeField] private InputActionReference _duoUltimateInput;
         [SerializeField] private InputActionReference _healInput;
+        [SerializeField] private InputActionReference _towerInteractInput;
 
         private void Start()
         {
@@ -86,6 +88,8 @@ namespace Kraken
                 _duoUltimateInput.action.performed += OnDuoUltimate;
                 _healInput.action.performed += OnHeal;
                 _healInput.action.canceled += OnHealReleased;
+                _towerInteractInput.action.performed += OnTowerInteractPressed;
+                _towerInteractInput.action.canceled += OnTowerInteractCanceled;
 
                 GameManager.ToggleCursor(false);
                 EventManager.AddEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
@@ -107,7 +111,7 @@ namespace Kraken
             _moveInput.action.performed -= OnMove;
             _moveInput.action.canceled -= OnMove;
             _pauseInput.action.performed -= OnPause;
-            _duoUltimateInput.action.performed += OnDuoUltimate;
+            _duoUltimateInput.action.performed -= OnDuoUltimate;
             _healInput.action.performed -= OnHeal;
             _healInput.action.canceled -= OnHealReleased;
 
@@ -383,6 +387,20 @@ namespace Kraken
         {
             if (_pauseManager.Paused) return;
             _healingComponent.OnHealingInput(false);
+        }
+
+        public void OnTowerInteractPressed(InputAction.CallbackContext value)
+        {
+            if (!controlsEnabled || _pauseManager.Paused) return;
+
+            _towerInteractComponent.OnTowerInteractPressed();
+        }
+
+        public void OnTowerInteractCanceled(InputAction.CallbackContext value)
+        {
+            if (_pauseManager.Paused) return;
+
+            _towerInteractComponent.OnTowerInteractCanceled();
         }
 
         public void SetControlsEnabled(bool controlsEnabled)

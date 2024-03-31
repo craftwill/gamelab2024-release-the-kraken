@@ -12,6 +12,7 @@ namespace Kraken
         [SerializeField, Tooltip("Time before loss after maximum zone occupancy is reached")] private int _maxZoneOccupancyTimer = 30;
         [SerializeField, Tooltip("The spawner object in the scene with its spawn points as children")] private Spawner _spawner;
         [SerializeField, Tooltip("The visual indicator for the zone occupation in the minimap")] private MinimapZoneOccupationUI _minimapIndicator;
+        [SerializeField] private Tower _tower;
         private int _enemyCount = 0;
         private bool _isCurrentlyFull = false;
         private bool _isActiveZone = false;
@@ -95,6 +96,11 @@ namespace Kraken
         public void SetIsActiveZone(bool isActiveZone) 
         {
             _isActiveZone = isActiveZone;
+        }
+
+        public bool ZoneHasTower()
+        {
+            return _tower.GetTowerState() == Tower.TowerState.Active;
         }
     }
 }

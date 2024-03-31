@@ -11,7 +11,8 @@ using Photon.Pun;
 using TMPro;
 
 using Bytes;
-
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Kraken
 {
@@ -44,6 +45,9 @@ namespace Kraken
                 Btn_OnStartGame();
             }
             _currentControllerPositionIndex = 1;
+
+            //creates the file or resets it on a new game
+            File.WriteAllText(TowerManager.GetFilePath(), JsonConvert.SerializeObject(new Dictionary<int, int>()));
 
             PhotonNetwork.LocalPlayer.SetCustomProperties(new ExitGames.Client.Photon.Hashtable
             {

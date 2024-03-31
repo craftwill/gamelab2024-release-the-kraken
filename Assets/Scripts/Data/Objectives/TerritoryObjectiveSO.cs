@@ -17,7 +17,6 @@ namespace Kraken
         public override void TriggerObjective(ObjectiveInstance instance)
         {
             base.TriggerObjective(instance);
-            List<Spawner> spawners = new List<Spawner>();
             // Night scaling
             spawnFrequency *= Mathf.Pow(Config.current.objectiveSpawningScaling, PlayerPrefs.GetInt(Config.GAME_NIGHT_KEY, 0));
 
@@ -25,18 +24,20 @@ namespace Kraken
             {
                 foreach(Zone z in instance.Zones)
                 {
-                    spawners.Add(z.GetSpawner());
                     z.SetIsActiveZone(true);
-                }
-                Animate.Repeat(spawnFrequency, () =>
-                {
-                    bool isInProgress = !instance.IsCompleted;
-                    if (isInProgress)
+
+                    if (z.ZoneHasTower()) spawnFrequency *= Config.current.towerSpawnMultiplier;
+
+                    Animate.Repeat(spawnFrequency, () =>
                     {
-                        spawners.ForEach(x => NetworkUtils.Instantiate(spawnData.GetRandomEnemy().name, x.GetRandomPosition()));
-                    }
-                    return isInProgress;
-                }, -1, true);
+                        bool isInProgress = !instance.IsCompleted;
+                        if (isInProgress)
+                        {
+                            NetworkUtils.Instantiate(spawnData.GetRandomEnemy().name, z.GetSpawner().GetRandomPosition());
+                        }
+                        return isInProgress;
+                    }, -1, true);
+                }            
             }
 
             EventManager.Dispatch(EventNames.ShowReinforcementHintUI, new StringDataBytes("REINFORCEMENT INCOMING!"));
