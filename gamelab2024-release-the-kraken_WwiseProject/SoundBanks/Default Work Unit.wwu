@@ -5,10 +5,16 @@
 			<ChildrenList>
 				<SoundBank Name="Testing" ID="{577694D5-AB44-40A9-B87E-ED4597DCEBC2}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Stop_Music_Objective" ID="{E3DC8836-A530-4258-9F39-59E24D4B2AB3}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_ZoneFullCapacity" ID="{0235C9CA-1F9B-42F0-899A-2B9CC62B78D0}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Music_General" ID="{849E02DE-A992-432A-9E83-B2DBC4461DB4}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Music_General" ID="{28D5667C-FD00-441E-9228-E90D7C6FD3E1}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Healing" ID="{B3D3D271-8D71-4459-B081-2371F99348CF}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Music_Boss" ID="{1D0BAF27-B7AA-4473-85CB-BEF955196F4B}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Healing" ID="{EFA9971A-7464-452A-827E-23B52EB8D26F}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_EnemyHurt" ID="{50D85769-262C-4554-A45E-1D417F92F9B2}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Music_Boss" ID="{0436C74E-BEBA-455C-AB1D-497C24FB919C}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Music_Objective" ID="{F3C87F64-835B-4668-ACFF-872C045E54FE}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Defeat" ID="{F4902D7C-5754-474C-80F7-EA79304CB3E2}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BossSpawn" ID="{F5629778-F9A1-48CC-8B4E-6FF8B6FE9B66}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UltimateTriggered" ID="{05C734AA-4FE2-4AEC-9A46-D5472CC3D081}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>

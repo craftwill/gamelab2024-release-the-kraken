@@ -1,13 +1,19 @@
 Event	ID	Name			Wwise Object Path	Notes
 	324646143	Play_Defeat			\Default Work Unit\Play_Defeat	
 	349172053	Play_EnemyHurt			\Default Work Unit\Play_EnemyHurt	
+	504869708	Stop_Music_General			\Default Work Unit\Stop_Music_General	
 	730396682	Stop_Healing			\Default Work Unit\Stop_Healing	
+	977895875	Play_Music_Objective			\Default Work Unit\Play_Music_Objective	
 	984790419	Play_UltimateNotice			\Default Work Unit\Play_UltimateNotice	
 	1218358740	Play_UltimateReady			\Default Work Unit\Play_UltimateReady	
 	1863926102	Play_WoolCollected			\Default Work Unit\Play_WoolCollected	
+	2155613437	Play_Music_Boss			\Default Work Unit\Play_Music_Boss	
 	2211787386	Play_Dash			\Default Work Unit\Play_Dash	
+	2291264325	Stop_Music_Objective			\Default Work Unit\Stop_Music_Objective	
 	2468480011	Play_VictoryFanfare			\Default Work Unit\Play_VictoryFanfare	
 	2741312416	Play_UltimateGoOff			\Default Work Unit\Play_UltimateGoOff	
+	2746305898	Play_Music_General			\Default Work Unit\Play_Music_General	
+	2869039319	Stop_Music_Boss			\Default Work Unit\Stop_Music_Boss	
 	3068332144	Play_Healing			\Default Work Unit\Play_Healing	
 	3162760014	Play_UltimateTriggered			\Default Work Unit\Play_UltimateTriggered	
 	3178286754	Play_PlayerHurt			\Default Work Unit\Play_PlayerHurt	
@@ -20,7 +26,10 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	12264851	healing-pokemon-sound	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\healing-pokemon-sound_04A517DC.wem		\Actor-Mixer Hierarchy\Default Work Unit\healing-pokemon-sound		212608
+	66191486	Fight music 1	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Fight music 1_0A5200D4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Placeholder\Fight music 1		10189980
+	85800411	Fight music 4 (boss)	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Fight music 4 (boss)_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Placeholder\Fight music 4 (boss)		11815008
 	198922756	Final Fantasy VII - Victory Fanfare [HD]	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Final Fantasy VII - Victory Fanfare [HD]_8BEEE5EA.wem		\Actor-Mixer Hierarchy\Default Work Unit\Final Fantasy VII - Victory Fanfare [HD]		9502864
+	252820667	Fight music 3	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Fight music 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Placeholder\Fight music 3		11870304
 	392899862	fast-whoosh-118248	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\fast-whoosh-118248_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\fast-whoosh-118248		212064
 	422643003	y2mate_rQlfs1Y	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\y2mate_rQlfs1Y_FC9CA280.wem		\Actor-Mixer Hierarchy\Default Work Unit\y2mate_rQlfs1Y		79076
 	624797327	tindeck_1	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\tindeck_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\tindeck_1		276576

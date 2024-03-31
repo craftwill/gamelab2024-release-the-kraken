@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{749D9E16-A86A-4D30-2C91-E2D326C5FFCA}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{39200C88-9011-6090-A94F-54B976594818}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -37,9 +37,21 @@
 					<ShortName>healing-pokemon-sound.wav</ShortName>
 					<CachePath>SFX/healing-pokemon-sound_04A517DC.wem</CachePath>
 				</File>
+				<File Id="66191486" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Fight music 1.wav</ShortName>
+					<CachePath>SFX/Fight music 1_0A5200D4.wem</CachePath>
+				</File>
+				<File Id="85800411" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Fight music 4 (boss).wav</ShortName>
+					<CachePath>SFX/Fight music 4 (boss)_818F3B66.wem</CachePath>
+				</File>
 				<File Id="198922756" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Final Fantasy VII - Victory Fanfare [HD].wav</ShortName>
 					<CachePath>SFX/Final Fantasy VII - Victory Fanfare [HD]_8BEEE5EA.wem</CachePath>
+				</File>
+				<File Id="252820667" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Fight music 3.wav</ShortName>
+					<CachePath>SFX/Fight music 3_818F3B66.wem</CachePath>
 				</File>
 				<File Id="392899862" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>fast-whoosh-118248.wav</ShortName>
@@ -121,6 +133,21 @@
 						<MediaRef Id="12264851"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2155613437" Name="Play_Music_Boss" DurationType="OneShot" DurationMin="66.97796" DurationMax="66.97796">
+					<MediaRefs>
+						<MediaRef Id="85800411"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2746305898" Name="Play_Music_General" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="66191486"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="977895875" Name="Play_Music_Objective" DurationType="OneShot" DurationMin="67.29143" DurationMax="67.29143">
+					<MediaRefs>
+						<MediaRef Id="252820667"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3178286754" Name="Play_PlayerHurt" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.36571428" DurationMax="0.36571428">
 					<MediaRefs>
 						<MediaRef Id="1042314046"/>
@@ -162,11 +189,14 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="730396682" Name="Stop_Healing" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2869039319" Name="Stop_Music_Boss" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="504869708" Name="Stop_Music_General" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2291264325" Name="Stop_Music_Objective" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="24633649" Name="ComboPitch"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{6455A113-2E08-90D1-F612-CF89025142AF}</FileHash>
+	<FileHash>{5DF2A835-E7CD-845F-58AD-92DC9FEC6DEA}</FileHash>
 </SoundBanksInfo>

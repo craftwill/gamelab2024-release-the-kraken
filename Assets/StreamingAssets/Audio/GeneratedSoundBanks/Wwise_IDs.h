@@ -19,6 +19,9 @@ namespace AK
         static const AkUniqueID PLAY_ENEMYHURT = 349172053U;
         static const AkUniqueID PLAY_ENEMYSHOOT = 3253098515U;
         static const AkUniqueID PLAY_HEALING = 3068332144U;
+        static const AkUniqueID PLAY_MUSIC_BOSS = 2155613437U;
+        static const AkUniqueID PLAY_MUSIC_GENERAL = 2746305898U;
+        static const AkUniqueID PLAY_MUSIC_OBJECTIVE = 977895875U;
         static const AkUniqueID PLAY_PLAYERHURT = 3178286754U;
         static const AkUniqueID PLAY_ULTIMATEGOOFF = 2741312416U;
         static const AkUniqueID PLAY_ULTIMATENOTICE = 984790419U;
@@ -28,6 +31,9 @@ namespace AK
         static const AkUniqueID PLAY_WOOLCOLLECTED = 1863926102U;
         static const AkUniqueID PLAY_ZONEFULLCAPACITY = 3233615227U;
         static const AkUniqueID STOP_HEALING = 730396682U;
+        static const AkUniqueID STOP_MUSIC_BOSS = 2869039319U;
+        static const AkUniqueID STOP_MUSIC_GENERAL = 504869708U;
+        static const AkUniqueID STOP_MUSIC_OBJECTIVE = 2291264325U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS
