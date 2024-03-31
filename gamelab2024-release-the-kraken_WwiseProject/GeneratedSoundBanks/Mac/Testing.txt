@@ -1,10 +1,12 @@
 Event	ID	Name			Wwise Object Path	Notes
+	324646143	Play_Defeat			\Default Work Unit\Play_Defeat	
 	349172053	Play_EnemyHurt			\Default Work Unit\Play_EnemyHurt	
 	730396682	Stop_Healing			\Default Work Unit\Stop_Healing	
 	984790419	Play_UltimateNotice			\Default Work Unit\Play_UltimateNotice	
 	1218358740	Play_UltimateReady			\Default Work Unit\Play_UltimateReady	
 	1863926102	Play_WoolCollected			\Default Work Unit\Play_WoolCollected	
 	2211787386	Play_Dash			\Default Work Unit\Play_Dash	
+	2468480011	Play_VictoryFanfare			\Default Work Unit\Play_VictoryFanfare	
 	2741312416	Play_UltimateGoOff			\Default Work Unit\Play_UltimateGoOff	
 	3068332144	Play_Healing			\Default Work Unit\Play_Healing	
 	3162760014	Play_UltimateTriggered			\Default Work Unit\Play_UltimateTriggered	
@@ -18,9 +20,11 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	12264851	healing-pokemon-sound	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\healing-pokemon-sound_04A517DC.wem		\Actor-Mixer Hierarchy\Default Work Unit\healing-pokemon-sound		212608
+	198922756	Final Fantasy VII - Victory Fanfare [HD]	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Final Fantasy VII - Victory Fanfare [HD]_8BEEE5EA.wem		\Actor-Mixer Hierarchy\Default Work Unit\Final Fantasy VII - Victory Fanfare [HD]		9502864
 	392899862	fast-whoosh-118248	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\fast-whoosh-118248_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\fast-whoosh-118248		212064
 	422643003	y2mate_rQlfs1Y	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\y2mate_rQlfs1Y_FC9CA280.wem		\Actor-Mixer Hierarchy\Default Work Unit\y2mate_rQlfs1Y		79076
 	624797327	tindeck_1	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\tindeck_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\tindeck_1		276576
+	628232679	dark-souls-you-died-sound-effect_hm5sYFG	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\dark-souls-you-died-sound-effect_hm5sYFG_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\dark-souls-you-died-sound-effect_hm5sYFG		1421408
 	781786885	FFXIV Limit Break 3	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\FFXIV Limit Break 3_76AE5D17.wem		\Actor-Mixer Hierarchy\Default Work Unit\FFXIV Limit Break 3		479356
 	875765215	alarme-factorio	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\alarme-factorio_FCF97502.wem		\Actor-Mixer Hierarchy\Default Work Unit\alarme-factorio		298744
 	908038837	ultimateReady	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\FFXIV Limit Break 3 Video Effect_F4D2370A.wem		\Actor-Mixer Hierarchy\Default Work Unit\ultimateReady		174048

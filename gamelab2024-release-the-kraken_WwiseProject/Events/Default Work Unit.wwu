@@ -149,6 +149,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_VictoryFanfare" ID="{7915DD0F-40E5-4E5B-842B-40654EB56848}">
+					<ChildrenList>
+						<Action Name="" ID="{22CD4AED-790B-4CE5-AB05-FD1C2BB3A7BA}" ShortID="877826595">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Final Fantasy VII - Victory Fanfare [HD]" ID="{5C77530D-05A3-4935-A168-C5ADE0A167A3}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Defeat" ID="{F4902D7C-5754-474C-80F7-EA79304CB3E2}">
+					<ChildrenList>
+						<Action Name="" ID="{FF120506-D7B4-4C66-8347-B96AAFA27FE8}" ShortID="862729223">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="dark-souls-you-died-sound-effect_hm5sYFG" ID="{4592589D-A9D7-4402-860B-9BB461D01FA8}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

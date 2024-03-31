@@ -411,6 +411,58 @@
 						<ActiveSource Name="healing-pokemon-sound" ID="{4418EECD-DEC7-4561-A7BB-FF5AB189AA03}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="Final Fantasy VII - Victory Fanfare [HD]" ID="{5C77530D-05A3-4935-A168-C5ADE0A167A3}" ShortID="488276">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Final Fantasy VII - Victory Fanfare [HD]" ID="{8234F4B4-7E33-499A-8FEE-8AAC76FEC02C}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="4.99519690369564"/>
+								<Property Name="LoopEnd" Type="Real64" Value="41.8143074728216"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Final Fantasy VII - Victory Fanfare [HD].wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="198922756"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Final Fantasy VII - Victory Fanfare [HD]" ID="{8234F4B4-7E33-499A-8FEE-8AAC76FEC02C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="dark-souls-you-died-sound-effect_hm5sYFG" ID="{4592589D-A9D7-4402-860B-9BB461D01FA8}" ShortID="918013652">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="dark-souls-you-died-sound-effect_hm5sYFG" ID="{5B9FA6D9-8314-4E93-99D3-17161462E6C4}">
+							<Language>SFX</Language>
+							<AudioFile>dark-souls-you-died-sound-effect_hm5sYFG.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="628232679"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="dark-souls-you-died-sound-effect_hm5sYFG" ID="{5B9FA6D9-8314-4E93-99D3-17161462E6C4}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

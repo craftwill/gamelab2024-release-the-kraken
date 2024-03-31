@@ -9,6 +9,7 @@
 						<ObjectRef Name="Play_Healing" ID="{B3D3D271-8D71-4459-B081-2371F99348CF}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Healing" ID="{EFA9971A-7464-452A-827E-23B52EB8D26F}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_EnemyHurt" ID="{50D85769-262C-4554-A45E-1D417F92F9B2}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Defeat" ID="{F4902D7C-5754-474C-80F7-EA79304CB3E2}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BossSpawn" ID="{F5629778-F9A1-48CC-8B4E-6FF8B6FE9B66}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UltimateTriggered" ID="{05C734AA-4FE2-4AEC-9A46-D5472CC3D081}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UltimateReady" ID="{5A9DA74C-690E-4BBD-A2F1-FBA15B73D3E0}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
@@ -16,6 +17,7 @@
 						<ObjectRef Name="Play_WoolCollected" ID="{A414BF86-6DA7-4CC5-BA14-D281C6AF9329}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UltimateGoOff" ID="{B292BC4C-D218-4DF9-95E7-11172D165110}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UltimateNotice" ID="{A81A9236-A414-4DFA-AC68-0348BD56EDFA}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_VictoryFanfare" ID="{7915DD0F-40E5-4E5B-842B-40654EB56848}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PlayerHurt" ID="{D9E29EE0-084F-4F26-93EA-23EB7F9640A2}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_EnemyShoot" ID="{94A96539-83E0-4FBD-AD12-48A3A79DA2C5}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
