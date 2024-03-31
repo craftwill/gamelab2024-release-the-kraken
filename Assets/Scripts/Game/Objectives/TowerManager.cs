@@ -68,7 +68,7 @@ namespace Kraken
 
         public void TowerBuilt()
         {
-            EventManager.Dispatch(EventNames.GainWool, new IntDataBytes(Config.current.towerWoolCost));
+            EventManager.Dispatch(EventNames.GainWool, new IntDataBytes(-Config.current.towerWoolCost));
             photonView.RPC(nameof(RPC_All_IncrementTowerBuilt), RpcTarget.All);
         }
 
