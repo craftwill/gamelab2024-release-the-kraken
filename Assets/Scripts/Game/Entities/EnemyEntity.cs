@@ -44,7 +44,8 @@ namespace Kraken
 
         protected virtual void HandleStopGameFlow(BytesData data) 
         {
-            _healthComponent.TakeDamage(1_000_000);
+            _entityController.enabled = false;
+            _pathfindingEntityController.SetControllerActive(false);
         }
 
         protected override void HandleTakeDamage(float dmgAmount)
