@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{39200C88-9011-6090-A94F-54B976594818}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{FB160650-A789-5F30-B817-A6E26D9951EB}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -198,5 +198,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5DF2A835-E7CD-845F-58AD-92DC9FEC6DEA}</FileHash>
+	<FileHash>{47905CDC-A284-ECE9-243E-4863C25B7E2D}</FileHash>
 </SoundBanksInfo>

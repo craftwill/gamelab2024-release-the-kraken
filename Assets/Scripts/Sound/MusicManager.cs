@@ -20,6 +20,7 @@ namespace Kraken
             AkSoundEngine.RegisterGameObj(gameObject);
             EventManager.AddEventListener(EventNames.StartGameFlow, HandleStartGameflow);
             EventManager.AddEventListener(EventNames.StopGameFlow, HandleStopGameflow);
+            EventManager.AddEventListener(EventNames.BossSpawned, HandleBossSpawned);
         }
 
         private void OnDestroy()
@@ -27,6 +28,7 @@ namespace Kraken
             AkSoundEngine.UnregisterGameObj(gameObject);
             EventManager.RemoveEventListener(EventNames.StartGameFlow, HandleStartGameflow);
             EventManager.RemoveEventListener(EventNames.StopGameFlow, HandleStopGameflow);
+            EventManager.RemoveEventListener(EventNames.BossSpawned, HandleBossSpawned);
         }
 
         public void StopAllMusic()
@@ -38,17 +40,20 @@ namespace Kraken
 
         private void HandleStartGameflow(BytesData data)
         {
-            Debug.Log("Start music");
             photonView.RPC(nameof(RPC_All_PlayGeneralMusic), RpcTarget.All);
         }
 
         private void HandleStopGameflow(BytesData data)
         {
-            Debug.Log("Stop music");
             StopAllMusic();
         }
 
-        
+        private void HandleBossSpawned(BytesData data)
+        {
+            StopAllMusic();
+            photonView.RPC(nameof(RPC_All_PlayBossMusic), RpcTarget.All);
+
+        }
 
         [PunRPC]
         private void RPC_All_PlayGeneralMusic()

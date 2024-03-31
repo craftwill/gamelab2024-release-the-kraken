@@ -20,6 +20,7 @@ namespace Kraken
             entity.GetHealthComponent().OnDie.AddListener(BossDeath);
 
             EventManager.Dispatch(EventNames.ShowReinforcementHintUI, new StringDataBytes("THY QUEEN IS HERE!"));
+            EventManager.Dispatch(EventNames.BossSpawned, null);
         }
 
         private void BossDeath()
