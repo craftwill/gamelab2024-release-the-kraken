@@ -5,6 +5,8 @@ using UnityEngine;
 
 using Bytes;
 using UnityEngine.SceneManagement;
+using static UnityEngine.Rendering.DebugUI;
+using UnityEngine.InputSystem;
 
 namespace Kraken
 {
@@ -39,6 +41,12 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.LeaveGame, HandleLeaveGame);
 
             CreatePlayer();
+
+            // Setup HUD according to player type and control schema
+            int playerClassId = GetPlayerClassId();
+            bool isRazzle = playerClassId == 0;
+            bool isKeyboard = Input.GetJoystickNames().Length <= 0;
+            EventManager.Dispatch(EventNames.SetupHUD, new SetupHUDData(isRazzle, isKeyboard));
 
             if (!PhotonNetwork.IsMasterClient) return;
 
@@ -101,31 +109,17 @@ namespace Kraken
             // Fetch property for player type
             string playerToCreateName = _razzlePrefab.name;
             Vector3 playerToCreateSpawnPos = _playersSpawnPos.position;
-            if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("player"))
+
+            int playerClassId = GetPlayerClassId();
+            if (playerClassId == 0)
             {
-                if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue("player", out var value))
-                {
-                    int classId = (int)value;
-                    if (classId == 0)
-                    {
-                        playerToCreateName = _razzlePrefab.name;
-                        playerToCreateSpawnPos = Config.current.razzleSpawnPoint;
-                    }
-                    else if (classId == 2)
-                    {
-                        playerToCreateName = _dazzlePrefab.name;
-                        playerToCreateSpawnPos = Config.current.dazzleSpawnPoint;
-                    }
-                }
+                playerToCreateName = _razzlePrefab.name;
+                playerToCreateSpawnPos = Config.current.razzleSpawnPoint;
             }
-            else
+            else if (playerClassId == 2)
             {
-                // Player2 is dazzle by default if custom properties are null
-                if (!PhotonNetwork.IsMasterClient)
-                {
-                    playerToCreateName = _dazzlePrefab.name;
-                    playerToCreateSpawnPos = Config.current.dazzleSpawnPoint;
-                }
+                playerToCreateName = _dazzlePrefab.name;
+                playerToCreateSpawnPos = Config.current.dazzleSpawnPoint;
             }
 
             // Force usage of Dazzle for player1
@@ -146,6 +140,20 @@ namespace Kraken
             _localPlayer = NetworkUtils.Instantiate(playerToCreateName, playerToCreateSpawnPos);
 
             photonView.RPC(nameof(RPC_Master_PlayerCreated), RpcTarget.MasterClient, _localPlayer.GetPhotonView().ViewID);
+        }
+
+        private int GetPlayerClassId() 
+        {
+            // Player2 is dazzle by default if custom properties are null
+            int playerClassId = 2;
+            if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("player"))
+            {
+                if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue("player", out var value))
+                {
+                    playerClassId = (int)value;
+                }
+            }
+            return playerClassId;
         }
 
         [PunRPC]

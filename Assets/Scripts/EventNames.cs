@@ -48,6 +48,7 @@ namespace Kraken
         public const string StopSpawning = "StopSpawning";
 
         // UI events
+        public const string SetupHUD = "SetupHUD";
         public const string UpdateCountownTimerUI = "UpdateCountownTimerUI";
         public const string UpdateObjectiveUI = "UpdateObjectiveUI";
         public const string UpdateObjectiveTimerUI = "UpdateObjectiveTimerUI";
@@ -110,5 +111,16 @@ namespace Kraken
         }
         public int EnemyCount { get; private set; }
         public int MaxEnemyCount { get; private set; }
+    }
+
+    public class SetupHUDData : BytesData
+    {
+        public SetupHUDData(bool isRazzle, bool isKeyboard)
+        {
+            IsRazzle = isRazzle;
+            IsKeyboard = isKeyboard;
+        }
+        public bool IsRazzle { get; private set; }
+        public bool IsKeyboard { get; private set; }
     }
 }

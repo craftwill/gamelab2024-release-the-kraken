@@ -6,11 +6,8 @@ using Bytes;
 
 namespace Kraken.UI
 {
-    public class AbilityUI : KrakenUIElement
+    public class AbilityUI : PlayerUIComponent
     {
-        [SerializeField] private Image _imgFilling;
-        [SerializeField] private Animator _abilityAnimator;
-
         private void Start()
         {
             EventManager.AddEventListener(EventNames.StartAbilityCooldown, HandleStartAbilityCooldown);
@@ -27,11 +24,11 @@ namespace Kraken.UI
 
             Animate.LerpSomething(cooldownDuration , (float step) => 
             {
-                _imgFilling.fillAmount = step;
+                _imgUsed.fillAmount = step;
             }, () =>
             {
-                _imgFilling.fillAmount = 1f;
-                _abilityAnimator.Play("AbilityUI_cooldownDone");
+                _imgUsed.fillAmount = 1f;
+                _animator.Play("AbilityUI_cooldownDone");
                 // Play sound cuz ability is ready here...
 
             }, timeScaled_: true);
