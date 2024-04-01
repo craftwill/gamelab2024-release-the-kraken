@@ -14,6 +14,7 @@ namespace Kraken
         [SerializeField] private AK.Wwise.Event _stopBossMusic;
         [SerializeField] private AK.Wwise.Event _playObjectiveMusic;
         [SerializeField] private AK.Wwise.Event _stopObjectiveMusic;
+        private bool _playingBossMusic = false;
 
         private void Start()
         {
@@ -21,6 +22,8 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.StartGameFlow, HandleStartGameflow);
             EventManager.AddEventListener(EventNames.StopGameFlow, HandleStopGameflow);
             EventManager.AddEventListener(EventNames.BossSpawned, HandleBossSpawned);
+            EventManager.AddEventListener(EventNames.PlayerEnteredObjective, HandlePlayerEnteredZone);
+            EventManager.AddEventListener(EventNames.PlayerLeftObjective, HandlePlayerLeftZone);
         }
 
         private void OnDestroy()
@@ -29,6 +32,8 @@ namespace Kraken
             EventManager.RemoveEventListener(EventNames.StartGameFlow, HandleStartGameflow);
             EventManager.RemoveEventListener(EventNames.StopGameFlow, HandleStopGameflow);
             EventManager.RemoveEventListener(EventNames.BossSpawned, HandleBossSpawned);
+            EventManager.RemoveEventListener(EventNames.PlayerEnteredObjective, HandlePlayerEnteredZone);
+            EventManager.RemoveEventListener(EventNames.PlayerLeftObjective, HandlePlayerLeftZone);
         }
 
         public void StopAllMusic()
@@ -41,6 +46,7 @@ namespace Kraken
         private void HandleStartGameflow(BytesData data)
         {
             photonView.RPC(nameof(RPC_All_PlayGeneralMusic), RpcTarget.All);
+            _playingBossMusic = false;
         }
 
         private void HandleStopGameflow(BytesData data)
@@ -52,7 +58,21 @@ namespace Kraken
         {
             StopAllMusic();
             photonView.RPC(nameof(RPC_All_PlayBossMusic), RpcTarget.All);
+            _playingBossMusic = true;
+        }
 
+        private void HandlePlayerEnteredZone(BytesData data)
+        {
+            if (_playingBossMusic || !Config.current.useObjectiveMusic) return;
+            StopAllMusic();
+            photonView.RPC(nameof(RPC_All_PlayObjectiveMusic), RpcTarget.All);
+        }
+
+        private void HandlePlayerLeftZone(BytesData data)
+        {
+            if (_playingBossMusic || !Config.current.useObjectiveMusic) return;
+            StopAllMusic();
+            photonView.RPC(nameof(RPC_All_PlayGeneralMusic), RpcTarget.All);
         }
 
         [PunRPC]
