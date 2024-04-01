@@ -350,8 +350,12 @@ MonoBehaviour:
   <Health>k__BackingField: 3
   <MaxHealth>k__BackingField: 3
   <IsAlive>k__BackingField: 1
+  <ScaleHpWithNight>k__BackingField: 1
   _destroyOnDie: 0
   OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealed:
     m_PersistentCalls:
       m_Calls: []
   OnDie:
@@ -937,6 +941,7 @@ GameObject:
   - component: {fileID: 7943204919484701936}
   - component: {fileID: 8455128632293184963}
   - component: {fileID: 6273920595487294825}
+  - component: {fileID: 4491167528251283266}
   m_Layer: 9
   m_Name: tempEnemyMarker
   m_TagString: Untagged
@@ -954,7 +959,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 2.5, z: 0}
-  m_LocalScale: {x: 25, y: 25, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2745319777357053054}
@@ -1000,7 +1005,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5be02cf370ec7524d96e3927b84a2b55, type: 3}
+  m_Sprite: {fileID: 1675458778, guid: 38de52d65b2014d4aa1182dab38227f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1023,6 +1028,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5523e7c34c7f0448babf4600da3c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4491167528251283266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5847381557580223909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aaff6260d5fbd547aaaf810c47bce1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: -1, z: 0}
 --- !u!1001 &5985768562094707110
 PrefabInstance:
   m_ObjectHideFlags: 0

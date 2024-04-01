@@ -90,10 +90,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2790538093634992692, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1070025560, guid: 38de52d65b2014d4aa1182dab38227f1,
+        type: 3}
     - target: {fileID: 2994236915493532572, guid: c767677ecb1762942a114712b6d1e354,
         type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 17
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2994236915493532572, guid: c767677ecb1762942a114712b6d1e354,
         type: 3}
@@ -104,6 +110,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ActionEvents.Array.data[16].m_ActionName
       value: Player/CastAbility[/Keyboard/e]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994236915493532572, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_ActionName
+      value: Player/Tower[/Keyboard/f,/DualSenseGamepadHID/rightShoulder]
       objectReference: {fileID: 0}
     - target: {fileID: 3938902759498121455, guid: c767677ecb1762942a114712b6d1e354,
         type: 3}
@@ -145,6 +156,21 @@ PrefabInstance:
       propertyPath: _entityAnimationComponent
       value: 
       objectReference: {fileID: 4988887561652899048}
+    - target: {fileID: 6255841072874626313, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6255841072874626313, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6255841072874626313, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6747958540799682996, guid: c767677ecb1762942a114712b6d1e354,
         type: 3}
       propertyPath: m_Name
@@ -169,6 +195,10 @@ PrefabInstance:
         type: 3}
       insertIndex: 6
       addedObject: {fileID: 3301035463224948240}
+    - targetCorrespondingSourceObject: {fileID: 7438497340087592465, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6653567408012043687}
   m_SourcePrefab: {fileID: 100100000, guid: c767677ecb1762942a114712b6d1e354, type: 3}
 --- !u!4 &914100191289639072 stripped
 Transform:
@@ -239,6 +269,25 @@ MonoBehaviour:
   _controlsComponent: {fileID: 5394453928790256752}
   _pauseManager: {fileID: 0}
   _verticalOffset: -0.45
+--- !u!1 &7033687099916908371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7438497340087592465, guid: c767677ecb1762942a114712b6d1e354,
+    type: 3}
+  m_PrefabInstance: {fileID: 479198835140235586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6653567408012043687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7033687099916908371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aaff6260d5fbd547aaaf810c47bce1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: -1, z: 0}
 --- !u!1001 &485436688897154879
 PrefabInstance:
   m_ObjectHideFlags: 0
