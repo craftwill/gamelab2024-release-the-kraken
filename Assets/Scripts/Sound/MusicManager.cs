@@ -16,6 +16,7 @@ namespace Kraken
         [SerializeField] private AK.Wwise.Event _playObjectiveMusic;
         [SerializeField] private AK.Wwise.Event _stopObjectiveMusic;
         private MusicState _state = MusicState.General;
+        private int _playersInZone = 0;
 
         private void Start()
         {
@@ -64,6 +65,7 @@ namespace Kraken
 
         private void HandlePlayerEnteredZone(BytesData data)
         {
+            _playersInZone++;
             if (_state == MusicState.Boss || _state == MusicState.Objective || !Config.current.useObjectiveMusic) return;
             StopAllMusic();
             photonView.RPC(nameof(RPC_All_PlayObjectiveMusic), RpcTarget.All);
@@ -72,7 +74,9 @@ namespace Kraken
 
         private void HandlePlayerLeftZone(BytesData data)
         {
+            _playersInZone--;
             if (_state == MusicState.Boss || _state == MusicState.General || !Config.current.useObjectiveMusic) return;
+            if (_playersInZone > 0) return;
             StopAllMusic();
             photonView.RPC(nameof(RPC_All_PlayGeneralMusic), RpcTarget.All);
             _state = MusicState.General;
