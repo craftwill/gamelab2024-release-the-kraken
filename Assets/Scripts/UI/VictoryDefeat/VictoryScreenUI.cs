@@ -26,6 +26,7 @@ namespace Kraken.UI
         {
             _btnNextNight.interactable = false;
             _gameFlowManager.GoToNextNight();
+            AkSoundEngine.StopAll();
         }
 
         

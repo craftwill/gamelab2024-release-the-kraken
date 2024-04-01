@@ -42,13 +42,5 @@ namespace Kraken
 
             EventManager.Dispatch(EventNames.ShowReinforcementHintUI, new StringDataBytes("REINFORCEMENT INCOMING!"));
         }
-
-        public override void EndObjective(ObjectiveInstance instance)
-        {
-            base.EndObjective(instance);
-
-            instance.Zones?.ForEach(x => x?.SetIsActiveZone(false));
-            EventManager.Dispatch(EventNames.UpdateCurrentZoneOccupancyUI, new UpdateZoneOccupancyUIData(0, 10));
-        }
     }
 }

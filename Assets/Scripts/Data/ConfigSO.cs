@@ -127,6 +127,9 @@ namespace Kraken
         [Header("UI Settings")]
         public bool hideGameCanvasOnPause = false;
 
+        [Header("Music Settings")]
+        public bool useObjectiveMusic = true;
+
         [Header("Scaling Settings")]
         [Tooltip("Multiplies a delay, should be < 1")]
         public float permanentSpawningScaling = 0.8f;

@@ -152,7 +152,6 @@ namespace Kraken
         private void RPC_Master_PlayerCreated(int playerCreatedViewId)
         {
             _playerCount++;
-            Debug.Log("Player created! Player count: " + _playerCount);
 
             if (_playerCount >= 2)
             {

@@ -15,6 +15,7 @@ namespace Kraken
     }
     public class EndGameManager : KrakenNetworkedManager
     {
+        [SerializeField] private EndGameManagerSoundComponent _soundComponent;
         private bool isGameEnded = false;
 
         private void Start()
@@ -90,10 +91,12 @@ namespace Kraken
             if (isVictory)
             {
                 EventManager.Dispatch(EventNames.ShowVictoryScreenUI, null);
+                _soundComponent.PlayVictorySound();
             }
             else
             {
                 EventManager.Dispatch(EventNames.ShowDefeatScreenUI, null);
+                _soundComponent.PlayDefeatSound();
             }
 
             GameManager.ToggleCursor(true);

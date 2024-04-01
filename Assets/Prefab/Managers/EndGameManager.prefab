@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8427522851191732140}
   - component: {fileID: 7419425353700991724}
+  - component: {fileID: 5042348991125875286}
   - component: {fileID: 7176809666395373653}
   m_Layer: 0
   m_Name: EndGameManager
@@ -45,6 +46,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb6fed1fa5971a4b924d883ffc35cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundComponent: {fileID: 5042348991125875286}
+--- !u!114 &5042348991125875286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2258252079934826305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fafc46a2654dc146825226e0dcda820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _victorySound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 414febce9f1048842a5600b14ac1e2e1,
+      type: 2}
+  _defeatSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: fb16932c804a50c43a448654d4c628ca,
+      type: 2}
 --- !u!114 &7176809666395373653
 MonoBehaviour:
   m_ObjectHideFlags: 0
