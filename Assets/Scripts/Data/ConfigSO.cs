@@ -107,6 +107,8 @@ namespace Kraken
         public float comboPitchIncrement = 100f;
         public float comboMaxHitInterval = 0.5f;
         public float hitFlashDuration = 0.1f;
+        public float knockbackForce = 25f;
+        public float knockBackDuration = 0.1f;
 
         [Header("Minimap Settings")]
         public bool showBasicEnemies = false;

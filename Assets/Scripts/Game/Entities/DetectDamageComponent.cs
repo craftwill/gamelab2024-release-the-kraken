@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Events;
 
 namespace Kraken.Game
@@ -11,6 +12,10 @@ namespace Kraken.Game
         public UnityEvent<float> OnDetectDamage;
 
         [SerializeField] private EntityClan[] _takeDamageFromClans;
+        [SerializeField] private bool _getKnockedBack = false;
+        [SerializeField] private Rigidbody _rigidBody;
+        [SerializeField] private NavMeshAgent _agent;
+        [SerializeField] private HealthComponent _healthComponent;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -20,6 +25,19 @@ namespace Kraken.Game
                 if(inflictDmgComp != null)
                 {
                     ProcessDamage(inflictDmgComp);
+                    if (_getKnockedBack)
+                    {
+                        Vector3 direction = Vector3.zero;
+                        if (inflictDmgComp.Source == null)
+                        {
+                            direction = (transform.position - inflictDmgComp.transform.position).normalized;
+                        }
+                        else
+                        {
+                            direction = (transform.position - inflictDmgComp.Source.position).normalized;
+                        }
+                        StartCoroutine(KnockbackCoroutine(direction));
+                    }
                 }
             }
         }
@@ -47,6 +65,19 @@ namespace Kraken.Game
         public void TakeDamageFromOtherSource(float damage)
         {
             OnDetectDamage.Invoke(damage);
+        }
+
+        private IEnumerator KnockbackCoroutine(Vector3 direction)
+        {
+            _rigidBody.isKinematic = false;
+            _agent.isStopped = true;
+            _rigidBody.AddForce(direction * Config.current.knockbackForce, ForceMode.Impulse);
+            yield return new WaitForSeconds(Config.current.knockBackDuration);
+            if (_healthComponent.IsAlive)
+            {
+                _rigidBody.isKinematic = true;
+                _agent.isStopped = false;
+            }   
         }
     }
 }
