@@ -59,7 +59,7 @@ namespace Kraken
         [PunRPC]
         private void RPC_ALL_Starfall(Vector3 pos, float chargeTime, float telegraphRadius, int damage)
         {
-            RingTelegraph telegraph = Instantiate(_starfallTelegraphPrefab, pos, _starfallTelegraphPrefab.transform.rotation).GetComponent<RingTelegraph>();
+            RingTelegraph telegraph = Instantiate(_starfallTelegraphPrefab, pos, _starfallTelegraphPrefab.transform.rotation, this.transform).GetComponent<RingTelegraph>();
             telegraph.StartTelegraph(chargeTime, telegraphRadius, 0f, damage);
         }
 

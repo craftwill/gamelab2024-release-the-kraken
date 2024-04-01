@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4696172084750020890}
   - component: {fileID: 8333744791327913207}
   - component: {fileID: 5528715203495092118}
+  - component: {fileID: 9187793432182815795}
   - component: {fileID: 5246415389099428364}
   m_Layer: 0
   m_Name: ImportantManagers
@@ -99,6 +100,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a7851e71e83ce4abe8d7c9a4db9135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9187793432182815795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237651157681132645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31932af59a743ec4f924de76cf3917b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playGeneralMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a989b7154b1a8f24a92dbe9d9a246f9d,
+      type: 2}
+  _stopGeneralMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 81bdcc213d7d5d241a07fbb79b3f8db4,
+      type: 2}
+  _playBossMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e7720d21f33218a4099fd2d15ab534e1,
+      type: 2}
+  _stopBossMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 69b253ed49854284c862f0c401406d32,
+      type: 2}
+  _playObjectiveMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 943b59f97a1e485439838dc27ebc4023,
+      type: 2}
+  _stopObjectiveMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 446c742f31ae82c4f907cfd4e541d2c1,
+      type: 2}
 --- !u!114 &5246415389099428364
 MonoBehaviour:
   m_ObjectHideFlags: 0

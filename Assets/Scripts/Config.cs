@@ -19,6 +19,9 @@ namespace Kraken
         public const string UI_VOLUME_KEY = "UIVolume";
         public const string CONTROLS_KEY = "Controls";
 
+        // Game keys
+        public const string GAME_NIGHT_KEY = "GameNight";
+
         // Settings keys
         public const string DISPLAY_FULLSCREEN = "DisplayFullscreen";
         public const string CAMERA_INVERT_Y_AXIS = "CameraInvertYAxis";

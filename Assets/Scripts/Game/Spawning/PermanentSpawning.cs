@@ -28,6 +28,9 @@ namespace Kraken
 
             EventManager.AddEventListener(EventNames.StartSpawning, HandleStartSpawning);
             EventManager.AddEventListener(EventNames.StopSpawning, HandleStopSpawning);
+
+            // Night scaling
+            spawnFrequency *= Mathf.Pow(Config.current.permanentSpawningScaling, PlayerPrefs.GetInt(Config.GAME_NIGHT_KEY, 0));
         }
 
         private void OnDestroy()
@@ -42,7 +45,9 @@ namespace Kraken
             
             Animate.Repeat(spawnFrequency, () =>
             {
-                if (_spawnActive) NetworkUtils.Instantiate(spawnData.GetRandomEnemy().name, GetSpawnPoint().position);
+                Vector3 spawnPos = GetSpawnPoint().position;
+                spawnPos += new Vector3(Random.Range(0f, 1f), 0f, Random.Range(0f, 1f)); // Add random offset
+                if (_spawnActive) NetworkUtils.Instantiate(spawnData.GetRandomEnemy().name, spawnPos);
                 return _spawnActive;
 
             }, -1, true);

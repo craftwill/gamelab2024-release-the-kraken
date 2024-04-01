@@ -14,7 +14,8 @@ namespace Kraken
         [SerializeField] private PlayerEntity _playerEntity;
         [SerializeField] private List<AttackSO> _attacks = new List<AttackSO>();
         [SerializeField] private InputActionReference _attackInput;
-        
+        [SerializeField] private PauseManager _pauseManager = null;
+
         private bool _isFreeToAttack = true;
         private AttackSO _currentAttack;
         private bool _controlsEnabled = true;
@@ -34,8 +35,13 @@ namespace Kraken
                     c.transform.position += transform.forward;
                     var idc = c.GetComponent<InflictDamageComponent>();
                     idc.Damage = x.damage;
+                    idc.Source = transform;
                     _colliders.Add(c);
                 });
+                if (_pauseManager == null)
+            {
+                _pauseManager = Object.FindObjectOfType<PauseManager>(); //temp but i don't wanna lock the game scene
+            }
             }
         }
 
@@ -57,7 +63,7 @@ namespace Kraken
 
         private void AttackPressed(InputAction.CallbackContext callback)
         {
-            if (!_controlsEnabled) return;
+            if (!_controlsEnabled || _pauseManager.Paused) return;
 
             if (_isFreeToAttack)
             {

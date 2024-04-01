@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 1, z: -6}
+  m_FollowOffset: {x: 0, y: 1, z: -9}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -152,7 +152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245881313563383296}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.67590773, y: 0.00013775993, z: -0.00012634291, w: 0.7369862}
+  m_LocalRotation: {x: 0.05530037, y: 0.000000017180051, z: -9.515192e-10, w: 0.99846977}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -666,7 +666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 1, z: -6}
+  m_FollowOffset: {x: 0, y: 1, z: -9}
   m_XDamping: 0.1
   m_YDamping: 0.1
   m_ZDamping: 0.1
@@ -793,7 +793,7 @@ Transform:
   m_GameObject: {fileID: 1601542376723397981}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -6}
+  m_LocalPosition: {x: 0, y: 1, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -820,7 +820,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 723387988070830562}
+  m_LookAt: {fileID: 6071304517905037911}
   m_Follow: {fileID: 723387988070830562}
   m_CommonLens: 1
   m_Lens:
@@ -904,11 +904,11 @@ MonoBehaviour:
   m_SplineCurvature: 0.2
   m_Orbits:
   - m_Height: 3.5
-    m_Radius: 4
+    m_Radius: 8
   - m_Height: 1
-    m_Radius: 6
+    m_Radius: 9
   - m_Height: 0.1
-    m_Radius: 4
+    m_Radius: 7
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 825150144020670679}
@@ -944,7 +944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CollideAgainst:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 9335
   m_IgnoreTag: Player
   m_TransparentLayers:
     serializedVersion: 2
@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 1, z: -6}
+  m_FollowOffset: {x: 0, y: 1, z: -9}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1226,7 +1226,7 @@ TrailRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: b7261f9179635fb489dd7a20e61674d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1334,7 +1334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3125956395443567921}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.03607023, y: -2.366478e-10, z: 2.75714e-12, w: 0.9993493}
+  m_LocalRotation: {x: 0.0088321995, y: -0.0000000022623838, z: 1.9982606e-11, w: 0.999961}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1909,6 +1909,37 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 7754507642755652074}
+--- !u!1 &6702861355251404656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6071304517905037911}
+  m_Layer: 12
+  m_Name: CameraFocus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6071304517905037911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6702861355251404656}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 723387988070830562}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6747958540799682996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1927,10 +1958,12 @@ GameObject:
   - component: {fileID: 6776644671420513302}
   - component: {fileID: 5423530764624292386}
   - component: {fileID: 4871313712549404074}
+  - component: {fileID: 186451009981560704}
   - component: {fileID: 2338596183922361558}
   - component: {fileID: 4801927777905466368}
   - component: {fileID: 2994236915493532572}
   - component: {fileID: 7000252827930271329}
+  - component: {fileID: 5403232961705662853}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -1958,6 +1991,7 @@ Transform:
   - {fileID: 5087714006406940513}
   - {fileID: 8634908351922152156}
   - {fileID: 6255841072874626313}
+  - {fileID: 6071304517905037911}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5806521009423482011
@@ -2014,12 +2048,19 @@ MonoBehaviour:
   _cameraOrientation: {fileID: 5087714006406940513}
   _input: {fileID: 2994236915493532572}
   _duoUltimateComponent: {fileID: 6776644671420513302}
+  _healingComponent: {fileID: 186451009981560704}
+  _towerInteractComponent: {fileID: 5403232961705662853}
   _takeDamageComponent: {fileID: 897399624514842760}
+  _pauseManager: {fileID: 0}
   _sprintInput: {fileID: -2249790821337775847, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
   _pauseInput: {fileID: 7956368911678358776, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
   _duoUltimateInput: {fileID: 2035575773999566507, guid: abae805e8a04eb44c951b59d4dda4171,
+    type: 3}
+  _healInput: {fileID: 1633009384100133035, guid: abae805e8a04eb44c951b59d4dda4171,
+    type: 3}
+  _towerInteractInput: {fileID: 364970863935581191, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
 --- !u!114 &3860904718989671536
 MonoBehaviour:
@@ -2048,6 +2089,31 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: efec16645f07dc540862788362f999ef,
       type: 2}
+  _ultimateReadySound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 22f25e401a97e4e408193d038ef9db78,
+      type: 2}
+  _ultimateNoticeSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 49de6790640aeb245921b3449b542e80,
+      type: 2}
+  _ultimateTriggeredSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b3a47167a5245454192241782c574561,
+      type: 2}
+  _healingSoundStart:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a55026c989d8d9f45b22fd45383f32b4,
+      type: 2}
+  _healingSoundStop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 030ec604c485feb4fa3693f0d03422e9,
+      type: 2}
 --- !u!114 &5208069392134486679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2061,11 +2127,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _feedback: {fileID: 0}
+  _flickerVFX: {fileID: 0}
   <Health>k__BackingField: 2000
   <MaxHealth>k__BackingField: 2000
   <IsAlive>k__BackingField: 1
+  <ScaleHpWithNight>k__BackingField: 0
   _destroyOnDie: 1
   OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealed:
     m_PersistentCalls:
       m_Calls: []
   OnDie:
@@ -2090,6 +2161,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3a05d6f4e3bebaf4ba868bb7bec59b00, type: 2}
   _attackInput: {fileID: 8504988724220268357, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
+  _pauseManager: {fileID: 0}
 --- !u!114 &6776644671420513302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2134,6 +2206,20 @@ MonoBehaviour:
   _animatorSuffix: 
   _animsAttackComboSpeed: 1.6
   _animsTransitionDuration: 0.1
+--- !u!114 &186451009981560704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747958540799682996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33cbd6f52dcfcd94e8131bf294e7df33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerControls: {fileID: 5510866118124797234}
+  _soundComponent: {fileID: 3860904718989671536}
 --- !u!114 &2338596183922361558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2279,6 +2365,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: c8d556fb-e989-40b7-a7f3-581d80a3ee8e
     m_ActionName: Player/CastAbility[/Keyboard/e,/DualSenseGamepadHID/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aa816a1b-ad15-4074-b75b-f1b4da640e06
+    m_ActionName: Player/Heal[/Keyboard/q,/DualSenseGamepadHID/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48d3e829-0f3a-442b-a6d6-662d69cddcb0
+    m_ActionName: Player/Tower[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -2310,6 +2404,18 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &5403232961705662853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747958540799682996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9875a39c3c567b341a0acdf953e4937e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7438497340087592465
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,7 +2525,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8483757960527509177}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.059241112, y: 0.0000000036763557, z: -2.1817459e-10, w: 0.9982437}
+  m_LocalRotation: {x: 0.03202461, y: 0.000000017197557, z: -5.5102767e-10, w: 0.9994871}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

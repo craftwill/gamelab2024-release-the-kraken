@@ -42,12 +42,13 @@ namespace Kraken
                 time += Time.deltaTime;
             }
 
-            if (!PhotonNetwork.IsMasterClient)
+            if (PhotonNetwork.IsMasterClient)
             {
                 PlayerEntity[] players = CombatUtils.GetPlayerEntities();
 
                 System.Array.ForEach(players, p =>
                 {
+                    if (p == null) return;
                     float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(p.transform.position.x, p.transform.position.z));
 
                     if (distance >= offsetRadius && distance <= telegraphRadius + offsetRadius)

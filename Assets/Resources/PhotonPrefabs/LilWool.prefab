@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8235901562057355601}
   - component: {fileID: 2201442590304732237}
+  - component: {fileID: 4376386630931433453}
   - component: {fileID: 9202293448660386269}
   - component: {fileID: 6178553950723016240}
   - component: {fileID: 6384618469004386142}
@@ -53,6 +54,24 @@ MonoBehaviour:
   _playerLayer:
     serializedVersion: 2
     m_Bits: 4096
+  _soundComponent: {fileID: 4376386630931433453}
+--- !u!114 &4376386630931433453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5281229062787241931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a9dd999d51ca74c91971c987372689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickupSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 100b0acf014e27544af71528e5a9ba4e,
+      type: 2}
 --- !u!54 &9202293448660386269
 Rigidbody:
   m_ObjectHideFlags: 0

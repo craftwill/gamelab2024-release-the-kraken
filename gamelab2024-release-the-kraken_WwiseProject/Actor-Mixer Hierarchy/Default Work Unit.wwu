@@ -34,6 +34,11 @@
 				<Sound Name="pew-pew-lame-sound-effect" ID="{673A8F8D-340C-44F7-9403-FE0B38CA459A}" ShortID="804680531">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -131,7 +136,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="classic_hurt" ID="{61087652-9BE2-4C4B-8912-B68F26CD8378}" ShortID="1036399665">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="New Attenuation" ID="{21F5D5AA-3A07-4871-9C7D-27540D1E0FEC}" WorkUnitID="{DCCF40E7-2697-49F0-8DB4-BFAF3F6745E1}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
 						</Reference>
@@ -180,6 +191,448 @@
 						<ActiveSource Name="ameno" ID="{B6FA9681-17BB-409B-AED1-2BF897B467C1}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="ultimateReady" ID="{0D7F5367-C109-4A6E-BED2-D99893D9FC41}" ShortID="157974442">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="FFXIV Limit Break 3 Video Effect" ID="{9B3843EA-622E-4C23-A8E5-0B654988CA04}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.89676350308642"/>
+								<Property Name="TrimEnd" Type="Real64" Value="1.80277199074074"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>FFXIV Limit Break 3 Video Effect.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="908038837"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="FFXIV Limit Break 3 Video Effect" ID="{9B3843EA-622E-4C23-A8E5-0B654988CA04}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="FFXIV Limit Break 3" ID="{68685F74-FC6F-4DF0-846E-99A873B605DB}" ShortID="1050956728">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="FFXIV Limit Break 3" ID="{0C35C878-CB39-4BD7-B5AE-A36B2799CA70}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="1.40523765432099"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="4.37287770061729"/>
+								<Property Name="TrimEnd" Type="Real64" Value="6.8690235339506"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>FFXIV Limit Break 3.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="781786885"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="FFXIV Limit Break 3" ID="{0C35C878-CB39-4BD7-B5AE-A36B2799CA70}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="tindeck_1" ID="{AB2A271F-3162-4050-B3E5-4F5B3A493D83}" ShortID="751575558">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="tindeck_1" ID="{2FA5A393-7D54-4C7A-93AD-505A59732BE6}">
+							<Language>SFX</Language>
+							<AudioFile>tindeck_1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="624797327"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="tindeck_1" ID="{2FA5A393-7D54-4C7A-93AD-505A59732BE6}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="y2mate_rQlfs1Y" ID="{F1371669-91B2-4EA1-9820-FDE53E67ED8F}" ShortID="419229758">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="y2mate_rQlfs1Y" ID="{2339D01F-8823-48CF-B713-E743C6A93882}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.272088292106967"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>y2mate_rQlfs1Y.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="422643003"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="y2mate_rQlfs1Y" ID="{2339D01F-8823-48CF-B713-E743C6A93882}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="alarme-factorio" ID="{30CB82B9-35C3-4E7B-B157-EE03DE61B0A3}" ShortID="1003038029">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="alarme-factorio" ID="{C3AD231E-59AC-42D8-AEA9-06BCF820037B}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="0"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="1.69300786981459"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>alarme-factorio.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="875765215"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="alarme-factorio" ID="{C3AD231E-59AC-42D8-AEA9-06BCF820037B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="xphit" ID="{E3462DE1-23B6-43CF-9232-46F0E246269C}" ShortID="566440177">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{E94E4028-8B62-4FA9-914E-80F20159F1D2}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="400"/>
+											<Property Name="Min" Type="Real64" Value="-1000"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="New Attenuation" ID="{21F5D5AA-3A07-4871-9C7D-27540D1E0FEC}" WorkUnitID="{DCCF40E7-2697-49F0-8DB4-BFAF3F6745E1}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="xphit" ID="{21A1366D-C3E5-4118-B6FF-898A1F4B7C1B}">
+							<Language>SFX</Language>
+							<AudioFile>xphit.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1037371522"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="xphit" ID="{21A1366D-C3E5-4118-B6FF-898A1F4B7C1B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="healing-pokemon-sound" ID="{ECE4734B-9395-4040-8F2C-94F572E1F120}" ShortID="92418886">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="healing-pokemon-sound" ID="{4418EECD-DEC7-4561-A7BB-FF5AB189AA03}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="0.882016806722689"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.882016806722689"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>healing-pokemon-sound.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="12264851"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="healing-pokemon-sound" ID="{4418EECD-DEC7-4561-A7BB-FF5AB189AA03}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Final Fantasy VII - Victory Fanfare [HD]" ID="{5C77530D-05A3-4935-A168-C5ADE0A167A3}" ShortID="488276">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Final Fantasy VII - Victory Fanfare [HD]" ID="{8234F4B4-7E33-499A-8FEE-8AAC76FEC02C}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="4.99519690369564"/>
+								<Property Name="LoopEnd" Type="Real64" Value="41.8143074728216"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Final Fantasy VII - Victory Fanfare [HD].wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="198922756"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Final Fantasy VII - Victory Fanfare [HD]" ID="{8234F4B4-7E33-499A-8FEE-8AAC76FEC02C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="dark-souls-you-died-sound-effect_hm5sYFG" ID="{4592589D-A9D7-4402-860B-9BB461D01FA8}" ShortID="918013652">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="dark-souls-you-died-sound-effect_hm5sYFG" ID="{5B9FA6D9-8314-4E93-99D3-17161462E6C4}">
+							<Language>SFX</Language>
+							<AudioFile>dark-souls-you-died-sound-effect_hm5sYFG.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="628232679"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="dark-souls-you-died-sound-effect_hm5sYFG" ID="{5B9FA6D9-8314-4E93-99D3-17161462E6C4}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Folder Name="Music" ID="{F87A4B29-F944-42CC-BB72-21936653CDF8}" ShortID="876433148">
+					<ChildrenList>
+						<Folder Name="Placeholder" ID="{E2AB6D26-9DB5-4035-AE89-094BC7C46B83}" ShortID="516766360">
+							<ChildrenList>
+								<Sound Name="Fight music 1" ID="{47A9DB8D-5E37-40A8-A3C1-CA819EBA26C0}" ShortID="1062410004">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music" ID="{71454D7B-A69B-4B06-9FDF-91E62C39A98F}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Fight music 1" ID="{F0EF3B51-669F-455E-94E4-27EA25EDFBB7}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="3.04727757769774"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="3.04727757769774"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Fight music 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="66191486"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Fight music 1" ID="{F0EF3B51-669F-455E-94E4-27EA25EDFBB7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Fight music 2" ID="{1F4F6DB1-BCF9-45B4-B43D-1E8D108C6D34}" ShortID="803409396">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music" ID="{71454D7B-A69B-4B06-9FDF-91E62C39A98F}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Fight music 2" ID="{7D94D00A-DECE-4125-B6E2-07E38A929BD7}">
+											<Language>SFX</Language>
+											<AudioFile>Fight music 2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="989675608"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Fight music 2" ID="{7D94D00A-DECE-4125-B6E2-07E38A929BD7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Fight music 3" ID="{CDB0389F-244B-480A-BF95-CE748613ACCB}" ShortID="531969049">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music" ID="{71454D7B-A69B-4B06-9FDF-91E62C39A98F}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Fight music 3" ID="{0004B63D-6D75-4BEE-9B31-E066816FBAE7}">
+											<Language>SFX</Language>
+											<AudioFile>Fight music 3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="252820667"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Fight music 3" ID="{0004B63D-6D75-4BEE-9B31-E066816FBAE7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Fight music 4 (boss)" ID="{A4C1E092-4583-4914-9BFB-B83E7551E2BF}" ShortID="1036438681">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music" ID="{71454D7B-A69B-4B06-9FDF-91E62C39A98F}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Fight music 4 (boss)" ID="{716B5844-EE95-4F21-BCA9-7A6E84DB2938}">
+											<Language>SFX</Language>
+											<AudioFile>Fight music 4 (boss).wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="85800411"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Fight music 4 (boss)" ID="{716B5844-EE95-4F21-BCA9-7A6E84DB2938}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Idle-menu-character select" ID="{5FD3A004-05DC-4473-B9C8-9E8EF12680D8}" ShortID="578941142">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music" ID="{71454D7B-A69B-4B06-9FDF-91E62C39A98F}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Idle-menu-character select" ID="{0645BD89-6C55-4AF2-8AD5-8B65CEC6406B}">
+											<Language>SFX</Language>
+											<AudioFile>Idle-menu-character select.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1021538816"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Idle-menu-character select" ID="{0645BD89-6C55-4AF2-8AD5-8B65CEC6406B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Jingles" ID="{1FEBFF0F-2C08-4A14-AA0E-B28B4F907274}" ShortID="125160239">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music" ID="{71454D7B-A69B-4B06-9FDF-91E62C39A98F}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Jingles" ID="{A234873F-7945-404F-A567-7DCAE78E8722}">
+											<Language>SFX</Language>
+											<AudioFile>Jingles.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="392398396"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Jingles" ID="{A234873F-7945-404F-A567-7DCAE78E8722}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Menu-loading (night-night)" ID="{A433A285-2753-4261-AA95-5F8669DE5A45}" ShortID="92941553">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Music" ID="{71454D7B-A69B-4B06-9FDF-91E62C39A98F}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Menu-loading (night-night)" ID="{F2CED3CA-E423-4C49-A6E8-8B8220AD02F2}">
+											<Language>SFX</Language>
+											<AudioFile>Menu-loading (night-night).wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="361327256"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Menu-loading (night-night)" ID="{F2CED3CA-E423-4C49-A6E8-8B8220AD02F2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

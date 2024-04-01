@@ -20,6 +20,12 @@ namespace Kraken
             _renderers = GetComponentsInChildren<Renderer>();
         }
 
+        private void OnDestroy()
+        {
+            // Should fix skinnedMeshRenderer error
+            _currFlashAnim?.Stop(callEndFunction: false);
+        }
+
         public void PlayHurtFeedback()
         {
             PlayHurtFeedbackWithFlashColor(_hitFlashColor);

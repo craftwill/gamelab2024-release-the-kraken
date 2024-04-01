@@ -62,13 +62,35 @@ namespace Kraken
         {
             base.HandleTakeDamage(dmgAmount);
 
-            _playerAnimationComponent.PlayHurtAnim();
+            // Don't play hurt anim if player is attacking
+            IKrakenAnimState currentPlayOnceAnim = _playerAnimationComponent.GetCurrentPlayOnceAnim();
+            if (currentPlayOnceAnim != null && currentPlayOnceAnim.ClipName.Contains("AttackCombo"))
+            {
+                // Hurt without anim
+            }
+            else
+            {
+                _playerAnimationComponent.PlayHurtAnim();
+            }
 
+            var hpData = new FloatDataBytes(_healthComponent.Health / _healthComponent.MaxHealth);
             if (_isOwner)
             {
-                FloatDataBytes bytes = new FloatDataBytes(_healthComponent.Health/_healthComponent.MaxHealth);
-                EventManager.Dispatch(EventNames.UpdateHealthUI, bytes);
+                EventManager.Dispatch(EventNames.UpdatePlayerHealthUI, hpData);
                 photonView.RPC(nameof(_soundComponent.RPC_All_PlayPlayerHurtSound), RpcTarget.All);
+            }
+            else
+            {
+                EventManager.Dispatch(EventNames.UpdateOtherPlayerHealthUI, hpData);
+            }
+        }
+
+        protected override void HandleHealed(float healAmount)
+        {
+            if (_isOwner)
+            {
+                var hpData = new FloatDataBytes(_healthComponent.Health / _healthComponent.MaxHealth);
+                EventManager.Dispatch(EventNames.UpdatePlayerHealthUI, hpData);
             }
         }
 

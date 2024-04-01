@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using Kraken.Network;
 
 using Bytes;
+using Unity.VisualScripting;
 
 namespace Kraken
 {
@@ -13,6 +14,8 @@ namespace Kraken
         [SerializeField] private PlayerEntity _playerEntity;
         [SerializeField] private InputActionReference _castAbilityInput;
         [SerializeField] private GameObject _abilityPrefab;
+        [SerializeField] private PlayerControlsComponent _controlsComponent;
+        [SerializeField] private PauseManager _pauseManager = null;
         [SerializeField] private float _verticalOffset = -0.25f;
 
         private float _jumpDuration = 0.27f;
@@ -25,6 +28,10 @@ namespace Kraken
             _jumpDuration = Config.current.dazzleAbilityJumpDuration;
             _jumpDistance = Config.current.dazzleAbilityJumpDistance;
             _jumpHeight = Config.current.dazzleAbilityJumpHeigth;
+            if (_pauseManager == null)
+            {
+                _pauseManager = Object.FindObjectOfType<PauseManager>(); //temp but i don't wanna lock the game scene
+            }
         }
 
         private void Awake()
@@ -39,6 +46,7 @@ namespace Kraken
 
         public void OnCastAbility(InputAction.CallbackContext value)
         {
+            if (!_controlsComponent.controlsEnabled || _pauseManager.Paused) return;
             CastAbility();
         }
 
@@ -59,6 +67,21 @@ namespace Kraken
             Vector3 startPos = transform.position;
             Vector3 middlePos = transform.position + transform.forward * _jumpDistance / 2 + new Vector3(0f, _jumpHeight, 0f);
             Vector3 endPos = transform.position + transform.forward * _jumpDistance;
+
+            // Raycast above endPos towards ground and see where the floor is.
+            int groundLayerMask = LayerMask.GetMask("Terrain");
+            Ray ray = new Ray(endPos + new Vector3(0, 20f, 0f), Vector3.down);
+            if (Physics.Raycast(ray, out var hit, 10000f, groundLayerMask))
+            {
+                endPos = hit.point;
+            }
+            else
+            {
+                // If not impact, can't cast ability and cancel cooldown.
+                CancelCooldown();
+                return;
+            }
+
             Animate.LerpSomething(_jumpDuration, (float step) => 
             {
                 if (step < 0.5f)

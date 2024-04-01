@@ -12,7 +12,9 @@ namespace Kraken
         [SerializeField, Tooltip("Time before loss after maximum zone occupancy is reached")] private int _maxZoneOccupancyTimer = 30;
         [SerializeField, Tooltip("The spawner object in the scene with its spawn points as children")] private Spawner _spawner;
         [SerializeField, Tooltip("The visual indicator for the zone occupation in the minimap")] private MinimapZoneOccupationUI _minimapIndicator;
+        [SerializeField] private Tower _tower;
         private int _enemyCount = 0;
+        private int _playerCount = 0;
         private bool _isCurrentlyFull = false;
         private bool _isActiveZone = false;
         private List<EnemyEntity> _enemyInZones;
@@ -21,6 +23,16 @@ namespace Kraken
         private void OnTriggerEnter(Collider other)
         {
             if (!PhotonNetwork.IsMasterClient) return;
+            var player = other.GetComponent<PlayerEntity>();
+            if (player is not null)
+            {
+                _playerCount++;
+                if (_isActiveZone)
+                {
+                    EventManager.Dispatch(EventNames.PlayerEnteredObjective, null);
+                }
+            }
+            
 
             //This trigger is on a gameobject with ZoneOccupancy Layer
             var ezc = other.GetComponent<EnemyZoneComponent>();
@@ -37,6 +49,18 @@ namespace Kraken
         private void OnTriggerExit(Collider other)
         {
             if (!PhotonNetwork.IsMasterClient) return;
+
+            var player = other.GetComponent<PlayerEntity>();
+            if (player is not null)
+            {
+                _playerCount--;
+                if (_isActiveZone)
+                {
+                    EventManager.Dispatch(EventNames.PlayerLeftObjective, null);
+                }
+            }
+
+            
 
             //This trigger is on a gameobject with ZoneOccupancy Layer
             var ezc = other.GetComponent<EnemyZoneComponent>();
@@ -57,7 +81,8 @@ namespace Kraken
 
             if (_isActiveZone)
             {
-                EventManager.Dispatch(EventNames.UpdateCurrentZoneOccupancyUI, new UpdateZoneOccupancyUIData(_enemyCount, _maxEnemyCount));
+                //commenting it in case we want to reuse stuff
+                //EventManager.Dispatch(EventNames.UpdateCurrentZoneOccupancyUI, new UpdateZoneOccupancyUIData(_enemyCount, _maxEnemyCount));
             }
 
             if (_enemyCount >= _maxEnemyCount)
@@ -94,6 +119,18 @@ namespace Kraken
         public void SetIsActiveZone(bool isActiveZone) 
         {
             _isActiveZone = isActiveZone;
+            if (_playerCount > 0)
+            {
+                if (isActiveZone)
+                    EventManager.Dispatch(EventNames.PlayerEnteredObjective, null);
+                else
+                    EventManager.Dispatch(EventNames.PlayerLeftObjective, null);
+            }
+        }
+
+        public bool ZoneHasTower()
+        {
+            return _tower.GetTowerState() == Tower.TowerState.Active;
         }
     }
 }

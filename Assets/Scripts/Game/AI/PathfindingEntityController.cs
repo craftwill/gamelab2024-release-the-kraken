@@ -17,6 +17,9 @@ namespace Kraken
         private Coroutine _staggerCoroutine;
 
         protected Transform _target;
+        protected float _roamingDestinationRefreshTime = 0;
+        protected float _spawnTime = 0;
+        protected Vector3 _lastPos = Vector3.zero;
         protected float _pathfindingDistanceRadius;
         protected float _closestPlayerDistance;
 
@@ -32,13 +35,14 @@ namespace Kraken
 
             _entityAnimationComponent.SetLoopedStateIdle();
             _navMeshAgent.speed *= _moveSpeed;
+            _spawnTime = Time.time;
         }
 
         protected override void Update()
         {
             base.Update();
 
-            if (!PhotonNetwork.IsMasterClient || !_isActive) return;
+            if (!PhotonNetwork.IsMasterClient || !_isActive || _staggered) return;
 
             if (!_navMeshAgent.isOnNavMesh)
             {
@@ -57,13 +61,25 @@ namespace Kraken
                 return;
             }
 
-            if (_target == null)
+            if (_lastPos == transform.position) 
             {
                 _entityAnimationComponent.SetLoopedStateIdle();
+            }
+            else
+            {
+                _entityAnimationComponent.SetLoopedStateWalking();
+            }
+            _lastPos = transform.position;
+
+            if (_target == null)
+            {
+                if (Time.time - _spawnTime > _roamingDestinationRefreshTime)
+                {
+                    _navMeshAgent.SetDestination(PickRandomNearbyPoint());
+                    _roamingDestinationRefreshTime += Random.Range(Config.current.enemyRoamMinChangeFrequency, Config.current.enemyRoamMaxChangeFrequency);
+                }
                 return;
             }
-
-            _entityAnimationComponent.SetLoopedStateWalking();
 
             Vector3 destination = _target.position;
             _navMeshAgent.SetDestination(destination);
@@ -106,6 +122,8 @@ namespace Kraken
         {
             _staggered = true;
             _navMeshAgent.isStopped = true;
+            _navMeshAgent.ResetPath();
+            _entityAnimationComponent.SetLoopedStateIdle(); // Should be hurt but we don't have that
             yield return new WaitForSeconds(Config.current.enemyStaggerDuration);
             _staggered = false;
             // Will sometimes be disabled due to other game mechanics
@@ -118,13 +136,22 @@ namespace Kraken
         {
             base.SetControllerActive(isActive);
 
-            _navMeshAgent.isStopped = !isActive;
+            if (_navMeshAgent.isOnNavMesh)
+                _navMeshAgent.isStopped = !isActive;
             _navMeshAgent.enabled = isActive;
+            _entityAnimationComponent.SetLoopedStateIdle(); // For some reason doesn't seem to work
         }
 
         protected virtual bool CanPathfind()
         {
             return true;
+        }
+
+        private Vector3 PickRandomNearbyPoint()
+        {
+            Vector2 direction = Random.insideUnitCircle.normalized * Random.Range(Config.current.enemyMinRoamDistance, Config.current.enemyMaxRoamDistance);
+            Transform point = transform;
+            return new Vector3(point.position.x + direction.x, point.position.y, point.position.z + direction.y);
         }
     }
 }

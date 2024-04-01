@@ -17,24 +17,30 @@ namespace Kraken
         public override void TriggerObjective(ObjectiveInstance instance)
         {
             base.TriggerObjective(instance);
-            Spawner spawner = instance.Zone.GetSpawner();
-            instance.Zone.SetIsActiveZone(true);
+            // Night scaling
+            spawnFrequency *= Mathf.Pow(Config.current.objectiveSpawningScaling, PlayerPrefs.GetInt(Config.GAME_NIGHT_KEY, 0));
 
-            //should not be kept this way
-            Animate.Repeat(spawnFrequency, () =>
+            if (instance.Zones is not null)
             {
-                bool isInProgress = !instance.IsCompleted;
-                if (isInProgress) NetworkUtils.Instantiate(spawnData.GetRandomEnemy().name, spawner.GetRandomPosition());
-                return isInProgress;
-            }, -1, true);
-        }
+                foreach(Zone z in instance.Zones)
+                {
+                    z.SetIsActiveZone(true);
 
-        public override void EndObjective(ObjectiveInstance instance)
-        {
-            base.EndObjective(instance);
+                    if (z.ZoneHasTower()) spawnFrequency *= Config.current.towerSpawnMultiplier;
 
-            instance.Zone.SetIsActiveZone(false);
-            EventManager.Dispatch(EventNames.UpdateCurrentZoneOccupancyUI, new UpdateZoneOccupancyUIData(0, 10));
+                    Animate.Repeat(spawnFrequency, () =>
+                    {
+                        bool isInProgress = !instance.IsCompleted;
+                        if (isInProgress)
+                        {
+                            NetworkUtils.Instantiate(spawnData.GetRandomEnemy().name, z.GetSpawner().GetRandomPosition());
+                        }
+                        return isInProgress;
+                    }, -1, true);
+                }            
+            }
+
+            EventManager.Dispatch(EventNames.ShowReinforcementHintUI, new StringDataBytes("REINFORCEMENT INCOMING!"));
         }
     }
 }

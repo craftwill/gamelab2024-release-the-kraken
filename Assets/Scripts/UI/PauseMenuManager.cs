@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 namespace Kraken
 {
-    public class PauseMenuManager : MonoBehaviour
+    public class PauseMenuManager : MonoBehaviourPun
     {
         [SerializeField] private GameObject _pauseScreen;
         [SerializeField] private GameObject _gameCanvas;
@@ -40,10 +40,7 @@ namespace Kraken
 
         public void OnBtnResume()
         {
-            if (_pauseManager._pauseState == PauseManager.PauseState.PausedBySelf)
-            {
-                EventManager.Dispatch(EventNames.TogglePause, null);
-            }
+            EventManager.Dispatch(EventNames.TogglePause, null);
         }
 
         public void OnBtnSettings()
@@ -54,8 +51,7 @@ namespace Kraken
 
         public void OnBtnQuit()
         {
-            AnimateManager.GetInstance().ClearAllAnimations();
-            PhotonNetwork.LeaveRoom();
+            _pauseManager.QuitToMainMenu();
         }
     }
 }

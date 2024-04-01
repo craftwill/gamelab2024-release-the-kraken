@@ -20,6 +20,8 @@ namespace Kraken
         public bool useDebugGameFlow = true;
         [Tooltip("Randomize objectives")]
         public bool randomizeObjectives = true;
+        public int spawnObjectiveCount = 3;
+        public int minibossObjectiveCount = 2;
         [Tooltip("Maximum time the game can last in seconds")]
         public int gameDuration = 600;
 
@@ -42,6 +44,12 @@ namespace Kraken
         public float dazzleAbilityRadius = 3f;
         public Vector3 dazzleSpawnPoint = Vector3.zero;
 
+        [Header("Enemy settings")]
+        public float enemyMinRoamDistance = 4f;
+        public float enemyMaxRoamDistance = 10f;
+        public float enemyRoamMinChangeFrequency = 2f;
+        public float enemyRoamMaxChangeFrequency = 5f;
+
         [Header("Player Controls settings")]
         public float moveSpeed = 7.5f;
         public float sprintSpeed = 14f;
@@ -51,6 +59,7 @@ namespace Kraken
         public float dashDuration = 0.2f;
         public float dashSpeed = 30f;
         public float dashCooldown = 3.0f;
+        public float sprintAfterAttackCooldown = 0.4f;
 
         [Header("Camera settings")]
         public float cameraSensitivity = 2f;
@@ -78,12 +87,28 @@ namespace Kraken
         public bool ultimateDoesSlowMo = true;
         public float ultimateSlowMoTimeScale = 0.5f;
         public float ultimateSlowMoDuration = 1f;
+        public bool ultimateIsCancellable = false;
+
+        [Header("Tower settigns")]
+        public int towerWoolCost = 50;
+        public int maxTowerPerRound = 2;
+        [Tooltip("A zone with a tower in it will spawn x timer slower")] public float towerSpawnMultiplier = 5;
+
+        [Header("Healing settings")]
+        [Tooltip("The max distance between the two players to be able to heal")]
+        public float healingMaxDistance = 3f;
+        [Tooltip("Heals 1 HP every x seconds")]
+        public float healingRate = 0.1f;
+        [Tooltip("How much hp one wool lets you heal")]
+        public float healingHpPerWool = 10f;
 
         [Header("Combat Settings")]
         public float enemyStaggerDuration = 0.5f;
         public float comboPitchIncrement = 100f;
         public float comboMaxHitInterval = 0.5f;
         public float hitFlashDuration = 0.1f;
+        public float knockbackForce = 25f;
+        public float knockBackDuration = 0.1f;
 
         [Header("Minimap Settings")]
         public bool showBasicEnemies = false;
@@ -101,5 +126,16 @@ namespace Kraken
 
         [Header("UI Settings")]
         public bool hideGameCanvasOnPause = false;
+
+        [Header("Music Settings")]
+        public bool useObjectiveMusic = true;
+
+        [Header("Scaling Settings")]
+        [Tooltip("Multiplies a delay, should be < 1")]
+        public float permanentSpawningScaling = 0.8f;
+        [Tooltip("Multiplies a delay, should be < 1")]
+        public float objectiveSpawningScaling = 1f;
+        [Tooltip("Multiplies a value, should be > 1")]
+        public float enemyHealthScaling = 1f;
     }
 }

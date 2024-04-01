@@ -58,6 +58,194 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_UltimateReady" ID="{5A9DA74C-690E-4BBD-A2F1-FBA15B73D3E0}">
+					<ChildrenList>
+						<Action Name="" ID="{B2E70F3F-AC6E-43BA-8055-4B59A7B7B8BE}" ShortID="772930798">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ultimateReady" ID="{0D7F5367-C109-4A6E-BED2-D99893D9FC41}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UltimateTriggered" ID="{05C734AA-4FE2-4AEC-9A46-D5472CC3D081}">
+					<ChildrenList>
+						<Action Name="" ID="{538013E6-0335-44FB-A822-16335BC6711C}" ShortID="168608355">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="FFXIV Limit Break 3" ID="{68685F74-FC6F-4DF0-846E-99A873B605DB}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_ZoneFullCapacity" ID="{0235C9CA-1F9B-42F0-899A-2B9CC62B78D0}">
+					<ChildrenList>
+						<Action Name="" ID="{4BBECF1D-0142-4768-8699-7D45C5C3BC9C}" ShortID="316386636">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="tindeck_1" ID="{AB2A271F-3162-4050-B3E5-4F5B3A493D83}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UltimateNotice" ID="{A81A9236-A414-4DFA-AC68-0348BD56EDFA}">
+					<ChildrenList>
+						<Action Name="" ID="{91215828-13DD-4E92-BF35-7E40E6D51C77}" ShortID="1029814130">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="y2mate_rQlfs1Y" ID="{F1371669-91B2-4EA1-9820-FDE53E67ED8F}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_BossSpawn" ID="{F5629778-F9A1-48CC-8B4E-6FF8B6FE9B66}">
+					<ChildrenList>
+						<Action Name="" ID="{731820DC-E71E-4480-B2F1-F7C96B70F7B7}" ShortID="528663007">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="alarme-factorio" ID="{30CB82B9-35C3-4E7B-B157-EE03DE61B0A3}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_WoolCollected" ID="{A414BF86-6DA7-4CC5-BA14-D281C6AF9329}">
+					<ChildrenList>
+						<Action Name="" ID="{B170046E-FE6F-4E7A-9225-ADE5132EDFB0}" ShortID="295691889">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="xphit" ID="{E3462DE1-23B6-43CF-9232-46F0E246269C}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Healing" ID="{B3D3D271-8D71-4459-B081-2371F99348CF}">
+					<ChildrenList>
+						<Action Name="" ID="{BAD56919-23B3-47AD-9C6B-883FD97173AF}" ShortID="998813752">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="healing-pokemon-sound" ID="{ECE4734B-9395-4040-8F2C-94F572E1F120}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Healing" ID="{EFA9971A-7464-452A-827E-23B52EB8D26F}">
+					<ChildrenList>
+						<Action Name="" ID="{BD674D4C-A769-47D2-AB1B-FBED33FA64E3}" ShortID="975446082">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="healing-pokemon-sound" ID="{ECE4734B-9395-4040-8F2C-94F572E1F120}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_VictoryFanfare" ID="{7915DD0F-40E5-4E5B-842B-40654EB56848}">
+					<ChildrenList>
+						<Action Name="" ID="{22CD4AED-790B-4CE5-AB05-FD1C2BB3A7BA}" ShortID="877826595">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Final Fantasy VII - Victory Fanfare [HD]" ID="{5C77530D-05A3-4935-A168-C5ADE0A167A3}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Defeat" ID="{F4902D7C-5754-474C-80F7-EA79304CB3E2}">
+					<ChildrenList>
+						<Action Name="" ID="{FF120506-D7B4-4C66-8347-B96AAFA27FE8}" ShortID="862729223">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="dark-souls-you-died-sound-effect_hm5sYFG" ID="{4592589D-A9D7-4402-860B-9BB461D01FA8}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Music_General" ID="{28D5667C-FD00-441E-9228-E90D7C6FD3E1}">
+					<ChildrenList>
+						<Action Name="" ID="{656704FB-3F99-4B51-ADF0-12EB3019D613}" ShortID="441133678">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Fight music 1" ID="{47A9DB8D-5E37-40A8-A3C1-CA819EBA26C0}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Music_General" ID="{849E02DE-A992-432A-9E83-B2DBC4461DB4}">
+					<ChildrenList>
+						<Action Name="" ID="{506C76F5-21B3-44D0-ADF8-4FFCDE7D327D}" ShortID="422867537">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Fight music 1" ID="{47A9DB8D-5E37-40A8-A3C1-CA819EBA26C0}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Music_Objective" ID="{F3C87F64-835B-4668-ACFF-872C045E54FE}">
+					<ChildrenList>
+						<Action Name="" ID="{DD26EEA8-10D7-40B6-9B62-AD601CDB2C03}" ShortID="355745651">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Fight music 3" ID="{CDB0389F-244B-480A-BF95-CE748613ACCB}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Music_Objective" ID="{E3DC8836-A530-4258-9F39-59E24D4B2AB3}">
+					<ChildrenList>
+						<Action Name="" ID="{E8269771-6E00-4BAC-B5D1-CD592866CBC0}" ShortID="99724256">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Fight music 3" ID="{CDB0389F-244B-480A-BF95-CE748613ACCB}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Music_Boss" ID="{1D0BAF27-B7AA-4473-85CB-BEF955196F4B}">
+					<ChildrenList>
+						<Action Name="" ID="{0747AC52-AD46-4249-A3CE-339B9B22A8A5}" ShortID="9663330">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Fight music 4 (boss)" ID="{A4C1E092-4583-4914-9BFB-B83E7551E2BF}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Music_Boss" ID="{0436C74E-BEBA-455C-AB1D-497C24FB919C}">
+					<ChildrenList>
+						<Action Name="" ID="{DF313C1E-2728-4F03-9DE4-785842B7508C}" ShortID="904593855">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Fight music 4 (boss)" ID="{A4C1E092-4583-4914-9BFB-B83E7551E2BF}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

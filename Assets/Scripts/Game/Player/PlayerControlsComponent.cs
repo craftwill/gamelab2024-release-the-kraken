@@ -26,6 +26,8 @@ namespace Kraken
         [SerializeField] private Transform _cameraOrientation;
         [SerializeField] private PlayerInput _input;
         [SerializeField] private DuoUltimateComponent _duoUltimateComponent;
+        [SerializeField] private PlayerHealingComponent _healingComponent;
+        [SerializeField] private PlayerTowerInteractComponent _towerInteractComponent;
         [SerializeField] private GameObject _takeDamageComponent;
         [SerializeField] private PauseManager _pauseManager = null;
         private CinemachineFreeLook _freeLookCam;
@@ -38,14 +40,16 @@ namespace Kraken
         private float _movementMagnitude = 0.0f;
         private float _attackMovementSpeed = 0.0f;
         private bool _dashReady = true;
-        private Coroutine _fovChangeCoroutine = null;
+        private Coroutine _resumeSprintCoroutine = null;
 
-        private bool controlsEnabled = true;
+        public bool controlsEnabled { get; private set; } = true;
         private bool cameraControlsEnabled = true;
 
         [SerializeField] private InputActionReference _sprintInput;
         [SerializeField] private InputActionReference _pauseInput;
         [SerializeField] private InputActionReference _duoUltimateInput;
+        [SerializeField] private InputActionReference _healInput;
+        [SerializeField] private InputActionReference _towerInteractInput;
 
         private void Start()
         {
@@ -82,6 +86,10 @@ namespace Kraken
                 _sprintInput.action.canceled += OnSprintCanceled;
                 _pauseInput.action.performed += OnPause;
                 _duoUltimateInput.action.performed += OnDuoUltimate;
+                _healInput.action.performed += OnHeal;
+                _healInput.action.canceled += OnHealReleased;
+                _towerInteractInput.action.performed += OnTowerInteractPressed;
+                _towerInteractInput.action.canceled += OnTowerInteractCanceled;
 
                 GameManager.ToggleCursor(false);
                 EventManager.AddEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
@@ -89,6 +97,11 @@ namespace Kraken
                 EventManager.AddEventListener(EventNames.UpdateCameraSettings, HandleCameraSettingsChanged);
                 EventManager.AddEventListener(EventNames.TogglePause, OnTogglePause);
             }
+            else
+            {
+                _input.enabled = false;
+            }
+    
         }
 
         private void OnDestroy()
@@ -98,7 +111,9 @@ namespace Kraken
             _moveInput.action.performed -= OnMove;
             _moveInput.action.canceled -= OnMove;
             _pauseInput.action.performed -= OnPause;
-            _duoUltimateInput.action.performed += OnDuoUltimate;
+            _duoUltimateInput.action.performed -= OnDuoUltimate;
+            _healInput.action.performed -= OnHeal;
+            _healInput.action.canceled -= OnHealReleased;
 
             EventManager.RemoveEventListener(EventNames.PlayerAttackStart, HandleAttackStart);
             EventManager.RemoveEventListener(EventNames.PlayerAttackEnd, HandleAttackEnd);
@@ -119,7 +134,7 @@ namespace Kraken
                 if (cameraControlsEnabled)
                     ProcessCameraControls();
 
-                if (controlsEnabled)
+                if (controlsEnabled && !_pauseManager.Paused)
                     ProcessControls();
 
                 //Workaround
@@ -135,6 +150,17 @@ namespace Kraken
         {
             Vector3 cameraDirection = transform.position - new Vector3(_camera.transform.position.x, transform.position.y, _camera.transform.position.z);
             _cameraOrientation.forward = cameraDirection.normalized;
+            if (Config.current.changeFovOnSprint)
+            {
+                if (_movementState == MovementState.Sprinting && _movementMagnitude > 0.0f)
+                {
+                    _freeLookCam.m_Lens.FieldOfView = Mathf.Lerp(_freeLookCam.m_Lens.FieldOfView, Config.current.sprintFov, 1 / Config.current.fovChangeDuration);
+                }
+                else
+                {
+                    _freeLookCam.m_Lens.FieldOfView = Mathf.Lerp(_freeLookCam.m_Lens.FieldOfView, Config.current.baseFov, 1 / Config.current.fovChangeDuration);
+                }
+            }
         }
 
         private void ProcessControls() 
@@ -183,7 +209,7 @@ namespace Kraken
 
         public void OnMove(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled) return;
+            if (!controlsEnabled || _pauseManager.Paused) return;
 
             if (_isOwner)
             {
@@ -219,19 +245,13 @@ namespace Kraken
 
         public void OnSprintPerformed(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled) return;
+            if (!controlsEnabled || _pauseManager.Paused) return;
 
             if (_isOwner)
             {
                 _sprintPressed = true;
                 if (_movementState != MovementState.Dashing)
                 {
-                    if (_fovChangeCoroutine != null)
-                    {
-                        StopCoroutine(_fovChangeCoroutine);
-                        _fovChangeCoroutine = null;
-                    }
-                    _fovChangeCoroutine = StartCoroutine(ChangeCameraFOV(Config.current.sprintFov, Config.current.fovChangeDuration));
                     if (_dashReady)
                     {
                         StartCoroutine(DashCoroutine());
@@ -247,7 +267,7 @@ namespace Kraken
 
         public void OnSprintCanceled(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled) return;
+            if (!controlsEnabled || _pauseManager.Paused) return;
 
             if (_isOwner)
             {
@@ -255,12 +275,6 @@ namespace Kraken
                 if (_movementState == MovementState.Sprinting)
                 {
                     _movementState = MovementState.Walking;
-                    if (_fovChangeCoroutine != null)
-                    {
-                        StopCoroutine(_fovChangeCoroutine);
-                        _fovChangeCoroutine = null;
-                    }
-                    _fovChangeCoroutine = StartCoroutine(ChangeCameraFOV(Config.current.baseFov, Config.current.fovChangeDuration));
                 }
             }
         }
@@ -284,21 +298,17 @@ namespace Kraken
 
         public void OnPause(InputAction.CallbackContext value)
         {
-            if (_pauseManager._pauseState != PauseManager.PauseState.PausedByOther)
-            {
-                EventManager.Dispatch(EventNames.TogglePause, null);
-            }
+            EventManager.Dispatch(EventNames.TogglePause, null);
         }
 
         public void OnTogglePause(BytesData data)
         {
-            photonView.RPC(nameof(RPC_All_ToggleCamera), RpcTarget.All);
-        }
-
-        [PunRPC]
-        public void RPC_All_ToggleCamera()
-        {
             _camera.SetActive(!_camera.activeInHierarchy);
+            _moveVec = Vector2.zero;
+            _movementState = MovementState.Walking;
+            bool didAnimStateChange = _playerAnimationComponent.SetLoopedStateIdle();
+            if (didAnimStateChange)
+                photonView.RPC(nameof(RPC_Other_SetLoopAnimState), RpcTarget.Others, "Idle");
         }
 
         public void HandleAttackStart(BytesData data)
@@ -309,6 +319,25 @@ namespace Kraken
 
         public void HandleAttackEnd(BytesData data)
         {
+            if (_sprintPressed)
+            {
+                _movementState = MovementState.Walking;
+                if (_resumeSprintCoroutine != null)
+                {
+                    StopCoroutine(_resumeSprintCoroutine);
+                    _resumeSprintCoroutine = null;
+                }
+                _resumeSprintCoroutine = StartCoroutine(resumeSprintingCoroutine());
+            }
+            else
+            {
+                _movementState = MovementState.Walking;
+            }
+        }
+
+        private IEnumerator resumeSprintingCoroutine()
+        {
+            yield return new WaitForSeconds(Config.current.sprintAfterAttackCooldown);
             if (_sprintPressed)
             {
                 _movementState = MovementState.Sprinting;
@@ -333,34 +362,45 @@ namespace Kraken
             }
         }
 
-        // shamelessly stolen from https://www.reddit.com/r/unity/comments/vzf1od/how_do_i_change_the_field_of_view_in_cinemachine/
-        private IEnumerator ChangeCameraFOV(float endFOV, float duration)
-        {
-            if (Config.current.changeFovOnSprint)
-            {
-                float startFOV = _freeLookCam.m_Lens.FieldOfView;
-                float time = 0;
-                while (time < duration)
-                {
-                    _freeLookCam.m_Lens.FieldOfView = Mathf.Lerp(startFOV, endFOV, time / duration);
-                    yield return null;
-                    time += Time.deltaTime;
-                }
-            }
-        }
-
         public void OnDuoUltimate(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled) return;
+            if (!controlsEnabled || _pauseManager.Paused) return;
 
             _duoUltimateComponent.OnDuoUltimateInput(true);
         }
 
         public void OnDuoUltimateReleased(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled) return;
+            if (!controlsEnabled || _pauseManager.Paused) return;
 
             _duoUltimateComponent.OnDuoUltimateInput(false);
+        }
+
+        public void OnHeal(InputAction.CallbackContext value)
+        {
+            if (!controlsEnabled || _pauseManager.Paused) return;
+
+            _healingComponent.OnHealingInput(true);
+        }
+
+        public void OnHealReleased(InputAction.CallbackContext value)
+        {
+            if (_pauseManager.Paused) return;
+            _healingComponent.OnHealingInput(false);
+        }
+
+        public void OnTowerInteractPressed(InputAction.CallbackContext value)
+        {
+            if (!controlsEnabled || _pauseManager.Paused) return;
+
+            _towerInteractComponent.OnTowerInteractPressed();
+        }
+
+        public void OnTowerInteractCanceled(InputAction.CallbackContext value)
+        {
+            if (_pauseManager.Paused) return;
+
+            _towerInteractComponent.OnTowerInteractCanceled();
         }
 
         public void SetControlsEnabled(bool controlsEnabled)

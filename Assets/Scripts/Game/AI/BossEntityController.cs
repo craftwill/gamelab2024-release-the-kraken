@@ -1,8 +1,9 @@
-using Bytes;
-using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
+
+using Bytes;
+
+using Photon.Pun;
 
 namespace Kraken
 {
@@ -11,7 +12,8 @@ namespace Kraken
         [SerializeField] private RingsOfLightAttack _rolAttack;
         [SerializeField] private StarfallAttack _starfallAttack;
         [SerializeField] private BossAnimationComponent _bossAnim;
-        [SerializeField] private Kraken.Game.HealthComponent _healthComponent;
+        [SerializeField] private Game.HealthComponent _healthComponent;
+        [SerializeField] private BossSoundComponent _soundComponent;
 
         [SerializeField] private StarfallAttackConfig _starfallConfig;
         [SerializeField] private RingsOfLightAttackConfig _rolConfig;
@@ -21,13 +23,14 @@ namespace Kraken
         public override void InitSettings(EnemyConfigSO config)
         {
             base.InitSettings(config);
+            _healthComponent.OnTakeDamage.AddListener(OnTakeDamageListener);
             _healthComponent.OnDie.AddListener(OnDieListener);
         }
 
         protected override void Start()
         {
             base.Start();
-
+            _soundComponent.PlayBossSpawnSound();
             if (!PhotonNetwork.IsMasterClient) return;
         }
 
@@ -65,11 +68,16 @@ namespace Kraken
             }
         }
 
+        private void OnTakeDamageListener(float dmgAmount)
+        {
+            EventManager.Dispatch(EventNames.UpdateBossHealthUI, new FloatDataBytes(_healthComponent.Health / _healthComponent.MaxHealth));
+        }
+
         private void OnDieListener()
         {
             StopAllCoroutines();
-            _rolAttack.gameObject.SetActive(false);
-            _starfallAttack.gameObject.SetActive(false);
+            PhotonNetwork.Destroy(_rolAttack.gameObject);
+            PhotonNetwork.Destroy(_starfallAttack.gameObject);
         }
     }
 

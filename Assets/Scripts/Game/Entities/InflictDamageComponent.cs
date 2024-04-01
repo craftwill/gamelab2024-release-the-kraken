@@ -8,5 +8,6 @@ namespace Kraken
     {
         public EntityClan Damageclan { get; set; } = EntityClan.Ally;
         public float Damage { get; set; } = 1f;
+        public Transform Source = null;
     }
 }

@@ -10,6 +10,11 @@ namespace Kraken
         [SerializeField] private AK.Wwise.Event _sprintSound;
         [SerializeField] private AK.Wwise.Event _hurtSound;
         [SerializeField] private AK.Wwise.Event _ultimateGoOffSound;
+        [SerializeField] private AK.Wwise.Event _ultimateReadySound;
+        [SerializeField] private AK.Wwise.Event _ultimateNoticeSound;
+        [SerializeField] private AK.Wwise.Event _ultimateTriggeredSound;
+        [SerializeField] private AK.Wwise.Event _healingSoundStart;
+        [SerializeField] private AK.Wwise.Event _healingSoundStop;
 
         private void Start()
         {
@@ -42,6 +47,34 @@ namespace Kraken
         public void RPC_All_PlayUltimateGoOffSound()
         {
             _ultimateGoOffSound.Post(gameObject);
+        }
+
+        [PunRPC]
+        public void RPC_All_PlayUltimateReady()
+        {
+            _ultimateReadySound.Post(gameObject);
+        }
+
+        public void PlayUltimateNoticeSound()
+        {
+            _ultimateNoticeSound.Post(gameObject);
+        }
+
+        public void PlayUltimateTriggeredSound()
+        {
+            _ultimateTriggeredSound.Post(gameObject);
+        }
+
+        [PunRPC]
+        public void RPC_All_PlayHealingSound()
+        {
+            _healingSoundStart.Post(gameObject);
+        }
+
+        [PunRPC]
+        public void RPC_All_StopHealingSound()
+        {
+            _healingSoundStop.Post(gameObject);
         }
     }
 }

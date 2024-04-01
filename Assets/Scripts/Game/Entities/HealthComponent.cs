@@ -15,12 +15,14 @@ namespace Kraken.Game
         [field: SerializeField] public float Health { get; private set; } = 10f;
         [field: SerializeField] public float MaxHealth { get; set; } = 10f;
         [field: SerializeField] public bool IsAlive { get; private set; } = true;
+        [field: SerializeField] public bool ScaleHpWithNight { get; private set; } = true;
 
         [Header("Testing")]
         public bool _destroyOnDie;
 
         [Header("Events")]
         public UnityEvent<float> OnTakeDamage;
+        public UnityEvent<float> OnHealed;
         public UnityEvent OnDie;
 
         private DetectDamageComponent[] _detectDmgComps;
@@ -36,6 +38,12 @@ namespace Kraken.Game
 
         private void Start()
         {
+            if (ScaleHpWithNight)
+            {
+                MaxHealth *= Mathf.Pow(Config.current.enemyHealthScaling, PlayerPrefs.GetInt(Config.GAME_NIGHT_KEY, 0));
+                MaxHealth = Mathf.Round(MaxHealth);
+                
+            }
             Health = MaxHealth;
         }
 
@@ -67,6 +75,19 @@ namespace Kraken.Game
                 Health = 0;
                 Die();
             }
+        }
+
+        public void GetHealed(float healAmount)
+        {
+            photonView.RPC(nameof(RPC_MasterGetHealed), RpcTarget.All, healAmount);
+        }
+
+        [PunRPC]
+        private void RPC_MasterGetHealed(float healAmount)
+        {
+            OnHealed.Invoke(healAmount);
+            if (!IsAlive) return;
+            Health = Mathf.Clamp(Health + healAmount, 0, MaxHealth);
         }
 
         private void Die()

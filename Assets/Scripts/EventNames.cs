@@ -39,6 +39,9 @@ namespace Kraken
         public const string StopObjectives = "StopObjectives";
         public const string ZoneFullLoss = "ZoneFullLoss";
         public const string MinibossCountChange = "MinibossDeath";
+        public const string BossSpawned = "BossSpawned";
+        public const string PlayerEnteredObjective = "PlayerEnteredObjective";
+        public const string PlayerLeftObjective = "PlayerLeftObjective";
 
         // Spawning
         public const string StartSpawning = "StartSpawning";
@@ -52,8 +55,12 @@ namespace Kraken
         public const string ShowVictoryScreenUI = "ShowVictoryScreenUI";
         public const string ShowDefeatScreenUI = "ShowDefeatScreenUI";
         public const string UpdateUltimateUI = "UpdateUltimateUI";
-        public const string UpdateHealthUI = "UpdateHealthUI";
+        public const string UpdatePlayerHealthUI = "UpdateHealthUI";
+        public const string UpdateOtherPlayerHealthUI = "UpdateOtherPlayerHealthUI";
+        public const string UpdateBossHealthUI = "UpdateBossHealthUI";
         public const string UpdateCurrentZoneOccupancyUI = "UpdateCurrentZoneOccupancyUI";
+        public const string ShowReinforcementHintUI = "ShowReinforcementHintUI";
+        public const string StartAbilityCooldown = "StartAbilityCooldown";
 
         //Game Events
         public const string TogglePause = "TogglePause";

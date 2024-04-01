@@ -11,7 +11,8 @@ using Photon.Pun;
 using TMPro;
 
 using Bytes;
-
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Kraken
 {
@@ -33,11 +34,20 @@ namespace Kraken
 
         private void Start()
         {
+            // Reset night count to 0
+            if (PlayerPrefs.HasKey(Config.GAME_NIGHT_KEY))
+            {
+                PlayerPrefs.SetInt(Config.GAME_NIGHT_KEY, 0);
+            }
+
             if (Config.current.isSkipMainMenu)
             {
                 Btn_OnStartGame();
             }
             _currentControllerPositionIndex = 1;
+
+            //creates the file or resets it on a new game
+            File.WriteAllText(TowerManager.GetFilePath(), JsonConvert.SerializeObject(new Dictionary<int, int>()));
 
             PhotonNetwork.LocalPlayer.SetCustomProperties(new ExitGames.Client.Photon.Hashtable
             {
@@ -127,7 +137,8 @@ namespace Kraken
         {
             if (AreAllPlayersReady() && PhotonNetwork.IsMasterClient)
             {
-                photonView.RPC(nameof(RPC_Master_OpenGameScene), RpcTarget.MasterClient);
+                _btnStart.interactable = false;
+                JoinGameScene();
             }
         }
 

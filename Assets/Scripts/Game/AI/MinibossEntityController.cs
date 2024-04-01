@@ -1,8 +1,10 @@
-using Bytes;
-using Photon.Pun;
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+using Photon.Pun;
+
+using Bytes;
 
 namespace Kraken
 {
@@ -11,7 +13,7 @@ namespace Kraken
         [SerializeField] private ConeTelegraph _coneTelegraph;
         [SerializeField] private InflictDamageComponent _inflictDamageComponent;//could probably avoid using this component
         [SerializeField] private MinibossAnimationComponent _animComponent;
-        [SerializeField] private Kraken.Game.HealthComponent _healthComponent;
+        [SerializeField] private Game.HealthComponent _healthComponent;
         [SerializeField] private MinibossAttackAdditionalConfig _attackConfig;
 
         private Coroutine _drawCoroutine = null;
@@ -26,6 +28,7 @@ namespace Kraken
             base.InitSettings(config);
             _inflictDamageComponent.Damage = config.damageDealt;
             _cooldown = config.attackCooldown;
+            _healthComponent.OnTakeDamage.AddListener(OnTakeDamageListener);
             _healthComponent.OnDie.AddListener(OnDieListener); 
         }
 
@@ -53,6 +56,7 @@ namespace Kraken
             {
                 if (_drawCoroutine is null)
                 {
+                    transform.LookAt(_target.position, Vector3.up);
                     _canPathfind = false;
                     _isOnCooldown = true;
                     photonView.RPC(nameof(RPC_ALL_StartConeTelegraph), RpcTarget.All);
@@ -98,10 +102,16 @@ namespace Kraken
             return _canPathfind;
         }
 
+        private void OnTakeDamageListener(float dmgAmount)
+        {
+            Debug.Log("OnTakeDamageListener miniboss");
+            EventManager.Dispatch(EventNames.UpdateBossHealthUI, new FloatDataBytes(_healthComponent.Health / _healthComponent.MaxHealth));
+        }
+
         private void OnDieListener()
         {
             StopAllCoroutines();
-            _coneTelegraph.gameObject.SetActive(false);
+            PhotonNetwork.Destroy(_coneTelegraph.gameObject);
         }
     }
 

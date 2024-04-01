@@ -188,6 +188,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff15319430b96847a38864208b37882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5394453928790256752 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5510866118124797234, guid: c767677ecb1762942a114712b6d1e354,
+    type: 3}
+  m_PrefabInstance: {fileID: 479198835140235586}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6558336477556455670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 211ba3d75f0fd364e8f0f377c736f524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6211199275726532057 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5806521009423482011, guid: c767677ecb1762942a114712b6d1e354,
@@ -224,6 +236,8 @@ MonoBehaviour:
     type: 3}
   _abilityPrefab: {fileID: 1911473875266983035, guid: 6d71a596deda610449ab94767950ac9f,
     type: 3}
+  _controlsComponent: {fileID: 5394453928790256752}
+  _pauseManager: {fileID: 0}
   _verticalOffset: -0.45
 --- !u!1001 &485436688897154879
 PrefabInstance:

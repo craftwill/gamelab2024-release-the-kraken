@@ -8,13 +8,14 @@ namespace Kraken
 {
     public class LilWoolManager : KrakenNetworkedManager
     {
-        private int _woolQuantity = 0;
+        public int _woolQuantity { get; private set; } = 0;
         private void Start()
         {
             if (!_isMaster) return;
 
+            _woolQuantity = Config.current.initialWoolQuantity;
+
             EventManager.AddEventListener(EventNames.GainWool, GainWool);
-            _woolQuantity = 0;
         }
 
         private void OnDestroy()
