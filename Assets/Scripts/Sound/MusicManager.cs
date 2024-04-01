@@ -16,6 +16,7 @@ namespace Kraken
         [SerializeField] private AK.Wwise.Event _playObjectiveMusic;
         [SerializeField] private AK.Wwise.Event _stopObjectiveMusic;
         private MusicState _state = MusicState.General;
+        private bool _inGame = false;
         private int _playersInZone = 0;
 
         private void Start()
@@ -49,11 +50,13 @@ namespace Kraken
         {
             photonView.RPC(nameof(RPC_All_PlayGeneralMusic), RpcTarget.All);
             _state = MusicState.General;
+            _inGame = true;
         }
 
         private void HandleStopGameflow(BytesData data)
         {
             StopAllMusic();
+            _inGame = false;
         }
 
         private void HandleBossSpawned(BytesData data)
@@ -66,7 +69,7 @@ namespace Kraken
         private void HandlePlayerEnteredZone(BytesData data)
         {
             _playersInZone++;
-            if (_state == MusicState.Boss || _state == MusicState.Objective || !Config.current.useObjectiveMusic) return;
+            if (_state == MusicState.Boss || _state == MusicState.Objective || !Config.current.useObjectiveMusic || !_inGame) return;
             StopAllMusic();
             photonView.RPC(nameof(RPC_All_PlayObjectiveMusic), RpcTarget.All);
             _state = MusicState.Objective;
@@ -75,7 +78,7 @@ namespace Kraken
         private void HandlePlayerLeftZone(BytesData data)
         {
             _playersInZone = Mathf.Clamp(_playersInZone - 1, 0, _playersInZone);
-            if (_state == MusicState.Boss || _state == MusicState.General || !Config.current.useObjectiveMusic) return;
+            if (_state == MusicState.Boss || _state == MusicState.General || !Config.current.useObjectiveMusic || !_inGame) return;
             if (_playersInZone > 0) return;
             StopAllMusic();
             photonView.RPC(nameof(RPC_All_PlayGeneralMusic), RpcTarget.All);

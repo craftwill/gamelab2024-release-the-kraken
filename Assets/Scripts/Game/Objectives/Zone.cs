@@ -23,17 +23,16 @@ namespace Kraken
         private void OnTriggerEnter(Collider other)
         {
             if (!PhotonNetwork.IsMasterClient) return;
-
-            if (_isActiveZone)
+            var player = other.GetComponent<PlayerEntity>();
+            if (player is not null)
             {
-                // Objective music
-                var player = other.GetComponent<PlayerEntity>();
-                if (player is not null)
+                _playerCount++;
+                if (_isActiveZone)
                 {
-                    _playerCount++;
                     EventManager.Dispatch(EventNames.PlayerEnteredObjective, null);
                 }
             }
+            
 
             //This trigger is on a gameobject with ZoneOccupancy Layer
             var ezc = other.GetComponent<EnemyZoneComponent>();
@@ -50,17 +49,18 @@ namespace Kraken
         private void OnTriggerExit(Collider other)
         {
             if (!PhotonNetwork.IsMasterClient) return;
-            
-            if (_isActiveZone)
+
+            var player = other.GetComponent<PlayerEntity>();
+            if (player is not null)
             {
-                // Objective music
-                var player = other.GetComponent<PlayerEntity>();
-                if (player is not null)
+                _playerCount--;
+                if (_isActiveZone)
                 {
-                    _playerCount--;
                     EventManager.Dispatch(EventNames.PlayerLeftObjective, null);
                 }
             }
+
+            
 
             //This trigger is on a gameobject with ZoneOccupancy Layer
             var ezc = other.GetComponent<EnemyZoneComponent>();
@@ -119,6 +119,7 @@ namespace Kraken
         public void SetIsActiveZone(bool isActiveZone) 
         {
             _isActiveZone = isActiveZone;
+            Debug.Log("Player count: " + _playerCount);
             if (_playerCount > 0)
             {
                 if (isActiveZone)
