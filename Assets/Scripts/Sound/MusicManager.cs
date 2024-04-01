@@ -8,13 +8,14 @@ namespace Kraken
 {
     public class MusicManager : MonoBehaviourPun
     {
+        enum MusicState { General, Objective, Boss};
         [SerializeField] private AK.Wwise.Event _playGeneralMusic;
         [SerializeField] private AK.Wwise.Event _stopGeneralMusic;
         [SerializeField] private AK.Wwise.Event _playBossMusic;
         [SerializeField] private AK.Wwise.Event _stopBossMusic;
         [SerializeField] private AK.Wwise.Event _playObjectiveMusic;
         [SerializeField] private AK.Wwise.Event _stopObjectiveMusic;
-        private bool _playingBossMusic = false;
+        private MusicState _state = MusicState.General;
 
         private void Start()
         {
@@ -46,7 +47,7 @@ namespace Kraken
         private void HandleStartGameflow(BytesData data)
         {
             photonView.RPC(nameof(RPC_All_PlayGeneralMusic), RpcTarget.All);
-            _playingBossMusic = false;
+            _state = MusicState.General;
         }
 
         private void HandleStopGameflow(BytesData data)
@@ -58,21 +59,23 @@ namespace Kraken
         {
             StopAllMusic();
             photonView.RPC(nameof(RPC_All_PlayBossMusic), RpcTarget.All);
-            _playingBossMusic = true;
+            _state = MusicState.Boss;
         }
 
         private void HandlePlayerEnteredZone(BytesData data)
         {
-            if (_playingBossMusic || !Config.current.useObjectiveMusic) return;
+            if (_state == MusicState.Boss || _state == MusicState.Objective || !Config.current.useObjectiveMusic) return;
             StopAllMusic();
             photonView.RPC(nameof(RPC_All_PlayObjectiveMusic), RpcTarget.All);
+            _state = MusicState.Objective;
         }
 
         private void HandlePlayerLeftZone(BytesData data)
         {
-            if (_playingBossMusic || !Config.current.useObjectiveMusic) return;
+            if (_state == MusicState.Boss || _state == MusicState.General || !Config.current.useObjectiveMusic) return;
             StopAllMusic();
             photonView.RPC(nameof(RPC_All_PlayGeneralMusic), RpcTarget.All);
+            _state = MusicState.General;
         }
 
         [PunRPC]
