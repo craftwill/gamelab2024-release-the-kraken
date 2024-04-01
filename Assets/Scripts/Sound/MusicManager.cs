@@ -74,7 +74,7 @@ namespace Kraken
 
         private void HandlePlayerLeftZone(BytesData data)
         {
-            _playersInZone--;
+            _playersInZone = Mathf.Clamp(_playersInZone - 1, 0, _playersInZone);
             if (_state == MusicState.Boss || _state == MusicState.General || !Config.current.useObjectiveMusic) return;
             if (_playersInZone > 0) return;
             StopAllMusic();
