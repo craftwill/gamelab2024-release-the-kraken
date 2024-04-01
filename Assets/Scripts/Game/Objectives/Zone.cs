@@ -119,7 +119,6 @@ namespace Kraken
         public void SetIsActiveZone(bool isActiveZone) 
         {
             _isActiveZone = isActiveZone;
-            Debug.Log("Player count: " + _playerCount);
             if (_playerCount > 0)
             {
                 if (isActiveZone)

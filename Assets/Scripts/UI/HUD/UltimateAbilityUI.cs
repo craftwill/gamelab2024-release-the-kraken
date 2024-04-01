@@ -30,7 +30,6 @@ namespace Kraken.UI
 
         private void SetWoolGaugeCount(int woolAmount) 
         {
-            print("woolAmount: " + woolAmount + " / " + Config.current.maxWoolQuantity);
             float fillAmount = (float)woolAmount / Config.current.maxWoolQuantity;
             _imgWoolGauge.fillAmount = fillAmount;
         }
