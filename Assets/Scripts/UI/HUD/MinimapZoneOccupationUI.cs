@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,8 +12,14 @@ namespace Kraken
         [SerializeField] private TextMeshProUGUI _percentage;
         [SerializeField] private SpriteRenderer _spriteRenderer;
         [SerializeField] private Sprite[] _sprites;
+        [SerializeField] private MMF_Player _feedbackPlayer;
         [SerializeField] private OccupancySoundComponent _soundComponent;
         private bool _isOverloaded = false;
+
+        private void Start()
+        {
+            _feedbackPlayer.Initialization();
+        }
 
         public void SetOccupation(int enemyCount, int maxEnemyCount)
         {
@@ -40,6 +47,15 @@ namespace Kraken
                         break;
                     }
                 }
+            }
+
+            if (enemyCount > maxEnemyCount)
+            {
+                _feedbackPlayer.PlayFeedbacks();
+            }
+            else
+            {
+                _feedbackPlayer.StopFeedbacks();
             }
         }
     }
