@@ -34,7 +34,6 @@ namespace Kraken
             {
                 for (int i = 0; i < _sprites.Length; i++)
                 {
-                    Debug.Log((1.0f / _sprites.Length) * (i + 1));
                     if (percentage < (1.0f/_sprites.Length) * (i+1))
                     {
                         _spriteRenderer.sprite = _sprites[i];
