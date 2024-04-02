@@ -9,6 +9,8 @@ namespace Kraken
     public class MinimapZoneOccupationUI : MonoBehaviourPun
     {
         [SerializeField] private TextMeshProUGUI _percentage;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
+        [SerializeField] private Sprite[] _sprites;
         [SerializeField] private OccupancySoundComponent _soundComponent;
         private bool _isOverloaded = false;
 
@@ -23,21 +25,22 @@ namespace Kraken
         [PunRPC]
         private void RPC_All_UpdateDisplay(int enemyCount, int maxEnemyCount)
         {
-            int percentageInt = (int)Mathf.Round(((float)enemyCount / maxEnemyCount) * 100);
-            _percentage.text = percentageInt.ToString() + "%";
-            if (enemyCount > maxEnemyCount)
+            float percentage = ((float)enemyCount / maxEnemyCount);
+            if (enemyCount == 0)
             {
-                if (!_isOverloaded)
-                {
-                    _soundComponent.PlayFullCapacitySound();
-                }
-                _percentage.color = Color.red;
-                _isOverloaded = true;
+                _spriteRenderer.sprite = null;
             }
             else
             {
-                _percentage.color = Color.black;
-                _isOverloaded = false;
+                for (int i = 0; i < _sprites.Length; i++)
+                {
+                    Debug.Log((1.0f / _sprites.Length) * (i + 1));
+                    if (percentage < (1.0f/_sprites.Length) * (i+1))
+                    {
+                        _spriteRenderer.sprite = _sprites[i];
+                        break;
+                    }
+                }
             }
         }
     }

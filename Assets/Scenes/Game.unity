@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2265.4358, g: 1781.9065, b: 1673.4221, a: 1}
+  m_IndirectSpecularColor: {r: 2259.8635, g: 1773.9924, b: 1661.0725, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2381,7 +2381,7 @@ PrefabInstance:
     - target: {fileID: 421534654617120881, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10.9
+      value: -66.79
       objectReference: {fileID: 0}
     - target: {fileID: 421534654617120881, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
@@ -2397,6 +2397,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763962351606350559, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8903322455385216682, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
@@ -17796,7 +17801,7 @@ PrefabInstance:
     - target: {fileID: 421534654617120881, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10.900002
+      value: -66.79001
       objectReference: {fileID: 0}
     - target: {fileID: 421534654617120881, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
@@ -17812,6 +17817,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763962351606350559, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8903322455385216682, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
@@ -21551,7 +21561,7 @@ PrefabInstance:
     - target: {fileID: 421534654617120881, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10.900002
+      value: -66.79001
       objectReference: {fileID: 0}
     - target: {fileID: 421534654617120881, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
@@ -21567,6 +21577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763962351606350559, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8903322455385216682, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
@@ -46924,7 +46939,7 @@ PrefabInstance:
     - target: {fileID: 421534654617120881, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10.900002
+      value: -66.79001
       objectReference: {fileID: 0}
     - target: {fileID: 421534654617120881, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
@@ -46940,6 +46955,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763962351606350559, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8903322455385216682, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
@@ -51160,7 +51180,7 @@ PrefabInstance:
     - target: {fileID: 421534654617120881, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10.900002
+      value: -66.79001
       objectReference: {fileID: 0}
     - target: {fileID: 421534654617120881, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
@@ -51176,6 +51196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763962351606350559, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8903322455385216682, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
