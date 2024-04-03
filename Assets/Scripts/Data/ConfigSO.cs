@@ -110,6 +110,7 @@ namespace Kraken
 
         [Header("Minimap Settings")]
         public bool showBasicEnemies = false;
+        public float zoneFullAlertSoundCooldown = 1f;
 
         [Header("LilWool Settings")]
         public float minWoolVerticalVelocity = 1f;

@@ -6,7 +6,7 @@ namespace Kraken
 {
     public class MinimapAlwaysFaceNorthComponent : MonoBehaviour
     {
-        [SerializeField] Vector3 direction = Vector3.down;
+        [SerializeField] private Vector3 direction = Vector3.down;
         private void Update()
         {
             transform.rotation = Quaternion.LookRotation(direction);

@@ -16,7 +16,8 @@ namespace Kraken
         [SerializeField] private OccupancySoundComponent _soundComponent;
         [SerializeField] private SpriteRenderer _highlight;
         private bool _isOverloaded = false;
-        Color highlightColor;
+        private bool _isAlertOnCooldown = false;
+        private Color highlightColor;
 
         private void Start()
         {
@@ -54,15 +55,29 @@ namespace Kraken
             if (enemyCount > maxEnemyCount)
             {
                 _feedbackPlayer.PlayFeedbacks();
+                if (!_isOverloaded && !_isAlertOnCooldown)
+                {
+                    _soundComponent.PlayFullCapacitySound();
+                    StartCoroutine(AlertSoundCooldown());
+                }
+                _isOverloaded = true;
             }
             else
             {
                 _feedbackPlayer.StopFeedbacks();
+                _isOverloaded = false;
             }
 
             highlightColor = _highlight.color;
             highlightColor.a = Mathf.Clamp(percentage,0f,1f);
             _highlight.color = highlightColor;
+        }
+
+        private IEnumerator AlertSoundCooldown()
+        {
+            _isAlertOnCooldown = true;
+            yield return new WaitForSeconds(Config.current.zoneFullAlertSoundCooldown);
+            _isAlertOnCooldown = false;
         }
     }
 }
