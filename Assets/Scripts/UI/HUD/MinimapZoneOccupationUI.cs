@@ -14,7 +14,9 @@ namespace Kraken
         [SerializeField] private Sprite[] _sprites;
         [SerializeField] private MMF_Player _feedbackPlayer;
         [SerializeField] private OccupancySoundComponent _soundComponent;
+        [SerializeField] private SpriteRenderer _highlight;
         private bool _isOverloaded = false;
+        Color highlightColor;
 
         private void Start()
         {
@@ -57,6 +59,10 @@ namespace Kraken
             {
                 _feedbackPlayer.StopFeedbacks();
             }
+
+            highlightColor = _highlight.color;
+            highlightColor.a = Mathf.Clamp(percentage,0f,1f);
+            _highlight.color = highlightColor;
         }
     }
 }

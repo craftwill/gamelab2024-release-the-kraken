@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2259.8635, g: 1773.9924, b: 1661.0725, a: 1}
+  m_IndirectSpecularColor: {r: 2259.848, g: 1773.9495, b: 1661.0569, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2398,6 +2398,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1705625437656872714, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
+        type: 3}
+      propertyPath: _highlight
+      value: 
+      objectReference: {fileID: 590410432}
     - target: {fileID: 3763962351606350559, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -3357,7 +3362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d30be309d536a42837ebf7ce146538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _border: {fileID: 2069836449}
+  _border: {fileID: 0}
 --- !u!1 &111385750
 GameObject:
   m_ObjectHideFlags: 0
@@ -5210,7 +5215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &159440049
 Transform:
   m_ObjectHideFlags: 0
@@ -5268,7 +5273,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7ed031e8d1e01c24cbb746a45bc9a378, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12347,7 +12352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &477384475
 Transform:
   m_ObjectHideFlags: 0
@@ -12405,7 +12410,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 60135254, guid: de304d549d7f91449a0f2a5995b812ae, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16742,7 +16747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &590410431
 Transform:
   m_ObjectHideFlags: 0
@@ -16800,7 +16805,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 973079348, guid: de304d549d7f91449a0f2a5995b812ae, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -17818,6 +17823,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1705625437656872714, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
+        type: 3}
+      propertyPath: _highlight
+      value: 
+      objectReference: {fileID: 477384476}
     - target: {fileID: 3763962351606350559, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -21578,6 +21588,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1705625437656872714, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
+        type: 3}
+      propertyPath: _highlight
+      value: 
+      objectReference: {fileID: 2069836451}
     - target: {fileID: 3763962351606350559, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -30489,7 +30504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d30be309d536a42837ebf7ce146538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _border: {fileID: 477384474}
+  _border: {fileID: 0}
 --- !u!1 &1069249362
 GameObject:
   m_ObjectHideFlags: 0
@@ -46956,6 +46971,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1705625437656872714, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
+        type: 3}
+      propertyPath: _highlight
+      value: 
+      objectReference: {fileID: 159440050}
     - target: {fileID: 3763962351606350559, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -50036,7 +50056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d30be309d536a42837ebf7ce146538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _border: {fileID: 590410430}
+  _border: {fileID: 0}
 --- !u!114 &1719548309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51197,6 +51217,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1705625437656872714, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
+        type: 3}
+      propertyPath: _highlight
+      value: 
+      objectReference: {fileID: 2040545760}
     - target: {fileID: 3763962351606350559, guid: 3acb7c5ddf5e4234eb637aae4b1e0356,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -55083,7 +55108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d30be309d536a42837ebf7ce146538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _border: {fileID: 2040545758}
+  _border: {fileID: 0}
 --- !u!1 &1906230551
 GameObject:
   m_ObjectHideFlags: 0
@@ -58115,7 +58140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2040545759
 Transform:
   m_ObjectHideFlags: 0
@@ -58173,7 +58198,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1935746643, guid: de304d549d7f91449a0f2a5995b812ae, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -58507,7 +58532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d30be309d536a42837ebf7ce146538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _border: {fileID: 159440048}
+  _border: {fileID: 0}
 --- !u!1 &2056660526
 GameObject:
   m_ObjectHideFlags: 0
@@ -58671,7 +58696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2069836450
 Transform:
   m_ObjectHideFlags: 0
@@ -58729,7 +58754,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -666893930, guid: de304d549d7f91449a0f2a5995b812ae, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
