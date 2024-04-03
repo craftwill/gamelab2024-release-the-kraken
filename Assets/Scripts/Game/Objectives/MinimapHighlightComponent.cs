@@ -17,7 +17,10 @@ namespace Kraken
         [PunRPC]
         private void RPC_All_SetHighlightVisible(bool visible)
         {
-            _border.SetActive(visible);
+            if (_border != null)
+            {
+                _border.SetActive(visible);
+            }
         }
     }
 
