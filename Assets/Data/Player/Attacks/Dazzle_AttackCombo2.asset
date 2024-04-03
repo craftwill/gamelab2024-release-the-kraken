@@ -18,7 +18,7 @@ MonoBehaviour:
     type: 3}
   timeBeforeHitboxDuration: 0.12
   hitboxDuration: 0.15
-  attackLockLength: 0.1
+  attackLockLength: 0.2
   animDoneBufferTimer: 0.6
   damage: 1
   comboStep: 2
