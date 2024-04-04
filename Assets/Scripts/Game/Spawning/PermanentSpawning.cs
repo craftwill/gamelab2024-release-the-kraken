@@ -24,7 +24,7 @@ namespace Kraken
 
             _zones = FindObjectsByType<Zone>(FindObjectsSortMode.None);
 
-            if (_zones is not null) System.Array.ForEach(_zones, x => _zoneSpawnPoints.AddRange(x.GetSpawner().GetSpawnPoints()));
+            if (_zones is not null) System.Array.ForEach(_zones, x => _zoneSpawnPoints.AddRange(x.GetSpawner().SpawnPoints));
 
             EventManager.AddEventListener(EventNames.StartSpawning, HandleStartSpawning);
             EventManager.AddEventListener(EventNames.StopSpawning, HandleStopSpawning);
@@ -35,6 +35,8 @@ namespace Kraken
 
         private void OnDestroy()
         {
+            if (!PhotonNetwork.IsMasterClient) return;
+
             EventManager.RemoveEventListener(EventNames.StartSpawning, HandleStartSpawning);
             EventManager.RemoveEventListener(EventNames.StopSpawning, HandleStopSpawning);
         }

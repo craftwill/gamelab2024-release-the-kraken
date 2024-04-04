@@ -55,7 +55,7 @@ namespace Together
         private void Start()
         {
             cvGroup = GetComponent<CanvasGroup>();
-
+            GameManager.ToggleCursor(true);
             // If already connected, allows menu interaction
             if (PhotonNetwork.IsConnected)
             {
