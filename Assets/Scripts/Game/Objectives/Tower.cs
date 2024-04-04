@@ -17,7 +17,7 @@ namespace Kraken
             Active = 2
         }
 
-        public int Id { get; set; }
+        [SerializeField] private int _id;
         [SerializeField] private GameObject _waitingPrefab;
         [SerializeField] private GameObject _towerPrefab;
 
@@ -91,9 +91,9 @@ namespace Kraken
                 NetworkUtils.Instantiate(_towerPrefab.name, transform.position, transform.rotation);
             }
 
-            if(!TowerManager.Instance.TowerData.TryAdd(Id, (int)_towerState))
+            if(!TowerManager.Instance.TowerData.TryAdd(_id, (int)_towerState))
             {
-                TowerManager.Instance.TowerData[Id] = (int)_towerState;
+                TowerManager.Instance.TowerData[_id] = (int)_towerState;
             }
             TowerManager.Instance.WriteFile();
         }
@@ -101,6 +101,11 @@ namespace Kraken
         public TowerState GetTowerState()
         {
             return _towerState;
+        }
+
+        public int GetId()
+        {
+            return _id;
         }
     }
 }
