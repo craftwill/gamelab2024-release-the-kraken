@@ -17,6 +17,7 @@ namespace Kraken
         [SerializeField] private PlayerControlsComponent _controlsComponent;
         [SerializeField] private PauseManager _pauseManager = null;
         [SerializeField] private float _verticalOffset = -0.25f;
+        private bool _ultimateRunning = false;
 
         private float _jumpDuration = 0.27f;
         private float _jumpDistance = 7f;
@@ -32,6 +33,7 @@ namespace Kraken
             {
                 _pauseManager = Object.FindObjectOfType<PauseManager>(); //temp but i don't wanna lock the game scene
             }
+            EventManager.AddEventListener(EventNames.UltimateRunning, HandleUltimateRunning);
         }
 
         private void Awake()
@@ -42,11 +44,12 @@ namespace Kraken
         private void OnDestroy()
         {
             _castAbilityInput.action.performed -= OnCastAbility;
+            EventManager.RemoveEventListener(EventNames.UltimateRunning, HandleUltimateRunning);
         }
 
         public void OnCastAbility(InputAction.CallbackContext value)
         {
-            if (!_controlsComponent.controlsEnabled || _pauseManager.Paused) return;
+            if (!_controlsComponent.controlsEnabled || _pauseManager.Paused || _ultimateRunning) return;
             CastAbility();
         }
 
@@ -103,6 +106,11 @@ namespace Kraken
                 _playerEntity.SetControlsEnabled(true);
                 transform.position = endPos;
             }, timeScaled_: true);
+        }
+
+        private void HandleUltimateRunning(BytesData data)
+        {
+            _ultimateRunning = ((BoolDataBytes)data).BoolValue;
         }
     }
 }
