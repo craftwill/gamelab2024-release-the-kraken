@@ -305,7 +305,7 @@ namespace Kraken
                 damage = (int) Mathf.Lerp(Config.current.ultimateMinDamage, Config.current.ultimateDamage, playerDistance / Config.current.ultimateMinDamageDistance);
             }
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            HealthComponent enemyHealthComponent;
+            EnemyEntity enemyEntity;
             int enemiesAffected = 0;
             Vector2 enemyPos2d = Vector2.zero;
             foreach (GameObject enemy in enemies)
@@ -315,10 +315,18 @@ namespace Kraken
                 if (IsEnemyInPolygon(positions, enemyPos2d))
                 {
                     enemiesAffected++;
-                    enemyHealthComponent = enemy.GetComponent<HealthComponent>();
-                    if (enemyHealthComponent != null)
+                    enemyEntity = enemy.GetComponent<EnemyEntity>();
+                    if (enemyEntity != null)
                     {
-                        enemyHealthComponent.TakeDamage(damage);
+                        if (enemyEntity is BossEntity)
+                        {
+                            ((BossEntity)enemyEntity).TakeUltimateDamage(damage);
+                        }
+                        else
+                        {
+                            enemyEntity.TakeDamage(damage);
+                        }
+                        
                     }
                 }
             }

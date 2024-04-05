@@ -129,11 +129,6 @@ namespace Kraken
             rg.isKinematic = true;
         }
 
-        public void TakeDamage(float dmgAmount)
-        {
-            _healthComponent.TakeDamage(dmgAmount);
-        }
-
         public Kraken.Game.HealthComponent GetHealthComponent()
         {
             return _healthComponent;
