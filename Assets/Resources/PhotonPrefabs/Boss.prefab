@@ -392,6 +392,7 @@ PrefabInstance:
     - {fileID: 6807864403598660797, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     - {fileID: 7010872933795953625, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     - {fileID: 6273920595487294825, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
+    - {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6904248142507945207, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     m_AddedGameObjects:
@@ -408,6 +409,10 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2848042123418667516}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3106089648525901737, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 3034569319508693757}
     - targetCorrespondingSourceObject: {fileID: 3106089648525901737, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       insertIndex: 2
@@ -427,6 +432,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4747030220377589486}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1208869458439557963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5847381557580223909, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+    type: 3}
+  m_PrefabInstance: {fileID: 4747030220377589486}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2057188062411797758 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6731842890158060048, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+    type: 3}
+  m_PrefabInstance: {fileID: 4747030220377589486}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e1cdcf0148b4446913931f05611f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &3419599846057638423 stripped
 NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 7968008091505032441, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
@@ -445,16 +468,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5592c53961416c489a7b7d5606087d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7321243370245587170 stripped
+--- !u!114 &4703944767403444054 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+  m_CorrespondingSourceObject: {fileID: 47026122244047288, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
     type: 3}
   m_PrefabInstance: {fileID: 4747030220377589486}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7708995712779942215}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e0f31c64a009cd48a76e0493edefb8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 02b608d3957cb6a45a5afecb9cc717e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &7492163626080287376 stripped
@@ -469,6 +492,31 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4747030220377589486}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3034569319508693757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7708995712779942215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fdde24c8ca9d3641902cd17562e9184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _entityAnimationComponent: {fileID: 6957891619024676904}
+  _healthComponent: {fileID: 3539384387315477434}
+  <EntityClan>k__BackingField: 1
+  _config: {fileID: 11400000, guid: 4d969c2c79c71e04bb5998530d493c58, type: 2}
+  _attackComponent: {fileID: 0}
+  _entityController: {fileID: 7503936983532037170}
+  _enemyZoneComponent: {fileID: 2057188062411797758}
+  _pathfindingEntityController: {fileID: 7503936983532037170}
+  _soundComponent: {fileID: 4703944767403444054}
+  _minimapIcon: {fileID: 1208869458439557963}
+  _woolPrefab: {fileID: 5281229062787241931, guid: a7e2e3f5a7a656a44805d0841a9704b9,
+    type: 3}
+  _woolDropped: 1
 --- !u!114 &7503936983532037170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3905b7c82fa7fbf4b901f81fa89f0078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ownerEntity: {fileID: 7321243370245587170}
+  _ownerEntity: {fileID: 3034569319508693757}
   _entityAnimationComponent: {fileID: 6957891619024676904}
   _navMeshAgent: {fileID: 3419599846057638423}
   _rolAttack: {fileID: 3590300219914515738}
