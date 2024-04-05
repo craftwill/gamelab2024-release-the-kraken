@@ -6,7 +6,7 @@ namespace Kraken
 {
     public class InflictDamageComponent : MonoBehaviour
     {
-        public EntityClan Damageclan { get; set; } = EntityClan.Ally;
+        public EntityClan Damageclan = EntityClan.Ally;
         public float Damage { get; set; } = 1f;
         public Transform Source = null;
     }

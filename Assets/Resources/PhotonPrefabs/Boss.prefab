@@ -369,13 +369,19 @@ PrefabInstance:
     - target: {fileID: 7943204919484701936, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7943204919484701936, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8455128632293184963, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -306407545, guid: 38de52d65b2014d4aa1182dab38227f1,
+        type: 3}
     - target: {fileID: 8581956803195504288, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: sceneViewId
@@ -385,6 +391,7 @@ PrefabInstance:
     - {fileID: 4623548838470204180, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     - {fileID: 6807864403598660797, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     - {fileID: 7010872933795953625, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
+    - {fileID: 6273920595487294825, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6904248142507945207, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     m_AddedGameObjects:

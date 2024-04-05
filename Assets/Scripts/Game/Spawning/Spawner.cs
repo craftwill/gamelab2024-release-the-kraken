@@ -7,22 +7,27 @@ namespace Kraken
 {
     public class Spawner : MonoBehaviour
     {
-        private List<Transform> spawnPoints;
-
-        private void Start()
+        private List<Transform> _spawnPoints;
+        public List<Transform> SpawnPoints
         {
-            spawnPoints = GetComponentsInChildren<Transform>().Where(x => x.CompareTag("SpawnPoint")).ToList();
+            get
+            {
+                if(_spawnPoints is null)
+                {
+                    _spawnPoints = GetComponentsInChildren<Transform>().Where(x => x.CompareTag("SpawnPoint")).ToList();
+                }
+                return _spawnPoints;
+            }
+            private set
+            {
+                _spawnPoints = value;
+            }
         }
 
         public Vector3 GetRandomPosition()
         {
-            if (spawnPoints.Count == 0) return Vector3.zero;
-            return spawnPoints[Random.Range(0, spawnPoints.Count)].position;
-        }
-
-        public List<Transform> GetSpawnPoints()
-        {
-            return spawnPoints;
+            if (SpawnPoints.Count == 0) return Vector3.zero;
+            return SpawnPoints[Random.Range(0, SpawnPoints.Count)].position;
         }
     }
 }

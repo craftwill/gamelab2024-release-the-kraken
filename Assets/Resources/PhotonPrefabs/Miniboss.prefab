@@ -418,18 +418,24 @@ PrefabInstance:
     - target: {fileID: 7943204919484701936, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7943204919484701936, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7968008091505032441, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: m_AngularSpeed
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 8455128632293184963, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1180037426, guid: 38de52d65b2014d4aa1182dab38227f1,
+        type: 3}
     - target: {fileID: 8581956803195504288, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: sceneViewId

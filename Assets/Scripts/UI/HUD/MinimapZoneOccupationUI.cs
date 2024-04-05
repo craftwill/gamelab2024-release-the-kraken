@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,8 +10,19 @@ namespace Kraken
     public class MinimapZoneOccupationUI : MonoBehaviourPun
     {
         [SerializeField] private TextMeshProUGUI _percentage;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
+        [SerializeField] private Sprite[] _sprites;
+        [SerializeField] private MMF_Player _feedbackPlayer;
         [SerializeField] private OccupancySoundComponent _soundComponent;
+        [SerializeField] private SpriteRenderer _highlight;
         private bool _isOverloaded = false;
+        private bool _isAlertOnCooldown = false;
+        private Color highlightColor;
+
+        private void Start()
+        {
+            _feedbackPlayer.Initialization();
+        }
 
         public void SetOccupation(int enemyCount, int maxEnemyCount)
         {
@@ -23,22 +35,49 @@ namespace Kraken
         [PunRPC]
         private void RPC_All_UpdateDisplay(int enemyCount, int maxEnemyCount)
         {
-            int percentageInt = (int)Mathf.Round(((float)enemyCount / maxEnemyCount) * 100);
-            _percentage.text = percentageInt.ToString() + "%";
+            float percentage = ((float)enemyCount / maxEnemyCount);
+            if (enemyCount == 0)
+            {
+                _spriteRenderer.sprite = null;
+            }
+            else
+            {
+                for (int i = 0; i < _sprites.Length; i++)
+                {
+                    if (percentage < (1.0f/_sprites.Length) * (i+1))
+                    {
+                        _spriteRenderer.sprite = _sprites[i];
+                        break;
+                    }
+                }
+            }
+
             if (enemyCount > maxEnemyCount)
             {
-                if (!_isOverloaded)
+                _feedbackPlayer.PlayFeedbacks();
+                if (!_isOverloaded && !_isAlertOnCooldown)
                 {
                     _soundComponent.PlayFullCapacitySound();
+                    StartCoroutine(AlertSoundCooldown());
                 }
-                _percentage.color = Color.red;
                 _isOverloaded = true;
             }
             else
             {
-                _percentage.color = Color.black;
+                _feedbackPlayer.StopFeedbacks();
                 _isOverloaded = false;
             }
+
+            highlightColor = _highlight.color;
+            highlightColor.a = Mathf.Clamp(percentage,0f,1f);
+            _highlight.color = highlightColor;
+        }
+
+        private IEnumerator AlertSoundCooldown()
+        {
+            _isAlertOnCooldown = true;
+            yield return new WaitForSeconds(Config.current.zoneFullAlertSoundCooldown);
+            _isAlertOnCooldown = false;
         }
     }
 }
