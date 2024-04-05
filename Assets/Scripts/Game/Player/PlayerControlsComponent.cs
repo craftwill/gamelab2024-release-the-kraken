@@ -44,6 +44,7 @@ namespace Kraken
 
         public bool controlsEnabled { get; private set; } = true;
         private bool cameraControlsEnabled = true;
+        private bool _ultimateRunning = false;
 
         [SerializeField] private InputActionReference _sprintInput;
         [SerializeField] private InputActionReference _pauseInput;
@@ -96,6 +97,7 @@ namespace Kraken
                 EventManager.AddEventListener(EventNames.PlayerAttackEnd, HandleAttackEnd);
                 EventManager.AddEventListener(EventNames.UpdateCameraSettings, HandleCameraSettingsChanged);
                 EventManager.AddEventListener(EventNames.TogglePause, OnTogglePause);
+                EventManager.AddEventListener(EventNames.UltimateRunning, HandleUltimateRunning);
             }
             else
             {
@@ -119,6 +121,7 @@ namespace Kraken
             EventManager.RemoveEventListener(EventNames.PlayerAttackEnd, HandleAttackEnd);
             EventManager.RemoveEventListener(EventNames.UpdateCameraSettings, HandleCameraSettingsChanged);
             EventManager.RemoveEventListener(EventNames.TogglePause, OnTogglePause);
+            EventManager.RemoveEventListener(EventNames.UltimateRunning, HandleUltimateRunning);
         }
 
         private void Update()
@@ -378,7 +381,7 @@ namespace Kraken
 
         public void OnHeal(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled || _pauseManager.Paused) return;
+            if (!controlsEnabled || _pauseManager.Paused || _ultimateRunning) return;
 
             _healingComponent.OnHealingInput(true);
         }
@@ -391,7 +394,7 @@ namespace Kraken
 
         public void OnTowerInteractPressed(InputAction.CallbackContext value)
         {
-            if (!controlsEnabled || _pauseManager.Paused) return;
+            if (!controlsEnabled || _pauseManager.Paused || _ultimateRunning) return;
 
             _towerInteractComponent.OnTowerInteractPressed();
         }
@@ -435,6 +438,11 @@ namespace Kraken
             _freeLookCam.m_XAxis.m_InvertInput = Config.current.invertXAxis;
             _freeLookCam.m_YAxis.m_InvertInput = Config.current.invertYAxis;
             _freeLookCam.m_Lens.FieldOfView = Config.current.baseFov;
+        }
+
+        private void HandleUltimateRunning(BytesData data)
+        {
+            _ultimateRunning = ((BoolDataBytes)data).BoolValue;
         }
     }
 }
