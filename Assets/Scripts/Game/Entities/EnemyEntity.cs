@@ -81,7 +81,7 @@ namespace Kraken
 
         // send flying enemy with physics when it dies
         [PunRPC]
-        private void RPC_All_Die() 
+        protected void RPC_All_Die() 
         {
             if(_pathfindingEntityController is BasicEntityController)
             {
@@ -99,6 +99,10 @@ namespace Kraken
             }
             else if (PhotonNetwork.IsMasterClient)
             {
+                if(this is BossEntity)
+                {
+                    Debug.Log("here");
+                }
                 PhotonNetwork.Destroy(photonView);
                 return;
             }
