@@ -14,6 +14,7 @@ namespace Kraken
         private void Start()
         {
             AkSoundEngine.RegisterGameObj(gameObject);
+            AkSoundEngine.StopAll(gameObject);
         }
 
         private void OnDestroy()
