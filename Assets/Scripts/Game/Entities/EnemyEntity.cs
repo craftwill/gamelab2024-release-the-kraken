@@ -104,10 +104,6 @@ namespace Kraken
             }
             else if (PhotonNetwork.IsMasterClient)
             {
-                if(this is BossEntity)
-                {
-                    Debug.Log("here");
-                }
                 PhotonNetwork.Destroy(photonView);
                 return;
             }
