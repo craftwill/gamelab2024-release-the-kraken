@@ -42,6 +42,11 @@ namespace Kraken
             EventManager.RemoveEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
         }
 
+        public virtual void TakeUltimateDamage(float dmgAmount)
+        {
+            base.TakeDamage(dmgAmount);
+        }
+
         protected virtual void HandleStopGameFlow(BytesData data) 
         {
             _entityController.enabled = false;

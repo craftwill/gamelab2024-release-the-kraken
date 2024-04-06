@@ -17,10 +17,5 @@ namespace Kraken
                 base.TakeDamage(dmgAmount);
             }
         }
-        public void TakeUltimateDamage(float dmgAmount)
-        {
-            _healthComponent.TakeDamage(dmgAmount);
-        }
-        
     }
 }

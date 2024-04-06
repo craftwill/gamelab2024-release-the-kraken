@@ -318,15 +318,7 @@ namespace Kraken
                     enemyEntity = enemy.GetComponent<EnemyEntity>();
                     if (enemyEntity != null)
                     {
-                        if (enemyEntity is BossEntity)
-                        {
-                            ((BossEntity)enemyEntity).TakeUltimateDamage(damage);
-                        }
-                        else
-                        {
-                            enemyEntity.TakeDamage(damage);
-                        }
-                        
+                        enemyEntity.TakeUltimateDamage(damage);
                     }
                 }
             }
