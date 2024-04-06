@@ -6,9 +6,14 @@ using Bytes;
 
 namespace Kraken.UI
 {
-    public class PlayerUIComponent : KrakenUIElement
+    public interface IPlayerUIComponent
     {
-        [Header("KrakenInputButtonUI")]
+        void Init(bool isRazzle, bool isKeyboard);
+        void SetIsGreyedOut(bool isGreyedOut);
+    }
+    public class PlayerUIComponent : KrakenUIElement, IPlayerUIComponent
+    {
+        [Header("PlayerUIComponent")]
         [SerializeField] protected Image _imgUsed;
         [SerializeField] protected Image _imgUsedBackground;
         [SerializeField] protected Image _imgControl;
@@ -24,16 +29,16 @@ namespace Kraken.UI
         [SerializeField] protected Sprite[] _controlSprites;
 
         protected bool _isGreyedOut;
-        protected int spriteIndexUsed;
-        protected int controlSpriteIndexUsed;
+        protected int _spriteIndexUsed;
+        protected int _controlSpriteIndexUsed;
 
         public void Init(bool isRazzle, bool isKeyboard)
         {
-            spriteIndexUsed = isRazzle ? 0 : 1;
-            controlSpriteIndexUsed = isKeyboard ? 0 : 1;
-            _imgUsed.sprite = _iconSprites[spriteIndexUsed];
-            _imgUsedBackground.sprite = _iconSprites[spriteIndexUsed];
-            _imgControl.sprite = _controlSprites[controlSpriteIndexUsed];
+            _spriteIndexUsed = isRazzle ? 0 : 1;
+            _controlSpriteIndexUsed = isKeyboard ? 0 : 1;
+            _imgUsed.sprite = _iconSprites[_spriteIndexUsed];
+            _imgUsedBackground.sprite = _iconSprites[_spriteIndexUsed];
+            _imgControl.sprite = _controlSprites[_controlSpriteIndexUsed];
         }
 
         public void SetIsGreyedOut(bool isGreyedOut) 
@@ -41,13 +46,13 @@ namespace Kraken.UI
             _isGreyedOut = isGreyedOut;
             if (_isGreyedOut)
             {
-                _imgUsed.sprite = _greyedOutIconSprites[spriteIndexUsed];
-                _imgUsedBackground.sprite = _greyedOutIconSprites[spriteIndexUsed];
+                _imgUsed.sprite = _greyedOutIconSprites[_spriteIndexUsed];
+                _imgUsedBackground.sprite = _greyedOutIconSprites[_spriteIndexUsed];
             }
             else
             {
-                _imgUsed.sprite = _iconSprites[spriteIndexUsed];
-                _imgUsedBackground.sprite = _iconSprites[spriteIndexUsed];
+                _imgUsed.sprite = _iconSprites[_spriteIndexUsed];
+                _imgUsedBackground.sprite = _iconSprites[_spriteIndexUsed];
             }
         }
     }

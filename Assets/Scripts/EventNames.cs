@@ -55,12 +55,16 @@ namespace Kraken
         public const string UpdateGameTimerUI = "UpdateGameTimerUI";
         public const string ShowVictoryScreenUI = "ShowVictoryScreenUI";
         public const string ShowDefeatScreenUI = "ShowDefeatScreenUI";
-        public const string UpdateUltimateUI = "UpdateUltimateUI";
-        public const string UpdatePlayerHealthUI = "UpdateHealthUI";
-        public const string UpdateOtherPlayerHealthUI = "UpdateOtherPlayerHealthUI";
         public const string UpdateBossHealthUI = "UpdateBossHealthUI";
         public const string UpdateCurrentZoneOccupancyUI = "UpdateCurrentZoneOccupancyUI";
         public const string ShowReinforcementHintUI = "ShowReinforcementHintUI";
+
+        // Player Profile HUD events
+        public const string UpdatePlayerHealthUI = "UpdateHealthUI";
+        public const string UpdateOtherPlayerHealthUI = "UpdateOtherPlayerHealthUI";
+
+        // Player Abilities HUD events
+        public const string UpdateUltimateUI = "UpdateUltimateUI";
         public const string StartAbilityCooldown = "StartAbilityCooldown";
 
         //Game Events

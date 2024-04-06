@@ -9,10 +9,12 @@ namespace Kraken.UI
     {
         // All UI components with state that changes depending on player and control schema
         private PlayerUIComponent[] _playerUIComponents;
+        private PlayerProfileUI _playerProfileUI;
 
         private void Awake()
         {
             _playerUIComponents = GetComponentsInChildren<PlayerUIComponent>();
+            _playerProfileUI = GetComponentInChildren<PlayerProfileUI>();
 
             EventManager.AddEventListener(EventNames.SetupHUD, HandleSetupHUD);
         }
@@ -30,6 +32,8 @@ namespace Kraken.UI
             {
                 comp.Init(setupData.IsRazzle, setupData.IsKeyboard);
             }
+
+            _playerProfileUI.Init(setupData.IsRazzle);
         }
     }
 }
