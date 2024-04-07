@@ -175,11 +175,13 @@ namespace Kraken
             _state = UltimateState.InUltimate;
             StartCoroutine(UltimateMinimumTimer());
             if (_players.Length != 2) _players = GameObject.FindGameObjectsWithTag("Player");
-            _players[0].transform.GetComponentInChildren<TrailRenderer>().AddPosition(_players[1].transform.position);
             foreach (GameObject player in _players)
             {
+                player.transform.GetComponentInChildren<TrailRenderer>().Clear();
                 player.transform.GetComponentInChildren<TrailRenderer>().emitting = true;
             }
+            _players[0].transform.GetComponentInChildren<TrailRenderer>().AddPosition(_players[1].transform.position);
+
         }
 
         IEnumerator UltimateCooldown()
