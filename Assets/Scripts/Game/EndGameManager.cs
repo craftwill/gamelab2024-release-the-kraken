@@ -69,8 +69,7 @@ namespace Kraken
                 photonView.RPC(nameof(RPC_All_EndGame), RpcTarget.All, false, (int)EndGameType.TimerOut);
             }
 
-            //Config.current.gameDuration
-            Animate timeLeftAnim = Animate.Delay(20f, GameTimerDoneCallback, true);
+            Animate timeLeftAnim = Animate.Delay(Config.current.gameDuration, GameTimerDoneCallback, true);
             // Send the timer Animate object to the UI to update it dynamically.
             EventManager.Dispatch(EventNames.InitTimeLeftUI, new ObjectDataBytes(timeLeftAnim));
         }
