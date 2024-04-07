@@ -127,6 +127,7 @@ namespace Kraken
 
         [Header("UI Settings")]
         public bool hideGameCanvasOnPause = false;
+        public float timeLeftUIProgressShowWarningTreshold = 0.6f;
 
         [Header("Music Settings")]
         public bool useObjectiveMusic = true;

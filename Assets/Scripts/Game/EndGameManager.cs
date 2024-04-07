@@ -69,7 +69,8 @@ namespace Kraken
                 photonView.RPC(nameof(RPC_All_EndGame), RpcTarget.All, false, (int)EndGameType.TimerOut);
             }
 
-            Animate timeLeftAnim = Animate.Delay(Config.current.gameDuration, GameTimerDoneCallback, true);
+            //Config.current.gameDuration
+            Animate timeLeftAnim = Animate.Delay(20f, GameTimerDoneCallback, true);
             // Send the timer Animate object to the UI to update it dynamically.
             EventManager.Dispatch(EventNames.InitTimeLeftUI, new ObjectDataBytes(timeLeftAnim));
         }
@@ -99,6 +100,13 @@ namespace Kraken
             {
                 EventManager.Dispatch(EventNames.ShowDefeatScreenUI, null);
                 _soundComponent.PlayDefeatSound();
+            }
+
+            switch (endGameType) 
+            {
+                case EndGameType.TimerOut:
+                    EventManager.Dispatch(EventNames.ShowDefeatTimeLeftUI, null);
+                    break;
             }
 
             GameManager.ToggleCursor(true);
