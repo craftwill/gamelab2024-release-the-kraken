@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Kraken.UI
 {
-    public class AnimatedHealthBarUI : KrakenUIElement
+    public abstract class AnimatedHealthBarUI : KrakenUIElement
     {
         [SerializeField] protected Image _imgFilling;
         [SerializeField] protected Image _imgFillingWhite;
