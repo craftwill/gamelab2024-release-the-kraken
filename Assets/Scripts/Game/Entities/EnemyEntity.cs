@@ -20,6 +20,7 @@ namespace Kraken
         [SerializeField] private GameObject _minimapIcon;
         [SerializeField] private GameObject _woolPrefab;
         [SerializeField] private int _woolDropped = 1;
+        [SerializeField] LayerMask _zoneOccupancyLayer;
 
         protected override void Awake()
         {
@@ -79,7 +80,7 @@ namespace Kraken
 
                 //remove colliders to not interfere with ontriggerexit
                 var colliders = GetComponentsInChildren<Collider>();
-                System.Array.ForEach(colliders, x => x.enabled = false);
+                System.Array.ForEach(colliders, x => { if (((1 << x.gameObject.layer) & _zoneOccupancyLayer) != 0) x.enabled = false; });
                 photonView.RPC(nameof(RPC_All_SpawnWool), RpcTarget.All);
             }
         }
