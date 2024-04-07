@@ -268,6 +268,8 @@ MonoBehaviour:
   _minimapIcon: {fileID: 5847381557580223909}
   _woolPrefab: {fileID: 5281229062787241931, guid: a7e2e3f5a7a656a44805d0841a9704b9,
     type: 3}
+  _smokePoofPrefab: {fileID: 5596100735769626616, guid: 3efb572bba23efa49b00e27ef47a37cd,
+    type: 3}
   _woolDropped: 1
   _zoneOccupancyLayer:
     serializedVersion: 2

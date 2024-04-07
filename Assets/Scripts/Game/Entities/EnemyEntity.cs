@@ -6,6 +6,7 @@ using Photon.Pun;
 
 using Bytes;
 using Kraken.Network;
+using System.Collections;
 
 namespace Kraken
 {
@@ -19,6 +20,7 @@ namespace Kraken
         [SerializeField] private EnemySoundComponent _soundComponent;
         [SerializeField] private GameObject _minimapIcon;
         [SerializeField] private GameObject _woolPrefab;
+        [SerializeField] private GameObject _smokePoofPrefab;
         [SerializeField] private int _woolDropped = 1;
         [SerializeField] LayerMask _zoneOccupancyLayer;
 
@@ -41,6 +43,7 @@ namespace Kraken
         protected override void OnDestroy()
         {
             EventManager.RemoveEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
+            Instantiate(_smokePoofPrefab, transform.position, Quaternion.identity);
         }
 
         public virtual void TakeUltimateDamage(float dmgAmount)
