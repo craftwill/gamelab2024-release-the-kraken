@@ -43,6 +43,7 @@ namespace Kraken
         protected override void OnDestroy()
         {
             EventManager.RemoveEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
+            if (!gameObject.scene.isLoaded) return;
             Instantiate(_smokePoofPrefab, transform.position, Quaternion.identity);
         }
 
