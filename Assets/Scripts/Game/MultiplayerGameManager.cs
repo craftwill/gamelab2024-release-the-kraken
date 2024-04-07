@@ -1,12 +1,13 @@
-using Kraken.Network;
+
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
 using Photon.Pun;
 using Photon.Realtime;
-using UnityEngine;
 
 using Bytes;
-using UnityEngine.SceneManagement;
-using static UnityEngine.Rendering.DebugUI;
-using UnityEngine.InputSystem;
+
+using Kraken.Network;
 
 namespace Kraken
 {
