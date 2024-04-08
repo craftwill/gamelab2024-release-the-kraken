@@ -25,17 +25,6 @@ namespace Kraken.Game
         public UnityEvent<float> OnHealed;
         public UnityEvent OnDie;
 
-        private DetectDamageComponent[] _detectDmgComps;
-
-        private void Awake()
-        {
-            _detectDmgComps = GetComponentsInChildren<DetectDamageComponent>();
-            foreach (var detectDmgComp in _detectDmgComps)
-            {
-                detectDmgComp.OnDetectDamage.AddListener(TakeDamage);
-            }
-        }
-
         private void Start()
         {
             if (ScaleHpWithNight)
@@ -45,14 +34,6 @@ namespace Kraken.Game
                 
             }
             Health = MaxHealth;
-        }
-
-        private void OnDestroy()
-        {
-            foreach (var detectDmgComp in _detectDmgComps)
-            {
-                detectDmgComp.OnDetectDamage.RemoveListener(TakeDamage);
-            }
         }
 
         public void TakeDamage(float dmgAmount) 
@@ -92,9 +73,9 @@ namespace Kraken.Game
 
         private void Die()
         {
-            if (!PhotonNetwork.IsMasterClient) return;
-
             IsAlive = false;
+            if (!PhotonNetwork.IsMasterClient) return;
+            
             OnDie.Invoke();
 
             if (_destroyOnDie)

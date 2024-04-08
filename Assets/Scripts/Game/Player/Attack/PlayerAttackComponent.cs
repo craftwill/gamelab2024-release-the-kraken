@@ -19,6 +19,7 @@ namespace Kraken
         private bool _isFreeToAttack = true;
         private AttackSO _currentAttack;
         private bool _controlsEnabled = true;
+        private bool _ultimateRunning = false;
         private bool _inProgress;
         private List<GameObject> _colliders = new List<GameObject>();
 
@@ -43,6 +44,7 @@ namespace Kraken
                 _pauseManager = Object.FindObjectOfType<PauseManager>(); //temp but i don't wanna lock the game scene
             }
             }
+            EventManager.AddEventListener(EventNames.UltimateRunning, HandleUltimateRunning);
         }
 
         private void OnDestroy()
@@ -51,6 +53,7 @@ namespace Kraken
             {
                 _attackInput.action.performed -= AttackPressed;
             }
+            EventManager.RemoveEventListener(EventNames.UltimateRunning, HandleUltimateRunning);
         }
 
         public void SetAttacksControlsEnabled(bool controlsEnabled)
@@ -63,7 +66,7 @@ namespace Kraken
 
         private void AttackPressed(InputAction.CallbackContext callback)
         {
-            if (!_controlsEnabled || _pauseManager.Paused) return;
+            if (!_controlsEnabled || _pauseManager.Paused || _ultimateRunning) return;
 
             if (_isFreeToAttack)
             {
@@ -120,6 +123,11 @@ namespace Kraken
         {
             yield return new WaitForSeconds(attack.animDoneBufferTimer);
             _inProgress = false;
+        }
+
+        private void HandleUltimateRunning(BytesData data)
+        {
+            _ultimateRunning = ((BoolDataBytes)data).BoolValue;
         }
     }
 }

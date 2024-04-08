@@ -42,6 +42,11 @@ namespace Kraken
             EventManager.RemoveEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
         }
 
+        public virtual void TakeUltimateDamage(float dmgAmount)
+        {
+            base.TakeDamage(dmgAmount);
+        }
+
         protected virtual void HandleStopGameFlow(BytesData data) 
         {
             _entityController.enabled = false;
@@ -81,7 +86,7 @@ namespace Kraken
 
         // send flying enemy with physics when it dies
         [PunRPC]
-        private void RPC_All_Die() 
+        protected void RPC_All_Die() 
         {
             if(_pathfindingEntityController is BasicEntityController)
             {
@@ -127,11 +132,6 @@ namespace Kraken
             GetComponent<SphereCollider>().isTrigger = true;
             Rigidbody rg = GetComponent<Rigidbody>();
             rg.isKinematic = true;
-        }
-
-        public void TakeDamage(float dmgAmount)
-        {
-            _healthComponent.TakeDamage(dmgAmount);
         }
 
         public Kraken.Game.HealthComponent GetHealthComponent()

@@ -740,6 +740,9 @@ MonoBehaviour:
   _controlsComponent: {fileID: 5394453928790256752}
   _pauseManager: {fileID: 0}
   _verticalOffset: -0.45
+  _wallLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &7033687099916908371 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7438497340087592465, guid: c767677ecb1762942a114712b6d1e354,

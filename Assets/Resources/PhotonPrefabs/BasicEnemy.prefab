@@ -592,7 +592,7 @@ MonoBehaviour:
         MutualizePools: 0
         ParentTransform: {fileID: 0}
         CachedRecycle: 1
-        ParticlesPrefab: {fileID: 8503542271123345878, guid: 9bcd8881f2d4c2d4da8864b15955fc7d,
+        ParticlesPrefab: {fileID: 8304199518257575393, guid: 9bcd8881f2d4c2d4da8864b15955fc7d,
           type: 3}
         RandomParticlePrefabs: []
         ForceSetActiveOnPlay: 0
@@ -781,6 +781,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fbb695d39ea3cc49a8b4e371da4cc45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damageclan: 0
+  Source: {fileID: 0}
 --- !u!23 &7482529136683517816
 MeshRenderer:
   m_ObjectHideFlags: 0

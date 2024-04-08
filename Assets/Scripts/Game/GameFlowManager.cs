@@ -11,6 +11,8 @@ namespace Kraken
     {
         private void Start()
         {
+            //Stop sounds on scene load
+            AkSoundEngine.StopAll();
             //scuffed
             CombatUtils.ResetGetPlayer();
             if (!_isMaster) return;

@@ -100,6 +100,17 @@ namespace Kraken
 
             Vector3 spawnPos = transform.position + transform.forward;
             BaseProjectile projectile = NetworkUtils.Instantiate(_rangedProjectile.name, spawnPos).GetComponent<BaseProjectile>();
+            StartCoroutine(DeleteProjectile(2f, projectile));
+
+            IEnumerator DeleteProjectile(float delay, BaseProjectile p)
+            {
+                yield return new WaitForSeconds(delay);
+                if(p && p.gameObject)
+                {
+                    PhotonNetwork.Destroy(p.gameObject);
+                }
+            }
+
             Vector3 sendDirection = (targetPosition - transform.position).normalized;
 
             // This send() calls a RPC_All behind the scene

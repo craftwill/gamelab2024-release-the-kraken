@@ -47,7 +47,7 @@ namespace Kraken
 
                 for(int i = 0; i < _towers.Count; ++i)
                 {
-                    if (TowerData.TryGetValue(_towers[i].Id, out int val))
+                    if (TowerData.TryGetValue(_towers[i].GetId(), out int val))
                     {
                         if (val == (int)Tower.TowerState.Waiting)
                         {
