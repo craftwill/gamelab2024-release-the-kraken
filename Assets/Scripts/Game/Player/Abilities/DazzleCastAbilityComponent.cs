@@ -94,7 +94,6 @@ namespace Kraken
                 middlePos = wallHit.point;
                 middlePos.y = height;
                 ray = new Ray(middlePos, Vector3.down);
-                Debug.DrawRay(middlePos, Vector3.down * 10000f, Color.red, 100f);
                 if (Physics.Raycast(ray, out var hit2, 10000f, groundLayerMask))
                 {
                     endPos = hit2.point;
