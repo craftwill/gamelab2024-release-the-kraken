@@ -99,7 +99,7 @@ namespace Kraken
             PlayAttackAnim();
 
             Vector3 spawnPos = transform.position + transform.forward;
-            BaseProjectile projectile = NetworkUtils.Instantiate(_rangedProjectile.name, spawnPos).GetComponent<BaseProjectile>();
+            BaseProjectile projectile = NetworkUtils.Instantiate(_rangedProjectile.name, spawnPos, transform.rotation).GetComponent<BaseProjectile>();
             StartCoroutine(DeleteProjectile(2f, projectile));
 
             IEnumerator DeleteProjectile(float delay, BaseProjectile p)
