@@ -217,6 +217,20 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
+                    "m_Id": "c6fab04ed3c145c6bf54979278ddee76"
+                },
+                "m_SlotId": 3
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "332479459b304ad1af635e22bb553840"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
                     "m_Id": "d771724bcb184b5d99994988af1d6a31"
                 },
                 "m_SlotId": 0
@@ -252,20 +266,6 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "f7155e1664cc41bab92fe1e3a7fcec8a"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "f7155e1664cc41bab92fe1e3a7fcec8a"
-                },
-                "m_SlotId": 2
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "332479459b304ad1af635e22bb553840"
                 },
                 "m_SlotId": 0
             }
@@ -319,7 +319,7 @@
     "m_FragmentContext": {
         "m_Position": {
             "x": 0.0,
-            "y": 200.0
+            "y": 216.0
         },
         "m_Blocks": [
             {
@@ -369,10 +369,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -842.6087646484375,
-            "y": -39.99999237060547,
-            "width": 0.0,
-            "height": 0.0
+            "x": -578.0,
+            "y": 151.00001525878907,
+            "width": 100.0,
+            "height": 33.999969482421878
         }
     },
     "m_Slots": [
@@ -905,9 +905,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -842.0,
-            "y": 356.9999694824219,
-            "width": 124.00006103515625,
+            "x": -837.0000610351563,
+            "y": 405.0,
+            "width": 124.0,
             "height": 34.000030517578128
         }
     },
@@ -1080,9 +1080,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -654.9999389648438,
-            "y": 269.0,
-            "width": 225.99996948242188,
+            "x": -657.0000610351563,
+            "y": 317.0,
+            "width": 226.0,
             "height": 186.0
         }
     },
@@ -1178,7 +1178,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "772f164eaa0c447182d0960794277417",
     "m_Id": 0,
-    "m_DisplayName": "Sprite",
+    "m_DisplayName": "Main Texture",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -1568,10 +1568,10 @@
         "m_Expanded": false,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -386.0,
-            "y": 274.0,
-            "width": 172.0,
-            "height": 118.0
+            "x": -381.0000305175781,
+            "y": 294.0,
+            "width": 172.00003051757813,
+            "height": 117.0
         }
     },
     "m_Slots": [
@@ -1675,13 +1675,13 @@
     },
     "m_Name": "Branch",
     "m_DrawState": {
-        "m_Expanded": false,
+        "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -397.0,
-            "y": -81.0,
-            "width": 207.99998474121095,
-            "height": 326.0
+            "x": -380.9999694824219,
+            "y": 144.0,
+            "width": 171.99996948242188,
+            "height": 142.0
         }
     },
     "m_Slots": [
