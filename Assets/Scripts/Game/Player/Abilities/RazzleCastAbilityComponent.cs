@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 using Kraken.Network;
+using Bytes;
 
 namespace Kraken
 {
@@ -14,6 +15,7 @@ namespace Kraken
         [SerializeField] private GameObject _abilityPrefab;
         [SerializeField] private float _verticalOffset = -0.35f;
         private float _spawnDistanceOffset = 5f;
+        private bool _ultimateRunning = false;
 
         private void Start()
         {
@@ -23,6 +25,7 @@ namespace Kraken
             {
                 _pauseManager = Object.FindObjectOfType<PauseManager>(); //temp but i don't wanna lock the game scene
             }
+            EventManager.AddEventListener(EventNames.UltimateRunning, HandleUltimateRunning);
         }
 
         private void Awake()
@@ -33,11 +36,12 @@ namespace Kraken
         private void OnDestroy()
         {
             _castAbilityInput.action.performed -= OnCastAbility;
+            EventManager.RemoveEventListener(EventNames.UltimateRunning, HandleUltimateRunning);
         }
 
         public void OnCastAbility(InputAction.CallbackContext value)
         {
-            if (!_controlsComponent.controlsEnabled || _pauseManager.Paused) return;
+            if (!_controlsComponent.controlsEnabled || _pauseManager.Paused || _ultimateRunning) return;
             CastAbility();
         }
 
@@ -53,6 +57,11 @@ namespace Kraken
 
             RazzlePullAbility pullAbility = ability.GetComponent<RazzlePullAbility>();
             pullAbility.ActivateAbility();
+        }
+
+        private void HandleUltimateRunning(BytesData data)
+        {
+            _ultimateRunning = ((BoolDataBytes)data).BoolValue;
         }
     }
 }

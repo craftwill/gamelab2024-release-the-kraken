@@ -17,7 +17,7 @@ namespace Kraken
     {
         [SerializeField] protected EntityAnimationComponent _entityAnimationComponent;
         [SerializeField] protected HealthComponent _healthComponent;
-
+        private DetectDamageComponent[] _detectDmgComps;
         [field: SerializeField] public EntityClan EntityClan { get; private set; } = EntityClan.Hostile;
 
         protected PlayerEntity[] _playerEntitiesList;
@@ -29,6 +29,17 @@ namespace Kraken
             _healthComponent.OnDie.AddListener(HandleDie);
 
             _playerEntitiesList = FindObjectsOfType<PlayerEntity>();
+
+            _detectDmgComps = GetComponentsInChildren<Kraken.Game.DetectDamageComponent>();
+            foreach (var detectDmgComp in _detectDmgComps)
+            {
+                detectDmgComp.OnDetectDamage.AddListener(TakeDamage);
+            }
+        }
+
+        public virtual void TakeDamage(float dmgAmount)
+        {
+            _healthComponent.TakeDamage(dmgAmount);
         }
 
         protected virtual void HandleTakeDamage(float dmgAmount)
@@ -51,6 +62,11 @@ namespace Kraken
             _healthComponent.OnTakeDamage.RemoveAllListeners();
             _healthComponent.OnHealed.RemoveAllListeners();
             _healthComponent.OnDie.RemoveAllListeners();
+
+            foreach (var detectDmgComp in _detectDmgComps)
+            {
+                detectDmgComp.OnDetectDamage.RemoveListener(TakeDamage);
+            }
         }
 
         public virtual (PlayerEntity, float) GetClosestPlayer()

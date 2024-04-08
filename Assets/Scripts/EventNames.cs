@@ -48,18 +48,25 @@ namespace Kraken
         public const string StopSpawning = "StopSpawning";
 
         // UI events
+        public const string SetupHUD = "SetupHUD";
+        public const string InitTimeLeftUI = "InitTimeLeftUI";
+        public const string ShowDefeatTimeLeftUI = "ShowDefeatTimeLeftUI";
         public const string UpdateCountownTimerUI = "UpdateCountownTimerUI";
         public const string UpdateObjectiveUI = "UpdateObjectiveUI";
         public const string UpdateObjectiveTimerUI = "UpdateObjectiveTimerUI";
         public const string UpdateGameTimerUI = "UpdateGameTimerUI";
         public const string ShowVictoryScreenUI = "ShowVictoryScreenUI";
         public const string ShowDefeatScreenUI = "ShowDefeatScreenUI";
-        public const string UpdateUltimateUI = "UpdateUltimateUI";
-        public const string UpdatePlayerHealthUI = "UpdateHealthUI";
-        public const string UpdateOtherPlayerHealthUI = "UpdateOtherPlayerHealthUI";
         public const string UpdateBossHealthUI = "UpdateBossHealthUI";
         public const string UpdateCurrentZoneOccupancyUI = "UpdateCurrentZoneOccupancyUI";
         public const string ShowReinforcementHintUI = "ShowReinforcementHintUI";
+
+        // Player Profile HUD events
+        public const string UpdatePlayerHealthUI = "UpdateHealthUI";
+        public const string UpdateOtherPlayerHealthUI = "UpdateOtherPlayerHealthUI";
+
+        // Player Abilities HUD events
+        public const string UpdateUltimateUI = "UpdateUltimateUI";
         public const string StartAbilityCooldown = "StartAbilityCooldown";
 
         //Game Events
@@ -110,5 +117,16 @@ namespace Kraken
         }
         public int EnemyCount { get; private set; }
         public int MaxEnemyCount { get; private set; }
+    }
+
+    public class SetupHUDData : BytesData
+    {
+        public SetupHUDData(bool isRazzle, bool isKeyboard)
+        {
+            IsRazzle = isRazzle;
+            IsKeyboard = isKeyboard;
+        }
+        public bool IsRazzle { get; private set; }
+        public bool IsKeyboard { get; private set; }
     }
 }
