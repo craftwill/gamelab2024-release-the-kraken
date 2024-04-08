@@ -73,9 +73,9 @@ namespace Kraken.Game
 
         private void Die()
         {
-            if (!PhotonNetwork.IsMasterClient) return;
-
             IsAlive = false;
+            if (!PhotonNetwork.IsMasterClient) return;
+            
             OnDie.Invoke();
 
             if (_destroyOnDie)
