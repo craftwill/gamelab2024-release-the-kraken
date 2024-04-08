@@ -268,7 +268,12 @@ MonoBehaviour:
   _minimapIcon: {fileID: 5847381557580223909}
   _woolPrefab: {fileID: 5281229062787241931, guid: a7e2e3f5a7a656a44805d0841a9704b9,
     type: 3}
+  _smokePoofPrefab: {fileID: 5596100735769626616, guid: 3efb572bba23efa49b00e27ef47a37cd,
+    type: 3}
   _woolDropped: 1
+  _zoneOccupancyLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &4623548838470204180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -781,6 +786,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fbb695d39ea3cc49a8b4e371da4cc45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damageclan: 0
+  Source: {fileID: 0}
 --- !u!23 &7482529136683517816
 MeshRenderer:
   m_ObjectHideFlags: 0
