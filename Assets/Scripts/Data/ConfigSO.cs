@@ -88,6 +88,7 @@ namespace Kraken
         public float ultimateSlowMoTimeScale = 0.5f;
         public float ultimateSlowMoDuration = 1f;
         public bool ultimateIsCancellable = false;
+        public bool mustKillWithUltimate = true;
 
         [Header("Tower settigns")]
         public int towerWoolCost = 50;

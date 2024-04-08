@@ -5,7 +5,7 @@ using Bytes;
 
 namespace Kraken.UI
 {
-    public class HUDManager : MonoBehaviour
+    public class HUDManager : KrakenUIElement
     {
         // All UI components with state that changes depending on player and control schema
         private PlayerUIComponent[] _playerUIComponents;
@@ -17,11 +17,13 @@ namespace Kraken.UI
             _playerProfileUI = GetComponentInChildren<PlayerProfileUI>();
 
             EventManager.AddEventListener(EventNames.SetupHUD, HandleSetupHUD);
+            EventManager.AddEventListener(EventNames.HideHUD, HandleHideHUD);
         }
 
         private void OnDestroy()
         {
             EventManager.RemoveEventListener(EventNames.SetupHUD, HandleSetupHUD);
+            EventManager.RemoveEventListener(EventNames.HideHUD, HandleHideHUD);
         }
 
         private void HandleSetupHUD(BytesData data) 
@@ -34,6 +36,11 @@ namespace Kraken.UI
             }
 
             _playerProfileUI.Init(setupData.IsRazzle);
+        }
+
+        private void HandleHideHUD(BytesData data)
+        {
+            SetVisible(false);
         }
     }
 }

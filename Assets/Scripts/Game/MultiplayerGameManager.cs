@@ -69,6 +69,12 @@ namespace Kraken
         private void HandleLeaveGame(BytesData data) 
         {
             AnimateManager.GetInstance().ClearAllAnimations();
+            photonView.RPC(nameof(RPC_ALL_LeaveRoom), RpcTarget.All);
+        }
+
+        [PunRPC]
+        private void RPC_ALL_LeaveRoom()
+        {
             PhotonNetwork.LeaveRoom();
         }
 

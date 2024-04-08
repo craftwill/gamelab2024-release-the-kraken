@@ -120,6 +120,7 @@ MonoBehaviour:
   - RPC_All_StopBossMusic
   - RPC_All_StopGeneralMusic
   - RPC_All_StopObjectiveMusic
+  - RPC_ALL_LeaveRoom
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

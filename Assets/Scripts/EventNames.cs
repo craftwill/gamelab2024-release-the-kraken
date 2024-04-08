@@ -49,6 +49,7 @@ namespace Kraken
 
         // UI events
         public const string SetupHUD = "SetupHUD";
+        public const string HideHUD = "HideHUD";
         public const string UpdateCountownTimerUI = "UpdateCountownTimerUI";
         public const string UpdateObjectiveUI = "UpdateObjectiveUI";
         public const string UpdateObjectiveTimerUI = "UpdateObjectiveTimerUI";
