@@ -17,9 +17,16 @@ namespace Kraken
             _animStateMachine.PlayAnimOnce(attackComboState, _animatorPrefix, _animatorSuffix, "AttackComboSpeed", _animsAttackComboSpeed, animDonePlayingCallback, _animsTransitionDuration);
         }
 
+        public void PlayHealingAnimation()
+        {
+            PlayerAnimState healingState = PlayerAnimState.Healing;
+            _animStateMachine.PlayAnimOnce(healingState, _animatorPrefix);
+        }
+
         // Animations used by player
         public class PlayerAnimState : EntityAnimState
         {
+            static public readonly PlayerAnimState Healing = new PlayerAnimState("Healing", 1f);
             public PlayerAnimState(string pClipName, float pAnimSpeed = 1f, int pNbVariations = -1)
                 : base(pClipName, pAnimSpeed, pNbVariations)
             {
