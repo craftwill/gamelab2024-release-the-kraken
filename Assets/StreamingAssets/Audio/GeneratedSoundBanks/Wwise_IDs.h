@@ -14,22 +14,32 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID PLAY_BOSSSPAWN = 3774338134U;
-        static const AkUniqueID PLAY_DASH = 2211787386U;
         static const AkUniqueID PLAY_DEFEAT = 324646143U;
         static const AkUniqueID PLAY_ENEMYHURT = 349172053U;
         static const AkUniqueID PLAY_ENEMYSHOOT = 3253098515U;
-        static const AkUniqueID PLAY_HEALING = 3068332144U;
         static const AkUniqueID PLAY_MUSIC_BOSS = 2155613437U;
         static const AkUniqueID PLAY_MUSIC_GENERAL = 2746305898U;
         static const AkUniqueID PLAY_MUSIC_OBJECTIVE = 977895875U;
         static const AkUniqueID PLAY_PLAYERHURT = 3178286754U;
-        static const AkUniqueID PLAY_ULTIMATEGOOFF = 2741312416U;
         static const AkUniqueID PLAY_ULTIMATENOTICE = 984790419U;
         static const AkUniqueID PLAY_ULTIMATEREADY = 1218358740U;
         static const AkUniqueID PLAY_ULTIMATETRIGGERED = 3162760014U;
         static const AkUniqueID PLAY_VICTORYFANFARE = 2468480011U;
-        static const AkUniqueID PLAY_WOOLCOLLECTED = 1863926102U;
         static const AkUniqueID PLAY_ZONEFULLCAPACITY = 3233615227U;
+        static const AkUniqueID SFX_DAZZLE_COMBAT_DEGATS_HURT = 792726151U;
+        static const AkUniqueID SFX_DAZZLE_HABILETE_COMBO_ATTAQUE1 = 3519417346U;
+        static const AkUniqueID SFX_DAZZLE_HABILETE_COMBO_ATTAQUE2 = 3519417345U;
+        static const AkUniqueID SFX_DAZZLE_HABILETE_COMBO_ATTAQUE3 = 3519417344U;
+        static const AkUniqueID SFX_DAZZLE_MOUVEMENT_FOOTSTEPS_COURSE = 1514878334U;
+        static const AkUniqueID SFX_DUO_HABILETE_DOUBLETROUBLE_COMPLETE = 1472712545U;
+        static const AkUniqueID SFX_DUO_HABILETE_PATCHUP_PATCHING = 1223449757U;
+        static const AkUniqueID SFX_DUO_MOUVEMENT_SPRINT_FWIP = 3092608232U;
+        static const AkUniqueID SFX_OBJETS_RESSOURCES_WOOL_COLLECT = 2523551556U;
+        static const AkUniqueID SFX_RAZZLE_COMBAT_DEGATS_HURT = 1316972749U;
+        static const AkUniqueID SFX_RAZZLE_HABILETE_COMBO_ATTAQUE1 = 3203340632U;
+        static const AkUniqueID SFX_RAZZLE_HABILETE_COMBO_ATTAQUE2 = 3203340635U;
+        static const AkUniqueID SFX_RAZZLE_HABILETE_COMBO_ATTAQUE3 = 3203340634U;
+        static const AkUniqueID SFX_RAZZLE_MOUVEMENT_FOOTSTEPS_HOVER = 2362336083U;
         static const AkUniqueID STOP_HEALING = 730396682U;
         static const AkUniqueID STOP_MUSIC_BOSS = 2869039319U;
         static const AkUniqueID STOP_MUSIC_GENERAL = 504869708U;

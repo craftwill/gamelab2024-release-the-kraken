@@ -126,6 +126,12 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[18].m_ActionName
       value: Player/Tower[/Keyboard/f,/DualSenseGamepadHID/rightShoulder]
       objectReference: {fileID: 0}
+    - target: {fileID: 3860904718989671536, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      propertyPath: _hurtSound.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b0de7fac6a997141a7df08568659c39,
+        type: 2}
     - target: {fileID: 3938902759498121455, guid: c767677ecb1762942a114712b6d1e354,
         type: 3}
       propertyPath: m_IsActive

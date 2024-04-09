@@ -107,6 +107,7 @@ namespace Kraken
 
             yield return new WaitForSeconds(attack.timeBeforeHitboxDuration);
             _colliders[attack.comboStep - 1].SetActive(true);
+            attack.sound.Post(gameObject);
             EventManager.Dispatch(EventNames.PlayerAttackStart, new FloatDataBytes(Config.current.attackMoveSpeed));
             yield return new WaitForSeconds(attack.hitboxDuration);
             _colliders[attack.comboStep - 1].SetActive(false);
