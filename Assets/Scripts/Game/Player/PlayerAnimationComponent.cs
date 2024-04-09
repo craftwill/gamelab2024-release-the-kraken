@@ -17,10 +17,13 @@ namespace Kraken
             _animStateMachine.PlayAnimOnce(attackComboState, _animatorPrefix, _animatorSuffix, "AttackComboSpeed", _animsAttackComboSpeed, animDonePlayingCallback, _animsTransitionDuration);
         }
 
-        public void PlayHealingAnimation()
+        public bool SetLoopedStateHealing()
         {
             PlayerAnimState healingState = PlayerAnimState.Healing;
-            _animStateMachine.PlayAnimOnce(healingState, _animatorPrefix);
+            bool didAnimStateChange = _animStateMachine.GetCurrentLoopedState()?.ClipName != healingState.ClipName;
+            _animStateMachine.SetLoopedState(healingState, _animatorPrefix, _animatorSuffix);
+
+            return didAnimStateChange;
         }
 
         // Animations used by player

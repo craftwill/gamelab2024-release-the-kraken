@@ -59,13 +59,14 @@ namespace Kraken
             {
                 if (GetDistanceBetweenPlayers() <= Config.current.healingMaxDistance && _componentToHeal.Health < _componentToHeal.MaxHealth && _lilWoolManager._woolQuantity > 0)
                 {
-                    _animComponent?.PlayHealingAnimation();
+                    _animComponent?.SetLoopedStateHealing();
                     _isHealing = true;
                     StartCoroutine(HealCoroutine());
                 }
             }
             else
             {
+                _animComponent?.SetLoopedStateIdle();
                 _isHealing = false;
             }
         }
