@@ -91,7 +91,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GTP_Map:
-        m_Texture: {fileID: 2800000, guid: 92155b68ef7cce04992a91812a96775f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 263d0bb90fb658c449becea4c276f8b8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HeightMap:
@@ -225,8 +225,8 @@ Material:
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
     - _ExcludeFromTUAndAA: 0
-    - _Gradient_Power: 3
-    - _Gradient_Thickness: 1
+    - _Gradient_Power: 1
+    - _Gradient_Thickness: 0.5
     - _HeightAmplitude: 0.02
     - _HeightCenter: 0.5
     - _HeightMapParametrization: 0
@@ -255,7 +255,7 @@ Material:
     - _PPDMinSamples: 5
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
-    - _Progress: 0.378
+    - _Progress: 0.436
     - _RayTracing: 0
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
