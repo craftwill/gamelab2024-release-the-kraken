@@ -1049,7 +1049,7 @@ Transform:
   m_GameObject: {fileID: 383808835}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.551, y: 6.76, z: -19.661}
+  m_LocalPosition: {x: 2.55, y: 6.94, z: -18.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1856,7 +1856,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bea1aa0a7ffa57e4ebc104ba11a8a010, type: 2}
+      objectReference: {fileID: 2100000, guid: 60426fb093641fd47945c9b504d2cab2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2703,7 +2703,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 607ff36f2bede3145937510dcdfab565, type: 2}
+      objectReference: {fileID: 2100000, guid: 99be27ce5c12e2b4b9f828d7a4ed8415, type: 2}
     - target: {fileID: 919132149155446097, guid: ae69a4b978c0a0746b024a1bc6096669,
         type: 3}
       propertyPath: m_Name
@@ -3562,7 +3562,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6bab82f12bf748f42ac5c1f9deab359b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.17771
+      value: -0.178
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6bab82f12bf748f42ac5c1f9deab359b,
         type: 3}
@@ -3572,7 +3572,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6bab82f12bf748f42ac5c1f9deab359b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.81334
+      value: 0.749
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6bab82f12bf748f42ac5c1f9deab359b,
         type: 3}
@@ -3618,7 +3618,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 033374b7216e1354092a37d6085a8e36, type: 2}
+      objectReference: {fileID: 2100000, guid: ab1cf3fc832a80b44a4e159c6815f6de, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4614,6 +4614,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: c8d556fb-e989-40b7-a7f3-581d80a3ee8e
     m_ActionName: Player/CastAbility[/Keyboard/e,/DualSenseGamepadHID/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aa816a1b-ad15-4074-b75b-f1b4da640e06
+    m_ActionName: Player/Heal[/Keyboard/q,/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48d3e829-0f3a-442b-a6d6-662d69cddcb0
+    m_ActionName: Player/Tower[/Keyboard/f,/XInputControllerWindows/buttonEast]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI
@@ -5024,6 +5032,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 32283b9792335834baf58f045158defd, type: 2}
     - target: {fileID: 8287496744339813026, guid: 0b6568e0d0df96748afd7a0942604037,
         type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8287496744339813026, guid: 0b6568e0d0df96748afd7a0942604037,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 32283b9792335834baf58f045158defd, type: 2}
@@ -5330,7 +5343,7 @@ Light:
   m_InnerSpotAngle: 21.802082
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -5365,15 +5378,15 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 2
-  m_AreaSize: {x: 1, y: 1}
+  m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
-  m_UseColorTemperature: 1
+  m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 1.02e-43, y: 6e-44, z: 5.3e-44, w: 1.3045e-41}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
-  m_ShadowAngle: 0
+  m_ShadowAngle: 0.5
 --- !u!4 &2138677393
 Transform:
   m_ObjectHideFlags: 0
@@ -5470,7 +5483,7 @@ MonoBehaviour:
   m_UseContactShadow:
     m_Override: 0
     m_UseOverride: 1
-    m_Level: 0
+    m_Level: 2
   m_RayTracedContactShadow: 0
   m_ShadowTint: {r: 0, g: 0, b: 0, a: 1}
   m_PenumbraTint: 0
