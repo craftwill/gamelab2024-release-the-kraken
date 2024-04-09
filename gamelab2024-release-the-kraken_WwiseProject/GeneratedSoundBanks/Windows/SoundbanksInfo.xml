@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{8399675E-EA55-2F46-796A-6E0E2D49AD50}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{0D3B341C-9EB0-2525-D21C-F7D077C13EF7}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -212,7 +212,7 @@
 						<MediaRef Id="447063309"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1514878334" Name="SFX_DAZZLE_MOUVEMENT_FOOTSTEPS_COURSE" DurationType="OneShot" DurationMin="0.6733787" DurationMax="0.6733787">
+				<Event Id="1514878334" Name="SFX_DAZZLE_MOUVEMENT_FOOTSTEPS_COURSE" DurationType="OneShot" DurationMin="0.5828339" DurationMax="0.7779899">
 					<MediaRefs>
 						<MediaRef Id="627948373"/>
 					</MediaRefs>
@@ -257,7 +257,7 @@
 						<MediaRef Id="447063309"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2362336083" Name="SFX_RAZZLE_MOUVEMENT_FOOTSTEPS_HOVER" DurationType="OneShot" DurationMin="0.61713773" DurationMax="0.61713773">
+				<Event Id="2362336083" Name="SFX_RAZZLE_MOUVEMENT_FOOTSTEPS_HOVER" DurationType="OneShot" DurationMin="0.53415525" DurationMax="0.71301174">
 					<MediaRefs>
 						<MediaRef Id="1073696907"/>
 					</MediaRefs>
@@ -272,5 +272,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9049FBB8-E37A-9E7D-F2DF-D997755272B1}</FileHash>
+	<FileHash>{4076CA2F-BC25-8A4C-F497-6AD0F07A1F7A}</FileHash>
 </SoundBanksInfo>

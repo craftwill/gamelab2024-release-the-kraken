@@ -254,6 +254,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6464194895206122378}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73b5006b47e8160489daecfa93c01f4d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6903488857669508832}
   m_SourcePrefab: {fileID: 100100000, guid: 73b5006b47e8160489daecfa93c01f4d, type: 3}
 --- !u!1 &242206377797706714 stripped
 GameObject:
@@ -456,6 +460,19 @@ MonoBehaviour:
         MaterialIndexes: 
         UseMaterialPropertyBlocks: 0
         SpriteRendererTextureProperty: _MainTex
+--- !u!114 &6903488857669508832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242206377797706714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 260803166802944458e44c8c9c95f579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundComponent: {fileID: 2728202769661526766}
 --- !u!4 &583125743962634592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 73b5006b47e8160489daecfa93c01f4d,
@@ -564,6 +581,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: b4cec8b407dd24a4fa0dd4e4f0316b6a,
         type: 2}
+    - target: {fileID: 3860904718989671536, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      propertyPath: _footstepSound.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 5eb7f71c891c50e4797bf16624b9377b,
+        type: 2}
     - target: {fileID: 4801927777905466368, guid: c767677ecb1762942a114712b6d1e354,
         type: 3}
       propertyPath: sceneViewId
@@ -662,6 +685,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1173246613505425054}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2728202769661526766 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3860904718989671536, guid: c767677ecb1762942a114712b6d1e354,
+    type: 3}
+  m_PrefabInstance: {fileID: 1173246613505425054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5615325859885225770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ab031389cdd1e479a085f4873192d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5615325859885225770 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6747958540799682996, guid: c767677ecb1762942a114712b6d1e354,
