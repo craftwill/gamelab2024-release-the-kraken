@@ -95,9 +95,15 @@ namespace Kraken
                 if (PhotonNetwork.IsMasterClient)
                 {
                     photonView.RPC(nameof(_soundComponent.RPC_All_StopWhirlpool), RpcTarget.All);
-                    PhotonNetwork.Destroy(photonView);
+                    photonView.RPC(nameof(RPC_All_DestroyRazzlePullAbility), RpcTarget.All);
                 }
             }
+        }
+
+        [PunRPC]
+        private void RPC_All_DestroyRazzlePullAbility()
+        {
+            Destroy(gameObject);
         }
 
         private void PullAllEnemies(float strengthMultiplier, ForceMode forceMode = ForceMode.Acceleration)

@@ -127,6 +127,7 @@ MonoBehaviour:
   - RPC_All_PlayWhirlpool
   - RPC_All_StopWhirlpool
   - RPC_All_PlayBuildSound
+  - RPC_All_DestroyRazzlePullAbility
   - OtherPlayerIsCalling
   - OtherPlayerCancel
   - OtherPlayerIsWaiting
