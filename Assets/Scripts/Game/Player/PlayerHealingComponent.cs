@@ -15,10 +15,12 @@ namespace Kraken
         private HealthComponent _componentToHeal;
         private LilWoolManager _lilWoolManager;
         private bool _isHealing = false;
+        private PlayerAnimationComponent _animComponent;
 
         private void Start()
         {
             _lilWoolManager = Object.FindObjectOfType<LilWoolManager>();
+            _animComponent = GetComponent<PlayerAnimationComponent>();
         }
 
         private void Update()
@@ -57,12 +59,14 @@ namespace Kraken
             {
                 if (GetDistanceBetweenPlayers() <= Config.current.healingMaxDistance && _componentToHeal.Health < _componentToHeal.MaxHealth && _lilWoolManager._woolQuantity > 0)
                 {
+                    _animComponent?.SetLoopedStateHealing();
                     _isHealing = true;
                     StartCoroutine(HealCoroutine());
                 }
             }
             else
             {
+                _animComponent?.SetLoopedStateIdle();
                 _isHealing = false;
             }
         }
