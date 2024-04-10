@@ -25,7 +25,7 @@ namespace Kraken.UI
 
         protected virtual void TakeDamage(float fillAmount)
         {
-            _animator.Play("AnimatedHealthBarUI_takeDamage", -1, 0);
+            _animator?.Play("AnimatedHealthBarUI_takeDamage", -1, 0);
             SetFillAmount(fillAmount);
         }
 
