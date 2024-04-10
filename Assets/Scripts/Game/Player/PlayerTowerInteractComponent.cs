@@ -45,6 +45,7 @@ namespace Kraken
         {
             if (t is null)
             {
+                EventManager.Dispatch(EventNames.TowerCancelBuilt, null);
                 _towerInRange.PlayerCancelBuild();
             }
             _towerInRange = t;
