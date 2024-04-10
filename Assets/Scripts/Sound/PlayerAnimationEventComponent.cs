@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimationEventComponent : MonoBehaviour
+namespace Kraken
 {
-    [SerializeField] private PlayerSoundComponent _soundComponent;
-    public void FootstepEvent()
+    public class PlayerAnimationEventComponent : MonoBehaviour
     {
-        _soundComponent.PlayFootstep();
+        [SerializeField] private PlayerSoundComponent _soundComponent;
+        public void FootstepEvent()
+        {
+            _soundComponent.PlayFootstep();
+        }
     }
 }
