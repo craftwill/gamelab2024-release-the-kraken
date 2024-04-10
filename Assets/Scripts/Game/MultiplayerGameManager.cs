@@ -146,7 +146,7 @@ namespace Kraken
             photonView.RPC(nameof(RPC_Master_PlayerCreated), RpcTarget.MasterClient, _localPlayer.GetPhotonView().ViewID);
         }
 
-        private int GetPlayerClassId() 
+        public static int GetPlayerClassId() 
         {
             // Player2 is dazzle by default if custom properties are null
             int playerClassId = 2;

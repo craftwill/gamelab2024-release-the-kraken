@@ -85,6 +85,19 @@ namespace Kraken
         public const string PlayerAttackEnd = "PlayerAttackEnd";
         public const string PlayerWin = "PlayerWin";
         public const string PlayerPatchingUp = "PlayerPatchingUp";
+
+        //Tower Events
+        public const string TowerAttemptBuilt = "TowerAttemptBuilt";
+        public const string TowerCancelBuilt = "TowerCancelBuilt";
+        public const string TowerBuilt = "TowerBuilt";
+        public const string PlayerEnteredTower = "PlayerEnteredTower";
+        public const string PlayerLeftTower = "PlayerLeftTower";
+    }
+
+    public class ZoneEventData : BytesData
+    {
+        public ZoneEventData(Zone z) { Zone = z; }
+        public Zone Zone { get; private set; }
     }
 
     public class Vector2EventData : BytesData

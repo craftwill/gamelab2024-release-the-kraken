@@ -23,6 +23,7 @@ namespace Kraken
         private void OnTriggerEnter(Collider other)
         {
             if (!PhotonNetwork.IsMasterClient) return;
+
             var player = other.GetComponent<PlayerEntity>();
             if (player is not null)
             {
@@ -131,6 +132,11 @@ namespace Kraken
         public bool ZoneHasTower()
         {
             return _tower.GetTowerState() == Tower.TowerState.Active;
+        }
+
+        public Tower.TowerState GetTowerState()
+        {
+            return _tower.GetTowerState();
         }
     }
 }
