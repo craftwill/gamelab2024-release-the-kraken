@@ -480,6 +480,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _takeDamageFromClans: 01000000
+  _getKnockedBack: 0
+  _rigidBody: {fileID: 0}
+  _agent: {fileID: 0}
+  _healthComponent: {fileID: 0}
 --- !u!1 &949640748533209320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,6 +2215,26 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 030ec604c485feb4fa3693f0d03422e9,
+      type: 2}
+  _footstepSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 5fc85df6ed1d4eb43b491a4bf5155ca5,
+      type: 2}
+  _dazzleAbilityJumpSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3ca3b6d88a126234ea25ae2806c7eddf,
+      type: 2}
+  _dazzleAbilityCrashSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: dfe32e3e28dc9cb4ead94dd5c1e97c47,
+      type: 2}
+  _razzleAbilityCastSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9c2350a219898d24685c5d5314f03823,
       type: 2}
 --- !u!114 &5208069392134486679
 MonoBehaviour:

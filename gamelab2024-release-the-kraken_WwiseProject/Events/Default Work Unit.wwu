@@ -3,7 +3,7 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Play_Dash" ID="{C844183B-5883-4BF2-8DB0-7D4D1C642480}">
+				<Event Name="SFX_DUO_MOUVEMENT_SPRINT_FWIP" ID="{C844183B-5883-4BF2-8DB0-7D4D1C642480}">
 					<ChildrenList>
 						<Action Name="" ID="{6DAF88DE-66CA-4A89-A86A-0B5475520CF8}" ShortID="316467153">
 							<ReferenceList>
@@ -47,7 +47,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_UltimateGoOff" ID="{B292BC4C-D218-4DF9-95E7-11172D165110}">
+				<Event Name="SFX_DUO_HABILETE_DOUBLETROUBLE_COMPLETE" ID="{B292BC4C-D218-4DF9-95E7-11172D165110}">
 					<ChildrenList>
 						<Action Name="" ID="{E88F93DC-1BCD-4C24-9A13-D5964F1A4768}" ShortID="822425631">
 							<ReferenceList>
@@ -113,7 +113,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_WoolCollected" ID="{A414BF86-6DA7-4CC5-BA14-D281C6AF9329}">
+				<Event Name="SFX_OBJETS_RESSOURCES_WOOL_COLLECT" ID="{A414BF86-6DA7-4CC5-BA14-D281C6AF9329}">
 					<ChildrenList>
 						<Action Name="" ID="{B170046E-FE6F-4E7A-9225-ADE5132EDFB0}" ShortID="295691889">
 							<ReferenceList>
@@ -124,7 +124,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_Healing" ID="{B3D3D271-8D71-4459-B081-2371F99348CF}">
+				<Event Name="SFX_DUO_HABILETE_PATCHUP_PATCHING" ID="{B3D3D271-8D71-4459-B081-2371F99348CF}">
 					<ChildrenList>
 						<Action Name="" ID="{BAD56919-23B3-47AD-9C6B-883FD97173AF}" ShortID="998813752">
 							<ReferenceList>
@@ -241,6 +241,116 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Fight music 4 (boss)" ID="{A4C1E092-4583-4914-9BFB-B83E7551E2BF}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_RAZZLE_COMBAT_DEGATS_HURT" ID="{20A9D10E-0FD8-4CE6-9D5C-A6573262FA42}">
+					<ChildrenList>
+						<Action Name="" ID="{5F6746DB-1EE0-4B6B-870D-CFB98F9AB636}" ShortID="426024007">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="minecraft_hit_soundmp3converter" ID="{31CE80F5-485F-46DF-A2FE-26300FB1BAAF}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_DAZZLE_COMBAT_DEGATS_HURT" ID="{30555EF1-CD57-47FD-95BF-954FDC957E0D}">
+					<ChildrenList>
+						<Action Name="" ID="{7ECF9A78-67BF-4212-B41F-779B3A21230F}" ShortID="1038696862">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="classic_hurt" ID="{61087652-9BE2-4C4B-8912-B68F26CD8378}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_DAZZLE_HABILETE_COMBO_ATTAQUE1" ID="{9A3C7D3C-9EDA-4F43-A178-4AAE6CF1C357}">
+					<ChildrenList>
+						<Action Name="" ID="{27AB826D-1688-4A6A-A437-63250C051CBD}" ShortID="33150009">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sword-slash-1" ID="{FC523EFC-CE0D-4CDF-B6CC-E5985069DEEA}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_DAZZLE_HABILETE_COMBO_ATTAQUE2" ID="{23216C23-B518-4512-B9DE-318517706030}">
+					<ChildrenList>
+						<Action Name="" ID="{EC925E19-29F2-4D07-8202-63E293D70108}" ShortID="259122339">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sword-slash-2" ID="{A510D645-94E0-43E9-9A09-791BC925DEF8}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_DAZZLE_HABILETE_COMBO_ATTAQUE3" ID="{16F69962-C9DC-4310-A45E-5FD4FFBF062A}">
+					<ChildrenList>
+						<Action Name="" ID="{465A0925-ABCD-4D61-B804-F5AE84FD4F3B}" ShortID="815004151">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sword-slash-3" ID="{1A0E2482-0639-4B9A-ABE2-07B939E4B061}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_RAZZLE_HABILETE_COMBO_ATTAQUE1" ID="{9928FA22-C7B9-40A8-AD6E-6405944D0AEC}">
+					<ChildrenList>
+						<Action Name="" ID="{73069048-6C40-44B4-B092-AF1E5FA94349}" ShortID="446869716">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sword-slash-1" ID="{FC523EFC-CE0D-4CDF-B6CC-E5985069DEEA}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_RAZZLE_HABILETE_COMBO_ATTAQUE2" ID="{758687A1-9942-48A2-BDCC-0A2CC1322819}">
+					<ChildrenList>
+						<Action Name="" ID="{B0E498BD-D743-4781-99E0-8DDA097EC4D6}" ShortID="360519257">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sword-slash-2" ID="{A510D645-94E0-43E9-9A09-791BC925DEF8}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_RAZZLE_HABILETE_COMBO_ATTAQUE3" ID="{11A72BBB-A8CA-4CCA-AB5B-C22B61000DFC}">
+					<ChildrenList>
+						<Action Name="" ID="{792714E7-A048-4BB2-88F7-36341376EF76}" ShortID="1052912077">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sword-slash-3" ID="{1A0E2482-0639-4B9A-ABE2-07B939E4B061}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_DAZZLE_MOUVEMENT_FOOTSTEPS_COURSE" ID="{2285B841-DD02-4CFE-9B94-7862A4210ACE}">
+					<ChildrenList>
+						<Action Name="" ID="{FA8DEF16-3E48-4FEE-AB12-026E23C05F95}" ShortID="656901748">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="footstep" ID="{CA794827-140C-4BCB-BCD4-BBE3F031EED3}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_RAZZLE_MOUVEMENT_FOOTSTEPS_HOVER" ID="{7DB463C3-03E5-4769-9803-460D9FE6BEE7}">
+					<ChildrenList>
+						<Action Name="" ID="{F67AF7C4-8D4C-4F5D-93FE-B821E7411376}" ShortID="122731877">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="woosh" ID="{AFD306BE-4D97-4363-808D-8E76B05EDAAF}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

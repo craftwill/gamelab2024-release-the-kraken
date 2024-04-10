@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{FB160650-A789-5F30-B817-A6E26D9951EB}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{8CD18495-559D-70AC-DD52-A424D5C0AF30}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -37,9 +37,13 @@
 					<ShortName>healing-pokemon-sound.wav</ShortName>
 					<CachePath>SFX/healing-pokemon-sound_04A517DC.wem</CachePath>
 				</File>
+				<File Id="38353607" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sword-slash-2.wav</ShortName>
+					<CachePath>SFX/sword-slash-2_818F3B66.wem</CachePath>
+				</File>
 				<File Id="66191486" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Fight music 1.wav</ShortName>
-					<CachePath>SFX/Fight music 1_0A5200D4.wem</CachePath>
+					<CachePath>SFX/Fight music 1_302B6FA0.wem</CachePath>
 				</File>
 				<File Id="85800411" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Fight music 4 (boss).wav</ShortName>
@@ -47,35 +51,71 @@
 				</File>
 				<File Id="198922756" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Final Fantasy VII - Victory Fanfare [HD].wav</ShortName>
-					<CachePath>SFX/Final Fantasy VII - Victory Fanfare [HD]_8BEEE5EA.wem</CachePath>
+					<CachePath>SFX/Final Fantasy VII - Victory Fanfare [HD]_ED2DD99F.wem</CachePath>
 				</File>
 				<File Id="252820667" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Fight music 3.wav</ShortName>
 					<CachePath>SFX/Fight music 3_818F3B66.wem</CachePath>
 				</File>
+				<File Id="312377221" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>crash_5mE1q2P.wav</ShortName>
+					<CachePath>SFX/crash_5mE1q2P_818F3B66.wem</CachePath>
+				</File>
 				<File Id="392899862" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>fast-whoosh-118248.wav</ShortName>
 					<CachePath>SFX/fast-whoosh-118248_818F3B66.wem</CachePath>
+				</File>
+				<File Id="408955314" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sword-slash-1.wav</ShortName>
+					<CachePath>SFX/sword-slash-1_818F3B66.wem</CachePath>
 				</File>
 				<File Id="422643003" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>y2mate_rQlfs1Y.wav</ShortName>
 					<CachePath>SFX/y2mate_rQlfs1Y_FC9CA280.wem</CachePath>
 				</File>
+				<File Id="447063309" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sword-slash-3.wav</ShortName>
+					<CachePath>SFX/sword-slash-3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="602690595" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>cartoon-jump.wav</ShortName>
+					<CachePath>SFX/cartoon-jump_818F3B66.wem</CachePath>
+				</File>
 				<File Id="624797327" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>tindeck_1.wav</ShortName>
 					<CachePath>SFX/tindeck_1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="627948373" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>footstep.wav</ShortName>
+					<CachePath>SFX/footstep_818F3B66.wem</CachePath>
 				</File>
 				<File Id="628232679" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>dark-souls-you-died-sound-effect_hm5sYFG.wav</ShortName>
 					<CachePath>SFX/dark-souls-you-died-sound-effect_hm5sYFG_818F3B66.wem</CachePath>
 				</File>
+				<File Id="735304147" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>lemon_tMqyvSF.wav</ShortName>
+					<CachePath>SFX/lemon_tMqyvSF_D786D2D9.wem</CachePath>
+				</File>
 				<File Id="781786885" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FFXIV Limit Break 3.wav</ShortName>
 					<CachePath>SFX/FFXIV Limit Break 3_76AE5D17.wem</CachePath>
 				</File>
+				<File Id="823988441" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Nasa releases audio of what a black hole 'sounds' like shorts.wav</ShortName>
+					<CachePath>SFX/Nasa releases audio of what a black hole 'sounds' like shorts_F55DC81F.wem</CachePath>
+				</File>
 				<File Id="875765215" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>alarme-factorio.wav</ShortName>
 					<CachePath>SFX/alarme-factorio_FCF97502.wem</CachePath>
+				</File>
+				<File Id="877710634" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>minecraft_hit_soundmp3converter.wav</ShortName>
+					<CachePath>SFX/minecraft_hit_soundmp3converter_2D9B98A3.wem</CachePath>
+				</File>
+				<File Id="894964667" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>386308__ldezem__pneumatic-hammer-deprag-zn231-start-1a.wav</ShortName>
+					<CachePath>SFX/386308__ldezem__pneumatic-hammer-deprag-zn231-start-1a_818F3B66.wem</CachePath>
 				</File>
 				<File Id="908038837" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FFXIV Limit Break 3 Video Effect.wav</ShortName>
@@ -101,36 +141,20 @@
 					<ShortName>squeaky-toy-1-6059.wav</ShortName>
 					<CachePath>SFX/squeaky-toy-1-6059_818F3B66.wem</CachePath>
 				</File>
+				<File Id="1073696907" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>woosh.wav</ShortName>
+					<CachePath>SFX/woosh_2BFCC654.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
-				<Event Id="3774338134" Name="Play_BossSpawn" DurationType="OneShot" DurationMin="1.6930078" DurationMax="1.6930078">
-					<MediaRefs>
-						<MediaRef Id="875765215"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2211787386" Name="Play_Dash" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.2016326" DurationMax="1.2016326">
-					<MediaRefs>
-						<MediaRef Id="392899862"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="324646143" Name="Play_Defeat" DurationType="OneShot" DurationMin="8.057324" DurationMax="8.057324">
 					<MediaRefs>
 						<MediaRef Id="628232679"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="349172053" Name="Play_EnemyHurt" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.504" DurationMax="0.504">
-					<MediaRefs>
-						<MediaRef Id="1046494642"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="3253098515" Name="Play_EnemyShoot" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.49308255" DurationMax="0.49308255">
 					<MediaRefs>
 						<MediaRef Id="996749074"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="3068332144" Name="Play_Healing" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="12264851"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2155613437" Name="Play_Music_Boss" DurationType="OneShot" DurationMin="66.97796" DurationMax="66.97796">
@@ -148,29 +172,9 @@
 						<MediaRef Id="252820667"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3178286754" Name="Play_PlayerHurt" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.36571428" DurationMax="0.36571428">
+				<Event Id="3178286754" Name="Play_PlayerHurt" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.3451883" DurationMax="0.3874608">
 					<MediaRefs>
 						<MediaRef Id="1042314046"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2741312416" Name="Play_UltimateGoOff" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.8557596" DurationMax="1.8557596">
-					<MediaRefs>
-						<MediaRef Id="933963966"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="984790419" Name="Play_UltimateNotice" DurationType="OneShot" DurationMin="0.4477303" DurationMax="0.4477303">
-					<MediaRefs>
-						<MediaRef Id="422643003"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1218358740" Name="Play_UltimateReady" DurationType="OneShot" DurationMin="0.9060085" DurationMax="0.9060085">
-					<MediaRefs>
-						<MediaRef Id="908038837"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="3162760014" Name="Play_UltimateTriggered" DurationType="OneShot" DurationMin="2.4961457" DurationMax="2.4961457">
-					<MediaRefs>
-						<MediaRef Id="781786885"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2468480011" Name="Play_VictoryFanfare" DurationType="Infinite">
@@ -178,17 +182,133 @@
 						<MediaRef Id="198922756"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1863926102" Name="Play_WoolCollected" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.5952754" DurationMax="1.336348">
-					<MediaRefs>
-						<MediaRef Id="1037371522"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="3233615227" Name="Play_ZoneFullCapacity" DurationType="OneShot" DurationMin="1.5673469" DurationMax="1.5673469">
 					<MediaRefs>
 						<MediaRef Id="624797327"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="730396682" Name="Stop_Healing" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="792726151" Name="SFX_DAZZLE_COMBAT_DEGATS_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.3451883" DurationMax="0.3874608">
+					<MediaRefs>
+						<MediaRef Id="1042314046"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3519417346" Name="SFX_DAZZLE_HABILETE_COMBO_ATTAQUE1" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.36571428" DurationMax="0.36571428">
+					<MediaRefs>
+						<MediaRef Id="408955314"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3519417345" Name="SFX_DAZZLE_HABILETE_COMBO_ATTAQUE2" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.44408163" DurationMax="0.44408163">
+					<MediaRefs>
+						<MediaRef Id="38353607"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3519417344" Name="SFX_DAZZLE_HABILETE_COMBO_ATTAQUE3" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.9404082" DurationMax="0.9404082">
+					<MediaRefs>
+						<MediaRef Id="447063309"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3931952720" Name="SFX_DAZZLE_HABILETE_SURPRISE_CRASH" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.5786848" DurationMax="1.5786848">
+					<MediaRefs>
+						<MediaRef Id="312377221"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2464567367" Name="SFX_DAZZLE_HABILETE_SURPRISE_JUMP" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.0248979" DurationMax="1.0248979">
+					<MediaRefs>
+						<MediaRef Id="602690595"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1514878334" Name="SFX_DAZZLE_MOUVEMENT_FOOTSTEPS_COURSE" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.5828339" DurationMax="0.7779899">
+					<MediaRefs>
+						<MediaRef Id="627948373"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1201508577" Name="SFX_DUO_HABILETE_DOUBLETROUBLE_CAST" DurationType="OneShot" DurationMin="2.4961457" DurationMax="2.4961457">
+					<MediaRefs>
+						<MediaRef Id="781786885"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1472712545" Name="SFX_DUO_HABILETE_DOUBLETROUBLE_COMPLETE" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.8557596" DurationMax="1.8557596">
+					<MediaRefs>
+						<MediaRef Id="933963966"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3964862123" Name="SFX_DUO_HABILETE_HOWLING_CAST" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.75" DurationMax="0.75">
+					<MediaRefs>
+						<MediaRef Id="894964667"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1223449757" Name="SFX_DUO_HABILETE_PATCHUP_PATCHING" MaxAttenuation="100" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="12264851"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="786476976" Name="SFX_DUO_HABILETE_PATCHUP_PATCHING_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3092608232" Name="SFX_DUO_MOUVEMENT_SPRINT_FWIP" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.2016326" DurationMax="1.2016326">
+					<MediaRefs>
+						<MediaRef Id="392899862"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3060955767" Name="SFX_ENNEMIS_MINIONS_MELEE_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.504" DurationMax="0.504">
+					<MediaRefs>
+						<MediaRef Id="1046494642"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2523551556" Name="SFX_OBJETS_RESSOURCES_WOOL_COLLECT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.5952754" DurationMax="1.336348">
+					<MediaRefs>
+						<MediaRef Id="1037371522"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1316972749" Name="SFX_RAZZLE_COMBAT_DEGATS_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.89724845" DurationMax="1.0071274">
+					<MediaRefs>
+						<MediaRef Id="877710634"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3203340632" Name="SFX_RAZZLE_HABILETE_COMBO_ATTAQUE1" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.36571428" DurationMax="0.36571428">
+					<MediaRefs>
+						<MediaRef Id="408955314"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3203340635" Name="SFX_RAZZLE_HABILETE_COMBO_ATTAQUE2" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.44408163" DurationMax="0.44408163">
+					<MediaRefs>
+						<MediaRef Id="38353607"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3203340634" Name="SFX_RAZZLE_HABILETE_COMBO_ATTAQUE3" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.9404082" DurationMax="0.9404082">
+					<MediaRefs>
+						<MediaRef Id="447063309"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3701084809" Name="SFX_RAZZLE_HABILETE_GATHERUP_CAST" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.0096114" DurationMax="1.0096114">
+					<MediaRefs>
+						<MediaRef Id="735304147"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="149926274" Name="SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL" MaxAttenuation="100" DurationType="OneShot" DurationMin="34.017235" DurationMax="34.017235">
+					<MediaRefs>
+						<MediaRef Id="823988441"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1025767425" Name="SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2362336083" Name="SFX_RAZZLE_MOUVEMENT_FOOTSTEPS_HOVER" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.61713773" DurationMax="0.61713773">
+					<MediaRefs>
+						<MediaRef Id="1073696907"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="376716515" Name="SFX_UI_JOUEURS_ULTIMATE_READY" DurationType="OneShot" DurationMin="0.9060085" DurationMax="0.9060085">
+					<MediaRefs>
+						<MediaRef Id="908038837"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3238219403" Name="SFX_UI_JOUEURS_ULTIMATE_WAITING" DurationType="OneShot" DurationMin="0.4477303" DurationMax="0.4477303">
+					<MediaRefs>
+						<MediaRef Id="422643003"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2920071018" Name="SFX_UI_OBJECTIFS_BOSS_WARNING" DurationType="OneShot" DurationMin="1.6930078" DurationMax="1.6930078">
+					<MediaRefs>
+						<MediaRef Id="875765215"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2869039319" Name="Stop_Music_Boss" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="504869708" Name="Stop_Music_General" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2291264325" Name="Stop_Music_Objective" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -198,5 +318,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1084FE2C-DD68-B086-8F37-E0DC6E776F62}</FileHash>
+	<FileHash>{BB07D861-D495-C98D-63D1-54D853EBE5F0}</FileHash>
 </SoundBanksInfo>
