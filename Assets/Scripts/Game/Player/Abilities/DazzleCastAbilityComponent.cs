@@ -17,6 +17,7 @@ namespace Kraken
         [SerializeField] private PlayerControlsComponent _controlsComponent;
         [SerializeField] private PauseManager _pauseManager = null;
         [SerializeField] private float _verticalOffset = -0.25f;
+        [SerializeField] private LayerMask _wallLayerMask;
         private bool _ultimateRunning = false;
 
         private float _jumpDuration = 0.27f;
@@ -85,8 +86,22 @@ namespace Kraken
                 return;
             }
 
-            Animate.LerpSomething(_jumpDuration, (float step) => 
+            // Check for walls
+            ray = new Ray(transform.position, transform.forward);
+            if (Physics.Raycast(ray, out var wallHit, _jumpDistance, _wallLayerMask))
             {
+                float height = middlePos.y;
+                middlePos = wallHit.point;
+                middlePos.y = height;
+                ray = new Ray(middlePos, Vector3.down);
+                if (Physics.Raycast(ray, out var hit2, 10000f, groundLayerMask))
+                {
+                    endPos = hit2.point;
+                }
+            }
+
+            Animate.LerpSomething(_jumpDuration, (float step) => 
+            {  
                 if (step < 0.5f)
                 {
                     transform.position = Vector3.Slerp(startPos, middlePos, step * 2);
