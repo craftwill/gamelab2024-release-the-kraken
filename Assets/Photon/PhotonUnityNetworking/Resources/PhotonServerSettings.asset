@@ -128,6 +128,11 @@ MonoBehaviour:
   - RPC_All_StopWhirlpool
   - RPC_All_PlayBuildSound
   - RPC_All_DestroyRazzlePullAbility
+  - OtherPlayerIsCalling
+  - OtherPlayerCancel
+  - OtherPlayerIsWaiting
+  - OtherPlayerIsWaitingOnTower
+  - OtherPlayerCancelTower
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

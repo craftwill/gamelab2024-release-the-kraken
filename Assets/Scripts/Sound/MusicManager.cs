@@ -25,7 +25,7 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.StartGameFlow, HandleStartGameflow);
             EventManager.AddEventListener(EventNames.StopGameFlow, HandleStopGameflow);
             EventManager.AddEventListener(EventNames.BossSpawned, HandleBossSpawned);
-            EventManager.AddEventListener(EventNames.PlayerEnteredObjective, HandlePlayerEnteredZone);
+            EventManager.AddEventListener(EventNames.PlayerEnteredObjective, HandlePlayerEnteredObjective);
             EventManager.AddEventListener(EventNames.PlayerLeftObjective, HandlePlayerLeftZone);
         }
 
@@ -35,7 +35,7 @@ namespace Kraken
             EventManager.RemoveEventListener(EventNames.StartGameFlow, HandleStartGameflow);
             EventManager.RemoveEventListener(EventNames.StopGameFlow, HandleStopGameflow);
             EventManager.RemoveEventListener(EventNames.BossSpawned, HandleBossSpawned);
-            EventManager.RemoveEventListener(EventNames.PlayerEnteredObjective, HandlePlayerEnteredZone);
+            EventManager.RemoveEventListener(EventNames.PlayerEnteredObjective, HandlePlayerEnteredObjective);
             EventManager.RemoveEventListener(EventNames.PlayerLeftObjective, HandlePlayerLeftZone);
         }
 
@@ -66,7 +66,7 @@ namespace Kraken
             _state = MusicState.Boss;
         }
 
-        private void HandlePlayerEnteredZone(BytesData data)
+        private void HandlePlayerEnteredObjective(BytesData data)
         {
             _playersInZone++;
             if (_state == MusicState.Boss || _state == MusicState.Objective || !Config.current.useObjectiveMusic || !_inGame) return;

@@ -13,7 +13,7 @@ namespace Kraken
         [SerializeField] private PlayerSoundComponent _soundComponent;
 
         private PlayerAnimationComponent _playerAnimationComponent;
-        private bool _isOwner;
+        public bool _isOwner { get; private set; }
 
         protected override void Awake()
         {
