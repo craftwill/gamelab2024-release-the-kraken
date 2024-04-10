@@ -1,3 +1,4 @@
+using Bytes;
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Kraken
         {
             if (_towerInRange &&_lilWoolManager?._woolQuantity >= Config.current.towerWoolCost && TowerManager.Instance.TowersBuiltThisRound < Config.current.maxTowerPerRound)
             {
+                EventManager.Dispatch(EventNames.TowerAttemptBuilt, null);
                 _towerInRange.PlayerTryBuild();
             }
         }
@@ -27,6 +29,7 @@ namespace Kraken
         {
             if (_towerInRange)
             {
+                EventManager.Dispatch(EventNames.TowerCancelBuilt, null);
                 _towerInRange.PlayerCancelBuild();
             }
         }
