@@ -138,6 +138,7 @@ namespace Kraken
             if (AreAllPlayersReady() && PhotonNetwork.IsMasterClient)
             {
                 _btnStart.interactable = false;
+                _btnStart.gameObject.SetActive(false);
                 JoinGameScene();
             }
         }
