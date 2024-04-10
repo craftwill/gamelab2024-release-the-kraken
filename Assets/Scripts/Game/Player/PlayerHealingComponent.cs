@@ -14,8 +14,9 @@ namespace Kraken
         private GameObject[] _players = { };
         private HealthComponent _componentToHeal;
         private LilWoolManager _lilWoolManager;
-        private bool _isHealing = false;
         private PlayerAnimationComponent _animComponent;
+        private bool _isHealing = false;
+        private bool _wasInRangeToHeal = false;
 
         private void Start()
         {
@@ -25,6 +26,9 @@ namespace Kraken
 
         private void Update()
         {
+            bool isInRangeToheal = GetDistanceBetweenPlayers() > Config.current.healingMaxDistance;
+            UpdatePlayerHealAbilityUI(isInRangeToheal);
+
             if (_players.Length < 2)
             {
                 _players = GameObject.FindGameObjectsWithTag("Player");
@@ -45,11 +49,21 @@ namespace Kraken
             if (_isHealing)
             {
                 transform.LookAt(_componentToHeal.transform);
-                if (GetDistanceBetweenPlayers() > Config.current.healingMaxDistance || _componentToHeal.Health == _componentToHeal.MaxHealth)
+                if (isInRangeToheal || _componentToHeal.Health == _componentToHeal.MaxHealth)
                 {
                     _isHealing = false;
                 }
             }
+        }
+
+        private void UpdatePlayerHealAbilityUI(bool isInRangeToHeal) 
+        {
+            if (_wasInRangeToHeal != isInRangeToHeal)
+            {
+                EventManager.Dispatch(EventNames.UpdatePlayerHealAbilityUI, new BoolDataBytes(isInRangeToHeal));
+            }
+            
+            _wasInRangeToHeal = isInRangeToHeal;
         }
 
         public void OnHealingInput(bool pressed)
