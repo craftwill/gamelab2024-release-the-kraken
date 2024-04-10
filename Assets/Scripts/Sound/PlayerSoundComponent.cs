@@ -15,6 +15,10 @@ namespace Kraken
         [SerializeField] private AK.Wwise.Event _ultimateTriggeredSound;
         [SerializeField] private AK.Wwise.Event _healingSoundStart;
         [SerializeField] private AK.Wwise.Event _healingSoundStop;
+        [SerializeField] private AK.Wwise.Event _footstepSound;
+        [SerializeField] private AK.Wwise.Event _dazzleAbilityJumpSound;
+        [SerializeField] private AK.Wwise.Event _dazzleAbilityCrashSound;
+        [SerializeField] private AK.Wwise.Event _razzleAbilityCastSound;
 
         private void Start()
         {
@@ -75,6 +79,35 @@ namespace Kraken
         public void RPC_All_StopHealingSound()
         {
             _healingSoundStop.Post(gameObject);
+        }
+
+        public void PlayFootstep()
+        {
+            photonView.RPC(nameof(RPC_All_PlayFootstepSound), RpcTarget.All);
+        }
+
+        [PunRPC]
+        public void RPC_All_PlayFootstepSound()
+        {
+            _footstepSound.Post(gameObject);
+        }
+
+        [PunRPC]
+        public void RPC_All_PlayDazzleAbilityJumpSound()
+        {
+            _dazzleAbilityJumpSound.Post(gameObject);
+        }
+
+        [PunRPC]
+        public void RPC_All_PlayDazzleAbilityCrashSound()
+        {
+            _dazzleAbilityCrashSound.Post(gameObject);
+        }
+
+        [PunRPC]
+        public void RPC_All_PlayRazzleAbilityCastSound()
+        {
+            _razzleAbilityCastSound.Post(gameObject);
         }
     }
 }

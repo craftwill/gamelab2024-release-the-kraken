@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c75bd90d2002764cbcde38269546abc, type: 3}
+  m_Name: E394B03D-91AD-4873-8DD5-DEFC037360EF
+  m_EditorClassIdentifier: 
+  objectName: SFX_DUO_HABILETE_HOWLING_CAST
+  id: 3964862123
+  guid: E394B03D-91AD-4873-8DD5-DEFC037360EF
