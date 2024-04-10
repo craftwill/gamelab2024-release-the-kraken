@@ -363,6 +363,8 @@ namespace Kraken
                 _freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity;
                 _freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier;
             }
+
+            EventManager.Dispatch(EventNames.InputSchemeChanged, new StringDataBytes(newScheme));
         }
 
         public void OnDuoUltimate(InputAction.CallbackContext value)

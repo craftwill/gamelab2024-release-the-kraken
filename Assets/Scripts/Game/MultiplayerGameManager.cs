@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 using Photon.Pun;
@@ -8,7 +9,6 @@ using Photon.Realtime;
 using Bytes;
 
 using Kraken.Network;
-using UnityEngine.InputSystem;
 
 namespace Kraken
 {
