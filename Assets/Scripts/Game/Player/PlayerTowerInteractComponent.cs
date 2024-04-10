@@ -1,3 +1,4 @@
+using Bytes;
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,7 +20,12 @@ namespace Kraken
         {
             if (_towerInRange &&_lilWoolManager?._woolQuantity >= Config.current.towerWoolCost && TowerManager.Instance.TowersBuiltThisRound < Config.current.maxTowerPerRound)
             {
-                _towerInRange.PlayerTryBuild();
+                if(_towerInRange._TowerState == Tower.TowerState.Inactive)
+                {
+
+                    EventManager.Dispatch(EventNames.TowerAttemptBuilt, null);
+                    _towerInRange.PlayerTryBuild();
+                }
             }
         }
 
@@ -27,7 +33,11 @@ namespace Kraken
         {
             if (_towerInRange)
             {
-                _towerInRange.PlayerCancelBuild();
+                if (_towerInRange._TowerState == Tower.TowerState.Inactive)
+                {
+                    EventManager.Dispatch(EventNames.TowerCancelBuilt, null);
+                    _towerInRange.PlayerCancelBuild();
+                }
             }
         }
 
@@ -35,6 +45,7 @@ namespace Kraken
         {
             if (t is null)
             {
+                EventManager.Dispatch(EventNames.TowerCancelBuilt, null);
                 _towerInRange.PlayerCancelBuild();
             }
             _towerInRange = t;
