@@ -187,10 +187,8 @@ namespace Kraken
         IEnumerator UltimateCooldown()
         {
             _ultimateAvailable = false;
-            EventManager.Dispatch(EventNames.UpdateUltimateUI_Deprecated, new FloatDataBytes(Config.current.ultimateCooldown));
             yield return new WaitForSeconds(Config.current.ultimateCooldown);
             _ultimateAvailable = true;
-            EventManager.Dispatch(EventNames.UpdateUltimateUI_Deprecated, new FloatDataBytes(0));
         }
 
         private void UpdateWoolQuantity(BytesData data)

@@ -67,7 +67,6 @@ namespace Kraken
         public const string UpdateOtherPlayerHealthUI = "UpdateOtherPlayerHealthUI";
 
         // Player Abilities HUD events
-        public const string UpdateUltimateUI_Deprecated = "UpdateUltimateUI_Deprecated";
         public const string UpdateUltimateUI = "UpdateUltimateUI";
         public const string StartAbilityCooldown = "StartAbilityCooldown";
         public const string UpdatePlayerHealAbilityUI = "UpdatePlayerHealAbilityUI";
