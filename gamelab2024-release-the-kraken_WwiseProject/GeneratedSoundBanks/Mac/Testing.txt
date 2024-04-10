@@ -1,14 +1,13 @@
 Event	ID	Name			Wwise Object Path	Notes
 	149926274	SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL			\Default Work Unit\SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL	
 	324646143	Play_Defeat			\Default Work Unit\Play_Defeat	
-	349172053	Play_EnemyHurt			\Default Work Unit\Play_EnemyHurt	
+	376716515	SFX_UI_JOUEURS_ULTIMATE_READY			\Default Work Unit\SFX_UI_JOUEURS_ULTIMATE_READY	
 	504869708	Stop_Music_General			\Default Work Unit\Stop_Music_General	
-	730396682	Stop_Healing			\Default Work Unit\Stop_Healing	
+	786476976	SFX_DUO_HABILETE_PATCHUP_PATCHING_STOP			\Default Work Unit\SFX_DUO_HABILETE_PATCHUP_PATCHING_STOP	
 	792726151	SFX_DAZZLE_COMBAT_DEGATS_HURT			\Default Work Unit\SFX_DAZZLE_COMBAT_DEGATS_HURT	
 	977895875	Play_Music_Objective			\Default Work Unit\Play_Music_Objective	
-	984790419	Play_UltimateNotice			\Default Work Unit\Play_UltimateNotice	
 	1025767425	SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL_STOP			\Default Work Unit\SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL_STOP	
-	1218358740	Play_UltimateReady			\Default Work Unit\Play_UltimateReady	
+	1201508577	SFX_DUO_HABILETE_DOUBLETROUBLE_CAST			\Default Work Unit\SFX_DUO_HABILETE_DOUBLETROUBLE_CAST	
 	1223449757	SFX_DUO_HABILETE_PATCHUP_PATCHING			\Default Work Unit\SFX_DUO_HABILETE_PATCHUP_PATCHING	
 	1316972749	SFX_RAZZLE_COMBAT_DEGATS_HURT			\Default Work Unit\SFX_RAZZLE_COMBAT_DEGATS_HURT	
 	1472712545	SFX_DUO_HABILETE_DOUBLETROUBLE_COMPLETE			\Default Work Unit\SFX_DUO_HABILETE_DOUBLETROUBLE_COMPLETE	
@@ -21,20 +20,22 @@ Event	ID	Name			Wwise Object Path	Notes
 	2523551556	SFX_OBJETS_RESSOURCES_WOOL_COLLECT			\Default Work Unit\SFX_OBJETS_RESSOURCES_WOOL_COLLECT	
 	2746305898	Play_Music_General			\Default Work Unit\Play_Music_General	
 	2869039319	Stop_Music_Boss			\Default Work Unit\Stop_Music_Boss	
+	2920071018	SFX_UI_OBJECTIFS_BOSS_WARNING			\Default Work Unit\SFX_UI_OBJECTIFS_BOSS_WARNING	
+	3060955767	SFX_ENNEMIS_MINIONS_MELEE_HURT			\Default Work Unit\SFX_ENNEMIS_MINIONS_MELEE_HURT	
 	3092608232	SFX_DUO_MOUVEMENT_SPRINT_FWIP			\Default Work Unit\SFX_DUO_MOUVEMENT_SPRINT_FWIP	
-	3162760014	Play_UltimateTriggered			\Default Work Unit\Play_UltimateTriggered	
 	3178286754	Play_PlayerHurt			\Default Work Unit\Play_PlayerHurt	
 	3203340632	SFX_RAZZLE_HABILETE_COMBO_ATTAQUE1			\Default Work Unit\SFX_RAZZLE_HABILETE_COMBO_ATTAQUE1	
 	3203340634	SFX_RAZZLE_HABILETE_COMBO_ATTAQUE3			\Default Work Unit\SFX_RAZZLE_HABILETE_COMBO_ATTAQUE3	
 	3203340635	SFX_RAZZLE_HABILETE_COMBO_ATTAQUE2			\Default Work Unit\SFX_RAZZLE_HABILETE_COMBO_ATTAQUE2	
 	3233615227	Play_ZoneFullCapacity			\Default Work Unit\Play_ZoneFullCapacity	
+	3238219403	SFX_UI_JOUEURS_ULTIMATE_WAITING			\Default Work Unit\SFX_UI_JOUEURS_ULTIMATE_WAITING	
 	3253098515	Play_EnemyShoot			\Default Work Unit\Play_EnemyShoot	
 	3519417344	SFX_DAZZLE_HABILETE_COMBO_ATTAQUE3			\Default Work Unit\SFX_DAZZLE_HABILETE_COMBO_ATTAQUE3	
 	3519417345	SFX_DAZZLE_HABILETE_COMBO_ATTAQUE2			\Default Work Unit\SFX_DAZZLE_HABILETE_COMBO_ATTAQUE2	
 	3519417346	SFX_DAZZLE_HABILETE_COMBO_ATTAQUE1			\Default Work Unit\SFX_DAZZLE_HABILETE_COMBO_ATTAQUE1	
 	3701084809	SFX_RAZZLE_HABILETE_GATHERUP_CAST			\Default Work Unit\SFX_RAZZLE_HABILETE_GATHERUP_CAST	
-	3774338134	Play_BossSpawn			\Default Work Unit\Play_BossSpawn	
 	3931952720	SFX_DAZZLE_HABILETE_SURPRISE_CRASH			\Default Work Unit\SFX_DAZZLE_HABILETE_SURPRISE_CRASH	
+	3964862123	SFX_DUO_HABILETE_HOWLING_CAST			\Default Work Unit\SFX_DUO_HABILETE_HOWLING_CAST	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	24633649	ComboPitch			\Default Work Unit\ComboPitch	
@@ -60,6 +61,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	823988441	Nasa releases audio of what a black hole 'sounds' like shorts	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Nasa releases audio of what a black hole 'sounds' like shorts_F55DC81F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nasa releases audio of what a black hole 'sounds' like shorts		6000736
 	875765215	alarme-factorio	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\alarme-factorio_FCF97502.wem		\Actor-Mixer Hierarchy\Default Work Unit\alarme-factorio		298744
 	877710634	minecraft_hit_soundmp3converter	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\minecraft_hit_soundmp3converter_2D9B98A3.wem		\Actor-Mixer Hierarchy\Default Work Unit\minecraft_hit_soundmp3converter		167784
+	894964667	386308__ldezem__pneumatic-hammer-deprag-zn231-start-1a	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\386308__ldezem__pneumatic-hammer-deprag-zn231-start-1a_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\386308__ldezem__pneumatic-hammer-deprag-zn231-start-1a		72160
 	908038837	ultimateReady	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\FFXIV Limit Break 3 Video Effect_F4D2370A.wem		\Actor-Mixer Hierarchy\Default Work Unit\ultimateReady		174048
 	933963966	ameno	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\ameno_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\ameno		327452
 	996749074	pew-pew-lame-sound-effect	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\pew-pew-lame-sound-effect_461CF5D3.wem		\Actor-Mixer Hierarchy\Default Work Unit\pew-pew-lame-sound-effect		43584

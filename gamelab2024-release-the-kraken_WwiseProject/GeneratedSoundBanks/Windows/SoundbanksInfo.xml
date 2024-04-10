@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{98E8321F-4DB6-8F08-7DBD-8707CFC7D67C}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{8CD18495-559D-70AC-DD52-A424D5C0AF30}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -113,6 +113,10 @@
 					<ShortName>minecraft_hit_soundmp3converter.wav</ShortName>
 					<CachePath>SFX/minecraft_hit_soundmp3converter_2D9B98A3.wem</CachePath>
 				</File>
+				<File Id="894964667" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>386308__ldezem__pneumatic-hammer-deprag-zn231-start-1a.wav</ShortName>
+					<CachePath>SFX/386308__ldezem__pneumatic-hammer-deprag-zn231-start-1a_818F3B66.wem</CachePath>
+				</File>
 				<File Id="908038837" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FFXIV Limit Break 3 Video Effect.wav</ShortName>
 					<CachePath>SFX/FFXIV Limit Break 3 Video Effect_F4D2370A.wem</CachePath>
@@ -143,19 +147,9 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="3774338134" Name="Play_BossSpawn" DurationType="OneShot" DurationMin="1.6930078" DurationMax="1.6930078">
-					<MediaRefs>
-						<MediaRef Id="875765215"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="324646143" Name="Play_Defeat" DurationType="OneShot" DurationMin="8.057324" DurationMax="8.057324">
 					<MediaRefs>
 						<MediaRef Id="628232679"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="349172053" Name="Play_EnemyHurt" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.504" DurationMax="0.504">
-					<MediaRefs>
-						<MediaRef Id="1046494642"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3253098515" Name="Play_EnemyShoot" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.49308255" DurationMax="0.49308255">
@@ -181,21 +175,6 @@
 				<Event Id="3178286754" Name="Play_PlayerHurt" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.3451883" DurationMax="0.3874608">
 					<MediaRefs>
 						<MediaRef Id="1042314046"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="984790419" Name="Play_UltimateNotice" DurationType="OneShot" DurationMin="0.4477303" DurationMax="0.4477303">
-					<MediaRefs>
-						<MediaRef Id="422643003"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1218358740" Name="Play_UltimateReady" DurationType="OneShot" DurationMin="0.9060085" DurationMax="0.9060085">
-					<MediaRefs>
-						<MediaRef Id="908038837"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="3162760014" Name="Play_UltimateTriggered" DurationType="OneShot" DurationMin="2.4961457" DurationMax="2.4961457">
-					<MediaRefs>
-						<MediaRef Id="781786885"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2468480011" Name="Play_VictoryFanfare" DurationType="Infinite">
@@ -243,9 +222,19 @@
 						<MediaRef Id="627948373"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1201508577" Name="SFX_DUO_HABILETE_DOUBLETROUBLE_CAST" DurationType="OneShot" DurationMin="2.4961457" DurationMax="2.4961457">
+					<MediaRefs>
+						<MediaRef Id="781786885"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1472712545" Name="SFX_DUO_HABILETE_DOUBLETROUBLE_COMPLETE" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.8557596" DurationMax="1.8557596">
 					<MediaRefs>
 						<MediaRef Id="933963966"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3964862123" Name="SFX_DUO_HABILETE_HOWLING_CAST" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.75" DurationMax="0.75">
+					<MediaRefs>
+						<MediaRef Id="894964667"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1223449757" Name="SFX_DUO_HABILETE_PATCHUP_PATCHING" MaxAttenuation="100" DurationType="Infinite">
@@ -253,9 +242,15 @@
 						<MediaRef Id="12264851"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="786476976" Name="SFX_DUO_HABILETE_PATCHUP_PATCHING_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3092608232" Name="SFX_DUO_MOUVEMENT_SPRINT_FWIP" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.2016326" DurationMax="1.2016326">
 					<MediaRefs>
 						<MediaRef Id="392899862"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3060955767" Name="SFX_ENNEMIS_MINIONS_MELEE_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.504" DurationMax="0.504">
+					<MediaRefs>
+						<MediaRef Id="1046494642"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2523551556" Name="SFX_OBJETS_RESSOURCES_WOOL_COLLECT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.5952754" DurationMax="1.336348">
@@ -299,7 +294,21 @@
 						<MediaRef Id="1073696907"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="730396682" Name="Stop_Healing" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="376716515" Name="SFX_UI_JOUEURS_ULTIMATE_READY" DurationType="OneShot" DurationMin="0.9060085" DurationMax="0.9060085">
+					<MediaRefs>
+						<MediaRef Id="908038837"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3238219403" Name="SFX_UI_JOUEURS_ULTIMATE_WAITING" DurationType="OneShot" DurationMin="0.4477303" DurationMax="0.4477303">
+					<MediaRefs>
+						<MediaRef Id="422643003"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2920071018" Name="SFX_UI_OBJECTIFS_BOSS_WARNING" DurationType="OneShot" DurationMin="1.6930078" DurationMax="1.6930078">
+					<MediaRefs>
+						<MediaRef Id="875765215"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2869039319" Name="Stop_Music_Boss" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="504869708" Name="Stop_Music_General" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2291264325" Name="Stop_Music_Objective" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -309,5 +318,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A244BD48-6CDF-7A9A-A076-66B91BC5E2D8}</FileHash>
+	<FileHash>{31E845B4-DA9A-BF9F-5B8B-6E71F53826B7}</FileHash>
 </SoundBanksInfo>
