@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 using Photon.Pun;
@@ -20,6 +21,7 @@ namespace Kraken
         [SerializeField] private GameObject _razzlePrefab;
         [SerializeField] private GameObject _dazzlePrefab;
 
+        private PlayerInput _playerInput;
         private GameObject _localPlayer;
         private bool _gameStarted = false;
         private bool _gameEnded = false;
@@ -42,11 +44,12 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.LeaveGame, HandleLeaveGame);
 
             CreatePlayer();
+            _playerInput = _localPlayer.GetComponent<PlayerInput>();
 
             // Setup HUD according to player type and control schema
             int playerClassId = GetPlayerClassId();
             bool isRazzle = playerClassId == 0;
-            bool isKeyboard = Input.GetJoystickNames().Length <= 0;
+            bool isKeyboard = _playerInput.currentControlScheme.Equals("Gamepad");
             EventManager.Dispatch(EventNames.SetupHUD, new SetupHUDData(isRazzle, isKeyboard));
 
             if (!PhotonNetwork.IsMasterClient) return;

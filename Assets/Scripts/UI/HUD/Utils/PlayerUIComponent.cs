@@ -2,8 +2,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-using Bytes;
-
 namespace Kraken.UI
 {
     public interface IPlayerUIComponent
@@ -35,7 +33,7 @@ namespace Kraken.UI
         public void Init(bool isRazzle, bool isKeyboard)
         {
             _spriteIndexUsed = isRazzle ? 0 : 1;
-            _controlSpriteIndexUsed = isKeyboard ? 0 : 1;
+            _controlSpriteIndexUsed = isKeyboard ? 1 : 0;
             _imgUsed.sprite = _iconSprites[_spriteIndexUsed];
             _imgUsedBackground.sprite = _iconSprites[_spriteIndexUsed];
             _imgControl.sprite = _controlSprites[_controlSpriteIndexUsed];
