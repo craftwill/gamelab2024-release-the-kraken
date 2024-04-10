@@ -37,7 +37,11 @@ namespace Kraken
 
             if (towerInteract)
             {
-                EventManager.Dispatch(EventNames.PlayerEnteredTower, _zoneEventData);
+                if (other.GetComponent<PlayerEntity>()._isOwner)
+                {
+                    EventManager.Dispatch(EventNames.PlayerEnteredTower, _zoneEventData);
+                }
+                
                 towerInteract.SetNewTowerInRange(this);
             }
         }
@@ -48,7 +52,11 @@ namespace Kraken
 
             if (towerInteract)
             {
-                EventManager.Dispatch(EventNames.PlayerLeftTower, _zoneEventData);
+                if (other.GetComponent<PlayerEntity>()._isOwner)
+                {
+                    EventManager.Dispatch(EventNames.PlayerLeftTower, _zoneEventData);
+                }
+
                 towerInteract.SetNewTowerInRange(null);
             }
         }
