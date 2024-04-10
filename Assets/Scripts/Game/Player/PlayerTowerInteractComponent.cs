@@ -20,8 +20,12 @@ namespace Kraken
         {
             if (_towerInRange &&_lilWoolManager?._woolQuantity >= Config.current.towerWoolCost && TowerManager.Instance.TowersBuiltThisRound < Config.current.maxTowerPerRound)
             {
-                EventManager.Dispatch(EventNames.TowerAttemptBuilt, null);
-                _towerInRange.PlayerTryBuild();
+                if(_towerInRange._TowerState == Tower.TowerState.Inactive)
+                {
+
+                    EventManager.Dispatch(EventNames.TowerAttemptBuilt, null);
+                    _towerInRange.PlayerTryBuild();
+                }
             }
         }
 
@@ -29,8 +33,11 @@ namespace Kraken
         {
             if (_towerInRange)
             {
-                EventManager.Dispatch(EventNames.TowerCancelBuilt, null);
-                _towerInRange.PlayerCancelBuild();
+                if (_towerInRange._TowerState == Tower.TowerState.Inactive)
+                {
+                    EventManager.Dispatch(EventNames.TowerCancelBuilt, null);
+                    _towerInRange.PlayerCancelBuild();
+                }
             }
         }
 
