@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 2248425653259204688}
   - component: {fileID: 5201743268733322080}
   - component: {fileID: 8722127706636790877}
+  - component: {fileID: 5045109784974756877}
   m_Layer: 0
   m_Name: RazzlePullAbility
   m_TagString: Untagged
@@ -251,6 +252,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6d5cb5af0b4bd48848a6ea32d547a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundComponent: {fileID: 5045109784974756877}
+--- !u!114 &5045109784974756877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911473875266983035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b1a238f9d3e114a8e88a37eaa1cbd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _whirlpoolPlay:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: bcd103a347dc3ef46b5d41f2aa324bca,
+      type: 2}
+  _whirlpoolStop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 70c59b1cc5bce0641b9a24e74d85f5d1,
+      type: 2}
 --- !u!1 &7383878295149284177
 GameObject:
   m_ObjectHideFlags: 0

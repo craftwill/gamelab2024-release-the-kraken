@@ -121,6 +121,11 @@ MonoBehaviour:
   - RPC_All_StopGeneralMusic
   - RPC_All_StopObjectiveMusic
   - RPC_All_PlayFootstepSound
+  - RPC_All_PlayDazzleAbilityCrashSound
+  - RPC_All_PlayDazzleAbilityJumpSound
+  - RPC_All_PlayRazzleAbilityCastSound
+  - RPC_All_PlayWhirlpool
+  - RPC_All_StopWhirlpool
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

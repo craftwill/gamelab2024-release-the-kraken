@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{01B13E2C-6C92-2842-B402-FFCB67F77F05}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{98E8321F-4DB6-8F08-7DBD-8707CFC7D67C}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -293,6 +293,7 @@
 						<MediaRef Id="823988441"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1025767425" Name="SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2362336083" Name="SFX_RAZZLE_MOUVEMENT_FOOTSTEPS_HOVER" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.61713773" DurationMax="0.61713773">
 					<MediaRefs>
 						<MediaRef Id="1073696907"/>
@@ -308,5 +309,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9173FE26-76D5-46DF-2F0C-DE18BE447C5D}</FileHash>
+	<FileHash>{D7878C8D-D15B-9CC9-3164-FB516159C5C7}</FileHash>
 </SoundBanksInfo>

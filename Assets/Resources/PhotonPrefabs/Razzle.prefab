@@ -719,6 +719,7 @@ MonoBehaviour:
   _castAbilityInput: {fileID: 4469811346193628206, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
   _controlsComponent: {fileID: 6643568239835857836}
+  _soundComponent: {fileID: 2728202769661526766}
   _pauseManager: {fileID: 0}
   _abilityPrefab: {fileID: 1911473875266983035, guid: 7d2f5f6fe6939f44e97389e718101846,
     type: 3}
