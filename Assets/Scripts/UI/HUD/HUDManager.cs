@@ -43,7 +43,6 @@ namespace Kraken.UI
         public void HandleInputSchemeChanged(BytesData data)
         {
             var newScheme = (data as StringDataBytes).StringValue;
-            Debug.Log("HEY!");
             bool isKeyboard = !newScheme.Equals("Gamepad");
             UpdatePlayerUIComponents(_isClientRazzle, isKeyboard);
         }
