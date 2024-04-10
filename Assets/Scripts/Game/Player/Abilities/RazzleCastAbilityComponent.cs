@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 using Kraken.Network;
 using Bytes;
+using Photon.Pun;
 
 namespace Kraken
 {
@@ -11,6 +12,7 @@ namespace Kraken
     {
         [SerializeField] private InputActionReference _castAbilityInput;
         [SerializeField] private PlayerControlsComponent _controlsComponent;
+        [SerializeField] private PlayerSoundComponent _soundComponent;
         [SerializeField] private PauseManager _pauseManager = null;
         [SerializeField] private GameObject _abilityPrefab;
         [SerializeField] private float _verticalOffset = -0.35f;
@@ -57,6 +59,7 @@ namespace Kraken
 
             RazzlePullAbility pullAbility = ability.GetComponent<RazzlePullAbility>();
             pullAbility.ActivateAbility();
+            photonView.RPC(nameof(_soundComponent.RPC_All_PlayRazzleAbilityCastSound), RpcTarget.All);
         }
 
         private void HandleUltimateRunning(BytesData data)

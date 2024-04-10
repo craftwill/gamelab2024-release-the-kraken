@@ -57,10 +57,13 @@ namespace Kraken.UI
         {
             bool isRunning = ((BoolDataBytes)data).BoolValue;
 
-            _isRainbow = isRunning;
-            if (_hurtAnim == null)
+            if (isRunning)
             {
-                UpdateAllSprites(_isRainbow ? 2 : 0);
+                SetRainbowState();
+            }
+            else
+            {
+                SetNormalState();
             }
         }
 
@@ -71,8 +74,11 @@ namespace Kraken.UI
 
         public void SetNormalState()
         {
+            _animator.SetBool("IsRainbow", false);
             _isRainbow = false;
-            UpdateAllSprites(0);
+
+            if(_hurtAnim == null)
+                UpdateAllSprites(0);
         }
 
         private void PlayHurtAnim()
@@ -95,8 +101,11 @@ namespace Kraken.UI
 
         public void SetRainbowState()
         {
+            _animator.SetBool("IsRainbow", true);
             _isRainbow = true;
-            UpdateAllSprites(2);
+
+            if (_hurtAnim == null)
+                UpdateAllSprites(2);
         }
 
         private void UpdateAllSprites(int offset = 0)

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8419461488728210086}
   - component: {fileID: 3222099341327882751}
+  - component: {fileID: 3066669560066275335}
   m_Layer: 0
   m_Name: WaitingTower
   m_TagString: Untagged
@@ -55,6 +56,23 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &3066669560066275335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350368888685842568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1628fcf28cd69e84b93929de1822d896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buildSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 80b14958677391044be2a270018c68d8,
+      type: 2}
 --- !u!1 &1028564723077288959
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,37 +1,27 @@
 
-using Bytes;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Kraken.UI
 {
-    public class UltimateAbilityUI : KrakenUIElement
+    public class UltimateAbilityUI : KrakenUIElement, IPlayerUIComponent
     {
-        [SerializeField] private Image _imgWoolGauge;
+        [Header("UltimateAbilityUI")]
+        [SerializeField] private Image _imgControl;
+        [Header("Control Sprites")]
+        // Index 0 is pc and 1 is xbox controller
+        [SerializeField] protected Sprite[] _controlSprites;
 
-        private void Start()
+        // IPlayerUIComponent
+        public void Init(bool isRazzle, bool isKeyboard)
         {
-            SetWoolGaugeCount(Config.current.initialWoolQuantity);
-            EventManager.AddEventListener(EventNames.UpdateWoolQuantity, HandleUpdateWoolQuantity);
+            _imgControl.sprite = _controlSprites[isKeyboard ? 0 : 1];
         }
 
-        private void OnDestroy()
+        public void SetIsGreyedOut(bool isGreyedOut)
         {
-            EventManager.RemoveEventListener(EventNames.UpdateWoolQuantity, HandleUpdateWoolQuantity);
+            // No grey out for this component
         }
-
-        private void HandleUpdateWoolQuantity(BytesData data)
-        {
-            int woolAmount = (data as IntDataBytes).IntValue;
-            SetWoolGaugeCount(woolAmount);
-        }
-
-        private void SetWoolGaugeCount(int woolAmount) 
-        {
-            float fillAmount = (float)woolAmount / Config.current.maxWoolQuantity;
-            _imgWoolGauge.fillAmount = fillAmount;
-        }
+        // IPlayerUIComponent end
     }
 }

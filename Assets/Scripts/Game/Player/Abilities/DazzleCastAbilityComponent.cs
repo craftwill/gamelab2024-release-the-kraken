@@ -6,6 +6,7 @@ using Kraken.Network;
 
 using Bytes;
 using Unity.VisualScripting;
+using Photon.Pun;
 
 namespace Kraken
 {
@@ -15,8 +16,10 @@ namespace Kraken
         [SerializeField] private InputActionReference _castAbilityInput;
         [SerializeField] private GameObject _abilityPrefab;
         [SerializeField] private PlayerControlsComponent _controlsComponent;
+        [SerializeField] private PlayerSoundComponent _soundComponent;
         [SerializeField] private PauseManager _pauseManager = null;
         [SerializeField] private float _verticalOffset = -0.25f;
+        [SerializeField] private LayerMask _wallLayerMask;
         private bool _ultimateRunning = false;
 
         private float _jumpDuration = 0.27f;
@@ -85,8 +88,23 @@ namespace Kraken
                 return;
             }
 
-            Animate.LerpSomething(_jumpDuration, (float step) => 
+            // Check for walls
+            ray = new Ray(transform.position, transform.forward);
+            if (Physics.Raycast(ray, out var wallHit, _jumpDistance, _wallLayerMask))
             {
+                float height = middlePos.y;
+                middlePos = wallHit.point;
+                middlePos.y = height;
+                ray = new Ray(middlePos, Vector3.down);
+                if (Physics.Raycast(ray, out var hit2, 10000f, groundLayerMask))
+                {
+                    endPos = hit2.point;
+                }
+            }
+            photonView.RPC(nameof(_soundComponent.RPC_All_PlayDazzleAbilityJumpSound), RpcTarget.All);
+
+            Animate.LerpSomething(_jumpDuration, (float step) => 
+            {  
                 if (step < 0.5f)
                 {
                     transform.position = Vector3.Slerp(startPos, middlePos, step * 2);
@@ -103,6 +121,7 @@ namespace Kraken
                 DazzleAoEAbility aoeAbility = ability.GetComponent<DazzleAoEAbility>();
                 aoeAbility.ActivateAbility();
 
+                photonView.RPC(nameof(_soundComponent.RPC_All_PlayDazzleAbilityCrashSound), RpcTarget.All);
                 _playerEntity.SetControlsEnabled(true);
                 transform.position = endPos;
             }, timeScaled_: true);

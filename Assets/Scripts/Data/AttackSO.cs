@@ -27,5 +27,8 @@ namespace Kraken
         public float animDoneBufferTimer;
         public int damage;
         public int comboStep = 1;
+        [Tooltip("Sound to play")]
+        public AK.Wwise.Event sound;
+
     }
 }

@@ -1,8 +1,6 @@
-﻿using System;
+﻿
 using UnityEngine;
-using UnityEngine.Events;
 
-using Photon.Pun;
 using Bytes;
 
 namespace Kraken
@@ -11,6 +9,9 @@ namespace Kraken
     {
         // Custom late start()
         public const string LateStart = "LateStart";
+
+        // Input events
+        public const string InputSchemeChanged = "InputSchemeChanged";
 
         // Main menu
         public const string TryConnectToPhoton = "TryConnectToPhoton";

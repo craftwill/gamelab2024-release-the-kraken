@@ -26,7 +26,10 @@ namespace Kraken
         {
             if (_animStateMachine.GetAnimator() == null) return;
 
-            _animStateMachine.PlayAnimOnce(EntityAnimState.Hurt, _animatorPrefix, _animatorSuffix);
+            var loopedName = _animStateMachine.GetCurrentLoopedState()?.ClipName;
+            var playOnceName = _animStateMachine.GetCurrentPlayOnceState()?.ClipName;
+            if (loopedName == "Idle" || playOnceName == "Idle" || loopedName == "Walk" || playOnceName == "Walk")
+                _animStateMachine.PlayAnimOnce(EntityAnimState.Hurt, _animatorPrefix, _animatorSuffix);
         }
 
         public bool SetLoopedStateIdle()
