@@ -52,6 +52,7 @@ namespace Kraken
         public const string SetupHUD = "SetupHUD";
         public const string InitTimeLeftUI = "InitTimeLeftUI";
         public const string ShowDefeatTimeLeftUI = "ShowDefeatTimeLeftUI";
+        public const string HideHUD = "HideHUD";
         public const string UpdateCountownTimerUI = "UpdateCountownTimerUI";
         public const string UpdateObjectiveUI = "UpdateObjectiveUI";
         public const string UpdateObjectiveTimerUI = "UpdateObjectiveTimerUI";

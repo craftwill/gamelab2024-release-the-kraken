@@ -133,6 +133,7 @@ MonoBehaviour:
   - OtherPlayerIsWaiting
   - OtherPlayerIsWaitingOnTower
   - OtherPlayerCancelTower
+  - RPC_ALL_LeaveRoom
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

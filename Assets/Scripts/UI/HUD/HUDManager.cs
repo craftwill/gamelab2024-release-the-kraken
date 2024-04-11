@@ -5,7 +5,7 @@ using Bytes;
 
 namespace Kraken.UI
 {
-    public class HUDManager : MonoBehaviour
+    public class HUDManager : KrakenUIElement
     {
         // All UI components with state that changes depending on player and control schema
         private IPlayerUIComponent[] _playerUIComponents;
@@ -13,8 +13,9 @@ namespace Kraken.UI
 
         private bool _isClientRazzle;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             _playerUIComponents = GetComponentsInChildren<IPlayerUIComponent>();
             _playerProfileUI = GetComponentInChildren<PlayerProfileUI>();
         }
@@ -22,6 +23,7 @@ namespace Kraken.UI
         private void Start()
         {
             EventManager.AddEventListener(EventNames.SetupHUD, HandleSetupHUD);
+            EventManager.AddEventListener(EventNames.HideHUD, HandleHideHUD);
             EventManager.AddEventListener(EventNames.InputSchemeChanged, HandleInputSchemeChanged);
         }
 
@@ -29,6 +31,7 @@ namespace Kraken.UI
         {
             EventManager.RemoveEventListener(EventNames.SetupHUD, HandleSetupHUD);
             EventManager.RemoveEventListener(EventNames.InputSchemeChanged, HandleInputSchemeChanged);
+            EventManager.RemoveEventListener(EventNames.HideHUD, HandleHideHUD);
         }
 
         private void HandleSetupHUD(BytesData data) 
@@ -53,6 +56,11 @@ namespace Kraken.UI
             {
                 comp.Init(isRazzle, isKeyboard);
             }
+        }
+
+        private void HandleHideHUD(BytesData data)
+        {
+            SetVisible(false);
         }
     }
 }

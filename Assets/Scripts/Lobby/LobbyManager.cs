@@ -145,6 +145,7 @@ namespace Kraken
 
         public void Btn_OnLeaveLobby()
         {
+            AnimateManager.GetInstance().ClearAllAnimations();
             PhotonNetwork.LeaveRoom();
         }
 

@@ -22,13 +22,17 @@ namespace Kraken.UI
             EventManager.RemoveEventListener(EventNames.ShowVictoryScreenUI, HandleShowScreenUI);
         }
 
+        protected override void HandleShowScreenUI(BytesData data)
+        {
+            PlayerPrefs.SetInt(Config.GAME_NIGHT_KEY, PlayerPrefs.GetInt(Config.GAME_NIGHT_KEY, 0) + 1);
+            base.HandleShowScreenUI(data);
+        }
+
         public void Btn_NextNight()
         {
             _btnNextNight.interactable = false;
             _gameFlowManager.GoToNextNight();
             AkSoundEngine.StopAll();
         }
-
-        
     }
 }
