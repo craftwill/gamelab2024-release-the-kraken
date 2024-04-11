@@ -75,6 +75,7 @@ MonoBehaviour:
   ultimateSlowMoTimeScale: 0.25
   ultimateSlowMoDuration: 0.25
   ultimateIsCancellable: 0
+  mustKillWithUltimate: 1
   towerWoolCost: 25
   maxTowerPerRound: 2
   towerSpawnMultiplier: 5

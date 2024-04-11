@@ -1,5 +1,5 @@
-
 using Bytes;
+using Photon.Pun;
 using UnityEngine;
 
 namespace Kraken.UI
@@ -14,6 +14,17 @@ namespace Kraken.UI
         private void OnDestroy()
         {
             EventManager.RemoveEventListener(EventNames.ShowDefeatScreenUI, HandleShowScreenUI);
+        }
+
+        protected override void HandleShowScreenUI(BytesData data)
+        {
+            PlayerPrefs.SetInt(Config.GAME_NIGHT_KEY, PlayerPrefs.GetInt(Config.GAME_NIGHT_KEY, 0));
+            base.HandleShowScreenUI(data);
+        }
+
+        public virtual void Btn_Restart()
+        {
+            PhotonNetwork.LoadLevel("Lobby");
         }
     }
 }

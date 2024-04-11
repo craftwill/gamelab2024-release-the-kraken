@@ -50,8 +50,8 @@ namespace Kraken
                 {
                     if (p == null) return;
                     float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(p.transform.position.x, p.transform.position.z));
-
-                    if (distance >= offsetRadius && distance <= telegraphRadius + offsetRadius)
+                    //added 0.5f because you otherwise it was unreliable to hit
+                    if (distance >= offsetRadius && distance <= telegraphRadius + offsetRadius + 0.5f)
                     {
                         var ddc = p.GetComponentInChildren<Kraken.Game.DetectDamageComponent>();
                         if (ddc) ddc.TakeDamageFromOtherSource(damage);
