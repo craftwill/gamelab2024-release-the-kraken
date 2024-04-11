@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c75bd90d2002764cbcde38269546abc, type: 3}
   m_Name: 94A96539-83E0-4FBD-AD12-48A3A79DA2C5
   m_EditorClassIdentifier: 
-  objectName: Play_EnemyShoot
-  id: 3253098515
+  objectName: SFX_ENNEMIS_MINIONS_RANGED_ATTAQUE
+  id: 1309490906
   guid: 94A96539-83E0-4FBD-AD12-48A3A79DA2C5

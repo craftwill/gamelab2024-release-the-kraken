@@ -14,7 +14,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_EnemyShoot" ID="{94A96539-83E0-4FBD-AD12-48A3A79DA2C5}">
+				<Event Name="SFX_ENNEMIS_MINIONS_RANGED_ATTAQUE" ID="{94A96539-83E0-4FBD-AD12-48A3A79DA2C5}">
 					<ChildrenList>
 						<Action Name="" ID="{709754B4-5599-4A52-B9F1-5DE630054905}" ShortID="221836452">
 							<ReferenceList>
@@ -25,7 +25,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_EnemyHurt" ID="{50D85769-262C-4554-A45E-1D417F92F9B2}">
+				<Event Name="SFX_ENNEMIS_MINIONS_MELEE_HURT" ID="{50D85769-262C-4554-A45E-1D417F92F9B2}">
 					<ChildrenList>
 						<Action Name="" ID="{20C8A4C6-151A-42ED-8218-D6BA71BB047B}" ShortID="508309703">
 							<ReferenceList>
@@ -351,6 +351,72 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="woosh" ID="{AFD306BE-4D97-4363-808D-8E76B05EDAAF}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_MINIONS_RANGED_HURT" ID="{E01D23CA-D04A-4ECD-9955-4CC7B69A7881}">
+					<ChildrenList>
+						<Action Name="" ID="{963F8EBD-362F-4F7E-A9F6-B80294727191}" ShortID="342270301">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="squeaky-toy-1-6059" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_MINIONS_TANK_HURT" ID="{2B56E858-58CE-4E9A-B8FB-ADA7553195AC}">
+					<ChildrenList>
+						<Action Name="" ID="{4E98CCF6-6E80-4DBF-84EA-75ED709F39C7}" ShortID="785328441">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="squeaky-toy-1-6059" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_MINIBOSS_COMBAT_HURT" ID="{AB361BAA-229B-45AC-9052-93C6622FAF99}">
+					<ChildrenList>
+						<Action Name="" ID="{D749D1AE-420F-44E8-B4C6-AAC460F3E34F}" ShortID="556374017">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="squeaky-toy-1-6059" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_BOSS_COMBAT_HURT" ID="{CE8A3FC6-0E44-4347-B9F7-3CA70AF78C8E}">
+					<ChildrenList>
+						<Action Name="" ID="{F085AD6C-257C-44EE-AF86-965F599DD938}" ShortID="378402606">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="squeaky-toy-1-6059" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_MINIONS_MELEE_ATTAQUE" ID="{C6994D9F-9E6C-41FE-9480-14B335BF7FF8}">
+					<ChildrenList>
+						<Action Name="" ID="{5E42AAE8-56D4-4F81-BB6A-A9BBCE97E09C}" ShortID="27471375">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sheep-122256" ID="{937A648A-8F41-425D-8088-1FB5C04A8308}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_MINIONS_TANK_ATTAQUE" ID="{67409B52-79BF-4924-A977-45AAA0FD9D5F}">
+					<ChildrenList>
+						<Action Name="" ID="{375E5122-BB8C-4178-9E0A-BF4CDCE222D1}" ShortID="136953226">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sheep-122256" ID="{937A648A-8F41-425D-8088-1FB5C04A8308}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

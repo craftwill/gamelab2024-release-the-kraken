@@ -15,7 +15,7 @@
 						<ObjectRef Name="Play_Music_Boss" ID="{1D0BAF27-B7AA-4473-85CB-BEF955196F4B}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SFX_DAZZLE_HABILETE_COMBO_ATTAQUE2" ID="{23216C23-B518-4512-B9DE-318517706030}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Healing" ID="{EFA9971A-7464-452A-827E-23B52EB8D26F}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_EnemyHurt" ID="{50D85769-262C-4554-A45E-1D417F92F9B2}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="SFX_ENNEMIS_MINIONS_MELEE_HURT" ID="{50D85769-262C-4554-A45E-1D417F92F9B2}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Music_Boss" ID="{0436C74E-BEBA-455C-AB1D-497C24FB919C}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Music_Objective" ID="{F3C87F64-835B-4668-ACFF-872C045E54FE}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Defeat" ID="{F4902D7C-5754-474C-80F7-EA79304CB3E2}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
@@ -35,7 +35,7 @@
 						<ObjectRef Name="Play_VictoryFanfare" ID="{7915DD0F-40E5-4E5B-842B-40654EB56848}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PlayerHurt" ID="{D9E29EE0-084F-4F26-93EA-23EB7F9640A2}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SFX_DAZZLE_HABILETE_COMBO_ATTAQUE1" ID="{9A3C7D3C-9EDA-4F43-A178-4AAE6CF1C357}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_EnemyShoot" ID="{94A96539-83E0-4FBD-AD12-48A3A79DA2C5}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="SFX_ENNEMIS_MINIONS_RANGED_ATTAQUE" ID="{94A96539-83E0-4FBD-AD12-48A3A79DA2C5}" WorkUnitID="{AC1AD6CE-4660-4DB0-A3F6-BABB8F09ACE4}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
