@@ -15,7 +15,7 @@ namespace Kraken.UI
         protected virtual void HandleShowScreenUI(BytesData data)
         {
             GameManager.ToggleCursor(true);
-            //EventManager.Dispatch(EventNames.HideHUD, null);
+            EventManager.Dispatch(EventNames.HideHUD, null);
             SetVisible(true);
 
             _maxNight = PlayerPrefs.GetInt(Config.GAME_MAX_NIGHT_KEY, 0);
@@ -41,6 +41,9 @@ namespace Kraken.UI
                 int index = (int)System.Char.GetNumericValue(number[i]);
                 Instantiate(_spritesPrefab[index], parent);
             }
+
+            //layout group stupid
+            parent.GetComponent<RectTransform>().sizeDelta = new Vector2(number.Length * 48, 60);
         }
 
         public virtual void Btn_BackToTitle()

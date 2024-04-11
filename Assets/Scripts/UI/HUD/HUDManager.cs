@@ -13,8 +13,9 @@ namespace Kraken.UI
 
         private bool _isClientRazzle;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             _playerUIComponents = GetComponentsInChildren<IPlayerUIComponent>();
             _playerProfileUI = GetComponentInChildren<PlayerProfileUI>();
         }
