@@ -14,6 +14,7 @@ namespace Kraken
         [SerializeField] private InflictDamageComponent _inflictDamageComponent;//could probably avoid using this component
         [SerializeField] private MinibossAnimationComponent _animComponent;
         [SerializeField] private Game.HealthComponent _healthComponent;
+        [SerializeField] private MinibossSoundComponent _soundComponent;
         [SerializeField] private MinibossAttackAdditionalConfig _attackConfig;
 
         private Coroutine _drawCoroutine = null;
@@ -93,6 +94,7 @@ namespace Kraken
             _coneTelegraph.gameObject.SetActive(false);
             _drawCoroutine = null;
             _canPathfind = true;
+            _soundComponent.PlayStompSound();
             Animate.Delay(_cooldown, () => _isOnCooldown = false, true);
 
         }

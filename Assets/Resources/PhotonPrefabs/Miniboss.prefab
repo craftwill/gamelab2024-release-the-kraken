@@ -475,6 +475,10 @@ PrefabInstance:
         type: 3}
       insertIndex: 3
       addedObject: {fileID: 9001902255904061304}
+    - targetCorrespondingSourceObject: {fileID: 3106089648525901737, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      insertIndex: 7
+      addedObject: {fileID: 8890380970307686783}
   m_SourcePrefab: {fileID: 100100000, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
 --- !u!4 &221423567439365202 stripped
 Transform:
@@ -525,6 +529,7 @@ MonoBehaviour:
   _inflictDamageComponent: {fileID: 9012708890727214374}
   _animComponent: {fileID: 9001902255904061304}
   _healthComponent: {fileID: 4536674062849678646}
+  _soundComponent: {fileID: 8890380970307686783}
   _attackConfig:
     chargeTime: 3
     angle: 60
@@ -551,6 +556,23 @@ MonoBehaviour:
   _animStateMachine: {fileID: 9205397303649844072}
   _animatorPrefix: SheepMiniBoss
   _animatorSuffix: 
+--- !u!114 &8890380970307686783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282374055492276171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67b49fed8ef2e449be28ad2876bf496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _StompSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0ac09e33d837a644faa54bf2087f60ec,
+      type: 2}
 --- !u!4 &7499172055204269084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2745319777357053054, guid: d82bf9ca5bd1a8149852b3fdba06fecc,

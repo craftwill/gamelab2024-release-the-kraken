@@ -35,6 +35,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3519417345	SFX_DAZZLE_HABILETE_COMBO_ATTAQUE2			\Default Work Unit\SFX_DAZZLE_HABILETE_COMBO_ATTAQUE2	
 	3519417346	SFX_DAZZLE_HABILETE_COMBO_ATTAQUE1			\Default Work Unit\SFX_DAZZLE_HABILETE_COMBO_ATTAQUE1	
 	3654486948	SFX_ENNEMIS_MINIBOSS_COMBAT_HURT			\Default Work Unit\SFX_ENNEMIS_MINIBOSS_COMBAT_HURT	
+	3676133243	SFX_ENNEMIS_MINIBOSS_POUND_SMASH			\Default Work Unit\SFX_ENNEMIS_MINIBOSS_POUND_SMASH	
 	3774338134	Play_BossSpawn			\Default Work Unit\Play_BossSpawn	
 	3930149174	SFX_ENNEMIS_BOSS_RINGS_CAST			\Default Work Unit\SFX_ENNEMIS_BOSS_RINGS_CAST	
 	4198191833	SFX_ENNEMIS_BOSS_COMBAT_HURT			\Default Work Unit\SFX_ENNEMIS_BOSS_COMBAT_HURT	
@@ -57,6 +58,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	624797327	tindeck_1	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\tindeck_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\tindeck_1		276576
 	627948373	footstep	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\footstep_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\footstep		118880
 	628232679	dark-souls-you-died-sound-effect_hm5sYFG	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\dark-souls-you-died-sound-effect_hm5sYFG_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\dark-souls-you-died-sound-effect_hm5sYFG		1421408
+	723110272	hit-sound-effect-12445	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\hit-sound-effect-12445_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\hit-sound-effect-12445		875616
 	781786885	FFXIV Limit Break 3	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\FFXIV Limit Break 3_76AE5D17.wem		\Actor-Mixer Hierarchy\Default Work Unit\FFXIV Limit Break 3		479356
 	785435577	478278__joao_janz__8-bit-explosion-1_5	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\478278__joao_janz__8-bit-explosion-1_5_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\478278__joao_janz__8-bit-explosion-1_5		204096
 	875765215	alarme-factorio	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\alarme-factorio_FCF97502.wem		\Actor-Mixer Hierarchy\Default Work Unit\alarme-factorio		298744

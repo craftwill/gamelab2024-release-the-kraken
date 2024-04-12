@@ -46,11 +46,11 @@ namespace Kraken
         {
             if (position != null)
             {
-                _starfallHitSound.Post(position);
+                _ringsOfLightHitSound.Post(position);
             }
             else
             {
-                _starfallHitSound.Post(gameObject);
+                _ringsOfLightHitSound.Post(gameObject);
             }
         }
     }
