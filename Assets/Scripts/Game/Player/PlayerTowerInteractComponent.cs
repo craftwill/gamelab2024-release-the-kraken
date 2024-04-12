@@ -23,7 +23,7 @@ namespace Kraken
             {
                 if(_towerInRange._TowerState == Tower.TowerState.Inactive)
                 {
-                    if (_towerInRange._playersCount == 0)
+                    if (_towerInRange.getPlayerCount() == 0)
                         photonView.RPC(nameof(_soundComponent.RPC_Other_PlayTowerWaitingSound), RpcTarget.Others);
                     EventManager.Dispatch(EventNames.TowerAttemptBuilt, null);
                     _towerInRange.PlayerTryBuild();

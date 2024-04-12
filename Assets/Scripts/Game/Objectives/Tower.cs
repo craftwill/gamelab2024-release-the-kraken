@@ -28,7 +28,6 @@ namespace Kraken
         private ZoneEventData _zoneEventData;
         private List<string> _playersInRange = new List<string>();
         public TowerState _TowerState { get; private set; }
-        public int _playersCount = 0;
 
         private void Start()
         {
@@ -68,17 +67,21 @@ namespace Kraken
         public void PlayerTryBuild()
         {
             string id = PhotonNetwork.LocalPlayer.UserId;
-            photonView.RPC(nameof(RPC_Master_AddPlayerInRange), RpcTarget.MasterClient, id);
+            photonView.RPC(nameof(RPC_All_AddPlayerInRange), RpcTarget.All, id);
+        }
+
+        public int getPlayerCount()
+        {
+            return _playersInRange.Count;
         }
 
         [PunRPC]
-        private void RPC_Master_AddPlayerInRange(string id)
+        private void RPC_All_AddPlayerInRange(string id)
         {
             if (!_playersInRange.Contains(id))
                 _playersInRange.Add(id);
-            photonView.RPC(nameof(RPC_All_UpdatePlayersInRangeCount), RpcTarget.All, _playersCount + 1);
 
-
+            if (!PhotonNetwork.IsMasterClient) return;
             if (_playersInRange.Count == PhotonNetwork.PlayerList.Length)
             {
                 if (_TowerState == TowerState.Inactive)
@@ -89,22 +92,15 @@ namespace Kraken
         }
 
         [PunRPC]
-        private void RPC_All_UpdatePlayersInRangeCount(int count)
-        {
-            _playersCount = count;
-        }
-
-        [PunRPC]
-        private void RPC_Master_RemovePlayerInRange(string id)
+        private void RPC_All_RemovePlayerInRange(string id)
         {
             _playersInRange.Remove(id);
-            photonView.RPC(nameof(RPC_All_UpdatePlayersInRangeCount), RpcTarget.All, _playersCount - 1);
         }
 
         public void PlayerCancelBuild()
         {
             string id = PhotonNetwork.LocalPlayer.UserId;
-            photonView.RPC(nameof(RPC_Master_RemovePlayerInRange), RpcTarget.MasterClient, id);
+            photonView.RPC(nameof(RPC_All_RemovePlayerInRange), RpcTarget.All, id);
         }
 
         public void SetNewTowerState(TowerState newState)
