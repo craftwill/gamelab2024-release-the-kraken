@@ -26,7 +26,7 @@ namespace Kraken
         private GameObject _spawnedInactive = null;
 
         private ZoneEventData _zoneEventData;
-        private List<string> _playersInRange = new List<string>();
+        public List<string> _playersInRange { get; private set; } = new List<string>();
         public TowerState _TowerState { get; private set; }
 
         private void Start()
