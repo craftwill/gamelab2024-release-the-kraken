@@ -541,6 +541,8 @@ MonoBehaviour:
       m_Bits: 4096
     materialInner: {fileID: 2100000, guid: 13c654d50cf991c4fbbac1d8495671df, type: 2}
     materialOuter: {fileID: 2100000, guid: 64294c33826ea3a43b298d38f07759c3, type: 2}
+    visualEffect: {fileID: 5975844294459365678, guid: 612ef11067d8ce14c8f91c2486e7742d,
+      type: 3}
 --- !u!114 &9001902255904061304
 MonoBehaviour:
   m_ObjectHideFlags: 0
