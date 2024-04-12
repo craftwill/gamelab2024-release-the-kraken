@@ -3,7 +3,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	324646143	Play_Defeat			\Default Work Unit\Play_Defeat	
 	504869708	Stop_Music_General			\Default Work Unit\Stop_Music_General	
 	606806114	SFX_ENNEMIS_BOSS_STARFALL_STARS			\Default Work Unit\SFX_ENNEMIS_BOSS_STARFALL_STARS	
-	730396682	Stop_Healing			\Default Work Unit\Stop_Healing	
+	786476976	SFX_DUO_HABILETE_PATCHUP_PATCHING_STOP			\Default Work Unit\SFX_DUO_HABILETE_PATCHUP_PATCHING_STOP	
 	792726151	SFX_DAZZLE_COMBAT_DEGATS_HURT			\Default Work Unit\SFX_DAZZLE_COMBAT_DEGATS_HURT	
 	977895875	Play_Music_Objective			\Default Work Unit\Play_Music_Objective	
 	984790419	Play_UltimateNotice			\Default Work Unit\Play_UltimateNotice	
