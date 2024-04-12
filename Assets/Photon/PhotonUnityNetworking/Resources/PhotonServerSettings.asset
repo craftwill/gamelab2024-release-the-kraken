@@ -134,6 +134,7 @@ MonoBehaviour:
   - OtherPlayerIsWaitingOnTower
   - OtherPlayerCancelTower
   - RPC_ALL_LeaveRoom
+  - RPC_All_PlayStarfallHitSound
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

@@ -167,9 +167,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0e8fc61758a854e8136e1ddeada2a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _id: 0
   _waitingPrefab: {fileID: 350368888685842568, guid: 566094046be25164e965e63209adeb81,
     type: 3}
   _towerPrefab: {fileID: 4886326546893888325, guid: 49e216a93f7db714aa0ebe3caefe3061,
+    type: 3}
+  _inactivePrefab: {fileID: 4886326546893888325, guid: f5205d5a747e82546a2c2a00b2f9e1e4,
     type: 3}
 --- !u!65 &7240359120946964819
 BoxCollider:
@@ -190,7 +193,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 5, z: 10}
+  m_Size: {x: 5, y: 5, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2007359913929852167
 MonoBehaviour:

@@ -75,13 +75,6 @@ MonoBehaviour:
   ultimateSlowMoTimeScale: 0.25
   ultimateSlowMoDuration: 0.25
   ultimateIsCancellable: 0
-  towerWoolCost: 25
-  maxTowerPerRound: 2
-  towerSpawnMultiplier: 5
-  healingMaxDistance: 3
-  healingRate: 0.1
-  healingHpPerWool: 10
-  ultimateIsCancellable: 0
   mustKillWithUltimate: 0
   towerWoolCost: 25
   maxTowerPerRound: 2

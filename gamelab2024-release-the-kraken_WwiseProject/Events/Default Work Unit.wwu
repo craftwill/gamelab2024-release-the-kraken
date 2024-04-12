@@ -14,7 +14,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_EnemyShoot" ID="{94A96539-83E0-4FBD-AD12-48A3A79DA2C5}">
+				<Event Name="SFX_ENNEMIS_MINIONS_RANGED_ATTAQUE" ID="{94A96539-83E0-4FBD-AD12-48A3A79DA2C5}">
 					<ChildrenList>
 						<Action Name="" ID="{709754B4-5599-4A52-B9F1-5DE630054905}" ShortID="221836452">
 							<ReferenceList>
@@ -25,7 +25,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_EnemyHurt" ID="{50D85769-262C-4554-A45E-1D417F92F9B2}">
+				<Event Name="SFX_ENNEMIS_MINIONS_MELEE_HURT" ID="{50D85769-262C-4554-A45E-1D417F92F9B2}">
 					<ChildrenList>
 						<Action Name="" ID="{20C8A4C6-151A-42ED-8218-D6BA71BB047B}" ShortID="508309703">
 							<ReferenceList>
@@ -351,6 +351,163 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="woosh" ID="{AFD306BE-4D97-4363-808D-8E76B05EDAAF}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_MINIONS_RANGED_HURT" ID="{E01D23CA-D04A-4ECD-9955-4CC7B69A7881}">
+					<ChildrenList>
+						<Action Name="" ID="{963F8EBD-362F-4F7E-A9F6-B80294727191}" ShortID="342270301">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="squeaky-toy-1-6059" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_MINIONS_TANK_HURT" ID="{2B56E858-58CE-4E9A-B8FB-ADA7553195AC}">
+					<ChildrenList>
+						<Action Name="" ID="{4E98CCF6-6E80-4DBF-84EA-75ED709F39C7}" ShortID="785328441">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="squeaky-toy-1-6059" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_MINIBOSS_COMBAT_HURT" ID="{AB361BAA-229B-45AC-9052-93C6622FAF99}">
+					<ChildrenList>
+						<Action Name="" ID="{D749D1AE-420F-44E8-B4C6-AAC460F3E34F}" ShortID="556374017">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="squeaky-toy-1-6059" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_BOSS_COMBAT_HURT" ID="{CE8A3FC6-0E44-4347-B9F7-3CA70AF78C8E}">
+					<ChildrenList>
+						<Action Name="" ID="{F085AD6C-257C-44EE-AF86-965F599DD938}" ShortID="378402606">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="squeaky-toy-1-6059" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_MINIONS_MELEE_ATTAQUE" ID="{C6994D9F-9E6C-41FE-9480-14B335BF7FF8}">
+					<ChildrenList>
+						<Action Name="" ID="{5E42AAE8-56D4-4F81-BB6A-A9BBCE97E09C}" ShortID="27471375">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sheep-122256" ID="{937A648A-8F41-425D-8088-1FB5C04A8308}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_MINIONS_TANK_ATTAQUE" ID="{67409B52-79BF-4924-A977-45AAA0FD9D5F}">
+					<ChildrenList>
+						<Action Name="" ID="{375E5122-BB8C-4178-9E0A-BF4CDCE222D1}" ShortID="136953226">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sheep-122256" ID="{937A648A-8F41-425D-8088-1FB5C04A8308}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_BOSS_STARFALL_STARS" ID="{F14E47B7-0E38-41F3-ACA6-91D95673AFB9}">
+					<ChildrenList>
+						<Action Name="" ID="{15B81768-C2D6-4DA2-AF93-2DCEF2953F7B}" ShortID="1054727454">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="478278__joao_janz__8-bit-explosion-1_5" ID="{E068510A-57AA-4692-9FAC-C2D05D0B9B7E}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_BOSS_RINGS_CAST" ID="{1E8DADE7-83A5-4885-850B-611DE7BD5333}">
+					<ChildrenList>
+						<Action Name="" ID="{69CF45BB-325E-49D1-9BCF-460E50ABBDD4}" ShortID="1010526035">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="hit-sound-effect-12445" ID="{828D207E-AB59-430A-A4C4-94D8D113E622}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_MINIBOSS_POUND_SMASH" ID="{C7944E24-5032-42C2-93D3-159D7ACCF68B}">
+					<ChildrenList>
+						<Action Name="" ID="{C8477470-A7CD-4AA8-B9DB-B0F86FD5F0A4}" ShortID="787555923">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="hit-sound-effect-12445" ID="{828D207E-AB59-430A-A4C4-94D8D113E622}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_DAZZLE_HABILETE_SURPRISE_JUMP" ID="{79655D23-264B-4786-AA9E-D35CF9248314}">
+					<ChildrenList>
+						<Action Name="" ID="{E78F9081-9915-41DB-8A96-706729DBB5D8}" ShortID="57149468">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="cartoon-jump" ID="{C7D774A8-8E33-451F-8754-FFCA9F4AE767}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_DAZZLE_HABILETE_SURPRISE_CRASH" ID="{48CADD96-D47D-4F6D-AD72-574DB645DD56}">
+					<ChildrenList>
+						<Action Name="" ID="{81CECD01-4A7F-4073-8B9A-2EC878947FE1}" ShortID="199810364">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="crash_5mE1q2P" ID="{A0A0734C-FFAE-4621-9057-EE87EC8DD4FD}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_RAZZLE_HABILETE_GATHERUP_CAST" ID="{1BD2B0F3-919F-4172-B602-8C0C0E3A06BC}">
+					<ChildrenList>
+						<Action Name="" ID="{AA377CE7-07D4-4E04-9024-A895401818B8}" ShortID="261790569">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="lemon_tMqyvSF" ID="{F146B07A-A6F5-4EFA-8B04-883A30D97766}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL" ID="{6332EC88-1A06-47DA-9B59-AE9D803382FA}">
+					<ChildrenList>
+						<Action Name="" ID="{8C9F4823-8BC0-4A37-9F06-FECA345DF67A}" ShortID="833089544">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nasa releases audio of what a black hole 'sounds' like shorts" ID="{D3C0E2D6-D4C1-4BB5-8C1A-BB3B4D8E8235}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL_STOP" ID="{EF8CA0EF-D454-450B-A184-11E329683C58}">
+					<ChildrenList>
+						<Action Name="" ID="{A07D103A-2E37-488E-90FB-D2C513617DF5}" ShortID="229527235">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nasa releases audio of what a black hole 'sounds' like shorts" ID="{D3C0E2D6-D4C1-4BB5-8C1A-BB3B4D8E8235}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

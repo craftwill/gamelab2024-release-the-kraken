@@ -381,7 +381,7 @@ MonoBehaviour:
   _attackSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 3849b76044012c0449ce687747e35719,
+    WwiseObjectReference: {fileID: 11400000, guid: 899eb110f1204744a9d14e7e09761366,
       type: 2}
   _hurtSound:
     idInternal: 0
