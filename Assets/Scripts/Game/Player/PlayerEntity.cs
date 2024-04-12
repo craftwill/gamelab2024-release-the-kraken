@@ -87,10 +87,14 @@ namespace Kraken
 
         protected override void HandleHealed(float healAmount)
         {
+            var hpData = new FloatDataBytes(_healthComponent.Health / _healthComponent.MaxHealth);
             if (_isOwner)
             {
-                var hpData = new FloatDataBytes(_healthComponent.Health / _healthComponent.MaxHealth);
                 EventManager.Dispatch(EventNames.UpdatePlayerHealthUI, hpData);
+            }
+            else
+            {
+                EventManager.Dispatch(EventNames.UpdateOtherPlayerHealthUI, hpData);
             }
         }
 
