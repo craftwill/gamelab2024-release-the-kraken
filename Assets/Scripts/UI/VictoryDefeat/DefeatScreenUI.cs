@@ -6,6 +6,8 @@ namespace Kraken.UI
 {
     public class DefeatScreenUI : BaseEndGameScrenUI
     {
+        [SerializeField] private GameObject _sheepLost;
+        [SerializeField] private GameObject _playerLost;
         private void Start()
         {
             EventManager.AddEventListener(EventNames.ShowDefeatScreenUI, HandleShowScreenUI);
@@ -28,12 +30,12 @@ namespace Kraken.UI
 
         private void HandleShowDefeatByZoneUI(BytesData data)
         {
-            
+            _sheepLost.SetActive(true);
         }
 
         private void HandleShowDefeatByPlayerUI(BytesData data)
         {
-            
+            _playerLost.SetActive(true);
         }
 
         public virtual void Btn_Restart()

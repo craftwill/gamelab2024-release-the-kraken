@@ -106,12 +106,12 @@ namespace Kraken
                 case EndGameType.TimerOut:
                     EventManager.Dispatch(EventNames.ShowDefeatTimeLeftUI, null);
                     break;
-                //case EndGameType.PlayerDeath:
-                //    EventManager.Dispatch(EventNames.ShowDefeatByPlayerUI, null);
-                //    break;
-                //case EndGameType.ZoneFullLoss:
-                //    EventManager.Dispatch(EventNames.ShowDefeatByZoneUI, null);
-                //    break;
+                case EndGameType.PlayerDeath:
+                    EventManager.Dispatch(EventNames.ShowDefeatByPlayerUI, null);
+                    break;
+                case EndGameType.ZoneFullLoss:
+                    EventManager.Dispatch(EventNames.ShowDefeatByZoneUI, null);
+                    break;
             }
 
             GameManager.ToggleCursor(true);
