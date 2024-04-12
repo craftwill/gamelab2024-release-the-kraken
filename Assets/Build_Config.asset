@@ -80,7 +80,7 @@ MonoBehaviour:
   maxTowerPerRound: 2
   towerSpawnMultiplier: 5
   healingMaxDistance: 3
-  healingRate: 0.1
+  healingRate: 0.01
   healingHpPerWool: 10
   enemyStaggerDuration: 2
   comboPitchIncrement: 100
