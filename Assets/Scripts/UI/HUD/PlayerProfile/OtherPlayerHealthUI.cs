@@ -48,9 +48,9 @@ namespace Kraken.UI
             });
         }
 
-        public void SetPlayerType(bool _isRazzle) 
+        public void SetPlayerType(bool isRazzle) 
         {
-
+            _isRazzle = isRazzle;
         }
 
         public void SetIsRainbow(bool isRainbow)
