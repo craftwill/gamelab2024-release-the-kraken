@@ -422,6 +422,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="SFX_ENNEMIS_BOSS_STARFALL_STARS" ID="{F14E47B7-0E38-41F3-ACA6-91D95673AFB9}">
+					<ChildrenList>
+						<Action Name="" ID="{15B81768-C2D6-4DA2-AF93-2DCEF2953F7B}" ShortID="1054727454">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="478278__joao_janz__8-bit-explosion-1_5" ID="{E068510A-57AA-4692-9FAC-C2D05D0B9B7E}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_BOSS_RINGS_CAST" ID="{1E8DADE7-83A5-4885-850B-611DE7BD5333}">
+					<ChildrenList>
+						<Action Name="" ID="{69CF45BB-325E-49D1-9BCF-460E50ABBDD4}" ShortID="1010526035">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="478278__joao_janz__8-bit-explosion-1_5" ID="{E068510A-57AA-4692-9FAC-C2D05D0B9B7E}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

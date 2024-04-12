@@ -1,6 +1,7 @@
 Event	ID	Name			Wwise Object Path	Notes
 	324646143	Play_Defeat			\Default Work Unit\Play_Defeat	
 	504869708	Stop_Music_General			\Default Work Unit\Stop_Music_General	
+	606806114	SFX_ENNEMIS_BOSS_STARFALL_STARS			\Default Work Unit\SFX_ENNEMIS_BOSS_STARFALL_STARS	
 	730396682	Stop_Healing			\Default Work Unit\Stop_Healing	
 	792726151	SFX_DAZZLE_COMBAT_DEGATS_HURT			\Default Work Unit\SFX_DAZZLE_COMBAT_DEGATS_HURT	
 	977895875	Play_Music_Objective			\Default Work Unit\Play_Music_Objective	
@@ -35,6 +36,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3519417346	SFX_DAZZLE_HABILETE_COMBO_ATTAQUE1			\Default Work Unit\SFX_DAZZLE_HABILETE_COMBO_ATTAQUE1	
 	3654486948	SFX_ENNEMIS_MINIBOSS_COMBAT_HURT			\Default Work Unit\SFX_ENNEMIS_MINIBOSS_COMBAT_HURT	
 	3774338134	Play_BossSpawn			\Default Work Unit\Play_BossSpawn	
+	3930149174	SFX_ENNEMIS_BOSS_RINGS_CAST			\Default Work Unit\SFX_ENNEMIS_BOSS_RINGS_CAST	
 	4198191833	SFX_ENNEMIS_BOSS_COMBAT_HURT			\Default Work Unit\SFX_ENNEMIS_BOSS_COMBAT_HURT	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
@@ -56,6 +58,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	627948373	footstep	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\footstep_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\footstep		118880
 	628232679	dark-souls-you-died-sound-effect_hm5sYFG	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\dark-souls-you-died-sound-effect_hm5sYFG_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\dark-souls-you-died-sound-effect_hm5sYFG		1421408
 	781786885	FFXIV Limit Break 3	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\FFXIV Limit Break 3_76AE5D17.wem		\Actor-Mixer Hierarchy\Default Work Unit\FFXIV Limit Break 3		479356
+	785435577	478278__joao_janz__8-bit-explosion-1_5	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\478278__joao_janz__8-bit-explosion-1_5_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\478278__joao_janz__8-bit-explosion-1_5		204096
 	875765215	alarme-factorio	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\alarme-factorio_FCF97502.wem		\Actor-Mixer Hierarchy\Default Work Unit\alarme-factorio		298744
 	877710634	minecraft_hit_soundmp3converter	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\minecraft_hit_soundmp3converter_2D9B98A3.wem		\Actor-Mixer Hierarchy\Default Work Unit\minecraft_hit_soundmp3converter		167784
 	908038837	ultimateReady	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\FFXIV Limit Break 3 Video Effect_F4D2370A.wem		\Actor-Mixer Hierarchy\Default Work Unit\ultimateReady		174048

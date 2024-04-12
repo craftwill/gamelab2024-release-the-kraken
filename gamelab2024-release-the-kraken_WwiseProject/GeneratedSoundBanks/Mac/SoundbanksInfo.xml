@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{FE596F60-3880-993F-9310-62986A1A1EE7}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{49C12210-153E-9294-C0BB-E3BCB8D0F786}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -92,6 +92,10 @@
 				<File Id="781786885" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FFXIV Limit Break 3.wav</ShortName>
 					<CachePath>SFX/FFXIV Limit Break 3_76AE5D17.wem</CachePath>
+				</File>
+				<File Id="785435577" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>478278__joao_janz__8-bit-explosion-1_5.wav</ShortName>
+					<CachePath>SFX/478278__joao_janz__8-bit-explosion-1_5_818F3B66.wem</CachePath>
 				</File>
 				<File Id="875765215" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>alarme-factorio.wav</ShortName>
@@ -231,6 +235,16 @@
 						<MediaRef Id="1046494642"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3930149174" Name="SFX_ENNEMIS_BOSS_RINGS_CAST" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.0625" DurationMax="1.0625">
+					<MediaRefs>
+						<MediaRef Id="785435577"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="606806114" Name="SFX_ENNEMIS_BOSS_STARFALL_STARS" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.0625" DurationMax="1.0625">
+					<MediaRefs>
+						<MediaRef Id="785435577"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3654486948" Name="SFX_ENNEMIS_MINIBOSS_COMBAT_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.504" DurationMax="0.504">
 					<MediaRefs>
 						<MediaRef Id="1046494642"/>
@@ -306,5 +320,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{3D2C7CB0-BC08-BB8F-D293-5376240BA306}</FileHash>
+	<FileHash>{FC1DB5F4-2298-E47F-C962-54BDA367A5EA}</FileHash>
 </SoundBanksInfo>

@@ -49,6 +49,7 @@ MonoBehaviour:
   _ring2ChargeTime: 0
   _ring1Radius: 0
   _ring2Radius: 0
+  _soundComponent: {fileID: 6177580151121801195}
   _ringOfLightTelegraphPrefab: {fileID: 7606557052295748628, guid: cb0a3c04fd1d6b149b29f1789e02c3a8,
     type: 3}
 --- !u!114 &4702124003625813099
@@ -123,6 +124,7 @@ MonoBehaviour:
   _starCount: 0
   _delayBetweenStars: 0
   _telegraphRadius: 0
+  _soundComponent: {fileID: 6177580151121801195}
   _starfallTelegraphPrefab: {fileID: 7606557052295748628, guid: cb0a3c04fd1d6b149b29f1789e02c3a8,
     type: 3}
 --- !u!114 &6644211839944383033
@@ -595,6 +597,16 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: f31c9e5c8524fd94183b734e4ea7cd6e,
+      type: 2}
+  _starfallHitSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4034574ed6492c94eb6a838f08e6571f,
+      type: 2}
+  _ringsOfLightHitSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4d0e507c603f31042a4d63e370f4def7,
       type: 2}
 --- !u!114 &8082780783602929124 stripped
 MonoBehaviour:
