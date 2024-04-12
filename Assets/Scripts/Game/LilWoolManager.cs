@@ -47,6 +47,18 @@ namespace Kraken
             {
                 _woolQuantity = Config.current.maxWoolQuantity;
             }
+
+            float woolQuantityPercentage = _woolQuantity / Config.current.maxWoolQuantity;
+
+            // If wool quantity > 50%, show cast totem animation
+            bool showTotemAnim = woolQuantityPercentage > 0.5f;
+            EventManager.Dispatch(EventNames.UpdatePlayerTotemAbilityUI, new BoolDataBytes(showTotemAnim));
+
+            // If wool at 100%, show cast ultimate animation
+            bool showUltAnim = woolQuantityPercentage >= 1f;
+            EventManager.Dispatch(EventNames.UpdateUltimateUI, new BoolDataBytes(showUltAnim));
+
+            // Update wool gauge
             EventManager.Dispatch(EventNames.UpdateWoolQuantity, new IntDataBytes(_woolQuantity));
         }
     }

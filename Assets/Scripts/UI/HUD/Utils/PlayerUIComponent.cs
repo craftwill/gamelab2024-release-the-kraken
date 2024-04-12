@@ -30,7 +30,7 @@ namespace Kraken.UI
         protected int _spriteIndexUsed;
         protected int _controlSpriteIndexUsed;
 
-        public void Init(bool isRazzle, bool isKeyboard)
+        public virtual void Init(bool isRazzle, bool isKeyboard)
         {
             _spriteIndexUsed = isRazzle ? 0 : 1;
             _controlSpriteIndexUsed = isKeyboard ? 1 : 0;
@@ -42,6 +42,7 @@ namespace Kraken.UI
         public void SetIsGreyedOut(bool isGreyedOut) 
         {
             _isGreyedOut = isGreyedOut;
+            _imgControl.gameObject.SetActive(!_isGreyedOut);
             if (_isGreyedOut)
             {
                 _imgUsed.sprite = _greyedOutIconSprites[_spriteIndexUsed];

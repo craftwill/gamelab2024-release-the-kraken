@@ -70,7 +70,9 @@ namespace Kraken
         // Player Abilities HUD events
         public const string UpdateUltimateUI = "UpdateUltimateUI";
         public const string StartAbilityCooldown = "StartAbilityCooldown";
-
+        public const string UpdatePlayerHealAbilityUI = "UpdatePlayerHealAbilityUI";
+        public const string UpdatePlayerTotemAbilityUI = "UpdatePlayerTotemAbilityUI";
+        
         //Game Events
         public const string TogglePause = "TogglePause";
         public const string GainWool = "GainWool";
@@ -83,6 +85,7 @@ namespace Kraken
         public const string PlayerAttackStart = "PlayerAttackStart";
         public const string PlayerAttackEnd = "PlayerAttackEnd";
         public const string PlayerWin = "PlayerWin";
+        public const string PlayerPatchingUp = "PlayerPatchingUp";
 
         //Tower Events
         public const string TowerAttemptBuilt = "TowerAttemptBuilt";
