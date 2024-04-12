@@ -14,5 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: The final boss spawned in the CENTER zone!
   objectiveTimer: -1
+  triggerSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f31c9e5c8524fd94183b734e4ea7cd6e,
+      type: 2}
   bossPrefab: {fileID: 7708995712779942215, guid: 6f7a9bd6f58aead4b8cacc9f5f345a70,
     type: 3}

@@ -102,7 +102,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_BossSpawn" ID="{F5629778-F9A1-48CC-8B4E-6FF8B6FE9B66}">
+				<Event Name="SFX_UI_OBJECTIFS_BOSS_WARNING" ID="{F5629778-F9A1-48CC-8B4E-6FF8B6FE9B66}">
 					<ChildrenList>
 						<Action Name="" ID="{731820DC-E71E-4480-B2F1-F7C96B70F7B7}" ShortID="528663007">
 							<ReferenceList>
@@ -135,7 +135,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Stop_Healing" ID="{EFA9971A-7464-452A-827E-23B52EB8D26F}">
+				<Event Name="SFX_DUO_HABILETE_PATCHUP_PATCHING_STOP" ID="{EFA9971A-7464-452A-827E-23B52EB8D26F}">
 					<ChildrenList>
 						<Action Name="" ID="{BD674D4C-A769-47D2-AB1B-FBED33FA64E3}" ShortID="975446082">
 							<PropertyList>
@@ -171,7 +171,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_Music_General" ID="{28D5667C-FD00-441E-9228-E90D7C6FD3E1}">
+				<Event Name="MUSIQUE_MONDE_BASE_COMBAT" ID="{28D5667C-FD00-441E-9228-E90D7C6FD3E1}">
 					<ChildrenList>
 						<Action Name="" ID="{656704FB-3F99-4B51-ADF0-12EB3019D613}" ShortID="441133678">
 							<ReferenceList>
@@ -182,7 +182,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Stop_Music_General" ID="{849E02DE-A992-432A-9E83-B2DBC4461DB4}">
+				<Event Name="MUSIQUE_MONDE_BASE_COMBAT_STOP" ID="{849E02DE-A992-432A-9E83-B2DBC4461DB4}">
 					<ChildrenList>
 						<Action Name="" ID="{506C76F5-21B3-44D0-ADF8-4FFCDE7D327D}" ShortID="422867537">
 							<PropertyList>
@@ -196,7 +196,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_Music_Objective" ID="{F3C87F64-835B-4668-ACFF-872C045E54FE}">
+				<Event Name="MUSIQUE_MONDE_ENNEMIS_MINIBOSS" ID="{F3C87F64-835B-4668-ACFF-872C045E54FE}">
 					<ChildrenList>
 						<Action Name="" ID="{DD26EEA8-10D7-40B6-9B62-AD601CDB2C03}" ShortID="355745651">
 							<ReferenceList>
@@ -207,7 +207,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Stop_Music_Objective" ID="{E3DC8836-A530-4258-9F39-59E24D4B2AB3}">
+				<Event Name="MUSIQUE_MONDE_ENNEMIS_MINIBOSS_STOP" ID="{E3DC8836-A530-4258-9F39-59E24D4B2AB3}">
 					<ChildrenList>
 						<Action Name="" ID="{E8269771-6E00-4BAC-B5D1-CD592866CBC0}" ShortID="99724256">
 							<PropertyList>
@@ -221,7 +221,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_Music_Boss" ID="{1D0BAF27-B7AA-4473-85CB-BEF955196F4B}">
+				<Event Name="MUSIQUE_MONDE_ENNEMIS_BOSS" ID="{1D0BAF27-B7AA-4473-85CB-BEF955196F4B}">
 					<ChildrenList>
 						<Action Name="" ID="{0747AC52-AD46-4249-A3CE-339B9B22A8A5}" ShortID="9663330">
 							<ReferenceList>
@@ -232,7 +232,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Stop_Music_Boss" ID="{0436C74E-BEBA-455C-AB1D-497C24FB919C}">
+				<Event Name="MUSIQUE_MONDE_ENNEMIS_BOSS_STOP" ID="{0436C74E-BEBA-455C-AB1D-497C24FB919C}">
 					<ChildrenList>
 						<Action Name="" ID="{DF313C1E-2728-4F03-9DE4-785842B7508C}" ShortID="904593855">
 							<PropertyList>
@@ -508,6 +508,61 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Nasa releases audio of what a black hole 'sounds' like shorts" ID="{D3C0E2D6-D4C1-4BB5-8C1A-BB3B4D8E8235}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_UI_JOUEURS_WOOL_FULL" ID="{97687223-7DF5-403D-BAA7-EE2B7C7763F6}">
+					<ChildrenList>
+						<Action Name="" ID="{C8C98AAC-2E81-4CC5-A67F-27614881CDAA}" ShortID="282765085">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Win_2" ID="{321A6B6B-428B-43D9-8DB5-26DC81F8817A}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_UI_OBJECTIFS_MINIBOSS_WARNING" ID="{721B2932-381A-4038-A7FE-116BC4F781A0}">
+					<ChildrenList>
+						<Action Name="" ID="{99326EDC-7599-48EA-A2C2-5935DA5B9CE1}" ShortID="1001537926">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="alarme-factorio" ID="{30CB82B9-35C3-4E7B-B157-EE03DE61B0A3}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_UI_OBJECTIFS_REINFORCEMENTS_WARNING" ID="{BE65F1A1-A12C-44F1-9ECA-73E74B94A77E}">
+					<ChildrenList>
+						<Action Name="" ID="{2397B167-7238-4666-89F0-C4A449DB032F}" ShortID="1069852453">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="alarme-factorio" ID="{30CB82B9-35C3-4E7B-B157-EE03DE61B0A3}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_UI_GENERAL_BOUTONS_HOVER" ID="{5CC81549-CD29-443B-85E3-4F7721187AA7}">
+					<ChildrenList>
+						<Action Name="" ID="{22C8E0E4-1B1A-4EB3-A383-142DB026802E}" ShortID="997280289">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Button_1" ID="{1709F81D-3303-4D79-8156-A9E97A6005AA}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_UI_GENERAL_BOUTONS_SELECT" ID="{F0A8C458-4607-41C1-BEE7-71F56D505398}">
+					<ChildrenList>
+						<Action Name="" ID="{3D5825F0-91EF-45B8-9F92-C9A94374D82E}" ShortID="762792265">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Button_4" ID="{7FC61E2D-40D3-4460-8B0B-328013543F93}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

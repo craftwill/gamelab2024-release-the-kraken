@@ -14,5 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: tied to id10miniboss
   objectiveTimer: 0
+  triggerSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ca1ee790dfc785e4a8767938c19b5191,
+      type: 2}
   spawnFrequency: 10
   spawnData: {fileID: 11400000, guid: ae52b6ddd841e724aa2dc41bdb8f3f64, type: 2}

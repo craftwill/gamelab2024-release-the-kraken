@@ -30,7 +30,6 @@ namespace Kraken
         protected override void Start()
         {
             base.Start();
-            _soundComponent.PlayBossSpawnSound();
             if (!PhotonNetwork.IsMasterClient) return;
         }
 

@@ -84,6 +84,11 @@ namespace Kraken
             if (currentObjective is null) return;
 
             currentObjective.TriggerObjective();
+            //Play objective trigger sound
+            if (currentObjective.objectiveSO.triggerSound != null)
+            {
+                currentObjective.objectiveSO.triggerSound.Post(gameObject);
+            }
             
             ObjectiveInstance cur = currentObjective;
             int time = cur.objectiveSO.objectiveTimer;
