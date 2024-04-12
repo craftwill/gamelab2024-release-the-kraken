@@ -26,8 +26,9 @@ namespace Kraken
         private GameObject _spawnedInactive = null;
 
         private ZoneEventData _zoneEventData;
-        public List<string> _playersInRange { get; private set; } = new List<string>();
+        private List<string> _playersInRange = new List<string>();
         public TowerState _TowerState { get; private set; }
+        public int _playersCount = 0;
 
         private void Start()
         {
@@ -75,6 +76,8 @@ namespace Kraken
         {
             if (!_playersInRange.Contains(id))
                 _playersInRange.Add(id);
+            photonView.RPC(nameof(RPC_All_UpdatePlayersInRangeCount), RpcTarget.All, _playersCount + 1);
+
 
             if (_playersInRange.Count == PhotonNetwork.PlayerList.Length)
             {
@@ -86,9 +89,16 @@ namespace Kraken
         }
 
         [PunRPC]
+        private void RPC_All_UpdatePlayersInRangeCount(int count)
+        {
+            _playersCount = count;
+        }
+
+        [PunRPC]
         private void RPC_Master_RemovePlayerInRange(string id)
         {
             _playersInRange.Remove(id);
+            photonView.RPC(nameof(RPC_All_UpdatePlayersInRangeCount), RpcTarget.All, _playersCount - 1);
         }
 
         public void PlayerCancelBuild()
