@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{9F8EF4BB-83BB-15A5-F03B-DDA4A941879E}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{A57BFBD1-1847-F5FA-9738-D517CF142C03}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -67,7 +67,7 @@
 				</File>
 				<File Id="354254577" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>lemon_tMqyvSF.wav</ShortName>
-					<CachePath>SFX/lemon_tMqyvSF_855D264A.wem</CachePath>
+					<CachePath>SFX/lemon_tMqyvSF_6A15B21E.wem</CachePath>
 				</File>
 				<File Id="392899862" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>fast-whoosh-118248.wav</ShortName>
@@ -366,5 +366,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{41C8B485-42AD-5AD6-CA63-C21C529ED065}</FileHash>
+	<FileHash>{9E9E05F1-9DCE-A032-980C-4E856F2CE498}</FileHash>
 </SoundBanksInfo>
