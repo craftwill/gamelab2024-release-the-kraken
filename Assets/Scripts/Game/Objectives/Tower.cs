@@ -21,6 +21,9 @@ namespace Kraken
         [SerializeField] private int _id;
         [SerializeField] private GameObject _waitingPrefab;
         [SerializeField] private GameObject _towerPrefab;
+        [SerializeField] private GameObject _inactivePrefab;
+
+        private GameObject _spawnedInactive = null;
 
         private ZoneEventData _zoneEventData;
         private List<string> _playersInRange = new List<string>();
@@ -100,12 +103,17 @@ namespace Kraken
 
             if(_TowerState == TowerState.Waiting)
             {
+                PhotonNetwork.Destroy(_spawnedInactive);
                 NetworkUtils.Instantiate(_waitingPrefab.name, transform.position, transform.rotation);
                 TowerManager.Instance.TowerBuilt();
             }
             else if(_TowerState == TowerState.Active)
             {
                 NetworkUtils.Instantiate(_towerPrefab.name, transform.position, transform.rotation);
+            }
+            else if(_TowerState == TowerState.Inactive)
+            {
+                _spawnedInactive = NetworkUtils.Instantiate(_inactivePrefab.name, transform.position, transform.rotation);
             }
 
             if(!TowerManager.Instance.TowerData.TryAdd(_id, (int)_TowerState))
