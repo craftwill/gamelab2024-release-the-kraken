@@ -52,6 +52,8 @@ MonoBehaviour:
   _soundComponent: {fileID: 6177580151121801195}
   _ringOfLightTelegraphPrefab: {fileID: 7606557052295748628, guid: cb0a3c04fd1d6b149b29f1789e02c3a8,
     type: 3}
+  _ringOfLightVFX: {fileID: 5975844294459365678, guid: 7ab93201aef41de45892d1dcfee0b373,
+    type: 3}
 --- !u!114 &4702124003625813099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +128,8 @@ MonoBehaviour:
   _telegraphRadius: 0
   _soundComponent: {fileID: 6177580151121801195}
   _starfallTelegraphPrefab: {fileID: 7606557052295748628, guid: cb0a3c04fd1d6b149b29f1789e02c3a8,
+    type: 3}
+  _starfallVFX: {fileID: 5975844294459365678, guid: ab45b14df95972046b68c05e359e8704,
     type: 3}
 --- !u!114 &6644211839944383033
 MonoBehaviour:

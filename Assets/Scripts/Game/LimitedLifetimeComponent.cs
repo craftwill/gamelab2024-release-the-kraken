@@ -8,6 +8,14 @@ public class LimitedLifetimeComponent : MonoBehaviour
 
     private void Start()
     {
+        if (!Mathf.Approximately(_lifetime, 0f))
+            StartCoroutine(LifetimeCoroutine());
+
+    }
+
+    public void StartNewLifeTime(float lifetime)
+    {
+        _lifetime = lifetime;
         StartCoroutine(LifetimeCoroutine());
     }
 
