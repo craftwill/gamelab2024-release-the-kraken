@@ -59,12 +59,12 @@ MonoBehaviour:
   _imgHpFilling: {fileID: 4875022793969939708}
   _imgPortrait: {fileID: 2897010864700626860}
   _portraitSprites:
-  - {fileID: 1191346132, guid: d43e9bbaf8926c049acc1a2b0ac48461, type: 3}
-  - {fileID: 237673147, guid: d43e9bbaf8926c049acc1a2b0ac48461, type: 3}
-  - {fileID: -64176927, guid: d43e9bbaf8926c049acc1a2b0ac48461, type: 3}
   - {fileID: -74034968, guid: d43e9bbaf8926c049acc1a2b0ac48461, type: 3}
   - {fileID: 1360784162, guid: d43e9bbaf8926c049acc1a2b0ac48461, type: 3}
   - {fileID: -1594801658, guid: d43e9bbaf8926c049acc1a2b0ac48461, type: 3}
+  - {fileID: 1191346132, guid: d43e9bbaf8926c049acc1a2b0ac48461, type: 3}
+  - {fileID: 237673147, guid: d43e9bbaf8926c049acc1a2b0ac48461, type: 3}
+  - {fileID: -64176927, guid: d43e9bbaf8926c049acc1a2b0ac48461, type: 3}
 --- !u!225 &6652027562313774605
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0

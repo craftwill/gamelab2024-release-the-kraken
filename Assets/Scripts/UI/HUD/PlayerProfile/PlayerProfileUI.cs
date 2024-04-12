@@ -115,6 +115,7 @@ namespace Kraken.UI
             _imgBackground.sprite = _backgroundSprites[(_isRazzle ? 0 : 1)];
             _imgPortrait.sprite = _portraitSprites[indexOffset];
             _imgPortraitTail.sprite = _portraitTailSprites[indexOffset];
+            _otherPlayerHealthUI.SetPlayerType(_isRazzle);
             _otherPlayerHealthUI.SetIsRainbow(_isRainbow);
         }
     }

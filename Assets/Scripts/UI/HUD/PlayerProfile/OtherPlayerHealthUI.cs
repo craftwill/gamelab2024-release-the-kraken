@@ -14,6 +14,7 @@ namespace Kraken.UI
 
         [SerializeField] private Sprite[] _portraitSprites;
 
+        private bool _isRazzle;
         private bool _isRainbow;
 
         private Animate _hurtAnim;
@@ -37,22 +38,29 @@ namespace Kraken.UI
 
         private void PlayHurtAnim() 
         {
-            _imgPortrait.sprite = _portraitSprites[1];
+            int indexOffset = (_isRazzle ? 0 : 3);
+            _imgPortrait.sprite = _portraitSprites[1 + indexOffset];
             _hurtAnim?.Stop(callEndFunction: false);
             _hurtAnim = Animate.Delay(HURT_SPRITE_CHANGE_DELAY, () => 
             {
-                _imgPortrait.sprite = _portraitSprites[(_isRainbow ? 2 : 0)];
+                _imgPortrait.sprite = _portraitSprites[(_isRainbow ? 2 : 0) + indexOffset];
                 _hurtAnim = null;
             });
+        }
+
+        public void SetPlayerType(bool _isRazzle) 
+        {
+
         }
 
         public void SetIsRainbow(bool isRainbow)
         {
             _isRainbow = isRainbow;
 
+            int indexOffset = (_isRazzle ? 0 : 3);
             if (_hurtAnim == null)
             {
-                _imgPortrait.sprite = _portraitSprites[(isRainbow ? 2 : 0)];
+                _imgPortrait.sprite = _portraitSprites[(isRainbow ? 2 : 0) + indexOffset];
             }
         }
     }

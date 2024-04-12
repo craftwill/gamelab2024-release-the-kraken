@@ -26,7 +26,7 @@ namespace Kraken
 
         private void Update()
         {
-            bool isInRangeToheal = GetDistanceBetweenPlayers() > Config.current.healingMaxDistance;
+            bool isInRangeToheal = GetDistanceBetweenPlayers() <= Config.current.healingMaxDistance;
             UpdatePlayerHealAbilityUI(isInRangeToheal);
 
             if (_players.Length < 2)
