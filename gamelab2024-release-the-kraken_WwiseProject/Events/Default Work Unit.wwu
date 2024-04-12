@@ -499,6 +499,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL_STOP" ID="{EF8CA0EF-D454-450B-A184-11E329683C58}">
+					<ChildrenList>
+						<Action Name="" ID="{A07D103A-2E37-488E-90FB-D2C513617DF5}" ShortID="229527235">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nasa releases audio of what a black hole 'sounds' like shorts" ID="{D3C0E2D6-D4C1-4BB5-8C1A-BB3B4D8E8235}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{AE84FFC5-7214-ADC5-D11E-AC2284BC97EF}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{9F8EF4BB-83BB-15A5-F03B-DDA4A941879E}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -285,7 +285,7 @@
 						<MediaRef Id="723110272"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1774571785" Name="SFX_ENNEMIS_MINIONS_MELEE_ATTAQUE" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.6979592" DurationMax="1.6979592">
+				<Event Id="1774571785" Name="SFX_ENNEMIS_MINIONS_MELEE_ATTAQUE" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.6979592" DurationMax="2.0192251">
 					<MediaRefs>
 						<MediaRef Id="248373617"/>
 					</MediaRefs>
@@ -305,7 +305,7 @@
 						<MediaRef Id="1046494642"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3172406615" Name="SFX_ENNEMIS_MINIONS_TANK_ATTAQUE" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.6979592" DurationMax="1.6979592">
+				<Event Id="3172406615" Name="SFX_ENNEMIS_MINIONS_TANK_ATTAQUE" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.6979592" DurationMax="2.0192251">
 					<MediaRefs>
 						<MediaRef Id="248373617"/>
 					</MediaRefs>
@@ -366,5 +366,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C36B3E7F-8F36-05E4-8C3F-2CF7226DBA66}</FileHash>
+	<FileHash>{D694C9DB-5A0E-AC8D-F9DC-B8702334D0B2}</FileHash>
 </SoundBanksInfo>
