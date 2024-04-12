@@ -438,7 +438,62 @@
 						<Action Name="" ID="{69CF45BB-325E-49D1-9BCF-460E50ABBDD4}" ShortID="1010526035">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="478278__joao_janz__8-bit-explosion-1_5" ID="{E068510A-57AA-4692-9FAC-C2D05D0B9B7E}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="hit-sound-effect-12445" ID="{828D207E-AB59-430A-A4C4-94D8D113E622}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_ENNEMIS_MINIBOSS_POUND_SMASH" ID="{C7944E24-5032-42C2-93D3-159D7ACCF68B}">
+					<ChildrenList>
+						<Action Name="" ID="{C8477470-A7CD-4AA8-B9DB-B0F86FD5F0A4}" ShortID="787555923">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="hit-sound-effect-12445" ID="{828D207E-AB59-430A-A4C4-94D8D113E622}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_DAZZLE_HABILETE_SURPRISE_JUMP" ID="{79655D23-264B-4786-AA9E-D35CF9248314}">
+					<ChildrenList>
+						<Action Name="" ID="{E78F9081-9915-41DB-8A96-706729DBB5D8}" ShortID="57149468">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="cartoon-jump" ID="{C7D774A8-8E33-451F-8754-FFCA9F4AE767}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_DAZZLE_HABILETE_SURPRISE_CRASH" ID="{48CADD96-D47D-4F6D-AD72-574DB645DD56}">
+					<ChildrenList>
+						<Action Name="" ID="{81CECD01-4A7F-4073-8B9A-2EC878947FE1}" ShortID="199810364">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="crash_5mE1q2P" ID="{A0A0734C-FFAE-4621-9057-EE87EC8DD4FD}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_RAZZLE_HABILETE_GATHERUP_CAST" ID="{1BD2B0F3-919F-4172-B602-8C0C0E3A06BC}">
+					<ChildrenList>
+						<Action Name="" ID="{AA377CE7-07D4-4E04-9024-A895401818B8}" ShortID="261790569">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="lemon_tMqyvSF" ID="{F146B07A-A6F5-4EFA-8B04-883A30D97766}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL" ID="{6332EC88-1A06-47DA-9B59-AE9D803382FA}">
+					<ChildrenList>
+						<Action Name="" ID="{8C9F4823-8BC0-4A37-9F06-FECA345DF67A}" ShortID="833089544">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nasa releases audio of what a black hole 'sounds' like shorts" ID="{D3C0E2D6-D4C1-4BB5-8C1A-BB3B4D8E8235}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
