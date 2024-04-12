@@ -49,7 +49,7 @@ namespace Kraken
             if (_isHealing)
             {
                 transform.LookAt(_componentToHeal.transform);
-                if (isInRangeToheal || _componentToHeal.Health == _componentToHeal.MaxHealth)
+                if (!isInRangeToheal || _componentToHeal.Health == _componentToHeal.MaxHealth)
                 {
                     _isHealing = false;
                 }
