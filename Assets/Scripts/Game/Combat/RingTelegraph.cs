@@ -16,6 +16,8 @@ namespace Kraken
         private Vector3[] _outerPolygonPoints;
         private int[] _innerPolygonTriangles;
         private int[] _outerPolygonTriangles;
+        public delegate void PlaySound(GameObject obj);
+        public PlaySound _playSoundDelegate = null;
 
         private const int POLYGON_SIDES = 50;
 
@@ -58,7 +60,10 @@ namespace Kraken
                     }
                 });
             }
-
+            if (_playSoundDelegate != null)
+            {
+                _playSoundDelegate(gameObject);
+            }
             Destroy(this.gameObject);
         }
 

@@ -62,13 +62,7 @@ namespace Kraken
         {
             RingTelegraph telegraph = Instantiate(_starfallTelegraphPrefab, pos, _starfallTelegraphPrefab.transform.rotation, this.transform).GetComponent<RingTelegraph>();
             telegraph.StartTelegraph(chargeTime, telegraphRadius, 0f, damage);
-            StartCoroutine(StarfallImpactSoundCoroutine(chargeTime));
-        }
-
-        IEnumerator StarfallImpactSoundCoroutine(float chargeTime)
-        {
-            yield return new WaitForSeconds(chargeTime);
-            _soundComponent.PlayStarfallHitSound();
+            telegraph._playSoundDelegate = _soundComponent.PlayStarfallHitSound;
         }
 
         private List<Vector3> GetSpawnPoints()

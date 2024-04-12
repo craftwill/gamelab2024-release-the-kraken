@@ -42,9 +42,16 @@ namespace Kraken
             }
         }
 
-        public void PlayRingsOfLightHitSound()
+        public void PlayRingsOfLightHitSound(GameObject position = null)
         {
-            _ringsOfLightHitSound.Post(gameObject);
+            if (position != null)
+            {
+                _starfallHitSound.Post(position);
+            }
+            else
+            {
+                _starfallHitSound.Post(gameObject);
+            }
         }
     }
 

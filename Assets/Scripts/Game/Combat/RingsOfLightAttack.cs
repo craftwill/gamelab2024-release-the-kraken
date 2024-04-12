@@ -33,7 +33,7 @@ namespace Kraken
         {
             RingTelegraph telegraph = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation, this.transform).GetComponent<RingTelegraph>();
             telegraph.StartTelegraph(ring1ChargeTime, ring1Radius, 0f, damage);
-            StartCoroutine(RingsOfLightImpactSoundCoroutine(ring1ChargeTime));
+            telegraph._playSoundDelegate = _soundComponent.PlayRingsOfLightHitSound;
 
             StartCoroutine(SpawnSecondRing(ring1ChargeTime, ring2ChargeTime, ring2Radius, ring1Radius, damage));
         }
@@ -43,13 +43,7 @@ namespace Kraken
             yield return new WaitForSeconds(ring1ChargeTime);
             RingTelegraph telegraph2 = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation, this.transform).GetComponent<RingTelegraph>();
             telegraph2.StartTelegraph(ring2ChargeTime, ring2Radius, ring1Radius, damage);
-            StartCoroutine(RingsOfLightImpactSoundCoroutine(ring2ChargeTime));
-        }
-
-        IEnumerator RingsOfLightImpactSoundCoroutine(float chargeTime)
-        {
-            yield return new WaitForSeconds(chargeTime);
-            _soundComponent.PlayStarfallHitSound();
+            telegraph2._playSoundDelegate = _soundComponent.PlayRingsOfLightHitSound;
         }
 
         //two functions method for designer testing as well
