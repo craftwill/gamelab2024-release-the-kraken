@@ -69,6 +69,11 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: fb16932c804a50c43a448654d4c628ca,
       type: 2}
+  _littleTimeLeftSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1be40bf31131e6845b83aed3aed430ab,
+      type: 2}
 --- !u!114 &7176809666395373653
 MonoBehaviour:
   m_ObjectHideFlags: 0

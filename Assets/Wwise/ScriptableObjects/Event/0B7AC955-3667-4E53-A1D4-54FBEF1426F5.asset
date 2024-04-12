@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f788d800c1c6bc40a4578f7438ab716, type: 3}
-  m_Name: id10_TerritoryObjective
+  m_Script: {fileID: 11500000, guid: 2c75bd90d2002764cbcde38269546abc, type: 3}
+  m_Name: 0B7AC955-3667-4E53-A1D4-54FBEF1426F5
   m_EditorClassIdentifier: 
-  objectiveName: tied to id10miniboss
-  objectiveTimer: 0
-  objectiveType: 1
-  spawnFrequency: 10
-  spawnData: {fileID: 11400000, guid: ae52b6ddd841e724aa2dc41bdb8f3f64, type: 2}
+  objectName: SFX_UI_OBJECTIFS_NUIT_WAKEUP
+  id: 744912080
+  guid: 0B7AC955-3667-4E53-A1D4-54FBEF1426F5
