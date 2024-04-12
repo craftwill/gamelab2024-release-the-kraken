@@ -278,6 +278,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 47026122244047288, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: _hurtSound.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 2805c424cc00b204f944891332f40949,
+        type: 2}
+    - target: {fileID: 47026122244047288, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: _attackSound.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 3849b76044012c0449ce687747e35719,
+        type: 2}
     - target: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: _config

@@ -81,6 +81,7 @@ namespace Kraken
         {
             PlayAttackAnim();
             _inflictDamageComponent.gameObject.SetActive(true);
+            photonView.RPC(nameof(_soundComponent.RPC_All_PlayEnemyAttackSound), RpcTarget.All);
 
             // Only master client processes attack duration
             if (!PhotonNetwork.IsMasterClient) return;

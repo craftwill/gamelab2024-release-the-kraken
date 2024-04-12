@@ -19,6 +19,7 @@ namespace Kraken
         [SerializeField] private float _ring2ChargeTime;
         [SerializeField] private float _ring1Radius;
         [SerializeField] private float _ring2Radius;
+        [SerializeField] private BossSoundComponent _soundComponent;
 
         [SerializeField] private GameObject _ringOfLightTelegraphPrefab;
 
@@ -32,6 +33,7 @@ namespace Kraken
         {
             RingTelegraph telegraph = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation, this.transform).GetComponent<RingTelegraph>();
             telegraph.StartTelegraph(ring1ChargeTime, ring1Radius, 0f, damage);
+            telegraph._playSoundDelegate = _soundComponent.PlayRingsOfLightHitSound;
 
             StartCoroutine(SpawnSecondRing(ring1ChargeTime, ring2ChargeTime, ring2Radius, ring1Radius, damage));
         }
@@ -41,6 +43,7 @@ namespace Kraken
             yield return new WaitForSeconds(ring1ChargeTime);
             RingTelegraph telegraph2 = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation, this.transform).GetComponent<RingTelegraph>();
             telegraph2.StartTelegraph(ring2ChargeTime, ring2Radius, ring1Radius, damage);
+            telegraph2._playSoundDelegate = _soundComponent.PlayRingsOfLightHitSound;
         }
 
         //two functions method for designer testing as well
