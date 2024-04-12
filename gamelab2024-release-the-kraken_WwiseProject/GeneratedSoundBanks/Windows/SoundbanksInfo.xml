@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{A57BFBD1-1847-F5FA-9738-D517CF142C03}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{B2C0E57E-4F56-E6F3-38A1-558B614DF8D3}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -255,6 +255,7 @@
 						<MediaRef Id="12264851"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="786476976" Name="SFX_DUO_HABILETE_PATCHUP_PATCHING_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3092608232" Name="SFX_DUO_MOUVEMENT_SPRINT_FWIP" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.2016326" DurationMax="1.2016326">
 					<MediaRefs>
 						<MediaRef Id="392899862"/>
@@ -356,7 +357,6 @@
 						<MediaRef Id="1073696907"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="730396682" Name="Stop_Healing" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2869039319" Name="Stop_Music_Boss" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="504869708" Name="Stop_Music_General" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2291264325" Name="Stop_Music_Objective" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -366,5 +366,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9E9E05F1-9DCE-A032-980C-4E856F2CE498}</FileHash>
+	<FileHash>{4C032ED8-B0F6-B0F8-3C01-82ADB8195591}</FileHash>
 </SoundBanksInfo>
