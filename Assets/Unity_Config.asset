@@ -20,8 +20,8 @@ MonoBehaviour:
   isSkipMainMenu: 0
   useDebugGameFlow: 1
   randomizeObjectives: 1
-  spawnObjectiveCount: 0
-  minibossObjectiveCount: 0
+  spawnObjectiveCount: 3
+  minibossObjectiveCount: 2
   gameDuration: 600
   maxHealth: 250
   razzleAbilityCooldown: 3
@@ -51,11 +51,11 @@ MonoBehaviour:
   dashSpeed: 30
   dashCooldown: 3
   sprintAfterAttackCooldown: 0.4
-  cameraSensitivity: 0.18697338
+  cameraSensitivity: 0.2
   yCameraSensitivityMultiplier: 0.01
   cameraControllerMultiplier: 10
   invertXAxis: 0
-  invertYAxis: 0
+  invertYAxis: 1
   baseFov: 50
   sprintFov: 60
   fovChangeDuration: 5
