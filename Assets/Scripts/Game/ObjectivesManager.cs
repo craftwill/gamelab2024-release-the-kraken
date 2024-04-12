@@ -21,6 +21,7 @@ namespace Kraken
         [SerializeField] private List<ObjectiveWithLocation> _allSpawnObjectives;
         [SerializeField] private List<ObjectiveWithLocation> _allMinibossObjectives;
         [SerializeField] private ObjectiveWithLocation _bossObjective;
+        [SerializeField] private ObjectivesSoundComponent _soundComponent;
 
         private List<ObjectiveWithLocation> _loadedObjectives;
         private ObjectiveInstance currentObjective = null;
@@ -84,12 +85,8 @@ namespace Kraken
             if (currentObjective is null) return;
 
             currentObjective.TriggerObjective();
-            //Play objective trigger sound
-            if (currentObjective.objectiveSO.triggerSound != null)
-            {
-                currentObjective.objectiveSO.triggerSound.Post(gameObject);
-            }
-            
+            _soundComponent.PlayObjectiveSound(currentObjective.objectiveSO.objectiveType);
+
             ObjectiveInstance cur = currentObjective;
             int time = cur.objectiveSO.objectiveTimer;
             //will either end by the time or if something triggers the next objective to start
@@ -133,6 +130,12 @@ namespace Kraken
         private void RPC_All_UpdateObjectiveUI(string objectiveName, int objectiveTimer) 
         {
             EventManager.Dispatch(EventNames.UpdateObjectiveUI, new UpdateObjectiveUIData(objectiveName, objectiveTimer));
+        }
+
+        [PunRPC]
+        private void RPC_All_PlayObjectivesSound(AK.Wwise.Event sound)
+        {
+            sound.Post(gameObject);
         }
 
         private ObjectiveInstance GetNextObjective()
