@@ -49,6 +49,7 @@ MonoBehaviour:
   _ring2ChargeTime: 0
   _ring1Radius: 0
   _ring2Radius: 0
+  _soundComponent: {fileID: 6177580151121801195}
   _ringOfLightTelegraphPrefab: {fileID: 7606557052295748628, guid: cb0a3c04fd1d6b149b29f1789e02c3a8,
     type: 3}
 --- !u!114 &4702124003625813099
@@ -123,6 +124,7 @@ MonoBehaviour:
   _starCount: 0
   _delayBetweenStars: 0
   _telegraphRadius: 0
+  _soundComponent: {fileID: 6177580151121801195}
   _starfallTelegraphPrefab: {fileID: 7606557052295748628, guid: cb0a3c04fd1d6b149b29f1789e02c3a8,
     type: 3}
 --- !u!114 &6644211839944383033
@@ -260,6 +262,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 47026122244047288, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: _hurtSound.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: bc41572bcca8b8f46a315db6d12b40bb,
+        type: 2}
     - target: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: _config
@@ -393,6 +401,7 @@ PrefabInstance:
     - {fileID: 7010872933795953625, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     - {fileID: 6273920595487294825, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     - {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
+    - {fileID: 7174202112263796747, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6904248142507945207, guid: d82bf9ca5bd1a8149852b3fdba06fecc, type: 3}
     m_AddedGameObjects:
@@ -516,7 +525,12 @@ MonoBehaviour:
   _minimapIcon: {fileID: 1208869458439557963}
   _woolPrefab: {fileID: 5281229062787241931, guid: a7e2e3f5a7a656a44805d0841a9704b9,
     type: 3}
+  _smokePoofPrefab: {fileID: 5596100735769626616, guid: 3efb572bba23efa49b00e27ef47a37cd,
+    type: 3}
   _woolDropped: 1
+  _zoneOccupancyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &7503936983532037170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,6 +597,16 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: f31c9e5c8524fd94183b734e4ea7cd6e,
+      type: 2}
+  _starfallHitSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4034574ed6492c94eb6a838f08e6571f,
+      type: 2}
+  _ringsOfLightHitSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4d0e507c603f31042a4d63e370f4def7,
       type: 2}
 --- !u!114 &8082780783602929124 stripped
 MonoBehaviour:

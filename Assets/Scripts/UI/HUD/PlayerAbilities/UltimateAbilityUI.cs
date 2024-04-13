@@ -1,37 +1,46 @@
 
 using Bytes;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Kraken.UI
 {
-    public class UltimateAbilityUI : KrakenUIElement
+    public class UltimateAbilityUI : KrakenUIElement, IPlayerUIComponent
     {
-        [SerializeField] private Image _imgWoolGauge;
+        [Header("UltimateAbilityUI")]
+        [SerializeField] private Animator _animator;
+        [SerializeField] private Image _imgControl;
+        [Header("Control Sprites")]
+        // Index 0 is pc and 1 is xbox controller
+        [SerializeField] protected Sprite[] _controlSprites;
+
+        // IPlayerUIComponent
+        public void Init(bool isRazzle, bool isKeyboard)
+        {
+            _imgControl.sprite = _controlSprites[isKeyboard ? 0 : 1];
+        }
+
+        public void SetIsGreyedOut(bool isGreyedOut)
+        {
+            // No grey out for this component
+        }
+        // IPlayerUIComponent end
 
         private void Start()
         {
-            SetWoolGaugeCount(Config.current.initialWoolQuantity);
-            EventManager.AddEventListener(EventNames.UpdateWoolQuantity, HandleUpdateWoolQuantity);
+            EventManager.AddEventListener(EventNames.UpdateUltimateUI, HandleUpdateUltimateUI);
         }
 
         private void OnDestroy()
         {
-            EventManager.RemoveEventListener(EventNames.UpdateWoolQuantity, HandleUpdateWoolQuantity);
+            EventManager.RemoveEventListener(EventNames.UpdateUltimateUI, HandleUpdateUltimateUI);
         }
 
-        private void HandleUpdateWoolQuantity(BytesData data)
+        private void HandleUpdateUltimateUI(BytesData data)
         {
-            int woolAmount = (data as IntDataBytes).IntValue;
-            SetWoolGaugeCount(woolAmount);
-        }
+            var showUltCastMeAnim = (data as BoolDataBytes).BoolValue;
 
-        private void SetWoolGaugeCount(int woolAmount) 
-        {
-            float fillAmount = (float)woolAmount / Config.current.maxWoolQuantity;
-            _imgWoolGauge.fillAmount = fillAmount;
+            _animator.SetBool("IsCastMe", showUltCastMeAnim);
         }
     }
 }

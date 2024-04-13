@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c75bd90d2002764cbcde38269546abc, type: 3}
   m_Name: 50D85769-262C-4554-A45E-1D417F92F9B2
   m_EditorClassIdentifier: 
-  objectName: Play_EnemyHurt
-  id: 349172053
+  objectName: SFX_ENNEMIS_MINIONS_MELEE_HURT
+  id: 3060955767
   guid: 50D85769-262C-4554-A45E-1D417F92F9B2

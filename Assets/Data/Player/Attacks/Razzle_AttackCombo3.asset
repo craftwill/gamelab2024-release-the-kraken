@@ -19,5 +19,11 @@ MonoBehaviour:
   timeBeforeHitboxDuration: 0.9
   hitboxDuration: 0.15
   attackLockLength: 0.7
+  animDoneBufferTimer: 0
   damage: 3
   comboStep: 3
+  sound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0c8c3f6de92c3fc40b12066abf9cb642,
+      type: 2}

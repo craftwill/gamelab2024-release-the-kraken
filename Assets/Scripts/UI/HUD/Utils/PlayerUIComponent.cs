@@ -2,8 +2,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-using Bytes;
-
 namespace Kraken.UI
 {
     public interface IPlayerUIComponent
@@ -32,10 +30,10 @@ namespace Kraken.UI
         protected int _spriteIndexUsed;
         protected int _controlSpriteIndexUsed;
 
-        public void Init(bool isRazzle, bool isKeyboard)
+        public virtual void Init(bool isRazzle, bool isKeyboard)
         {
             _spriteIndexUsed = isRazzle ? 0 : 1;
-            _controlSpriteIndexUsed = isKeyboard ? 0 : 1;
+            _controlSpriteIndexUsed = isKeyboard ? 1 : 0;
             _imgUsed.sprite = _iconSprites[_spriteIndexUsed];
             _imgUsedBackground.sprite = _iconSprites[_spriteIndexUsed];
             _imgControl.sprite = _controlSprites[_controlSpriteIndexUsed];
@@ -44,6 +42,7 @@ namespace Kraken.UI
         public void SetIsGreyedOut(bool isGreyedOut) 
         {
             _isGreyedOut = isGreyedOut;
+            _imgControl.gameObject.SetActive(!_isGreyedOut);
             if (_isGreyedOut)
             {
                 _imgUsed.sprite = _greyedOutIconSprites[_spriteIndexUsed];

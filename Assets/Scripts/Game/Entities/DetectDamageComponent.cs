@@ -70,13 +70,15 @@ namespace Kraken.Game
         private IEnumerator KnockbackCoroutine(Vector3 direction)
         {
             _rigidBody.isKinematic = false;
-            _agent.isStopped = true;
+            if (_agent.isOnNavMesh)
+                _agent.isStopped = true;
             _rigidBody.AddForce(direction * Config.current.knockbackForce, ForceMode.Impulse);
             yield return new WaitForSeconds(Config.current.knockBackDuration);
             if (_healthComponent.IsAlive)
             {
                 _rigidBody.isKinematic = true;
-                _agent.isStopped = false;
+                if (_agent.isOnNavMesh)
+                    _agent.isStopped = false;
             }   
         }
     }

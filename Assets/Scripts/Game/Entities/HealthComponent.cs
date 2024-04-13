@@ -38,11 +38,11 @@ namespace Kraken.Game
 
         public void TakeDamage(float dmgAmount) 
         {
-            photonView.RPC(nameof(RPC_Master_TakeDamage), RpcTarget.All, dmgAmount);
+            photonView.RPC(nameof(RPC_All_TakeDamage), RpcTarget.All, dmgAmount);
         }
 
         [PunRPC]
-        private void RPC_Master_TakeDamage(float dmgAmount)
+        private void RPC_All_TakeDamage(float dmgAmount)
         {
             if (!IsAlive) return;
 
@@ -60,11 +60,11 @@ namespace Kraken.Game
 
         public void GetHealed(float healAmount)
         {
-            photonView.RPC(nameof(RPC_MasterGetHealed), RpcTarget.All, healAmount);
+            photonView.RPC(nameof(RPC_AllGetHealed), RpcTarget.All, healAmount);
         }
 
         [PunRPC]
-        private void RPC_MasterGetHealed(float healAmount)
+        private void RPC_AllGetHealed(float healAmount)
         {
             OnHealed.Invoke(healAmount);
             if (!IsAlive) return;

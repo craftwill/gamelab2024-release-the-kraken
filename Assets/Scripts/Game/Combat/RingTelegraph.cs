@@ -16,6 +16,8 @@ namespace Kraken
         private Vector3[] _outerPolygonPoints;
         private int[] _innerPolygonTriangles;
         private int[] _outerPolygonTriangles;
+        public delegate void PlaySound(GameObject obj);
+        public PlaySound _playSoundDelegate = null;
 
         private const int POLYGON_SIDES = 50;
 
@@ -50,15 +52,18 @@ namespace Kraken
                 {
                     if (p == null) return;
                     float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(p.transform.position.x, p.transform.position.z));
-
-                    if (distance >= offsetRadius && distance <= telegraphRadius + offsetRadius)
+                    //added 0.5f because you otherwise it was unreliable to hit
+                    if (distance >= offsetRadius && distance <= telegraphRadius + offsetRadius + 0.5f)
                     {
                         var ddc = p.GetComponentInChildren<Kraken.Game.DetectDamageComponent>();
                         if (ddc) ddc.TakeDamageFromOtherSource(damage);
                     }
                 });
             }
-
+            if (_playSoundDelegate != null)
+            {
+                _playSoundDelegate(gameObject);
+            }
             Destroy(this.gameObject);
         }
 

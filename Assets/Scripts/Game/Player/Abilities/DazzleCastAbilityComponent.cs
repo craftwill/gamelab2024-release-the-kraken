@@ -6,6 +6,7 @@ using Kraken.Network;
 
 using Bytes;
 using Unity.VisualScripting;
+using Photon.Pun;
 
 namespace Kraken
 {
@@ -15,6 +16,7 @@ namespace Kraken
         [SerializeField] private InputActionReference _castAbilityInput;
         [SerializeField] private GameObject _abilityPrefab;
         [SerializeField] private PlayerControlsComponent _controlsComponent;
+        [SerializeField] private PlayerSoundComponent _soundComponent;
         [SerializeField] private PauseManager _pauseManager = null;
         [SerializeField] private float _verticalOffset = -0.25f;
         [SerializeField] private LayerMask _wallLayerMask;
@@ -99,6 +101,7 @@ namespace Kraken
                     endPos = hit2.point;
                 }
             }
+            photonView.RPC(nameof(_soundComponent.RPC_All_PlayDazzleAbilityJumpSound), RpcTarget.All);
 
             Animate.LerpSomething(_jumpDuration, (float step) => 
             {  
@@ -118,6 +121,7 @@ namespace Kraken
                 DazzleAoEAbility aoeAbility = ability.GetComponent<DazzleAoEAbility>();
                 aoeAbility.ActivateAbility();
 
+                photonView.RPC(nameof(_soundComponent.RPC_All_PlayDazzleAbilityCrashSound), RpcTarget.All);
                 _playerEntity.SetControlsEnabled(true);
                 transform.position = endPos;
             }, timeScaled_: true);

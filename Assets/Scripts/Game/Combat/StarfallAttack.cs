@@ -17,6 +17,7 @@ namespace Kraken
         [SerializeField] private int _starCount;
         [SerializeField] private float _delayBetweenStars;
         [SerializeField] private float _telegraphRadius;
+        [SerializeField] private BossSoundComponent _soundComponent;
 
         [SerializeField] private GameObject _starfallTelegraphPrefab;
 
@@ -61,6 +62,7 @@ namespace Kraken
         {
             RingTelegraph telegraph = Instantiate(_starfallTelegraphPrefab, pos, _starfallTelegraphPrefab.transform.rotation, this.transform).GetComponent<RingTelegraph>();
             telegraph.StartTelegraph(chargeTime, telegraphRadius, 0f, damage);
+            telegraph._playSoundDelegate = _soundComponent.PlayStarfallHitSound;
         }
 
         private List<Vector3> GetSpawnPoints()

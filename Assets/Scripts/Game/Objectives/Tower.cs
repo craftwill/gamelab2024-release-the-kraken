@@ -5,6 +5,7 @@ using UnityEngine;
 using System.IO;
 using Kraken.Network;
 using Newtonsoft.Json;
+using Bytes;
 
 namespace Kraken
 {
@@ -20,9 +21,18 @@ namespace Kraken
         [SerializeField] private int _id;
         [SerializeField] private GameObject _waitingPrefab;
         [SerializeField] private GameObject _towerPrefab;
+        [SerializeField] private GameObject _inactivePrefab;
 
+        private GameObject _spawnedInactive = null;
+
+        private ZoneEventData _zoneEventData;
         private List<string> _playersInRange = new List<string>();
-        private TowerState _towerState;
+        public TowerState _TowerState { get; private set; }
+
+        private void Start()
+        {
+            _zoneEventData = new ZoneEventData(transform.parent.GetComponent<Zone>());
+        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -30,6 +40,11 @@ namespace Kraken
 
             if (towerInteract)
             {
+                if (other.GetComponent<PlayerEntity>()._isOwner)
+                {
+                    EventManager.Dispatch(EventNames.PlayerEnteredTower, _zoneEventData);
+                }
+                
                 towerInteract.SetNewTowerInRange(this);
             }
         }
@@ -40,6 +55,11 @@ namespace Kraken
 
             if (towerInteract)
             {
+                if (other.GetComponent<PlayerEntity>()._isOwner)
+                {
+                    EventManager.Dispatch(EventNames.PlayerLeftTower, _zoneEventData);
+                }
+
                 towerInteract.SetNewTowerInRange(null);
             }
         }
@@ -58,7 +78,7 @@ namespace Kraken
 
             if (_playersInRange.Count == PhotonNetwork.PlayerList.Length)
             {
-                if (_towerState == TowerState.Inactive)
+                if (_TowerState == TowerState.Inactive)
                 {
                     SetNewTowerState(TowerState.Waiting);
                 }
@@ -79,28 +99,33 @@ namespace Kraken
 
         public void SetNewTowerState(TowerState newState)
         {
-            _towerState = newState;
+            _TowerState = newState;
 
-            if(_towerState == TowerState.Waiting)
+            if(_TowerState == TowerState.Waiting)
             {
+                PhotonNetwork.Destroy(_spawnedInactive);
                 NetworkUtils.Instantiate(_waitingPrefab.name, transform.position, transform.rotation);
                 TowerManager.Instance.TowerBuilt();
             }
-            else if(_towerState == TowerState.Active)
+            else if(_TowerState == TowerState.Active)
             {
                 NetworkUtils.Instantiate(_towerPrefab.name, transform.position, transform.rotation);
             }
-
-            if(!TowerManager.Instance.TowerData.TryAdd(_id, (int)_towerState))
+            else if(_TowerState == TowerState.Inactive)
             {
-                TowerManager.Instance.TowerData[_id] = (int)_towerState;
+                _spawnedInactive = NetworkUtils.Instantiate(_inactivePrefab.name, transform.position, transform.rotation);
+            }
+
+            if(!TowerManager.Instance.TowerData.TryAdd(_id, (int)_TowerState))
+            {
+                TowerManager.Instance.TowerData[_id] = (int)_TowerState;
             }
             TowerManager.Instance.WriteFile();
         }
 
         public TowerState GetTowerState()
         {
-            return _towerState;
+            return _TowerState;
         }
 
         public int GetId()

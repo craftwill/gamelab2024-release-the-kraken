@@ -21,6 +21,7 @@ namespace Kraken
 
         // Game keys
         public const string GAME_NIGHT_KEY = "GameNight";
+        public const string GAME_MAX_NIGHT_KEY = "MaxGameNight";
 
         // Settings keys
         public const string DISPLAY_FULLSCREEN = "DisplayFullscreen";

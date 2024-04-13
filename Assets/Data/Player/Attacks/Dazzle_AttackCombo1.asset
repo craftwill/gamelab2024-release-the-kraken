@@ -22,3 +22,8 @@ MonoBehaviour:
   animDoneBufferTimer: 0.6
   damage: 1
   comboStep: 1
+  sound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 7bfd293adac64bc4eb6ad04b041e3e87,
+      type: 2}

@@ -9,6 +9,7 @@ namespace Kraken
 {
     public class RazzlePullAbility : MonoBehaviourPun
     {
+        [SerializeField] RazzlePullAbilitySoundComponent _soundComponent;
         private float _pullDuration = 5f;
         private float _radius = 4f;
         private float _initialPullStrength = 2f;
@@ -34,6 +35,7 @@ namespace Kraken
         public void ActivateAbility()
         {
             photonView.RPC(nameof(RPC_All_ActivateRazzleAbility), RpcTarget.All);
+            photonView.RPC(nameof(_soundComponent.RPC_All_PlayWhirlpool), RpcTarget.All);
         }
 
         [PunRPC]
@@ -92,9 +94,16 @@ namespace Kraken
                 }
                 if (PhotonNetwork.IsMasterClient)
                 {
-                    PhotonNetwork.Destroy(photonView);
+                    photonView.RPC(nameof(_soundComponent.RPC_All_StopWhirlpool), RpcTarget.All);
+                    photonView.RPC(nameof(RPC_All_DestroyRazzlePullAbility), RpcTarget.All);
                 }
             }
+        }
+
+        [PunRPC]
+        private void RPC_All_DestroyRazzlePullAbility()
+        {
+            Destroy(gameObject);
         }
 
         private void PullAllEnemies(float strengthMultiplier, ForceMode forceMode = ForceMode.Acceleration)
