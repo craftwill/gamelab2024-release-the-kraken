@@ -6,6 +6,7 @@ using Photon.Pun;
 
 using Bytes;
 using Kraken.Network;
+using System.Collections;
 
 namespace Kraken
 {
@@ -19,7 +20,9 @@ namespace Kraken
         [SerializeField] private EnemySoundComponent _soundComponent;
         [SerializeField] private GameObject _minimapIcon;
         [SerializeField] private GameObject _woolPrefab;
+        [SerializeField] private GameObject _smokePoofPrefab;
         [SerializeField] private int _woolDropped = 1;
+        [SerializeField] LayerMask _zoneOccupancyLayer;
 
         protected override void Awake()
         {
@@ -40,6 +43,8 @@ namespace Kraken
         protected override void OnDestroy()
         {
             EventManager.RemoveEventListener(EventNames.StopGameFlow, HandleStopGameFlow);
+            if (!gameObject.scene.isLoaded) return;
+            Instantiate(_smokePoofPrefab, transform.position, Quaternion.identity);
         }
 
         public virtual void TakeUltimateDamage(float dmgAmount)
@@ -79,7 +84,7 @@ namespace Kraken
 
                 //remove colliders to not interfere with ontriggerexit
                 var colliders = GetComponentsInChildren<Collider>();
-                System.Array.ForEach(colliders, x => x.enabled = false);
+                System.Array.ForEach(colliders, x => { if (((1 << x.gameObject.layer) & _zoneOccupancyLayer) != 0) x.enabled = false; });
                 photonView.RPC(nameof(RPC_All_SpawnWool), RpcTarget.All);
             }
         }

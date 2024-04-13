@@ -75,6 +75,7 @@ namespace Kraken
         [PunRPC]
         private void RPC_All_IncrementTowerBuilt()
         {
+            EventManager.Dispatch(EventNames.TowerBuilt, null);
             TowersBuiltThisRound++;
         }
 

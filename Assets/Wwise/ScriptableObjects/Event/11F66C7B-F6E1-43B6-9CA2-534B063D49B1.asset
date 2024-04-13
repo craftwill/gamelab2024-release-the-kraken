@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c75bd90d2002764cbcde38269546abc, type: 3}
+  m_Name: 11F66C7B-F6E1-43B6-9CA2-534B063D49B1
+  m_EditorClassIdentifier: 
+  objectName: SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL_STOP
+  id: 1025767425
+  guid: 11F66C7B-F6E1-43B6-9CA2-534B063D49B1

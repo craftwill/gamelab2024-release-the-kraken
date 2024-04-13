@@ -1,8 +1,6 @@
-﻿using System;
+﻿
 using UnityEngine;
-using UnityEngine.Events;
 
-using Photon.Pun;
 using Bytes;
 
 namespace Kraken
@@ -11,6 +9,9 @@ namespace Kraken
     {
         // Custom late start()
         public const string LateStart = "LateStart";
+
+        // Input events
+        public const string InputSchemeChanged = "InputSchemeChanged";
 
         // Main menu
         public const string TryConnectToPhoton = "TryConnectToPhoton";
@@ -51,6 +52,7 @@ namespace Kraken
         public const string SetupHUD = "SetupHUD";
         public const string InitTimeLeftUI = "InitTimeLeftUI";
         public const string ShowDefeatTimeLeftUI = "ShowDefeatTimeLeftUI";
+        public const string HideHUD = "HideHUD";
         public const string UpdateCountownTimerUI = "UpdateCountownTimerUI";
         public const string UpdateObjectiveUI = "UpdateObjectiveUI";
         public const string UpdateObjectiveTimerUI = "UpdateObjectiveTimerUI";
@@ -68,7 +70,9 @@ namespace Kraken
         // Player Abilities HUD events
         public const string UpdateUltimateUI = "UpdateUltimateUI";
         public const string StartAbilityCooldown = "StartAbilityCooldown";
-
+        public const string UpdatePlayerHealAbilityUI = "UpdatePlayerHealAbilityUI";
+        public const string UpdatePlayerTotemAbilityUI = "UpdatePlayerTotemAbilityUI";
+        
         //Game Events
         public const string TogglePause = "TogglePause";
         public const string GainWool = "GainWool";
@@ -81,6 +85,20 @@ namespace Kraken
         public const string PlayerAttackStart = "PlayerAttackStart";
         public const string PlayerAttackEnd = "PlayerAttackEnd";
         public const string PlayerWin = "PlayerWin";
+        public const string PlayerPatchingUp = "PlayerPatchingUp";
+
+        //Tower Events
+        public const string TowerAttemptBuilt = "TowerAttemptBuilt";
+        public const string TowerCancelBuilt = "TowerCancelBuilt";
+        public const string TowerBuilt = "TowerBuilt";
+        public const string PlayerEnteredTower = "PlayerEnteredTower";
+        public const string PlayerLeftTower = "PlayerLeftTower";
+    }
+
+    public class ZoneEventData : BytesData
+    {
+        public ZoneEventData(Zone z) { Zone = z; }
+        public Zone Zone { get; private set; }
     }
 
     public class Vector2EventData : BytesData

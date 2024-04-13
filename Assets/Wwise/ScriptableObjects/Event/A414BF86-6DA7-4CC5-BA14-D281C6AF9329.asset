@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c75bd90d2002764cbcde38269546abc, type: 3}
   m_Name: A414BF86-6DA7-4CC5-BA14-D281C6AF9329
   m_EditorClassIdentifier: 
-  objectName: Play_WoolCollected
-  id: 1863926102
+  objectName: SFX_OBJETS_RESSOURCES_WOOL_COLLECT
+  id: 2523551556
   guid: A414BF86-6DA7-4CC5-BA14-D281C6AF9329

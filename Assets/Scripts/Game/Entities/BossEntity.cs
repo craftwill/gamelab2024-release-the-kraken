@@ -8,7 +8,7 @@ namespace Kraken
     {
         public override void TakeDamage(float dmgAmount)
         {
-            if (_healthComponent.Health - dmgAmount <= 0f)
+            if (Config.current.mustKillWithUltimate && _healthComponent.Health - dmgAmount <= 0f)
             {
                 Debug.Log("Must kill with ultimate");
             }

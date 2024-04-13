@@ -268,7 +268,12 @@ MonoBehaviour:
   _minimapIcon: {fileID: 5847381557580223909}
   _woolPrefab: {fileID: 5281229062787241931, guid: a7e2e3f5a7a656a44805d0841a9704b9,
     type: 3}
+  _smokePoofPrefab: {fileID: 5596100735769626616, guid: 3efb572bba23efa49b00e27ef47a37cd,
+    type: 3}
   _woolDropped: 1
+  _zoneOccupancyLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &4623548838470204180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,7 +381,7 @@ MonoBehaviour:
   _attackSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 3849b76044012c0449ce687747e35719,
+    WwiseObjectReference: {fileID: 11400000, guid: 899eb110f1204744a9d14e7e09761366,
       type: 2}
   _hurtSound:
     idInternal: 0

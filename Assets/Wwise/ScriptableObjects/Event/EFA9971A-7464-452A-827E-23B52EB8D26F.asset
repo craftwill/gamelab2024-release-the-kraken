@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c75bd90d2002764cbcde38269546abc, type: 3}
   m_Name: EFA9971A-7464-452A-827E-23B52EB8D26F
   m_EditorClassIdentifier: 
-  objectName: Stop_Healing
-  id: 730396682
+  objectName: SFX_DUO_HABILETE_PATCHUP_PATCHING_STOP
+  id: 786476976
   guid: EFA9971A-7464-452A-827E-23B52EB8D26F

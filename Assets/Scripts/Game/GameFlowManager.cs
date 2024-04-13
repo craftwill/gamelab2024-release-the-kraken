@@ -76,14 +76,7 @@ namespace Kraken
         [PunRPC]
         public void RPC_All_GoToNextNight()
         {
-            if (PlayerPrefs.HasKey(Config.GAME_NIGHT_KEY))
-            {
-                PlayerPrefs.SetInt(Config.GAME_NIGHT_KEY, PlayerPrefs.GetInt(Config.GAME_NIGHT_KEY) + 1);
-            }
-            else
-            {
-                PlayerPrefs.SetInt(Config.GAME_NIGHT_KEY, 1);
-            }
+            //night increment done through the victory screen
             PhotonNetwork.LoadLevel("Game");
         }
     }
