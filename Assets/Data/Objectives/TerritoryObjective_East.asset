@@ -15,5 +15,5 @@ MonoBehaviour:
   objectiveName: Defend the EAST zone!
   objectiveTimer: 30
   objectiveType: 0
-  spawnFrequency: 0.5
+  spawnFrequency: 0.4
   spawnData: {fileID: 11400000, guid: ae52b6ddd841e724aa2dc41bdb8f3f64, type: 2}
