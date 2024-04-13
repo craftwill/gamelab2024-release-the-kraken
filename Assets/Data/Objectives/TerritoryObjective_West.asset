@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TerritoryObjective_West
   m_EditorClassIdentifier: 
   objectiveName: Defend the WEST zone!
-  objectiveTimer: 45
+  objectiveTimer: 30
   objectiveType: 0
   spawnFrequency: 0.5
   spawnData: {fileID: 11400000, guid: ae52b6ddd841e724aa2dc41bdb8f3f64, type: 2}

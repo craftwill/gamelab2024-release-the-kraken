@@ -16,7 +16,7 @@ MonoBehaviour:
   maxHealth: 75
   moveSpeed: 0.5
   attackRange: 10
-  damageDealt: 50
+  damageDealt: 75
   attackCooldown: 1
   attackDuration: 0.1
   lockedIntoAttackDuration: 0.5
