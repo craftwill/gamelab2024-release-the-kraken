@@ -19,7 +19,7 @@ namespace Kraken
             EnemyEntity entity = NetworkUtils.Instantiate(bossPrefab.name, instance.Zones[0].GetSpawner().GetRandomPosition()).GetComponent<EnemyEntity>();
             entity.GetHealthComponent().OnDie.AddListener(BossDeath);
 
-            EventManager.Dispatch(EventNames.ShowReinforcementHintUI, new StringDataBytes("THY QUEEN IS HERE!"));
+            EventManager.Dispatch(EventNames.ShowReinforcementHintUI, new StringDataBytes("THE QUEEN IS HERE!"));
             EventManager.Dispatch(EventNames.BossSpawned, null);
         }
 
