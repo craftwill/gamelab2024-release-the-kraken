@@ -1,14 +1,17 @@
 using Bytes;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Kraken.UI
 {
     public class DefeatScreenUI : BaseEndGameScrenUI
     {
+        [SerializeField] Button _startOverButton;
         private void Start()
         {
             EventManager.AddEventListener(EventNames.ShowDefeatScreenUI, HandleShowScreenUI);
+            _startOverButton.interactable = PhotonNetwork.IsMasterClient;
         }
 
         private void OnDestroy()
@@ -24,6 +27,7 @@ namespace Kraken.UI
 
         public virtual void Btn_Restart()
         {
+            if (!PhotonNetwork.IsMasterClient) return;
             PhotonNetwork.LoadLevel("Lobby");
         }
     }
