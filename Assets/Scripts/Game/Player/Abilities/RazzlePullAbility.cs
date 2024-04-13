@@ -89,8 +89,13 @@ namespace Kraken
                 _isPulling = false;
                 foreach (EnemyEntity enemy in _enemyEntitiesBeingPulled)
                 {
-                    enemy.GetComponent<Rigidbody>().drag = _initialEnemiesDrag; // Restore initial drag
-                    enemy.EnableControllerAndDisablePhysics();
+                    try
+                    {
+                        enemy.GetComponent<Rigidbody>().drag = _initialEnemiesDrag; // Restore initial drag
+                        enemy.EnableControllerAndDisablePhysics();
+                    }
+                    catch { }
+                    
                 }
                 if (PhotonNetwork.IsMasterClient)
                 {
