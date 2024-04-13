@@ -1,5 +1,6 @@
 using Bytes;
 using Kraken.Game;
+using Kraken.Network;
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace Kraken
     {
         [SerializeField] private PlayerControlsComponent _playerControls;
         [SerializeField] private PlayerSoundComponent _soundComponent;
+        [SerializeField] private GameObject _healVFXinstance;
         private GameObject[] _players = { };
         private HealthComponent _componentToHeal;
         private LilWoolManager _lilWoolManager;
@@ -52,6 +54,7 @@ namespace Kraken
                 if (GetDistanceBetweenPlayers() > Config.current.healingMaxDistance || _componentToHeal.Health == _componentToHeal.MaxHealth)
                 {
                     _isHealing = false;
+                    photonView.RPC(nameof(RPC_ALL_HealAnimAndVFX), RpcTarget.All, false);
                 }
             }
         }
@@ -73,15 +76,16 @@ namespace Kraken
             {
                 if (GetDistanceBetweenPlayers() <= Config.current.healingMaxDistance && _componentToHeal.Health < _componentToHeal.MaxHealth && _lilWoolManager._woolQuantity > 0)
                 {
-                    _animComponent?.SetLoopedStateHealing();
                     _isHealing = true;
+                    photonView.RPC(nameof(RPC_ALL_HealAnimAndVFX), RpcTarget.All, true);
+
                     StartCoroutine(HealCoroutine());
                 }
             }
             else
             {
-                _animComponent?.SetLoopedStateIdle();
                 _isHealing = false;
+                photonView.RPC(nameof(RPC_ALL_HealAnimAndVFX), RpcTarget.All, false);
             }
         }
 
@@ -111,6 +115,15 @@ namespace Kraken
         private void RPC_Master_UseWool()
         {
             EventManager.Dispatch(EventNames.GainWool, new IntDataBytes(-1));
+        }
+
+        [PunRPC]
+        private void RPC_ALL_HealAnimAndVFX(bool toggle)
+        {
+            _healVFXinstance.SetActive(toggle);
+            _healVFXinstance.transform.position = _componentToHeal.transform.position;
+            if (toggle) _animComponent?.SetLoopedStateHealing();
+            else _animComponent.SetLoopedStateIdle();
         }
 
         private float GetDistanceBetweenPlayers()
