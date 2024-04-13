@@ -24,6 +24,8 @@ namespace Kraken
         public int minibossObjectiveCount = 2;
         [Tooltip("Maximum time the game can last in seconds")]
         public int gameDuration = 600;
+        [Tooltip("How much time left to the game before playing a warning sound")]
+        public int timeLeftSound = 60;
 
         [Header("Player settings")]
         public int maxHealth = 100;

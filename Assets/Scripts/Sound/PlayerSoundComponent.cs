@@ -19,6 +19,7 @@ namespace Kraken
         [SerializeField] private AK.Wwise.Event _dazzleAbilityJumpSound;
         [SerializeField] private AK.Wwise.Event _dazzleAbilityCrashSound;
         [SerializeField] private AK.Wwise.Event _razzleAbilityCastSound;
+        [SerializeField] private AK.Wwise.Event _towerWaitingSound;
 
         private void Start()
         {
@@ -108,6 +109,12 @@ namespace Kraken
         public void RPC_All_PlayRazzleAbilityCastSound()
         {
             _razzleAbilityCastSound.Post(gameObject);
+        }
+
+        [PunRPC]
+        public void RPC_Other_PlayTowerWaitingSound()
+        {
+            _towerWaitingSound.Post(gameObject);
         }
     }
 }

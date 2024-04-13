@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveName: The final boss spawned in the CENTER zone!
   objectiveTimer: -1
+  objectiveType: 2
   bossPrefab: {fileID: 7708995712779942215, guid: 6f7a9bd6f58aead4b8cacc9f5f345a70,
     type: 3}

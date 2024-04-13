@@ -1096,6 +1096,72 @@
 						<ActiveSource Name="hit-sound-effect-12445" ID="{D543A357-C0C5-4D33-90FD-CFF0B76A7236}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="Win_2" ID="{321A6B6B-428B-43D9-8DB5-26DC81F8817A}" ShortID="478395293">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Win_2" ID="{B3EDC977-2616-4F20-8482-E53DF79E5561}">
+							<Language>SFX</Language>
+							<AudioFile>Win_2.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="726315569"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Win_2" ID="{B3EDC977-2616-4F20-8482-E53DF79E5561}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Button_1" ID="{1709F81D-3303-4D79-8156-A9E97A6005AA}" ShortID="953293899">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Button_1" ID="{D6E7EE53-0A8E-4540-91A1-5A045876E0E7}">
+							<Language>SFX</Language>
+							<AudioFile>Button_1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="935668573"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Button_1" ID="{D6E7EE53-0A8E-4540-91A1-5A045876E0E7}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Button_4" ID="{7FC61E2D-40D3-4460-8B0B-328013543F93}" ShortID="893447695">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Button_4" ID="{CEEC4411-F2C4-4D18-B1A4-F003354F6EEC}">
+							<Language>SFX</Language>
+							<AudioFile>Button_4.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="984372585"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Button_4" ID="{CEEC4411-F2C4-4D18-B1A4-F003354F6EEC}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

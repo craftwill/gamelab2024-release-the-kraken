@@ -949,7 +949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CollideAgainst:
     serializedVersion: 2
-    m_Bits: 9335
+    m_Bits: 9463
   m_IgnoreTag: Player
   m_TransparentLayers:
     serializedVersion: 2
@@ -2236,6 +2236,11 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 9c2350a219898d24685c5d5314f03823,
       type: 2}
+  _towerWaitingSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: eb9457429df502142aeec80f809d1465,
+      type: 2}
 --- !u!114 &5208069392134486679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2538,6 +2543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9875a39c3c567b341a0acdf953e4937e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundComponent: {fileID: 0}
 --- !u!1 &7438497340087592465
 GameObject:
   m_ObjectHideFlags: 0
