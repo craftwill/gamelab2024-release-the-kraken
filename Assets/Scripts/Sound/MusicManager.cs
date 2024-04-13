@@ -30,7 +30,6 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.PlayerEnteredObjective, HandlePlayerEnteredObjective);
             EventManager.AddEventListener(EventNames.PlayerLeftObjective, HandlePlayerLeftZone);
             EventManager.AddEventListener(EventNames.EnterMenu, HandleEnterMenu);
-            //EventManager.AddEventListener(EventNames.LeaveMenu, HandleLeaveMenu);
         }
 
         private void OnDestroy()
@@ -42,18 +41,19 @@ namespace Kraken
             EventManager.RemoveEventListener(EventNames.PlayerEnteredObjective, HandlePlayerEnteredObjective);
             EventManager.RemoveEventListener(EventNames.PlayerLeftObjective, HandlePlayerLeftZone);
             EventManager.RemoveEventListener(EventNames.EnterMenu, HandleEnterMenu);
-            //EventManager.RemoveEventListener(EventNames.LeaveMenu, HandleLeaveMenu);
         }
 
-        public void StopAllMusic()
+        [PunRPC]
+        public void RPC_All_StopAllMusic()
         {
-            photonView.RPC(nameof(RPC_All_StopGeneralMusic), RpcTarget.All);
-            photonView.RPC(nameof(RPC_All_StopObjectiveMusic), RpcTarget.All);
-            photonView.RPC(nameof(RPC_All_StopBossMusic), RpcTarget.All);
+            RPC_All_StopGeneralMusic();
+            RPC_All_StopObjectiveMusic();
+            RPC_All_StopBossMusic();
         }
 
         private void HandleStartGameflow(BytesData data)
         {
+            _stopMenuMusic.Post(gameObject);
             photonView.RPC(nameof(RPC_All_PlayGeneralMusic), RpcTarget.All);
             _state = MusicState.General;
             _inGame = true;
@@ -61,13 +61,13 @@ namespace Kraken
 
         private void HandleStopGameflow(BytesData data)
         {
-            StopAllMusic();
+            photonView.RPC(nameof(RPC_All_StopAllMusic), RpcTarget.All);
             _inGame = false;
         }
 
         private void HandleBossSpawned(BytesData data)
         {
-            StopAllMusic();
+            photonView.RPC(nameof(RPC_All_StopAllMusic), RpcTarget.All);
             photonView.RPC(nameof(RPC_All_PlayBossMusic), RpcTarget.All);
             _state = MusicState.Boss;
         }
@@ -76,7 +76,7 @@ namespace Kraken
         {
             _playersInZone++;
             if (_state == MusicState.Boss || _state == MusicState.Objective || !Config.current.useObjectiveMusic || !_inGame) return;
-            StopAllMusic();
+            photonView.RPC(nameof(RPC_All_StopAllMusic), RpcTarget.All);
             photonView.RPC(nameof(RPC_All_PlayObjectiveMusic), RpcTarget.All);
             _state = MusicState.Objective;
         }
@@ -86,32 +86,25 @@ namespace Kraken
             _playersInZone = Mathf.Clamp(_playersInZone - 1, 0, _playersInZone);
             if (_state == MusicState.Boss || _state == MusicState.General || !Config.current.useObjectiveMusic || !_inGame) return;
             if (_playersInZone > 0) return;
-            StopAllMusic();
+            photonView.RPC(nameof(RPC_All_StopAllMusic), RpcTarget.All);
             photonView.RPC(nameof(RPC_All_PlayGeneralMusic), RpcTarget.All);
             _state = MusicState.General;
         }
 
         private void HandleEnterMenu(BytesData data)
         {
-            Debug.Log(_state);
             if (_state != MusicState.Menu)
             {
-            Debug.Log("post");
+                RPC_All_StopAllMusic();
                 _playMenuMusic.Post(gameObject);
                 _state = MusicState.Menu;
             }
         }
 
-        private void HandleLeaveMenu(BytesData data)
-        {
-            Debug.Log("leave");
-            _stopMenuMusic.Post(gameObject);
-            _state = MusicState.General;
-        }
-
         [PunRPC]
         private void RPC_All_PlayGeneralMusic()
         {
+            photonView.RPC(nameof(RPC_All_StopAllMusic), RpcTarget.All);
             _playGeneralMusic.Post(gameObject);
         }
 

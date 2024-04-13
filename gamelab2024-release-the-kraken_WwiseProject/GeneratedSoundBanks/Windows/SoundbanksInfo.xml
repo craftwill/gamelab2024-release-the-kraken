@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{1E48C52F-DD4D-9B82-D0AE-2EA5D309B319}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{63083462-87A4-9FD8-6440-B65D9EDF18CB}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -179,7 +179,7 @@
 				<Event Id="2251471866" Name="MUSIQUE_GENERAL_MENUS_MAINMENU_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1706943895" Name="MUSIQUE_MONDE_BASE_COMBAT" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="879523648"/>
+						<MediaRef Id="912005944"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1834235186" Name="MUSIQUE_MONDE_BASE_COMBAT_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -191,7 +191,7 @@
 				<Event Id="3528907905" Name="MUSIQUE_MONDE_ENNEMIS_BOSS_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2795390379" Name="MUSIQUE_MONDE_ENNEMIS_MINIBOSS" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="912005944"/>
+						<MediaRef Id="879523648"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="958708710" Name="MUSIQUE_MONDE_ENNEMIS_MINIBOSS_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -418,5 +418,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{3BCFA730-CFE1-34AA-3597-C97A3EE305D1}</FileHash>
+	<FileHash>{EB2255CE-92EA-770A-9D94-63F79466B3B7}</FileHash>
 </SoundBanksInfo>

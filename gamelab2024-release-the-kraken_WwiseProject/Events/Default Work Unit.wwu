@@ -176,7 +176,7 @@
 						<Action Name="" ID="{656704FB-3F99-4B51-ADF0-12EB3019D613}" ShortID="441133678">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Soundtrack_1" ID="{98DA23B0-C0CF-4DE1-9067-DFD45CB1F1BE}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Soundtrack_4" ID="{F795AEE9-073C-4A70-A730-E258A2DD5F99}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -190,7 +190,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Soundtrack_1" ID="{98DA23B0-C0CF-4DE1-9067-DFD45CB1F1BE}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Soundtrack_4" ID="{F795AEE9-073C-4A70-A730-E258A2DD5F99}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -201,7 +201,7 @@
 						<Action Name="" ID="{DD26EEA8-10D7-40B6-9B62-AD601CDB2C03}" ShortID="355745651">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Soundtrack_4" ID="{F795AEE9-073C-4A70-A730-E258A2DD5F99}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Soundtrack_1" ID="{98DA23B0-C0CF-4DE1-9067-DFD45CB1F1BE}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -215,7 +215,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Soundtrack_4" ID="{F795AEE9-073C-4A70-A730-E258A2DD5F99}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Soundtrack_1" ID="{98DA23B0-C0CF-4DE1-9067-DFD45CB1F1BE}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

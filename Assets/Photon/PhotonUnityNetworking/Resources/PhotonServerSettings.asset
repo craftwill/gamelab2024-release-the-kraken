@@ -145,6 +145,7 @@ MonoBehaviour:
   - RPC_All_RemovePlayerInRange
   - RPC_Other_PlayTowerWaitingSound
   - RPC_ALL_HealAnimAndVFX
+  - RPC_All_StopAllMusic
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
