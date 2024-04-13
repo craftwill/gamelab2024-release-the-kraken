@@ -25,14 +25,14 @@ MonoBehaviour:
   gameDuration: 240
   timeLeftSound: 60
   maxHealth: 250
-  razzleAbilityCooldown: 3
-  razzleAbilityPullDuration: 2.4
-  razzleAbilityRadius: 8
+  razzleAbilityCooldown: 4
+  razzleAbilityPullDuration: 3.5
+  razzleAbilityRadius: 10
   razzleAbilityInitialPullStrength: 60
-  razzleAbilityPullStrengthOverTime: 10
+  razzleAbilityPullStrengthOverTime: 12
   razzleAbilitySpawnDistanceOffset: 10
   razzleSpawnPoint: {x: 75.75, y: -30.9, z: 62}
-  dazzleAbilityCooldown: 3
+  dazzleAbilityCooldown: 4
   dazzleAbilityJumpDuration: 0.2
   dazzleAbilityJumpDistance: 8
   dazzleAbilityJumpHeigth: 3
@@ -56,7 +56,7 @@ MonoBehaviour:
   yCameraSensitivityMultiplier: 0.01
   cameraControllerMultiplier: 10
   invertXAxis: 0
-  invertYAxis: 1
+  invertYAxis: 0
   baseFov: 50
   sprintFov: 60
   fovChangeDuration: 5

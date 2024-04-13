@@ -295,6 +295,11 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
+      propertyPath: _woolDropped
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
       propertyPath: _attackComponent
       value: 
       objectReference: {fileID: 0}
