@@ -15,13 +15,13 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.7573847, y: 1, z: 0.8510412, w: 0.14432456}
+    m_Value: {x: 0.76, y: 1, z: 0.852, w: 0.14432456}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.93775517, z: 0.77589357, w: 0.14442013}
+    m_Value: {x: 1, y: 0.93766665, z: 0.78, w: 0.14442013}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.92192805, z: 0.66805136, w: -5.205263e-10}
+    m_Value: {x: 1, y: 0.92300004, z: 0.66999996, w: -5.205263e-10}
   shadowsStart:
     m_OverrideState: 1
     m_Value: 0
@@ -193,6 +193,46 @@ MonoBehaviour:
   saturation:
     m_OverrideState: 1
     m_Value: 100
+--- !u!114 &-2839879946954886815
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c1be1b6c95cd2e41b27903b9270817f, type: 3}
+  m_Name: Vignette
+  m_EditorClassIdentifier: 
+  active: 1
+  mode:
+    m_OverrideState: 1
+    m_Value: 0
+  color:
+    m_OverrideState: 1
+    m_Value: {r: 0.1207306, g: 0.01775543, b: 0.1792453, a: 1}
+  center:
+    m_OverrideState: 1
+    m_Value: {x: 0.5, y: 0.5}
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.483
+  smoothness:
+    m_OverrideState: 1
+    m_Value: 0.348
+  roundness:
+    m_OverrideState: 1
+    m_Value: 1
+  rounded:
+    m_OverrideState: 1
+    m_Value: 0
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+  opacity:
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &-2393325429737970267
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -268,6 +308,8 @@ MonoBehaviour:
   - {fileID: -5324151113626573602}
   - {fileID: -6558655644389992878}
   - {fileID: 7682672222589140098}
+  - {fileID: -2839879946954886815}
+  - {fileID: 7201463731537435759}
 --- !u!114 &5695175594835535326
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -387,6 +429,52 @@ MonoBehaviour:
   fogType:
     m_OverrideState: 1
     m_Value: 0
+--- !u!114 &7201463731537435759
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f077503be6ae942a1e1245dbd53ea9, type: 3}
+  m_Name: Bloom
+  m_EditorClassIdentifier: 
+  active: 1
+  quality:
+    m_OverrideState: 1
+    m_Value: 1
+  threshold:
+    m_OverrideState: 1
+    m_Value: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.6
+  scatter:
+    m_OverrideState: 1
+    m_Value: 0.7
+  tint:
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 0.9386792, b: 0.98520374, a: 1}
+  dirtTexture:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+  dirtIntensity:
+    m_OverrideState: 1
+    m_Value: 0
+  anamorphic:
+    m_OverrideState: 0
+    m_Value: 1
+  m_Resolution:
+    m_OverrideState: 0
+    m_Value: 2
+  m_HighQualityPrefiltering:
+    m_OverrideState: 0
+    m_Value: 0
+  m_HighQualityFiltering:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!114 &7682672222589140098
 MonoBehaviour:
   m_ObjectHideFlags: 3
