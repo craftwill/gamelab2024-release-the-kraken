@@ -63,11 +63,11 @@ namespace Kraken
 
             if (_lastPos == transform.position) 
             {
-                _entityAnimationComponent.SetLoopedStateIdle();
+                photonView.RPC(nameof(RPC_All_SetLoopedStateIdle), RpcTarget.All);
             }
             else
             {
-                _entityAnimationComponent.SetLoopedStateWalking();
+                photonView.RPC(nameof(RPC_All_SetLoopedStateWalking), RpcTarget.All);
             }
             _lastPos = transform.position;
 
@@ -83,6 +83,18 @@ namespace Kraken
 
             Vector3 destination = _target.position;
             _navMeshAgent.SetDestination(destination);
+        }
+
+        [PunRPC]
+        private void RPC_All_SetLoopedStateIdle()
+        {
+            _entityAnimationComponent.SetLoopedStateIdle();
+        }
+
+        [PunRPC]
+        private void RPC_All_SetLoopedStateWalking()
+        {
+            _entityAnimationComponent.SetLoopedStateWalking();
         }
 
         protected override void FixedUpdate()
