@@ -10,6 +10,7 @@ namespace Kraken
     {
         [SerializeField] private AK.Wwise.Event _victorySound;
         [SerializeField] private AK.Wwise.Event _defeatSound;
+        [SerializeField] private AK.Wwise.Event _littleTimeLeftSound;
 
         private void Start()
         {
@@ -29,6 +30,11 @@ namespace Kraken
         public void PlayDefeatSound()
         {
             _defeatSound.Post(gameObject);
+        }
+
+        public void PlayLittleTimeLeftSound()
+        {
+            _littleTimeLeftSound.Post(gameObject);
         }
     }
 

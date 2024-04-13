@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c75bd90d2002764cbcde38269546abc, type: 3}
   m_Name: E3DC8836-A530-4258-9F39-59E24D4B2AB3
   m_EditorClassIdentifier: 
-  objectName: Stop_Music_Objective
-  id: 2291264325
+  objectName: MUSIQUE_MONDE_ENNEMIS_MINIBOSS_STOP
+  id: 958708710
   guid: E3DC8836-A530-4258-9F39-59E24D4B2AB3
