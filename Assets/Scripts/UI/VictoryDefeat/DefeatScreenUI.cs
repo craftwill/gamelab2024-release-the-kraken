@@ -9,12 +9,14 @@ namespace Kraken.UI
     {
         [SerializeField] private GameObject _sheepLost;
         [SerializeField] private GameObject _playerLost;
+        [SerializeField] private GameObject _timeLost;
         [SerializeField] Button _startOverButton;
         private void Start()
         {
             EventManager.AddEventListener(EventNames.ShowDefeatScreenUI, HandleShowScreenUI);
             EventManager.AddEventListener(EventNames.ShowDefeatByZoneUI, HandleShowDefeatByZoneUI);
             EventManager.AddEventListener(EventNames.ShowDefeatByPlayerUI, HandleShowDefeatByPlayerUI);
+            EventManager.AddEventListener(EventNames.ShowDefeatTimeLeftUI, HandleShowDefeatTimeLeftUI);
             _startOverButton.interactable = PhotonNetwork.IsMasterClient;
         }
 
@@ -23,6 +25,7 @@ namespace Kraken.UI
             EventManager.RemoveEventListener(EventNames.ShowDefeatScreenUI, HandleShowScreenUI);
             EventManager.RemoveEventListener(EventNames.ShowDefeatByZoneUI, HandleShowDefeatByZoneUI);
             EventManager.RemoveEventListener(EventNames.ShowDefeatByPlayerUI, HandleShowDefeatByPlayerUI);
+            EventManager.RemoveEventListener(EventNames.ShowDefeatTimeLeftUI, HandleShowDefeatTimeLeftUI);
         }
 
         protected override void HandleShowScreenUI(BytesData data)
@@ -39,6 +42,11 @@ namespace Kraken.UI
         private void HandleShowDefeatByPlayerUI(BytesData data)
         {
             _playerLost.SetActive(true);
+        }
+
+        private void HandleShowDefeatTimeLeftUI(BytesData data)
+        {
+            _timeLost.SetActive(true);
         }
 
         public virtual void Btn_Restart()
