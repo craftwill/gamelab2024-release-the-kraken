@@ -54,6 +54,7 @@ namespace Together
 
         private void Start()
         {
+            AkSoundEngine.StopAll();
             cvGroup = GetComponent<CanvasGroup>();
             GameManager.ToggleCursor(true);
             // If already connected, allows menu interaction
