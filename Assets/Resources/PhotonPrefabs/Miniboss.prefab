@@ -531,8 +531,8 @@ MonoBehaviour:
   _healthComponent: {fileID: 4536674062849678646}
   _soundComponent: {fileID: 8890380970307686783}
   _attackConfig:
-    chargeTime: 3
-    angle: 60
+    chargeTime: 1.5
+    angle: 120
     obstructingLayer:
       serializedVersion: 2
       m_Bits: 1152

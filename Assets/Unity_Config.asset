@@ -22,7 +22,8 @@ MonoBehaviour:
   randomizeObjectives: 1
   spawnObjectiveCount: 3
   minibossObjectiveCount: 2
-  gameDuration: 600
+  gameDuration: 240
+  timeLeftSound: 60
   maxHealth: 250
   razzleAbilityCooldown: 3
   razzleAbilityPullDuration: 2.4
