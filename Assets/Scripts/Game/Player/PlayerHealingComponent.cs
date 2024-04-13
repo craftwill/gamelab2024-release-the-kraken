@@ -24,7 +24,7 @@ namespace Kraken
             _animComponent = GetComponent<PlayerAnimationComponent>();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             bool isInRangeToheal = GetDistanceBetweenPlayers() <= Config.current.healingMaxDistance;
             UpdatePlayerHealAbilityUI(isInRangeToheal);
