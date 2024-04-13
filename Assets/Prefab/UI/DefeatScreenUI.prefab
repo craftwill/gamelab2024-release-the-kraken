@@ -396,7 +396,8 @@ MonoBehaviour:
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 905351684, guid: 5e56765c1b6c18442b0c965a26f76f8d,
+      type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1241,6 +1242,7 @@ MonoBehaviour:
   - {fileID: 114003572391552758, guid: a13b11c794f12d144af4b592dd818586, type: 3}
   _sheepLost: {fileID: 4215299256708173598}
   _playerLost: {fileID: 8164580841980569886}
+  _startOverButton: {fileID: 3548080792672435648}
 --- !u!225 &3635314609476812948
 CanvasGroup:
   m_ObjectHideFlags: 0

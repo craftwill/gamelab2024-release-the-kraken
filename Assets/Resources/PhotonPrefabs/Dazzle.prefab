@@ -126,6 +126,11 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[18].m_ActionName
       value: Player/Tower[/Keyboard/f,/DualSenseGamepadHID/rightShoulder]
       objectReference: {fileID: 0}
+    - target: {fileID: 3593658210558774574, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3860904718989671536, guid: c767677ecb1762942a114712b6d1e354,
         type: 3}
       propertyPath: _hurtSound.WwiseObjectReference
@@ -193,6 +198,11 @@ PrefabInstance:
       propertyPath: _feedback
       value: 
       objectReference: {fileID: 3434708773564725410}
+    - target: {fileID: 5417207765296262271, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5423530764624292386, guid: c767677ecb1762942a114712b6d1e354,
         type: 3}
       propertyPath: animator
