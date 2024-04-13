@@ -85,6 +85,7 @@ namespace Kraken
             float timeToCharge = _attackConfig.chargeTime;
 
             var g = Instantiate(_attackConfig.visualEffect, transform.position + Vector3.down, transform.rotation);
+            g.transform.parent = this.transform;
             var llc = g.GetComponent<LimitedLifetimeComponent>();
             llc.StartNewLifeTime(timeToCharge + 0.1f);
             var vfx = g.GetComponent<UnityEngine.VFX.VisualEffect>();
