@@ -1,5 +1,39 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6558655644389992878
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b24b200358312b4fa1004e2431c2f1f, type: 3}
+  m_Name: ShadowsMidtonesHighlights
+  m_EditorClassIdentifier: 
+  active: 1
+  shadows:
+    m_OverrideState: 1
+    m_Value: {x: 0.7573847, y: 1, z: 0.8510412, w: 0.14432456}
+  midtones:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.93775517, z: 0.77589357, w: 0.14442013}
+  highlights:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.92192805, z: 0.66805136, w: -5.205263e-10}
+  shadowsStart:
+    m_OverrideState: 1
+    m_Value: 0
+  shadowsEnd:
+    m_OverrideState: 1
+    m_Value: 0.3
+  highlightsStart:
+    m_OverrideState: 1
+    m_Value: 0.55
+  highlightsEnd:
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &-6424858261156301717
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -131,6 +165,34 @@ MonoBehaviour:
   m_ObsoleteEarthPreset:
     m_OverrideState: 1
     m_Value: 1
+--- !u!114 &-5324151113626573602
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8bcdf71d7fafa419fca1ed162f5fc9, type: 3}
+  m_Name: ColorAdjustments
+  m_EditorClassIdentifier: 
+  active: 1
+  postExposure:
+    m_OverrideState: 1
+    m_Value: -0.66
+  contrast:
+    m_OverrideState: 1
+    m_Value: 3
+  colorFilter:
+    m_OverrideState: 1
+    m_Value: {r: 0.7918018, g: 0.76784444, b: 0.8018868, a: 1}
+  hueShift:
+    m_OverrideState: 1
+    m_Value: -2
+  saturation:
+    m_OverrideState: 1
+    m_Value: 100
 --- !u!114 &-2393325429737970267
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -149,13 +211,13 @@ MonoBehaviour:
     m_Value: 0
   skyIntensityMode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2
   exposure:
     m_OverrideState: 1
     m_Value: 0
   multiplier:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.5
   upperHemisphereLuxValue:
     m_OverrideState: 1
     m_Value: 1
@@ -176,16 +238,16 @@ MonoBehaviour:
     m_Value: 0
   top:
     m_OverrideState: 1
-    m_Value: {r: 0.62186956, g: 0, b: 1, a: 1}
+    m_Value: {r: 0.3923222, g: 0.3671235, b: 0.4716981, a: 1}
   middle:
     m_OverrideState: 1
-    m_Value: {r: 0.8867924, g: 0.23764415, b: 0.079476655, a: 1}
+    m_Value: {r: 0.4811321, g: 0.18427575, b: 0.097588114, a: 1}
   bottom:
     m_OverrideState: 1
-    m_Value: {r: 0.39031082, g: 0.046057325, b: 0.4245283, a: 1}
+    m_Value: {r: 0.7795942, g: 0.63171947, b: 0.7924528, a: 1}
   gradientDiffusion:
     m_OverrideState: 1
-    m_Value: 4.69
+    m_Value: 4.22
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +265,9 @@ MonoBehaviour:
   - {fileID: -6424858261156301717}
   - {fileID: 5695175594835535326}
   - {fileID: -2393325429737970267}
+  - {fileID: -5324151113626573602}
+  - {fileID: -6558655644389992878}
+  - {fileID: 7682672222589140098}
 --- !u!114 &5695175594835535326
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -215,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953beb541740ddc499d005ee80c9ff29, type: 3}
   m_Name: Fog
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   quality:
     m_OverrideState: 1
     m_Value: 1
@@ -233,7 +298,7 @@ MonoBehaviour:
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   maxFogDistance:
     m_OverrideState: 1
-    m_Value: 5000
+    m_Value: 4885
   mipFogMaxMip:
     m_OverrideState: 0
     m_Value: 0.5
@@ -245,25 +310,25 @@ MonoBehaviour:
     m_Value: 1000
   baseHeight:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: -25
   maximumHeight:
     m_OverrideState: 1
-    m_Value: 700
+    m_Value: 672
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 500
+    m_Value: 498.14
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 0.75, b: 0.924, a: 1}
+    m_Value: {r: 0.16037738, g: 0.04614632, b: 0.12721355, a: 1}
   globalLightProbeDimmer:
     m_OverrideState: 1
     m_Value: 1
   depthExtent:
     m_OverrideState: 1
-    m_Value: 64
+    m_Value: 17
   denoisingMode:
     m_OverrideState: 1
     m_Value: 2
@@ -322,3 +387,28 @@ MonoBehaviour:
   fogType:
     m_OverrideState: 1
     m_Value: 0
+--- !u!114 &7682672222589140098
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598e2d32e2c7b0c418e030c3236d663a, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 1
+  quality:
+    m_OverrideState: 1
+    m_Value: 3
+  spectralLut:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.1
+  m_MaxSamples:
+    m_OverrideState: 1
+    m_Value: 6

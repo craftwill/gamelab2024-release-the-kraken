@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_VfxSlash
+  m_Name: M_VfxSlash2
   m_Shader: {fileID: -6465566751694194690, guid: 3d4c049f3e135664cac0e3d5342d1982,
     type: 3}
   m_Parent: {fileID: 0}
@@ -311,7 +311,7 @@ Material:
     - _Diffusion_Profile_Asset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Emission_Color: {r: 5.3403134, g: 2.9839022, b: 0.47861287, a: 1}
+    - _Emission_Color: {r: 3.9999995, g: 0.2279999, b: 3.035069, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
