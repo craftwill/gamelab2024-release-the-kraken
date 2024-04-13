@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c75bd90d2002764cbcde38269546abc, type: 3}
   m_Name: 849E02DE-A992-432A-9E83-B2DBC4461DB4
   m_EditorClassIdentifier: 
-  objectName: Stop_Music_General
-  id: 504869708
+  objectName: MUSIQUE_MONDE_BASE_COMBAT_STOP
+  id: 1834235186
   guid: 849E02DE-A992-432A-9E83-B2DBC4461DB4

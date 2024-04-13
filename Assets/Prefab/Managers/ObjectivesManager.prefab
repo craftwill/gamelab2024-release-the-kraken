@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2277595925778132862}
   - component: {fileID: 8198660850295026202}
   - component: {fileID: 7751270002852661781}
+  - component: {fileID: 2401557483120585309}
   m_Layer: 0
   m_Name: ObjectivesManager
   m_TagString: Untagged
@@ -45,26 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1ed2613c0357b4c9cb3b539d261810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _allObjectives:
-  - objective: {fileID: 11400000, guid: d5de5d7bb1f2bd440acdcc480dbce767, type: 2}
-    spawnLocation: {fileID: 0}
-    minimapHighlight: {fileID: 0}
-  - objective: {fileID: 11400000, guid: 8f2b9857dd9d1b74294f51251ca87efe, type: 2}
-    spawnLocation: {fileID: 0}
-    minimapHighlight: {fileID: 0}
-  - objective: {fileID: 11400000, guid: d9729f7919619a24b93fc278fe9b4f83, type: 2}
-    spawnLocation: {fileID: 0}
-    minimapHighlight: {fileID: 0}
-  - objective: {fileID: 11400000, guid: 0114a1512d0efe6408678174e82d21ed, type: 2}
-    spawnLocation: {fileID: 0}
-    minimapHighlight: {fileID: 0}
-  - objective: {fileID: 11400000, guid: b3b15758b2993f7478a91d08d1adfb65, type: 2}
-    spawnLocation: {fileID: 0}
-    minimapHighlight: {fileID: 0}
+  _allSpawnObjectives: []
+  _allMinibossObjectives: []
   _bossObjective:
     objective: {fileID: 11400000, guid: c4818d15034597b49929bafc22ebc2de, type: 2}
-    spawnLocation: {fileID: 0}
-    minimapHighlight: {fileID: 0}
+    spawnLocation:
+    - {fileID: 0}
+    minimapHighlight:
+    - {fileID: 0}
+  _soundComponent: {fileID: 2401557483120585309}
 --- !u!114 &7751270002852661781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,3 +77,30 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &2401557483120585309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8767720622561718191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90dafdbd559fc15419afd6025fa6b0f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _territoryObjectiveSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0b70c0474100a504899df205648c017f,
+      type: 2}
+  _minibossObjectiveSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ca1ee790dfc785e4a8767938c19b5191,
+      type: 2}
+  _bossObjectiveSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f31c9e5c8524fd94183b734e4ea7cd6e,
+      type: 2}

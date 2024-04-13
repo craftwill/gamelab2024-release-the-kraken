@@ -45,6 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bfb55c08e210c46a29186a2668ec13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _woolFullSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 89c4f5136517a094fb39507a1b211299,
+      type: 2}
 --- !u!114 &3622246722456022249
 MonoBehaviour:
   m_ObjectHideFlags: 0
