@@ -141,6 +141,10 @@ MonoBehaviour:
   - RPC_All_PlayBossObjectiveSound
   - RPC_All_PlayMinibossObjectiveSound
   - RPC_All_PlayTerritoryObjectiveSound
+  - RPC_All_AddPlayerInRange
+  - RPC_All_RemovePlayerInRange
+  - RPC_Other_PlayTowerWaitingSound
+  - RPC_ALL_HealAnimAndVFX
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
