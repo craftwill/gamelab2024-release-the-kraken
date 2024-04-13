@@ -24,6 +24,7 @@ namespace Kraken.UI
 
         public virtual void Btn_Restart()
         {
+            if (!PhotonNetwork.IsMasterClient) return;
             PhotonNetwork.LoadLevel("Lobby");
         }
     }
