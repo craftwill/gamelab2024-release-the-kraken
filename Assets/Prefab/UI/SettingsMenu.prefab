@@ -781,6 +781,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4968766218133955616}
+        m_TargetAssemblyTypeName: Kraken.MainMenuSoundComponent, Assembly-CSharp
+        m_MethodName: PlaySliderSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1821597985232409312
 GameObject:
   m_ObjectHideFlags: 0
@@ -2273,6 +2285,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4968766218133955616}
+        m_TargetAssemblyTypeName: Kraken.MainMenuSoundComponent, Assembly-CSharp
+        m_MethodName: PlayButtonClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &4089253576184533060
 GameObject:
@@ -2367,6 +2391,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2564221547770356321}
         m_TargetAssemblyTypeName: Kraken.SettingsManager, Assembly-CSharp
         m_MethodName: OnMusicVolumeChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4968766218133955616}
+        m_TargetAssemblyTypeName: Kraken.MainMenuSoundComponent, Assembly-CSharp
+        m_MethodName: PlaySliderSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2854,6 +2890,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4968766218133955616}
+        m_TargetAssemblyTypeName: Kraken.MainMenuSoundComponent, Assembly-CSharp
+        m_MethodName: PlaySliderSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5566164288754586747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2941,6 +2989,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2564221547770356321}
         m_TargetAssemblyTypeName: Kraken.SettingsManager, Assembly-CSharp
         m_MethodName: OnInvertXAxisChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4968766218133955616}
+        m_TargetAssemblyTypeName: Kraken.MainMenuSoundComponent, Assembly-CSharp
+        m_MethodName: PlayButtonClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3383,6 +3443,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4968766218133955616}
+        m_TargetAssemblyTypeName: Kraken.MainMenuSoundComponent, Assembly-CSharp
+        m_MethodName: PlayButtonClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6723841553394665472
 GameObject:
   m_ObjectHideFlags: 0
@@ -3590,6 +3662,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4968766218133955616}
+        m_TargetAssemblyTypeName: Kraken.MainMenuSoundComponent, Assembly-CSharp
+        m_MethodName: PlayButtonClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &7033637767941280045
 GameObject:
@@ -3771,6 +3855,7 @@ GameObject:
   - component: {fileID: 2431359413777465514}
   - component: {fileID: 7215672056996872492}
   - component: {fileID: 2564221547770356321}
+  - component: {fileID: 4968766218133955616}
   m_Layer: 5
   m_Name: SettingsMenu
   m_TagString: Untagged
@@ -3831,6 +3916,33 @@ MonoBehaviour:
   _sliderSensitivity: {fileID: 7040320845355490556}
   _sliderMusic: {fileID: 2508460663455356931}
   _sliderSounds: {fileID: 3350151606559868455}
+--- !u!114 &4968766218133955616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7694868230518541051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2634b78039a8294b8a1fc3f8f36a779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttonHoverSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c576a1d9260a9c246826b581beb224d8,
+      type: 2}
+  _buttonClickSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 694535cdbb7178a4eb314fb1f9fc158e,
+      type: 2}
+  _sliderSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2ffe99fd0ab7e944d942c4551c14e9ff,
+      type: 2}
 --- !u!1 &8405156982618391631
 GameObject:
   m_ObjectHideFlags: 0

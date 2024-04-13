@@ -62,6 +62,7 @@ namespace Together
                 cvGroup.interactable = true;
             }
             _inputFieldRoomCode.onSubmit.AddListener(OnEnterInCodeField);
+            EventManager.Dispatch(EventNames.EnterMenu, null);
         }
 
         private void OnDestroy()

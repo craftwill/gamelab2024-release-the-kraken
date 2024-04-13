@@ -13,20 +13,20 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID MUSIQUE_GENERAL_MENUS_DEFEAT = 104799728U;
         static const AkUniqueID MUSIQUE_GENERAL_MENUS_MAINMENU = 1387075791U;
         static const AkUniqueID MUSIQUE_GENERAL_MENUS_MAINMENU_STOP = 2251471866U;
-        static const AkUniqueID MUSIQUE_GENERAL_MENUS_VICTORY = 65226133U;
         static const AkUniqueID MUSIQUE_MONDE_BASE_COMBAT = 1706943895U;
         static const AkUniqueID MUSIQUE_MONDE_BASE_COMBAT_STOP = 1834235186U;
         static const AkUniqueID MUSIQUE_MONDE_ENNEMIS_BOSS = 1616343810U;
         static const AkUniqueID MUSIQUE_MONDE_ENNEMIS_BOSS_STOP = 3528907905U;
         static const AkUniqueID MUSIQUE_MONDE_ENNEMIS_MINIBOSS = 2795390379U;
         static const AkUniqueID MUSIQUE_MONDE_ENNEMIS_MINIBOSS_STOP = 958708710U;
+        static const AkUniqueID PLAY_DEFEAT = 324646143U;
         static const AkUniqueID PLAY_PLAYERHURT = 3178286754U;
         static const AkUniqueID PLAY_ULTIMATENOTICE = 984790419U;
         static const AkUniqueID PLAY_ULTIMATEREADY = 1218358740U;
         static const AkUniqueID PLAY_ULTIMATETRIGGERED = 3162760014U;
+        static const AkUniqueID PLAY_VICTORYFANFARE = 2468480011U;
         static const AkUniqueID PLAY_ZONEFULLCAPACITY = 3233615227U;
         static const AkUniqueID SFX_DAZZLE_COMBAT_DEGATS_HURT = 792726151U;
         static const AkUniqueID SFX_DAZZLE_HABILETE_COMBO_ATTAQUE1 = 3519417346U;
@@ -61,11 +61,10 @@ namespace AK
         static const AkUniqueID SFX_RAZZLE_MOUVEMENT_FOOTSTEPS_HOVER = 2362336083U;
         static const AkUniqueID SFX_UI_GENERAL_BOUTONS_HOVER = 3172891524U;
         static const AkUniqueID SFX_UI_GENERAL_BOUTONS_SELECT = 2482710870U;
-        static const AkUniqueID SFX_UI_JOUEURS_TOUR_WAITING = 2066124668U;
+        static const AkUniqueID SFX_UI_GENERAL_BOUTONS_SLIDER = 77152589U;
         static const AkUniqueID SFX_UI_JOUEURS_WOOL_FULL = 2276912851U;
         static const AkUniqueID SFX_UI_OBJECTIFS_BOSS_WARNING = 2920071018U;
         static const AkUniqueID SFX_UI_OBJECTIFS_MINIBOSS_WARNING = 1600746727U;
-        static const AkUniqueID SFX_UI_OBJECTIFS_NUIT_WAKEUP = 744912080U;
         static const AkUniqueID SFX_UI_OBJECTIFS_REINFORCEMENTS_WARNING = 1984403743U;
     } // namespace EVENTS
 

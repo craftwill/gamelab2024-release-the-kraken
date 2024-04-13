@@ -8,13 +8,15 @@ namespace Kraken
 {
     public class MusicManager : MonoBehaviourPun
     {
-        enum MusicState { General, Objective, Boss};
+        enum MusicState { Menu, General, Objective, Boss};
         [SerializeField] private AK.Wwise.Event _playGeneralMusic;
         [SerializeField] private AK.Wwise.Event _stopGeneralMusic;
         [SerializeField] private AK.Wwise.Event _playBossMusic;
         [SerializeField] private AK.Wwise.Event _stopBossMusic;
         [SerializeField] private AK.Wwise.Event _playObjectiveMusic;
         [SerializeField] private AK.Wwise.Event _stopObjectiveMusic;
+        [SerializeField] private AK.Wwise.Event _playMenuMusic;
+        [SerializeField] private AK.Wwise.Event _stopMenuMusic;
         private MusicState _state = MusicState.General;
         private bool _inGame = false;
         private int _playersInZone = 0;
@@ -27,6 +29,8 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.BossSpawned, HandleBossSpawned);
             EventManager.AddEventListener(EventNames.PlayerEnteredObjective, HandlePlayerEnteredObjective);
             EventManager.AddEventListener(EventNames.PlayerLeftObjective, HandlePlayerLeftZone);
+            EventManager.AddEventListener(EventNames.EnterMenu, HandleEnterMenu);
+            //EventManager.AddEventListener(EventNames.LeaveMenu, HandleLeaveMenu);
         }
 
         private void OnDestroy()
@@ -37,6 +41,8 @@ namespace Kraken
             EventManager.RemoveEventListener(EventNames.BossSpawned, HandleBossSpawned);
             EventManager.RemoveEventListener(EventNames.PlayerEnteredObjective, HandlePlayerEnteredObjective);
             EventManager.RemoveEventListener(EventNames.PlayerLeftObjective, HandlePlayerLeftZone);
+            EventManager.RemoveEventListener(EventNames.EnterMenu, HandleEnterMenu);
+            //EventManager.RemoveEventListener(EventNames.LeaveMenu, HandleLeaveMenu);
         }
 
         public void StopAllMusic()
@@ -82,6 +88,24 @@ namespace Kraken
             if (_playersInZone > 0) return;
             StopAllMusic();
             photonView.RPC(nameof(RPC_All_PlayGeneralMusic), RpcTarget.All);
+            _state = MusicState.General;
+        }
+
+        private void HandleEnterMenu(BytesData data)
+        {
+            Debug.Log(_state);
+            if (_state != MusicState.Menu)
+            {
+            Debug.Log("post");
+                _playMenuMusic.Post(gameObject);
+                _state = MusicState.Menu;
+            }
+        }
+
+        private void HandleLeaveMenu(BytesData data)
+        {
+            Debug.Log("leave");
+            _stopMenuMusic.Post(gameObject);
             _state = MusicState.General;
         }
 

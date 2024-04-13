@@ -26,6 +26,7 @@ namespace Kraken
         [SerializeField] private InputActionReference _submitInput;
         [SerializeField] private InputActionReference _cancelInput;
         [SerializeField] private Button _btnStart;
+        [SerializeField] private MainMenuSoundComponent _soundComponent;
         private GameObject _controlledController;
         private int _currentControllerPositionIndex = 1;
         private int[] controllerPositions = { -300, 0, 300 };
@@ -34,6 +35,8 @@ namespace Kraken
 
         private void Start()
         {
+            EventManager.Dispatch(EventNames.EnterMenu, null);
+
             // Reset night count to 0
             if (PlayerPrefs.HasKey(Config.GAME_NIGHT_KEY))
             {
@@ -139,6 +142,7 @@ namespace Kraken
             {
                 _btnStart.interactable = false;
                 _btnStart.gameObject.SetActive(false);
+                //EventManager.Dispatch(EventNames.LeaveMenu, null);
                 JoinGameScene();
             }
         }
@@ -212,6 +216,7 @@ namespace Kraken
             PhotonNetwork.LocalPlayer.SetCustomProperties(props);
             int controllerToMove = _controlledController == _controller1 ? 1 : 2;
             photonView.RPC(nameof(RPC_All_MoveController), RpcTarget.All, _currentControllerPositionIndex, controllerToMove);
+            _soundComponent.PlaySliderSound();
         }
 
         public void OnSubmit(InputAction.CallbackContext value)
