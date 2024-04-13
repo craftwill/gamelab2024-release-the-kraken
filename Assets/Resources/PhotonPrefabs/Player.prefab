@@ -949,7 +949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CollideAgainst:
     serializedVersion: 2
-    m_Bits: 9335
+    m_Bits: 9463
   m_IgnoreTag: Player
   m_TransparentLayers:
     serializedVersion: 2
