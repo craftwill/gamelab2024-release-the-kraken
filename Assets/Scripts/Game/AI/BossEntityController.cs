@@ -42,6 +42,8 @@ namespace Kraken
         {
             base.FixedUpdate();
 
+            if (_target) transform.LookAt(_target.position, Vector3.up);
+
             if (!PhotonNetwork.IsMasterClient) return;
 
             //A state machine could have been good
