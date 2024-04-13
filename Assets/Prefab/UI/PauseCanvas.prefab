@@ -267,6 +267,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1574693410882298713}
+        m_TargetAssemblyTypeName: Kraken.MainMenuSoundComponent, Assembly-CSharp
+        m_MethodName: PlayButtonClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3452524096644659854
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,6 +468,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8893606496914965919}
         m_TargetAssemblyTypeName: Kraken.PauseMenuManager, Assembly-CSharp
         m_MethodName: OnBtnQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1574693410882298713}
+        m_TargetAssemblyTypeName: Kraken.MainMenuSoundComponent, Assembly-CSharp
+        m_MethodName: PlayButtonClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -761,6 +785,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8893606496914965919}
         m_TargetAssemblyTypeName: Kraken.PauseMenuManager, Assembly-CSharp
         m_MethodName: OnBtnSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1574693410882298713}
+        m_TargetAssemblyTypeName: Kraken.MainMenuSoundComponent, Assembly-CSharp
+        m_MethodName: PlayButtonClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1163,6 +1199,7 @@ GameObject:
   - component: {fileID: 1476114879612073485}
   - component: {fileID: 4824776573520447244}
   - component: {fileID: 8893606496914965919}
+  - component: {fileID: 1574693410882298713}
   m_Layer: 5
   m_Name: PauseCanvas
   m_TagString: Untagged
@@ -1269,6 +1306,34 @@ MonoBehaviour:
   _gameCanvas: {fileID: 0}
   _pauseBaseMenu: {fileID: 7189177883619455336}
   _pauseSettingsMenu: {fileID: 7078489983153705851}
+  _pauseManager: {fileID: 0}
+--- !u!114 &1574693410882298713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977668774254428364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2634b78039a8294b8a1fc3f8f36a779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttonHoverSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c576a1d9260a9c246826b581beb224d8,
+      type: 2}
+  _buttonClickSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 694535cdbb7178a4eb314fb1f9fc158e,
+      type: 2}
+  _sliderSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2ffe99fd0ab7e944d942c4551c14e9ff,
+      type: 2}
 --- !u!1001 &644701666896419200
 PrefabInstance:
   m_ObjectHideFlags: 0
