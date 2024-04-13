@@ -16,7 +16,7 @@ namespace Kraken
         [SerializeField] private Game.HealthComponent _healthComponent;
         [SerializeField] private MinibossSoundComponent _soundComponent;
         [SerializeField] private MinibossAttackAdditionalConfig _attackConfig;
-
+        
         private Coroutine _drawCoroutine = null;
         private float _cooldown = 0f;
         private bool _isOnCooldown = false;
@@ -83,7 +83,16 @@ namespace Kraken
         {
             float time = 0f;
             float timeToCharge = _attackConfig.chargeTime;
-            while(time < timeToCharge)
+
+            var g = Instantiate(_attackConfig.visualEffect, transform.position + Vector3.down, transform.rotation);
+            g.transform.parent = this.transform;
+            var llc = g.GetComponent<LimitedLifetimeComponent>();
+            llc.StartNewLifeTime(timeToCharge + 0.1f);
+            var vfx = g.GetComponent<UnityEngine.VFX.VisualEffect>();
+            vfx.SetFloat("Charge Length", timeToCharge - 0.2f);
+            vfx.enabled = true;
+
+            while (time < timeToCharge)
             {
                 _coneTelegraph.DrawCone(time / timeToCharge);
                 yield return new WaitForEndOfFrame();
@@ -126,5 +135,6 @@ namespace Kraken
         public LayerMask playerLayer;
         public Material materialInner;
         public Material materialOuter;
+        public GameObject visualEffect;
     }
 }

@@ -32,9 +32,11 @@ namespace Kraken
 
         private IEnumerator DrawCoroutine(float chargeTime, float telegraphRadius, float offsetRadius, int damage)
         {
-            float time = 0f;
+            
 
-            while(time < chargeTime)
+            float time = 0f;
+            
+            while (time < chargeTime)
             {
                 float chargeRatio = time / chargeTime;
 

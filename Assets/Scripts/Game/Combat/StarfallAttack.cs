@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Kraken.Network;
 using Photon.Pun;
+using UnityEngine.VFX;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -20,6 +21,7 @@ namespace Kraken
         [SerializeField] private BossSoundComponent _soundComponent;
 
         [SerializeField] private GameObject _starfallTelegraphPrefab;
+        [SerializeField] private GameObject _starfallVFX;
 
         public void StartAttack(float chargeTime, float attackRadius, int starCount, float delayBetweenStars, float telegraphRadius, int damage)
         {
@@ -63,6 +65,14 @@ namespace Kraken
             RingTelegraph telegraph = Instantiate(_starfallTelegraphPrefab, pos, _starfallTelegraphPrefab.transform.rotation, this.transform).GetComponent<RingTelegraph>();
             telegraph.StartTelegraph(chargeTime, telegraphRadius, 0f, damage);
             telegraph._playSoundDelegate = _soundComponent.PlayStarfallHitSound;
+
+            var star = Instantiate(_starfallVFX, telegraph.transform.position, telegraph.transform.rotation);
+            var llc = star.GetComponent<LimitedLifetimeComponent>();
+            llc.StartNewLifeTime(chargeTime + 1f);
+            var vfx = star.GetComponent<VisualEffect>();
+            vfx.SetFloat("Charge Radius", telegraphRadius);
+            vfx.SetFloat("Charge Length", chargeTime - 0.5f);
+            vfx.enabled = true;
         }
 
         private List<Vector3> GetSpawnPoints()
