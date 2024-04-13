@@ -75,7 +75,7 @@ namespace Kraken
             }
 
             Animate timeLeftAnim = Animate.Delay(Config.current.gameDuration, GameTimerDoneCallback, true);
-            Animate.Delay(Config.current.gameDuration - Config.current.timeLeftSound, PlayLittleTimeLeftWarning, true);
+            Animate.Delay(Config.current.gameDuration * Config.current.timeLeftUIProgressShowWarningTreshold, PlayLittleTimeLeftWarning, true);
             // Send the timer Animate object to the UI to update it dynamically.
             EventManager.Dispatch(EventNames.InitTimeLeftUI, new ObjectDataBytes(timeLeftAnim));
         }
