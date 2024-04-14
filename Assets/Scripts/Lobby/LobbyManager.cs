@@ -136,10 +136,13 @@ namespace Kraken
             _controlledController = PhotonNetwork.IsMasterClient ? _controller1 : _controller2;
         }
 
+        private bool onlyOnce = true;
+
         public void Btn_OnStartGame() 
         {
-            if (AreAllPlayersReady() && PhotonNetwork.IsMasterClient)
+            if (onlyOnce && AreAllPlayersReady() && PhotonNetwork.IsMasterClient)
             {
+                onlyOnce = false;
                 _btnStart.interactable = false;
                 _btnStart.gameObject.SetActive(false);
                 JoinGameScene();
