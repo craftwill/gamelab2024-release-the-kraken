@@ -604,6 +604,31 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="SFX_OBJETS_PLACEABLE_TOUR_CHIENS" ID="{1203BC2C-4A28-4F8F-8FBE-39063E51A8D4}">
+					<ChildrenList>
+						<Action Name="" ID="{2EE6FCCF-75B0-4B7D-8C1D-36BB9AEA4600}" ShortID="1007667480">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="656117__itsthegoodstuff__dog-barking" ID="{37874417-DE0F-4D50-AFF8-4C11A16091C0}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_OBJETS_PLACEABLE_TOUR_CHIENS_STOP" ID="{2FEEC34C-4C96-4F5B-A630-4A5A37DAF4EC}">
+					<ChildrenList>
+						<Action Name="" ID="{123429CB-3448-4AA7-9EBB-C95E5578516E}" ShortID="1015215868">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="656117__itsthegoodstuff__dog-barking" ID="{37874417-DE0F-4D50-AFF8-4C11A16091C0}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
