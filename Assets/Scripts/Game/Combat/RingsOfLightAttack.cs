@@ -61,6 +61,7 @@ namespace Kraken
             var llc = rol.GetComponent<LimitedLifetimeComponent>();
             llc.StartNewLifeTime(ring2ChargeTime + 1f);
             var vfx = rol.GetComponent<VisualEffect>();
+            vfx.SetBool("Enable Beam", false);
             vfx.SetFloat("Charge Radius", ring1Radius + ring2Radius);
             vfx.SetFloat("Charge Length", ring2ChargeTime);
             vfx.SetFloat("Ring Start Radius", ring1Radius);
