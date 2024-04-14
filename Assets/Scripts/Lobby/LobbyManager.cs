@@ -142,7 +142,6 @@ namespace Kraken
             {
                 _btnStart.interactable = false;
                 _btnStart.gameObject.SetActive(false);
-                //EventManager.Dispatch(EventNames.LeaveMenu, null);
                 JoinGameScene();
             }
         }
