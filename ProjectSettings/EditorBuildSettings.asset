@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: e725f4f5f1855274392cff21baf461ff
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UlricSizeTest.unity
-    guid: 49973e1deb71f31448a7487b714ac1e0
+    guid: e6ab97cb5eb38d14f959947dc694af9f
   m_configObjects: {}
