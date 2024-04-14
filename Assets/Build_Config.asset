@@ -36,7 +36,7 @@ MonoBehaviour:
   dazzleAbilityJumpDuration: 0.2
   dazzleAbilityJumpDistance: 8
   dazzleAbilityJumpHeigth: 3
-  dazzleAbilityDamage: 5
+  dazzleAbilityDamage: 4
   dazzleAbilityRadius: 4
   dazzleSpawnPoint: {x: 77.75, y: -30.9, z: 62}
   enemyMinRoamDistance: 4
@@ -103,6 +103,6 @@ MonoBehaviour:
   hideGameCanvasOnPause: 0
   timeLeftUIProgressShowWarningTreshold: 0.6
   useObjectiveMusic: 1
-  permanentSpawningScaling: 0.8
+  permanentSpawningScaling: 0.6
   objectiveSpawningScaling: 1
   enemyHealthScaling: 1
