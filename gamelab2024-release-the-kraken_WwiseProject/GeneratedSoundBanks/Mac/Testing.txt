@@ -1,9 +1,8 @@
 Event	ID	Name			Wwise Object Path	Notes
-	65226133	MUSIQUE_GENERAL_MENUS_VICTORY			\Default Work Unit\MUSIQUE_GENERAL_MENUS_VICTORY	
-	104799728	MUSIQUE_GENERAL_MENUS_DEFEAT			\Default Work Unit\MUSIQUE_GENERAL_MENUS_DEFEAT	
+	77152589	SFX_UI_GENERAL_BOUTONS_SLIDER			\Default Work Unit\SFX_UI_GENERAL_BOUTONS_SLIDER	
 	149926274	SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL			\Default Work Unit\SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL	
+	324646143	Play_Defeat			\Default Work Unit\Play_Defeat	
 	606806114	SFX_ENNEMIS_BOSS_STARFALL_STARS			\Default Work Unit\SFX_ENNEMIS_BOSS_STARFALL_STARS	
-	744912080	SFX_UI_OBJECTIFS_NUIT_WAKEUP			\Default Work Unit\SFX_UI_OBJECTIFS_NUIT_WAKEUP	
 	786476976	SFX_DUO_HABILETE_PATCHUP_PATCHING_STOP			\Default Work Unit\SFX_DUO_HABILETE_PATCHUP_PATCHING_STOP	
 	792726151	SFX_DAZZLE_COMBAT_DEGATS_HURT			\Default Work Unit\SFX_DAZZLE_COMBAT_DEGATS_HURT	
 	958708710	MUSIQUE_MONDE_ENNEMIS_MINIBOSS_STOP			\Default Work Unit\MUSIQUE_MONDE_ENNEMIS_MINIBOSS_STOP	
@@ -23,11 +22,11 @@ Event	ID	Name			Wwise Object Path	Notes
 	1774571785	SFX_ENNEMIS_MINIONS_MELEE_ATTAQUE			\Default Work Unit\SFX_ENNEMIS_MINIONS_MELEE_ATTAQUE	
 	1834235186	MUSIQUE_MONDE_BASE_COMBAT_STOP			\Default Work Unit\MUSIQUE_MONDE_BASE_COMBAT_STOP	
 	1984403743	SFX_UI_OBJECTIFS_REINFORCEMENTS_WARNING			\Default Work Unit\SFX_UI_OBJECTIFS_REINFORCEMENTS_WARNING	
-	2066124668	SFX_UI_JOUEURS_TOUR_WAITING			\Default Work Unit\SFX_UI_JOUEURS_TOUR_WAITING	
 	2251471866	MUSIQUE_GENERAL_MENUS_MAINMENU_STOP			\Default Work Unit\MUSIQUE_GENERAL_MENUS_MAINMENU_STOP	
 	2276912851	SFX_UI_JOUEURS_WOOL_FULL			\Default Work Unit\SFX_UI_JOUEURS_WOOL_FULL	
 	2362336083	SFX_RAZZLE_MOUVEMENT_FOOTSTEPS_HOVER			\Default Work Unit\SFX_RAZZLE_MOUVEMENT_FOOTSTEPS_HOVER	
 	2464567367	SFX_DAZZLE_HABILETE_SURPRISE_JUMP			\Default Work Unit\SFX_DAZZLE_HABILETE_SURPRISE_JUMP	
+	2468480011	Play_VictoryFanfare			\Default Work Unit\Play_VictoryFanfare	
 	2482710870	SFX_UI_GENERAL_BOUTONS_SELECT			\Default Work Unit\SFX_UI_GENERAL_BOUTONS_SELECT	
 	2523551556	SFX_OBJETS_RESSOURCES_WOOL_COLLECT			\Default Work Unit\SFX_OBJETS_RESSOURCES_WOOL_COLLECT	
 	2758487669	SFX_ENNEMIS_MINIONS_TANK_HURT			\Default Work Unit\SFX_ENNEMIS_MINIONS_TANK_HURT	
@@ -60,36 +59,34 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	12264851	healing-pokemon-sound	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\healing-pokemon-sound_04A517DC.wem		\Actor-Mixer Hierarchy\Default Work Unit\healing-pokemon-sound		212608
 	38353607	sword-slash-2	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\sword-slash-2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\sword-slash-2		78432
-	66191486	Fight music 1	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Fight music 1_302B6FA0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Placeholder\Fight music 1		10189980
-	85800411	Fight music 4 (boss)	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Fight music 4 (boss)_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Placeholder\Fight music 4 (boss)		11815008
+	145574417	Boss_Fight	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Boss_Fight_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Final\Boss_Fight		22164576
 	198922756	Final Fantasy VII - Victory Fanfare [HD]	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Final Fantasy VII - Victory Fanfare [HD]_ED2DD99F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Final Fantasy VII - Victory Fanfare [HD]		9502864
 	248373617	sheep-122256	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\sheep-122256_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\sheep-122256		299616
-	252820667	Fight music 3	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Fight music 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Placeholder\Fight music 3		11870304
 	295875071	cartoon-jump	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\cartoon-jump_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\cartoon-jump		180888
 	354254577	lemon_tMqyvSF	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\lemon_tMqyvSF_6A15B21E.wem		\Actor-Mixer Hierarchy\Default Work Unit\lemon_tMqyvSF		180360
 	392899862	fast-whoosh-118248	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\fast-whoosh-118248_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\fast-whoosh-118248		212064
 	408955314	sword-slash-1	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\sword-slash-1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\sword-slash-1		64608
 	422643003	y2mate_rQlfs1Y	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\y2mate_rQlfs1Y_FC9CA280.wem		\Actor-Mixer Hierarchy\Default Work Unit\y2mate_rQlfs1Y		79076
 	447063309	sword-slash-3	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\sword-slash-3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\sword-slash-3		165984
+	485885184	Idle-menu-character_select	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Idle-menu-character_select_17191D24.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Final\Idle-menu-character_select		6453020
 	580226891	Nasa releases audio of what a black hole 'sounds' like shorts	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Nasa releases audio of what a black hole 'sounds' like shorts_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nasa releases audio of what a black hole 'sounds' like shorts		6000736
-	581589547	Powerup_10	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Powerup_10_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Powerup_10		55126
 	624797327	tindeck_1	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\tindeck_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\tindeck_1		276576
 	627948373	footstep	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\footstep_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\footstep		118880
 	628232679	dark-souls-you-died-sound-effect_hm5sYFG	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\dark-souls-you-died-sound-effect_hm5sYFG_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\dark-souls-you-died-sound-effect_hm5sYFG		1421408
-	687353985	a-yawn-7011	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\a-yawn-7011_6A615AF5.wem		\Actor-Mixer Hierarchy\Default Work Unit\a-yawn-7011		765956
 	723110272	hit-sound-effect-12445	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\hit-sound-effect-12445_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\hit-sound-effect-12445		875616
 	726315569	Win_2	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Win_2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Win_2		83490
 	781786885	FFXIV Limit Break 3	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\FFXIV Limit Break 3_76AE5D17.wem		\Actor-Mixer Hierarchy\Default Work Unit\FFXIV Limit Break 3		479356
 	785435577	478278__joao_janz__8-bit-explosion-1_5	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\478278__joao_janz__8-bit-explosion-1_5_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\478278__joao_janz__8-bit-explosion-1_5		204096
 	875765215	alarme-factorio	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\alarme-factorio_FCF97502.wem		\Actor-Mixer Hierarchy\Default Work Unit\alarme-factorio		298744
 	877710634	minecraft_hit_soundmp3converter	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\minecraft_hit_soundmp3converter_2D9B98A3.wem		\Actor-Mixer Hierarchy\Default Work Unit\minecraft_hit_soundmp3converter		167784
+	879523648	Soundtrack_1	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Soundtrack_1_6796BE0F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Final\Soundtrack_1		14514532
 	908038837	ultimateReady	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\FFXIV Limit Break 3 Video Effect_F4D2370A.wem		\Actor-Mixer Hierarchy\Default Work Unit\ultimateReady		174048
+	912005944	Soundtrack_4	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Soundtrack_4_4240262A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Final\Soundtrack_4		13082176
 	933963966	ameno	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\ameno_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\ameno		327452
 	935668573	Button_1	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Button_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_1		10240
 	984372585	Button_4	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Button_4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_4		12924
 	996749074	pew-pew-lame-sound-effect	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\pew-pew-lame-sound-effect_461CF5D3.wem		\Actor-Mixer Hierarchy\Default Work Unit\pew-pew-lame-sound-effect		43584
 	1010470056	crash_5mE1q2P	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\crash_5mE1q2P_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\crash_5mE1q2P		278576
-	1021538816	Idle-menu-character select	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Idle-menu-character select_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Placeholder\Idle-menu-character select		6741600
 	1037371522	xphit	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\xphit_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\xphit		66246
 	1042314046	classic_hurt	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\classic_hurt_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\classic_hurt		32352
 	1046494642	squeaky-toy-1-6059	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\squeaky-toy-1-6059_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\squeaky-toy-1-6059		48480

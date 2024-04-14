@@ -421,6 +421,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3822395181958380601}
+        m_TargetAssemblyTypeName: Kraken.MainMenuSoundComponent, Assembly-CSharp
+        m_MethodName: PlayButtonClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4004473413954634490
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,6 +980,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3822395181958380601}
+        m_TargetAssemblyTypeName: Kraken.MainMenuSoundComponent, Assembly-CSharp
+        m_MethodName: PlayButtonClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5263921860995557164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,6 +1344,7 @@ GameObject:
   - component: {fileID: 6936195579878878169}
   - component: {fileID: 5597676363466635379}
   - component: {fileID: 3635314609476812948}
+  - component: {fileID: 3822395181958380601}
   m_Layer: 5
   m_Name: DefeatScreenUI
   m_TagString: Untagged
@@ -1392,6 +1417,33 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &3822395181958380601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7957069505619947444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2634b78039a8294b8a1fc3f8f36a779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttonHoverSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c576a1d9260a9c246826b581beb224d8,
+      type: 2}
+  _buttonClickSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 694535cdbb7178a4eb314fb1f9fc158e,
+      type: 2}
+  _sliderSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2ffe99fd0ab7e944d942c4551c14e9ff,
+      type: 2}
 --- !u!1 &8164580841980569886
 GameObject:
   m_ObjectHideFlags: 0

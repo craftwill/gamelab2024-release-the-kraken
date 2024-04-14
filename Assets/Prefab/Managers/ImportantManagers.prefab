@@ -142,6 +142,16 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 446c742f31ae82c4f907cfd4e541d2c1,
       type: 2}
+  _playMenuMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 40523a302d0aa104a8c8459cef70e642,
+      type: 2}
+  _stopMenuMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f2134740f803f47459012126a0cb254f,
+      type: 2}
 --- !u!114 &5246415389099428364
 MonoBehaviour:
   m_ObjectHideFlags: 0
