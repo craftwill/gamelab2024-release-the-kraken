@@ -31,14 +31,14 @@ MonoBehaviour:
   razzleAbilityInitialPullStrength: 60
   razzleAbilityPullStrengthOverTime: 12
   razzleAbilitySpawnDistanceOffset: 10
-  razzleSpawnPoint: {x: 75.75, y: -30.9, z: 62}
+  razzleSpawnPoint: {x: 75.75, y: -30.9, z: 68}
   dazzleAbilityCooldown: 4
   dazzleAbilityJumpDuration: 0.2
   dazzleAbilityJumpDistance: 8
   dazzleAbilityJumpHeigth: 3
   dazzleAbilityDamage: 4
   dazzleAbilityRadius: 4
-  dazzleSpawnPoint: {x: 77.75, y: -30.9, z: 62}
+  dazzleSpawnPoint: {x: 77.75, y: -30.9, z: 68}
   enemyMinRoamDistance: 4
   enemyMaxRoamDistance: 10
   enemyRoamMinChangeFrequency: 2
@@ -70,14 +70,14 @@ MonoBehaviour:
   ultimateTriggerTimer: 5
   ultimateCooldown: 10
   ultimateMinWool: 10
-  ultimateDistancePerWool: 2
+  ultimateDistancePerWool: 1.5
   ultimateMinimumDuration: 0.5
   ultimateDoesSlowMo: 1
   ultimateSlowMoTimeScale: 0.25
   ultimateSlowMoDuration: 0.25
   ultimateIsCancellable: 0
   mustKillWithUltimate: 1
-  towerWoolCost: 25
+  towerWoolCost: 50
   maxTowerPerRound: 2
   towerSpawnMultiplier: 4
   healingMaxDistance: 5
