@@ -35,6 +35,8 @@ namespace Kraken
             base.Start();
             _rootMesh = GetComponentInChildren<Animator>().transform;
             _playerRef = CombatUtils.GetPlayerEntities()[0];
+            // When boss spawns, show its HP bar
+            EventManager.Dispatch(EventNames.UpdateBossHealthUI, new UpdateBossHealthUIData(isMiniBoss: false, 1f));
             if (!PhotonNetwork.IsMasterClient) return;
         }
 
@@ -89,7 +91,9 @@ namespace Kraken
 
         private void OnTakeDamageListener(float dmgAmount)
         {
-            EventManager.Dispatch(EventNames.UpdateBossHealthUI, new FloatDataBytes(_healthComponent.Health / _healthComponent.MaxHealth));
+            bool isShowUltIndicator = _healthComponent.Health <= Config.current.ultimateDamage;
+            float fillAmount = _healthComponent.Health / _healthComponent.MaxHealth;
+            EventManager.Dispatch(EventNames.UpdateBossHealthUI, new UpdateBossHealthUIData(isMiniBoss: false, fillAmount, isShowUltIndicator));
         }
 
         private void OnDieListener()

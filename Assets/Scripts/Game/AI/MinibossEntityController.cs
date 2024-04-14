@@ -116,7 +116,8 @@ namespace Kraken
         private void OnTakeDamageListener(float dmgAmount)
         {
             Debug.Log("OnTakeDamageListener miniboss");
-            EventManager.Dispatch(EventNames.UpdateBossHealthUI, new FloatDataBytes(_healthComponent.Health / _healthComponent.MaxHealth));
+            float fillAmount = _healthComponent.Health / _healthComponent.MaxHealth;
+            EventManager.Dispatch(EventNames.UpdateBossHealthUI, new UpdateBossHealthUIData(isMiniBoss: true, fillAmount));
         }
 
         private void OnDieListener()
