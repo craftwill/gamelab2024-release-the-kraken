@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{63083462-87A4-9FD8-6440-B65D9EDF18CB}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{75E96B56-213F-0B81-CA75-2AAA6E750692}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -48,6 +48,10 @@
 				<File Id="198922756" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Final Fantasy VII - Victory Fanfare [HD].wav</ShortName>
 					<CachePath>SFX/Final Fantasy VII - Victory Fanfare [HD]_ED2DD99F.wem</CachePath>
+				</File>
+				<File Id="209964271" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>656117__itsthegoodstuff__dog-barking.wav</ShortName>
+					<CachePath>SFX/656117__itsthegoodstuff__dog-barking_BA5B3836.wem</CachePath>
 				</File>
 				<File Id="248373617" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sheep-122256.wav</ShortName>
@@ -79,7 +83,7 @@
 				</File>
 				<File Id="485885184" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Idle-menu-character_select.wav</ShortName>
-					<CachePath>SFX/Idle-menu-character_select_17191D24.wem</CachePath>
+					<CachePath>SFX/Idle-menu-character_select_863F78DD.wem</CachePath>
 				</File>
 				<File Id="580226891" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Nasa releases audio of what a black hole 'sounds' like shorts.wav</ShortName>
@@ -123,7 +127,7 @@
 				</File>
 				<File Id="879523648" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundtrack_1.wav</ShortName>
-					<CachePath>SFX/Soundtrack_1_6796BE0F.wem</CachePath>
+					<CachePath>SFX/Soundtrack_1_042FC3FE.wem</CachePath>
 				</File>
 				<File Id="908038837" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FFXIV Limit Break 3 Video Effect.wav</ShortName>
@@ -131,7 +135,7 @@
 				</File>
 				<File Id="912005944" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundtrack_4.wav</ShortName>
-					<CachePath>SFX/Soundtrack_4_4240262A.wem</CachePath>
+					<CachePath>SFX/Soundtrack_4_89B5777A.wem</CachePath>
 				</File>
 				<File Id="933963966" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ameno.wav</ShortName>
@@ -336,6 +340,12 @@
 						<MediaRef Id="1046494642"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3033443092" Name="SFX_OBJETS_PLACEABLE_TOUR_CHIENS" MaxAttenuation="100" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="209964271"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3204927251" Name="SFX_OBJETS_PLACEABLE_TOUR_CHIENS_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2523551556" Name="SFX_OBJETS_RESSOURCES_WOOL_COLLECT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.5952754" DurationMax="1.336348">
 					<MediaRefs>
 						<MediaRef Id="1037371522"/>
@@ -418,5 +428,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8229D992-2F34-34BC-AED2-710FB7232D94}</FileHash>
+	<FileHash>{EC1C306B-BCC9-F23F-D18D-39D78DFECB3E}</FileHash>
 </SoundBanksInfo>
