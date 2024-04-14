@@ -42,7 +42,19 @@ namespace Kraken
         {
             base.Update();
 
-            if (!PhotonNetwork.IsMasterClient || !_isActive || _staggered) return;
+            if (!_isActive || _staggered) return;
+
+            if (_lastPos == transform.position)
+            {
+                _entityAnimationComponent.SetLoopedStateIdle();
+            }
+            else
+            {
+                _entityAnimationComponent.SetLoopedStateWalking();
+            }
+            _lastPos = transform.position;
+
+            if (!PhotonNetwork.IsMasterClient) return;
 
             if (!_navMeshAgent.isOnNavMesh)
             {
@@ -60,16 +72,6 @@ namespace Kraken
                 _navMeshAgent.isStopped = true;
                 return;
             }
-
-            if (_lastPos == transform.position) 
-            {
-                _entityAnimationComponent.SetLoopedStateIdle();
-            }
-            else
-            {
-                _entityAnimationComponent.SetLoopedStateWalking();
-            }
-            _lastPos = transform.position;
 
             if (_target == null)
             {

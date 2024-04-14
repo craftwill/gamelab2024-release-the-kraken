@@ -21,6 +21,7 @@ namespace Kraken
         private bool _isOnCooldown = false;
 
         private Transform _rootMesh;
+        private PlayerEntity _playerRef;
 
         public override void InitSettings(EnemyConfigSO config)
         {
@@ -33,6 +34,7 @@ namespace Kraken
         {
             base.Start();
             _rootMesh = GetComponentInChildren<Animator>().transform;
+            _playerRef = CombatUtils.GetPlayerEntities()[0];
             if (!PhotonNetwork.IsMasterClient) return;
         }
 
@@ -45,7 +47,8 @@ namespace Kraken
         {
             base.FixedUpdate();
 
-            if (_target) _rootMesh.LookAt(new Vector3(_target.position.x, _rootMesh.position.y, _target.position.z), Vector3.up);
+            //_target is only set on master, this always looks at the same player
+            _rootMesh.LookAt(new Vector3(_playerRef.transform.position.x, _rootMesh.position.y, _playerRef.transform.position.z), Vector3.up);
 
             if (!PhotonNetwork.IsMasterClient) return;
 

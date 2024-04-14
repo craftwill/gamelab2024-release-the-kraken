@@ -146,6 +146,8 @@ MonoBehaviour:
   - RPC_Other_PlayTowerWaitingSound
   - RPC_ALL_HealAnimAndVFX
   - RPC_All_StopAllMusic
+  - RPC_ALL_PlayRoLAnim
+  - RPC_ALL_PlayStarfallAnim
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
