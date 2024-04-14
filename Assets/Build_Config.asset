@@ -23,8 +23,8 @@ MonoBehaviour:
   spawnObjectiveCount: 3
   minibossObjectiveCount: 2
   gameDuration: 240
-  timeLeftSound: 60
   maxHealth: 250
+  initialCameraAngle: 180
   razzleAbilityCooldown: 4
   razzleAbilityPullDuration: 3.5
   razzleAbilityRadius: 12
@@ -32,6 +32,7 @@ MonoBehaviour:
   razzleAbilityPullStrengthOverTime: 12
   razzleAbilitySpawnDistanceOffset: 10
   razzleSpawnPoint: {x: 75.75, y: -30.9, z: 68}
+  razzleSpawnRotation: {x: 0, y: 180, z: 0}
   dazzleAbilityCooldown: 4
   dazzleAbilityJumpDuration: 0.2
   dazzleAbilityJumpDistance: 8
@@ -39,6 +40,7 @@ MonoBehaviour:
   dazzleAbilityDamage: 4
   dazzleAbilityRadius: 4
   dazzleSpawnPoint: {x: 77.75, y: -30.9, z: 68}
+  dazzleSpawnRotation: {x: 0, y: 180, z: 0}
   enemyMinRoamDistance: 4
   enemyMaxRoamDistance: 10
   enemyRoamMinChangeFrequency: 2
