@@ -176,7 +176,7 @@
 						<Action Name="" ID="{656704FB-3F99-4B51-ADF0-12EB3019D613}" ShortID="441133678">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Fight music 1" ID="{47A9DB8D-5E37-40A8-A3C1-CA819EBA26C0}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Soundtrack_4" ID="{F795AEE9-073C-4A70-A730-E258A2DD5F99}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -190,7 +190,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Fight music 1" ID="{47A9DB8D-5E37-40A8-A3C1-CA819EBA26C0}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Soundtrack_4" ID="{F795AEE9-073C-4A70-A730-E258A2DD5F99}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -201,7 +201,7 @@
 						<Action Name="" ID="{DD26EEA8-10D7-40B6-9B62-AD601CDB2C03}" ShortID="355745651">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Fight music 3" ID="{CDB0389F-244B-480A-BF95-CE748613ACCB}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Soundtrack_1" ID="{98DA23B0-C0CF-4DE1-9067-DFD45CB1F1BE}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -215,7 +215,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Fight music 3" ID="{CDB0389F-244B-480A-BF95-CE748613ACCB}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Soundtrack_1" ID="{98DA23B0-C0CF-4DE1-9067-DFD45CB1F1BE}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -226,7 +226,7 @@
 						<Action Name="" ID="{0747AC52-AD46-4249-A3CE-339B9B22A8A5}" ShortID="9663330">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Fight music 4 (boss)" ID="{A4C1E092-4583-4914-9BFB-B83E7551E2BF}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Boss_Fight" ID="{993C0674-E87C-49AC-83B3-B841E9BE62EF}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -240,7 +240,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Fight music 4 (boss)" ID="{A4C1E092-4583-4914-9BFB-B83E7551E2BF}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Boss_Fight" ID="{993C0674-E87C-49AC-83B3-B841E9BE62EF}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -563,6 +563,42 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Button_4" ID="{7FC61E2D-40D3-4460-8B0B-328013543F93}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_UI_GENERAL_BOUTONS_SLIDER" ID="{6DB70006-CC2A-46D9-AC5F-E1BE213205E1}">
+					<ChildrenList>
+						<Action Name="" ID="{8ACA67B4-BFD1-4020-86BF-5ED85F5A659C}" ShortID="177029001">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Button_1" ID="{1709F81D-3303-4D79-8156-A9E97A6005AA}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MUSIQUE_GENERAL_MENUS_MAINMENU" ID="{6E5E57DD-E2E2-49B5-85B0-246E3BC0FD0F}">
+					<ChildrenList>
+						<Action Name="" ID="{BD1A4A49-299F-45C9-9BC6-47E77E2FE607}" ShortID="505626329">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Idle-menu-character_select" ID="{AC9B21D5-71A1-463E-8284-5510D61EBB69}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MUSIQUE_GENERAL_MENUS_MAINMENU_STOP" ID="{DC61FE54-4C3A-4499-A102-9DEEE8C1FA93}">
+					<ChildrenList>
+						<Action Name="" ID="{A8E71A3B-4A89-4311-A83C-116F48E8304B}" ShortID="66265852">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Idle-menu-character_select" ID="{AC9B21D5-71A1-463E-8284-5510D61EBB69}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

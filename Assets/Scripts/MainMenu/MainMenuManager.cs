@@ -54,6 +54,7 @@ namespace Together
 
         private void Start()
         {
+            AkSoundEngine.StopAll();
             cvGroup = GetComponent<CanvasGroup>();
             GameManager.ToggleCursor(true);
             // If already connected, allows menu interaction
@@ -62,6 +63,7 @@ namespace Together
                 cvGroup.interactable = true;
             }
             _inputFieldRoomCode.onSubmit.AddListener(OnEnterInCodeField);
+            EventManager.Dispatch(EventNames.EnterMenu, null);
         }
 
         private void OnDestroy()

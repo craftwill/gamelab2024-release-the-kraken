@@ -8,8 +8,22 @@ namespace Kraken
     {
         [SerializeField] private AK.Wwise.Event _buttonHoverSound;
         [SerializeField] private AK.Wwise.Event _buttonClickSound;
-        [SerializeField] private AK.Wwise.Event _mainMenuMusic;
-        [SerializeField] private AK.Wwise.Event _mainMenuMusicStop;
+        [SerializeField] private AK.Wwise.Event _sliderSound;
+
+        private void Start()
+        {
+            AkSoundEngine.RegisterGameObj(gameObject);
+        }
+
+        private void OnDestroy()
+        {
+            AkSoundEngine.UnregisterGameObj(gameObject);
+        }
+
+        private void Update()
+        {
+            AkSoundEngine.SetObjectPosition(gameObject, transform);
+        }
 
         public void PlayButtonHoverSound()
         {
@@ -21,14 +35,9 @@ namespace Kraken
             _buttonClickSound.Post(gameObject);
         }
 
-        public void PlayMenuMusic()
+        public void PlaySliderSound()
         {
-            _mainMenuMusic.Post(gameObject);
-        }
-
-        public void StopMenuMusic()
-        {
-            _mainMenuMusicStop.Post(gameObject);
+            _sliderSound.Post(gameObject);
         }
     }
 
