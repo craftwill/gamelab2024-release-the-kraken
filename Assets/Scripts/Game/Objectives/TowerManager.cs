@@ -53,7 +53,11 @@ namespace Kraken
                         {
                             _towers[i].SetNewTowerState(Tower.TowerState.Active);
                         }
-                        if (val == (int)Tower.TowerState.Active)
+                        else if (val == (int)Tower.TowerState.Active)
+                        {
+                            _towers[i].SetNewTowerState(Tower.TowerState.Inactive);
+                        }
+                        else if(val == (int)Tower.TowerState.Inactive)
                         {
                             _towers[i].SetNewTowerState(Tower.TowerState.Inactive);
                         }
