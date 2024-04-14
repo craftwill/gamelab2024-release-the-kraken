@@ -534,7 +534,7 @@ MonoBehaviour:
   _woolDropped: 1
   _zoneOccupancyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!114 &7503936983532037170
 MonoBehaviour:
   m_ObjectHideFlags: 0

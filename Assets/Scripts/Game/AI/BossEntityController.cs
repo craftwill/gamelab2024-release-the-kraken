@@ -20,6 +20,8 @@ namespace Kraken
 
         private bool _isOnCooldown = false;
 
+        private Transform _rootMesh;
+
         public override void InitSettings(EnemyConfigSO config)
         {
             base.InitSettings(config);
@@ -30,6 +32,7 @@ namespace Kraken
         protected override void Start()
         {
             base.Start();
+            _rootMesh = GetComponentInChildren<Animator>().transform;
             if (!PhotonNetwork.IsMasterClient) return;
         }
 
@@ -41,6 +44,8 @@ namespace Kraken
         protected override void FixedUpdate()
         {
             base.FixedUpdate();
+
+            if (_target) _rootMesh.LookAt(new Vector3(_target.position.x, _rootMesh.position.y, _target.position.z), Vector3.up);
 
             if (!PhotonNetwork.IsMasterClient) return;
 
