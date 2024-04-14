@@ -20,8 +20,8 @@ MonoBehaviour:
   isSkipMainMenu: 0
   useDebugGameFlow: 1
   randomizeObjectives: 1
-  spawnObjectiveCount: 0
-  minibossObjectiveCount: 0
+  spawnObjectiveCount: 3
+  minibossObjectiveCount: 2
   gameDuration: 240
   timeLeftSound: 60
   maxHealth: 250
