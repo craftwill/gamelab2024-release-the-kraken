@@ -32,6 +32,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2758487669	SFX_ENNEMIS_MINIONS_TANK_HURT			\Default Work Unit\SFX_ENNEMIS_MINIONS_TANK_HURT	
 	2795390379	MUSIQUE_MONDE_ENNEMIS_MINIBOSS			\Default Work Unit\MUSIQUE_MONDE_ENNEMIS_MINIBOSS	
 	2920071018	SFX_UI_OBJECTIFS_BOSS_WARNING			\Default Work Unit\SFX_UI_OBJECTIFS_BOSS_WARNING	
+	3033443092	SFX_OBJETS_PLACEABLE_TOUR_CHIENS			\Default Work Unit\SFX_OBJETS_PLACEABLE_TOUR_CHIENS	
 	3060955767	SFX_ENNEMIS_MINIONS_MELEE_HURT			\Default Work Unit\SFX_ENNEMIS_MINIONS_MELEE_HURT	
 	3092608232	SFX_DUO_MOUVEMENT_SPRINT_FWIP			\Default Work Unit\SFX_DUO_MOUVEMENT_SPRINT_FWIP	
 	3162760014	Play_UltimateTriggered			\Default Work Unit\Play_UltimateTriggered	
@@ -41,6 +42,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3203340632	SFX_RAZZLE_HABILETE_COMBO_ATTAQUE1			\Default Work Unit\SFX_RAZZLE_HABILETE_COMBO_ATTAQUE1	
 	3203340634	SFX_RAZZLE_HABILETE_COMBO_ATTAQUE3			\Default Work Unit\SFX_RAZZLE_HABILETE_COMBO_ATTAQUE3	
 	3203340635	SFX_RAZZLE_HABILETE_COMBO_ATTAQUE2			\Default Work Unit\SFX_RAZZLE_HABILETE_COMBO_ATTAQUE2	
+	3204927251	SFX_OBJETS_PLACEABLE_TOUR_CHIENS_STOP			\Default Work Unit\SFX_OBJETS_PLACEABLE_TOUR_CHIENS_STOP	
 	3233615227	Play_ZoneFullCapacity			\Default Work Unit\Play_ZoneFullCapacity	
 	3519417344	SFX_DAZZLE_HABILETE_COMBO_ATTAQUE3			\Default Work Unit\SFX_DAZZLE_HABILETE_COMBO_ATTAQUE3	
 	3519417345	SFX_DAZZLE_HABILETE_COMBO_ATTAQUE2			\Default Work Unit\SFX_DAZZLE_HABILETE_COMBO_ATTAQUE2	
@@ -61,6 +63,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	38353607	sword-slash-2	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\sword-slash-2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\sword-slash-2		78432
 	145574417	Boss_Fight	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Boss_Fight_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Final\Boss_Fight		22164576
 	198922756	Final Fantasy VII - Victory Fanfare [HD]	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Final Fantasy VII - Victory Fanfare [HD]_ED2DD99F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Final Fantasy VII - Victory Fanfare [HD]		9502864
+	209964271	656117__itsthegoodstuff__dog-barking	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\656117__itsthegoodstuff__dog-barking_BA5B3836.wem		\Actor-Mixer Hierarchy\Default Work Unit\656117__itsthegoodstuff__dog-barking		3596856
 	248373617	sheep-122256	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\sheep-122256_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\sheep-122256		299616
 	295875071	cartoon-jump	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\cartoon-jump_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\cartoon-jump		180888
 	354254577	lemon_tMqyvSF	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\lemon_tMqyvSF_6A15B21E.wem		\Actor-Mixer Hierarchy\Default Work Unit\lemon_tMqyvSF		180360
@@ -68,7 +71,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	408955314	sword-slash-1	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\sword-slash-1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\sword-slash-1		64608
 	422643003	y2mate_rQlfs1Y	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\y2mate_rQlfs1Y_FC9CA280.wem		\Actor-Mixer Hierarchy\Default Work Unit\y2mate_rQlfs1Y		79076
 	447063309	sword-slash-3	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\sword-slash-3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\sword-slash-3		165984
-	485885184	Idle-menu-character_select	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Idle-menu-character_select_17191D24.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Final\Idle-menu-character_select		6453020
+	485885184	Idle-menu-character_select	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Idle-menu-character_select_863F78DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Final\Idle-menu-character_select		6453020
 	580226891	Nasa releases audio of what a black hole 'sounds' like shorts	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Nasa releases audio of what a black hole 'sounds' like shorts_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nasa releases audio of what a black hole 'sounds' like shorts		6000736
 	624797327	tindeck_1	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\tindeck_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\tindeck_1		276576
 	627948373	footstep	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\footstep_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\footstep		118880
@@ -79,9 +82,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	785435577	478278__joao_janz__8-bit-explosion-1_5	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\478278__joao_janz__8-bit-explosion-1_5_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\478278__joao_janz__8-bit-explosion-1_5		204096
 	875765215	alarme-factorio	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\alarme-factorio_FCF97502.wem		\Actor-Mixer Hierarchy\Default Work Unit\alarme-factorio		298744
 	877710634	minecraft_hit_soundmp3converter	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\minecraft_hit_soundmp3converter_2D9B98A3.wem		\Actor-Mixer Hierarchy\Default Work Unit\minecraft_hit_soundmp3converter		167784
-	879523648	Soundtrack_1	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Soundtrack_1_6796BE0F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Final\Soundtrack_1		14514532
+	879523648	Soundtrack_1	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Soundtrack_1_042FC3FE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Final\Soundtrack_1		14514532
 	908038837	ultimateReady	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\FFXIV Limit Break 3 Video Effect_F4D2370A.wem		\Actor-Mixer Hierarchy\Default Work Unit\ultimateReady		174048
-	912005944	Soundtrack_4	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Soundtrack_4_4240262A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Final\Soundtrack_4		13082176
+	912005944	Soundtrack_4	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Soundtrack_4_89B5777A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Final\Soundtrack_4		13082176
 	933963966	ameno	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\ameno_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\ameno		327452
 	935668573	Button_1	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Button_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_1		10240
 	984372585	Button_4	E:\Repos\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Mac\SFX\Button_4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_4		12924
