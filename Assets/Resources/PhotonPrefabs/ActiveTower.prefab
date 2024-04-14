@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 8074268616083216891}
   - component: {fileID: 2949433569012335955}
   - component: {fileID: 733265593898295112}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ActiveTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
