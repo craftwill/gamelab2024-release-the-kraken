@@ -21,6 +21,7 @@ namespace Kraken
         private bool _isOnCooldown = false;
 
         private Transform _rootMesh;
+        private PlayerEntity _playerRef;
 
         public override void InitSettings(EnemyConfigSO config)
         {
@@ -33,6 +34,7 @@ namespace Kraken
         {
             base.Start();
             _rootMesh = GetComponentInChildren<Animator>().transform;
+            _playerRef = CombatUtils.GetPlayerEntities()[0];
             if (!PhotonNetwork.IsMasterClient) return;
         }
 
@@ -45,7 +47,8 @@ namespace Kraken
         {
             base.FixedUpdate();
 
-            if (_target) _rootMesh.LookAt(new Vector3(_target.position.x, _rootMesh.position.y, _target.position.z), Vector3.up);
+            //_target is only set on master, this always looks at the same player
+            _rootMesh.LookAt(new Vector3(_playerRef.transform.position.x, _rootMesh.position.y, _playerRef.transform.position.z), Vector3.up);
 
             if (!PhotonNetwork.IsMasterClient) return;
 
@@ -56,20 +59,32 @@ namespace Kraken
                 float cd = 0f;
                 if(Random.value > 0.5f)
                 {
-                    _bossAnim.PlayRingsOfLightAttack();
+                    photonView.RPC(nameof(RPC_ALL_PlayRoLAnim), RpcTarget.All);
                     _rolAttack.StartAttack(_rolConfig.ring1ChargeTime, _rolConfig.ring2ChargeTime, _rolConfig.ring1Radius, _rolConfig.ring2Radius, _rolConfig.damage);
                     cd = _rolConfig.cooldown;
                     
                 }
                 else
                 {
-                    _bossAnim.PlayStarfallAttack();
+                    photonView.RPC(nameof(RPC_ALL_PlayStarfallAnim), RpcTarget.All);
                     _starfallAttack.StartAttack(_starfallConfig.starChargeTime, _starfallConfig.attackRadius, _starfallConfig.starCount, _starfallConfig.delayBetweenStars, _starfallConfig.telegraphRadius, _starfallConfig.damage);
                     cd = _starfallConfig.cooldown;
                 }
 
                 Animate.Delay(cd, () => _isOnCooldown = false, true);
             }
+        }
+
+        [PunRPC]
+        private void RPC_ALL_PlayStarfallAnim()
+        {
+            _bossAnim.PlayStarfallAttack();
+        }
+
+        [PunRPC]
+        private void RPC_ALL_PlayRoLAnim()
+        {
+            _bossAnim.PlayRingsOfLightAttack();
         }
 
         private void OnTakeDamageListener(float dmgAmount)
