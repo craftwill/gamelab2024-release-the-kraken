@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: id10_MinibossObjective
   m_EditorClassIdentifier: 
   objectiveName: A strong foe spawned in the NORTH zone!
-  objectiveTimer: 60
+  objectiveTimer: 30
   objectiveType: 1
   minibossPrefab: {fileID: 7282374055492276171, guid: 691daec9c7545fd4e983b7f43bb3a5b4,
     type: 3}

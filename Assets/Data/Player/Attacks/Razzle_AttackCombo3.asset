@@ -20,7 +20,7 @@ MonoBehaviour:
   hitboxDuration: 0.15
   attackLockLength: 0.7
   animDoneBufferTimer: 0
-  damage: 3
+  damage: 2
   comboStep: 3
   sound:
     idInternal: 0

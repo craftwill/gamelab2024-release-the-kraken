@@ -353,6 +353,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 3436083627714981878, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3436083627714981878, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3436083627714981878, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3436083627714981878, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 3587988577761823498, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: animator
@@ -361,17 +381,17 @@ PrefabInstance:
     - target: {fileID: 5555642061347861552, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5555642061347861552, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5555642061347861552, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7181925533259565700, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
@@ -531,7 +551,7 @@ MonoBehaviour:
     type: 3}
   _smokePoofPrefab: {fileID: 5596100735769626616, guid: 3efb572bba23efa49b00e27ef47a37cd,
     type: 3}
-  _woolDropped: 1
+  _woolDropped: 0
   _zoneOccupancyLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -556,20 +576,20 @@ MonoBehaviour:
   _healthComponent: {fileID: 3539384387315477434}
   _soundComponent: {fileID: 6177580151121801195}
   _starfallConfig:
-    starChargeTime: 1.2
-    attackRadius: 12
+    starChargeTime: 1.1
+    attackRadius: 18
     starCount: 50
     delayBetweenStars: 0.1
-    telegraphRadius: 1
+    telegraphRadius: 3
     damage: 20
-    cooldown: 8
+    cooldown: 6
   _rolConfig:
-    ring1ChargeTime: 2
-    ring2ChargeTime: 2
-    ring1Radius: 8
-    ring2Radius: 6
+    ring1ChargeTime: 1.4
+    ring2ChargeTime: 1.3
+    ring1Radius: 10
+    ring2Radius: 9
     damage: 50
-    cooldown: 8
+    cooldown: 6
 --- !u!114 &6957891619024676904
 MonoBehaviour:
   m_ObjectHideFlags: 0
