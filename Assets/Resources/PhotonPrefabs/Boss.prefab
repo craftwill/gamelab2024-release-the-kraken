@@ -573,15 +573,15 @@ MonoBehaviour:
   _soundComponent: {fileID: 6177580151121801195}
   _starfallConfig:
     starChargeTime: 1.1
-    attackRadius: 17
+    attackRadius: 18
     starCount: 50
     delayBetweenStars: 0.1
     telegraphRadius: 3
     damage: 20
     cooldown: 6
   _rolConfig:
-    ring1ChargeTime: 1.3
-    ring2ChargeTime: 1.2
+    ring1ChargeTime: 1.4
+    ring2ChargeTime: 1.3
     ring1Radius: 10
     ring2Radius: 9
     damage: 50
