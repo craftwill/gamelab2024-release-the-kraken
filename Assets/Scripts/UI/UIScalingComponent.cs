@@ -8,10 +8,12 @@ namespace Kraken
     public class UIScalingComponent : MonoBehaviour
     {
         private RectTransform _transform;
+        private Vector3 _defaultValue;
         private void Start()
         {
             _transform = GetComponent<RectTransform>();
-            _transform.localScale = Vector3.one * Config.current.uiScale;
+            _defaultValue = _transform.localScale;
+            _transform.localScale = _defaultValue * Config.current.uiScale;
             EventManager.AddEventListener(EventNames.UpdateUIScale, HandleUpdateUIScale);
         }
 
@@ -22,7 +24,7 @@ namespace Kraken
 
         private void HandleUpdateUIScale(BytesData data)
         {
-            _transform.localScale = Vector3.one * Config.current.uiScale;
+            _transform.localScale = _defaultValue * Config.current.uiScale;
         }
     }
 }
