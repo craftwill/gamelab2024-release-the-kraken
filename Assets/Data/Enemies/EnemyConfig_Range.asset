@@ -17,7 +17,7 @@ MonoBehaviour:
   moveSpeed: 1
   attackRange: 13
   damageDealt: 1
-  attackCooldown: 2
+  attackCooldown: 3
   attackDuration: 0.1
   lockedIntoAttackDuration: 1.95
   rangedProjectile: {fileID: 5834890183731645403, guid: 3fe510781b6755943b2a523623012b20,

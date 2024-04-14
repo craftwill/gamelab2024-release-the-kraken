@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: EnemyConfig_Boss
   m_EditorClassIdentifier: 
   enemyName: Default Enemy Name
-  maxHealth: 50
+  maxHealth: 100
   moveSpeed: 0
   attackRange: 2.5
   damageDealt: 1
   attackCooldown: 1
   attackDuration: 0.1
   lockedIntoAttackDuration: 0.5
-  zoneOccupancyCount: 1
+  rangedProjectile: {fileID: 0}
+  zoneOccupancyCount: 75
   pathfindingDistanceRadius: 25

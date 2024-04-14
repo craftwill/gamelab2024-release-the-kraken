@@ -22,22 +22,23 @@ MonoBehaviour:
   randomizeObjectives: 1
   spawnObjectiveCount: 3
   minibossObjectiveCount: 2
-  gameDuration: 600
+  gameDuration: 240
+  timeLeftSound: 60
   maxHealth: 250
-  razzleAbilityCooldown: 3
-  razzleAbilityPullDuration: 2.4
-  razzleAbilityRadius: 8
+  razzleAbilityCooldown: 4
+  razzleAbilityPullDuration: 3.5
+  razzleAbilityRadius: 12
   razzleAbilityInitialPullStrength: 60
-  razzleAbilityPullStrengthOverTime: 10
+  razzleAbilityPullStrengthOverTime: 12
   razzleAbilitySpawnDistanceOffset: 10
-  razzleSpawnPoint: {x: 75.75, y: -30.9, z: 62}
-  dazzleAbilityCooldown: 3
+  razzleSpawnPoint: {x: 75.75, y: -30.9, z: 68}
+  dazzleAbilityCooldown: 4
   dazzleAbilityJumpDuration: 0.2
   dazzleAbilityJumpDistance: 8
   dazzleAbilityJumpHeigth: 3
-  dazzleAbilityDamage: 5
+  dazzleAbilityDamage: 4
   dazzleAbilityRadius: 4
-  dazzleSpawnPoint: {x: 77.75, y: -30.9, z: 62}
+  dazzleSpawnPoint: {x: 77.75, y: -30.9, z: 68}
   enemyMinRoamDistance: 4
   enemyMaxRoamDistance: 10
   enemyRoamMinChangeFrequency: 2
@@ -55,7 +56,7 @@ MonoBehaviour:
   yCameraSensitivityMultiplier: 0.01
   cameraControllerMultiplier: 10
   invertXAxis: 0
-  invertYAxis: 1
+  invertYAxis: 0
   baseFov: 50
   sprintFov: 60
   fovChangeDuration: 5
@@ -63,26 +64,26 @@ MonoBehaviour:
   ultimateStartMaxDistance: 5
   ultimateEndDistance: 3
   ultimateMinDamageDistance: 15
-  ultimateDamage: 10
+  ultimateDamage: 20
   ultimateMinDamage: 3
   ultimateDuration: 5
   ultimateTriggerTimer: 5
   ultimateCooldown: 10
   ultimateMinWool: 10
-  ultimateDistancePerWool: 2
+  ultimateDistancePerWool: 1.5
   ultimateMinimumDuration: 0.5
   ultimateDoesSlowMo: 1
   ultimateSlowMoTimeScale: 0.25
   ultimateSlowMoDuration: 0.25
   ultimateIsCancellable: 0
-  mustKillWithUltimate: 0
-  towerWoolCost: 25
+  mustKillWithUltimate: 1
+  towerWoolCost: 50
   maxTowerPerRound: 2
-  towerSpawnMultiplier: 5
-  healingMaxDistance: 3
+  towerSpawnMultiplier: 4
+  healingMaxDistance: 5
   healingRate: 0.01
   healingHpPerWool: 10
-  enemyStaggerDuration: 2
+  enemyStaggerDuration: 3
   comboPitchIncrement: 100
   comboMaxHitInterval: 2
   hitFlashDuration: 0.2
@@ -102,6 +103,6 @@ MonoBehaviour:
   hideGameCanvasOnPause: 0
   timeLeftUIProgressShowWarningTreshold: 0.6
   useObjectiveMusic: 1
-  permanentSpawningScaling: 0.8
+  permanentSpawningScaling: 0.6
   objectiveSpawningScaling: 1
   enemyHealthScaling: 1

@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: TerritoryObjective_South
   m_EditorClassIdentifier: 
   objectiveName: Defend the SOUTH zone!
-  objectiveTimer: 45
-  triggerSound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 0b70c0474100a504899df205648c017f,
-      type: 2}
-  spawnFrequency: 0.8
+  objectiveTimer: 30
+  objectiveType: 0
+  spawnFrequency: 0.4
   spawnData: {fileID: 11400000, guid: ae52b6ddd841e724aa2dc41bdb8f3f64, type: 2}
