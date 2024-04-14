@@ -4,6 +4,7 @@ using UnityEngine;
 using Bytes;
 using Kraken.Network;
 using Photon.Pun;
+using UnityEngine.VFX;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -22,6 +23,7 @@ namespace Kraken
         [SerializeField] private BossSoundComponent _soundComponent;
 
         [SerializeField] private GameObject _ringOfLightTelegraphPrefab;
+        [SerializeField] private GameObject _ringOfLightVFX;
 
         public void StartAttack(float ring1ChargeTime, float ring2ChargeTime, float ring1Radius, float ring2Radius, int damage)
         {
@@ -35,6 +37,16 @@ namespace Kraken
             telegraph.StartTelegraph(ring1ChargeTime, ring1Radius, 0f, damage);
             telegraph._playSoundDelegate = _soundComponent.PlayRingsOfLightHitSound;
 
+            var rol = Instantiate(_ringOfLightVFX, transform.position, telegraph.transform.rotation);
+            var llc = rol.GetComponent<LimitedLifetimeComponent>();
+            llc.StartNewLifeTime(ring1ChargeTime + 1f);
+            var vfx = rol.GetComponent<VisualEffect>();
+            vfx.SetFloat("Charge Radius", ring1Radius);
+            vfx.SetFloat("Charge Length", ring1ChargeTime);
+            vfx.SetFloat("Ring Start Radius", 0f);
+            vfx.SetFloat("Ring End Radius", ring1Radius);
+            vfx.enabled = true;
+
             StartCoroutine(SpawnSecondRing(ring1ChargeTime, ring2ChargeTime, ring2Radius, ring1Radius, damage));
         }
 
@@ -44,6 +56,16 @@ namespace Kraken
             RingTelegraph telegraph2 = Instantiate(_ringOfLightTelegraphPrefab, this.transform.position, _ringOfLightTelegraphPrefab.transform.rotation, this.transform).GetComponent<RingTelegraph>();
             telegraph2.StartTelegraph(ring2ChargeTime, ring2Radius, ring1Radius, damage);
             telegraph2._playSoundDelegate = _soundComponent.PlayRingsOfLightHitSound;
+
+            var rol = Instantiate(_ringOfLightVFX, transform.position, telegraph2.transform.rotation);
+            var llc = rol.GetComponent<LimitedLifetimeComponent>();
+            llc.StartNewLifeTime(ring2ChargeTime + 1f);
+            var vfx = rol.GetComponent<VisualEffect>();
+            vfx.SetFloat("Charge Radius", ring1Radius + ring2Radius);
+            vfx.SetFloat("Charge Length", ring2ChargeTime);
+            vfx.SetFloat("Ring Start Radius", ring1Radius);
+            vfx.SetFloat("Ring End Radius", ring1Radius + ring2Radius);
+            vfx.enabled = true;
         }
 
         //two functions method for designer testing as well

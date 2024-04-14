@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{B2C0E57E-4F56-E6F3-38A1-558B614DF8D3}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{63083462-87A4-9FD8-6440-B65D9EDF18CB}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -41,13 +41,9 @@
 					<ShortName>sword-slash-2.wav</ShortName>
 					<CachePath>SFX/sword-slash-2_818F3B66.wem</CachePath>
 				</File>
-				<File Id="66191486" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Fight music 1.wav</ShortName>
-					<CachePath>SFX/Fight music 1_302B6FA0.wem</CachePath>
-				</File>
-				<File Id="85800411" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Fight music 4 (boss).wav</ShortName>
-					<CachePath>SFX/Fight music 4 (boss)_818F3B66.wem</CachePath>
+				<File Id="145574417" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Boss_Fight.wav</ShortName>
+					<CachePath>SFX/Boss_Fight_818F3B66.wem</CachePath>
 				</File>
 				<File Id="198922756" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Final Fantasy VII - Victory Fanfare [HD].wav</ShortName>
@@ -56,10 +52,6 @@
 				<File Id="248373617" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sheep-122256.wav</ShortName>
 					<CachePath>SFX/sheep-122256_818F3B66.wem</CachePath>
-				</File>
-				<File Id="252820667" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Fight music 3.wav</ShortName>
-					<CachePath>SFX/Fight music 3_818F3B66.wem</CachePath>
 				</File>
 				<File Id="295875071" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>cartoon-jump.wav</ShortName>
@@ -85,6 +77,10 @@
 					<ShortName>sword-slash-3.wav</ShortName>
 					<CachePath>SFX/sword-slash-3_818F3B66.wem</CachePath>
 				</File>
+				<File Id="485885184" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Idle-menu-character_select.wav</ShortName>
+					<CachePath>SFX/Idle-menu-character_select_17191D24.wem</CachePath>
+				</File>
 				<File Id="580226891" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Nasa releases audio of what a black hole 'sounds' like shorts.wav</ShortName>
 					<CachePath>SFX/Nasa releases audio of what a black hole 'sounds' like shorts_818F3B66.wem</CachePath>
@@ -105,6 +101,10 @@
 					<ShortName>hit-sound-effect-12445.wav</ShortName>
 					<CachePath>SFX/hit-sound-effect-12445_818F3B66.wem</CachePath>
 				</File>
+				<File Id="726315569" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Win_2.wav</ShortName>
+					<CachePath>SFX/Win_2_818F3B66.wem</CachePath>
+				</File>
 				<File Id="781786885" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FFXIV Limit Break 3.wav</ShortName>
 					<CachePath>SFX/FFXIV Limit Break 3_76AE5D17.wem</CachePath>
@@ -121,13 +121,29 @@
 					<ShortName>minecraft_hit_soundmp3converter.wav</ShortName>
 					<CachePath>SFX/minecraft_hit_soundmp3converter_2D9B98A3.wem</CachePath>
 				</File>
+				<File Id="879523648" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundtrack_1.wav</ShortName>
+					<CachePath>SFX/Soundtrack_1_6796BE0F.wem</CachePath>
+				</File>
 				<File Id="908038837" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FFXIV Limit Break 3 Video Effect.wav</ShortName>
 					<CachePath>SFX/FFXIV Limit Break 3 Video Effect_F4D2370A.wem</CachePath>
 				</File>
+				<File Id="912005944" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundtrack_4.wav</ShortName>
+					<CachePath>SFX/Soundtrack_4_4240262A.wem</CachePath>
+				</File>
 				<File Id="933963966" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ameno.wav</ShortName>
 					<CachePath>SFX/ameno_818F3B66.wem</CachePath>
+				</File>
+				<File Id="935668573" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Button_1.wav</ShortName>
+					<CachePath>SFX/Button_1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="984372585" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Button_4.wav</ShortName>
+					<CachePath>SFX/Button_4_818F3B66.wem</CachePath>
 				</File>
 				<File Id="996749074" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>pew-pew-lame-sound-effect.wav</ShortName>
@@ -155,29 +171,33 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="3774338134" Name="Play_BossSpawn" DurationType="OneShot" DurationMin="1.6930078" DurationMax="1.6930078">
+				<Event Id="1387075791" Name="MUSIQUE_GENERAL_MENUS_MAINMENU" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="875765215"/>
+						<MediaRef Id="485885184"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2251471866" Name="MUSIQUE_GENERAL_MENUS_MAINMENU_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1706943895" Name="MUSIQUE_MONDE_BASE_COMBAT" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="912005944"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1834235186" Name="MUSIQUE_MONDE_BASE_COMBAT_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1616343810" Name="MUSIQUE_MONDE_ENNEMIS_BOSS" DurationType="OneShot" DurationMin="125.64898" DurationMax="125.64898">
+					<MediaRefs>
+						<MediaRef Id="145574417"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3528907905" Name="MUSIQUE_MONDE_ENNEMIS_BOSS_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2795390379" Name="MUSIQUE_MONDE_ENNEMIS_MINIBOSS" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="879523648"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="958708710" Name="MUSIQUE_MONDE_ENNEMIS_MINIBOSS_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="324646143" Name="Play_Defeat" DurationType="OneShot" DurationMin="8.057324" DurationMax="8.057324">
 					<MediaRefs>
 						<MediaRef Id="628232679"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2155613437" Name="Play_Music_Boss" DurationType="OneShot" DurationMin="66.97796" DurationMax="66.97796">
-					<MediaRefs>
-						<MediaRef Id="85800411"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2746305898" Name="Play_Music_General" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="66191486"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="977895875" Name="Play_Music_Objective" DurationType="OneShot" DurationMin="67.29143" DurationMax="67.29143">
-					<MediaRefs>
-						<MediaRef Id="252820667"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3178286754" Name="Play_PlayerHurt" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.3451883" DurationMax="0.3874608">
@@ -357,14 +377,46 @@
 						<MediaRef Id="1073696907"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2869039319" Name="Stop_Music_Boss" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="504869708" Name="Stop_Music_General" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="2291264325" Name="Stop_Music_Objective" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3172891524" Name="SFX_UI_GENERAL_BOUTONS_HOVER" DurationType="OneShot" DurationMin="0.115011334" DurationMax="0.115011334">
+					<MediaRefs>
+						<MediaRef Id="935668573"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2482710870" Name="SFX_UI_GENERAL_BOUTONS_SELECT" DurationType="OneShot" DurationMin="0.14544217" DurationMax="0.14544217">
+					<MediaRefs>
+						<MediaRef Id="984372585"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="77152589" Name="SFX_UI_GENERAL_BOUTONS_SLIDER" DurationType="OneShot" DurationMin="0.115011334" DurationMax="0.115011334">
+					<MediaRefs>
+						<MediaRef Id="935668573"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2276912851" Name="SFX_UI_JOUEURS_WOOL_FULL" DurationType="OneShot" DurationMin="0.9455102" DurationMax="0.9455102">
+					<MediaRefs>
+						<MediaRef Id="726315569"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2920071018" Name="SFX_UI_OBJECTIFS_BOSS_WARNING" DurationType="OneShot" DurationMin="1.6930078" DurationMax="1.6930078">
+					<MediaRefs>
+						<MediaRef Id="875765215"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1600746727" Name="SFX_UI_OBJECTIFS_MINIBOSS_WARNING" DurationType="OneShot" DurationMin="1.6930078" DurationMax="1.6930078">
+					<MediaRefs>
+						<MediaRef Id="875765215"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1984403743" Name="SFX_UI_OBJECTIFS_REINFORCEMENTS_WARNING" DurationType="OneShot" DurationMin="1.6930078" DurationMax="1.6930078">
+					<MediaRefs>
+						<MediaRef Id="875765215"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="24633649" Name="ComboPitch"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{4C032ED8-B0F6-B0F8-3C01-82ADB8195591}</FileHash>
+	<FileHash>{EB2255CE-92EA-770A-9D94-63F79466B3B7}</FileHash>
 </SoundBanksInfo>

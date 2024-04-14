@@ -1,19 +1,31 @@
 using Bytes;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Kraken.UI
 {
     public class DefeatScreenUI : BaseEndGameScrenUI
     {
+        [SerializeField] private GameObject _sheepLost;
+        [SerializeField] private GameObject _playerLost;
+        [SerializeField] private GameObject _timeLost;
+        [SerializeField] Button _startOverButton;
         private void Start()
         {
             EventManager.AddEventListener(EventNames.ShowDefeatScreenUI, HandleShowScreenUI);
+            EventManager.AddEventListener(EventNames.ShowDefeatByZoneUI, HandleShowDefeatByZoneUI);
+            EventManager.AddEventListener(EventNames.ShowDefeatByPlayerUI, HandleShowDefeatByPlayerUI);
+            EventManager.AddEventListener(EventNames.ShowDefeatTimeLeftUI, HandleShowDefeatTimeLeftUI);
+            _startOverButton.interactable = PhotonNetwork.IsMasterClient;
         }
 
         private void OnDestroy()
         {
             EventManager.RemoveEventListener(EventNames.ShowDefeatScreenUI, HandleShowScreenUI);
+            EventManager.RemoveEventListener(EventNames.ShowDefeatByZoneUI, HandleShowDefeatByZoneUI);
+            EventManager.RemoveEventListener(EventNames.ShowDefeatByPlayerUI, HandleShowDefeatByPlayerUI);
+            EventManager.RemoveEventListener(EventNames.ShowDefeatTimeLeftUI, HandleShowDefeatTimeLeftUI);
         }
 
         protected override void HandleShowScreenUI(BytesData data)
@@ -22,8 +34,24 @@ namespace Kraken.UI
             base.HandleShowScreenUI(data);
         }
 
+        private void HandleShowDefeatByZoneUI(BytesData data)
+        {
+            _sheepLost.SetActive(true);
+        }
+
+        private void HandleShowDefeatByPlayerUI(BytesData data)
+        {
+            _playerLost.SetActive(true);
+        }
+
+        private void HandleShowDefeatTimeLeftUI(BytesData data)
+        {
+            _timeLost.SetActive(true);
+        }
+
         public virtual void Btn_Restart()
         {
+            if (!PhotonNetwork.IsMasterClient) return;
             PhotonNetwork.LoadLevel("Lobby");
         }
     }

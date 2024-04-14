@@ -69,7 +69,13 @@ namespace Kraken
                 photonView.RPC(nameof(RPC_All_EndGame), RpcTarget.All, false, (int)EndGameType.TimerOut);
             }
 
+            void PlayLittleTimeLeftWarning()
+            {
+                _soundComponent.PlayLittleTimeLeftSound();
+            }
+
             Animate timeLeftAnim = Animate.Delay(Config.current.gameDuration, GameTimerDoneCallback, true);
+            Animate.Delay(Config.current.gameDuration * Config.current.timeLeftUIProgressShowWarningTreshold, PlayLittleTimeLeftWarning, true);
             // Send the timer Animate object to the UI to update it dynamically.
             EventManager.Dispatch(EventNames.InitTimeLeftUI, new ObjectDataBytes(timeLeftAnim));
         }
@@ -105,6 +111,12 @@ namespace Kraken
             {
                 case EndGameType.TimerOut:
                     EventManager.Dispatch(EventNames.ShowDefeatTimeLeftUI, null);
+                    break;
+                case EndGameType.PlayerDeath:
+                    EventManager.Dispatch(EventNames.ShowDefeatByPlayerUI, null);
+                    break;
+                case EndGameType.ZoneFullLoss:
+                    EventManager.Dispatch(EventNames.ShowDefeatByZoneUI, null);
                     break;
             }
 

@@ -17,8 +17,9 @@ MonoBehaviour:
   moveSpeed: 1
   attackRange: 2
   damageDealt: 2
-  attackCooldown: 1.5
+  attackCooldown: 2.5
   attackDuration: 0.1
   lockedIntoAttackDuration: 0.75
-  zoneOccupancyCount: 1
+  rangedProjectile: {fileID: 0}
+  zoneOccupancyCount: 2
   pathfindingDistanceRadius: 25

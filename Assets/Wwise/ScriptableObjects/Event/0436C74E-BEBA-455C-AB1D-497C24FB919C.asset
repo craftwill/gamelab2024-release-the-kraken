@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c75bd90d2002764cbcde38269546abc, type: 3}
   m_Name: 0436C74E-BEBA-455C-AB1D-497C24FB919C
   m_EditorClassIdentifier: 
-  objectName: Stop_Music_Boss
-  id: 2869039319
+  objectName: MUSIQUE_MONDE_ENNEMIS_BOSS_STOP
+  id: 3528907905
   guid: 0436C74E-BEBA-455C-AB1D-497C24FB919C

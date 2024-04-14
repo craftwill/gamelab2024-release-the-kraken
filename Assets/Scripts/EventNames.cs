@@ -33,6 +33,8 @@ namespace Kraken
         public const string StopGameFlow = "StopGameFlow";
         public const string StartGameTimer = "StartGameTimer";
         public const string LeaveGame = "LeaveGame";
+        public const string EnterMenu = "EnterMenu";
+        public const string LeaveMenu = "EnterMenu";
 
         // Objectives events
         public const string StartObjectives = "StartObjectives";
@@ -62,6 +64,8 @@ namespace Kraken
         public const string UpdateBossHealthUI = "UpdateBossHealthUI";
         public const string UpdateCurrentZoneOccupancyUI = "UpdateCurrentZoneOccupancyUI";
         public const string ShowReinforcementHintUI = "ShowReinforcementHintUI";
+        public const string ShowDefeatByPlayerUI = "ShowDefeatByPlayerUI";
+        public const string ShowDefeatByZoneUI = "ShowDefeatByZoneUI";
 
         // Player Profile HUD events
         public const string UpdatePlayerHealthUI = "UpdateHealthUI";

@@ -4342,6 +4342,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1732652936}
+        m_TargetAssemblyTypeName: Kraken.MainMenuSoundComponent, Assembly-CSharp
+        m_MethodName: PlayButtonClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1539984074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4689,6 +4701,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1732652933}
         m_TargetAssemblyTypeName: Together.LobbyManager, Assembly-CSharp
         m_MethodName: Btn_OnStartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1732652936}
+        m_TargetAssemblyTypeName: Kraken.MainMenuSoundComponent, Assembly-CSharp
+        m_MethodName: PlayButtonClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5550,6 +5574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1732652932}
   - component: {fileID: 1732652933}
+  - component: {fileID: 1732652936}
   - component: {fileID: 1732652934}
   - component: {fileID: 1732652935}
   m_Layer: 5
@@ -5611,6 +5636,7 @@ MonoBehaviour:
   _cancelInput: {fileID: -6215972033495757003, guid: abae805e8a04eb44c951b59d4dda4171,
     type: 3}
   _btnStart: {fileID: 1618817272}
+  _soundComponent: {fileID: 1732652936}
 --- !u!114 &1732652934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5740,6 +5766,33 @@ MonoBehaviour:
   m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1732652936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732652931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2634b78039a8294b8a1fc3f8f36a779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttonHoverSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c576a1d9260a9c246826b581beb224d8,
+      type: 2}
+  _buttonClickSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 694535cdbb7178a4eb314fb1f9fc158e,
+      type: 2}
+  _sliderSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2ffe99fd0ab7e944d942c4551c14e9ff,
+      type: 2}
 --- !u!1001 &1789287258
 PrefabInstance:
   m_ObjectHideFlags: 0

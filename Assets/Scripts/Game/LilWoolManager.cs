@@ -9,6 +9,9 @@ namespace Kraken
     public class LilWoolManager : KrakenNetworkedManager
     {
         public int _woolQuantity { get; private set; } = 0;
+        [SerializeField] private AK.Wwise.Event _woolFullSound;
+        private bool _hasPlayedFullSound = false;
+
         private void Start()
         {
             if (!_isMaster) return;
@@ -60,6 +63,17 @@ namespace Kraken
 
             // Update wool gauge
             EventManager.Dispatch(EventNames.UpdateWoolQuantity, new IntDataBytes(_woolQuantity));
+
+            if (woolQuantityPercentage >= 1f)
+            {
+                if (!_hasPlayedFullSound)
+                {
+                    _woolFullSound.Post(gameObject);
+                    _hasPlayedFullSound = true;
+                }
+            }
+            else
+                _hasPlayedFullSound = false;
         }
     }
 }

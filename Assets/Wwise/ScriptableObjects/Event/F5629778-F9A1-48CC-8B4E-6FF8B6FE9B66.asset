@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c75bd90d2002764cbcde38269546abc, type: 3}
   m_Name: F5629778-F9A1-48CC-8B4E-6FF8B6FE9B66
   m_EditorClassIdentifier: 
-  objectName: Play_BossSpawn
-  id: 3774338134
+  objectName: SFX_UI_OBJECTIFS_BOSS_WARNING
+  id: 2920071018
   guid: F5629778-F9A1-48CC-8B4E-6FF8B6FE9B66

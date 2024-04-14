@@ -295,6 +295,11 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
+      propertyPath: _woolDropped
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628587998543513100, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
       propertyPath: _attackComponent
       value: 
       objectReference: {fileID: 0}
@@ -383,6 +388,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Miniboss
       objectReference: {fileID: 0}
+    - target: {fileID: 3436083627714981878, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3436083627714981878, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3436083627714981878, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3436083627714981878, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.547
+      objectReference: {fileID: 0}
     - target: {fileID: 3528024205557268655, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: m_IsActive
@@ -396,17 +421,17 @@ PrefabInstance:
     - target: {fileID: 5555642061347861552, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5555642061347861552, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5555642061347861552, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6807864403598660797, guid: d82bf9ca5bd1a8149852b3fdba06fecc,
         type: 3}
@@ -531,8 +556,8 @@ MonoBehaviour:
   _healthComponent: {fileID: 4536674062849678646}
   _soundComponent: {fileID: 8890380970307686783}
   _attackConfig:
-    chargeTime: 3
-    angle: 60
+    chargeTime: 1.5
+    angle: 120
     obstructingLayer:
       serializedVersion: 2
       m_Bits: 1152
@@ -541,6 +566,8 @@ MonoBehaviour:
       m_Bits: 4096
     materialInner: {fileID: 2100000, guid: 13c654d50cf991c4fbbac1d8495671df, type: 2}
     materialOuter: {fileID: 2100000, guid: 64294c33826ea3a43b298d38f07759c3, type: 2}
+    visualEffect: {fileID: 5975844294459365678, guid: 612ef11067d8ce14c8f91c2486e7742d,
+      type: 3}
 --- !u!114 &9001902255904061304
 MonoBehaviour:
   m_ObjectHideFlags: 0

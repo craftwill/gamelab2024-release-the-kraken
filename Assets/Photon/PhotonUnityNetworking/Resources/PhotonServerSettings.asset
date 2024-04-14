@@ -135,6 +135,17 @@ MonoBehaviour:
   - OtherPlayerCancelTower
   - RPC_ALL_LeaveRoom
   - RPC_All_PlayStarfallHitSound
+  - RPC_All_TakeDamage
+  - RPC_AllGetHealed
+  - RPC_All_PlayObjectivesSound
+  - RPC_All_PlayBossObjectiveSound
+  - RPC_All_PlayMinibossObjectiveSound
+  - RPC_All_PlayTerritoryObjectiveSound
+  - RPC_All_AddPlayerInRange
+  - RPC_All_RemovePlayerInRange
+  - RPC_Other_PlayTowerWaitingSound
+  - RPC_ALL_HealAnimAndVFX
+  - RPC_All_StopAllMusic
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
