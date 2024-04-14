@@ -38,6 +38,16 @@ namespace Kraken
             _pauseSettingsMenu.SetActive(false);
         }
 
+        //when the game ends
+        public void UnPause()
+        {
+            _paused = true;
+            _pauseScreen.SetActive(false);
+            GameManager.ToggleCursor(true);
+            _pauseBaseMenu.SetActive(true);
+            _pauseSettingsMenu.SetActive(false);
+        }
+
         public void OnBtnResume()
         {
             EventManager.Dispatch(EventNames.TogglePause, null);
