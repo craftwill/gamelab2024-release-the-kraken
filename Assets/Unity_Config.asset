@@ -27,7 +27,7 @@ MonoBehaviour:
   maxHealth: 250
   razzleAbilityCooldown: 4
   razzleAbilityPullDuration: 3.5
-  razzleAbilityRadius: 10
+  razzleAbilityRadius: 12
   razzleAbilityInitialPullStrength: 60
   razzleAbilityPullStrengthOverTime: 12
   razzleAbilitySpawnDistanceOffset: 10
@@ -64,7 +64,7 @@ MonoBehaviour:
   ultimateStartMaxDistance: 5
   ultimateEndDistance: 3
   ultimateMinDamageDistance: 15
-  ultimateDamage: 10
+  ultimateDamage: 20
   ultimateMinDamage: 3
   ultimateDuration: 5
   ultimateTriggerTimer: 5
@@ -79,11 +79,11 @@ MonoBehaviour:
   mustKillWithUltimate: 0
   towerWoolCost: 25
   maxTowerPerRound: 2
-  towerSpawnMultiplier: 5
-  healingMaxDistance: 3
+  towerSpawnMultiplier: 4
+  healingMaxDistance: 5
   healingRate: 0.01
   healingHpPerWool: 10
-  enemyStaggerDuration: 2
+  enemyStaggerDuration: 3
   comboPitchIncrement: 100
   comboMaxHitInterval: 2
   hitFlashDuration: 0.2
