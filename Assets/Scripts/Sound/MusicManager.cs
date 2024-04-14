@@ -104,7 +104,6 @@ namespace Kraken
         [PunRPC]
         private void RPC_All_PlayGeneralMusic()
         {
-            photonView.RPC(nameof(RPC_All_StopAllMusic), RpcTarget.All);
             _playGeneralMusic.Post(gameObject);
         }
 
