@@ -45,7 +45,7 @@ namespace Kraken
         {
             base.FixedUpdate();
 
-            if (_target) _rootMesh.LookAt(_target.position, Vector3.up);
+            if (_target) _rootMesh.LookAt(new Vector3(_target.position.x, _rootMesh.position.y, _target.position.z), Vector3.up);
 
             if (!PhotonNetwork.IsMasterClient) return;
 
