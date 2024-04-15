@@ -66,6 +66,7 @@ namespace Kraken
         public const string ShowReinforcementHintUI = "ShowReinforcementHintUI";
         public const string ShowDefeatByPlayerUI = "ShowDefeatByPlayerUI";
         public const string ShowDefeatByZoneUI = "ShowDefeatByZoneUI";
+        public const string UpdatePatchingUpUI = "UpdatePatchingUpUI";
         public const string UpdateUIScale = "UpdateUIScale";
 
         // Player Profile HUD events
@@ -151,5 +152,18 @@ namespace Kraken
         }
         public bool IsRazzle { get; private set; }
         public bool IsKeyboard { get; private set; }
+    }
+
+    public class UpdateBossHealthUIData : BytesData
+    {
+        public UpdateBossHealthUIData(bool isMiniBoss, float hpAmount, bool isShowUltIndicator = false)
+        {
+            IsMiniBoss = isMiniBoss;
+            HpFillAmount = hpAmount;
+            IsShowUltIndicator = isShowUltIndicator;
+        }
+        public bool IsMiniBoss { get; private set; }
+        public float HpFillAmount { get; private set; }
+        public bool IsShowUltIndicator { get; private set; }
     }
 }
