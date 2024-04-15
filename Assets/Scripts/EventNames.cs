@@ -66,6 +66,7 @@ namespace Kraken
         public const string ShowReinforcementHintUI = "ShowReinforcementHintUI";
         public const string ShowDefeatByPlayerUI = "ShowDefeatByPlayerUI";
         public const string ShowDefeatByZoneUI = "ShowDefeatByZoneUI";
+        public const string UpdateUIScale = "UpdateUIScale";
 
         // Player Profile HUD events
         public const string UpdatePlayerHealthUI = "UpdateHealthUI";

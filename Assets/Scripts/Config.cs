@@ -30,6 +30,7 @@ namespace Kraken
         public const string CAMERA_SENSITIVITY = "CameraSensitivity";
         public const string VOLUME_MUSIC = "VolumeMusic";
         public const string VOLUME_SOUNDS = "VolumeSounds";
+        public const string UI_SCALE = "UIScale";
 
         // Wwise RTPC names
         public const string COMBO_PITCH = "ComboPitch";
