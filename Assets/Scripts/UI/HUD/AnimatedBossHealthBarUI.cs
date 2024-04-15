@@ -51,9 +51,10 @@ namespace Kraken.UI
             {
                 SetVisible(true);
                 UpdateAllImages(bossData.IsMiniBoss);
-                _ultIndicator.SetActive(bossData.IsShowUltIndicator);
-                _imgFilling.color = (bossData.IsShowUltIndicator) ? Color.magenta : Color.white;
             }
+
+            _ultIndicator.SetActive(bossData.IsShowUltIndicator);
+            _imgFilling.color = (bossData.IsShowUltIndicator) ? Color.magenta : Color.white;
         }
     }
 }
