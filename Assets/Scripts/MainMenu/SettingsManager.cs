@@ -9,6 +9,7 @@ namespace Kraken
     public class SettingsManager : MonoBehaviour
     {
         [SerializeField] private GameObject _previousMenu;
+        [SerializeField] private Button _btnBack;
         [SerializeField] private Toggle _toggleFullscreen;
         [SerializeField] private Toggle _toggleInvertYAxis;
         [SerializeField] private Toggle _toggleInvertXAxis;
@@ -40,6 +41,11 @@ namespace Kraken
                 _sliderSounds.value = PlayerPrefs.GetFloat(Config.VOLUME_SOUNDS);
             }
             _sliderUIScale.value = Config.current.uiScale;
+        }
+
+        private void OnEnable()
+        {
+            _btnBack.Select();
         }
 
         public void OnFullscreenChange()
