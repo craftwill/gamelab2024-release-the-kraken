@@ -23,7 +23,7 @@ namespace Kraken.UI
             SetVisible(_startsVisible);
         }
 
-        public void SetVisible(bool isVisible)
+        public virtual void SetVisible(bool isVisible)
         {
             _canvasGroup.alpha = isVisible ? _visibleAlpha : 0;
             _canvasGroup.interactable = _interactableWhenVisible && isVisible;
