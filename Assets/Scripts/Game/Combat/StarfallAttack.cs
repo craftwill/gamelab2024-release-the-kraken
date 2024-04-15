@@ -109,10 +109,6 @@ namespace Kraken
                         break;
                     }
                 }
-                if (!valid)
-                {
-                    p = transform.position;
-                }
                 spawnPoints.Add(p);
 
             }

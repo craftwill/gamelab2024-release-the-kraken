@@ -119,17 +119,20 @@ namespace Kraken
             // Fetch property for player type
             string playerToCreateName = _razzlePrefab.name;
             Vector3 playerToCreateSpawnPos = _playersSpawnPos.position;
+            Vector3 playerToCreateSpawnRotation = _playersSpawnPos.rotation.eulerAngles;
 
             int playerClassId = GetPlayerClassId();
             if (playerClassId == 0)
             {
                 playerToCreateName = _razzlePrefab.name;
                 playerToCreateSpawnPos = Config.current.razzleSpawnPoint;
+                playerToCreateSpawnRotation = Config.current.razzleSpawnRotation;
             }
             else if (playerClassId == 2)
             {
                 playerToCreateName = _dazzlePrefab.name;
                 playerToCreateSpawnPos = Config.current.dazzleSpawnPoint;
+                playerToCreateSpawnRotation = Config.current.dazzleSpawnRotation;
             }
 
             // Force usage of Dazzle for player1
@@ -139,15 +142,17 @@ namespace Kraken
                 {
                     playerToCreateName = _dazzlePrefab.name;
                     playerToCreateSpawnPos = Config.current.razzleSpawnPoint;
-                }   
+                    playerToCreateSpawnRotation = Config.current.razzleSpawnRotation;
+                }
                 else
                 {
                     playerToCreateName = _razzlePrefab.name;
                     playerToCreateSpawnPos = Config.current.dazzleSpawnPoint;
+                    playerToCreateSpawnRotation = Config.current.dazzleSpawnRotation;
                 }
             }
 
-            _localPlayer = NetworkUtils.Instantiate(playerToCreateName, playerToCreateSpawnPos);
+            _localPlayer = NetworkUtils.Instantiate(playerToCreateName, playerToCreateSpawnPos, Quaternion.Euler(playerToCreateSpawnRotation));
 
             photonView.RPC(nameof(RPC_Master_PlayerCreated), RpcTarget.MasterClient, _localPlayer.GetPhotonView().ViewID);
         }

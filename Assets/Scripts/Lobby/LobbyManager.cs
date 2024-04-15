@@ -29,7 +29,7 @@ namespace Kraken
         [SerializeField] private MainMenuSoundComponent _soundComponent;
         private GameObject _controlledController;
         private int _currentControllerPositionIndex = 1;
-        private int[] controllerPositions = { -300, 0, 300 };
+        private int[] controllerPositions = { -150, 0, 150 };
         private bool _movementInput = false;
         private bool _requireTwoPlayers;
 
@@ -136,10 +136,13 @@ namespace Kraken
             _controlledController = PhotonNetwork.IsMasterClient ? _controller1 : _controller2;
         }
 
+        private bool onlyOnce = true;
+
         public void Btn_OnStartGame() 
         {
-            if (AreAllPlayersReady() && PhotonNetwork.IsMasterClient)
+            if (onlyOnce && AreAllPlayersReady() && PhotonNetwork.IsMasterClient)
             {
+                onlyOnce = false;
                 _btnStart.interactable = false;
                 _btnStart.gameObject.SetActive(false);
                 JoinGameScene();
@@ -148,6 +151,7 @@ namespace Kraken
 
         public void Btn_OnLeaveLobby()
         {
+            EventManager.Dispatch(EventNames.LeaveLobby, null);
             AnimateManager.GetInstance().ClearAllAnimations();
             PhotonNetwork.LeaveRoom();
         }
