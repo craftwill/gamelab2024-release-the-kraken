@@ -395,9 +395,9 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 905351684, guid: 5e56765c1b6c18442b0c965a26f76f8d,
       type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 905351684, guid: 5e56765c1b6c18442b0c965a26f76f8d,
+    m_SelectedSprite: {fileID: 905351684, guid: 5e56765c1b6c18442b0c965a26f76f8d,
       type: 3}
+    m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -955,7 +955,8 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: -2032883177, guid: 5e56765c1b6c18442b0c965a26f76f8d,
       type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: -2032883177, guid: 5e56765c1b6c18442b0c965a26f76f8d,
+      type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1404,6 +1405,7 @@ MonoBehaviour:
   _playerLost: {fileID: 8164580841980569886}
   _timeLost: {fileID: 4004473413954634490}
   _startOverButton: {fileID: 3548080792672435648}
+  _backToMenuButton: {fileID: 2029351725837239006}
 --- !u!225 &3635314609476812948
 CanvasGroup:
   m_ObjectHideFlags: 0

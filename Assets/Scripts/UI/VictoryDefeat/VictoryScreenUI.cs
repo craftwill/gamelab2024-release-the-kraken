@@ -30,9 +30,20 @@ namespace Kraken.UI
 
         public void Btn_NextNight()
         {
-            _btnNextNight.interactable = false;
-            _gameFlowManager.GoToNextNight();
-            AkSoundEngine.StopAll();
+            if (_onlyOnce)
+            {
+                _onlyOnce = false;
+                _btnNextNight.interactable = false;
+                _gameFlowManager.GoToNextNight();
+                AkSoundEngine.StopAll();
+            }
+        }
+
+        public override void SetVisible(bool isVisible)
+        {
+            base.SetVisible(isVisible);
+
+            _btnNextNight.Select();
         }
     }
 }
