@@ -86,6 +86,7 @@ namespace Kraken
 
             currentObjective.TriggerObjective();
             _soundComponent.PlayObjectiveSound(currentObjective.objectiveSO.objectiveType);
+            photonView.RPC(nameof(RPC_All_DispatchReinforcementHint), RpcTarget.All, currentObjective.objectiveSO.reinforcementText);
 
             ObjectiveInstance cur = currentObjective;
             int time = cur.objectiveSO.objectiveTimer;
@@ -136,6 +137,12 @@ namespace Kraken
         private void RPC_All_PlayObjectivesSound(AK.Wwise.Event sound)
         {
             sound.Post(gameObject);
+        }
+
+        [PunRPC]
+        private void RPC_All_DispatchReinforcementHint(string hint)
+        {
+            EventManager.Dispatch(EventNames.ShowReinforcementHintUI, new StringDataBytes(hint));
         }
 
         private ObjectiveInstance GetNextObjective()

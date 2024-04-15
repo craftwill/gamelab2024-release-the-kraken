@@ -12,6 +12,7 @@ namespace Kraken
         public string objectiveName = "Default Objective Name";
         [Tooltip("Time before next objective spawns")] public int objectiveTimer = 60;
         [SerializeField] public Type objectiveType;
+        [SerializeField] public string reinforcementText;
 
         public virtual void TriggerObjective(ObjectiveInstance instance) { }
         public virtual void EndObjective(ObjectiveInstance instance) 
