@@ -22,6 +22,7 @@ namespace Kraken
         public bool randomizeObjectives = true;
         public int spawnObjectiveCount = 3;
         public int minibossObjectiveCount = 2;
+        public bool firstObectiveIsSpawn = true;
         [Tooltip("Maximum time the game can last in seconds")]
         public int gameDuration = 600;
 
