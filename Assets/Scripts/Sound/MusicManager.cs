@@ -30,6 +30,7 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.PlayerEnteredObjective, HandlePlayerEnteredObjective);
             EventManager.AddEventListener(EventNames.PlayerLeftObjective, HandlePlayerLeftZone);
             EventManager.AddEventListener(EventNames.EnterMenu, HandleEnterMenu);
+            EventManager.AddEventListener(EventNames.LeaveLobby, HandleLeaveLobby);
         }
 
         private void OnDestroy()
@@ -41,6 +42,7 @@ namespace Kraken
             EventManager.RemoveEventListener(EventNames.PlayerEnteredObjective, HandlePlayerEnteredObjective);
             EventManager.RemoveEventListener(EventNames.PlayerLeftObjective, HandlePlayerLeftZone);
             EventManager.RemoveEventListener(EventNames.EnterMenu, HandleEnterMenu);
+            EventManager.RemoveEventListener(EventNames.LeaveLobby, HandleLeaveLobby);
         }
 
         [PunRPC]
@@ -99,6 +101,11 @@ namespace Kraken
                 _playMenuMusic.Post(gameObject);
                 _state = MusicState.Menu;
             }
+        }
+
+        private void HandleLeaveLobby(BytesData data)
+        {
+            _state = MusicState.General;
         }
 
         [PunRPC]

@@ -34,7 +34,7 @@ namespace Kraken
         public const string StartGameTimer = "StartGameTimer";
         public const string LeaveGame = "LeaveGame";
         public const string EnterMenu = "EnterMenu";
-        public const string LeaveMenu = "EnterMenu";
+        public const string LeaveLobby = "LeaveLobby";
 
         // Objectives events
         public const string StartObjectives = "StartObjectives";
