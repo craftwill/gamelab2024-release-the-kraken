@@ -29,7 +29,7 @@ namespace Kraken
         [SerializeField] private MainMenuSoundComponent _soundComponent;
         private GameObject _controlledController;
         private int _currentControllerPositionIndex = 1;
-        private int[] controllerPositions = { -300, 0, 300 };
+        private int[] controllerPositions = { -150, 0, 150 };
         private bool _movementInput = false;
         private bool _requireTwoPlayers;
 

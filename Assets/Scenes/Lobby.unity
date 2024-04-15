@@ -3253,7 +3253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lobby
+  m_text: LOBBY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8bba4d6c1eab254a9a6c9eb56654043, type: 2}
   m_sharedMaterial: {fileID: -1441511622255555024, guid: e8bba4d6c1eab254a9a6c9eb56654043,
