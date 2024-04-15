@@ -148,6 +148,7 @@ MonoBehaviour:
   - RPC_All_StopAllMusic
   - RPC_ALL_PlayRoLAnim
   - RPC_ALL_PlayStarfallAnim
+  - RPC_All_DispatchReinforcementHint
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

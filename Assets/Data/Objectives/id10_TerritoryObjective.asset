@@ -15,5 +15,6 @@ MonoBehaviour:
   objectiveName: tied to id10miniboss
   objectiveTimer: 0
   objectiveType: 1
+  reinforcementText: REINFORCEMENT INCOMING!
   spawnFrequency: 10
   spawnData: {fileID: 11400000, guid: ae52b6ddd841e724aa2dc41bdb8f3f64, type: 2}

@@ -40,7 +40,6 @@ namespace Kraken
                 }            
             }
 
-            EventManager.Dispatch(EventNames.ShowReinforcementHintUI, new StringDataBytes("REINFORCEMENT INCOMING!"));
         }
     }
 }
