@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.20336476, g: 0.1450075, b: 0.21003988, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3628,6 +3628,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_ThinTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860994787912207547, guid: 14f336867f6a27847b000c33f94356d7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7933,6 +7938,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Desk (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 922b6ad81ec40204a8ba3bda5ee82f42,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9552,6 +9562,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_ThinTree (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860994787912207547, guid: 14f336867f6a27847b000c33f94356d7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16968,6 +16983,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Desk (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 922b6ad81ec40204a8ba3bda5ee82f42,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19424,6 +19444,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2232867589124821646, guid: 1a83592a07ab7e14a9c2bf484fb242d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1a83592a07ab7e14a9c2bf484fb242d8,
         type: 3}
@@ -25432,6 +25457,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Desk (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 922b6ad81ec40204a8ba3bda5ee82f42,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27206,7 +27236,7 @@ PrefabInstance:
     - target: {fileID: 30942287227299761, guid: 6b97e817a37669944b953c819f65b5d3,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 30942287227299761, guid: 6b97e817a37669944b953c819f65b5d3,
         type: 3}
@@ -29467,6 +29497,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748832568529893912, guid: 6b97e817a37669944b953c819f65b5d3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6748832568529893912, guid: 6b97e817a37669944b953c819f65b5d3,
         type: 3}
@@ -36066,6 +36101,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_SchoolFenceSmall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4831757309c41454d8fe5dcfa38d4db7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41837,6 +41877,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_SchoolFenceSmall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4831757309c41454d8fe5dcfa38d4db7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50539,6 +50584,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_CarnivalStand (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19cd5f7ecc0dd1244b2f194d986b46df,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -68237,6 +68287,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_CarnivalStand (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19cd5f7ecc0dd1244b2f194d986b46df,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -72606,6 +72661,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_CarnivalStand
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 19cd5f7ecc0dd1244b2f194d986b46df,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -78087,6 +78147,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_SchoolFenceSmall
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4831757309c41454d8fe5dcfa38d4db7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -85255,6 +85320,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_ThinTree (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860994787912207547, guid: 14f336867f6a27847b000c33f94356d7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -95546,6 +95616,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_SchoolFenceSmall (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4831757309c41454d8fe5dcfa38d4db7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -96156,6 +96231,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2232867589124821646, guid: 1a83592a07ab7e14a9c2bf484fb242d8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1a83592a07ab7e14a9c2bf484fb242d8,
         type: 3}
       propertyPath: m_Name
@@ -96364,6 +96444,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_SchoolFenceSmall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4831757309c41454d8fe5dcfa38d4db7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -97466,6 +97551,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Desk (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 922b6ad81ec40204a8ba3bda5ee82f42,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -102980,6 +103070,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_SchoolFenceSmall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4831757309c41454d8fe5dcfa38d4db7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -104895,6 +104990,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_ThinTree (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860994787912207547, guid: 14f336867f6a27847b000c33f94356d7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -110464,6 +110564,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Desk (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 922b6ad81ec40204a8ba3bda5ee82f42,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -111494,6 +111599,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Desk
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 922b6ad81ec40204a8ba3bda5ee82f42,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
