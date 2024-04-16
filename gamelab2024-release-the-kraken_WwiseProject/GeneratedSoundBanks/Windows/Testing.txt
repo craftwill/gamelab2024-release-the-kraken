@@ -16,6 +16,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1472712545	SFX_DUO_HABILETE_DOUBLETROUBLE_COMPLETE			\Default Work Unit\SFX_DUO_HABILETE_DOUBLETROUBLE_COMPLETE	
 	1477548770	SFX_ENNEMIS_MINIONS_RANGED_HURT			\Default Work Unit\SFX_ENNEMIS_MINIONS_RANGED_HURT	
 	1514878334	SFX_DAZZLE_MOUVEMENT_FOOTSTEPS_COURSE			\Default Work Unit\SFX_DAZZLE_MOUVEMENT_FOOTSTEPS_COURSE	
+	1520414494	SFX_DUO_HABILETE_HOWLING_BUILD			\Default Work Unit\SFX_DUO_HABILETE_HOWLING_BUILD	
 	1600746727	SFX_UI_OBJECTIFS_MINIBOSS_WARNING			\Default Work Unit\SFX_UI_OBJECTIFS_MINIBOSS_WARNING	
 	1616343810	MUSIQUE_MONDE_ENNEMIS_BOSS			\Default Work Unit\MUSIQUE_MONDE_ENNEMIS_BOSS	
 	1706943895	MUSIQUE_MONDE_BASE_COMBAT			\Default Work Unit\MUSIQUE_MONDE_BASE_COMBAT	
@@ -73,6 +74,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	248373617	Sheep_Hurt	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\sheep-122256_38A62F02.wem		\Actor-Mixer Hierarchy\Real Sounds\Sheep_Hurt		216988
 	268989260	DoubleTrouble_Trigger	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\MAGSpel_Anime Ability Release 3_73886B54.wem		\Actor-Mixer Hierarchy\Real Sounds\DoubleTrouble_Trigger		217892
 	274691248	Zone_Full	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\train whistle 1_818F3B66.wem		\Actor-Mixer Hierarchy\Real Sounds\Zone_Full		224656
+	330774828	Boss_Stars	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\MAGSpel_Anime Ability Release 6_5D59E6D9.wem		\Actor-Mixer Hierarchy\Real Sounds\Boss_Stars		158308
 	354254577	Razzle_Gather_Cast	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\lemon_tMqyvSF_E7A314BD.wem		\Actor-Mixer Hierarchy\Real Sounds\Razzle_Gather_Cast		95864
 	365072297	Wool_Collect	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\bounce on 1_1A8BF2DE.wem		\Actor-Mixer Hierarchy\Real Sounds\Wool_Collect		16810
 	375125388	Razzle_Attack_2	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\simple-zaps-48107_4544B5CC.wem		\Actor-Mixer Hierarchy\Real Sounds\Razzle_Attack_2		44912
@@ -89,7 +91,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	726315569	Win_2	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\Win_2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Win_2		83490
 	738646416	Dazzle_Attack_2	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\swoosh 9_4DFEEBD3.wem		\Actor-Mixer Hierarchy\Real Sounds\Dazzle_Attack_2		36488
 	774707277	Dazzle_Jump	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\FGHTMisc_Anime Throw 2_98B6C12D.wem		\Actor-Mixer Hierarchy\Real Sounds\Dazzle_Jump		68584
-	785435577	478278__joao_janz__8-bit-explosion-1_5	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\478278__joao_janz__8-bit-explosion-1_5_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\478278__joao_janz__8-bit-explosion-1_5		204096
 	814155486	Soundtrack_3_FIGHT	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\Soundtrack_3_FIGHT_D516612F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Final\Soundtrack_3_FIGHT		21217496
 	879523648	Soundtrack_1	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\Soundtrack_1_042FC3FE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\Final\Soundtrack_1		14514532
 	880892876	Razzle_Attack_1	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\woosh 25_818F3B66.wem		\Actor-Mixer Hierarchy\Real Sounds\Razzle_Attack_1		52050
@@ -98,6 +99,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	926136448	DoubleTrouble_Ready	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\MAGSpel_Anime Ability Ready 2_01FEC4AE.wem		\Actor-Mixer Hierarchy\Real Sounds\DoubleTrouble_Ready		152140
 	935668573	Button_1	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\Button_1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_1		10240
 	959119863	Miniboss_Warning	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\kazoo 9_818F3B66.wem		\Actor-Mixer Hierarchy\Real Sounds\Miniboss_Warning		201928
+	1014317934	Howling_Build	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\boxes knocked over 3_818F3B66.wem		\Actor-Mixer Hierarchy\Real Sounds\Howling_Build		87466
 	1039761743	DoubleTrouble_Complete	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\Glyph Activation Light 01_94A25A85.wem		\Actor-Mixer Hierarchy\Real Sounds\DoubleTrouble_Complete		288192
 	1043428434	Button	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\448086__breviceps__normal-click_818F3B66.wem		\Actor-Mixer Hierarchy\Real Sounds\Button		8596
 	1046494642	Minion_Hurt	E:\UnityProjects\Gamelab2024\gamelab2024-release-the-kraken\gamelab2024-release-the-kraken_WwiseProject\.cache\Windows\SFX\squeaky-toy-1-6059_818F3B66.wem		\Actor-Mixer Hierarchy\Real Sounds\Minion_Hurt		48480

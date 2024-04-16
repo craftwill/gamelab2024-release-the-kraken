@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{E7146AA6-E12A-F40A-306B-03B20DC221B8}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{0687DCF3-0DEC-8356-8D24-D97F050D4A38}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -76,6 +76,10 @@
 				<File Id="274691248" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>train whistle 1.wav</ShortName>
 					<CachePath>SFX/train whistle 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="330774828" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MAGSpel_Anime Ability Release 6.wav</ShortName>
+					<CachePath>SFX/MAGSpel_Anime Ability Release 6_5D59E6D9.wem</CachePath>
 				</File>
 				<File Id="354254577" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>lemon_tMqyvSF.wav</ShortName>
@@ -141,10 +145,6 @@
 					<ShortName>FGHTMisc_Anime Throw 2.wav</ShortName>
 					<CachePath>SFX/FGHTMisc_Anime Throw 2_98B6C12D.wem</CachePath>
 				</File>
-				<File Id="785435577" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>478278__joao_janz__8-bit-explosion-1_5.wav</ShortName>
-					<CachePath>SFX/478278__joao_janz__8-bit-explosion-1_5_818F3B66.wem</CachePath>
-				</File>
 				<File Id="814155486" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Soundtrack_3_FIGHT.wav</ShortName>
 					<CachePath>SFX/Soundtrack_3_FIGHT_D516612F.wem</CachePath>
@@ -176,6 +176,10 @@
 				<File Id="959119863" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>kazoo 9.wav</ShortName>
 					<CachePath>SFX/kazoo 9_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1014317934" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>boxes knocked over 3.wav</ShortName>
+					<CachePath>SFX/boxes knocked over 3_818F3B66.wem</CachePath>
 				</File>
 				<File Id="1039761743" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Glyph Activation Light 01.wav</ShortName>
@@ -299,6 +303,11 @@
 						<MediaRef Id="1039761743"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1520414494" Name="SFX_DUO_HABILETE_HOWLING_BUILD" DurationType="OneShot" DurationMin="0.91010416" DurationMax="0.91010416">
+					<MediaRefs>
+						<MediaRef Id="1014317934"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1223449757" Name="SFX_DUO_HABILETE_PATCHUP_PATCHING" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="148797908"/>
@@ -320,9 +329,9 @@
 						<MediaRef Id="723110272"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="606806114" Name="SFX_ENNEMIS_BOSS_STARFALL_STARS" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.0625" DurationMax="1.0625">
+				<Event Id="606806114" Name="SFX_ENNEMIS_BOSS_STARFALL_STARS" DurationType="OneShot" DurationMin="0.72275716" DurationMax="0.9531331">
 					<MediaRefs>
-						<MediaRef Id="785435577"/>
+						<MediaRef Id="330774828"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3654486948" Name="SFX_ENNEMIS_MINIBOSS_COMBAT_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.38196057" DurationMax="0.504">
@@ -463,5 +472,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{2A5B3813-94AB-26BC-4296-3EC9F14555F5}</FileHash>
+	<FileHash>{B0F92D6B-D5BF-F49C-835D-22339C219D7D}</FileHash>
 </SoundBanksInfo>

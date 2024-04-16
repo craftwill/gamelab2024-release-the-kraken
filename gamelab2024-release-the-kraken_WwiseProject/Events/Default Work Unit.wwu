@@ -427,7 +427,7 @@
 						<Action Name="" ID="{15B81768-C2D6-4DA2-AF93-2DCEF2953F7B}" ShortID="1054727454">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="478278__joao_janz__8-bit-explosion-1_5" ID="{E068510A-57AA-4692-9FAC-C2D05D0B9B7E}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Boss_Stars" ID="{05F81B3A-5A5F-4B71-803E-E8BC7CDB112D}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
