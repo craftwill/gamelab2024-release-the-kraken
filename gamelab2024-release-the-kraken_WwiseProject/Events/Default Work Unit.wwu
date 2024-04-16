@@ -328,7 +328,7 @@
 						<Action Name="" ID="{792714E7-A048-4BB2-88F7-36341376EF76}" ShortID="1052912077">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Razzle_Attack_3" ID="{FCD74CF6-09C2-495C-99AA-E533FC352FA7}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
+									<ObjectRef Name="Razzle_Attack_3" ID="{9CC8F22A-8F67-44A5-A46D-AC75AEE4C20D}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

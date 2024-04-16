@@ -29,14 +29,10 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{2CAC591A-C2DD-9063-536F-FD4C1D70B78F}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{E7146AA6-E12A-F40A-306B-03B20DC221B8}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
-				<File Id="33591119" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>556991__ycbcr__tabletop-clock-ticking-speed-ramp-down-followup.wav</ShortName>
-					<CachePath>SFX/556991__ycbcr__tabletop-clock-ticking-speed-ramp-down-followup_DFF0636B.wem</CachePath>
-				</File>
 				<File Id="120466864" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FGHTImpt_Anime Melee 4.wav</ShortName>
 					<CachePath>SFX/FGHTImpt_Anime Melee 4_AEF7984D.wem</CachePath>
@@ -81,10 +77,6 @@
 					<ShortName>train whistle 1.wav</ShortName>
 					<CachePath>SFX/train whistle 1_818F3B66.wem</CachePath>
 				</File>
-				<File Id="294773144" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>PUNCH_PERCUSSIVE_HEAVY_08.wav</ShortName>
-					<CachePath>SFX/PUNCH_PERCUSSIVE_HEAVY_08_818F3B66.wem</CachePath>
-				</File>
 				<File Id="354254577" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>lemon_tMqyvSF.wav</ShortName>
 					<CachePath>SFX/lemon_tMqyvSF_E7A314BD.wem</CachePath>
@@ -112,6 +104,10 @@
 				<File Id="532802689" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>triangle 1.wav</ShortName>
 					<CachePath>SFX/triangle 1_85F81882.wem</CachePath>
+				</File>
+				<File Id="549962265" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FGHTImpt_Anime Melee 6.wav</ShortName>
+					<CachePath>SFX/FGHTImpt_Anime Melee 6_776DEC4B.wem</CachePath>
 				</File>
 				<File Id="558663070" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>kazoo 1.wav</ShortName>
@@ -181,10 +177,6 @@
 					<ShortName>kazoo 9.wav</ShortName>
 					<CachePath>SFX/kazoo 9_818F3B66.wem</CachePath>
 				</File>
-				<File Id="1014317934" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>boxes knocked over 3.wav</ShortName>
-					<CachePath>SFX/boxes knocked over 3_818F3B66.wem</CachePath>
-				</File>
 				<File Id="1039761743" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Glyph Activation Light 01.wav</ShortName>
 					<CachePath>SFX/Glyph Activation Light 01_94A25A85.wem</CachePath>
@@ -237,7 +229,7 @@
 						<MediaRef Id="121810478"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3178286754" Name="Play_PlayerHurt" DurationType="OneShot" DurationMin="0.56877166" DurationMax="0.56877166">
+				<Event Id="3178286754" Name="Play_PlayerHurt" DurationType="OneShot" DurationMin="0.5635393" DurationMax="0.61489904">
 					<MediaRefs>
 						<MediaRef Id="682832007"/>
 					</MediaRefs>
@@ -267,7 +259,7 @@
 						<MediaRef Id="274691248"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="792726151" Name="SFX_DAZZLE_COMBAT_DEGATS_HURT" DurationType="OneShot" DurationMin="0.56877166" DurationMax="0.56877166">
+				<Event Id="792726151" Name="SFX_DAZZLE_COMBAT_DEGATS_HURT" DurationType="OneShot" DurationMin="0.5635393" DurationMax="0.61489904">
 					<MediaRefs>
 						<MediaRef Id="682832007"/>
 					</MediaRefs>
@@ -305,11 +297,6 @@
 				<Event Id="1472712545" Name="SFX_DUO_HABILETE_DOUBLETROUBLE_COMPLETE" DurationType="OneShot" DurationMin="1.9199026" DurationMax="1.9199026">
 					<MediaRefs>
 						<MediaRef Id="1039761743"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1520414494" Name="SFX_DUO_HABILETE_HOWLING_BUILD" DurationType="OneShot" DurationMin="0.91010416" DurationMax="0.91010416">
-					<MediaRefs>
-						<MediaRef Id="1014317934"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1223449757" Name="SFX_DUO_HABILETE_PATCHUP_PATCHING" DurationType="Infinite">
@@ -399,7 +386,7 @@
 						<MediaRef Id="365072297"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1316972749" Name="SFX_RAZZLE_COMBAT_DEGATS_HURT" DurationType="OneShot" DurationMin="0.56877166" DurationMax="0.56877166">
+				<Event Id="1316972749" Name="SFX_RAZZLE_COMBAT_DEGATS_HURT" DurationType="OneShot" DurationMin="0.5635393" DurationMax="0.61489904">
 					<MediaRefs>
 						<MediaRef Id="682832007"/>
 					</MediaRefs>
@@ -414,9 +401,9 @@
 						<MediaRef Id="375125388"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3203340634" Name="SFX_RAZZLE_HABILETE_COMBO_ATTAQUE3" DurationType="OneShot" DurationMin="0.31541297" DurationMax="0.31541297">
+				<Event Id="3203340634" Name="SFX_RAZZLE_HABILETE_COMBO_ATTAQUE3" DurationType="OneShot" DurationMin="0.4369798" DurationMax="0.4369798">
 					<MediaRefs>
-						<MediaRef Id="294773144"/>
+						<MediaRef Id="549962265"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3701084809" Name="SFX_RAZZLE_HABILETE_GATHERUP_CAST" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.5429044" DurationMax="0.5429044">
@@ -465,11 +452,6 @@
 						<MediaRef Id="959119863"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="744912080" Name="SFX_UI_OBJECTIFS_NUIT_WAKEUP" DurationType="OneShot" DurationMin="2.0311565" DurationMax="2.0311565">
-					<MediaRefs>
-						<MediaRef Id="33591119"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="1984403743" Name="SFX_UI_OBJECTIFS_REINFORCEMENTS_WARNING" DurationType="OneShot" DurationMin="1.1453785" DurationMax="1.1453785">
 					<MediaRefs>
 						<MediaRef Id="558663070"/>
@@ -481,5 +463,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{AC10C5E4-CAF3-CCF7-9176-20285C806165}</FileHash>
+	<FileHash>{6104738E-6868-4A9C-18B2-B59BF6780B63}</FileHash>
 </SoundBanksInfo>

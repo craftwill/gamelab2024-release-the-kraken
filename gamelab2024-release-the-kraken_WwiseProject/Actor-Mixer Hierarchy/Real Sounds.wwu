@@ -369,41 +369,6 @@
 						<ActiveSource Name="woosh 25" ID="{B87AA953-8B9D-4649-A440-B4D1F31AAA00}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Razzle_Attack_3" ID="{FCD74CF6-09C2-495C-99AA-E533FC352FA7}" ShortID="348798970">
-					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="1"/>
-						<Property Name="Pitch" Type="int32">
-							<ValueList>
-								<Value>-1010</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-2</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="PUNCH_PERCUSSIVE_HEAVY_08" ID="{8EC23A9D-A27E-4891-9E69-019209EA490E}">
-							<Language>SFX</Language>
-							<AudioFile>PUNCH_PERCUSSIVE_HEAVY_08.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="294773144"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="PUNCH_PERCUSSIVE_HEAVY_08" ID="{8EC23A9D-A27E-4891-9E69-019209EA490E}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
 				<Sound Name="Dazzle_Jump" ID="{068CD1A1-77A8-4556-B59A-85297DDC4D9E}" ShortID="746079142">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
@@ -1349,12 +1314,23 @@
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
 						<Property Name="Pitch" Type="int32">
 							<ValueList>
-								<Value>-100</Value>
+								<Value>-210</Value>
 							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{8022E801-45B5-43D0-A55E-156E049B8331}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="126"/>
+											<Property Name="Min" Type="Real64" Value="-25"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-5</Value>
+								<Value>-2</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -1377,6 +1353,37 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="punch clothes 3" ID="{5164E159-94AC-4226-A824-2788EC975AE3}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Razzle_Attack_3" ID="{9CC8F22A-8F67-44A5-A46D-AC75AEE4C20D}" ShortID="630780685">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="FGHTImpt_Anime Melee 6" ID="{10C1A2CE-18F5-43B8-8A02-B80B6A936969}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.0980975029726516"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="3.72770511296076"/>
+								<Property Name="TrimEnd" Type="Real64" Value="4.16468489892984"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>FGHTImpt_Anime Melee 6.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="549962265"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="FGHTImpt_Anime Melee 6" ID="{10C1A2CE-18F5-43B8-8A02-B80B6A936969}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>
