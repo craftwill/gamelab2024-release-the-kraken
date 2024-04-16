@@ -1892,6 +1892,9 @@
 						<Reference Name="Attenuation">
 							<Custom>
 								<Attenuation Name="Attenuation (Custom)" ID="{F8611F42-7B10-47A0-9498-FDC4CE3C8D64}" ShortID="126894824">
+									<PropertyList>
+										<Property Name="RadiusMax" Type="Real64" Value="50"/>
+									</PropertyList>
 									<CurveUsageInfoList>
 										<VolumeDryUsage>
 											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
@@ -1906,8 +1909,8 @@
 															<Flags>5</Flags>
 														</Point>
 														<Point>
-															<XPos>100</XPos>
-															<YPos>-10.53325</YPos>
+															<XPos>50</XPos>
+															<YPos>-200</YPos>
 															<Flags>37</Flags>
 														</Point>
 													</PointList>
@@ -2051,7 +2054,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-3</Value>
+								<Value>-9</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>

@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{DE5C2B77-65C3-6328-1D69-7747431E74DB}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{39C6571A-77A6-71B0-8988-6B952967327E}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -384,7 +384,7 @@
 						<MediaRef Id="1046494642"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3033443092" Name="SFX_OBJETS_PLACEABLE_TOUR_CHIENS" MaxAttenuation="100" DurationType="Infinite">
+				<Event Id="3033443092" Name="SFX_OBJETS_PLACEABLE_TOUR_CHIENS" MaxAttenuation="50" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="595269278"/>
 					</MediaRefs>
@@ -472,5 +472,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D1EFB1C9-7034-9538-8551-B7193C5030AB}</FileHash>
+	<FileHash>{B54C3F95-9360-7199-0308-BBA56414CC52}</FileHash>
 </SoundBanksInfo>
