@@ -76,6 +76,7 @@ namespace Kraken
         [PunRPC]
         public void RPC_All_GoToNextNight()
         {
+            AnimateManager.GetInstance().ClearAllAnimations();
             //night increment done through the victory screen
             PhotonNetwork.LoadLevel("Game");
         }

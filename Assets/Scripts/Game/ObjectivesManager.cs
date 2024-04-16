@@ -44,7 +44,7 @@ namespace Kraken
             _loadedObjectives.AddRange(_allSpawnObjectives.GetRange(0, Config.current.spawnObjectiveCount));
             _loadedObjectives.AddRange(_allMinibossObjectives.GetRange(0, Config.current.minibossObjectiveCount));
 
-            if(_loadedObjectives.Count > 0)
+            if(Config.current.spawnObjectiveCount > 0)
             {
                 do
                 {

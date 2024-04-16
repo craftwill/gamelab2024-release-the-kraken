@@ -53,6 +53,7 @@ namespace Kraken.UI
         {
             if (_onlyOnce)
             {
+                AnimateManager.GetInstance().ClearAllAnimations();
                 _onlyOnce = false;
                 if (!PhotonNetwork.IsMasterClient) return;
                 EventManager.Dispatch(EventNames.StopAllSounds, null);
