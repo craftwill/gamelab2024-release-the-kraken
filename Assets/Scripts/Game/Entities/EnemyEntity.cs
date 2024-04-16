@@ -24,6 +24,8 @@ namespace Kraken
         [SerializeField] private int _woolDropped = 1;
         [SerializeField] LayerMask _zoneOccupancyLayer;
 
+        private float _initialRigibodyDrag;
+
         protected override void Awake()
         {
             base.Awake();
@@ -33,6 +35,9 @@ namespace Kraken
                 _attackComponent.InitSettings(_config.damageDealt, _config.attackCooldown, _config.attackDuration, _config.lockedIntoAttackDuration, _config.rangedProjectile);
             _entityController.InitSettings(_config);
             _enemyZoneComponent.InitSettings(_config.zoneOccupancyCount);
+
+            // Store to restore later if enemy drag was changed trough an ability or script and enemy dies
+            _initialRigibodyDrag = GetComponent<Rigidbody>().drag;
         }
 
         protected virtual void Start()
@@ -104,6 +109,7 @@ namespace Kraken
                 GetComponent<NavMeshAgent>().enabled = false;
                 GetComponent<SphereCollider>().isTrigger = false;
                 Rigidbody rg = GetComponent<Rigidbody>();
+                rg.drag = _initialRigibodyDrag;
                 rg.isKinematic = false;
 
                 Vector3 closestPlayerPos = GetClosestPlayer().Item1.transform.position;
