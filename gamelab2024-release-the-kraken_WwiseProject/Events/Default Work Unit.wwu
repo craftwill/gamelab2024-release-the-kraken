@@ -41,7 +41,7 @@
 						<Action Name="" ID="{EFF6A7D7-1D41-4AFF-94D9-59EF571345AB}" ShortID="223434850">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="classic_hurt" ID="{61087652-9BE2-4C4B-8912-B68F26CD8378}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="RD_Hurt" ID="{EE115EA1-FE95-4637-8A32-5B80D42DE807}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
