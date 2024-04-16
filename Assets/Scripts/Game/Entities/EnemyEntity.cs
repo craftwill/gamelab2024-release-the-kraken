@@ -85,7 +85,6 @@ namespace Kraken
                 //remove colliders to not interfere with ontriggerexit
                 var colliders = GetComponentsInChildren<Collider>();
                 System.Array.ForEach(colliders, x => { if (((1 << x.gameObject.layer) & _zoneOccupancyLayer) != 0) x.enabled = false; });
-                photonView.RPC(nameof(RPC_All_SpawnWool), RpcTarget.All);
             }
         }
 
@@ -93,7 +92,13 @@ namespace Kraken
         [PunRPC]
         protected void RPC_All_Die() 
         {
-            if(_pathfindingEntityController is BasicEntityController)
+            //Spawn wool
+            for (int i = 0; i < _woolDropped; i++)
+            {
+                Instantiate(_woolPrefab, gameObject.transform.position, Quaternion.identity);
+            }
+
+            if (_pathfindingEntityController is BasicEntityController)
             {
                 GetComponent<PhotonTransformView>().enabled = false;
                 GetComponent<NavMeshAgent>().enabled = false;
@@ -142,15 +147,6 @@ namespace Kraken
         public Kraken.Game.HealthComponent GetHealthComponent()
         {
             return _healthComponent;
-        }
-
-        [PunRPC]
-        private void RPC_All_SpawnWool()
-        {
-            for (int i = 0; i < _woolDropped; i++)
-            {
-                Instantiate(_woolPrefab, gameObject.transform.position, Quaternion.identity);
-            }
         }
 
         public PathfindingEntityController GetController()
