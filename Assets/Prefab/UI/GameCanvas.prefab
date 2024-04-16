@@ -3221,6 +3221,23 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2097570763600934453}
     m_Modifications:
+    - target: {fileID: 5947331466651862650, guid: d7f6dae66949ef9469444cc6f70f1f4a,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2234494a67a7d7042adbc623db6fa94f,
+        type: 2}
+    - target: {fileID: 5947331466651862650, guid: d7f6dae66949ef9469444cc6f70f1f4a,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4467592220223873218, guid: 2234494a67a7d7042adbc623db6fa94f,
+        type: 2}
+    - target: {fileID: 5947331466651862650, guid: d7f6dae66949ef9469444cc6f70f1f4a,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6878818500012158894, guid: d7f6dae66949ef9469444cc6f70f1f4a,
         type: 3}
       propertyPath: m_Name

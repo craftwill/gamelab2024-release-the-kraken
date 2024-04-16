@@ -27,6 +27,8 @@ namespace Kraken
             if (photonView.AmOwner)
             {
                 _isOwner = true;
+                // Set above head canvas disabled if we are the local player
+                GetComponentInChildren<PlayerAboveHeadIconComponent>().gameObject.SetActive(false);
             }
 
             _playerAnimationComponent = (PlayerAnimationComponent) _entityAnimationComponent;
