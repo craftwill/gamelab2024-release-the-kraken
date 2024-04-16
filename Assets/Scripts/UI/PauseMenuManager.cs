@@ -15,6 +15,8 @@ namespace Kraken
         [SerializeField] private GameObject _pauseBaseMenu;
         [SerializeField] private GameObject _pauseSettingsMenu;
         [SerializeField] private Button _resumeButton;
+        [SerializeField] private ControllerLayout _controllerLayout;
+        [SerializeField] private ControllerLayout _keyboardLayout;
         [SerializeField] private PauseManager _pauseManager = null;
         private bool _paused = false;
 
@@ -30,6 +32,8 @@ namespace Kraken
         {
             _paused = !_paused;
             _pauseScreen.SetActive(_paused);
+            _keyboardLayout.gameObject.SetActive(false);
+            _controllerLayout.gameObject.SetActive(false);
             if (Config.current.hideGameCanvasOnPause)
             {
                 _gameCanvas.SetActive(!_paused);
@@ -55,6 +59,18 @@ namespace Kraken
         public void OnBtnResume()
         {
             EventManager.Dispatch(EventNames.TogglePause, null);
+        }
+
+        public void OnBtnControls()
+        {
+            void Back()
+            {
+                _pauseBaseMenu.SetActive(true);
+            }
+
+            _controllerLayout.gameObject.SetActive(true);
+            _controllerLayout.SetBackButton(Back);
+            _pauseBaseMenu.SetActive(false);
         }
 
         public void OnBtnSettings()
