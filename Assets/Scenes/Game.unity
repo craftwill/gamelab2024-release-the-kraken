@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.20336476, g: 0.1450075, b: 0.21003988, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -109538,7 +109538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnData: {fileID: 11400000, guid: 30f45879b29669d47a3b208cfd422a5e, type: 2}
-  spawnFrequency: 0.9
+  spawnFrequency: 1.1
   zoneSpawnRatio: 0.8
   _additionalSpawnpoints:
   - {fileID: 1699772189}
