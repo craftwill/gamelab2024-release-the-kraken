@@ -70,6 +70,13 @@ namespace Kraken
             EventManager.RemoveEventListener(EventNames.LeaveGame, HandleLeaveGame);
         }
 
+        public override void OnPlayerLeftRoom(Player otherPlayer)
+        {
+            base.OnPlayerLeftRoom(otherPlayer);
+            photonView.RPC(nameof(RPC_ALL_LeaveRoom), RpcTarget.All);
+
+        }
+
         private void HandleLeaveGame(BytesData data) 
         {
             photonView.RPC(nameof(RPC_ALL_LeaveRoom), RpcTarget.All);
