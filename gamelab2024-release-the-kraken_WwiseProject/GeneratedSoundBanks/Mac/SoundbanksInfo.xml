@@ -29,10 +29,14 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{1B1B1AB8-7FAC-99E0-D621-1B42A63F87E8}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{3DFF293D-353D-6E33-9614-9ADDF5EC9A19}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
+				<File Id="33591119" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>556991__ycbcr__tabletop-clock-ticking-speed-ramp-down-followup.wav</ShortName>
+					<CachePath>SFX/556991__ycbcr__tabletop-clock-ticking-speed-ramp-down-followup_DFF0636B.wem</CachePath>
+				</File>
 				<File Id="120466864" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FGHTImpt_Anime Melee 4.wav</ShortName>
 					<CachePath>SFX/FGHTImpt_Anime Melee 4_AEF7984D.wem</CachePath>
@@ -72,6 +76,10 @@
 				<File Id="268989260" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MAGSpel_Anime Ability Release 3.wav</ShortName>
 					<CachePath>SFX/MAGSpel_Anime Ability Release 3_73886B54.wem</CachePath>
+				</File>
+				<File Id="274691248" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>train whistle 1.wav</ShortName>
+					<CachePath>SFX/train whistle 1_818F3B66.wem</CachePath>
 				</File>
 				<File Id="294773144" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PUNCH_PERCUSSIVE_HEAVY_08.wav</ShortName>
@@ -176,6 +184,10 @@
 				<File Id="959119863" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>kazoo 9.wav</ShortName>
 					<CachePath>SFX/kazoo 9_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1014317934" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>boxes knocked over 3.wav</ShortName>
+					<CachePath>SFX/boxes knocked over 3_818F3B66.wem</CachePath>
 				</File>
 				<File Id="1039761743" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Glyph Activation Light 01.wav</ShortName>
@@ -301,6 +313,11 @@
 				<Event Id="1472712545" Name="SFX_DUO_HABILETE_DOUBLETROUBLE_COMPLETE" DurationType="OneShot" DurationMin="1.9199026" DurationMax="1.9199026">
 					<MediaRefs>
 						<MediaRef Id="1039761743"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1520414494" Name="SFX_DUO_HABILETE_HOWLING_BUILD" DurationType="OneShot" DurationMin="0.91010416" DurationMax="0.91010416">
+					<MediaRefs>
+						<MediaRef Id="1014317934"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1223449757" Name="SFX_DUO_HABILETE_PATCHUP_PATCHING" DurationType="Infinite">
@@ -456,6 +473,16 @@
 						<MediaRef Id="959119863"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="744912080" Name="SFX_UI_OBJECTIFS_NUIT_WAKEUP" DurationType="OneShot" DurationMin="2.0311565" DurationMax="2.0311565">
+					<MediaRefs>
+						<MediaRef Id="33591119"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="746122290" Name="SFX_UI_OBJECTIFS_REINFORCEMENTS_FULL" DurationType="OneShot" DurationMin="0.99493057" DurationMax="0.99493057">
+					<MediaRefs>
+						<MediaRef Id="274691248"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1984403743" Name="SFX_UI_OBJECTIFS_REINFORCEMENTS_WARNING" DurationType="OneShot" DurationMin="1.1453785" DurationMax="1.1453785">
 					<MediaRefs>
 						<MediaRef Id="558663070"/>
@@ -467,5 +494,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E8621351-3A82-AFEA-2274-4F0970678D7E}</FileHash>
+	<FileHash>{0E9F8005-3825-1F3F-25C9-7397591EA8EE}</FileHash>
 </SoundBanksInfo>

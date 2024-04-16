@@ -73,7 +73,7 @@ MonoBehaviour:
   _buildSound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 80b14958677391044be2a270018c68d8,
+    WwiseObjectReference: {fileID: 11400000, guid: 4740b24db5472324ba6864bd1d1e11e0,
       type: 2}
 --- !u!65 &6632122473513638767
 BoxCollider:
