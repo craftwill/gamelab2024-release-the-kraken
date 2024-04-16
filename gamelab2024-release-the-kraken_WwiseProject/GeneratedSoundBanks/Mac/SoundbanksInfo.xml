@@ -29,14 +29,10 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{3DFF293D-353D-6E33-9614-9ADDF5EC9A19}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{193BD9E5-5834-31F6-535F-1F8EC3465B0F}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
-				<File Id="33591119" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>556991__ycbcr__tabletop-clock-ticking-speed-ramp-down-followup.wav</ShortName>
-					<CachePath>SFX/556991__ycbcr__tabletop-clock-ticking-speed-ramp-down-followup_DFF0636B.wem</CachePath>
-				</File>
 				<File Id="120466864" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FGHTImpt_Anime Melee 4.wav</ShortName>
 					<CachePath>SFX/FGHTImpt_Anime Melee 4_AEF7984D.wem</CachePath>
@@ -76,10 +72,6 @@
 				<File Id="268989260" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MAGSpel_Anime Ability Release 3.wav</ShortName>
 					<CachePath>SFX/MAGSpel_Anime Ability Release 3_73886B54.wem</CachePath>
-				</File>
-				<File Id="274691248" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>train whistle 1.wav</ShortName>
-					<CachePath>SFX/train whistle 1_818F3B66.wem</CachePath>
 				</File>
 				<File Id="294773144" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PUNCH_PERCUSSIVE_HEAVY_08.wav</ShortName>
@@ -184,10 +176,6 @@
 				<File Id="959119863" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>kazoo 9.wav</ShortName>
 					<CachePath>SFX/kazoo 9_818F3B66.wem</CachePath>
-				</File>
-				<File Id="1014317934" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>boxes knocked over 3.wav</ShortName>
-					<CachePath>SFX/boxes knocked over 3_818F3B66.wem</CachePath>
 				</File>
 				<File Id="1039761743" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Glyph Activation Light 01.wav</ShortName>
@@ -315,11 +303,6 @@
 						<MediaRef Id="1039761743"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1520414494" Name="SFX_DUO_HABILETE_HOWLING_BUILD" DurationType="OneShot" DurationMin="0.91010416" DurationMax="0.91010416">
-					<MediaRefs>
-						<MediaRef Id="1014317934"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="1223449757" Name="SFX_DUO_HABILETE_PATCHUP_PATCHING" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="148797908"/>
@@ -331,7 +314,7 @@
 						<MediaRef Id="392899862"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="4198191833" Name="SFX_ENNEMIS_BOSS_COMBAT_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.504" DurationMax="0.504">
+				<Event Id="4198191833" Name="SFX_ENNEMIS_BOSS_COMBAT_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.38196057" DurationMax="0.504">
 					<MediaRefs>
 						<MediaRef Id="1046494642"/>
 					</MediaRefs>
@@ -346,7 +329,7 @@
 						<MediaRef Id="785435577"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3654486948" Name="SFX_ENNEMIS_MINIBOSS_COMBAT_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.504" DurationMax="0.504">
+				<Event Id="3654486948" Name="SFX_ENNEMIS_MINIBOSS_COMBAT_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.38196057" DurationMax="0.504">
 					<MediaRefs>
 						<MediaRef Id="1046494642"/>
 					</MediaRefs>
@@ -366,7 +349,7 @@
 						</Custom>
 					</PluginRefs>
 				</Event>
-				<Event Id="3060955767" Name="SFX_ENNEMIS_MINIONS_MELEE_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.504" DurationMax="0.504">
+				<Event Id="3060955767" Name="SFX_ENNEMIS_MINIONS_MELEE_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.38196057" DurationMax="0.504">
 					<MediaRefs>
 						<MediaRef Id="1046494642"/>
 					</MediaRefs>
@@ -376,7 +359,7 @@
 						<MediaRef Id="885078972"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1477548770" Name="SFX_ENNEMIS_MINIONS_RANGED_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.504" DurationMax="0.504">
+				<Event Id="1477548770" Name="SFX_ENNEMIS_MINIONS_RANGED_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.38196057" DurationMax="0.504">
 					<MediaRefs>
 						<MediaRef Id="1046494642"/>
 					</MediaRefs>
@@ -391,7 +374,7 @@
 						</Custom>
 					</PluginRefs>
 				</Event>
-				<Event Id="2758487669" Name="SFX_ENNEMIS_MINIONS_TANK_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.504" DurationMax="0.504">
+				<Event Id="2758487669" Name="SFX_ENNEMIS_MINIONS_TANK_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.38196057" DurationMax="0.504">
 					<MediaRefs>
 						<MediaRef Id="1046494642"/>
 					</MediaRefs>
@@ -453,7 +436,7 @@
 						<MediaRef Id="1043428434"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="77152589" Name="SFX_UI_GENERAL_BOUTONS_SLIDER" DurationType="OneShot" DurationMin="0.1661678" DurationMax="0.1661678">
+				<Event Id="77152589" Name="SFX_UI_GENERAL_BOUTONS_SLIDER" DurationType="OneShot" DurationMin="0.14803867" DurationMax="0.14803867">
 					<MediaRefs>
 						<MediaRef Id="532150868"/>
 					</MediaRefs>
@@ -473,16 +456,6 @@
 						<MediaRef Id="959119863"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="744912080" Name="SFX_UI_OBJECTIFS_NUIT_WAKEUP" DurationType="OneShot" DurationMin="2.0311565" DurationMax="2.0311565">
-					<MediaRefs>
-						<MediaRef Id="33591119"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="746122290" Name="SFX_UI_OBJECTIFS_REINFORCEMENTS_FULL" DurationType="OneShot" DurationMin="0.99493057" DurationMax="0.99493057">
-					<MediaRefs>
-						<MediaRef Id="274691248"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="1984403743" Name="SFX_UI_OBJECTIFS_REINFORCEMENTS_WARNING" DurationType="OneShot" DurationMin="1.1453785" DurationMax="1.1453785">
 					<MediaRefs>
 						<MediaRef Id="558663070"/>
@@ -494,5 +467,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{0E9F8005-3825-1F3F-25C9-7397591EA8EE}</FileHash>
+	<FileHash>{99ACF434-3AD3-2117-1A82-4AA088E4B108}</FileHash>
 </SoundBanksInfo>
