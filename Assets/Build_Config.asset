@@ -97,7 +97,7 @@ MonoBehaviour:
   maxWoolVerticalVelocity: 8
   maxWoolHorizontalVelocity: 3
   maxWoolAngularVelocity: 5
-  woolRagdollDuration: 2
+  woolRagdollDuration: 1
   woolAcceleration: 100
   woolDrag: 5
   initialWoolQuantity: 0
