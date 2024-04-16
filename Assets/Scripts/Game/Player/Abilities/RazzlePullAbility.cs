@@ -91,8 +91,12 @@ namespace Kraken
                 {
                     try
                     {
-                        enemy.GetComponent<Rigidbody>().drag = _initialEnemiesDrag; // Restore initial drag
-                        enemy.EnableControllerAndDisablePhysics();
+                        if (enemy == null) continue;
+                        if (enemy.GetHealthComponent().IsAlive)
+                        {
+                            enemy.GetComponent<Rigidbody>().drag = _initialEnemiesDrag; // Restore initial drag
+                            enemy.EnableControllerAndDisablePhysics();
+                        }
                     }
                     catch { }
                     
@@ -121,7 +125,7 @@ namespace Kraken
 
         private void PullEnemy(EnemyEntity enemy, float strengthMultiplier, ForceMode forceMode = ForceMode.Acceleration)
         {
-            if (enemy == null) return;
+            if (enemy == null || !enemy.GetHealthComponent().IsAlive) return;
 
             Rigidbody rg = enemy.GetComponent<Rigidbody>();
             Vector3 dirToCenter = -(enemy.transform.position - transform.position).normalized;
