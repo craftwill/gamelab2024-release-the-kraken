@@ -12,6 +12,7 @@ namespace Kraken
         [SerializeField] protected KrakenAnimationStateMachine _animStateMachine;
         [SerializeField] protected string _animatorPrefix = "";
         [SerializeField] protected string _animatorSuffix = "";
+        [SerializeField] private float _hurtAnimSpeed = 1f;
 
         private void Start()
         {
@@ -29,7 +30,7 @@ namespace Kraken
             var loopedName = _animStateMachine.GetCurrentLoopedState()?.ClipName;
             var playOnceName = _animStateMachine.GetCurrentPlayOnceState()?.ClipName;
             if (loopedName == "Idle" || playOnceName == "Idle" || loopedName == "Walk" || playOnceName == "Walk")
-                _animStateMachine.PlayAnimOnce(EntityAnimState.Hurt, _animatorPrefix, _animatorSuffix);
+                _animStateMachine.PlayAnimOnce(EntityAnimState.Hurt, _animatorPrefix, _animatorSuffix, "HurtAnimSpeed", _hurtAnimSpeed);
         }
 
         public bool SetLoopedStateIdle()
