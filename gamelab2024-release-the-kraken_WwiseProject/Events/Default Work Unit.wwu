@@ -8,7 +8,7 @@
 						<Action Name="" ID="{6DAF88DE-66CA-4A89-A86A-0B5475520CF8}" ShortID="316467153">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="fast-whoosh-118248" ID="{DB3A231B-C652-4875-BA65-E034E0348602}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Duo_Sprint" ID="{DB3A231B-C652-4875-BA65-E034E0348602}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -19,7 +19,7 @@
 						<Action Name="" ID="{709754B4-5599-4A52-B9F1-5DE630054905}" ShortID="221836452">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="pew-pew-lame-sound-effect" ID="{673A8F8D-340C-44F7-9403-FE0B38CA459A}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Ranged_Attack" ID="{5E904546-A59D-415A-A786-855FCF0EE0AB}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -30,7 +30,7 @@
 						<Action Name="" ID="{20C8A4C6-151A-42ED-8218-D6BA71BB047B}" ShortID="508309703">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="squeaky-toy-1-6059" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Minion_Hurt" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -52,7 +52,7 @@
 						<Action Name="" ID="{E88F93DC-1BCD-4C24-9A13-D5964F1A4768}" ShortID="822425631">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="ameno" ID="{7F91470D-B461-4944-A1C0-1BA261C1DB26}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="DoubleTrouble_Complete" ID="{82526806-0F21-4693-B669-65B33FD6F23F}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -63,7 +63,7 @@
 						<Action Name="" ID="{B2E70F3F-AC6E-43BA-8055-4B59A7B7B8BE}" ShortID="772930798">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="ultimateReady" ID="{0D7F5367-C109-4A6E-BED2-D99893D9FC41}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="DoubleTrouble_Ready" ID="{4E7C212C-44C9-441F-8EF7-6FADFD0BBE53}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -74,7 +74,7 @@
 						<Action Name="" ID="{538013E6-0335-44FB-A822-16335BC6711C}" ShortID="168608355">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="FFXIV Limit Break 3" ID="{68685F74-FC6F-4DF0-846E-99A873B605DB}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="DoubleTrouble_Trigger" ID="{8E93EAF2-74AA-4385-A375-4E8C29955DA5}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -96,7 +96,7 @@
 						<Action Name="" ID="{91215828-13DD-4E92-BF35-7E40E6D51C77}" ShortID="1029814130">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="y2mate_rQlfs1Y" ID="{F1371669-91B2-4EA1-9820-FDE53E67ED8F}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Player_Waiting" ID="{697D2107-5A7E-41FF-8F72-1378BEE5A896}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -107,7 +107,7 @@
 						<Action Name="" ID="{731820DC-E71E-4480-B2F1-F7C96B70F7B7}" ShortID="528663007">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="alarme-factorio" ID="{30CB82B9-35C3-4E7B-B157-EE03DE61B0A3}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Boss_Warning" ID="{280C504E-1DDD-49BF-9B2B-21E352DBFA9F}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -118,7 +118,7 @@
 						<Action Name="" ID="{B170046E-FE6F-4E7A-9225-ADE5132EDFB0}" ShortID="295691889">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="xphit" ID="{E3462DE1-23B6-43CF-9232-46F0E246269C}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Wool_Collect" ID="{F3673398-180C-4EFD-B04D-744C1861DF79}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -126,10 +126,10 @@
 				</Event>
 				<Event Name="SFX_DUO_HABILETE_PATCHUP_PATCHING" ID="{B3D3D271-8D71-4459-B081-2371F99348CF}">
 					<ChildrenList>
-						<Action Name="" ID="{BAD56919-23B3-47AD-9C6B-883FD97173AF}" ShortID="998813752">
+						<Action Name="" ID="{C1E5E00B-6542-47EF-9EDA-D3277914C034}" ShortID="273287586">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="healing-pokemon-sound" ID="{ECE4734B-9395-4040-8F2C-94F572E1F120}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="PatchingUp_Patching" ID="{876F8986-98CF-42C0-9B1A-E77635CEA961}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -154,7 +154,7 @@
 						<Action Name="" ID="{22CD4AED-790B-4CE5-AB05-FD1C2BB3A7BA}" ShortID="877826595">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Final Fantasy VII - Victory Fanfare [HD]" ID="{5C77530D-05A3-4935-A168-C5ADE0A167A3}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Soundtrack_3_FIGHT" ID="{E2769F9C-95D6-4D26-810C-81503AB87F7E}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -165,7 +165,7 @@
 						<Action Name="" ID="{FF120506-D7B4-4C66-8347-B96AAFA27FE8}" ShortID="862729223">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="dark-souls-you-died-sound-effect_hm5sYFG" ID="{4592589D-A9D7-4402-860B-9BB461D01FA8}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Menu-loading_option_2" ID="{9954DC82-3E50-44BC-A831-716B67D4BD39}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -251,7 +251,7 @@
 						<Action Name="" ID="{5F6746DB-1EE0-4B6B-870D-CFB98F9AB636}" ShortID="426024007">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="minecraft_hit_soundmp3converter" ID="{31CE80F5-485F-46DF-A2FE-26300FB1BAAF}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="RD_Hurt" ID="{EE115EA1-FE95-4637-8A32-5B80D42DE807}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -262,7 +262,7 @@
 						<Action Name="" ID="{7ECF9A78-67BF-4212-B41F-779B3A21230F}" ShortID="1038696862">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="classic_hurt" ID="{61087652-9BE2-4C4B-8912-B68F26CD8378}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="RD_Hurt" ID="{EE115EA1-FE95-4637-8A32-5B80D42DE807}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -273,7 +273,7 @@
 						<Action Name="" ID="{27AB826D-1688-4A6A-A437-63250C051CBD}" ShortID="33150009">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="sword-slash-1" ID="{FC523EFC-CE0D-4CDF-B6CC-E5985069DEEA}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Dazzle_Attack_1" ID="{15382EEE-A4F9-43BE-820B-1A67B8AF46C8}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -284,7 +284,7 @@
 						<Action Name="" ID="{EC925E19-29F2-4D07-8202-63E293D70108}" ShortID="259122339">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="sword-slash-2" ID="{A510D645-94E0-43E9-9A09-791BC925DEF8}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Dazzle_Attack_2" ID="{96F3AF31-301C-42FA-A07F-A2D1A16D5ABA}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -295,7 +295,7 @@
 						<Action Name="" ID="{465A0925-ABCD-4D61-B804-F5AE84FD4F3B}" ShortID="815004151">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="sword-slash-3" ID="{1A0E2482-0639-4B9A-ABE2-07B939E4B061}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Dazzle_Attack_3" ID="{060DE9D0-7002-4BFE-A24B-E745E1D172D9}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -306,7 +306,7 @@
 						<Action Name="" ID="{73069048-6C40-44B4-B092-AF1E5FA94349}" ShortID="446869716">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="sword-slash-1" ID="{FC523EFC-CE0D-4CDF-B6CC-E5985069DEEA}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Razzle_Attack_1" ID="{A2FD25F4-BEC8-4A85-92CC-462BBDBE4ACD}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -317,7 +317,7 @@
 						<Action Name="" ID="{B0E498BD-D743-4781-99E0-8DDA097EC4D6}" ShortID="360519257">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="sword-slash-2" ID="{A510D645-94E0-43E9-9A09-791BC925DEF8}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Razzle_Attack_2" ID="{1770B48A-1D57-4D28-884D-1E0FA92C10C5}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -328,7 +328,7 @@
 						<Action Name="" ID="{792714E7-A048-4BB2-88F7-36341376EF76}" ShortID="1052912077">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="sword-slash-3" ID="{1A0E2482-0639-4B9A-ABE2-07B939E4B061}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Razzle_Attack_3" ID="{FCD74CF6-09C2-495C-99AA-E533FC352FA7}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -339,7 +339,7 @@
 						<Action Name="" ID="{FA8DEF16-3E48-4FEE-AB12-026E23C05F95}" ShortID="656901748">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="footstep" ID="{CA794827-140C-4BCB-BCD4-BBE3F031EED3}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Dazzle_Footsteps" ID="{CA794827-140C-4BCB-BCD4-BBE3F031EED3}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -350,7 +350,7 @@
 						<Action Name="" ID="{F67AF7C4-8D4C-4F5D-93FE-B821E7411376}" ShortID="122731877">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="woosh" ID="{AFD306BE-4D97-4363-808D-8E76B05EDAAF}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Razzle_Footsteps" ID="{AFD306BE-4D97-4363-808D-8E76B05EDAAF}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -361,7 +361,7 @@
 						<Action Name="" ID="{963F8EBD-362F-4F7E-A9F6-B80294727191}" ShortID="342270301">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="squeaky-toy-1-6059" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Minion_Hurt" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -372,7 +372,7 @@
 						<Action Name="" ID="{4E98CCF6-6E80-4DBF-84EA-75ED709F39C7}" ShortID="785328441">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="squeaky-toy-1-6059" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Minion_Hurt" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -383,7 +383,7 @@
 						<Action Name="" ID="{D749D1AE-420F-44E8-B4C6-AAC460F3E34F}" ShortID="556374017">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="squeaky-toy-1-6059" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Minion_Hurt" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -394,7 +394,7 @@
 						<Action Name="" ID="{F085AD6C-257C-44EE-AF86-965F599DD938}" ShortID="378402606">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="squeaky-toy-1-6059" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Minion_Hurt" ID="{3AEC8694-863C-4000-ADD1-050EA3058237}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -405,7 +405,7 @@
 						<Action Name="" ID="{5E42AAE8-56D4-4F81-BB6A-A9BBCE97E09C}" ShortID="27471375">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="sheep-122256" ID="{937A648A-8F41-425D-8088-1FB5C04A8308}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Sheep_Hurt" ID="{937A648A-8F41-425D-8088-1FB5C04A8308}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -416,7 +416,7 @@
 						<Action Name="" ID="{375E5122-BB8C-4178-9E0A-BF4CDCE222D1}" ShortID="136953226">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="sheep-122256" ID="{937A648A-8F41-425D-8088-1FB5C04A8308}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Sheep_Hurt" ID="{937A648A-8F41-425D-8088-1FB5C04A8308}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -438,7 +438,7 @@
 						<Action Name="" ID="{69CF45BB-325E-49D1-9BCF-460E50ABBDD4}" ShortID="1010526035">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="hit-sound-effect-12445" ID="{828D207E-AB59-430A-A4C4-94D8D113E622}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Miniboss_Smash" ID="{828D207E-AB59-430A-A4C4-94D8D113E622}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -449,7 +449,7 @@
 						<Action Name="" ID="{C8477470-A7CD-4AA8-B9DB-B0F86FD5F0A4}" ShortID="787555923">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="hit-sound-effect-12445" ID="{828D207E-AB59-430A-A4C4-94D8D113E622}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Miniboss_Smash" ID="{828D207E-AB59-430A-A4C4-94D8D113E622}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -460,7 +460,7 @@
 						<Action Name="" ID="{E78F9081-9915-41DB-8A96-706729DBB5D8}" ShortID="57149468">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="cartoon-jump" ID="{C7D774A8-8E33-451F-8754-FFCA9F4AE767}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Dazzle_Jump" ID="{068CD1A1-77A8-4556-B59A-85297DDC4D9E}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -471,7 +471,7 @@
 						<Action Name="" ID="{81CECD01-4A7F-4073-8B9A-2EC878947FE1}" ShortID="199810364">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="crash_5mE1q2P" ID="{A0A0734C-FFAE-4621-9057-EE87EC8DD4FD}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Dazzle_Crash" ID="{3048AF18-9D79-46A3-9531-B776A5B8541D}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -482,7 +482,7 @@
 						<Action Name="" ID="{AA377CE7-07D4-4E04-9024-A895401818B8}" ShortID="261790569">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="lemon_tMqyvSF" ID="{F146B07A-A6F5-4EFA-8B04-883A30D97766}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Razzle_Gather_Cast" ID="{F146B07A-A6F5-4EFA-8B04-883A30D97766}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -490,10 +490,10 @@
 				</Event>
 				<Event Name="SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL" ID="{6332EC88-1A06-47DA-9B59-AE9D803382FA}">
 					<ChildrenList>
-						<Action Name="" ID="{8C9F4823-8BC0-4A37-9F06-FECA345DF67A}" ShortID="833089544">
+						<Action Name="" ID="{E2F1785C-EB0A-4031-AE12-86ED0855F944}" ShortID="645461410">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Nasa releases audio of what a black hole 'sounds' like shorts" ID="{D3C0E2D6-D4C1-4BB5-8C1A-BB3B4D8E8235}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Razzle_Gather" ID="{0F39EA17-ED4B-4DB4-BB03-56E922751CD1}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -507,7 +507,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Nasa releases audio of what a black hole 'sounds' like shorts" ID="{D3C0E2D6-D4C1-4BB5-8C1A-BB3B4D8E8235}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Razzle_Gather_Old" ID="{D3C0E2D6-D4C1-4BB5-8C1A-BB3B4D8E8235}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -529,7 +529,7 @@
 						<Action Name="" ID="{99326EDC-7599-48EA-A2C2-5935DA5B9CE1}" ShortID="1001537926">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="alarme-factorio" ID="{30CB82B9-35C3-4E7B-B157-EE03DE61B0A3}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Miniboss_Warning" ID="{0DF11EDD-98EF-4BE9-AE33-B5603FCBD3DE}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -540,7 +540,7 @@
 						<Action Name="" ID="{2397B167-7238-4666-89F0-C4A449DB032F}" ShortID="1069852453">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="alarme-factorio" ID="{30CB82B9-35C3-4E7B-B157-EE03DE61B0A3}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Objective_Warning" ID="{8423F25A-B25A-49A1-800C-051456FA13AE}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -562,7 +562,7 @@
 						<Action Name="" ID="{3D5825F0-91EF-45B8-9F92-C9A94374D82E}" ShortID="762792265">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Button_4" ID="{7FC61E2D-40D3-4460-8B0B-328013543F93}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Button" ID="{BCCB6AC6-2124-431C-AFBF-2A2CDA55820C}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -573,7 +573,7 @@
 						<Action Name="" ID="{8ACA67B4-BFD1-4020-86BF-5ED85F5A659C}" ShortID="177029001">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Button_1" ID="{1709F81D-3303-4D79-8156-A9E97A6005AA}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Slider" ID="{51724E4F-807E-49C7-99AC-901BBB799F2E}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -606,10 +606,54 @@
 				</Event>
 				<Event Name="SFX_OBJETS_PLACEABLE_TOUR_CHIENS" ID="{1203BC2C-4A28-4F8F-8FBE-39063E51A8D4}">
 					<ChildrenList>
-						<Action Name="" ID="{2EE6FCCF-75B0-4B7D-8C1D-36BB9AEA4600}" ShortID="1007667480">
+						<Action Name="" ID="{E8BDBB76-376C-4873-AAB2-78458D7CABD2}" ShortID="952102615">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="656117__itsthegoodstuff__dog-barking" ID="{37874417-DE0F-4D50-AFF8-4C11A16091C0}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Dog_Bark" ID="{A3527B15-DA59-4FC3-9CF3-AAD7053A14E4}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{FEF64C7C-272A-4FC8-84CD-D28A51B1454B}" ShortID="592321176">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="1.5">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{B892F98D-5EB1-44CA-BB5C-355B63D0B3CE}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="5"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Dog_Bark" ID="{A3527B15-DA59-4FC3-9CF3-AAD7053A14E4}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{EF2A6DAF-E15E-4657-9355-D317EA765342}" ShortID="1004168082">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="4">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{15645434-2D50-4FE9-959B-3C2D8BDFE8E3}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="8"/>
+													<Property Name="Min" Type="Real64" Value="-8"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Dog_Bark" ID="{A3527B15-DA59-4FC3-9CF3-AAD7053A14E4}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -624,6 +668,39 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="656117__itsthegoodstuff__dog-barking" ID="{37874417-DE0F-4D50-AFF8-4C11A16091C0}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_DUO_HABILETE_HOWLING_BUILD" ID="{38D2941D-67C9-4B46-A759-2A8D260BA980}">
+					<ChildrenList>
+						<Action Name="" ID="{3464E2DE-F4E6-461D-9E73-A646C0939267}" ShortID="853846043">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Howling_Build" ID="{BE9A0E0A-E425-4E86-A082-7F164EBC96CA}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_UI_OBJECTIFS_NUIT_WAKEUP" ID="{26B6E468-BBAD-498D-86F0-90B1983FA2A4}">
+					<ChildrenList>
+						<Action Name="" ID="{5FFEBE2D-1FC0-4373-BEC4-578F21A5FD72}" ShortID="731877275">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Night_WakeUp" ID="{EA942C24-E4D3-481A-AFE5-189634600BC2}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="SFX_UI_OBJECTIFS_REINFORCEMENTS_FULL" ID="{B86E56BE-85A9-4520-A1BF-D5D4286709D1}">
+					<ChildrenList>
+						<Action Name="" ID="{AAF12052-A039-44F9-99EB-94985BD26DE8}" ShortID="805441806">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Zone_Full" ID="{A00C0360-8540-44B2-B5EE-9FC070A3B297}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
