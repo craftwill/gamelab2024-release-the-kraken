@@ -599,6 +599,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4871313712549404074, guid: c767677ecb1762942a114712b6d1e354,
         type: 3}
+      propertyPath: _hurtAnimSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871313712549404074, guid: c767677ecb1762942a114712b6d1e354,
+        type: 3}
       propertyPath: _animatorPrefix
       value: Razzle
       objectReference: {fileID: 0}
