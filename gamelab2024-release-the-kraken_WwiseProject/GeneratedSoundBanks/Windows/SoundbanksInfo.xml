@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{193BD9E5-5834-31F6-535F-1F8EC3465B0F}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{575E2C5A-E3F1-E4FD-B936-EACBE6B7273F}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -73,6 +73,10 @@
 					<ShortName>MAGSpel_Anime Ability Release 3.wav</ShortName>
 					<CachePath>SFX/MAGSpel_Anime Ability Release 3_73886B54.wem</CachePath>
 				</File>
+				<File Id="274691248" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>train whistle 1.wav</ShortName>
+					<CachePath>SFX/train whistle 1_818F3B66.wem</CachePath>
+				</File>
 				<File Id="294773144" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PUNCH_PERCUSSIVE_HEAVY_08.wav</ShortName>
 					<CachePath>SFX/PUNCH_PERCUSSIVE_HEAVY_08_818F3B66.wem</CachePath>
@@ -112,10 +116,6 @@
 				<File Id="595269278" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>440866__v23__angry-big-dog-barking-close-d15.wav</ShortName>
 					<CachePath>SFX/440866__v23__angry-big-dog-barking-close-d15_FBC78EF0.wem</CachePath>
-				</File>
-				<File Id="624797327" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>tindeck_1.wav</ShortName>
-					<CachePath>SFX/tindeck_1_818F3B66.wem</CachePath>
 				</File>
 				<File Id="627948373" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>footstep.wav</ShortName>
@@ -258,9 +258,9 @@
 						<MediaRef Id="814155486"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3233615227" Name="Play_ZoneFullCapacity" DurationType="OneShot" DurationMin="1.5673469" DurationMax="1.5673469">
+				<Event Id="3233615227" Name="Play_ZoneFullCapacity" DurationType="OneShot" DurationMin="0.99493057" DurationMax="0.99493057">
 					<MediaRefs>
-						<MediaRef Id="624797327"/>
+						<MediaRef Id="274691248"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="792726151" Name="SFX_DAZZLE_COMBAT_DEGATS_HURT" DurationType="OneShot" DurationMin="0.56877166" DurationMax="0.56877166">
@@ -339,7 +339,7 @@
 						<MediaRef Id="723110272"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1774571785" Name="SFX_ENNEMIS_MINIONS_MELEE_ATTAQUE" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.2295567" DurationMax="1.4621975">
+				<Event Id="1774571785" Name="SFX_ENNEMIS_MINIONS_MELEE_ATTAQUE" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.4370779" DurationMax="1.5428933">
 					<MediaRefs>
 						<MediaRef Id="248373617"/>
 					</MediaRefs>
@@ -364,7 +364,7 @@
 						<MediaRef Id="1046494642"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3172406615" Name="SFX_ENNEMIS_MINIONS_TANK_ATTAQUE" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.2295567" DurationMax="1.4621975">
+				<Event Id="3172406615" Name="SFX_ENNEMIS_MINIONS_TANK_ATTAQUE" MaxAttenuation="100" DurationType="OneShot" DurationMin="1.4370779" DurationMax="1.5428933">
 					<MediaRefs>
 						<MediaRef Id="248373617"/>
 					</MediaRefs>
@@ -415,7 +415,7 @@
 						<MediaRef Id="354254577"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="149926274" Name="SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL" DurationType="OneShot" DurationMin="3.5139582" DurationMax="3.5139582">
+				<Event Id="149926274" Name="SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL" DurationType="OneShot" DurationMin="2.6630824" DurationMax="2.6630824">
 					<MediaRefs>
 						<MediaRef Id="165152256"/>
 					</MediaRefs>
@@ -467,5 +467,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8FBC3683-5E60-2274-D9D7-3EEFEE95BA5C}</FileHash>
+	<FileHash>{CFCDEC56-D3B8-0A89-44DA-4FBC42B9D266}</FileHash>
 </SoundBanksInfo>

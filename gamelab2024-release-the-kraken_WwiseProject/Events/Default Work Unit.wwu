@@ -85,7 +85,7 @@
 						<Action Name="" ID="{4BBECF1D-0142-4768-8699-7D45C5C3BC9C}" ShortID="316386636">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="tindeck_1" ID="{AB2A271F-3162-4050-B3E5-4F5B3A493D83}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Zone_Full" ID="{A00C0360-8540-44B2-B5EE-9FC070A3B297}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -143,7 +143,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="healing-pokemon-sound" ID="{ECE4734B-9395-4040-8F2C-94F572E1F120}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="PatchingUp_Patching" ID="{876F8986-98CF-42C0-9B1A-E77635CEA961}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -507,7 +507,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Razzle_Gather_Old" ID="{D3C0E2D6-D4C1-4BB5-8C1A-BB3B4D8E8235}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Razzle_Gather" ID="{0F39EA17-ED4B-4DB4-BB03-56E922751CD1}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -667,7 +667,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="656117__itsthegoodstuff__dog-barking" ID="{37874417-DE0F-4D50-AFF8-4C11A16091C0}" WorkUnitID="{62C53424-8509-41BB-9D02-91D1A9256F3B}"/>
+									<ObjectRef Name="Dog_Bark" ID="{A3527B15-DA59-4FC3-9CF3-AAD7053A14E4}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -690,17 +690,6 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Night_WakeUp" ID="{EA942C24-E4D3-481A-AFE5-189634600BC2}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="SFX_UI_OBJECTIFS_REINFORCEMENTS_FULL" ID="{B86E56BE-85A9-4520-A1BF-D5D4286709D1}">
-					<ChildrenList>
-						<Action Name="" ID="{AAF12052-A039-44F9-99EB-94985BD26DE8}" ShortID="805441806">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Zone_Full" ID="{A00C0360-8540-44B2-B5EE-9FC070A3B297}" WorkUnitID="{EBE54333-3600-4C8C-B7A8-B3E4190CC19F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

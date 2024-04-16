@@ -237,6 +237,16 @@
 				<Sound Name="Razzle_Gather" ID="{0F39EA17-ED4B-4DB4-BB03-56E922751CD1}" ShortID="813861093">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>480</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -757,12 +767,15 @@
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
 						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-270</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{7BF293A2-25F5-4D99-A55C-C7F9508A1DC7}">
 										<PropertyList>
 											<Property Name="Enabled" Type="bool" Value="True"/>
-											<Property Name="Min" Type="Real64" Value="-300"/>
+											<Property Name="Min" Type="Real64" Value="-123"/>
 										</PropertyList>
 									</Modifier>
 								</ModifierInfo>
@@ -770,7 +783,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-10</Value>
+								<Value>-11</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -1333,6 +1346,7 @@
 				</Sound>
 				<Sound Name="RD_Hurt" ID="{EE115EA1-FE95-4637-8A32-5B80D42DE807}" ShortID="126507965">
 					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
 						<Property Name="Pitch" Type="int32">
 							<ValueList>
 								<Value>-100</Value>
@@ -1349,7 +1363,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{394372F9-33F5-4F5D-B855-45374C3D955D}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
+							<ObjectRef Name="Sounds" ID="{EBF758D0-A299-4E09-B2BD-565E96F4CA17}" WorkUnitID="{BA51EE9D-F01F-4AEC-A1CC-6863A3673E3D}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
