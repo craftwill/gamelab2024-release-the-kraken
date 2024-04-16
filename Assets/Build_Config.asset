@@ -98,12 +98,13 @@ MonoBehaviour:
   maxWoolHorizontalVelocity: 3
   maxWoolAngularVelocity: 5
   woolRagdollDuration: 2
-  woolAcceleration: 75
+  woolAcceleration: 100
   woolDrag: 5
   initialWoolQuantity: 0
   maxWoolQuantity: 50
   hideGameCanvasOnPause: 0
   timeLeftUIProgressShowWarningTreshold: 0.6
+  uiScale: 1
   useObjectiveMusic: 1
   permanentSpawningScaling: 0.6
   objectiveSpawningScaling: 1
