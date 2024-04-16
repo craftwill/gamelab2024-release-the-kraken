@@ -55,6 +55,7 @@ namespace Kraken.UI
             {
                 _onlyOnce = false;
                 if (!PhotonNetwork.IsMasterClient) return;
+                EventManager.Dispatch(EventNames.StopAllSounds, null);
                 PhotonNetwork.LoadLevel("Lobby");
             }
         }

@@ -31,6 +31,7 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.PlayerLeftObjective, HandlePlayerLeftZone);
             EventManager.AddEventListener(EventNames.EnterMenu, HandleEnterMenu);
             EventManager.AddEventListener(EventNames.LeaveLobby, HandleLeaveLobby);
+            EventManager.AddEventListener(EventNames.StopAllSounds, HandleStopAllSounds);
         }
 
         private void OnDestroy()
@@ -43,6 +44,7 @@ namespace Kraken
             EventManager.RemoveEventListener(EventNames.PlayerLeftObjective, HandlePlayerLeftZone);
             EventManager.RemoveEventListener(EventNames.EnterMenu, HandleEnterMenu);
             EventManager.RemoveEventListener(EventNames.LeaveLobby, HandleLeaveLobby);
+            EventManager.RemoveEventListener(EventNames.StopAllSounds, HandleStopAllSounds);
         }
 
         [PunRPC]
@@ -106,6 +108,11 @@ namespace Kraken
         private void HandleLeaveLobby(BytesData data)
         {
             _state = MusicState.General;
+        }
+
+        private void HandleStopAllSounds(BytesData data)
+        {
+            AkSoundEngine.StopAll();
         }
 
         [PunRPC]
