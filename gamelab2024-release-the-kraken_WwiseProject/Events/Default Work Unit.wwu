@@ -695,6 +695,42 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Enviro" ID="{7EBBB6D7-80F3-45FA-8EFA-9F370E051279}">
+					<ChildrenList>
+						<Action Name="" ID="{063ECC51-DCC0-40E5-BBC0-006BB359EA53}" ShortID="482620411">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Enviro" ID="{D17E4044-F838-45E5-BAEA-3B47DAF5BF09}" WorkUnitID="{D8EBF1D0-CA2A-44EE-AF15-10677CD25F5F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MUSIQUE_MONDE_JEU" ID="{2FF752C2-0A38-47B7-9C57-AB53B4AB4F18}">
+					<ChildrenList>
+						<Action Name="" ID="{F9B9FDD7-7135-4032-A9A5-AD7AE8DC6667}" ShortID="461392497">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Enviro" ID="{D17E4044-F838-45E5-BAEA-3B47DAF5BF09}" WorkUnitID="{D8EBF1D0-CA2A-44EE-AF15-10677CD25F5F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MUSIQUE_MONDE_JEU_STOP" ID="{1C66DB92-3D83-4357-88D5-4487A72AA410}">
+					<ChildrenList>
+						<Action Name="" ID="{2BE0B8AC-BD4A-4E8F-9FCA-AD124CF5DB47}" ShortID="86972838">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Enviro" ID="{D17E4044-F838-45E5-BAEA-3B47DAF5BF09}" WorkUnitID="{D8EBF1D0-CA2A-44EE-AF15-10677CD25F5F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

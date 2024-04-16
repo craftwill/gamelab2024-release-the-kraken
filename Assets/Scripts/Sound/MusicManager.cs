@@ -9,14 +9,12 @@ namespace Kraken
     public class MusicManager : MonoBehaviourPun
     {
         enum MusicState { Menu, General, Objective, Boss};
-        [SerializeField] private AK.Wwise.Event _playGeneralMusic;
-        [SerializeField] private AK.Wwise.Event _stopGeneralMusic;
         [SerializeField] private AK.Wwise.Event _playBossMusic;
         [SerializeField] private AK.Wwise.Event _stopBossMusic;
-        [SerializeField] private AK.Wwise.Event _playObjectiveMusic;
-        [SerializeField] private AK.Wwise.Event _stopObjectiveMusic;
         [SerializeField] private AK.Wwise.Event _playMenuMusic;
         [SerializeField] private AK.Wwise.Event _stopMenuMusic;
+        [SerializeField] private AK.Wwise.Event _playGameMusic;
+        [SerializeField] private AK.Wwise.Event _stopGameMusic;
         private MusicState _state = MusicState.General;
         private bool _inGame = false;
         private int _playersInZone = 0;
@@ -50,15 +48,15 @@ namespace Kraken
         [PunRPC]
         public void RPC_All_StopAllMusic()
         {
-            RPC_All_StopGeneralMusic();
-            RPC_All_StopObjectiveMusic();
             RPC_All_StopBossMusic();
+            RPC_All_StopGameMusic();
         }
 
         private void HandleStartGameflow(BytesData data)
         {
             _stopMenuMusic.Post(gameObject);
-            photonView.RPC(nameof(RPC_All_PlayGeneralMusic), RpcTarget.All);
+            photonView.RPC(nameof(RPC_All_PlayGameMusic), RpcTarget.All);
+            AkSoundEngine.SetState("Events", "Base");
             _state = MusicState.General;
             _inGame = true;
         }
@@ -80,18 +78,17 @@ namespace Kraken
         {
             _playersInZone++;
             if (_state == MusicState.Boss || _state == MusicState.Objective || !Config.current.useObjectiveMusic || !_inGame) return;
-            photonView.RPC(nameof(RPC_All_StopAllMusic), RpcTarget.All);
-            photonView.RPC(nameof(RPC_All_PlayObjectiveMusic), RpcTarget.All);
+            AkSoundEngine.SetState("Events", "Objective");
             _state = MusicState.Objective;
         }
 
         private void HandlePlayerLeftZone(BytesData data)
         {
+            Debug.Log(_state);
             _playersInZone = Mathf.Clamp(_playersInZone - 1, 0, _playersInZone);
             if (_state == MusicState.Boss || _state == MusicState.General || !Config.current.useObjectiveMusic || !_inGame) return;
             if (_playersInZone > 0) return;
-            photonView.RPC(nameof(RPC_All_StopAllMusic), RpcTarget.All);
-            photonView.RPC(nameof(RPC_All_PlayGeneralMusic), RpcTarget.All);
+            AkSoundEngine.SetState("Events", "Base");
             _state = MusicState.General;
         }
 
@@ -122,30 +119,6 @@ namespace Kraken
         }
 
         [PunRPC]
-        private void RPC_All_PlayGeneralMusic()
-        {
-            _playGeneralMusic.Post(gameObject);
-        }
-
-        [PunRPC]
-        private void RPC_All_StopGeneralMusic()
-        {
-            _stopGeneralMusic.Post(gameObject);
-        }
-
-        [PunRPC]
-        private void RPC_All_PlayObjectiveMusic()
-        {
-            _playObjectiveMusic.Post(gameObject);
-        }
-
-        [PunRPC]
-        private void RPC_All_StopObjectiveMusic()
-        {
-            _stopObjectiveMusic.Post(gameObject);
-        }
-
-        [PunRPC]
         private void RPC_All_PlayBossMusic()
         {
             _playBossMusic.Post(gameObject);
@@ -155,6 +128,18 @@ namespace Kraken
         private void RPC_All_StopBossMusic()
         {
             _stopBossMusic.Post(gameObject);
+        }
+
+        [PunRPC]
+        private void RPC_All_PlayGameMusic()
+        {
+            _playGameMusic.Post(gameObject);
+        }
+
+        [PunRPC]
+        private void RPC_All_StopGameMusic()
+        {
+            _stopGameMusic.Post(gameObject);
         }
     }
 
