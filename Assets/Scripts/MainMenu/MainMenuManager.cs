@@ -22,6 +22,7 @@ namespace Together
 
         [SerializeField] private TMP_InputField _inputFieldRoomCode;
         [SerializeField] private GameObject _settingsScreen;
+        [SerializeField] private ControllerLayout _controllerLayout;
 
         private void Awake()
         {
@@ -96,6 +97,7 @@ namespace Together
 
             isHosting = true;
             EventManager.Dispatch(EventNames.CreateRoom, null);
+            
         }
 
         public void Btn_OnJoinGame()
@@ -105,6 +107,18 @@ namespace Together
             
             isJoining = true;
             EventManager.Dispatch(EventNames.JoinRoomWithCode, new StringDataBytes(_inputFieldRoomCode.text.ToUpper()));
+        }
+
+        public void Btn_OnControls()
+        {
+            void Back()
+            {
+                gameObject.SetActive(true);
+            }
+
+            _controllerLayout.gameObject.SetActive(true);
+            _controllerLayout.SetBackButton(Back);
+            gameObject.SetActive(false);
         }
 
         public void Btn_OnSettings()
