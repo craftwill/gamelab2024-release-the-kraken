@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c75bd90d2002764cbcde38269546abc, type: 3}
+  m_Name: 38D2941D-67C9-4B46-A759-2A8D260BA980
+  m_EditorClassIdentifier: 
+  objectName: SFX_DUO_HABILETE_HOWLING_BUILD
+  id: 1520414494
+  guid: 38D2941D-67C9-4B46-A759-2A8D260BA980
