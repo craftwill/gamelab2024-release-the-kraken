@@ -29,7 +29,7 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{0687DCF3-0DEC-8356-8D24-D97F050D4A38}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{DE5C2B77-65C3-6328-1D69-7747431E74DB}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -233,7 +233,7 @@
 						<MediaRef Id="121810478"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3178286754" Name="Play_PlayerHurt" DurationType="OneShot" DurationMin="0.5635393" DurationMax="0.61489904">
+				<Event Id="3178286754" Name="Play_PlayerHurt" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.5635393" DurationMax="0.61489904">
 					<MediaRefs>
 						<MediaRef Id="682832007"/>
 					</MediaRefs>
@@ -263,32 +263,32 @@
 						<MediaRef Id="274691248"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="792726151" Name="SFX_DAZZLE_COMBAT_DEGATS_HURT" DurationType="OneShot" DurationMin="0.5635393" DurationMax="0.61489904">
+				<Event Id="792726151" Name="SFX_DAZZLE_COMBAT_DEGATS_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.5635393" DurationMax="0.61489904">
 					<MediaRefs>
 						<MediaRef Id="682832007"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3519417346" Name="SFX_DAZZLE_HABILETE_COMBO_ATTAQUE1" DurationType="OneShot" DurationMin="0.33899862" DurationMax="0.33899862">
+				<Event Id="3519417346" Name="SFX_DAZZLE_HABILETE_COMBO_ATTAQUE1" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.33899862" DurationMax="0.33899862">
 					<MediaRefs>
 						<MediaRef Id="193271097"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3519417345" Name="SFX_DAZZLE_HABILETE_COMBO_ATTAQUE2" DurationType="OneShot" DurationMin="0.33192426" DurationMax="0.33192426">
+				<Event Id="3519417345" Name="SFX_DAZZLE_HABILETE_COMBO_ATTAQUE2" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.33192426" DurationMax="0.33192426">
 					<MediaRefs>
 						<MediaRef Id="738646416"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3519417344" Name="SFX_DAZZLE_HABILETE_COMBO_ATTAQUE3" DurationType="OneShot" DurationMin="0.44589773" DurationMax="0.44589773">
+				<Event Id="3519417344" Name="SFX_DAZZLE_HABILETE_COMBO_ATTAQUE3" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.44589773" DurationMax="0.44589773">
 					<MediaRefs>
 						<MediaRef Id="120466864"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3931952720" Name="SFX_DAZZLE_HABILETE_SURPRISE_CRASH" DurationType="OneShot" DurationMin="0.6279649" DurationMax="0.6279649">
+				<Event Id="3931952720" Name="SFX_DAZZLE_HABILETE_SURPRISE_CRASH" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.6279649" DurationMax="0.6279649">
 					<MediaRefs>
 						<MediaRef Id="161441567"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2464567367" Name="SFX_DAZZLE_HABILETE_SURPRISE_JUMP" DurationType="OneShot" DurationMin="0.31234017" DurationMax="0.31234017">
+				<Event Id="2464567367" Name="SFX_DAZZLE_HABILETE_SURPRISE_JUMP" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.31234017" DurationMax="0.31234017">
 					<MediaRefs>
 						<MediaRef Id="774707277"/>
 					</MediaRefs>
@@ -303,12 +303,12 @@
 						<MediaRef Id="1039761743"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1520414494" Name="SFX_DUO_HABILETE_HOWLING_BUILD" DurationType="OneShot" DurationMin="0.91010416" DurationMax="0.91010416">
+				<Event Id="1520414494" Name="SFX_DUO_HABILETE_HOWLING_BUILD" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.91010416" DurationMax="0.91010416">
 					<MediaRefs>
 						<MediaRef Id="1014317934"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1223449757" Name="SFX_DUO_HABILETE_PATCHUP_PATCHING" DurationType="Infinite">
+				<Event Id="1223449757" Name="SFX_DUO_HABILETE_PATCHUP_PATCHING" MaxAttenuation="100" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="148797908"/>
 					</MediaRefs>
@@ -329,7 +329,7 @@
 						<MediaRef Id="723110272"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="606806114" Name="SFX_ENNEMIS_BOSS_STARFALL_STARS" DurationType="OneShot" DurationMin="0.72275716" DurationMax="0.9531331">
+				<Event Id="606806114" Name="SFX_ENNEMIS_BOSS_STARFALL_STARS" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.72275716" DurationMax="0.9531331">
 					<MediaRefs>
 						<MediaRef Id="330774828"/>
 					</MediaRefs>
@@ -384,33 +384,33 @@
 						<MediaRef Id="1046494642"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3033443092" Name="SFX_OBJETS_PLACEABLE_TOUR_CHIENS" DurationType="Infinite">
+				<Event Id="3033443092" Name="SFX_OBJETS_PLACEABLE_TOUR_CHIENS" MaxAttenuation="100" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="595269278"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3204927251" Name="SFX_OBJETS_PLACEABLE_TOUR_CHIENS_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="2523551556" Name="SFX_OBJETS_RESSOURCES_WOOL_COLLECT" DurationType="OneShot" DurationMin="0.19319108" DurationMax="0.19319108">
+				<Event Id="2523551556" Name="SFX_OBJETS_RESSOURCES_WOOL_COLLECT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.19319108" DurationMax="0.19319108">
 					<MediaRefs>
 						<MediaRef Id="365072297"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1316972749" Name="SFX_RAZZLE_COMBAT_DEGATS_HURT" DurationType="OneShot" DurationMin="0.5635393" DurationMax="0.61489904">
+				<Event Id="1316972749" Name="SFX_RAZZLE_COMBAT_DEGATS_HURT" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.5635393" DurationMax="0.61489904">
 					<MediaRefs>
 						<MediaRef Id="682832007"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3203340632" Name="SFX_RAZZLE_HABILETE_COMBO_ATTAQUE1" DurationType="OneShot" DurationMin="0.5411875" DurationMax="0.5411875">
+				<Event Id="3203340632" Name="SFX_RAZZLE_HABILETE_COMBO_ATTAQUE1" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.5411875" DurationMax="0.5411875">
 					<MediaRefs>
 						<MediaRef Id="880892876"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3203340635" Name="SFX_RAZZLE_HABILETE_COMBO_ATTAQUE2" DurationType="OneShot" DurationMin="0.4668054" DurationMax="0.4668054">
+				<Event Id="3203340635" Name="SFX_RAZZLE_HABILETE_COMBO_ATTAQUE2" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.4668054" DurationMax="0.4668054">
 					<MediaRefs>
 						<MediaRef Id="375125388"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3203340634" Name="SFX_RAZZLE_HABILETE_COMBO_ATTAQUE3" DurationType="OneShot" DurationMin="0.4369798" DurationMax="0.4369798">
+				<Event Id="3203340634" Name="SFX_RAZZLE_HABILETE_COMBO_ATTAQUE3" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.4369798" DurationMax="0.4369798">
 					<MediaRefs>
 						<MediaRef Id="549962265"/>
 					</MediaRefs>
@@ -420,7 +420,7 @@
 						<MediaRef Id="354254577"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="149926274" Name="SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL" DurationType="OneShot" DurationMin="2.6630824" DurationMax="2.6630824">
+				<Event Id="149926274" Name="SFX_RAZZLE_HABILETE_GATHERUP_WHIRLPOOL" MaxAttenuation="100" DurationType="OneShot" DurationMin="2.6630824" DurationMax="2.6630824">
 					<MediaRefs>
 						<MediaRef Id="165152256"/>
 					</MediaRefs>
@@ -472,5 +472,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9AE064B6-F23F-0D02-97FA-9825D255791D}</FileHash>
+	<FileHash>{D1EFB1C9-7034-9538-8551-B7193C5030AB}</FileHash>
 </SoundBanksInfo>
