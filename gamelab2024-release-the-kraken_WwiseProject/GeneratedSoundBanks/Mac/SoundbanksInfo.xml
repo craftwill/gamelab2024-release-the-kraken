@@ -29,10 +29,14 @@
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{575E2C5A-E3F1-E4FD-B936-EACBE6B7273F}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{2CAC591A-C2DD-9063-536F-FD4C1D70B78F}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
+				<File Id="33591119" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>556991__ycbcr__tabletop-clock-ticking-speed-ramp-down-followup.wav</ShortName>
+					<CachePath>SFX/556991__ycbcr__tabletop-clock-ticking-speed-ramp-down-followup_DFF0636B.wem</CachePath>
+				</File>
 				<File Id="120466864" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FGHTImpt_Anime Melee 4.wav</ShortName>
 					<CachePath>SFX/FGHTImpt_Anime Melee 4_AEF7984D.wem</CachePath>
@@ -177,13 +181,13 @@
 					<ShortName>kazoo 9.wav</ShortName>
 					<CachePath>SFX/kazoo 9_818F3B66.wem</CachePath>
 				</File>
+				<File Id="1014317934" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>boxes knocked over 3.wav</ShortName>
+					<CachePath>SFX/boxes knocked over 3_818F3B66.wem</CachePath>
+				</File>
 				<File Id="1039761743" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Glyph Activation Light 01.wav</ShortName>
 					<CachePath>SFX/Glyph Activation Light 01_94A25A85.wem</CachePath>
-				</File>
-				<File Id="1042314046" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>classic_hurt.wav</ShortName>
-					<CachePath>SFX/classic_hurt_818F3B66.wem</CachePath>
 				</File>
 				<File Id="1043428434" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>448086__breviceps__normal-click.wav</ShortName>
@@ -233,9 +237,9 @@
 						<MediaRef Id="121810478"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3178286754" Name="Play_PlayerHurt" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.3451883" DurationMax="0.3874608">
+				<Event Id="3178286754" Name="Play_PlayerHurt" DurationType="OneShot" DurationMin="0.56877166" DurationMax="0.56877166">
 					<MediaRefs>
-						<MediaRef Id="1042314046"/>
+						<MediaRef Id="682832007"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="984790419" Name="Play_UltimateNotice" DurationType="OneShot" DurationMin="1.1348026" DurationMax="1.1348026">
@@ -301,6 +305,11 @@
 				<Event Id="1472712545" Name="SFX_DUO_HABILETE_DOUBLETROUBLE_COMPLETE" DurationType="OneShot" DurationMin="1.9199026" DurationMax="1.9199026">
 					<MediaRefs>
 						<MediaRef Id="1039761743"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1520414494" Name="SFX_DUO_HABILETE_HOWLING_BUILD" DurationType="OneShot" DurationMin="0.91010416" DurationMax="0.91010416">
+					<MediaRefs>
+						<MediaRef Id="1014317934"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1223449757" Name="SFX_DUO_HABILETE_PATCHUP_PATCHING" DurationType="Infinite">
@@ -456,6 +465,11 @@
 						<MediaRef Id="959119863"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="744912080" Name="SFX_UI_OBJECTIFS_NUIT_WAKEUP" DurationType="OneShot" DurationMin="2.0311565" DurationMax="2.0311565">
+					<MediaRefs>
+						<MediaRef Id="33591119"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1984403743" Name="SFX_UI_OBJECTIFS_REINFORCEMENTS_WARNING" DurationType="OneShot" DurationMin="1.1453785" DurationMax="1.1453785">
 					<MediaRefs>
 						<MediaRef Id="558663070"/>
@@ -467,5 +481,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{55E87B2E-2A64-011B-2BAC-4F7DA80E9540}</FileHash>
+	<FileHash>{3AA7225C-D7AF-E3D8-6160-2957DB77821F}</FileHash>
 </SoundBanksInfo>
