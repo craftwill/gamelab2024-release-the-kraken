@@ -1,12 +1,11 @@
-using Bytes;
-using Kraken.Game;
-using Photon.Pun;
-using Photon.Realtime;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.AI;
+
+using Photon.Pun;
+using Bytes;
 
 namespace Kraken
 {
@@ -25,6 +24,8 @@ namespace Kraken
         private static bool _otherPlayerWaiting = false;
         private bool _playersSeparated = false;
         private bool _canBeEnded = true;
+        private bool _isCloseEnoughToCast;
+        private bool _wasCloseEnoughToCast;
         private static bool _ultimateAvailable = false;
         private static int _woolQuantity = 0;
         private static int _minWoolQuantity = 0;
@@ -58,7 +59,16 @@ namespace Kraken
         private void Update()
         {
             if (!photonView.IsMine) return;
-            if (_state == UltimateState.InUltimate)
+            if (_state == UltimateState.WaitingForUltimate && !_otherPlayerWaiting)
+            {
+                _isCloseEnoughToCast = GetDistanceBetweenPlayers() < Config.current.ultimateStartMaxDistance;
+                if (_wasCloseEnoughToCast != _isCloseEnoughToCast)
+                {
+                    EventManager.Dispatch(EventNames.UpdatePressControlToUltUI, new BoolDataBytes(_isCloseEnoughToCast));
+                }
+                _wasCloseEnoughToCast = _isCloseEnoughToCast;
+            }
+            else if (_state == UltimateState.InUltimate)
             {
                 //Calculate distance traveled
                 Vector3 distanceVec = transform.position - _previousPosition;
@@ -106,13 +116,13 @@ namespace Kraken
             if (!_ultimateAvailable) return;
 
             _state = input ? UltimateState.WaitingForUltimate : UltimateState.NotInUltimate;
-            if ((_otherPlayerWaiting || !Config.current.requireTwoPlayersForUltimate) && input && GetDistanceBetweenPlayers() < Config.current.ultimateStartMaxDistance)
+            if ((_otherPlayerWaiting || !Config.current.requireTwoPlayersForUltimate) && input && _isCloseEnoughToCast)
             {
                 photonView.RPC(nameof(RPC_All_StartDrawing), RpcTarget.All);
             }
             else if (input)
             {
-                photonView.RPC(nameof(RPC_Others_WaitingForUltimate), RpcTarget.Others, input); ;
+                photonView.RPC(nameof(RPC_Others_WaitingForUltimate), RpcTarget.Others, input);
             }
         }
 
@@ -131,6 +141,8 @@ namespace Kraken
                 _inputTimerCoroutine = null;
             }
             _inputTimerCoroutine = StartCoroutine(UltimateTriggerTimer());
+            // Show other player is waiting for you in HUD
+            EventManager.Dispatch(EventNames.UpdateUltimateUIIndicator, new BoolDataBytes(true));
         }
 
         private IEnumerator UltimateTriggerTimer()
@@ -152,6 +164,10 @@ namespace Kraken
         public void RPC_All_StartDrawing()
         {
             EventManager.Dispatch(EventNames.UltimateRunning, new BoolDataBytes(true));
+            // Hide other player is waiting for you in HUD
+            EventManager.Dispatch(EventNames.UpdateUltimateUIIndicator, new BoolDataBytes(false));
+            // Hide press control to cast ult
+            EventManager.Dispatch(EventNames.UpdatePressControlToUltUI, new BoolDataBytes(false));
             _soundComponent.PlayUltimateTriggeredSound();
         }
 
