@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Kraken
 {
@@ -13,6 +14,7 @@ namespace Kraken
         [SerializeField] private GameObject _gameCanvas;
         [SerializeField] private GameObject _pauseBaseMenu;
         [SerializeField] private GameObject _pauseSettingsMenu;
+        [SerializeField] private Button _resumeButton;
         [SerializeField] private PauseManager _pauseManager = null;
         private bool _paused = false;
 
@@ -34,6 +36,18 @@ namespace Kraken
             }
             Cursor.lockState = _paused ? CursorLockMode.None : CursorLockMode.Locked;
             Cursor.visible = _paused;
+            _pauseBaseMenu.SetActive(true);
+            _pauseSettingsMenu.SetActive(false);
+            if (_paused)
+                _resumeButton.Select();
+        }
+
+        //when the game ends
+        public void UnPause()
+        {
+            _paused = true;
+            _pauseScreen.SetActive(false);
+            GameManager.ToggleCursor(true);
             _pauseBaseMenu.SetActive(true);
             _pauseSettingsMenu.SetActive(false);
         }

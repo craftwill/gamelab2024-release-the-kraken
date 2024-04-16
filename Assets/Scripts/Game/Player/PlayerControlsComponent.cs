@@ -76,6 +76,7 @@ namespace Kraken
                     _freeLookCam.m_XAxis.m_MaxSpeed = Config.current.cameraSensitivity;
                     _freeLookCam.m_YAxis.m_MaxSpeed = Config.current.cameraSensitivity * Config.current.yCameraSensitivityMultiplier; ;
                 }
+                _freeLookCam.m_XAxis.Value = Config.current.initialCameraAngle;
                 _freeLookCam.m_XAxis.m_InvertInput = Config.current.invertXAxis;
                 _freeLookCam.m_YAxis.m_InvertInput = Config.current.invertYAxis;
                 _freeLookCam.m_Lens.FieldOfView = Config.current.baseFov;

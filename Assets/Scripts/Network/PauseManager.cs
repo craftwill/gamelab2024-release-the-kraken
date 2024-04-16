@@ -15,17 +15,26 @@ namespace Kraken
         {
             PhotonNetwork.MinimalTimeScaleToDispatchInFixedUpdate = 0;
             EventManager.AddEventListener(EventNames.TogglePause, TogglePause);
+            EventManager.AddEventListener(EventNames.StopGameFlow, DisablePause);
         }
 
         private void OnDestroy()
         {
             EventManager.RemoveEventListener(EventNames.TogglePause, TogglePause);
+            EventManager.RemoveEventListener(EventNames.StopGameFlow, DisablePause);
         }
 
         private void TogglePause(BytesData data)
         {
             Paused = !Paused;
             _pauseMenuManager.OnTogglePause();
+        }
+
+        private void DisablePause(BytesData data)
+        {
+            EventManager.RemoveEventListener(EventNames.TogglePause, TogglePause);
+            _pauseMenuManager.UnPause();
+            Paused = false;
         }
 
         public void QuitToMainMenu()

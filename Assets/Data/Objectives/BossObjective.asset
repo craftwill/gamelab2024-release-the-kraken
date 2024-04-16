@@ -15,5 +15,6 @@ MonoBehaviour:
   objectiveName: The final boss spawned in the CENTER zone!
   objectiveTimer: -1
   objectiveType: 2
+  reinforcementText: THE QUEEN IS HERE!
   bossPrefab: {fileID: 7708995712779942215, guid: 6f7a9bd6f58aead4b8cacc9f5f345a70,
     type: 3}

@@ -15,6 +15,7 @@ MonoBehaviour:
   objectiveName: A strong foe spawned in the NORTH zone!
   objectiveTimer: 30
   objectiveType: 1
+  reinforcementText: REINFORCEMENT INCOMING!
   minibossPrefab: {fileID: 7282374055492276171, guid: 691daec9c7545fd4e983b7f43bb3a5b4,
     type: 3}
   territory: {fileID: 11400000, guid: 4363a71699020e24cb6335c1ae93c0f1, type: 2}

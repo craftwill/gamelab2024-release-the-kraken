@@ -9,18 +9,21 @@ namespace Kraken
     public class SettingsManager : MonoBehaviour
     {
         [SerializeField] private GameObject _previousMenu;
+        [SerializeField] private Button _btnBack;
         [SerializeField] private Toggle _toggleFullscreen;
         [SerializeField] private Toggle _toggleInvertYAxis;
         [SerializeField] private Toggle _toggleInvertXAxis;
         [SerializeField] private Slider _sliderSensitivity;
         [SerializeField] private Slider _sliderMusic;
         [SerializeField] private Slider _sliderSounds;
+        [SerializeField] private Slider _sliderUIScale;
         private string _fullscreenKey = Config.DISPLAY_FULLSCREEN;
         private string _invertYAxisKey = Config.CAMERA_INVERT_Y_AXIS;
         private string _invertXAxisKey = Config.CAMERA_INVERT_X_AXIS;
         private string _sensitivityKey = Config.CAMERA_SENSITIVITY;
         private string _musicKey = Config.VOLUME_MUSIC;
         private string _soundsKey = Config.VOLUME_SOUNDS;
+        private string _UIScaleKey = Config.UI_SCALE;
 
         private void Awake()
         {
@@ -37,6 +40,12 @@ namespace Kraken
             {
                 _sliderSounds.value = PlayerPrefs.GetFloat(Config.VOLUME_SOUNDS);
             }
+            _sliderUIScale.value = Config.current.uiScale;
+        }
+
+        private void OnEnable()
+        {
+            _btnBack.Select();
         }
 
         public void OnFullscreenChange()
@@ -76,6 +85,14 @@ namespace Kraken
         {
             PlayerPrefs.SetFloat(_soundsKey, _sliderSounds.value);
             AkSoundEngine.SetRTPCValue(_soundsKey, PlayerPrefs.GetFloat(Config.VOLUME_SOUNDS));
+        }
+
+        public void OnUIScaleChange()
+        {
+            PlayerPrefs.SetFloat(_UIScaleKey, _sliderUIScale.value);
+            Config.current.uiScale = _sliderUIScale.value;
+            EventManager.Dispatch(EventNames.UpdateUIScale, new FloatDataBytes(_sliderUIScale.value));
+
         }
 
         public void BtnBack()

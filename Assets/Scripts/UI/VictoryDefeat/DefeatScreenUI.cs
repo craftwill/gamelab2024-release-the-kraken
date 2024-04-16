@@ -11,13 +11,13 @@ namespace Kraken.UI
         [SerializeField] private GameObject _playerLost;
         [SerializeField] private GameObject _timeLost;
         [SerializeField] Button _startOverButton;
+        [SerializeField] Button _backToMenuButton;
         private void Start()
         {
             EventManager.AddEventListener(EventNames.ShowDefeatScreenUI, HandleShowScreenUI);
             EventManager.AddEventListener(EventNames.ShowDefeatByZoneUI, HandleShowDefeatByZoneUI);
             EventManager.AddEventListener(EventNames.ShowDefeatByPlayerUI, HandleShowDefeatByPlayerUI);
             EventManager.AddEventListener(EventNames.ShowDefeatTimeLeftUI, HandleShowDefeatTimeLeftUI);
-            _startOverButton.interactable = PhotonNetwork.IsMasterClient;
         }
 
         private void OnDestroy()
@@ -51,8 +51,26 @@ namespace Kraken.UI
 
         public virtual void Btn_Restart()
         {
-            if (!PhotonNetwork.IsMasterClient) return;
-            PhotonNetwork.LoadLevel("Lobby");
+            if (_onlyOnce)
+            {
+                _onlyOnce = false;
+                if (!PhotonNetwork.IsMasterClient) return;
+                PhotonNetwork.LoadLevel("Lobby");
+            }
+        }
+
+        public override void SetVisible(bool isVisible)
+        {
+            base.SetVisible(isVisible);
+            if (PhotonNetwork.IsMasterClient)
+            {
+                _startOverButton.Select();
+            }   
+            else
+            {
+                _startOverButton.gameObject.SetActive(false);
+                _backToMenuButton.Select();
+            }
         }
     }
 }

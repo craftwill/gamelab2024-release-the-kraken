@@ -12,6 +12,9 @@ namespace Kraken.UI
         [SerializeField] protected Transform _maxScoreObject;
         [SerializeField] protected Transform _currentScoreObject;
         [SerializeField] protected GameObject[] _spritesPrefab;
+
+        //can't afford a button registering twice
+        protected bool _onlyOnce = true;
         protected virtual void HandleShowScreenUI(BytesData data)
         {
             GameManager.ToggleCursor(true);
@@ -48,7 +51,11 @@ namespace Kraken.UI
 
         public virtual void Btn_BackToTitle()
         {
-            EventManager.Dispatch(EventNames.LeaveGame, null);
+            if (_onlyOnce)
+            {
+                _onlyOnce = false;
+                EventManager.Dispatch(EventNames.LeaveGame, null);
+            }
         }
     }
 }

@@ -22,11 +22,13 @@ namespace Kraken
         public bool randomizeObjectives = true;
         public int spawnObjectiveCount = 3;
         public int minibossObjectiveCount = 2;
+        public bool firstObectiveIsSpawn = true;
         [Tooltip("Maximum time the game can last in seconds")]
         public int gameDuration = 600;
 
         [Header("Player settings")]
         public int maxHealth = 100;
+        public float initialCameraAngle = 0f;
         [Header("Razzle")]
         public float razzleAbilityCooldown = 10f;
         public float razzleAbilityPullDuration = 5f;
@@ -35,6 +37,7 @@ namespace Kraken
         public float razzleAbilityPullStrengthOverTime = 1.5f;
         public float razzleAbilitySpawnDistanceOffset = 5f;
         public Vector3 razzleSpawnPoint = Vector3.zero;
+        public Vector3 razzleSpawnRotation = Vector3.zero;
         [Header("Dazzle")]
         public float dazzleAbilityCooldown = 10f;
         public float dazzleAbilityJumpDuration = 0.27f;
@@ -43,6 +46,7 @@ namespace Kraken
         public float dazzleAbilityDamage = 5f;
         public float dazzleAbilityRadius = 3f;
         public Vector3 dazzleSpawnPoint = Vector3.zero;
+        public Vector3 dazzleSpawnRotation = Vector3.zero;
 
         [Header("Enemy settings")]
         public float enemyMinRoamDistance = 4f;
@@ -129,6 +133,7 @@ namespace Kraken
         [Header("UI Settings")]
         public bool hideGameCanvasOnPause = false;
         public float timeLeftUIProgressShowWarningTreshold = 0.6f;
+        public float uiScale = 1f;
 
         [Header("Music Settings")]
         public bool useObjectiveMusic = true;

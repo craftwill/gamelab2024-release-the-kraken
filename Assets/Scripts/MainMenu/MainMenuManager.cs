@@ -50,6 +50,10 @@ namespace Together
             {
                 AkSoundEngine.SetRTPCValue(Config.VOLUME_SOUNDS, PlayerPrefs.GetFloat(Config.VOLUME_SOUNDS));
             }
+            if (PlayerPrefs.HasKey(Config.UI_SCALE))
+            {
+                Config.current.uiScale = PlayerPrefs.GetFloat(Config.UI_SCALE);
+            }
         }
 
         private void Start()

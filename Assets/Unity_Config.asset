@@ -23,8 +23,8 @@ MonoBehaviour:
   spawnObjectiveCount: 3
   minibossObjectiveCount: 2
   gameDuration: 240
-  timeLeftSound: 60
   maxHealth: 250
+  initialCameraAngle: 180
   razzleAbilityCooldown: 4
   razzleAbilityPullDuration: 3.5
   razzleAbilityRadius: 12
@@ -32,6 +32,7 @@ MonoBehaviour:
   razzleAbilityPullStrengthOverTime: 12
   razzleAbilitySpawnDistanceOffset: 10
   razzleSpawnPoint: {x: 75.75, y: -30.9, z: 68}
+  razzleSpawnRotation: {x: 0, y: 180, z: 0}
   dazzleAbilityCooldown: 4
   dazzleAbilityJumpDuration: 0.2
   dazzleAbilityJumpDistance: 8
@@ -39,6 +40,7 @@ MonoBehaviour:
   dazzleAbilityDamage: 4
   dazzleAbilityRadius: 4
   dazzleSpawnPoint: {x: 77.75, y: -30.9, z: 68}
+  dazzleSpawnRotation: {x: 0, y: 180, z: 0}
   enemyMinRoamDistance: 4
   enemyMaxRoamDistance: 10
   enemyRoamMinChangeFrequency: 2
@@ -96,12 +98,13 @@ MonoBehaviour:
   maxWoolHorizontalVelocity: 3
   maxWoolAngularVelocity: 5
   woolRagdollDuration: 2
-  woolAcceleration: 75
+  woolAcceleration: 100
   woolDrag: 5
   initialWoolQuantity: 0
   maxWoolQuantity: 50
   hideGameCanvasOnPause: 0
   timeLeftUIProgressShowWarningTreshold: 0.6
+  uiScale: 1
   useObjectiveMusic: 1
   permanentSpawningScaling: 0.6
   objectiveSpawningScaling: 1

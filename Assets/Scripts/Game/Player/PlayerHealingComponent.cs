@@ -55,6 +55,7 @@ namespace Kraken
                 {
                     _isHealing = false;
                     photonView.RPC(nameof(RPC_ALL_HealAnimAndVFX), RpcTarget.All, false);
+                    EventManager.Dispatch(EventNames.UpdatePatchingUpUI, new BoolDataBytes(false));
                 }
             }
         }
@@ -71,7 +72,6 @@ namespace Kraken
 
         public void OnHealingInput(bool pressed)
         {
-
             if (pressed)
             {
                 if (GetDistanceBetweenPlayers() <= Config.current.healingMaxDistance && _componentToHeal.Health < _componentToHeal.MaxHealth && _lilWoolManager._woolQuantity > 0)
@@ -80,12 +80,14 @@ namespace Kraken
                     photonView.RPC(nameof(RPC_ALL_HealAnimAndVFX), RpcTarget.All, true);
 
                     StartCoroutine(HealCoroutine());
+                    EventManager.Dispatch(EventNames.UpdatePatchingUpUI, new BoolDataBytes(true));
                 }
             }
             else
             {
                 _isHealing = false;
                 photonView.RPC(nameof(RPC_ALL_HealAnimAndVFX), RpcTarget.All, false);
+                EventManager.Dispatch(EventNames.UpdatePatchingUpUI, new BoolDataBytes(false));
             }
         }
 
@@ -101,6 +103,7 @@ namespace Kraken
                     if (_lilWoolManager._woolQuantity == 0)
                     {
                         _isHealing = false;
+                        EventManager.Dispatch(EventNames.UpdatePatchingUpUI, new BoolDataBytes(false));
                     }
                     photonView.RPC(nameof(RPC_Master_UseWool), RpcTarget.MasterClient);
                 }

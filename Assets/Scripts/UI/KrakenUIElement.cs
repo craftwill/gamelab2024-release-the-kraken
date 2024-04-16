@@ -9,6 +9,7 @@ namespace Kraken.UI
         [SerializeField] private bool _startsVisible = true;
         [SerializeField] private bool _interactableWhenVisible = true;
         [SerializeField] private float _visibleAlpha = 1f;
+        protected bool _isVisible = false;
 
         private CanvasGroup _canvasGroup;
 
@@ -23,11 +24,17 @@ namespace Kraken.UI
             SetVisible(_startsVisible);
         }
 
-        public void SetVisible(bool isVisible)
+        public virtual void SetVisible(bool isVisible)
         {
+            _isVisible = isVisible;
             _canvasGroup.alpha = isVisible ? _visibleAlpha : 0;
             _canvasGroup.interactable = _interactableWhenVisible && isVisible;
             _canvasGroup.blocksRaycasts = _interactableWhenVisible && isVisible;
+        }
+
+        public bool GetIsVisible() 
+        {
+            return _isVisible;
         }
     }
 }
