@@ -59,7 +59,7 @@ namespace Kraken
         private void Update()
         {
             if (!photonView.IsMine) return;
-            if (_state == UltimateState.WaitingForUltimate && !_otherPlayerWaiting)
+            if (_state == UltimateState.WaitingForUltimate && _otherPlayerWaiting)
             {
                 _isCloseEnoughToCast = GetDistanceBetweenPlayers() < Config.current.ultimateStartMaxDistance;
                 if (_wasCloseEnoughToCast != _isCloseEnoughToCast)

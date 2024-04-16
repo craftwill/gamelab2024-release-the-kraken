@@ -64,7 +64,7 @@ namespace Kraken
         {
             void GameTimerDoneCallback()
             {
-                if (!_isMaster) return;
+                if (!_isMaster || this == null) return;
                 print("DEFEAT!! -------- Timer expired!");
                 photonView.RPC(nameof(RPC_All_EndGame), RpcTarget.All, false, (int)EndGameType.TimerOut);
             }

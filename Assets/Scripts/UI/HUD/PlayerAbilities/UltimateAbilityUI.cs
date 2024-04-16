@@ -24,6 +24,7 @@ namespace Kraken.UI
         public void Init(bool isRazzle, bool isKeyboard)
         {
             _imgControl.sprite = _controlSprites[isKeyboard ? 0 : 1];
+            _imgUltIndicator.sprite = _ultIndicatorSprites[_isRazzle ? 0 : 1];
         }
 
         public void SetIsGreyedOut(bool isGreyedOut)
@@ -34,22 +35,14 @@ namespace Kraken.UI
 
         private void Start()
         {
-            EventManager.AddEventListener(EventNames.SetupHUD, HandleSetupHUD);
             EventManager.AddEventListener(EventNames.UpdateUltimateUI, HandleUpdateUltimateUI);
             EventManager.AddEventListener(EventNames.UpdateUltimateUIIndicator, HandleUpdateUltimateUIIndicator);
         }
 
         private void OnDestroy()
         {
-            EventManager.RemoveEventListener(EventNames.SetupHUD, HandleSetupHUD);
             EventManager.RemoveEventListener(EventNames.UpdateUltimateUI, HandleUpdateUltimateUI);
             EventManager.RemoveEventListener(EventNames.UpdateUltimateUIIndicator, HandleUpdateUltimateUIIndicator);
-        }
-
-        private void HandleSetupHUD(BytesData data)
-        {
-            _isRazzle = (data as SetupHUDData).IsRazzle;
-            _imgUltIndicator.sprite = _ultIndicatorSprites[_isRazzle ? 0 : 1];
         }
 
         private void HandleUpdateUltimateUI(BytesData data)
