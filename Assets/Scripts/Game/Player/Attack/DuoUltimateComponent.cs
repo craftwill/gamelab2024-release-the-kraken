@@ -59,16 +59,7 @@ namespace Kraken
         private void Update()
         {
             if (!photonView.IsMine) return;
-            if (_state == UltimateState.WaitingForUltimate && _otherPlayerWaiting)
-            {
-                _isCloseEnoughToCast = GetDistanceBetweenPlayers() < Config.current.ultimateStartMaxDistance;
-                if (_wasCloseEnoughToCast != _isCloseEnoughToCast)
-                {
-                    EventManager.Dispatch(EventNames.UpdatePressControlToUltUI, new BoolDataBytes(_isCloseEnoughToCast));
-                }
-                _wasCloseEnoughToCast = _isCloseEnoughToCast;
-            }
-            else if (_state == UltimateState.InUltimate)
+            if (_state == UltimateState.InUltimate)
             {
                 //Calculate distance traveled
                 Vector3 distanceVec = transform.position - _previousPosition;
@@ -99,6 +90,20 @@ namespace Kraken
                 {
                     _playersSeparated = true;
                 }
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            // If we are the player waited to start the ult, update show control HUD according to if close enough
+            if (_otherPlayerWaiting)
+            {
+                _isCloseEnoughToCast = GetDistanceBetweenPlayers() < Config.current.ultimateStartMaxDistance;
+                if (_wasCloseEnoughToCast != _isCloseEnoughToCast)
+                {
+                    EventManager.Dispatch(EventNames.UpdatePressControlToUltUI, new BoolDataBytes(_isCloseEnoughToCast));
+                }
+                _wasCloseEnoughToCast = _isCloseEnoughToCast;
             }
         }
 
@@ -143,6 +148,9 @@ namespace Kraken
             _inputTimerCoroutine = StartCoroutine(UltimateTriggerTimer());
             // Show other player is waiting for you in HUD
             EventManager.Dispatch(EventNames.UpdateUltimateUIIndicator, new BoolDataBytes(true));
+            // Show press control to cast ult if close enough
+            _isCloseEnoughToCast = GetDistanceBetweenPlayers() < Config.current.ultimateStartMaxDistance;
+            EventManager.Dispatch(EventNames.UpdatePressControlToUltUI, new BoolDataBytes(_isCloseEnoughToCast));
         }
 
         private IEnumerator UltimateTriggerTimer()
