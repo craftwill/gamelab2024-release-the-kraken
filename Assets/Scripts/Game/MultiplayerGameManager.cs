@@ -50,7 +50,12 @@ namespace Kraken
             int playerClassId = GetPlayerClassId();
             bool isRazzle = playerClassId == 0;
             bool isKeyboard = _playerInput.currentControlScheme.Equals("Gamepad");
-            EventManager.Dispatch(EventNames.SetupHUD, new SetupHUDData(isRazzle, isKeyboard));
+
+            // Delay to init HUD since events listeners are added in Start()
+            Animate.Delay(0.02f, () => 
+            {
+                EventManager.Dispatch(EventNames.SetupHUD, new SetupHUDData(isRazzle, isKeyboard));
+            });
 
             if (!PhotonNetwork.IsMasterClient) return;
 
