@@ -33,6 +33,7 @@ namespace Kraken
             if (!_isMaster) return;
 
             // Temporary basic shuffle
+            //re: famous last words
             if (Config.current.randomizeObjectives)
             {
                 _allSpawnObjectives.MMShuffle();
@@ -42,7 +43,16 @@ namespace Kraken
             _loadedObjectives = new List<ObjectiveWithLocation>();
             _loadedObjectives.AddRange(_allSpawnObjectives.GetRange(0, Config.current.spawnObjectiveCount));
             _loadedObjectives.AddRange(_allMinibossObjectives.GetRange(0, Config.current.minibossObjectiveCount));
-            if (Config.current.randomizeObjectives) _loadedObjectives.MMShuffle();
+
+            if(_loadedObjectives.Count > 0)
+            {
+                do
+                {
+                    if (Config.current.randomizeObjectives) _loadedObjectives.MMShuffle();
+
+                } while (Config.current.firstObectiveIsSpawn && _loadedObjectives[0].objective is not TerritoryObjectiveSO);
+            }
+            
 
             EventManager.AddEventListener(EventNames.StartObjectives, HandleStartObjectives);
             EventManager.AddEventListener(EventNames.NextObjective, HandleNextObjectives);
