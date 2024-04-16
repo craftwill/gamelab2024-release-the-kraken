@@ -71,6 +71,22 @@ namespace AK
         static const AkUniqueID SFX_UI_OBJECTIFS_REINFORCEMENTS_WARNING = 1984403743U;
     } // namespace EVENTS
 
+    namespace STATES
+    {
+        namespace EVENTS
+        {
+            static const AkUniqueID GROUP = 1381315342U;
+
+            namespace STATE
+            {
+                static const AkUniqueID BASE = 1291433366U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID OBJECTIVE = 6899006U;
+            } // namespace STATE
+        } // namespace EVENTS
+
+    } // namespace STATES
+
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID COMBOPITCH = 24633649U;

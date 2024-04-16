@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{AA67F0C4-6CBA-6C6E-E795-D4F55A3BFC86}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{DB8A9578-DF19-F83E-D047-C8C697D4C59B}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -28,8 +28,17 @@
 				<GameParameter Id="583340435" Name="VolumeSounds"/>
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="1381315342" Name="Events">
+					<States>
+						<State Id="6899006" Name="Objective"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="1291433366" Name="Base"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{39C6571A-77A6-71B0-8988-6B952967327E}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{9C68AD81-4358-EF60-31F4-916803D2A0D3}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -111,7 +120,7 @@
 				</File>
 				<File Id="549962265" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FGHTImpt_Anime Melee 6.wav</ShortName>
-					<CachePath>SFX/FGHTImpt_Anime Melee 6_776DEC4B.wem</CachePath>
+					<CachePath>SFX/FGHTImpt_Anime Melee 6_FA5396E4.wem</CachePath>
 				</File>
 				<File Id="558663070" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>kazoo 1.wav</ShortName>
@@ -472,5 +481,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{58B31F0F-234F-EE57-8EB1-10EDF6781FBE}</FileHash>
+	<FileHash>{8D515997-C7E6-7AD5-5DA0-6D48554341DD}</FileHash>
 </SoundBanksInfo>

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{6D2C53BE-587B-4E4A-BDB2-9C27C51E5AE1}" SchemaVersion="119">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{6D2C53BE-587B-4E4A-BDB2-9C27C51E5AE1}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{6D2C53BE-587B-4E4A-BDB2-9C27C51E5AE1}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Events" ID="{CC4C60EF-1E89-40C8-81E1-80681853D17C}">
+					<ChildrenList>
+						<State Name="None" ID="{184A3356-2172-4009-874C-6383058938DF}"/>
+						<State Name="Objective" ID="{37D560A8-D418-45E2-A613-BFA86C78FC9B}"/>
+						<State Name="Base" ID="{99D4776C-CB39-402D-AA39-8197AB29FBF1}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>
