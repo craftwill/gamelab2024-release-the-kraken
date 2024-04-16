@@ -112,6 +112,12 @@ namespace Kraken
 
         private void HandleStopAllSounds(BytesData data)
         {
+            photonView.RPC(nameof(RPC_All_StopAllSounds), RpcTarget.All);
+        }
+
+        [PunRPC]
+        private void RPC_All_StopAllSounds()
+        {
             AkSoundEngine.StopAll();
         }
 
