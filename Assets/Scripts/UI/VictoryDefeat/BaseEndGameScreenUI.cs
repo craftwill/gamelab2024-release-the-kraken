@@ -17,6 +17,7 @@ namespace Kraken.UI
         protected bool _onlyOnce = true;
         protected virtual void HandleShowScreenUI(BytesData data)
         {
+            Time.timeScale = 1f;
             GameManager.ToggleCursor(true);
             EventManager.Dispatch(EventNames.HideHUD, null);
             SetVisible(true);

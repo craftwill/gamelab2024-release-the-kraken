@@ -35,6 +35,7 @@ namespace Kraken
 
         private void Start()
         {
+            Time.timeScale = 1f;
             EventManager.Dispatch(EventNames.EnterMenu, null);
 
             // Reset night count to 0

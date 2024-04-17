@@ -59,6 +59,7 @@ namespace Together
 
         private void Start()
         {
+            Time.timeScale = 1f;
             AkSoundEngine.StopAll();
             cvGroup = GetComponent<CanvasGroup>();
             GameManager.ToggleCursor(true);
