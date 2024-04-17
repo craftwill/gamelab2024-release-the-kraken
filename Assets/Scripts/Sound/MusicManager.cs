@@ -56,7 +56,7 @@ namespace Kraken
         {
             _stopMenuMusic.Post(gameObject);
             photonView.RPC(nameof(RPC_All_PlayGameMusic), RpcTarget.All);
-            AkSoundEngine.SetState("Events", "Base");
+            photonView.RPC(nameof(RPC_All_SetGameMusicState), RpcTarget.All,"Base");
             _state = MusicState.General;
             _inGame = true;
         }
@@ -78,17 +78,16 @@ namespace Kraken
         {
             _playersInZone++;
             if (_state == MusicState.Boss || _state == MusicState.Objective || !Config.current.useObjectiveMusic || !_inGame) return;
-            AkSoundEngine.SetState("Events", "Objective");
+            photonView.RPC(nameof(RPC_All_SetGameMusicState), RpcTarget.All,"Objective");
             _state = MusicState.Objective;
         }
 
         private void HandlePlayerLeftZone(BytesData data)
         {
-            Debug.Log(_state);
             _playersInZone = Mathf.Clamp(_playersInZone - 1, 0, _playersInZone);
             if (_state == MusicState.Boss || _state == MusicState.General || !Config.current.useObjectiveMusic || !_inGame) return;
             if (_playersInZone > 0) return;
-            AkSoundEngine.SetState("Events", "Base");
+            photonView.RPC(nameof(RPC_All_SetGameMusicState), RpcTarget.All, "Base");
             _state = MusicState.General;
         }
 
@@ -140,6 +139,12 @@ namespace Kraken
         private void RPC_All_StopGameMusic()
         {
             _stopGameMusic.Post(gameObject);
+        }
+
+        [PunRPC]
+        private void RPC_All_SetGameMusicState(string state)
+        {
+            AkSoundEngine.SetState("Events", state);
         }
     }
 
