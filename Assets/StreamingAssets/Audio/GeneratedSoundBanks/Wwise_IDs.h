@@ -15,8 +15,12 @@ namespace AK
     {
         static const AkUniqueID MUSIQUE_GENERAL_MENUS_MAINMENU = 1387075791U;
         static const AkUniqueID MUSIQUE_GENERAL_MENUS_MAINMENU_STOP = 2251471866U;
+        static const AkUniqueID MUSIQUE_MONDE_BASE_COMBAT = 1706943895U;
+        static const AkUniqueID MUSIQUE_MONDE_BASE_COMBAT_STOP = 1834235186U;
         static const AkUniqueID MUSIQUE_MONDE_ENNEMIS_BOSS = 1616343810U;
         static const AkUniqueID MUSIQUE_MONDE_ENNEMIS_BOSS_STOP = 3528907905U;
+        static const AkUniqueID MUSIQUE_MONDE_ENNEMIS_MINIBOSS = 2795390379U;
+        static const AkUniqueID MUSIQUE_MONDE_ENNEMIS_MINIBOSS_STOP = 958708710U;
         static const AkUniqueID MUSIQUE_MONDE_JEU = 2487678769U;
         static const AkUniqueID MUSIQUE_MONDE_JEU_STOP = 48483668U;
         static const AkUniqueID PLAY_DEFEAT = 324646143U;

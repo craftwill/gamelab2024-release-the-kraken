@@ -38,7 +38,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{A9BF4493-95E2-F7E5-6BDD-165A52FE2196}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{056832A1-5FFE-41FA-3800-FF64EE601CCF}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
@@ -166,6 +166,10 @@
 					<ShortName>Soundtrack_3_FIGHT.wav</ShortName>
 					<CachePath>SFX/Soundtrack_3_FIGHT_D516612F.wem</CachePath>
 				</File>
+				<File Id="879523648" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundtrack_1.wav</ShortName>
+					<CachePath>SFX/Soundtrack_1_042FC3FE.wem</CachePath>
+				</File>
 				<File Id="880892876" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>woosh 25.wav</ShortName>
 					<CachePath>SFX/woosh 25_818F3B66.wem</CachePath>
@@ -173,6 +177,10 @@
 				<File Id="885078972" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ELECSprk_Anime Spark 1.wav</ShortName>
 					<CachePath>SFX/ELECSprk_Anime Spark 1_DD8C97F0.wem</CachePath>
+				</File>
+				<File Id="912005944" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Soundtrack_4.wav</ShortName>
+					<CachePath>SFX/Soundtrack_4_89B5777A.wem</CachePath>
 				</File>
 				<File Id="926136448" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MAGSpel_Anime Ability Ready 2.wav</ShortName>
@@ -219,12 +227,24 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="2251471866" Name="MUSIQUE_GENERAL_MENUS_MAINMENU_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1706943895" Name="MUSIQUE_MONDE_BASE_COMBAT" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="912005944"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1834235186" Name="MUSIQUE_MONDE_BASE_COMBAT_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1616343810" Name="MUSIQUE_MONDE_ENNEMIS_BOSS" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="145574417"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3528907905" Name="MUSIQUE_MONDE_ENNEMIS_BOSS_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2795390379" Name="MUSIQUE_MONDE_ENNEMIS_MINIBOSS" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="879523648"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="958708710" Name="MUSIQUE_MONDE_ENNEMIS_MINIBOSS_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2487678769" Name="MUSIQUE_MONDE_JEU" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -495,5 +515,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D5FA2169-9E26-1BDE-5124-BD32BE99A059}</FileHash>
+	<FileHash>{4F2EC083-4043-2541-E493-5C8FBED202A9}</FileHash>
 </SoundBanksInfo>
