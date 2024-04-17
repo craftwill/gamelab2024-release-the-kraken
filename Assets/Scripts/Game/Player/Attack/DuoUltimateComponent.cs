@@ -159,6 +159,7 @@ namespace Kraken
             _otherPlayerWaiting = true;
             yield return new WaitForSeconds(Config.current.ultimateTriggerTimer);
             _otherPlayerWaiting = false;
+            EventManager.Dispatch(EventNames.UpdateUltimateUIIndicator, new BoolDataBytes(false));
         }
 
         private IEnumerator UltimateMinimumTimer()

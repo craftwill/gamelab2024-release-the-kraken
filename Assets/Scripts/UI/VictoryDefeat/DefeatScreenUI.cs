@@ -1,5 +1,6 @@
 using Bytes;
 using Photon.Pun;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ namespace Kraken.UI
         [SerializeField] private GameObject _playerLost;
         [SerializeField] private GameObject _timeLost;
         [SerializeField] Button _startOverButton;
-        [SerializeField] Button _backToMenuButton;
+        
         private void Start()
         {
             EventManager.AddEventListener(EventNames.ShowDefeatScreenUI, HandleShowScreenUI);
@@ -32,6 +33,7 @@ namespace Kraken.UI
         {
             PlayerPrefs.SetInt(Config.GAME_NIGHT_KEY, PlayerPrefs.GetInt(Config.GAME_NIGHT_KEY, 0));
             base.HandleShowScreenUI(data);
+            StartCoroutine(PreventAccidentClick());
         }
 
         private void HandleShowDefeatByZoneUI(BytesData data)
@@ -64,13 +66,20 @@ namespace Kraken.UI
         public override void SetVisible(bool isVisible)
         {
             base.SetVisible(isVisible);
+        }
+
+        private IEnumerator PreventAccidentClick()
+        {
+            yield return new WaitForSeconds(2f);
+
+            _backToMenuButton.gameObject.SetActive(true);
             if (PhotonNetwork.IsMasterClient)
             {
+                _startOverButton.gameObject.SetActive(true);
                 _startOverButton.Select();
-            }   
+            }
             else
             {
-                _startOverButton.gameObject.SetActive(false);
                 _backToMenuButton.Select();
             }
         }
