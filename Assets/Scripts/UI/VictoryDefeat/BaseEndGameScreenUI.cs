@@ -2,6 +2,7 @@
 using UnityEngine;
 
 using Bytes;
+using UnityEngine.UI;
 
 namespace Kraken.UI
 {
@@ -12,11 +13,13 @@ namespace Kraken.UI
         [SerializeField] protected Transform _maxScoreObject;
         [SerializeField] protected Transform _currentScoreObject;
         [SerializeField] protected GameObject[] _spritesPrefab;
+        [SerializeField] protected Button _backToMenuButton;
 
         //can't afford a button registering twice
         protected bool _onlyOnce = true;
         protected virtual void HandleShowScreenUI(BytesData data)
         {
+            Time.timeScale = 1f;
             GameManager.ToggleCursor(true);
             EventManager.Dispatch(EventNames.HideHUD, null);
             SetVisible(true);

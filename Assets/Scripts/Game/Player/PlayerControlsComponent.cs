@@ -411,7 +411,7 @@ namespace Kraken
         public void SetControlsEnabled(bool controlsEnabled)
         {
             this.controlsEnabled = controlsEnabled;
-
+            if (!controlsEnabled) _playerAnimationComponent.SetLoopedStateIdle();
             _playerAttackComponent.SetAttacksControlsEnabled(controlsEnabled);
         }
 

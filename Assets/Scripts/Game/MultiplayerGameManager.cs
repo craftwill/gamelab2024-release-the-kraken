@@ -112,6 +112,7 @@ namespace Kraken
             }    
 
             _gameStarted = true;
+            Time.timeScale = 1f;
             EventManager.Dispatch(EventNames.StartGameFlow, null);
         }
 

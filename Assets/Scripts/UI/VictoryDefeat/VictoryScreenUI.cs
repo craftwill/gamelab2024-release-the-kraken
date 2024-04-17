@@ -1,6 +1,7 @@
 
 using Bytes;
 using Photon.Pun;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +27,7 @@ namespace Kraken.UI
         {
             PlayerPrefs.SetInt(Config.GAME_NIGHT_KEY, PlayerPrefs.GetInt(Config.GAME_NIGHT_KEY, 0) + 1);
             base.HandleShowScreenUI(data);
+            StartCoroutine(PreventAccidentClick());
         }
 
         public void Btn_NextNight()
@@ -42,7 +44,14 @@ namespace Kraken.UI
         public override void SetVisible(bool isVisible)
         {
             base.SetVisible(isVisible);
+        }
 
+        private IEnumerator PreventAccidentClick()
+        {
+            yield return new WaitForSeconds(2f);
+
+            _backToMenuButton.gameObject.SetActive(true);
+            _btnNextNight.gameObject.SetActive(true);
             _btnNextNight.Select();
         }
     }

@@ -80,13 +80,23 @@ namespace Kraken
         [PunRPC]
         private void RPC_ALL_PlayStarfallAnim()
         {
-            _bossAnim.PlayStarfallAttack();
+            //not sure if it works
+            void PlayFuckingIdle()
+            {
+                _bossAnim.SetLoopedStateIdle();
+            }
+            _bossAnim.PlayStarfallAttack(PlayFuckingIdle);
         }
 
         [PunRPC]
         private void RPC_ALL_PlayRoLAnim()
         {
-            _bossAnim.PlayRingsOfLightAttack();
+            //not sure if it works
+            void PlayFuckingIdle()
+            {
+                _bossAnim.SetLoopedStateIdle();
+            }
+            _bossAnim.PlayRingsOfLightAttack(PlayFuckingIdle);
         }
 
         private void OnTakeDamageListener(float dmgAmount)
