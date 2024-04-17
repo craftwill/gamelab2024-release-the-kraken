@@ -127,7 +127,7 @@ namespace Kraken
 
             if (!PhotonNetwork.IsMasterClient) return;
 
-            Animate.Delay(2.5f, () => 
+            Animate.Delay(1.5f, () => 
             {
                 if (this == null) return;
                 PhotonNetwork.Destroy(photonView);

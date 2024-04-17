@@ -17,6 +17,8 @@ namespace Kraken
         private bool _youWaiting = false;
         private int _woolQuantity = 0;
         private LilWoolManager _woolManager;
+        private bool _isC = true;
+        private bool canShowInput = false;
 
         private GameObject _calling;
         private GameObject _waiting;
@@ -26,6 +28,8 @@ namespace Kraken
         [SerializeField] private GameObject _dazzleWaiting;
         [SerializeField] private GameObject _razzleWaiting;
         [SerializeField] private GameObject _towerAvailable;
+        [SerializeField] private GameObject _mkInput;
+        [SerializeField] private GameObject _cInput;
 
         private void Start()
         {
@@ -42,6 +46,7 @@ namespace Kraken
             EventManager.AddEventListener(EventNames.PlayerEnteredTower, HandlePlayerEnteredZone);
             EventManager.AddEventListener(EventNames.PlayerLeftTower, HandlePlayerLeftZone);
             EventManager.AddEventListener(EventNames.UpdateWoolQuantity, HandleUpdateWoolQuantity);
+            EventManager.AddEventListener(EventNames.InputSchemeChanged, HandleInputSchemeChanged);
         }
 
         private void OnDestroy()
@@ -52,6 +57,7 @@ namespace Kraken
             EventManager.RemoveEventListener(EventNames.PlayerEnteredTower, HandlePlayerEnteredZone);
             EventManager.RemoveEventListener(EventNames.PlayerLeftTower, HandlePlayerLeftZone);
             EventManager.RemoveEventListener(EventNames.UpdateWoolQuantity, HandleUpdateWoolQuantity);
+            EventManager.RemoveEventListener(EventNames.InputSchemeChanged, HandleInputSchemeChanged);
         }
 
         private void HandleTowerAttemptBuilt(BytesData bytes)
@@ -83,6 +89,7 @@ namespace Kraken
             {
                 _playerIsInZone = true;
                 UpdateTowerUI();
+                
             }
         }
 
@@ -100,6 +107,12 @@ namespace Kraken
         {
             _woolQuantity = ((IntDataBytes)bytes).IntValue;
             UpdateTowerUI();
+        }
+
+        private void HandleInputSchemeChanged(BytesData bytes)
+        {
+            _isC = (bytes as StringDataBytes).StringValue.Equals("Gamepad");
+            SetNewVisibleUI(_visibleGameObject);
         }
 
         private void UpdateTowerUI()
@@ -124,12 +137,25 @@ namespace Kraken
 
         private void SetNewVisibleUI(GameObject g)
         {
-            if(g != _visibleGameObject)
+            
+            if (g != _visibleGameObject)
             {
                 _visibleGameObject?.SetActive(false);
                 _visibleGameObject = g;
                 _visibleGameObject?.SetActive(true);
             }
+            
+            if (_visibleGameObject && _playerIsInZone)
+            {
+                _cInput.SetActive(_isC);
+                _mkInput.SetActive(!_isC);
+            }
+            else
+            {
+                _cInput.SetActive(false);
+                _mkInput.SetActive(false);
+            }
+            
         }
 
         [PunRPC]
