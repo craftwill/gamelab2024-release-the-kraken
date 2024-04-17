@@ -55,7 +55,6 @@ namespace Kraken
                 {
                     _isHealing = false;
                     photonView.RPC(nameof(RPC_ALL_HealAnimAndVFX), RpcTarget.All, false);
-                    EventManager.Dispatch(EventNames.UpdatePatchingUpUI, new BoolDataBytes(false));
                 }
             }
         }
@@ -80,14 +79,12 @@ namespace Kraken
                     photonView.RPC(nameof(RPC_ALL_HealAnimAndVFX), RpcTarget.All, true);
 
                     StartCoroutine(HealCoroutine());
-                    EventManager.Dispatch(EventNames.UpdatePatchingUpUI, new BoolDataBytes(true));
                 }
             }
             else
             {
                 _isHealing = false;
                 photonView.RPC(nameof(RPC_ALL_HealAnimAndVFX), RpcTarget.All, false);
-                EventManager.Dispatch(EventNames.UpdatePatchingUpUI, new BoolDataBytes(false));
             }
         }
 
@@ -103,7 +100,7 @@ namespace Kraken
                     if (_lilWoolManager._woolQuantity == 0)
                     {
                         _isHealing = false;
-                        EventManager.Dispatch(EventNames.UpdatePatchingUpUI, new BoolDataBytes(false));
+                        photonView.RPC(nameof(RPC_ALL_HealAnimAndVFX), RpcTarget.All, false);
                     }
                     photonView.RPC(nameof(RPC_Master_UseWool), RpcTarget.MasterClient);
                 }
@@ -123,6 +120,7 @@ namespace Kraken
         [PunRPC]
         private void RPC_ALL_HealAnimAndVFX(bool toggle)
         {
+            EventManager.Dispatch(EventNames.UpdatePatchingUpUI, new BoolDataBytes(toggle));
             _healVFXinstance.SetActive(toggle);
             _healVFXinstance.transform.position = _componentToHeal.transform.position;
             if (toggle) _animComponent?.SetLoopedStateHealing();
