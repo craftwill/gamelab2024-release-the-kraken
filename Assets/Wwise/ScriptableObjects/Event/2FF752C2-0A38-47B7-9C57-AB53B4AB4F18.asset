@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c75bd90d2002764cbcde38269546abc, type: 3}
+  m_Name: 2FF752C2-0A38-47B7-9C57-AB53B4AB4F18
+  m_EditorClassIdentifier: 
+  objectName: MUSIQUE_MONDE_JEU
+  id: 2487678769
+  guid: 2FF752C2-0A38-47B7-9C57-AB53B4AB4F18

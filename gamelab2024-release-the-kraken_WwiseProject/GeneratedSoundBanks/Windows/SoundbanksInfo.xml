@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{FBDEAE07-9751-92DB-BE55-4F3FD255DFDD}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{FFD25D80-6D63-8F4B-329E-B0E0D48C78E4}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -28,11 +28,24 @@
 				<GameParameter Id="583340435" Name="VolumeSounds"/>
 				<GameParameter Id="3923584592" Name="VolumeMusic"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="1381315342" Name="Events">
+					<States>
+						<State Id="6899006" Name="Objective"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="1291433366" Name="Base"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{39C6571A-77A6-71B0-8988-6B952967327E}">
+		<SoundBank Id="1512859615" Type="User" Language="SFX" Hash="{C641DC97-4BBE-597C-960E-170AF85B34B1}">
 			<ShortName>Testing</ShortName>
 			<Path>Testing.bnk</Path>
 			<Media>
+				<File Id="17124181" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Base.wav</ShortName>
+					<CachePath>SFX/Base_FBC78EF0.wem</CachePath>
+				</File>
 				<File Id="120466864" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FGHTImpt_Anime Melee 4.wav</ShortName>
 					<CachePath>SFX/FGHTImpt_Anime Melee 4_AEF7984D.wem</CachePath>
@@ -97,6 +110,10 @@
 					<ShortName>fast-whoosh-118248.wav</ShortName>
 					<CachePath>SFX/fast-whoosh-118248_0414C971.wem</CachePath>
 				</File>
+				<File Id="452272550" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Objective.wav</ShortName>
+					<CachePath>SFX/Objective_FBC78EF0.wem</CachePath>
+				</File>
 				<File Id="485885184" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Idle-menu-character_select.wav</ShortName>
 					<CachePath>SFX/Idle-menu-character_select_863F78DD.wem</CachePath>
@@ -111,7 +128,7 @@
 				</File>
 				<File Id="549962265" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FGHTImpt_Anime Melee 6.wav</ShortName>
-					<CachePath>SFX/FGHTImpt_Anime Melee 6_776DEC4B.wem</CachePath>
+					<CachePath>SFX/FGHTImpt_Anime Melee 6_FA5396E4.wem</CachePath>
 				</File>
 				<File Id="558663070" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>kazoo 1.wav</ShortName>
@@ -228,6 +245,23 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="958708710" Name="MUSIQUE_MONDE_ENNEMIS_MINIBOSS_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2487678769" Name="MUSIQUE_MONDE_JEU" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1381315342" Id="1291433366"/>
+							<MediaRefs>
+								<MediaRef Id="17124181"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1381315342" Id="6899006"/>
+							<MediaRefs>
+								<MediaRef Id="452272550"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="48483668" Name="MUSIQUE_MONDE_JEU_STOP" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="324646143" Name="Play_Defeat" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="121810478"/>
@@ -470,7 +504,16 @@
 			<GameParameters>
 				<GameParameter Id="24633649" Name="ComboPitch"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="1381315342" Name="Events">
+					<States>
+						<State Id="6899006" Name="Objective"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="1291433366" Name="Base"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B54C3F95-9360-7199-0308-BBA56414CC52}</FileHash>
+	<FileHash>{D2BE3B7C-1E31-E7EC-E4B9-C5456371DD17}</FileHash>
 </SoundBanksInfo>

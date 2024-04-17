@@ -149,6 +149,10 @@ MonoBehaviour:
   - RPC_ALL_PlayRoLAnim
   - RPC_ALL_PlayStarfallAnim
   - RPC_All_DispatchReinforcementHint
+  - RPC_All_StopAllSounds
+  - RPC_All_PlayGameMusic
+  - RPC_All_StopGameMusic
+  - RPC_All_SetGameMusicState
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

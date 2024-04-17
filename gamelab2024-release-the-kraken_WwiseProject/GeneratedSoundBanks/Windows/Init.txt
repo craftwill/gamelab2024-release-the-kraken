@@ -1,3 +1,11 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	1381315342	Events			\Default Work Unit\Events	
+
+State	ID	Name	State Group			Notes
+	6899006	Objective	Events			
+	748895195	None	Events			
+	1291433366	Base	Events			
+
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	583340435	VolumeSounds			\Default Work Unit\VolumeSounds	
 	3923584592	VolumeMusic			\Default Work Unit\VolumeMusic	
