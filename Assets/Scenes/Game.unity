@@ -109538,7 +109538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnData: {fileID: 11400000, guid: 30f45879b29669d47a3b208cfd422a5e, type: 2}
-  spawnFrequency: 1.1
+  spawnFrequency: 1.2
   zoneSpawnRatio: 0.8
   _additionalSpawnpoints:
   - {fileID: 1699772189}

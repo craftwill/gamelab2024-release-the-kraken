@@ -22,6 +22,7 @@ MonoBehaviour:
   randomizeObjectives: 1
   spawnObjectiveCount: 3
   minibossObjectiveCount: 2
+  firstObectiveIsSpawn: 1
   gameDuration: 240
   maxHealth: 250
   initialCameraAngle: 180
@@ -63,8 +64,8 @@ MonoBehaviour:
   sprintFov: 60
   fovChangeDuration: 5
   changeFovOnSprint: 1
-  ultimateStartMaxDistance: 5
-  ultimateEndDistance: 3
+  ultimateStartMaxDistance: 7
+  ultimateEndDistance: 4
   ultimateMinDamageDistance: 15
   ultimateDamage: 20
   ultimateMinDamage: 3
