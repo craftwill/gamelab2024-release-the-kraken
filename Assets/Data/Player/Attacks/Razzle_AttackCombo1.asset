@@ -16,9 +16,9 @@ MonoBehaviour:
   nextAttack: {fileID: 11400000, guid: 8ce0b873351851b47a26208ab227c093, type: 2}
   colliderGameObject: {fileID: 9211684295016083868, guid: 2225460c0f30b044f9f6ad6844e982ed,
     type: 3}
-  timeBeforeHitboxDuration: 0.45
+  timeBeforeHitboxDuration: 0.3
   hitboxDuration: 0.15
-  attackLockLength: 0.5
+  attackLockLength: 0.3
   animDoneBufferTimer: 0.5
   damage: 1
   comboStep: 1
