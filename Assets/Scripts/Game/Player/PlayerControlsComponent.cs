@@ -33,7 +33,7 @@ namespace Kraken
         private CinemachineFreeLook _freeLookCam;
         
         private MovementState _movementState = MovementState.Walking;
-        private string _currentScheme;
+        private string _currentScheme = "";
         private Vector2 _moveVec = Vector2.zero;
         private float _fallingVelocity = -1.0f;
         private bool _sprintPressed = false;
@@ -80,7 +80,6 @@ namespace Kraken
                 _freeLookCam.m_XAxis.m_InvertInput = Config.current.invertXAxis;
                 _freeLookCam.m_YAxis.m_InvertInput = Config.current.invertYAxis;
                 _freeLookCam.m_Lens.FieldOfView = Config.current.baseFov;
-                _currentScheme = _input.currentControlScheme;
 
                 _moveInput.action.performed += OnMove;
                 _moveInput.action.canceled += OnMove;
