@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: EnemyConfig_Miniboss
   m_EditorClassIdentifier: 
   enemyName: Miniboss
-  maxHealth: 75
+  maxHealth: 60
   moveSpeed: 0.5
   attackRange: 10
-  damageDealt: 75
+  damageDealt: 50
   attackCooldown: 1
   attackDuration: 0.1
   lockedIntoAttackDuration: 0.5
   rangedProjectile: {fileID: 0}
-  zoneOccupancyCount: 50
+  zoneOccupancyCount: 25
   pathfindingDistanceRadius: 25

@@ -675,19 +675,19 @@ MonoBehaviour:
   _healthComponent: {fileID: 3539384387315477434}
   _soundComponent: {fileID: 6177580151121801195}
   _starfallConfig:
-    starChargeTime: 1.1
+    starChargeTime: 1.2
     attackRadius: 18
     starCount: 50
     delayBetweenStars: 0.1
-    telegraphRadius: 3
-    damage: 20
+    telegraphRadius: 2.5
+    damage: 10
     cooldown: 6
   _rolConfig:
-    ring1ChargeTime: 1.4
-    ring2ChargeTime: 1.3
+    ring1ChargeTime: 1.5
+    ring2ChargeTime: 1.4
     ring1Radius: 10
     ring2Radius: 9
-    damage: 50
+    damage: 30
     cooldown: 6
 --- !u!114 &6957891619024676904
 MonoBehaviour:
@@ -704,6 +704,7 @@ MonoBehaviour:
   _animStateMachine: {fileID: 8082780783602929124}
   _animatorPrefix: SheepBoss_Queen
   _animatorSuffix: 
+  _hurtAnimSpeed: 1
 --- !u!114 &6177580151121801195
 MonoBehaviour:
   m_ObjectHideFlags: 0
