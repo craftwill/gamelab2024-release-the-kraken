@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ProjectInfo>
-	<Project Name="gamelab2024-release-the-kraken_WwiseProject" GUID="{43191C42-7FF9-4233-8D59-EE703698F0A6}" Generator="2023.1.2.8444"/>
+	<Project Name="gamelab2024-release-the-kraken_WwiseProject" GUID="{43191C42-7FF9-4233-8D59-EE703698F0A6}" Generator="2023.1.1.8417"/>
 	<CacheRoot>../../../../gamelab2024-release-the-kraken_WwiseProject/.cache</CacheRoot>
 	<Platforms>
 		<Platform Name="Mac" GUID="{8604BDCF-2AA9-4A6C-92EE-12A6197470DE}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="../../../../gamelab2024-release-the-kraken_WwiseProject/GeneratedSoundBanks/Mac"/>
@@ -9,5 +9,5 @@
 	<Languages>
 		<Language Name="English(US)" Id="684519430" GUID="{87711FE0-4EBC-44E4-8A02-0B050347E4EA}" Default="true" UseAsStandIn="true"/>
 	</Languages>
-	<FileHash>{7C035095-3A1F-34A2-08A8-52D1C617F0D1}</FileHash>
+	<FileHash>{20B444B4-7716-34EA-0BB1-5A3958A09C7D}</FileHash>
 </ProjectInfo>
